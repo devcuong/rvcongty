@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 16, 2020 lúc 04:30 PM
+-- Thời gian đã tạo: Th2 16, 2020 lúc 06:21 PM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `congty` (
   `id` int(11) NOT NULL,
   `tencongty` varchar(100) NOT NULL,
+  `logo` varchar(100) NOT NULL,
   `nganhnghe` varchar(100) NOT NULL,
   `nhanvien` int(11) NOT NULL,
   `luotdanhgia` int(11) NOT NULL,
