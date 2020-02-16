@@ -22,8 +22,6 @@
 	content="https://reviewcongty.com/images/banner.jpg">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:site_name" content="Review Công ty">
-<meta name="google-site-verification"
-	content="NdJrx4BHKYYlht3UIv40iAbUayfeEEdK8gP4p2wFgKA">
 <title>Review Công ty - Review lương bổng, đãi ngộ, HR, sếp và công
 	việc,... gì cũng có</title>
 
@@ -62,11 +60,14 @@
 
 <link rel="preload stylesheet" as="style" crossorigin="anonymous"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-<link href="./rvcongty_files/css" rel="stylesheet">
+<link href="<?php echo $servername ?>/mvc/public/css/css" rel="stylesheet">
 <link rel="preload stylesheet" as="style" crossorigin="anonymous"
 	href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.css"
 	integrity="sha256-GHbWr7miG/WXEsrIb47MsX3KBJa9FTyi5ZMYr4XDHAQ=">
-<link rel="stylesheet" type="text/css" href=<?php echo $servername ?>/mvc/public/css/style.less />
+<link rel="stylesheet" type="text/css" href="<?php echo $servername ?>/mvc/public/css/style.less" />
+ <link rel="preload stylesheet" as="style" crossorigin="anonymous"
+    href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <style type="text/css" id="less:stylesheets-style">
 @media screen and (max-width: 768px) {
 	html {
@@ -548,20 +549,7 @@ a.white-link:hover {
 	background: white;
 }
 </style>
-<script type="text/javascript" async="" src="./rvcongty_files/js"></script>
-<script src="./rvcongty_files/osd.js.tải xuống"></script>
-<script src="./rvcongty_files/351711512097765" async=""></script>
-<script src="./rvcongty_files/sdk.js.tải xuống" async=""
-	crossorigin="anonymous"></script>
-<script src="./rvcongty_files/f(4).txt"></script>
-<script async="" src="./rvcongty_files/fbevents.js.tải xuống"></script>
-<script src="./rvcongty_files/f(5).txt" id="google_shimpl"></script>
-<script data-ad-client="ca-pub-4277948410104697" async=""
-	src="./rvcongty_files/f(6).txt" data-checked-head="true"></script>
-<link rel="preload" href="./rvcongty_files/f(7).txt" as="script">
-<script type="text/javascript" src="./rvcongty_files/f(7).txt"></script>
-<link rel="preload" href="./rvcongty_files/f(8).txt" as="script">
-<script type="text/javascript" src="./rvcongty_files/f(8).txt"></script>
+<script type="text/javascript" async="" src="<?php echo $servername ?>/mvc/public/js/js"></script>
 <style>
 #instantclick {
 	position: fixed;
@@ -581,10 +569,6 @@ a.white-link:hover {
 	transition: all .25s
 }
 </style>
-<script async="" src="./rvcongty_files/hotjar-1196872.js.tải xuống"></script>
-<script async=""
-	src="./rvcongty_files/modules.a6ee02de5873aa236440.js.tải xuống"
-	charset="utf-8"></script>
 <style type="text/css">
 iframe#_hjRemoteVarsFrame {
 	display: none !important;
@@ -964,7 +948,7 @@ transform
 		<div class="container">
 			<div class="logo" data-no-instant="">
 				<a href="https://reviewcongty.com/"> <img class="logo__img"
-					src="./rvcongty_files/logo_transparent.png" alt="">
+					src="https://reviewcongty.com/images/logo/logo_transparent.png" alt="">
 				</a>
 				<h1 class="logo__header has-text-white is-size-5">
 					<a href="https://reviewcongty.com/"> Review Công ty </a>
@@ -979,7 +963,7 @@ transform
 
 		<section class="hero-img">
 			<div class="hero-img__gradient"></div>
-			<img src="./rvcongty_files/banner.jpg" alt="">
+			<img src="https://reviewcongty.com/images/banner.jpg" alt="">
 		</section>
 
 		<section class="hero" style="margin-top: -225px">
@@ -1053,7 +1037,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/lien-viet-tech-logo.png">
+								<img src="https://reviewcongty.com/images/companies/lien-viet-tech-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1093,7 +1077,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/keaz-logo.jpg">
+								<img src="https://reviewcongty.com/images/companies/keaz-logo.jpg">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1134,7 +1118,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/sakuko-vi-t-nam-logo.png">
+								<img src="https://reviewcongty.com/images/companies/sakuko-vi-t-nam-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1174,7 +1158,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/softdreams-logo.png">
+								<img src="https://reviewcongty.com/images/companies/softdreams-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1214,7 +1198,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/tek-experts-logo.png">
+								<img src="https://reviewcongty.com/images/companies/tek-experts-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1254,7 +1238,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/itviec-logo.jpg">
+								<img src="https://reviewcongty.com/images/companies/itviec-logo.jpg">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1294,7 +1278,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/luxstay-logo.png">
+								<img src="https://reviewcongty.com/images/companies/luxstay-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1334,7 +1318,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/bh-tech-logo.png">
+								<img src="https://reviewcongty.com/images/companies/bh-tech-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1374,7 +1358,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/sapo-logo.png">
+								<img src="https://reviewcongty.com/images/companies/sapo-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1414,7 +1398,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/nashtech-logo.png">
+								<img src="https://reviewcongty.com/images/companies/nashtech-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1454,7 +1438,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/bkav-logo.jpg">
+								<img src="https://reviewcongty.com/images/companies/bkav-logo.jpg">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1492,11 +1476,9 @@ transform
 					</div>
 					<div data-href="/companies/finos-technology" class="company-item">
 						<div class="company-info">
-
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/finos-technology.jpg">
+								<img src="https://reviewcongty.com/images/companies/finos-technology.jpg">
 							</figure>
-
 							<div class="company-info__detail">
 								<h2
 									class="is-size-5 has-text-weight-semibold company-info__name">
@@ -1527,14 +1509,12 @@ transform
 									</span>
 								</div>
 							</div>
-
 						</div>
 					</div>
 					<div data-href="/companies/designveloper-dsv" class="company-item">
 						<div class="company-info">
-
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/designveloper-dsv-logo.png">
+								<img src="https://reviewcongty.com/images/companies/designveloper-dsv-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1576,7 +1556,7 @@ transform
 
 							<figure class="company-info__logo image is-64x64">
 								<img
-									src="./rvcongty_files/passion-fruit-software-development.png">
+									src="https://reviewcongty.com/images/companies/passion-fruit-software-development.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1619,7 +1599,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/passion-fruit-software-logo.png">
+								<img src="https://reviewcongty.com/images/companies/passion-fruit-software-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1661,7 +1641,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/cong-ty-tnhh-enjoyworks.png">
+								<img src="https://reviewcongty.com/images/companies/cong-ty-tnhh-enjoyworks.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1747,7 +1727,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/rikkeisoft-logo.png">
+								<img src="https://reviewcongty.com/images/companies/rikkeisoft-logo.png">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1787,7 +1767,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/bombus.jpg">
+								<img src="https://reviewcongty.com/images/companies/bombus.jpg">
 							</figure>
 
 							<div class="company-info__detail">
@@ -1827,7 +1807,7 @@ transform
 						<div class="company-info">
 
 							<figure class="company-info__logo image is-64x64">
-								<img src="./rvcongty_files/lozi-logo.jpg">
+								<img src="https://reviewcongty.com/images/companies/lozi-logo.jpg">
 							</figure>
 
 							<div class="company-info__detail">
@@ -2229,18 +2209,6 @@ transform
 
 			</section>
 		</div>
-
-		<script>
-  (() => {
-    // Lol, need to write JS for tab
-    const $ = document.querySelectorAll.bind(document);
-    $('.company-item').forEach(item => {
-      item.addEventListener('click', evt => {
-        window.location = evt.currentTarget.dataset.href;
-      })
-    })
-  })()
-</script>
 	</div>
 	<div class="autocomplete-suggestions "
 		style="left: 120px; top: 261px; width: 1104px;"></div>
@@ -2259,15 +2227,6 @@ transform
 			</div>
 		</div>
 	</footer>
-
-	<iframe id="google_osd_static_frame_7303783858290"
-		name="google_osd_static_frame"
-		style="display: none; width: 0px; height: 0px;"
-		src="./rvcongty_files/saved_resource(3).html"></iframe>
-	<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame"
-		id="_hjRemoteVarsFrame"
-		src="./rvcongty_files/box-469cf41adb11dc78be68c1ae7f9457a4.html"
-		style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
 	<div>
 		<div id="_hj_feedback_container">
 			<style type="text/css"> /*reset css*/
@@ -4946,307 +4905,7 @@ body._hj-f5b2a1eb-9b07_position_fixed {
 	padding: 12px 20px !important;
 }
 </style>
-			<div id="_hj-f5b2a1eb-9b07_feedback"
-				class="_hj-f5b2a1eb-9b07_widget _hj-f5b2a1eb-9b07_ltr _hj-f5b2a1eb-9b07_en"
-				data-state="minimized" data-minimized-position="middle_right"
-				data-device="desktop" data-viewmode="desktop">
-				<!-- Minimized State -->
-				<div id="_hj-f5b2a1eb-9b07_feedback_minimized">
-					<div class="_hj-f5b2a1eb-9b07_feedback_minimized_label">
-						<div class="_hj-f5b2a1eb-9b07_feedback_minimized_label_text">
-							Feedback</div>
-						<div
-							class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon_emotion_default"
-							data-emotion-score="3">
-							<span class="path1"></span><span class="path2"></span>
-						</div>
-					</div>
-					<div
-						class="_hj-f5b2a1eb-9b07_hotjar_buddy _hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon_emotion_default _hj-f5b2a1eb-9b07_bottom_position_launcher"
-						data-emotion-score="3">
-						<span class="path1"></span><span class="path2"></span>
-					</div>
-					<div id="_hj-f5b2a1eb-9b07_feedback_minimized_message"
-						class="_hj-f5b2a1eb-9b07_feedback_minimized_message _hj-f5b2a1eb-9b07_transition _hj-f5b2a1eb-9b07_rounded_corners">
-						<a
-							class="_hj-f5b2a1eb-9b07_feedback_minimized_message_close _hj-f5b2a1eb-9b07_link_no_underline _hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon-x _hj-f5b2a1eb-9b07_transition"></a>
-						<span id="_hj-f5b2a1eb-9b07_feedback_minimized_text_initial"
-							class="_hj-f5b2a1eb-9b07_wordwrap">Help us improve by sharing
-							your feedback.</span> <span
-							id="_hj-f5b2a1eb-9b07_feedback_minimized_text_thankyou"
-							class="_hj-f5b2a1eb-9b07_wordwrap">Thank you for sharing your
-							feedback with us!</span>
-					</div>
-				</div>
-				<!-- Opened State -->
-				<a id="_hj-f5b2a1eb-9b07_feedback_open_close"> <span
-					class="_hj-f5b2a1eb-9b07_link_no_underline _hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon-x"></span>
-				</a>
-				<div id="_hj-f5b2a1eb-9b07_feedback_open"
-					class="_hj-f5b2a1eb-9b07_rounded_corners _hj-f5b2a1eb-9b07_transition">
-					<a id="_hj-f5b2a1eb-9b07_feedback_open_close_phone"> <span
-						class="_hj-f5b2a1eb-9b07_link_no_underline _hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon-x"></span>
-					</a>
-					<!-- STEP 1: EMOTION -->
-					<div id="_hj-f5b2a1eb-9b07_state-1" data-state="emotion">
-						<p class="_hj-f5b2a1eb-9b07_widget_title">How would you rate your
-							experience?</p>
-						<div class="_hj-f5b2a1eb-9b07_widget_content">
-							<div
-								class="_hj-f5b2a1eb-9b07_emotion_content _hj-f5b2a1eb-9b07_emotion_type_default">
-								<div class="_hj-f5b2a1eb-9b07_emotion_option"
-									data-bind="emotion" data-emotion-option="0">
-									<span
-										class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon_emotion_default"
-										data-emotion-score="0"> <span class="path1"></span><span
-										class="path2"></span>
-									</span> <span
-										class="_hj-f5b2a1eb-9b07_emotion_text _hj-f5b2a1eb-9b07_transition">Hate</span>
-								</div>
-								<div class="_hj-f5b2a1eb-9b07_emotion_option"
-									data-bind="emotion" data-emotion-option="1">
-									<span
-										class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon_emotion_default"
-										data-emotion-score="1"> <span class="path1"></span><span
-										class="path2"></span>
-									</span> <span
-										class="_hj-f5b2a1eb-9b07_emotion_text _hj-f5b2a1eb-9b07_transition">Dislike</span>
-								</div>
-								<div class="_hj-f5b2a1eb-9b07_emotion_option"
-									data-bind="emotion" data-emotion-option="2">
-									<span
-										class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon_emotion_default"
-										data-emotion-score="2"> <span class="path1"></span><span
-										class="path2"></span>
-									</span> <span
-										class="_hj-f5b2a1eb-9b07_emotion_text _hj-f5b2a1eb-9b07_transition">Neutral</span>
-								</div>
-								<div class="_hj-f5b2a1eb-9b07_emotion_option"
-									data-bind="emotion" data-emotion-option="3">
-									<span
-										class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon_emotion_default"
-										data-emotion-score="3"> <span class="path1"></span><span
-										class="path2"></span>
-									</span> <span
-										class="_hj-f5b2a1eb-9b07_emotion_text _hj-f5b2a1eb-9b07_transition">Like</span>
-								</div>
-								<div class="_hj-f5b2a1eb-9b07_emotion_option"
-									data-bind="emotion" data-emotion-option="4">
-									<span
-										class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon_emotion_default"
-										data-emotion-score="4"> <span class="path1"></span><span
-										class="path2"></span>
-									</span> <span
-										class="_hj-f5b2a1eb-9b07_emotion_text _hj-f5b2a1eb-9b07_transition">Love</span>
-								</div>
-								<div class="_hj-f5b2a1eb-9b07_clear_both"></div>
-							</div>
-							<div class="_hj-f5b2a1eb-9b07_emotion_comment_holder">
-								<textarea maxlength="1000" class="_hj-f5b2a1eb-9b07_input_field"
-									id="_hj-f5b2a1eb-9b07_emotion_comment"
-									name="_hj-f5b2a1eb-9b07_emotion_comment"
-									placeholder="Tell us about your experience..." rows="3"
-									data-bind="comment"></textarea>
-								<div class="_hj-f5b2a1eb-9b07_toolset_actions">
-									<div id="_hj-f5b2a1eb-9b07_toolset_action_select"
-										class="_hj-f5b2a1eb-9b07_transition">
-										<span
-											class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon-select-element"></span>
-										<div
-											class="_hj-f5b2a1eb-9b07_toolset_tooltip _hj-f5b2a1eb-9b07_transition">Select
-											an element on the page.</div>
-									</div>
-								</div>
-							</div>
-							<div class="_hj-f5b2a1eb-9b07_emotion_comment_footer"></div>
-						</div>
-					</div>
-					<!-- STEP 2: EMAIL -->
-					<div id="_hj-f5b2a1eb-9b07_state-2" data-state="email">
-						<p class="_hj-f5b2a1eb-9b07_widget_title">false</p>
-						<div class="_hj-f5b2a1eb-9b07_widget_content">
-							<input maxlength="255" class="_hj-f5b2a1eb-9b07_input_field"
-								type="email" id="_hj-f5b2a1eb-9b07_email"
-								name="_hj-f5b2a1eb-9b07_email" placeholder="email@domain.com"
-								data-bind="email">
-						</div>
-					</div>
-					<!-- STEP 3: THANK YOU AND CONSENT -->
-					<div id="_hj-f5b2a1eb-9b07_state-3" data-state="consent">
-						<p class="_hj-f5b2a1eb-9b07_widget_title">Thank you for sharing
-							your feedback with us!</p>
-						<div class="_hj-f5b2a1eb-9b07_widget_content">
-							<p class="_hj-f5b2a1eb-9b07_consent_message_text">
-								Connecting your feedback with data related to your visits
-								(device-specific, usage data, cookies, behavior and
-								interactions) will help us improve faster. Do you give us your
-								consent to do so for your previous and future visits?&nbsp;<a
-									class="_hj-f5b2a1eb-9b07_more_info_link"
-									href="https://www.hotjarconsent.com/" target="_blank"
-									rel="noopener">More information</a>
-							</p>
-							<div class="_hj-f5b2a1eb-9b07_consent_actions">
-								<button
-									class="_hj-f5b2a1eb-9b07_btn_primary _hj-f5b2a1eb-9b07_rounded_corners"
-									data-consent="false" type="button">
-									<i class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon-x"></i>
-								</button>
-								<button
-									class="_hj-f5b2a1eb-9b07_btn_primary _hj-f5b2a1eb-9b07_rounded_corners"
-									data-consent="true" type="button">
-									<i class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon-ok"></i>
-								</button>
-							</div>
-						</div>
-					</div>
-					<!-- FOOTER -->
-					<div class="_hj-f5b2a1eb-9b07_widget_footer">
-						<div id="_hj-f5b2a1eb-9b07_hotjar_branding"
-							class="_hj-f5b2a1eb-9b07_pull_left">
-							<span
-								class="_hj-f5b2a1eb-9b07_link_no_underline _hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon-hotjar"></span>
-							Not using <a
-								href="https://www.hotjar.com/incoming-feedback?utm_source=client&amp;utm_medium=incoming_feedback&amp;utm_campaign=insights"
-								target="_blank">Hotjar</a> yet?
-						</div>
-						<div class="_hj-f5b2a1eb-9b07_pull_right">
-							<button type="button" id="_hj-f5b2a1eb-9b07_action_skip"
-								class="_hj-f5b2a1eb-9b07_btn_clear _hj-f5b2a1eb-9b07_rounded_corners _hj-f5b2a1eb-9b07_transition">Skip</button>
-							<button type="button" id="_hj-f5b2a1eb-9b07_action_submit"
-								class="_hj-f5b2a1eb-9b07_btn_primary _hj-f5b2a1eb-9b07_rounded_corners _hj-f5b2a1eb-9b07_transition _hj-f5b2a1eb-9b07_shadow _hj-f5b2a1eb-9b07_btn_disabled">Send</button>
-						</div>
-						<div class="_hj-f5b2a1eb-9b07_clear_both"></div>
-					</div>
-				</div>
-				<!-- PAGE HIGHLIGHTER -->
-				<div id="_hj-f5b2a1eb-9b07_feedback_page_highlight"
-					class="_hj-f5b2a1eb-9b07_feedback_selection_ignore">
-					<div
-						class="_hj-f5b2a1eb-9b07_feedback_page_highlight_line _hj-f5b2a1eb-9b07_transition"
-						id="_hj-f5b2a1eb-9b07_feedback_page_highlight_line_top"></div>
-					<div
-						class="_hj-f5b2a1eb-9b07_feedback_page_highlight_line _hj-f5b2a1eb-9b07_transition"
-						id="_hj-f5b2a1eb-9b07_feedback_page_highlight_line_right"></div>
-					<div
-						class="_hj-f5b2a1eb-9b07_feedback_page_highlight_line _hj-f5b2a1eb-9b07_transition"
-						id="_hj-f5b2a1eb-9b07_feedback_page_highlight_line_bottom"></div>
-					<div
-						class="_hj-f5b2a1eb-9b07_feedback_page_highlight_line _hj-f5b2a1eb-9b07_transition"
-						id="_hj-f5b2a1eb-9b07_feedback_page_highlight_line_left"></div>
-					<div id="_hj-f5b2a1eb-9b07_feedback_top_message_select">
-						Select an element on the page. <a
-							id="_hj-f5b2a1eb-9b07_feedback_top_message_select_close"
-							class="_hj-f5b2a1eb-9b07_feedback_selection_ignore _hj-f5b2a1eb-9b07_transition">
-							<span
-							class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon-x _hj-f5b2a1eb-9b07_feedback_selection_ignore"></span>
-						</a>
-					</div>
-				</div>
-				<!-- DIMMERS (OVERLAY) + ELEMENT HIGHLIGHTER -->
-				<div class="_hj-f5b2a1eb-9b07_feedback_content_dimmer"
-					id="_hj-f5b2a1eb-9b07_feedback_content_dimmer_top"
-					data-show-for="desktop"></div>
-				<div class="_hj-f5b2a1eb-9b07_feedback_content_dimmer"
-					id="_hj-f5b2a1eb-9b07_feedback_content_dimmer_right"
-					data-show-for="desktop"></div>
-				<div class="_hj-f5b2a1eb-9b07_feedback_content_dimmer"
-					id="_hj-f5b2a1eb-9b07_feedback_content_dimmer_bottom"
-					data-show-for="desktop"></div>
-				<div class="_hj-f5b2a1eb-9b07_feedback_content_dimmer"
-					id="_hj-f5b2a1eb-9b07_feedback_content_dimmer_left"
-					data-show-for="desktop"></div>
-				<div id="_hj-f5b2a1eb-9b07_feedback_content_highlighter"
-					data-show-for="desktop">
-					<a id="_hj-f5b2a1eb-9b07_feedback_content_highlighter_close"> <span
-						class="_hj-f5b2a1eb-9b07_icon _hj-f5b2a1eb-9b07_icon-x _hj-f5b2a1eb-9b07_feedback_selection_ignore"></span>
-					</a>
-				</div>
-			</div>
 		</div>
 	</div>
-	<div id="free_vpn_container">
-		<div class="free-vpn_wrap">
-			<div class="free-vpn_rate-popup">
-				<div class="free-vpn_close-btn">
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-						viewBox="0 0 512 512" style="enable-background: new 0 0 512 512;"
-						xml:space="preserve">                            <g>                                <g>                                    <path
-							fill="#afafaf"
-							d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249                                        C10.096,509.982,15.39,512,20.683,512c5.293,0,10.586-2.019,14.625-6.059L505.943,35.306                                        C514.019,27.23,514.019,14.135,505.943,6.058z"></path>                                </g>                            </g>                            <g>                                <g>                                    <path
-							fill="#afafaf"
-							d="M505.942,476.694L35.306,6.059c-8.076-8.077-21.172-8.077-29.248,0c-8.077,8.076-8.077,21.171,0,29.248l470.636,470.636                                        c4.038,4.039,9.332,6.058,14.625,6.058c5.293,0,10.587-2.019,14.624-6.057C514.018,497.866,514.018,484.771,505.942,476.694z"></path>                                </g>                            </g>                        </svg>
-				</div>
-				<div class="free-vpn_logo"></div>
-				<div class="free-vpn_title">Free VPN</div>
-				<div class="free-vpn_text">Enjoyed our app? Give us 5 stars!</div>
-				<div class="free-vpn_stars">
-					<svg xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-						id="Capa_1" x="0px" y="0px" width="512px" height="512px"
-						viewBox="0 0 46.354 46.354"
-						style="enable-background: new 0 0 46.354 46.354;"
-						xml:space="preserve">
-						<g>
-						<g>                            <path
-							d="M21.57,2.049c0.303-0.612,0.927-1,1.609-1c0.682,0,1.307,0.388,1.609,1l5.771,11.695c0.261,0.529,0.767,0.896,1.352,0.981   L44.817,16.6c0.677,0.098,1.237,0.572,1.448,1.221c0.211,0.649,0.035,1.363-0.454,1.839l-9.338,9.104   c-0.423,0.412-0.616,1.006-0.517,1.588l2.204,12.855c0.114,0.674-0.161,1.354-0.715,1.756c-0.553,0.4-1.284,0.453-1.89,0.137   l-11.544-6.07c-0.522-0.275-1.147-0.275-1.67,0l-11.544,6.069c-0.604,0.317-1.337,0.265-1.89-0.136   c-0.553-0.401-0.829-1.082-0.714-1.756l2.204-12.855c0.1-0.582-0.094-1.176-0.517-1.588L0.542,19.66   c-0.489-0.477-0.665-1.19-0.454-1.839c0.211-0.649,0.772-1.123,1.449-1.221l12.908-1.875c0.584-0.085,1.09-0.452,1.351-0.982   L21.57,2.049z"
-							data-original="#000000" class="active-path"
-							data-old_color="#000000" fill="#FFD325"></path>                        </g></g> </svg>
-					<svg xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-						id="Capa_1" x="0px" y="0px" width="512px" height="512px"
-						viewBox="0 0 46.354 46.354"
-						style="enable-background: new 0 0 46.354 46.354;"
-						xml:space="preserve">
-						<g>
-						<g>                            <path
-							d="M21.57,2.049c0.303-0.612,0.927-1,1.609-1c0.682,0,1.307,0.388,1.609,1l5.771,11.695c0.261,0.529,0.767,0.896,1.352,0.981   L44.817,16.6c0.677,0.098,1.237,0.572,1.448,1.221c0.211,0.649,0.035,1.363-0.454,1.839l-9.338,9.104   c-0.423,0.412-0.616,1.006-0.517,1.588l2.204,12.855c0.114,0.674-0.161,1.354-0.715,1.756c-0.553,0.4-1.284,0.453-1.89,0.137   l-11.544-6.07c-0.522-0.275-1.147-0.275-1.67,0l-11.544,6.069c-0.604,0.317-1.337,0.265-1.89-0.136   c-0.553-0.401-0.829-1.082-0.714-1.756l2.204-12.855c0.1-0.582-0.094-1.176-0.517-1.588L0.542,19.66   c-0.489-0.477-0.665-1.19-0.454-1.839c0.211-0.649,0.772-1.123,1.449-1.221l12.908-1.875c0.584-0.085,1.09-0.452,1.351-0.982   L21.57,2.049z"
-							data-original="#000000" class="active-path"
-							data-old_color="#000000" fill="#FFD325"></path>                        </g></g> </svg>
-					<svg xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-						id="Capa_1" x="0px" y="0px" width="512px" height="512px"
-						viewBox="0 0 46.354 46.354"
-						style="enable-background: new 0 0 46.354 46.354;"
-						xml:space="preserve">
-						<g>
-						<g>                            <path
-							d="M21.57,2.049c0.303-0.612,0.927-1,1.609-1c0.682,0,1.307,0.388,1.609,1l5.771,11.695c0.261,0.529,0.767,0.896,1.352,0.981   L44.817,16.6c0.677,0.098,1.237,0.572,1.448,1.221c0.211,0.649,0.035,1.363-0.454,1.839l-9.338,9.104   c-0.423,0.412-0.616,1.006-0.517,1.588l2.204,12.855c0.114,0.674-0.161,1.354-0.715,1.756c-0.553,0.4-1.284,0.453-1.89,0.137   l-11.544-6.07c-0.522-0.275-1.147-0.275-1.67,0l-11.544,6.069c-0.604,0.317-1.337,0.265-1.89-0.136   c-0.553-0.401-0.829-1.082-0.714-1.756l2.204-12.855c0.1-0.582-0.094-1.176-0.517-1.588L0.542,19.66   c-0.489-0.477-0.665-1.19-0.454-1.839c0.211-0.649,0.772-1.123,1.449-1.221l12.908-1.875c0.584-0.085,1.09-0.452,1.351-0.982   L21.57,2.049z"
-							data-original="#000000" class="active-path"
-							data-old_color="#000000" fill="#FFD325"></path>                        </g></g> </svg>
-					<svg xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-						id="Capa_1" x="0px" y="0px" width="512px" height="512px"
-						viewBox="0 0 46.354 46.354"
-						style="enable-background: new 0 0 46.354 46.354;"
-						xml:space="preserve">
-						<g>
-						<g>                            <path
-							d="M21.57,2.049c0.303-0.612,0.927-1,1.609-1c0.682,0,1.307,0.388,1.609,1l5.771,11.695c0.261,0.529,0.767,0.896,1.352,0.981   L44.817,16.6c0.677,0.098,1.237,0.572,1.448,1.221c0.211,0.649,0.035,1.363-0.454,1.839l-9.338,9.104   c-0.423,0.412-0.616,1.006-0.517,1.588l2.204,12.855c0.114,0.674-0.161,1.354-0.715,1.756c-0.553,0.4-1.284,0.453-1.89,0.137   l-11.544-6.07c-0.522-0.275-1.147-0.275-1.67,0l-11.544,6.069c-0.604,0.317-1.337,0.265-1.89-0.136   c-0.553-0.401-0.829-1.082-0.714-1.756l2.204-12.855c0.1-0.582-0.094-1.176-0.517-1.588L0.542,19.66   c-0.489-0.477-0.665-1.19-0.454-1.839c0.211-0.649,0.772-1.123,1.449-1.221l12.908-1.875c0.584-0.085,1.09-0.452,1.351-0.982   L21.57,2.049z"
-							data-original="#000000" class="active-path"
-							data-old_color="#000000" fill="#FFD325"></path>                        </g></g> </svg>
-					<svg xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-						id="Capa_1" x="0px" y="0px" width="512px" height="512px"
-						viewBox="0 0 46.354 46.354"
-						style="enable-background: new 0 0 46.354 46.354;"
-						xml:space="preserve">
-						<g>
-						<g>                            <path
-							d="M21.57,2.049c0.303-0.612,0.927-1,1.609-1c0.682,0,1.307,0.388,1.609,1l5.771,11.695c0.261,0.529,0.767,0.896,1.352,0.981   L44.817,16.6c0.677,0.098,1.237,0.572,1.448,1.221c0.211,0.649,0.035,1.363-0.454,1.839l-9.338,9.104   c-0.423,0.412-0.616,1.006-0.517,1.588l2.204,12.855c0.114,0.674-0.161,1.354-0.715,1.756c-0.553,0.4-1.284,0.453-1.89,0.137   l-11.544-6.07c-0.522-0.275-1.147-0.275-1.67,0l-11.544,6.069c-0.604,0.317-1.337,0.265-1.89-0.136   c-0.553-0.401-0.829-1.082-0.714-1.756l2.204-12.855c0.1-0.582-0.094-1.176-0.517-1.588L0.542,19.66   c-0.489-0.477-0.665-1.19-0.454-1.839c0.211-0.649,0.772-1.123,1.449-1.221l12.908-1.875c0.584-0.085,1.09-0.452,1.351-0.982   L21.57,2.049z"
-							data-original="#000000" class="active-path"
-							data-old_color="#000000" fill="#FFD325"></path>                        </g></g> </svg>
-				</div>
-				<a class="free-vpn_rate-btn" target="_blank"
-					href="https://chrome.google.com/webstore/detail/free-vpn-the-fastest-vpn/nkomfibbgccdjcahcpleidblgknecfhh/reviews">Rate
-					VPN</a>
-			</div>
-		</div>
-	</div>
-	<script>window.__vidChanged = function(state){if(state === 1) {document.body.dispatchEvent(new Event('vidChanged'))}}
-if(document.querySelector('#movie_player')){document.querySelector('#movie_player').addEventListener('onStateChange', '__vidChanged');}</script>
 </body>
-<iframe id="google_esf" name="google_esf"
-	src="./rvcongty_files/zrt_lookup.html"
-	data-ad-client="ca-pub-4277948410104697" style="display: none;"></iframe>
 </html>
