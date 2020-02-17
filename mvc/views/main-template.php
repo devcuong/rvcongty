@@ -1,4 +1,5 @@
 <?php require_once 'mvc/core/Config.php'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,7 +58,7 @@
 <meta name="msapplication-TileImage"
 	content="/images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-
+<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/timeago.locales.min.js"></script>
 <link rel="preload stylesheet" as="style" crossorigin="anonymous"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
 <link href="<?php echo $servername ?>/mvc/public/css/css" rel="stylesheet">
@@ -65,9 +66,10 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.css"
 	integrity="sha256-GHbWr7miG/WXEsrIb47MsX3KBJa9FTyi5ZMYr4XDHAQ=">
 <link rel="stylesheet" type="text/css" href="<?php echo $servername ?>/mvc/public/css/style.less" />
- <link rel="preload stylesheet" as="style" crossorigin="anonymous"
+<link rel="preload stylesheet" as="style" crossorigin="anonymous"
     href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+   
 <style type="text/css" id="less:stylesheets-style">
 @media screen and (max-width: 768px) {
 	html {
@@ -960,8 +962,7 @@ transform
 
 	<div class="container main-container"
 		style="height: auto !important; min-height: 0px !important;">
-
-		<?php require_once 'mvc/views/pages/main-home.php'; ?>
+		<?php require_once "./mvc/views/pages/" . $data["Page"] . ".php"?>
 	</div>
 	<div class="autocomplete-suggestions "
 		style="left: 120px; top: 261px; width: 1104px;"></div>
@@ -3660,5 +3661,9 @@ body._hj-f5b2a1eb-9b07_position_fixed {
 </style>
 		</div>
 	</div>
+	 <script type="text/javascript">
+	 var nodes = document.querySelectorAll(".needs_to_be_rendered");
+	 timeago.render(nodes, "vi"), timeago.cancel();
+    </script>
 </body>
 </html>
