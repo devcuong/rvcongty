@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 17, 2020 lúc 03:12 AM
+-- Thời gian đã tạo: Th2 17, 2020 lúc 09:09 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -31,11 +31,13 @@ SET time_zone = "+00:00";
 CREATE TABLE `congty` (
   `id` int(11) NOT NULL,
   `tencongty` varchar(100) NOT NULL,
+  `slugcongty` varchar(100) NOT NULL,
   `logo` varchar(100) NOT NULL,
   `nganhnghe` varchar(100) NOT NULL,
   `nhanvien` varchar(50) NOT NULL,
   `luotdanhgia` int(11) NOT NULL,
   `tongsao` int(11) NOT NULL,
+  `rate` float NOT NULL,
   `diachi` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -43,10 +45,10 @@ CREATE TABLE `congty` (
 -- Đang đổ dữ liệu cho bảng `congty`
 --
 
-INSERT INTO `congty` (`id`, `tencongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `diachi`) VALUES
-(1, 'Lien Viet Tech', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 12, 42, '109 Tran Hung Dao Hoan Kiem Ha Noi'),
-(2, 'Keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 2, 6, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
-(3, 'Sakuko Việt Nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 217, 326, '1 Trung Yên Plaza Cau Giay Ha Noi');
+INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`) VALUES
+(1, 'Lien Viet Tech', 'lien-viet-tech', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 12, 42, 3.5, '109 Tran Hung Dao Hoan Kiem Ha Noi'),
+(2, 'Keaz', 'keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 2, 6, 4.2, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
+(3, 'Sakuko Việt Nam', 'sakuko-viet-nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 217, 760, 3.5, '1 Trung Yên Plaza Cau Giay Ha Noi');
 
 -- --------------------------------------------------------
 
