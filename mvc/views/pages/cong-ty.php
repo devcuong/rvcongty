@@ -33,18 +33,18 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
     for ($i = 1; $i <= $whole; $i ++) {
         ?>
 										 <span class="icon is-small has-text-warning"> <i
-							class="fas fa-star"></i>
-					</span>
+						class="fas fa-star"></i>
+				</span>
 										 <?php } ?>
+										<?php if($whole != 5) {?>
 										<span class="icon is-small has-text-warning"> <i
-							class="fas fa-star-half-alt"></i>
-					</span>
-										<?php for ($i=1; $i<=(5-($whole+1));$i++){ ?>
-										<?php if($whole != 5){ ?>
-										<span class="icon is-small has-text-warning"> <i
-							class="far fa-star"></i>
-					</span>
+						class="fas fa-star-half-alt"></i>
+				</span>
 										<?php } ?>
+										<?php for ($i=1; $i<=(5-($whole+1));$i++){ ?>
+										<span class="icon is-small has-text-warning"> <i
+						class="far fa-star"></i>
+				</span>
 										<?php } ?>
 										
 										</span> <span class="company-info__rating-count">(<?php echo $row["luotdanhgia"] ?>)</span>
@@ -178,7 +178,7 @@ $dataReply = $r["reply_data"];
   
 </section>
 <div class="modal" id="review-modal">
-    <form id="review-form" action="/reviews" method="POST">
+    <form id="review-form" action="<?php echo $servername ?>/cong-ty/dang-review" method="POST">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">

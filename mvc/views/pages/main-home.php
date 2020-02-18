@@ -960,336 +960,42 @@
 			<section class="summary-reviews column z-1">
 				<h1 class="is-size-4 has-text-weight-bold reviews__header">Review
 					gần đây</h1>
-				<div class="review">
+				<?php 
+                                    while($r = mysqli_fetch_array($data["15ReviewMoiNhat"])){
+                                        ?>
+                                        <div class="review">
 					<h3>
-						<span class="has-text-weight-bold">Văn Nguyễn</span> đã review <a
-							href="https://reviewcongty.com/companies/lien-viet-tech"> Lien
-							Viet Tech </a>
+						<span class="has-text-weight-bold"><?php echo $r["reviewer"] ?></span> đã review <a
+							href="<?php echo $servername ?>/cong-ty/<?php echo $r["slugcongty"]."-".$r["id"] ?>"> <?php echo $r["tencongty"] ?> </a>
 					</h3>
 					<p>
-						20 phút trước <span><span class="icon is-small has-text-warning">
-								<i class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span></span>
+						<span class="needs_to_be_rendered" datetime="<?php echo $r["thoigian"] ?>"><?php echo $r["thoigian"] ?></span> 
+						<span>
+						  <?php
+    $n = $r["rate"];
+    $whole = floor($r["rate"]);
+    $fraction = $n - $whole;
+    for ($i = 1; $i <= $whole; $i ++) {
+        ?>
+										 <span class="icon is-small has-text-warning"> <i
+						class="fas fa-star"></i>
+				</span>
+										 <?php } ?>
+										<?php if($whole != 5) {?>
+										<span class="icon is-small has-text-warning"> <i
+						class="fas fa-star-half-alt"></i>
+				</span>
+										<?php } ?>
+										<?php for ($i=1; $i<=(5-($whole+1));$i++){ ?>
+										<span class="icon is-small has-text-warning"> <i
+						class="far fa-star"></i>
+				</span>
+										<?php } ?>
+						</span>
 					</p>
-					<p>Mọi thứ đều ổn. Lương cũng ổn so mức lương khi mới ra trường.
-						Chế độ đãi ngộ tốt. Mọi người đều thân thiện =)).</p>
+					<p><?php echo $r["noidung"] ?></p>
 				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Ẩn danh</span> đã review <a
-							href="https://reviewcongty.com/companies/keaz"> Keaz </a>
-					</h3>
-					<p>
-						32 phút trước <span><span class="icon is-small has-text-warning">
-								<i class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>Technical Lead hiện tại khá cùi nên cũng chả giải quyết gì.</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Ẩn danh</span> đã review <a
-							href="https://reviewcongty.com/companies/sakuko-viet-nam"> Sakuko
-							Việt Nam </a>
-					</h3>
-					<p>
-						35 phút trước <span><span class="icon is-small has-text-warning">
-								<i class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>Em thấy các anh chị quản lý cũ rất có tâm mà công ty không giữ
-						được. Ngày trước sếp Hằng còn bỏ tiền túi để mừng tuổi cho nv bán
-						bánh bọn em. Giờ anh …</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Ẩn danh</span> đã review <a
-							href="https://reviewcongty.com/companies/softdreams"> Softdreams
-						</a>
-					</h3>
-					<p>
-						Một giờ trước <span><span class="icon is-small has-text-warning">
-								<i class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>- Công ty thuần Việt, lương chỉ ở mức khá, các sếp đều khá nice
-						- PM có năng lực nhưng quy trình làm việc chưa rõ ràng, ít buổi
-						chia sẻ đào tạo, chủ …</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Ẩn danh</span> đã review <a
-							href="https://reviewcongty.com/companies/tek-experts"> Tek
-							Experts </a>
-					</h3>
-					<p>
-						Một giờ trước <span><span class="icon is-small has-text-warning">
-								<i class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>Cho em hỏi là công ty mình có tuyển thu họ vào làm hay sao ạ ,
-						dạo này để ý trên floor có anh nào đeo đủ vòng vèo nhẫn nhủng xong
-						mặt lúc nào cũng như…</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Tìm việc</span> đã review <a
-							href="https://reviewcongty.com/companies/itviec"> ITviec </a>
-					</h3>
-					<p>
-						Một giờ trước <span><span class="icon is-small has-text-warning">
-								<i class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>Cho em hỏi em tính nộp đơn ứng tuyển ở HCm, em thấy bạn em bảo
-						đang tuyển 10 vị trí lận mà bạn em lại không đậu, có phải Để số
-						cho vui không ạ, em …</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Ứng viên</span> đã review <a
-							href="https://reviewcongty.com/companies/luxstay"> Luxstay </a>
-					</h3>
-					<p>
-						2 giờ trước <span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>Bên này backend Dev range lương như nào nhỉ các bác?</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Ẩn danh</span> đã review <a
-							href="https://reviewcongty.com/companies/bh-tech"> BH Tech </a>
-					</h3>
-					<p>
-						2 giờ trước <span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>ae nào mới ra trường hoặc đi thực tập thì ko nên vào.</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Dev</span> đã review <a
-							href="https://reviewcongty.com/companies/sapo"> SAPO </a>
-					</h3>
-					<p>
-						2 giờ trước <span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>Làm dev ở đây thế nào vậy các ac</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Principal 3</span> đã review <a
-							href="https://reviewcongty.com/companies/nashtech"> NashTech </a>
-					</h3>
-					<p>
-						3 giờ trước <span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span></span>
-					</p>
-					<p>lương 1k9 net sướng</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Một cựu nhân viên AP 4 năm tại
-							AP (Chăm sóc khách hàng)</span> đã review <a
-							href="https://reviewcongty.com/companies/bkav"> Bkav </a>
-					</h3>
-					<p>
-						4 giờ trước <span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>1. Nếu nói về nhân viên nói chung thì đều rất hoà đồng vui vẻ,
-						mọi người phần lớn là lành tính do môi trường ở đây không có gì
-						phải tranh đấu. 2. Sếp…</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Định xưng tên nhưng thôi</span>
-						đã review <a
-							href="https://reviewcongty.com/companies/finos-technology"> FinOS
-							Technology </a>
-					</h3>
-					<p>
-						4 giờ trước <span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>Anh em đánh giá hơi tiêu cực nên có thể nhiều người nghĩ là đang
-						dìm hàng. Vì vậy để mình tóm lại vài điều như dưới: - Về tổng quát
-						thì công ty mới…</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">em trai giấu tên</span> đã
-						review <a
-							href="https://reviewcongty.com/companies/designveloper-dsv">
-							Designveloper (DSV) </a>
-					</h3>
-					<p>
-						5 giờ trước <span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="far fa-star"></i>
-						</span></span>
-					</p>
-					<p>Công ty có chị đẹp BA mặt sắc, giỏi chịu đựng áp lực tứ phương
-						tám hướng, chiên nghiệp, vui vẻ không quạu. Bị cái hiếm khi thấy
-						trên công ty, rồi giờ …</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">Ẩn danh</span> đã review <a
-							href="https://reviewcongty.com/companies/passion-fruit-software-development">
-							Passion Fruit Software Development </a>
-					</h3>
-					<p>
-						5 giờ trước <span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span></span>
-					</p>
-					<p>AE QC apply nhe
-
-						https://itviec.com/it-jobs/quality-and-tester-engineers-qc-qa-passion-fruit-software-development-4039?utm_campaign=gsn_brand&amp;utm_me…</p>
-				</div>
-				<div class="review">
-					<h3>
-						<span class="has-text-weight-bold">MRS</span> đã review <a
-							href="https://reviewcongty.com/companies/passion-fruit-software">
-							Passion Fruit Software </a>
-					</h3>
-					<p>
-						5 giờ trước <span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span><span class="icon is-small has-text-warning"> <i
-								class="fas fa-star"></i>
-						</span></span>
-					</p>
-					<p>Passion Fruit Software Development - Omnicasa Software Solutions
-						Passion Fruit Software Development Ltd,Co was established on 2004
-						with 100% investme…</p>
-				</div>
+                                        <?php } ?>
 
 			</section>
 		</div>

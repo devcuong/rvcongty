@@ -404,6 +404,13 @@ a.white-link:hover {
 
 .summary-reviews .review {
 	margin-bottom: 1rem;
+	
+	background-color: #fff;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    color: #4a4a4a;
+    max-width: 100%;
+    position: relative;
+    padding: 0.3rem 0 0 0.3rem;
 }
 
 .autocomplete-suggestion {

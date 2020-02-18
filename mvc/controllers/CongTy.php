@@ -12,5 +12,14 @@ class CongTy extends Controller{
         ]);
     }
     
+    function DangReview()
+    {
+        $idCongTy = "";
+        $reviewerName = "";
+        $reviewerPosition = "";
+        $content="";
+        $score="";
+    }
+    
 }
 ?>
