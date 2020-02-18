@@ -28,7 +28,9 @@ class Reply extends Controller{
         
         $replyObject = $arrJson[0];
         
-        echo $replyObject->replyer;
+        $review = $this->model("ReviewModel");
+        
+        var_dump($review->LayReviewBangIdCongTy(1));
     }
     
 }

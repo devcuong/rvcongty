@@ -72,21 +72,21 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 		<span class="icon"> <i class="fas fa-pencil-alt"></i>
 		</span> &nbsp;&nbsp; Viết review
 	</button>
-</section><?php } ?>
+</section>
 
 <section class="full-reviews">
 	<!-- Review Page Top -->
  <?php
-while ($row = mysqli_fetch_array($data["Review"])) {
+while ($r = mysqli_fetch_array($data["Review"])) {
     ?>
   <div class="review card">
 		<header class="card-header">
 			<p class="card-header-title">
-              <?php echo $row["reviewer"] ?>  &nbsp; 
+              <?php echo $r["review_reviewer"] ?>  &nbsp; 
         <span>
         <?php
-    $n = $row["rate"];
-    $whole = floor($row["rate"]);
+    $n = $r["review_rate"];
+    $whole = floor($r["review_rate"]);
     $fraction = $n - $whole;
     for ($i = 1; $i <= $whole; $i ++) {
         ?>
@@ -106,7 +106,7 @@ while ($row = mysqli_fetch_array($data["Review"])) {
 										<?php } ?>
         </span>
 			</p>
-			<span class="review__time needs_to_be_rendered" datetime="<?php echo $row["thoigian"] ?>"><?php echo $row["thoigian"] ?></span>
+			<span class="review__time needs_to_be_rendered" datetime="<?php echo $r["review_thoigian"] ?>"><?php echo $r["review_thoigian"] ?></span>
 			<a class="review__share"
 				href="/companies/first-interactive-technology/review/5e4a4b5a4563221e556e76cc">
 				<i class="fas fa-link" style="margin-right: 5px"></i> Share
@@ -115,27 +115,27 @@ while ($row = mysqli_fetch_array($data["Review"])) {
 		<div class="card-content">
 
 			<div class="content text-500">
-              <?php echo $row["noidung"] ?>
+              <?php echo $r["review_noidung"] ?>
           </div>
 		</div>
 		<footer class="card-footer">
-			<a href="#" data-id="5e4a4b5a4563221e556e76cc" data-prefill=""
+			<a href="#" data-id="<?php echo $r["review_id"] ?>" data-prefill=""
 				data-reaction="LIKE" class="link-comment card-footer-item clickable">
 				<span class="icon-reply icon has-text-info"> <i
 					class="fas fa-comments"></i>
 			</span> Reply
-			</a> <span data-id="5e4a4b5a4563221e556e76cc"
+			</a> <span data-id="<?php echo $r["review_id"] ?>"
 				data-prefill="Bác nói đúng vãi, tặng 1 like" data-reaction="LIKE"
 				class="link-comment card-footer-item clickable">0 <span
 				class="icon-like icon has-text-success"> <i class="fas fa-thumbs-up"></i>
 			</span>
-			</span> <span data-id="5e4a4b5a4563221e556e76cc"
+			</span> <span data-id="<?php echo $r["review_id"] ?>"
 				data-prefill="Review nhảm nhí, dislike" data-reaction="HATE"
 				class="link-comment card-footer-item clickable">0 <span
 				class="icon-dislike icon has-text-danger"> <i
 					class="fas fa-thumbs-down"></i>
 			</span>
-			</span> <span data-id="5e4a4b5a4563221e556e76cc"
+			</span> <span data-id="<?php echo $r["review_id"] ?>"
 				data-prefill="Xóa review này giùm!" data-reaction="DELETE"
 				class="link-comment card-footer-item clickable">0 <span
 				class="icon-ban icon is-medium"> <span class="fa-stack fa-md"> <i
@@ -145,11 +145,11 @@ while ($row = mysqli_fetch_array($data["Review"])) {
 			</span>
 			</span>
 		</footer>
-      <?php if(isset($row["data"])){ ?>
+      <?php if(isset($r["reply_data"])){ ?>
        <div class="review-comments">
        <?php
         
-$dataReply = $row["data"];
+$dataReply = $r["reply_data"];
         $arrJson = json_decode($dataReply);
         for ($i = 0; $i < count($arrJson); $i ++) {
             ?>
@@ -175,7 +175,113 @@ $dataReply = $row["data"];
        <?php } ?>
   </div>
   <?php } ?>
+  
 </section>
+<div class="modal" id="review-modal">
+    <form id="review-form" action="/reviews" method="POST">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Viết Review công ty <?php echo $row["tencongty"] ?></p>
+                <button class="delete button-close" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Tên họ</label>
+                    <div class="control">
+                        <input class="input" name="reviewer" type="text"
+                            placeholder="Muốn xưng tên thật thì xưng không thì thui">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Chức vụ</label>
+                    <div class="control">
+                        <input class="input" name="position" type="text" placeholder="Dev quèn/HR hay Manager">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Review công ty <span class="has-text-danger">(Bắt buộc)</span> </label>
+                    <div class="control">
+                        <textarea required class="textarea" name="content"
+                            placeholder="Bức xúc hay gì thì viết dài dài vô (Tối thiểu 10 kí tự)"></textarea>
+                    </div>
+                    <p class="help is-danger is-hidden">Nội dung tối thiếu 10 kí tự</p>
+                </div>
+                <div class="field">
+                    <label class="label">Cho điểm công ty</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="score">
+                                <option value="1">1 điểm - Max sida, né gấp kẻo hối hận</option>
+                                <option value="2">2 điểm - Hết thuốc chữa, đang tính đường chuồn</option>
+                                <option value="3" selected>3 điểm - Cũng tạm, để coi sao</option>
+                                <option value="4">4 điểm - Cũng ngon, nên làm lâu dài</option>
+                                <option value="5">5 điểm - Công ty tuyệt cmn vời, đuổi cũng méo đi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="companyId" value="<?php echo $row["id"] ?>" />
+                <div class="g-recaptcha" data-sitekey="6LdzGtkUAAAAAPbjiQfk8z3AbWKKjRWNE_MXxcOQ" data-callback="onReviewCaptchaSuccess"></div>
+                <p class="m-t-5">
+                    Người đăng chịu trách nhiệm về tính xác thực của nội dung chứ <b>bên mình không có chịu</b>, okay?
+                </p>
+            </section>
+            <footer class="modal-card-foot">
+                <button type="submit" disabled class="button button-review-submit is-success">Đăng Review</button>
+                <button class="button button-close">Hủy bỏ</button>
+            </footer>
+        </div>
+    </form>
+    <button class="modal-close button-close is-large" aria-label="close"></button>
+</div>
 
+<script src="https://reviewcongty.com/javascript/review.js" async defer></script>
+<div class="modal" id="comment-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="box">
+            <form id="comment-form" action="/reviews/comment" method="POST">
+                <div class="field">
+                    <label class="label">Tên họ</label>
+                    <div class="control">
+                        <input class="input" name="reviewer" type="text"
+                            placeholder="Muốn xưng tên thật thì xưng không thì thui">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Comment <span class="has-text-danger">(Bắt buộc)</span> </label>
+                    <div class="control">
+                        <textarea required class="textarea" name="content" id="review-content"
+                            placeholder="Bức xúc hay gì thì viết dài dài vô (Tối thiểu 10 kí tự)"></textarea>
+                    </div>
+
+                </div>
+                <div class="field">
+                    <label class="label">Bày tỏ thái độ</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="reaction" id="review-reaction">
+                                <option value="LIKE" selected>👍 Like</option>
+                                <option value="HATE">👎 Đếch lai</option>
+                                <option value="DELETE">❌ Xóa giùm</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LfaZYYUAAAAAJm3LX9_eCHCnoSQvGM_aydMNExO" data-callback="onCommentCaptchaSuccess"></div>
+                <input type="hidden" name="companyId" value="<?php echo $row["id"] ?>" />
+                <input type="hidden" id="review-id" name="reviewId" />
+
+                <div class="m-t-15">
+                    <button type="submit" disabled class="button is-success button-comment-submit">Đăng Comment</button>
+                    <button type="button" class="button button-close">Hủy bỏ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <button class="modal-close button-close is-large" aria-label="close"></button>
+</div>
+<?php } ?>
 <script src="https://reviewcongty.com/javascript/comment.js" async defer></script>
 <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
