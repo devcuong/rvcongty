@@ -82,7 +82,7 @@ while ($r = mysqli_fetch_array($data["Review"])) {
   <div class="review card">
 		<header class="card-header">
 			<p class="card-header-title">
-              <?php echo $r["review_reviewer"] ?>  &nbsp; 
+              <?php echo $r["review_reviewer"]." (".$r["review_position"].")" ?>  &nbsp; 
         <span>
         <?php
     $n = $r["review_rate"];
@@ -155,13 +155,15 @@ $dataReply = $r["reply_data"];
             ?>
                  <div class="comment">
 				<p class="comment__title">
-					<span class="has-text-weight-bold"> <?php echo $arrJson[$i]->replyer?> đã <?php if (($arrJson[$i]->likeordislike)==1) {?><span
+					<span class="has-text-weight-bold"> <?php echo $arrJson[$i]->replyer?> đã <?php if (($arrJson[$i]->reaction)=="LIKE") {?><span
 						class="icon-like icon has-text-success"> <i
 							class="fas fa-thumbs-up"></i>
-					</span><?php }else{ ?><span
+					</span><?php }else if(($arrJson[$i]->reaction)=="HATE") { ?><span
 						class="icon-dislike icon has-text-danger"> <i
 							class="fas fa-thumbs-down"></i>
-					</span><?php } ?>
+					</span><?php }else{ ?>
+					đề nghị xóa X
+					<?php } ?>
                   
                   </span> &nbsp; <span class="needs_to_be_rendered" datetime="<?php echo $arrJson[$i]->thoigian ?>"><?php echo $arrJson[$i]->thoigian ?></span>
 				</p>
@@ -242,7 +244,7 @@ $dataReply = $r["reply_data"];
     <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
-            <form id="comment-form" action="/reviews/comment" method="POST">
+            <form id="comment-form" action="<?php echo $servername ?>/cong-ty/dang-reply" method="POST">
                 <div class="field">
                     <label class="label">Tên họ</label>
                     <div class="control">
@@ -270,8 +272,9 @@ $dataReply = $r["reply_data"];
                         </div>
                     </div>
                 </div>
-                <div class="g-recaptcha" data-sitekey="6LfaZYYUAAAAAJm3LX9_eCHCnoSQvGM_aydMNExO" data-callback="onCommentCaptchaSuccess"></div>
+                <div class="g-recaptcha" data-sitekey="6LeCXNoUAAAAAKA3UQKXI_5FRluNDNnjJbFaUCBm" data-callback="onCommentCaptchaSuccess"></div>
                 <input type="hidden" name="companyId" value="<?php echo $row["id"] ?>" />
+                <input type="hidden" name="companyUrl" value="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];?>" />
                 <input type="hidden" id="review-id" name="reviewId" />
 
                 <div class="m-t-15">

@@ -2,7 +2,7 @@
 class Replyer {
     // Properties
     public $replyer;
-    public $likeordislike;
+    public $reaction;
     public $noidung;
     public $thoigian;
     
@@ -14,12 +14,12 @@ class Replyer {
         return $this->replyer;
     }
     
-    function set_likeordislike($likeordislike){
-        $this->likeordislike = $likeordislike;
+    function set_reaction($reaction){
+        $this->reaction = $reaction;
     }
     
-    function get_likeordislike(){
-        return $this->likeordislike;
+    function get_reaction(){
+        return $this->reaction;
     }
     
     function set_noidung($noidung){
