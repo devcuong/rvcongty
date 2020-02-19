@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 19, 2020 lúc 04:59 AM
+-- Thời gian đã tạo: Th2 19, 2020 lúc 08:04 PM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -46,9 +46,9 @@ CREATE TABLE `congty` (
 --
 
 INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`) VALUES
-(1, 'Lien Viet Tech', 'lien-viet-tech', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 14, 44, 3.14286, '109 Tran Hung Dao Hoan Kiem Ha Noi'),
-(2, 'Keaz', 'keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 4, 8, 2, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
-(3, 'Sakuko Việt Nam', 'sakuko-viet-nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 219, 762, 3.47945, '1 Trung Yên Plaza Cau Giay Ha Noi');
+(1, 'Lien Viet Tech', 'lien-viet-tech', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 17, 57, 3.35294, '109 Tran Hung Dao Hoan Kiem Ha Noi'),
+(2, 'Keaz', 'keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 2, 6, 4.2, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
+(3, 'Sakuko Việt Nam', 'sakuko-viet-nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 217, 760, 3.5, '1 Trung Yên Plaza Cau Giay Ha Noi');
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ CREATE TABLE `reply` (
 --
 
 INSERT INTO `reply` (`id`, `idreview`, `data`) VALUES
-(1, 1, '[{\"replyer\":\"John\",\"likeordislike\":1,\"noidung\":\"New York\",\"thoigian\":\"1581958324485\"},{\"replyer\":\"John Wick\",\"likeordislike\":0,\"noidung\":\"New York\", \"thoigian\":\"1581958358520\"}]');
+(1, 1, '[{\"replyer\":\"John\",\"reaction\":\"HATE\",\"noidung\":\"New York\",\"thoigian\":\"1581958324485\"},{\"replyer\":\"John Wick\",\"reaction\":\"DELETE\",\"noidung\":\"New York\",\"thoigian\":\"1581958358520\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"aaaaaaaaaaa\",\"thoigian\":\"2020-02-19 16:49:41\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhu1ea3m nhu00ed, dislike\",\"thoigian\":\"2020-02-19 16:51:55\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhu1ea3m nhu00ed, dislike\",\"thoigian\":\"2020-02-19 16:59:32\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhảm nhí, dislike\",\"thoigian\":\"2020-02-19 17:02:04\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-02-19 17:02:24\"}]');
 
 -- --------------------------------------------------------
 
@@ -78,6 +78,7 @@ INSERT INTO `reply` (`id`, `idreview`, `data`) VALUES
 CREATE TABLE `review` (
   `id` int(100) NOT NULL,
   `reviewer` varchar(100) NOT NULL,
+  `position` varchar(100) NOT NULL,
   `rate` int(1) NOT NULL,
   `noidung` text NOT NULL,
   `congty` int(11) NOT NULL,
@@ -88,12 +89,14 @@ CREATE TABLE `review` (
 -- Đang đổ dữ liệu cho bảng `review`
 --
 
-INSERT INTO `review` (`id`, `reviewer`, `rate`, `noidung`, `congty`, `thoigian`) VALUES
-(1, 'Nguyễn Khắc Thành (DEV quèn)  \r\n', 5, 'Có nhiều gái xinh và dễ thương. Công ty tuyệt với, đuổi cũng méo đi.\r\n', 1, '1581955907004'),
-(2, 'Ẩn danh  \r\n', 1, 'công ty max coi thường thiết kế, làm việc nhốn nháo không có trình tự gì\r\ncông ty như cái chợ ai thích làm gì thì làm, nên tránh', 1, '1581956999796'),
-(3, '\"Biến mẹ mày đi\"', 3, '\"Biến mẹ mày đi\"', 1, '2020-02-18 19:19:08'),
-(4, 'Thi', 1, '\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"', 1, '2020-02-19 04:44:28'),
-(5, 'Thi', 1, '\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"', 1, '2020-02-19 04:44:38');
+INSERT INTO `review` (`id`, `reviewer`, `position`, `rate`, `noidung`, `congty`, `thoigian`) VALUES
+(1, 'Nguyễn Khắc Thành\r\n\r\n', 'DEV quèn', 5, 'Có nhiều gái xinh và dễ thương. Công ty tuyệt với, đuổi cũng méo đi.\r\n', 1, '1581955907004'),
+(2, 'Ẩn danh', 'HR Manager', 1, 'công ty max coi thường thiết kế, làm việc nhốn nháo không có trình tự gì\r\ncông ty như cái chợ ai thích làm gì thì làm, nên tránh', 1, '1581956999796'),
+(3, 'Cuong Doan', 'HR Manager', 1, 'Cuong DoanCuong DoanCuong DoanCuong DoanCuong DoanCuong DoanCuong DoanCuong DoanCuong Doan', 1, '2020-02-19 14:48:52'),
+(4, 'Cuong Doan', 'HR Manager', 3, 'dev siêu quèn', 1, '2020-02-19 14:49:15'),
+(5, 'Ẩn Danh', 'Dev quèn', 1, '$position$position$position$position$position$position$position$position$position$position$position$position$position', 1, '2020-02-19 15:10:18'),
+(6, 'Ẩn Danh', 'Dev quèn', 5, 'ok maok ma', 1, '2020-02-19 15:11:17'),
+(7, 'Ẩn Danh', 'Dev quèn', 5, 'aaaaaaaaaaaaaaa', 1, '2020-02-19 16:50:45');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -137,7 +140,7 @@ ALTER TABLE `reply`
 -- AUTO_INCREMENT cho bảng `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
