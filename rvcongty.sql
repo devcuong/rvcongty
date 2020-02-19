@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 18, 2020 lúc 05:15 PM
+-- Thời gian đã tạo: Th2 19, 2020 lúc 04:59 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -46,9 +46,9 @@ CREATE TABLE `congty` (
 --
 
 INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`) VALUES
-(1, 'Lien Viet Tech', 'lien-viet-tech', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 12, 42, 3.5, '109 Tran Hung Dao Hoan Kiem Ha Noi'),
-(2, 'Keaz', 'keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 2, 6, 4.2, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
-(3, 'Sakuko Việt Nam', 'sakuko-viet-nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 217, 760, 3.5, '1 Trung Yên Plaza Cau Giay Ha Noi');
+(1, 'Lien Viet Tech', 'lien-viet-tech', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 14, 44, 3.14286, '109 Tran Hung Dao Hoan Kiem Ha Noi'),
+(2, 'Keaz', 'keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 4, 8, 2, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
+(3, 'Sakuko Việt Nam', 'sakuko-viet-nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 219, 762, 3.47945, '1 Trung Yên Plaza Cau Giay Ha Noi');
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,10 @@ CREATE TABLE `review` (
 
 INSERT INTO `review` (`id`, `reviewer`, `rate`, `noidung`, `congty`, `thoigian`) VALUES
 (1, 'Nguyễn Khắc Thành (DEV quèn)  \r\n', 5, 'Có nhiều gái xinh và dễ thương. Công ty tuyệt với, đuổi cũng méo đi.\r\n', 1, '1581955907004'),
-(2, 'Ẩn danh  \r\n', 1, 'công ty max coi thường thiết kế, làm việc nhốn nháo không có trình tự gì\r\ncông ty như cái chợ ai thích làm gì thì làm, nên tránh', 1, '1581956999796');
+(2, 'Ẩn danh  \r\n', 1, 'công ty max coi thường thiết kế, làm việc nhốn nháo không có trình tự gì\r\ncông ty như cái chợ ai thích làm gì thì làm, nên tránh', 1, '1581956999796'),
+(3, '\"Biến mẹ mày đi\"', 3, '\"Biến mẹ mày đi\"', 1, '2020-02-18 19:19:08'),
+(4, 'Thi', 1, '\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"', 1, '2020-02-19 04:44:28'),
+(5, 'Thi', 1, '\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"\"Biến mẹ mày đi\"', 1, '2020-02-19 04:44:38');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -134,7 +137,7 @@ ALTER TABLE `reply`
 -- AUTO_INCREMENT cho bảng `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
