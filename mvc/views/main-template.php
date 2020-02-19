@@ -956,11 +956,11 @@ transform
 		aria-label="main navigation">
 		<div class="container">
 			<div class="logo" data-no-instant="">
-				<a href="https://reviewcongty.com/"> <img class="logo__img"
+				<a href="<?php echo $servername ?>"> <img class="logo__img"
 					src="https://reviewcongty.com/images/logo/logo_transparent.png" alt="">
 				</a>
 				<h1 class="logo__header has-text-white is-size-5">
-					<a href="https://reviewcongty.com/"> Review Công ty </a>
+					<a href="<?php echo $servername ?>"> RV Công ty </a>
 				</h1>
 			</div>
 		</div>

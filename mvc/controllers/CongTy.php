@@ -30,32 +30,29 @@ class CongTy extends Controller{
         $score="";
         
         // id công ty
-        if(isset($_POST["companyId"])){
-            $idCongTy = $_POST["companyId"];
-        }
+        $idCongTy = $_POST["companyId"];
         
         // slug công ty
-        if (isset($_POST[""])){
-            $companyUrl = $_POST["companyUrl"];
-        }
-        
-        // reviewer
-        if("" != trim($_POST['reviewer'])){
-            $reviewerName = $_POST["reviewer"];
-        }
-        else {
-            $reviewerName = "Ẩn Danh";
-        }
+        $companyUrl = $_POST["companyUrl"];
         
         // content
         $content = $_POST["content"];
         
-        // position
-        if("" != trim($_POST["position"])){
-            $reviewerPosition = $_POST["position"];
+        // reviewer
+        if(isset($_POST['reviewer'])){
+            if(trim($_POST['reviewer']) != ""){
+                $reviewerName = $_POST["reviewer"];
+            } else {
+                $reviewerName = "Ẩn Danh";
+            }
         }
-        else {
-            $reviewerPosition = "Dev quèn";
+        // position
+        if(isset($_POST['position'])){
+            if(trim($_POST['position']) != ""){
+                $reviewerPosition= $_POST["position"];
+            } else {
+                $reviewerPosition= "Dev quèn";
+            }
         }
         
         // score
@@ -72,6 +69,7 @@ class CongTy extends Controller{
                 exit();
             }
         }
+       
     }
     
 }
