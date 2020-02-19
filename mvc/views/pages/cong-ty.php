@@ -222,6 +222,7 @@ $dataReply = $r["reply_data"];
                     </div>
                 </div>
                 <input type="hidden" name="companyId" value="<?php echo $row["id"] ?>" />
+                 <input type="hidden" name="companyUrl" value="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];?>" />
                 <div class="g-recaptcha" data-sitekey="6LdzGtkUAAAAAPbjiQfk8z3AbWKKjRWNE_MXxcOQ" data-callback="onReviewCaptchaSuccess"></div>
                 <p class="m-t-5">
                     Người đăng chịu trách nhiệm về tính xác thực của nội dung chứ <b>bên mình không có chịu</b>, okay?

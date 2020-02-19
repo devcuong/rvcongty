@@ -23,6 +23,7 @@ class CongTy extends Controller{
     function DangReview()
     {
         $idCongTy = "";
+        $companyUrl = "";
         $reviewerName = "";
         $reviewerPosition = "";
         $content="";
@@ -33,8 +34,13 @@ class CongTy extends Controller{
             $idCongTy = $_POST["companyId"];
         }
         
+        // slug công ty
+        if (isset($_POST[""])){
+            $companyUrl = $_POST["companyUrl"];
+        }
+        
         // reviewer
-        if(isset($_POST["reviewer"])){
+        if("" != trim($_POST['reviewer'])){
             $reviewerName = $_POST["reviewer"];
         }
         else {
@@ -45,19 +51,27 @@ class CongTy extends Controller{
         $content = $_POST["content"];
         
         // position
-        if(isset($_POST["position"])){
+        if("" != trim($_POST["position"])){
+            $reviewerPosition = $_POST["position"];
+        }
+        else {
             $reviewerPosition = "Dev quèn";
         }
         
         // score
         $score = intval($_POST["score"]);
         
-        $created_date = date("Y-m-d H:i:s");
+        $createdDate = date("Y-m-d H:i:s");
         
-        $kq = $this->ReviewModel->ThemReview($reviewerName, $score, $content, $idCongTy, $created_date);
-        $kq2 = $this->CongTyModel->UpdateRateCongTy($idCongTy, $score);
-        
-        echo $kq2;
+        $kq = $this->ReviewModel->ThemReview($reviewerName, $score, $content, $idCongTy, $createdDate);
+        if($kq)
+        {
+            $kq2 = $this->CongTyModel->UpdateRateCongTy($idCongTy, $score);
+            if($kq2){
+                header("Location: " . $companyUrl, 301);
+                exit();
+            }
+        }
     }
     
 }
