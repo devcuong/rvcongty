@@ -47,30 +47,21 @@
 				<div class="tabs-section" style="height: auto !important;">
 					<nav class="pagination is-small custom-pagination"
 						role="navigation" aria-label="pagination">
-						<span class="pagination-summary">Trang <b>1</b> trên tổng số <b>353</b></span>
+						<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b> trên tổng số <b><?php echo $data["SoTrang"]; ?></b></span>
 						<ul class="pagination-list">
-							<li><a href="https://reviewcongty.com/?tab=latest&amp;page=1"
-								class="pagination-link is-current">1</a></li>
-							<li><a href="https://reviewcongty.com/?tab=latest&amp;page=2"
-								class="pagination-link ">2</a></li>
-							<li><a href="https://reviewcongty.com/?tab=latest&amp;page=3"
-								class="pagination-link ">3</a></li>
-							<li><a href="https://reviewcongty.com/?tab=latest&amp;page=4"
-								class="pagination-link ">4</a></li>
-							<li><a href="https://reviewcongty.com/?tab=latest&amp;page=5"
-								class="pagination-link ">5</a></li>
-							<li><a href="https://reviewcongty.com/?tab=latest&amp;page=6"
-								class="pagination-link ">6</a></li>
-							<li><a href="https://reviewcongty.com/?tab=latest&amp;page=7"
-								class="pagination-link ">7</a></li>
-							<li><a href="https://reviewcongty.com/?tab=latest&amp;page=8"
-								class="pagination-link ">8</a></li>
-							<li><a href="https://reviewcongty.com/?tab=latest&amp;page=9"
-								class="pagination-link ">9</a></li>
+						<?php for($i=1; $i<=$data["SoTrang"]; $i++){ ?>
+							<?php if($i == $data["TrangHienTai"]) {?>
+							<li><a href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
+								class="pagination-link is-current"><?php echo $i ?></a></li>
+							<?php }else{ ?>
+							<li><a href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
+								class="pagination-link "><?php echo $i ?></a></li>
+							<?php } ?>
+						<?php } ?>
 						</ul>
 					</nav>
 					<?php 
-                                    while($row = mysqli_fetch_array($data["TatCaCongTy"])){
+                                    while($row = mysqli_fetch_array($data["SoCongTyTrangHienTai"])){
                                         ?>
                                         <div data-href="/companies/lien-viet-tech" class="company-item">
 						<div class="company-info">
@@ -121,29 +112,20 @@
                                         <?php } ?>
 					<div style="margin-top: 0.6rem">
 						<nav class="pagination is-small custom-pagination"
-							role="navigation" aria-label="pagination">
-							<span class="pagination-summary">Trang <b>1</b> trên tổng số <b>353</b></span>
-							<ul class="pagination-list">
-								<li><a href="https://reviewcongty.com/?tab=latest&amp;page=1"
-									class="pagination-link is-current">1</a></li>
-								<li><a href="https://reviewcongty.com/?tab=latest&amp;page=2"
-									class="pagination-link ">2</a></li>
-								<li><a href="https://reviewcongty.com/?tab=latest&amp;page=3"
-									class="pagination-link ">3</a></li>
-								<li><a href="https://reviewcongty.com/?tab=latest&amp;page=4"
-									class="pagination-link ">4</a></li>
-								<li><a href="https://reviewcongty.com/?tab=latest&amp;page=5"
-									class="pagination-link ">5</a></li>
-								<li><a href="https://reviewcongty.com/?tab=latest&amp;page=6"
-									class="pagination-link ">6</a></li>
-								<li><a href="https://reviewcongty.com/?tab=latest&amp;page=7"
-									class="pagination-link ">7</a></li>
-								<li><a href="https://reviewcongty.com/?tab=latest&amp;page=8"
-									class="pagination-link ">8</a></li>
-								<li><a href="https://reviewcongty.com/?tab=latest&amp;page=9"
-									class="pagination-link ">9</a></li>
-							</ul>
-						</nav>
+						role="navigation" aria-label="pagination">
+						<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b> trên tổng số <b><?php echo $data["SoTrang"]; ?></b></span>
+						<ul class="pagination-list">
+						<?php for($i=1; $i<=$data["SoTrang"]; $i++){ ?>
+							<?php if($i == $data["TrangHienTai"]) {?>
+							<li><a href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
+								class="pagination-link is-current"><?php echo $i ?></a></li>
+							<?php }else{ ?>
+							<li><a href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
+								class="pagination-link "><?php echo $i ?></a></li>
+							<?php } ?>
+						<?php } ?>
+						</ul>
+					</nav>
 
 					</div>
 				</div>

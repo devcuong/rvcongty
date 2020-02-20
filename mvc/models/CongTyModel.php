@@ -13,6 +13,12 @@ class CongTyModel extends DB{
             return mysqli_query($this->con, $qr);
         }
         
+        // Lấy công ty để phân trang
+        public function LayCongTyPhanTrang($soCongTyBoQua, $soCongTyMoiTrang){
+            $qr = "SELECT * FROM congty LIMIT ".$soCongTyBoQua.','.$soCongTyMoiTrang;
+            return mysqli_query($this->con, $qr);
+        }
+        
         // Update rate công ty
         public function UpdateRateCongTy($iD, $score){
             $qr = "UPDATE congty SET luotdanhgia = luotdanhgia + 1, tongsao = tongsao + $score, rate = tongsao/luotdanhgia WHERE id = $iD";
