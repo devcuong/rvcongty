@@ -9,9 +9,12 @@ class CongTy extends Controller
     public $ReviewModel;
 
     public $ReplyModel;
+    
+    
 
     public function __construct()
     {
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
         $this->CongTyModel = $this->model("CongTyModel");
         $this->ReviewModel = $this->model("ReviewModel");
         $this->ReplyModel = $this->model("ReplyModel");
@@ -107,6 +110,7 @@ class CongTy extends Controller
         $replyer->replyer = $reviewer;
         $replyer->reaction = $reaction;
         $replyer->noidung = $content;
+        
         $createdDate = date("Y-m-d H:i:s");
         $replyer->thoigian = $createdDate;
         
