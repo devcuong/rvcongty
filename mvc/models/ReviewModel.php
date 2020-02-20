@@ -15,10 +15,15 @@ class ReviewModel extends DB{
     
     // Thêm review
     public function ThemReview($reviewer,$position, $rate, $noidung, $congty, $thoigian){
-        $qr = "INSERT INTO review VALUES(null, '$reviewer','$position', $rate, '$noidung', '$congty', '$thoigian')";
-        $result = false;
-        if(mysqli_query($this->con, $qr)){
-            $result = true;
+        $qr= "INSERT INTO review (reviewer, position, rate, noidung, congty, thoigian) VALUES(?, ?, ?, ?, ?, ?)";
+        $stmt = mysqli_stmt_init($this->con);
+        $result = 0;
+        if(!mysqli_stmt_prepare($stmt, $qr)){
+            echo "SQL statement failed";
+        }else{
+            mysqli_stmt_bind_param($stmt, "ssssss", $reviewer, $position, $rate, $noidung, $congty, $thoigian);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
         }
         return json_encode($result);
     }
