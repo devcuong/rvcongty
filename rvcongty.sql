@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 21, 2020 lúc 03:08 AM
+-- Thời gian đã tạo: Th2 21, 2020 lúc 08:54 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -46,7 +46,7 @@ CREATE TABLE `congty` (
 --
 
 INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`) VALUES
-(1, 'Lien Viet Tech', 'lien-viet-tech', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 19, 63, 3.31579, '109 Tran Hung Dao Hoan Kiem Ha Noi'),
+(1, 'Lien Viet Tech', 'lien-viet-tech', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 21, 67, 3.19048, '109 Tran Hung Dao Hoan Kiem Ha Noi'),
 (2, 'Keaz', 'keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 3, 8, 2.66667, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
 (3, 'Sakuko Việt Nam', 'sakuko-viet-nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 217, 760, 3.5, '1 Trung Yên Plaza Cau Giay Ha Noi');
 
@@ -106,7 +106,9 @@ INSERT INTO `review` (`id`, `reviewer`, `position`, `rate`, `noidung`, `congty`,
 (7, 'Ẩn Danh', 'Dev quèn', 5, 'aaaaaaaaaaaaaaa', 1, '2020-02-19 16:50:45'),
 (8, 'ok', 'abcdef ghg', 3, '$result$result$result$result$result$result$result$result$result$result', 1, '2020-02-20 04:24:16'),
 (9, 'Ẩn Danh', 'Dev quèn', 3, 'SELECT * FROM Customers;\r\n', 1, '2020-02-20 04:30:02'),
-(10, 'Ẩn Danh', 'Dev quèn', 2, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghgabcdef ghgabcdef ghg', 2, '2020-02-21 08:00:44');
+(10, 'Ẩn Danh', 'Dev quèn', 2, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghgabcdef ghgabcdef ghg', 2, '2020-02-21 08:00:44'),
+(11, 'Ẩn Danh', 'Dev quèn', 1, 'HONG KONGMắc bệnh teo cơ từ 14 năm trước, Steven Yan phải ngồi xe lăn đi khắp các cửa hàng tìm mua khẩu trang, nhưng thường trở về trắng tay.\r\nYan cố gắng tìm kiếm nơi bán khẩu trang gần căn hộ mình nhưng chỉ thành công một lần vào tháng trước. Ông xếp hàng 6 giờ để lấy được 5 chiếc khẩu trang miễn phí. \"Tôi kiệt sức\", Yan nói. \"Tôi không dám di chuyển vì sợ mất chỗ\".', 1, '2020-02-21 09:34:13'),
+(12, 'Ẩn Danh', 'Dev quèn', 3, 'HONG KONGMắc bệnh teo cơ từ 14 năm trước, Steven Yan phải ngồi xe lăn đi khắp các cửa hàng tìm mua khẩu trang, nhưng thường trở về trắng tay.\r\n\r\nYan cố gắng tìm kiếm nơi bán khẩu trang gần căn hộ mình nhưng chỉ thành công một lần vào tháng trước. Ông xếp hàng 6 giờ để lấy được 5 chiếc khẩu trang miễn phí. \"Tôi kiệt sức\", Yan nói. \"Tôi không dám di chuyển vì sợ mất chỗ\".', 1, '2020-02-21 09:34:40');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -150,7 +152,7 @@ ALTER TABLE `reply`
 -- AUTO_INCREMENT cho bảng `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
