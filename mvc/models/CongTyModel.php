@@ -18,6 +18,17 @@ class CongTyModel extends DB{
             $qr = "SELECT * FROM congty LIMIT ".$soCongTyBoQua.','.$soCongTyMoiTrang;
             return mysqli_query($this->con, $qr);
         }
+        // Lấy công ty best để phân trang
+        public function LayCongTyBestPhanTrang($soCongTyBoQua, $soCongTyMoiTrang){
+            $qr = "SELECT * FROM congty ORDER BY rate DESC LIMIT ".$soCongTyBoQua.','.$soCongTyMoiTrang;
+            return mysqli_query($this->con, $qr);
+        }
+        
+        // Lấy công ty worst để phân trang
+        public function LayCongTyWorstPhanTrang($soCongTyBoQua, $soCongTyMoiTrang){
+            $qr = "SELECT * FROM congty ORDER BY rate ASC LIMIT ".$soCongTyBoQua.','.$soCongTyMoiTrang;
+            return mysqli_query($this->con, $qr);
+        }
         
         // Update rate công ty
         public function UpdateRateCongTy($iD, $score){

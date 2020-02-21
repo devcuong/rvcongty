@@ -25,19 +25,19 @@
 				<div class="tabs" style="margin-bottom: 0.6rem">
 					<ul>
 						<li data-tab="top-comments" class="tab is-active"><a
-							href="https://reviewcongty.com/?tab=latest"
+							href="<?php echo $servername ?>/?tab=latest"
 							class="has-text-weight-bold"> <span class="icon has-text-info"> <i
 									class="fas fa-comments"></i>
 							</span> Mới cập nhật
 						</a></li>
 						<li data-tab="top-companies" class="tab "><a
-							href="https://reviewcongty.com/?tab=best"
+							href="<?php echo $servername ?>/?tab=best"
 							class="has-text-weight-bold"> <span class="icon has-text-success">
 									<i class="fas fa-thumbs-up"></i>
 							</span> Top công ty xịn
 						</a></li>
 						<li data-tab="worst-companies" class="tab "><a
-							href="https://reviewcongty.com/?tab=worst"
+							href="<?php echo $servername ?>/?tab=worst"
 							class="has-text-weight-bold"> <span class="icon has-text-danger">
 									<i class="fas fa-thumbs-down"></i>
 							</span> Công ty bựa nên né
@@ -51,17 +51,33 @@
 						<ul class="pagination-list">
 						<?php for($i=1; $i<=$data["SoTrang"]; $i++){ ?>
 							<?php if($i == $data["TrangHienTai"]) {?>
+							<?php if("latest" == $data["TabCongTy"]){ ?>
 							<li><a href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
 								class="pagination-link is-current"><?php echo $i ?></a></li>
+								<?php }else if("best" == $data["TabCongTy"]) { ?>
+								<li><a href="<?php echo $servername ?>/?tab=best&amp;page=<?php echo $i ?>"
+								class="pagination-link is-current"><?php echo $i ?></a></li>
+								<?php }else{ ?>
+								<li><a href="<?php echo $servername ?>/?tab=worst&amp;page=<?php echo $i ?>"
+								class="pagination-link is-current"><?php echo $i ?></a></li>
+								<?php } ?>
 							<?php }else{ ?>
+							<?php if("latest" == $data["TabCongTy"]) {?>
 							<li><a href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
 								class="pagination-link "><?php echo $i ?></a></li>
+								<?php } else if("best" == $data["TabCongTy"]){ ?>
+								<li><a href="<?php echo $servername ?>/?tab=best&amp;page=<?php echo $i ?>"
+								class="pagination-link "><?php echo $i ?></a></li>
+								<?php } else{ ?>
+								<li><a href="<?php echo $servername ?>/?tab=worst&amp;page=<?php echo $i ?>"
+								class="pagination-link "><?php echo $i ?></a></li>
+								<?php }?>
 							<?php } ?>
 						<?php } ?>
 						</ul>
 					</nav>
 					<?php 
-                                    while($row = mysqli_fetch_array($data["SoCongTyTrangHienTai"])){
+                                    while($row = mysqli_fetch_array($data["CongTyTrangHienTai"])){
                                         ?>
                                         <div data-href="/companies/lien-viet-tech" class="company-item">
 						<div class="company-info">

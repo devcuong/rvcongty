@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 20, 2020 lúc 02:00 PM
+-- Thời gian đã tạo: Th2 21, 2020 lúc 03:08 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -47,7 +47,7 @@ CREATE TABLE `congty` (
 
 INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`) VALUES
 (1, 'Lien Viet Tech', 'lien-viet-tech', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 19, 63, 3.31579, '109 Tran Hung Dao Hoan Kiem Ha Noi'),
-(2, 'Keaz', 'keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 2, 6, 4.2, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
+(2, 'Keaz', 'keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 3, 8, 2.66667, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
 (3, 'Sakuko Việt Nam', 'sakuko-viet-nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 217, 760, 3.5, '1 Trung Yên Plaza Cau Giay Ha Noi');
 
 -- --------------------------------------------------------
@@ -73,7 +73,8 @@ INSERT INTO `reply` (`id`, `idreview`, `data`) VALUES
 (6, 3, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"DELETE\",\"noidung\":\"okokokokokokokokokokokokokokokok\",\"thoigian\":\"2020-02-19 21:08:58\"}]'),
 (7, 2, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"okokokokokokokokokokokok\",\"thoigian\":\"2020-02-19 21:09:14\"}]'),
 (9, 7, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"cái đéo gì vậy trời\",\"thoigian\":\"2020-02-19 21:23:04\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"ko hiểu luôn tụi bay\",\"thoigian\":\"2020-02-19 21:28:38\"}]'),
-(11, 8, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"$data$data$data$data$data$data$data\",\"thoigian\":\"2020-02-20 04:39:17\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"SELECT * FROM Customers;\\r\\n\",\"thoigian\":\"2020-02-20 04:39:29\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"DELETE\",\"noidung\":\"SELECT * FROM Customers;\\r\\n\",\"thoigian\":\"2020-02-20 04:39:41\"}]');
+(11, 8, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"$data$data$data$data$data$data$data\",\"thoigian\":\"2020-02-20 04:39:17\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"SELECT * FROM Customers;\\r\\n\",\"thoigian\":\"2020-02-20 04:39:29\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"DELETE\",\"noidung\":\"SELECT * FROM Customers;\\r\\n\",\"thoigian\":\"2020-02-20 04:39:41\"}]'),
+(12, 10, '[{\"replyer\":\"Ha Ha\",\"reaction\":\"HATE\",\"noidung\":\"abcabcabcabcabc\",\"thoigian\":\"2020-02-21 08:01:21\"}]');
 
 -- --------------------------------------------------------
 
@@ -104,7 +105,8 @@ INSERT INTO `review` (`id`, `reviewer`, `position`, `rate`, `noidung`, `congty`,
 (6, 'Ẩn Danh', 'Dev quèn', 5, 'ok maok ma', 1, '2020-02-19 15:11:17'),
 (7, 'Ẩn Danh', 'Dev quèn', 5, 'aaaaaaaaaaaaaaa', 1, '2020-02-19 16:50:45'),
 (8, 'ok', 'abcdef ghg', 3, '$result$result$result$result$result$result$result$result$result$result', 1, '2020-02-20 04:24:16'),
-(9, 'Ẩn Danh', 'Dev quèn', 3, 'SELECT * FROM Customers;\r\n', 1, '2020-02-20 04:30:02');
+(9, 'Ẩn Danh', 'Dev quèn', 3, 'SELECT * FROM Customers;\r\n', 1, '2020-02-20 04:30:02'),
+(10, 'Ẩn Danh', 'Dev quèn', 2, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghgabcdef ghgabcdef ghg', 2, '2020-02-21 08:00:44');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -142,13 +144,13 @@ ALTER TABLE `congty`
 -- AUTO_INCREMENT cho bảng `reply`
 --
 ALTER TABLE `reply`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

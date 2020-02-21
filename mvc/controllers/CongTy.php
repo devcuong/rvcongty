@@ -20,16 +20,38 @@ class CongTy extends Controller
         $this->ReplyModel = $this->model("ReplyModel");
     }
 
-    function Index($a, $b)
+    function Index($a, $b, $c=null)
     {
+        $trangReviewHienTai = 1;
+        $soReviewMoiTrang = 10;
+        if($c != null){
+            $trangReviewHienTai = $c;
+        }
+        
+        $soReviewBoQua = ($trangReviewHienTai-1)*$soReviewMoiTrang;
         $urlCongTy = explode("-", $b);
         $idCongTy = end($urlCongTy);
+        
+        // Model
+        $congty = $this->CongTyModel;
+        $review = $this->ReviewModel;
+        
+        // Tất cả review
+        $tatCaReview = $review->LayReviewBangIdCongTy($idCongTy);
+        $soReview = mysqli_num_rows($tatCaReview);
+        $soTrang = ceil($soReview/$soReviewMoiTrang);
+        
+        // Lấy review tại trang
+        $reviewTrangHienTai = $review->LayReviewPhanTrang($idCongTy, $soReviewBoQua, $soReviewMoiTrang);
         // View
         $this->view("main-template", [
             "Page" => "cong-ty",
-            "CongTy" => $this->CongTyModel->LayCongTyBangId($idCongTy),
-            "Review" => $this->ReviewModel->LayReviewBangIdCongTy($idCongTy)
+            "CongTy" => $congty->LayCongTyBangId($idCongTy),
+            "Review" => $reviewTrangHienTai,
+            "SoTrang" => $soTrang,
+            "TrangHienTai" => $trangReviewHienTai
         ]);
+        //echo $reviewTrangHienTai;
     }
 
     // Đăng review

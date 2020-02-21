@@ -4,7 +4,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 <nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs"
 	data-no-instant="">
 	<ul>
-		<li><a href="/"> <span class="icon is-small"> <i class="fas fa-home"
+		<li><a href="<?php echo $servername ?>"> <span class="icon is-small"> <i class="fas fa-home"
 					aria-hidden="true"></i>
 			</span> <span>Trang chủ</span>
 		</a></li>
@@ -73,8 +73,19 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 		</span> &nbsp;&nbsp; Viết review
 	</button>
 </section>
-
 <section class="full-reviews">
+<nav class="pagination is-small custom-pagination" role="navigation" aria-label="pagination">
+  <span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b> trên tổng số <b><?php echo $data["SoTrang"] ?></b></span>
+  <ul class="pagination-list">
+  	<?php for($i=1; $i <= $data["SoTrang"]; $i++){ ?>
+  		<?php if($i == $data["TrangHienTai"]){ ?>
+  		<li><a href="<?php echo $servername?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link is-current"><?php echo $i ?></a></li>
+  		<?php }else{ ?>
+  		 <li><a href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link "><?php echo $i ?></a></li>
+  		<?php } ?>
+  	<?php } ?>
+  </ul>
+</nav>
 	<!-- Review Page Top -->
  <?php
 while ($r = mysqli_fetch_array($data["Review"])) {
