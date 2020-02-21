@@ -16,8 +16,8 @@
 	content="Review Công ty - Review lương bổng, đãi ngộ, HR, sếp và công việc,... gì cũng có">
 <meta property="og:type" content="website">
 
-<meta property="og:url" content="https://reviewcongty.com">
-<link rel="canonical" href="https://reviewcongty.com/">
+<meta property="og:url" content="https://rvcongty.com">
+<link rel="canonical" href="https://rvcongty.com/">
 
 <meta property="og:image"
 	content="https://reviewcongty.com/images/banner.jpg">

@@ -79,7 +79,7 @@
 					<?php 
                                     while($row = mysqli_fetch_array($data["CongTyTrangHienTai"])){
                                         ?>
-                                        <div data-href="/companies/lien-viet-tech" class="company-item">
+                                        <div data-href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]?>" class="company-item">
 						<div class="company-info">
 							<figure class="company-info__logo image is-64x64">
 								<img src="<?php echo $servername ?>/mvc/public/asset/companies/logo/<?php echo $row["logo"]; ?>">

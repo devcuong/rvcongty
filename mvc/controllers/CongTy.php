@@ -147,7 +147,6 @@ class CongTy extends Controller
         } else {
             array_push($arrData, $replyer);
             $kq = $this->ReplyModel->ThemReplyTheoIdReview($idReview, json_encode($arrData, JSON_UNESCAPED_UNICODE));
-            // echo $kq;
         }
         
         header("Location: " . $companyUrl, 301);
