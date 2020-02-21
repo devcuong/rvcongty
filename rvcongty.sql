@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 21, 2020 lúc 08:54 AM
+-- Thời gian đã tạo: Th2 21, 2020 lúc 11:28 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -67,14 +67,19 @@ CREATE TABLE `reply` (
 --
 
 INSERT INTO `reply` (`id`, `idreview`, `data`) VALUES
-(1, 1, '[{\"replyer\":\"John\",\"reaction\":\"HATE\",\"noidung\":\"New York\",\"thoigian\":\"1581958324485\"},{\"replyer\":\"John Wick\",\"reaction\":\"DELETE\",\"noidung\":\"New York\",\"thoigian\":\"1581958358520\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"aaaaaaaaaaa\",\"thoigian\":\"2020-02-19 16:49:41\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhu1ea3m nhu00ed, dislike\",\"thoigian\":\"2020-02-19 16:51:55\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhu1ea3m nhu00ed, dislike\",\"thoigian\":\"2020-02-19 16:59:32\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhảm nhí, dislike\",\"thoigian\":\"2020-02-19 17:02:04\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-02-19 17:02:24\"}]'),
+(1, 1, '[{\"replyer\":\"John\",\"reaction\":\"HATE\",\"noidung\":\"New York\",\"thoigian\":\"1581958324485\"},{\"replyer\":\"John Wick\",\"reaction\":\"DELETE\",\"noidung\":\"New York\",\"thoigian\":\"1581958358520\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"aaaaaaaaaaa\",\"thoigian\":\"2020-02-19 16:49:41\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhu1ea3m nhu00ed, dislike\",\"thoigian\":\"2020-02-19 16:51:55\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhu1ea3m nhu00ed, dislike\",\"thoigian\":\"2020-02-19 16:59:32\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhảm nhí, dislike\",\"thoigian\":\"2020-02-19 17:02:04\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-02-19 17:02:24\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"<?php } ?><?php } ?>\",\"thoigian\":\"2020-02-21 17:24:59\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"<?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?>\",\"thoigian\":\"2020-02-21 17:25:49\"}]'),
 (2, 5, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"$qr$qr$qr$qr\",\"thoigian\":\"2020-02-19 20:42:37\"}]'),
 (4, 4, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"$result$result\",\"thoigian\":\"2020-02-19 20:44:09\"}]'),
 (6, 3, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"DELETE\",\"noidung\":\"okokokokokokokokokokokokokokokok\",\"thoigian\":\"2020-02-19 21:08:58\"}]'),
 (7, 2, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"okokokokokokokokokokokok\",\"thoigian\":\"2020-02-19 21:09:14\"}]'),
 (9, 7, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"cái đéo gì vậy trời\",\"thoigian\":\"2020-02-19 21:23:04\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"ko hiểu luôn tụi bay\",\"thoigian\":\"2020-02-19 21:28:38\"}]'),
 (11, 8, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"$data$data$data$data$data$data$data\",\"thoigian\":\"2020-02-20 04:39:17\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"SELECT * FROM Customers;\\r\\n\",\"thoigian\":\"2020-02-20 04:39:29\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"DELETE\",\"noidung\":\"SELECT * FROM Customers;\\r\\n\",\"thoigian\":\"2020-02-20 04:39:41\"}]'),
-(12, 10, '[{\"replyer\":\"Ha Ha\",\"reaction\":\"HATE\",\"noidung\":\"abcabcabcabcabc\",\"thoigian\":\"2020-02-21 08:01:21\"}]');
+(12, 10, '[{\"replyer\":\"Ha Ha\",\"reaction\":\"HATE\",\"noidung\":\"abcabcabcabcabc\",\"thoigian\":\"2020-02-21 08:01:21\"}]'),
+(13, 50000, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-02-21 17:23:56\"}]'),
+(14, 50000, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"DELETE\",\"noidung\":\"Xóa review này giùm!\",\"thoigian\":\"2020-02-21 17:24:04\"}]'),
+(15, 50000, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-02-21 17:25:25\"}]'),
+(16, 50000, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-02-21 17:26:01\"}]'),
+(17, 12, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"<?php } ?><?php } ?><?php } ?><?php } ?><?php } ?>\",\"thoigian\":\"2020-02-21 17:26:19\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"SELECT * FROM Customers;\\r\\n\",\"thoigian\":\"2020-02-21 17:26:43\"}]');
 
 -- --------------------------------------------------------
 
@@ -146,7 +151,7 @@ ALTER TABLE `congty`
 -- AUTO_INCREMENT cho bảng `reply`
 --
 ALTER TABLE `reply`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `review`
