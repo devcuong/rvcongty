@@ -153,5 +153,7 @@ class CongTy extends Controller
         header("Location: " . $companyUrl, 301);
         exit();
     }
+    
+
 }
 ?>

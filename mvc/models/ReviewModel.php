@@ -6,6 +6,10 @@ class ReviewModel extends DB{
         return mysqli_query($this->con, $qr);
     }
     
+    public function LayReviewBangIdReview($iDReview){
+        $qr = "SELECT review.id AS review_id, review.reviewer AS review_reviewer, review.position AS reviewer_position, review.rate AS reviewer_rate, review.noidung AS reviewer_noidung, review.thoigian AS reviewer_thoigian, congty.tencongty AS cong_tencongty, congty.slugcongty AS congty_slugcongty, congty.logo AS congty_logo, congty.nganhnghe AS congty_nganhnghe, congty.nhanvien AS congty_nhanvien, congty.luotdanhgia AS congty_luotdanhgia, congty.rate AS congty_rate, congty.diachi AS congty_diachi FROM review LEFT JOIN congty ON review.congty = congty.id WHERE review.id = $iDReview";
+        return mysqli_query($this->con, $qr);
+    }
     
     // Lấy 15 review mới nhất
     public function Lay15ReviewMoiNhat(){

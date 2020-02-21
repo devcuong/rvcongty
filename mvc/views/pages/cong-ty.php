@@ -188,7 +188,18 @@ $dataReply = $r["reply_data"];
        <?php } ?>
   </div>
   <?php } ?>
-  
+  <nav class="pagination is-small custom-pagination" role="navigation" aria-label="pagination">
+  <span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b> trên tổng số <b><?php echo $data["SoTrang"] ?></b></span>
+  <ul class="pagination-list">
+  	<?php for($i=1; $i <= $data["SoTrang"]; $i++){ ?>
+  		<?php if($i == $data["TrangHienTai"]){ ?>
+  		<li><a href="<?php echo $servername?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link is-current"><?php echo $i ?></a></li>
+  		<?php }else{ ?>
+  		 <li><a href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link "><?php echo $i ?></a></li>
+  		<?php } ?>
+  	<?php } ?>
+  </ul>
+</nav>
 </section>
 <div class="modal" id="review-modal">
     <form id="review-form" action="<?php echo $servername ?>/cong-ty/dang-review" method="POST">
@@ -250,7 +261,7 @@ $dataReply = $r["reply_data"];
     <button class="modal-close button-close is-large" aria-label="close"></button>
 </div>
 
-<script src="https://reviewcongty.com/javascript/review.js" async defer></script>
+<script src="<?php echo $servername ?>/mvc/public/js/review.js" async defer></script>
 <div class="modal" id="comment-modal">
     <div class="modal-background"></div>
     <div class="modal-content">
@@ -298,5 +309,5 @@ $dataReply = $r["reply_data"];
     <button class="modal-close button-close is-large" aria-label="close"></button>
 </div>
 <?php } ?>
-<script src="https://reviewcongty.com/javascript/comment.js" async defer></script>
+<script src="<?php echo $servername ?>/mvc/public/js/comment.js" async defer></script>
 <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
