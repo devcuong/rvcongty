@@ -146,7 +146,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="summary-reviews column z-1">
+			<section class="summary-reviews column z-1" >
 				<h1 class="is-size-4 has-text-weight-bold reviews__header">Review
 					gần đây</h1>
 				<?php 
@@ -182,7 +182,7 @@
 										<?php } ?>
 						</span>
 					</p>
-					<p><?php echo $r["noidung"] ?></p>
+					<p><?php echo mb_substr($r["noidung"],0, 50)."..." ?></p>
 				</div>
                                         <?php } ?>
 

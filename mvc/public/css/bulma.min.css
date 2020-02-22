@@ -8547,8 +8547,9 @@ a.panel-block:hover, label.panel-block:hover {
 .columns {
 	margin-left: -.75rem;
 	margin-right: -.75rem;
-	margin-top: -.75rem
+	margin-top: -.75rem;
 }
+
 
 .columns:last-child {
 	margin-bottom: -.75rem

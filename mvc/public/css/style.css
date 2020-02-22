@@ -158,7 +158,6 @@ a {
 .hero-img {
   margin-left: -64px;
   margin-right: -64px;
-  height: 230px;
   overflow-y: hidden;
   box-shadow: 0 4px 3px rgba(10, 10, 10, 0.1);
 
@@ -303,7 +302,6 @@ a {
 .summary-reviews {
   padding-left: 1.8rem;
   padding-top: 0.3rem;
-
   @media @mobile {
     padding: 0 0.8rem;
   }

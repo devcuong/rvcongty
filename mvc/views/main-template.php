@@ -71,6 +71,11 @@
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
    
 <style type="text/css" id="less:stylesheets-style">
+@media screen and (min-width: 769px) {
+	.columns{
+        display: flex;
+    }
+}
 @media screen and (max-width: 768px) {
 	html {
 		font-size: 14px;
@@ -98,7 +103,7 @@
 	.columns {
 		margin-left: auto;
 		margin-right: auto;
-		width: 98%;
+		width: 100%;
 	}
 	.modal-card {
 		width: 85vw;
@@ -249,13 +254,12 @@ a.white-link:hover {
 }
 
 .companies {
-	background-color: #fff;
-	box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px
-		rgba(10, 10, 10, 0.1);
-	color: #4a4a4a;
-	max-width: 100%;
-	position: relative;
-	padding: 0.3rem 0 0 0;
+    background-color: #fff;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    color: #4a4a4a;
+    max-width: 100%;
+    position: relative;
+    padding: 0.3rem 0 0 0;
 }
 
 .custom-pagination {
@@ -374,11 +378,6 @@ a.white-link:hover {
 	}
 }
 
-.summary-reviews {
-	padding-left: 1.8rem;
-	padding-top: 0.3rem;
-}
-
 @media screen and (max-width: 768px) {
 	.summary-reviews {
 		padding: 0 0.8rem;
@@ -386,7 +385,6 @@ a.white-link:hover {
 }
 
 .summary-reviews .reviews__header {
-	margin-top: 3.1rem;
 	margin-bottom: 0.4rem;
 }
 
@@ -394,17 +392,6 @@ a.white-link:hover {
 	.summary-reviews .reviews__header {
 		margin-top: 1.5rem;
 	}
-}
-
-.summary-reviews .review {
-	margin-bottom: 1rem;
-	
-	background-color: #fff;
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-    color: #4a4a4a;
-    max-width: 100%;
-    position: relative;
-    padding: 0.3rem 0 0 0.3rem;
 }
 
 .autocomplete-suggestion {
@@ -941,6 +928,10 @@ transform
 
 .fb_iframe_widget_fluid span {
 	width: 100%
+}
+
+.summary-reviews .review {
+    margin-bottom: 1rem;
 }
 </style>
 </head>
