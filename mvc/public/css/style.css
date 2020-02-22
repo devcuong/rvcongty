@@ -158,8 +158,7 @@ a {
 .hero-img {
   margin-left: -64px;
   margin-right: -64px;
-  overflow-y: hidden;
-
+ position: relative;
   @media @mobile {
     margin-left: 0;
     height: 220px;

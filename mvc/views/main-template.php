@@ -242,9 +242,61 @@ a.white-link:hover {
 	left: -64px;
 	right: -64px;
 	height: 434px;
-	background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.15));
 }
-
+.hero{
+	border-radius: 50px;
+    position: absolute;
+    bottom: 20px;
+    left: calc((100vw - 800px)/2);
+    width: 800px;
+    z-index: 1000;
+	background: rgba(0,0,0,0.2);
+}
+.banner-search-box {
+    border-radius: 30px;
+    background-color: transparent;
+	position: relative;
+    background: #fff;
+}
+.box-search {
+    border-radius: 30px !important;
+    overflow: hidden;
+	background-color: #fff;
+    border: 1px solid #ced4da;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+.banner-search-box .box-search .form-control{
+	position: relative;
+	flex: 1 1 auto;
+	padding: 12px 20px;
+    font-size: 120%;
+	border: none;
+	border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+	border-radius: 3px;
+	width: 1%;
+    margin-bottom: 0;
+}
+.input-group-append {
+    margin-left: -1px;
+	display: flex;
+}
+.input-group-append .btn {
+    padding: 0px 12px;
+	    width: 42px;
+    text-align: center;
+	position: relative;
+    z-index: 2;
+}
+.box-search .input-group-append .btn i {
+    color: #b62831;
+}
+.box-search .input-group-append .btn {
+    background-color: transparent;
+	border: none;
+}
 @media screen and (max-width: 768px) {
 	.hero-img .hero-img__gradient {
 		height: 220px;

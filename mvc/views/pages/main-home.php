@@ -1,23 +1,24 @@
 <section class="hero-img">
 			<div class="hero-img__gradient"></div>
 			<img src="<?php echo $servername ?>/mvc/public/images/banner.png" alt="">
-		</section>
-
-		<section class="hero">
+			<div class="hero">
 			<div class="hero-body z-1">
-				<h1 class="title has-text-white">Review lương bổng, đãi ngộ, HR,
-					tuyển dụng, sếp và công việc,... gì cũng có</h1>
 				<div>
 					<div class="field has-addons">
-						<div class="control has-icons-left is-expanded">
-							<span class="icon is-small is-left"> <i class="fas fa-search"></i>
-							</span> <input name="company-search" class="input" type="text"
+						<div class="control has-icons-left is-expanded banner-search-box">
+						<div class="input-group box-search">
+						<input name="company-search" class="input form-control" type="text"
 								placeholder="Tìm công ty" autocomplete="off">
+						<div class="input-group-append"><button class="btn" type="button" ng-click="toPageTrangChuTinTucTimKiem3(searchString)"> <i class="fa fa-search" aria-hidden="true"></i> </button></div>
+						</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		</section>
+
+		
 
 		<div class="columns" style="height: auto !important;">
 			<section class="companies column is-three-fifths"
