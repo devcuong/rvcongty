@@ -1,6 +1,6 @@
 <section class="hero-img">
 			<div class="hero-img__gradient"></div>
-			<img src="https://reviewcongty.com/images/banner.jpg" alt="">
+			<img src="<?php echo $servername ?>/mvc/public/images/banner.png" alt="">
 		</section>
 
 		<section class="hero">

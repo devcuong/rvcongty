@@ -159,7 +159,6 @@ a {
   margin-left: -64px;
   margin-right: -64px;
   overflow-y: hidden;
-  box-shadow: 0 4px 3px rgba(10, 10, 10, 0.1);
 
   @media @mobile {
     margin-left: 0;
@@ -172,7 +171,7 @@ a {
     top: 0;
     left: -64px;
     right: -64px;
-    height: 230px;
+    height: 434px;
     opacity: 0.6;
     background: linear-gradient(to right, #464d5c, #302b63, #24243e);
 

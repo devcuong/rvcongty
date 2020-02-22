@@ -241,7 +241,7 @@ a.white-link:hover {
 	top: 0;
 	left: -64px;
 	right: -64px;
-	height: 230px;
+	height: 434px;
 	background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.15));
 }
 
