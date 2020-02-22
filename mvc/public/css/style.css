@@ -114,7 +114,7 @@ a {
 
 .main-nav {
   background-color: #464d5c;
-  background: linear-gradient(to right, #464d5c, #302b63, #24243e);
+  background: linear-gradient(97deg,#00b9f2 35%,#0e7ccd 62%,#00b9f2 81%);
 
   .logo {
     padding: 0.3rem 0 0;

@@ -3,7 +3,7 @@
 			<img src="https://reviewcongty.com/images/banner.jpg" alt="">
 		</section>
 
-		<section class="hero" style="margin-top: -225px">
+		<section class="hero">
 			<div class="hero-body z-1">
 				<h1 class="title has-text-white">Review lương bổng, đãi ngộ, HR,
 					tuyển dụng, sếp và công việc,... gì cũng có</h1>

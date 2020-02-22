@@ -60,12 +60,12 @@
 <meta name="theme-color" content="#ffffff">
 <script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/timeago.locales.min.js"></script>
 <link rel="preload stylesheet" as="style" crossorigin="anonymous"
-	href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+	href="<?php echo $servername ?>/mvc/public/css/bulma.min.css">
 <link href="<?php echo $servername ?>/mvc/public/css/css" rel="stylesheet">
 <link rel="preload stylesheet" as="style" crossorigin="anonymous"
 	href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.css"
 	integrity="sha256-GHbWr7miG/WXEsrIb47MsX3KBJa9FTyi5ZMYr4XDHAQ=">
-<link rel="stylesheet" type="text/css" href="<?php echo $servername ?>/mvc/public/css/style.less" />
+<link rel="stylesheet" type="text/css" href="<?php echo $servername ?>/mvc/public/css/style.css" />
 <link rel="preload stylesheet" as="style" crossorigin="anonymous"
     href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -174,8 +174,10 @@ a.white-link:hover {
 }
 
 .main-nav {
-	background-color: #464d5c;
-	background: linear-gradient(to right, #464d5c, #302b63, #24243e);
+	font-size: 1rem;
+	line-height: 1.5rem;
+	background-color: #00b9f2;
+	background-image:linear-gradient(97deg,#00b9f2 35%,#0e7ccd 62%,#00b9f2 81%);
 }
 
 .main-nav .logo {
@@ -220,13 +222,6 @@ a.white-link:hover {
 	min-height: calc(100vh - 120px);
 }
 
-.hero-img {
-	margin-left: -64px;
-	margin-right: -64px;
-	height: 230px;
-	overflow-y: hidden;
-	box-shadow: 0 4px 3px rgba(10, 10, 10, 0.1);
-}
 
 @media screen and (max-width: 768px) {
 	.hero-img {
@@ -242,8 +237,7 @@ a.white-link:hover {
 	left: -64px;
 	right: -64px;
 	height: 230px;
-	opacity: 0.6;
-	background: linear-gradient(to right, #464d5c, #302b63, #24243e);
+	background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.15));
 }
 
 @media screen and (max-width: 768px) {
