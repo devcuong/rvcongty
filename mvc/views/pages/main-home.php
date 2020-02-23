@@ -26,7 +26,7 @@
 <div class="columns" style="height: auto !important;">
 	<section class="companies column is-three-fifths"
 		style="height: auto !important;">
-		<div class="tabs" style="margin-bottom: 0.6rem">
+		<div class="tabs">
 			<ul>
 				<li data-tab="top-comments"
 					class="tab <?php if($data["TabCongTy"] == "latest"){ echo "is-active"; } ?>"><a

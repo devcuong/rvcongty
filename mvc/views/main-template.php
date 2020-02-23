@@ -311,6 +311,15 @@ a.white-link:hover {
     position: relative;
     padding: 0.3rem 0 0 0;
 }
+.tabs{
+	border: 1px solid #A8E4FC !important;
+}
+.tabs:not(:last-child){
+	margin-bottom: 0px !important;
+}
+.custom-pagination{
+	margin-top: 0.8rem;
+}
 .summary-reviews{
 	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
     margin-left: 1rem;
