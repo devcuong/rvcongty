@@ -325,20 +325,15 @@ a.white-link:hover {
 
 .company-item {
 	display: block;
+	border: 1px solid #A8E4FC !important;
+	margin-bottom: 10px;
 }
 
 .company-item:hover {
-	background: #f1f2f2;
-	border-left: 2px solid #3273dc;
-	cursor: pointer;
-}
-
-.company-item:nth-child(even) {
-	background-image: linear-gradient(to top, #e6e9f06b 0%, #eef1f56e 100%);
-}
-
-.company-item:nth-child(even):hover {
-	background: #f1f2f2;
+/* 	background: #f1f2f2; */
+/* 	border-left: 2px solid #3273dc; */
+/* 	cursor: pointer; */
+	box-shadow: 0 3px 10px 0 rgba(0,0,0,0.1);
 }
 
 .company-info {
