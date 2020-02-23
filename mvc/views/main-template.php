@@ -311,7 +311,12 @@ a.white-link:hover {
     position: relative;
     padding: 0.3rem 0 0 0;
 }
-
+.summary-reviews{
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    margin-left: 1rem;
+	padding-left: 0.5rem;
+    background: white;
+}
 .custom-pagination {
 	padding-left: 1rem;
 	margin-bottom: 0.4rem;
@@ -346,6 +351,7 @@ a.white-link:hover {
 	text-align: center;
 	padding:1.25rem;
 	border-right: 1px solid #A8E4FC;
+	background: #fff;
 }
 .home-detail-company{
 	background: #F5FCFF;
