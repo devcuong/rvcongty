@@ -129,8 +129,7 @@
 
 body {
 	font-family: 'Quicksand', sans-serif;
-	background: #f5f7fa;
-	background: linear-gradient(to top, #ece9e6, #ffffff);
+	background: #fafafa;
 	min-height: 100vh;
 }
 
@@ -306,8 +305,7 @@ a.white-link:hover {
 }
 
 .companies {
-    background-color: #fff;
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    background-color: #fafafa;
     color: #4a4a4a;
     max-width: 100%;
     position: relative;
@@ -338,11 +336,26 @@ a.white-link:hover {
 
 .company-info {
 	display: flex;
-	padding: 0.7rem;
 	align-items: center;
 	flex-direction: row;
+	margin-bottom: 0px !important;
+	margin-left: 0px;
+	margin-right: 0px;
 }
-
+.home-logo-company{
+	text-align: center;
+	padding:1.25rem;
+	border-right: 1px solid #A8E4FC;
+}
+.home-detail-company{
+	background: #F5FCFF;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis:auto;
+}
+.company-info__detail{
+/* 	width: 100%; */
+}
 @media screen and (max-width: 768px) {
 	.company-info {
 		padding: 0.4rem 1.2rem;
