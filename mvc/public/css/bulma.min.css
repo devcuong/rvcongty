@@ -7272,7 +7272,7 @@ a.panel-block:hover, label.panel-block:hover {
 
 .tabs ul {
 	align-items: center;
-	border-bottom-color: #dbdbdb;
+	border-bottom-color: #A8E4FC;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	display: flex;
@@ -8547,7 +8547,6 @@ a.panel-block:hover, label.panel-block:hover {
 .columns {
 	margin-left: -.75rem;
 	margin-right: -.75rem;
-	margin-top: -.75rem;
 }
 
 
@@ -10147,7 +10146,7 @@ a.panel-block:hover, label.panel-block:hover {
 .hero-body {
 	flex-grow: 1;
 	flex-shrink: 0;
-	padding: 3rem 1.5rem
+	padding: 1rem 1rem
 }
 
 .section {

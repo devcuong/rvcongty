@@ -246,7 +246,7 @@ a.white-link:hover {
 .hero{
 	border-radius: 50px;
     position: absolute;
-    bottom: 20px;
+    bottom: 80px;
     left: calc((100vw - 800px)/2);
     width: 800px;
     z-index: 1000;
