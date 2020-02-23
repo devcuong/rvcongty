@@ -356,6 +356,9 @@ a.white-link:hover {
 .company-info__detail{
 /* 	width: 100%; */
 }
+.pagination-link{
+	border-radius: 0px;
+}
 @media screen and (max-width: 768px) {
 	.company-info {
 		padding: 0.4rem 1.2rem;
