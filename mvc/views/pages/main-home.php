@@ -8,7 +8,7 @@
 				<div class="field has-addons">
 					<div class="control has-icons-left is-expanded banner-search-box">
 						<div class="input-group box-search">
-							<input name="company-search" class="input form-control"
+							<input name="company-search" id="company-search" class="input form-control"
 								type="text" placeholder="Tìm công ty" autocomplete="off">
 							<div class="input-group-append">
 								<button class="btn" type="button"

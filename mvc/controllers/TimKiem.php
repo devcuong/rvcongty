@@ -1,5 +1,5 @@
 <?php
-class CongTy extends Controller
+class TimKiem extends Controller
 {
     
     public $CongTyModel;
@@ -11,13 +11,15 @@ class CongTy extends Controller
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $this->CongTyModel = $this->model("CongTyModel");
-        $this->ReviewModel = $this->model("ReviewModel");
-        $this->ReplyModel = $this->model("ReplyModel");
     }
     
     public function CongTy(){
         if (isset($_POST["tencongty"])){
-            echo $_POST["tencongty"];
+            $tuKhoa = $_POST["tencongty"];
+            $congTyModel = $this->CongTyModel;
+            $allKetQua = $congTyModel->LayCongTyTheoKyTu($tuKhoa);
+            $resultArrayKetQua = $allKetQua->fetch_all(MYSQLI_ASSOC);
+            echo json_encode($resultArrayKetQua);
         }
     }
 }

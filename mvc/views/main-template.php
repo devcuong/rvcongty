@@ -58,18 +58,21 @@
 <meta name="msapplication-TileImage"
 	content="/images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/timeago.locales.min.js"></script>
-<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/jquery-ui.min.js"></script>
+
 <link rel="preload stylesheet" as="style" crossorigin="anonymous"
 	href="<?php echo $servername ?>/mvc/public/css/bulma.min.css">
 <link href="<?php echo $servername ?>/mvc/public/css/css" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin="anonymous"
+	href="<?php echo $servername ?>/mvc/public/css/jquery-ui.min.css">
 <link rel="preload stylesheet" as="style" crossorigin="anonymous"
 	href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.css"
 	integrity="sha256-GHbWr7miG/WXEsrIb47MsX3KBJa9FTyi5ZMYr4XDHAQ=">
 <link rel="stylesheet" type="text/css" href="<?php echo $servername ?>/mvc/public/css/style.css" />
 <link rel="preload stylesheet" as="style" crossorigin="anonymous"
-    href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/timeago.locales.min.js"></script>
+<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/jquery-ui.min.js"></script>
    
 <style type="text/css" id="less:stylesheets-style">
 @media screen and (min-width: 769px) {
@@ -3744,6 +3747,39 @@ body._hj-f5b2a1eb-9b07_position_fixed {
 	 <script type="text/javascript">
 	 var nodes = document.querySelectorAll(".needs_to_be_rendered");
 	 timeago.render(nodes, "vi"), timeago.cancel();
+    </script>
+    <script>
+    jQuery.ui.autocomplete.prototype._resizeMenu = function() {
+        this.menu.element.outerWidth(this.element.outerWidth())
+    }, $(function() {
+        $("#company-search").autocomplete({
+            source: function(e, t) {
+                $.ajax({
+                    type: "post",
+                    url: "http://localhost/rvcongty/tim-kiem/cong-ty/",
+                    dataType: "json",
+                    data: {
+                    	tencongty: e.term
+                    },
+                    success: function(e) {
+                        t($.map(e, function(e) {
+                            var t = "/cong-ty/" + e.slugcongty + "-" + e.id + "/";
+                            return {
+                                label: e.tencongty,
+                                url: t
+                            }
+                        }))
+                    }
+                })
+            },
+            minlength: 2,
+            select: function(e, t) {
+                window.location.href = t.item.url
+            },
+            open: function() {},
+            close: function() {}
+        })
+    });
     </script>
 </body>
 </html>
