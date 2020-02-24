@@ -72,11 +72,14 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/timeago.locales.min.js"></script>
 <script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/jquery-ui.min.js"></script>
-   
+<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/config.js"></script>   
 <style type="text/css" id="less:stylesheets-style">
 @media screen and (min-width: 769px) {
 	.columns{
         display: flex;
+    }
+    .hero{
+    bottom: 80px;
     }
 }
 @media screen and (max-width: 768px) {
@@ -132,7 +135,7 @@
 
 body {
 	font-family: 'Quicksand', sans-serif;
-	background: #fafafa;
+	background: #fff;
 	min-height: 100vh;
 }
 
@@ -233,7 +236,7 @@ a.white-link:hover {
 @media screen and (max-width: 768px) {
 	.hero-img {
 		margin-left: 0;
-		height: 220px;
+/* 		height: 220px; */
 		margin-right: 0;
 	}
 }
@@ -248,9 +251,9 @@ a.white-link:hover {
 .hero{
 	border-radius: 50px;
     position: absolute;
-    bottom: 80px;
-    left: calc((100vw - 800px)/2);
-    width: 800px;
+/*     bottom: 80px; */
+    left: calc((100vw - 70vw)/2);
+    width: 70vw;
     z-index: 1000;
 	background: rgba(0,0,0,0.2);
 }
@@ -305,10 +308,13 @@ a.white-link:hover {
 		left: 0;
 		right: 0;
 	}
+    .hero{
+    bottom: 20px;
+    }
 }
 
 .companies {
-    background-color: #fafafa;
+    background-color: #fff;
     color: #4a4a4a;
     max-width: 100%;
     position: relative;
@@ -363,7 +369,6 @@ a.white-link:hover {
 	background: #fff;
 }
 .home-detail-company{
-	background: #F5FCFF;
 	flex-grow: 0;
 	flex-shrink: 0;
 	flex-basis:auto;
@@ -375,9 +380,9 @@ a.white-link:hover {
 	border-radius: 0px;
 }
 @media screen and (max-width: 768px) {
-	.company-info {
-		padding: 0.4rem 1.2rem;
-	}
+/* 	.company-info { */
+/* 		padding: 0.4rem 1.2rem; */
+/* 	} */
 }
 
 .company-info .company-info__name {
@@ -428,7 +433,7 @@ a.white-link:hover {
 	box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
 	opacity: 0.85;
 	border: none;
-	top: 1.8rem;
+	top: 0.8rem;
 	right: 1.5rem;
 	transition: 0.2s all;
 }
@@ -1028,7 +1033,8 @@ transform
     background: #F5FCFF !important; 
     font-weight: bold !important;
     color: #000!important;
-} 
+	border: none;
+}
 
 </style>
 </head>
@@ -1053,8 +1059,6 @@ transform
 		style="height: auto !important; min-height: 0px !important;">
 		<?php require_once "./mvc/views/pages/" . $data["Page"] . ".php"?>
 	</div>
-	<div class="autocomplete-suggestions "
-		style="left: 120px; top: 261px; width: 1104px;"></div>
 
 
 	<footer class="main-footer">
@@ -1080,21 +1084,23 @@ transform
     }, $(function() {
         $("#company-search").autocomplete({
             source: function(e, t) {
+                var keyWord = e.term;
                 $.ajax({
                     type: "post",
-                    url: "http://localhost/rvcongty/tim-kiem/cong-ty/",
+                    url: SiteName+"/tim-kiem/cong-ty/",
                     dataType: "json",
                     data: {
                     	tencongty: e.term
                     },
                     success: function(e) {
                         t($.map(e, function(e) {
-                            var t = "/cong-ty/" + e.slugcongty + "-" + e.id + "/";
+                            var t = SiteName+"/cong-ty/" + e.slugcongty + "-" + e.id + "/";
                             return {
                                 label: e.tencongty,
                                 url: t,
                                 image: e.logo,
-                                slug: e.slugcongty
+                                slug: e.slugcongty,
+                                term: keyWord
                             }
                         }))
                     }
@@ -1123,7 +1129,7 @@ transform
 			// suggest result
 			$childDiv.addClass("autocomplete-suggestion");
             $img.attr({
-              src: 'http://localhost/rvcongty/mvc/public/asset/companies/logo/' + item.image,
+              src: SiteName+'/mvc/public/asset/companies/logo/' + item.image,
               alt: item.label,
             });
 
@@ -1132,7 +1138,13 @@ transform
             //$li.append('<a href="#">');
             //image
             $figure.append($img);
-            $span.append(item.label);
+            //text
+            search = item.term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+            const re = new RegExp("(" + search.split(' ').join('|') + ")", "gi")
+            var normalLabel =  item.label;
+            var boldLabel = normalLabel.replace(re, "<b>"+item.term+"</b>");
+            //alert(boldLabel);
+            $span.append(boldLabel);
             $childDiv.append($figure).append($span);    
 
             return $childDiv.appendTo(div);

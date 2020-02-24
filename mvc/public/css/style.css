@@ -316,24 +316,6 @@ a {
   }
 }
 
-.autocomplete-suggestion {
-  display: flex;
-  align-items: center;
-  padding: 0.4rem;
-
-  b {
-    font-weight: 700;
-    color: #209cee;
-  }
-
-  .company-logo {
-    margin-right: 0.25rem;
-    display: flex;
-    align-items: center;
-    border: 1px solid #c2c2c2;
-  }
-}
-
 .full-reviews {
   margin-top: 0.6rem;
   overflow-x: hidden;

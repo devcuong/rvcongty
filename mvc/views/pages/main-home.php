@@ -97,13 +97,13 @@
 				data-href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]?>"
 				class="company-item">
 				<div class="company-info columns">
-					<div class="home-logo-company column is-2">
+					<div class="home-logo-company is-2">
 						<figure class="company-info__logo image is-64x64">
 							<img
 								src="<?php echo $servername ?>/mvc/public/asset/companies/logo/<?php echo $row["logo"]; ?>">
 						</figure>
 					</div>
-					<div class="home-detail-company column is-10">
+					<div class="home-detail-company is-10">
 						<div class="company-info__detail">
 							<h2 class="is-size-5 has-text-weight-semibold company-info__name">
 								<a
