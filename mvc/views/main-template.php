@@ -59,6 +59,7 @@
 	content="/images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 <script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/timeago.locales.min.js"></script>
+<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/jquery-ui.min.js"></script>
 <link rel="preload stylesheet" as="style" crossorigin="anonymous"
 	href="<?php echo $servername ?>/mvc/public/css/bulma.min.css">
 <link href="<?php echo $servername ?>/mvc/public/css/css" rel="stylesheet">

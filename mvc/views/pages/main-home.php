@@ -40,14 +40,14 @@
 					href="<?php echo $servername ?>/?tab=best"
 					class="has-text-weight-bold"> <span class="icon has-text-success">
 							<i class="fas fa-thumbs-up"></i>
-					</span> Top công ty NGON
+					</span> Top công ty XỊN
 				</a></li>
 				<li data-tab="worst-companies"
 					class="tab <?php if($data["TabCongTy"] == "worst"){ echo "is-active"; } ?>"><a
 					href="<?php echo $servername ?>/?tab=worst"
 					class="has-text-weight-bold"> <span class="icon has-text-danger"> <i
 							class="fas fa-thumbs-down"></i>
-					</span> Công ty nên NÉ
+					</span> Top công ty nên NÉ
 				</a></li>
 			</ul>
 		</div>

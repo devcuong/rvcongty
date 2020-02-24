@@ -30,7 +30,11 @@ class Reply extends Controller{
         
         $review = $this->model("ReviewModel");
         
-        var_dump($review->LayReviewBangIdCongTy(1));
+        $allReview = $review->LayReviewBangIdCongTy(1);
+        
+        $resultArray = $allReview->fetch_all(MYSQLI_ASSOC);
+        
+        echo(json_encode($resultArray));
     }
     
 }
