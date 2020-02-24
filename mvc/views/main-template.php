@@ -311,9 +311,6 @@ a.white-link:hover {
     position: relative;
     padding: 0.3rem 0 0 0;
 }
-.tabs{
-	border: 1px solid #A8E4FC !important;
-}
 .tabs:not(:last-child){
 	margin-bottom: 0px !important;
 }
@@ -1010,6 +1007,18 @@ transform
 
 .summary-reviews .review {
     margin-bottom: 1rem;
+}
+
+.btn-group button {
+  float: left; /* Float the buttons side by side */
+  border-radius: 0px;
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
 }
 </style>
 </head>
