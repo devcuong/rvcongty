@@ -1,70 +1,24 @@
-
 <div class="columns" style="height: auto !important;">
 	<section class="companies column is-three-fifths"
 		style="height: auto !important;">
-		<div class="tabs">
-			<ul>
-				<li data-tab="top-comments"
-					class="tab <?php if($data["TabCongTy"] == "latest"){ echo "is-active"; } ?>"><a
-					href="<?php echo $servername ?>/?tab=latest"
-					class="has-text-weight-bold"> <span class="icon has-text-info"> <i
-							class="fas fa-comments"></i>
-					</span> Mới cập nhật
-				</a></li>
-				<li data-tab="top-companies"
-					class="tab <?php if($data["TabCongTy"] == "best"){ echo "is-active"; } ?>"><a
-					href="<?php echo $servername ?>/?tab=best"
-					class="has-text-weight-bold"> <span class="icon has-text-success">
-							<i class="fas fa-thumbs-up"></i>
-					</span> Top công ty XỊN
-				</a></li>
-				<li data-tab="worst-companies"
-					class="tab <?php if($data["TabCongTy"] == "worst"){ echo "is-active"; } ?>"><a
-					href="<?php echo $servername ?>/?tab=worst"
-					class="has-text-weight-bold"> <span class="icon has-text-danger"> <i
-							class="fas fa-thumbs-down"></i>
-					</span> Top công ty nên NÉ
-				</a></li>
-			</ul>
-		</div>
 		<div class="tabs-section" style="height: auto !important;">
 			<nav class="pagination is-small custom-pagination" role="navigation"
 				aria-label="pagination">
+				<?php if($data["SoTrang"] != 0){ ?>
 				<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b>
 					trên tổng số <b><?php echo $data["SoTrang"]; ?></b></span>
+					<?php } ?>
 				<ul class="pagination-list">
-						<?php for($i=1; $i<=$data["SoTrang"]; $i++){ ?>
-							<?php if($i == $data["TrangHienTai"]) {?>
-							<?php if("latest" == $data["TabCongTy"]){ ?>
-							<li><a
-						href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
-						class="pagination-link is-current"><?php echo $i ?></a></li>
-								<?php }else if("best" == $data["TabCongTy"]) { ?>
-								<li><a
-						href="<?php echo $servername ?>/?tab=best&amp;page=<?php echo $i ?>"
-						class="pagination-link is-current"><?php echo $i ?></a></li>
-								<?php }else{ ?>
-								<li><a
-						href="<?php echo $servername ?>/?tab=worst&amp;page=<?php echo $i ?>"
-						class="pagination-link is-current"><?php echo $i ?></a></li>
-								<?php } ?>
-							<?php }else{ ?>
-							<?php if("latest" == $data["TabCongTy"]) {?>
-							<li><a
-						href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
-						class="pagination-link "><?php echo $i ?></a></li>
-								<?php } else if("best" == $data["TabCongTy"]){ ?>
-								<li><a
-						href="<?php echo $servername ?>/?tab=best&amp;page=<?php echo $i ?>"
-						class="pagination-link "><?php echo $i ?></a></li>
-								<?php } else{ ?>
-								<li><a
-						href="<?php echo $servername ?>/?tab=worst&amp;page=<?php echo $i ?>"
-						class="pagination-link "><?php echo $i ?></a></li>
-								<?php }?>
-							<?php } ?>
-						<?php } ?>
-						</ul>
+                <li><a href="?tab=latest&amp;page=1" class="pagination-link is-current">1</a></li>
+                <li><a href="?tab=latest&amp;page=2" class="pagination-link ">2</a></li>
+                <li><a href="?tab=latest&amp;page=3" class="pagination-link ">3</a></li>
+                <li><a href="?tab=latest&amp;page=4" class="pagination-link ">4</a></li>
+                <li><a href="?tab=latest&amp;page=5" class="pagination-link ">5</a></li>
+                <li><a href="?tab=latest&amp;page=6" class="pagination-link ">6</a></li>
+                <li><a href="?tab=latest&amp;page=7" class="pagination-link ">7</a></li>
+                <li><a href="?tab=latest&amp;page=8" class="pagination-link ">8</a></li>
+                <li><a href="?tab=latest&amp;page=9" class="pagination-link ">9</a></li>
+              </ul>
 			</nav>
 					<?php
     while ($row = mysqli_fetch_array($data["CongTyTrangHienTai"])) {
@@ -127,8 +81,10 @@
 					<div style="margin-top: 0.6rem">
 				<nav class="pagination is-small custom-pagination" role="navigation"
 					aria-label="pagination">
-					<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b>
-						trên tổng số <b><?php echo $data["SoTrang"]; ?></b></span>
+					<?php if($data["SoTrang"] != 0){ ?>
+				<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b>
+					trên tổng số <b><?php echo $data["SoTrang"]; ?></b></span>
+					<?php } ?>
 					<ul class="pagination-list">
 						<?php for($i=1; $i<=$data["SoTrang"]; $i++){ ?>
 							<?php if($i == $data["TrangHienTai"]) {?>

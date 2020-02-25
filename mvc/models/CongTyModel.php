@@ -30,6 +30,7 @@ class CongTyModel extends DB{
             $qr = "SELECT * FROM congty ORDER BY rate ASC LIMIT ".$soCongTyBoQua.','.$soCongTyMoiTrang;
             return mysqli_query($this->con, $qr);
         }
+        /*HẾT PHÂN TRANG*/
         
         /*TÌM KIẾM*/
         /*Lấy công ty theo ký tự trong tên*/
@@ -37,7 +38,18 @@ class CongTyModel extends DB{
             $qr = "SELECT * FROM congty WHERE tencongty LIKE '%$ten%'";
             return mysqli_query($this->con, $qr);
         }
-        
+        /*Tìm công ty theo từ khóa và phân trang*/
+        public function PhanTrangCongTyTheoTuKhoa($soCongTyBoQua, $soCongTyMoiTrang, $ten){
+            $qr = "";
+            if($ten != ""){
+                $qr = "SELECT * FROM congty WHERE tencongty LIKE '%$ten%' LIMIT $soCongTyBoQua,$soCongTyMoiTrang";
+            }else{
+                $qr = "SELECT * FROM congty LIMIT $soCongTyBoQua,$soCongTyMoiTrang";
+            }
+            return mysqli_query($this->con, $qr);
+            //return $qr;
+        }
+        /*HẾT TÌM KIẾM*/
         // Update rate công ty
         public function UpdateRateCongTy($iD, $score){
             $qr = "UPDATE congty SET luotdanhgia = luotdanhgia + 1, tongsao = tongsao + $score, rate = tongsao/luotdanhgia WHERE id = $iD";
