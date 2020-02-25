@@ -15,7 +15,7 @@ class TimKiem extends Controller
     
     public function CongTy(){
         if (isset($_POST["tencongty"])){
-            $tuKhoa = $_POST["tencongty"];
+            $tuKhoa = trim($_POST["tencongty"]);
             $congTyModel = $this->CongTyModel;
             $allKetQua = $congTyModel->LayCongTyTheoKyTu($tuKhoa);
             $resultArrayKetQua = $allKetQua->fetch_all(MYSQLI_ASSOC);
@@ -28,7 +28,10 @@ class TimKiem extends Controller
         $congTyMoiTrang = 10;
         $tuKhoa = "";
         if(isset($_POST["company-search"])){
-            $tuKhoa= $_POST["company-search"];
+            $tuKhoa= trim($_POST["company-search"]);
+        }
+        if(isset($_GET["company-search"])){
+            $tuKhoa= trim($_GET["company-search"]);
         }
         if(isset($_GET["page"])){
             $trangHienTai = $_GET["page"];
@@ -49,7 +52,8 @@ class TimKiem extends Controller
             "15ReviewMoiNhat" => $review->Lay15ReviewMoiNhat(),
             "SoTrang" => $soTrang,
             "TrangHienTai" => $trangHienTai,
-            "CongTyTrangHienTai" => $congTyTrangHienTai
+            "CongTyTrangHienTai" => $congTyTrangHienTai,
+            "TuKhoa" => $tuKhoa
         ]);
         //echo $congTyTrangHienTai;
     }

@@ -89,11 +89,11 @@
 						<?php for($i=1; $i<=$data["SoTrang"]; $i++){ ?>
 							<?php if($i == $data["TrangHienTai"]) {?>
 							<li><a
-							href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
+							href="<?php echo $servername ?>/tim-kiem/trang-ket-qua?page=<?php echo $i ?>&company-search=<?php echo $data["TuKhoa"] ?>"
 							class="pagination-link is-current"><?php echo $i ?></a></li>
 							<?php }else{ ?>
 							<li><a
-							href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
+							href="<?php echo $servername ?>/tim-kiem/trang-ket-qua/page=<?php echo $i ?>&company-search=<?php echo $data["TuKhoa"] ?>"
 							class="pagination-link "><?php echo $i ?></a></li>
 							<?php } ?>
 						<?php } ?>
