@@ -251,9 +251,8 @@ a.white-link:hover {
 .hero{
 	border-radius: 50px;
     position: absolute;
-/*     bottom: 80px; */
-    left: calc((100vw - 70vw)/2);
-    width: 70vw;
+    left: 15%;
+    width: 70%;
     z-index: 1000;
 	background: rgba(0,0,0,0.2);
 }

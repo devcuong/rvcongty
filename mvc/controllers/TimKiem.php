@@ -22,5 +22,14 @@ class TimKiem extends Controller
             echo json_encode($resultArrayKetQua);
         }
     }
+    
+    public function TrangKetQua(){
+        if(isset($_POST["company-search"])){
+            // View
+            $this->view("main-template", [
+                "Page" => "trang-ket-qua"
+            ]);
+        }
+    }
 }
 ?>

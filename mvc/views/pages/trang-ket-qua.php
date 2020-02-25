@@ -1,33 +1,32 @@
-<section class="hero-img">
-	<div class="hero-img__gradient"></div>
-	<img src="<?php echo $servername ?>/mvc/public/images/banner.png"
-		alt="">
-	<div class="hero">
-		<div class="hero-body z-1">
-			<div>
-				<div class="field has-addons">
-					<div class="control has-icons-left is-expanded banner-search-box">
-						<form action="<?php echo $servername ?>/tim-kiem/trang-ket-qua" method="POST">
-    						<div class="input-group box-search">
-    							<input name="company-search" id="company-search" class="input form-control"
-    								type="text" placeholder="Tìm công ty" autocomplete="off">
-    							<div class="input-group-append">
-    								<button class="btn" type="submit"
-    									ng-click="toPageTrangChuTinTucTimKiem3(searchString)">
-    									<i class="fa fa-search" aria-hidden="true"></i>
-    								</button>
-    							</div>
-    						</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+
 <div class="columns" style="height: auto !important;">
 	<section class="companies column is-three-fifths"
 		style="height: auto !important;">
+		<div class="tabs">
+			<ul>
+				<li data-tab="top-comments"
+					class="tab <?php if($data["TabCongTy"] == "latest"){ echo "is-active"; } ?>"><a
+					href="<?php echo $servername ?>/?tab=latest"
+					class="has-text-weight-bold"> <span class="icon has-text-info"> <i
+							class="fas fa-comments"></i>
+					</span> Mới cập nhật
+				</a></li>
+				<li data-tab="top-companies"
+					class="tab <?php if($data["TabCongTy"] == "best"){ echo "is-active"; } ?>"><a
+					href="<?php echo $servername ?>/?tab=best"
+					class="has-text-weight-bold"> <span class="icon has-text-success">
+							<i class="fas fa-thumbs-up"></i>
+					</span> Top công ty XỊN
+				</a></li>
+				<li data-tab="worst-companies"
+					class="tab <?php if($data["TabCongTy"] == "worst"){ echo "is-active"; } ?>"><a
+					href="<?php echo $servername ?>/?tab=worst"
+					class="has-text-weight-bold"> <span class="icon has-text-danger"> <i
+							class="fas fa-thumbs-down"></i>
+					</span> Top công ty nên NÉ
+				</a></li>
+			</ul>
+		</div>
 		<div class="tabs-section" style="height: auto !important;">
 			<nav class="pagination is-small custom-pagination" role="navigation"
 				aria-label="pagination">
@@ -38,7 +37,7 @@
 							<?php if($i == $data["TrangHienTai"]) {?>
 							<?php if("latest" == $data["TabCongTy"]){ ?>
 							<li><a
-						href="<?php echo $servername ?>/?page=<?php echo $i ?>"
+						href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
 						class="pagination-link is-current"><?php echo $i ?></a></li>
 								<?php }else if("best" == $data["TabCongTy"]) { ?>
 								<li><a
