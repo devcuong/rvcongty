@@ -122,17 +122,17 @@ while ($row = mysqli_fetch_array($data["Review"])) {
                 </span>
                 Reply
             </a>
-            <span data-id="5e4f4c5a4563221e556e7804" data-prefill="Bác nói đúng vãi, tặng 1 like" data-reaction="LIKE" class="link-comment card-footer-item clickable">
+            <span data-id="<?php echo $row["review_id"] ?>" data-prefill="Bác nói đúng vãi, tặng 1 like" data-reaction="LIKE" class="link-comment card-footer-item clickable">
                 <span class="icon-like icon has-text-success">
                     <i class="fas fa-thumbs-up"></i>
                 </span>
             </span>
-            <span data-id="5e4f4c5a4563221e556e7804" data-prefill="Review nhảm nhí, dislike" data-reaction="HATE" class="link-comment card-footer-item clickable">
+            <span data-id="<?php echo $row["review_id"] ?>" data-prefill="Review nhảm nhí, dislike" data-reaction="HATE" class="link-comment card-footer-item clickable">
                 <span class="icon-dislike icon has-text-danger">
                     <i class="fas fa-thumbs-down"></i>
                 </span>
             </span>
-            <span data-id="5e4f4c5a4563221e556e7804" data-prefill="Xóa review này giùm!" data-reaction="DELETE" class="link-comment card-footer-item clickable">
+            <span data-id="<?php echo $row["review_id"] ?>" data-prefill="Xóa review này giùm!" data-reaction="DELETE" class="link-comment card-footer-item clickable">
                 <span class="icon-ban icon is-medium">
                     <span class="fa-stack fa-md">
                         <i class="fas fa-comments fa-stack-1x has-text-info"></i>

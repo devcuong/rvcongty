@@ -55,7 +55,6 @@ class TimKiem extends Controller
             "CongTyTrangHienTai" => $congTyTrangHienTai,
             "TuKhoa" => $tuKhoa
         ]);
-        //echo $congTyTrangHienTai;
     }
 }
 ?>

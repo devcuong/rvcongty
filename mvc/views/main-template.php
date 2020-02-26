@@ -1138,11 +1138,11 @@ transform
             //image
             $figure.append($img);
             //text
-            search = item.term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
-            const re = new RegExp("(" + search.split(' ').join('|') + ")", "gi")
+            var search = item.term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+            alert(search);
+            const re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
             var normalLabel =  item.label;
             var boldLabel = normalLabel.replace(re, "<b>"+item.term+"</b>");
-            //alert(boldLabel);
             $span.append(boldLabel);
             $childDiv.append($figure).append($span);    
 
