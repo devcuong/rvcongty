@@ -74,6 +74,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 	</button>
 </section>
 <section class="full-reviews">
+<?php if ($data["SoTrang"]>0){ ?>
 <nav class="pagination is-small custom-pagination" role="navigation" aria-label="pagination">
   <span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b> trên tổng số <b><?php echo $data["SoTrang"] ?></b></span>
   <ul class="pagination-list">
@@ -86,6 +87,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
   	<?php } ?>
   </ul>
 </nav>
+<?php } ?>
 	<!-- Review Page Top -->
  <?php
 while ($r = mysqli_fetch_array($data["Review"])) {
@@ -188,6 +190,7 @@ $dataReply = $r["reply_data"];
        <?php } ?>
   </div>
   <?php } ?>
+  <?php if($data["SoTrang"]>0){ ?>
   <nav class="pagination is-small custom-pagination" role="navigation" aria-label="pagination">
   <span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b> trên tổng số <b><?php echo $data["SoTrang"] ?></b></span>
   <ul class="pagination-list">
@@ -200,6 +203,7 @@ $dataReply = $r["reply_data"];
   	<?php } ?>
   </ul>
 </nav>
+<?php } ?>
 </section>
 <div class="modal" id="review-modal">
     <form id="review-form" action="<?php echo $servername ?>/cong-ty/dang-review" method="POST">
