@@ -1139,10 +1139,9 @@ transform
             $figure.append($img);
             //text
             var search = item.term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-            alert(search);
             const re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
             var normalLabel =  item.label;
-            var boldLabel = normalLabel.replace(re, "<b>"+item.term+"</b>");
+            var boldLabel = normalLabel.replace(re, "<b>$1</b>");
             $span.append(boldLabel);
             $childDiv.append($figure).append($span);    
 

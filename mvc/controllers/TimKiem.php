@@ -23,18 +23,18 @@ class TimKiem extends Controller
         }
     }
     
-    public function TrangKetQua(){
+    public function TrangKetQua($a, $b, $c=null, $d=null){
         $trangHienTai = 1;
-        $congTyMoiTrang = 10;
+        $congTyMoiTrang = 1;
         $tuKhoa = "";
+        if($c != null){
+            $trangHienTai = $c;
+        }
         if(isset($_POST["company-search"])){
             $tuKhoa= trim($_POST["company-search"]);
         }
-        if(isset($_GET["company-search"])){
-            $tuKhoa= trim($_GET["company-search"]);
-        }
-        if(isset($_GET["page"])){
-            $trangHienTai = $_GET["page"];
+        if($d != null){
+            $tuKhoa= $d;
         }
         $soCongTyBoQua = ($trangHienTai-1)*$congTyMoiTrang;
         // Model
@@ -46,7 +46,6 @@ class TimKiem extends Controller
         $soTrang = ceil($soCongTy/$congTyMoiTrang);
         $congTyTrangHienTai="";
         $congTyTrangHienTai = $congty->PhanTrangCongTyTheoTuKhoa($soCongTyBoQua, $congTyMoiTrang, $tuKhoa);
-       
         //View
         $this->view("main-template", ["Page"=>"trang-ket-qua",
             "15ReviewMoiNhat" => $review->Lay15ReviewMoiNhat(),
