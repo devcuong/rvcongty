@@ -1,6 +1,9 @@
 <div class="columns" style="height: auto !important;">
 	<section class="companies column is-three-fifths"
 		style="height: auto !important;">
+		<?php if(($data["SoTrang"]) == 0){ ?>
+		<h2>KHÔNG CÓ KẾT QUẢ TÌM KIẾM PHÙ HỢP</h2>
+		<?php } ?>
 		<div class="tabs-section" style="height: auto !important;">
 			<nav class="pagination is-small custom-pagination" role="navigation"
 					aria-label="pagination">
