@@ -215,13 +215,15 @@ a.white-link:hover {
 }
 
 .main-footer {
-	color: white;
-	background-color: #464d5c;
-	background: linear-gradient(to right, #464d5c, #302b63, #24243e);
+	background-color: #00b9f2;
+    background-image: linear-gradient(97deg,#00b9f2 35%,#0e7ccd 62%,#00b9f2 81%);
 	flex-basis: 40px;
 	padding: 0.5rem 0;
+	margin-top: 20px;
 }
-
+.level-item a{
+	color: #fff !important;
+}
 @media screen and (max-width: 768px) {
 	.main-footer {
 		padding: 0.5rem 1rem;
@@ -1044,7 +1046,7 @@ transform
 		<div class="container">
 			<div class="logo" data-no-instant="">
 				<a href="<?php echo $servername ?>"> <img class="logo__img"
-					src="https://reviewcongty.com/images/logo/logo_transparent.png" alt="">
+					src="<?php echo $servername ?>/mvc/public/images/logo.png" alt="">
 				</a>
 				<h1 class="logo__header has-text-white is-size-5">
 					<a href="<?php echo $servername ?>"> CÔNG TY TOP </a>
