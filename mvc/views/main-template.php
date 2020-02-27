@@ -1047,7 +1047,7 @@ transform
 					src="https://reviewcongty.com/images/logo/logo_transparent.png" alt="">
 				</a>
 				<h1 class="logo__header has-text-white is-size-5">
-					<a href="<?php echo $servername ?>"> RV Công ty </a>
+					<a href="<?php echo $servername ?>"> CÔNG TY TOP </a>
 				</h1>
 			</div>
 		</div>
@@ -1065,9 +1065,9 @@ transform
 			<div class="level-left">
 				<p class="level-item">
 					<a class="white-link" target="_blank"
-						href="https://reviewcongty.com/faq">Giải đáp thắc mắc - Yêu cầu
+						href="<?php echo $servername ?>/faq">Giải đáp thắc mắc - Yêu cầu
 						xóa review</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="white-link"
-						target="_blank" href="https://reviewcongty.com/tnc">Điều khoản sử
+						target="_blank" href="<?php echo $servername ?>/tnc">Điều khoản sử
 						dụng</a>
 				</p>
 			</div>

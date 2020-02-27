@@ -121,7 +121,7 @@ while ($r = mysqli_fetch_array($data["Review"])) {
 			</p>
 			<span class="review__time needs_to_be_rendered" datetime="<?php echo $r["review_thoigian"] ?>"><?php echo $r["review_thoigian"] ?></span>
 			<a class="review__share"
-				href="/companies/first-interactive-technology/review/5e4a4b5a4563221e556e76cc">
+				href="<?php echo $servername ?>/review/<?php echo $r["review_id"] ?>">
 				<i class="fas fa-link" style="margin-right: 5px"></i> Share
 			</a>
 		</header>

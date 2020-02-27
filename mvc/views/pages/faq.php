@@ -9,7 +9,7 @@
                     1. Có công ty tôi muốn review nhưng không thấy trên trang này?
                 </p>
                 <p class="answer">
-                    Bạn vui lòng gửi mail tới <a href="mailto:company@reviewcongty.com?Subject=Thêm%20công%20ty">company@reviewcongty.com</a>
+                    Bạn vui lòng gửi mail tới <a href="mailto:company@congtytop.com?Subject=Thêm%20công%20ty">company@congtytop.com</a>
                     với tiêu đề "Thêm công ty".
                     Nội dung email gồm thông tin thêm về công ty như về tên công ty, địa điểm, website nhé.
                 </p>
@@ -18,7 +18,7 @@
                 </p>
                 <p class="answer">
                     Quý vị vui lòng sử dụng <b>email của công ty</b> để gửi mail
-                    tới <a href="mailto:deletecomment@rvcongty.com?Subject=Yêu%20cầu%20xóa%review">deletecomment@reviewcongty.com</a>
+                    tới <a href="mailto:deletecomment@congtytop.com?Subject=Yêu%20cầu%20xóa%review">deletecomment@congtytop.com</a>
                     với tiêu đề "Yêu cầu xóa review"<br>
                     Việc xóa review sẽ được thực hiện tùy thuộc vào nội dung review và thái độ của quí vị/quí công ty.<br>
                     Chúng tôi không lưu trữ bất kì thông tin nào của người dùng nên không thể ban bất kì người dùng
