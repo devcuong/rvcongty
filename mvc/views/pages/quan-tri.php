@@ -1,4 +1,3 @@
-  <?php require_once 'mvc/core/Config.php'; ?>
   <form method="POST" action="<?php echo $servername ?>/quan-tri/dang-nhap">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>

@@ -1,4 +1,5 @@
 <?php
+require 'mvc/class/Server.php';
 class QuanTri extends Controller
 {
     public $UserModel;
@@ -6,6 +7,7 @@ class QuanTri extends Controller
     public function __construct()
     {
         $this->UserModel = $this->model("UserModel");
+        
     }
     
     public function Index(){
@@ -26,13 +28,29 @@ class QuanTri extends Controller
         }
         $kq = $this->UserModel->LayUserBangEmailVaPassword($email);
         $temp = "";
+      
         while ($row = mysqli_fetch_array($kq)){
             $temp = $row["password"];
         }
+        $server = new Server();
         if($temp == $pass){
-            header("Location: " . $servername . "/quan-tri/cong-ty", 301);
-             exit();
+            header("Location: " . $server->servername . "/quan-tri/quan-tri-cong-ty", 301);
+            exit();
         }
+    }
+    
+    public function QuanTriCongTy(){
+        // View
+        $this->view("admin-template", [
+            "Page" => "quan-tri-cong-ty"
+        ]);
+    }
+    
+    public function ThemCongTy(){
+        // View
+        $this->view("admin-template", [
+            "Page" => "them-cong-ty"
+        ]);
     }
 }
     ?>

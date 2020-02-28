@@ -1,12 +1,7 @@
 <?php
 class TimKiem extends Controller
 {
-    
     public $CongTyModel;
-    
-    
-    
-    
     public function __construct()
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');

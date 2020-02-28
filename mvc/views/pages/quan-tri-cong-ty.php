@@ -1,3 +1,3 @@
 <?php
-echo "thêm công ty";
+echo "quản trị công ty";
 ?>

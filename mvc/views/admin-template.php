@@ -1,4 +1,4 @@
-
+<?php require_once 'mvc/core/Config.php'; ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -29,6 +29,9 @@
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
@@ -77,7 +80,8 @@
 		<div class="col-md-2 sidebar">
 			<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">CÔNG TY</a></li>
+				<li><a href="#">TẤT CẢ CÔNG TY</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/them-cong-ty">THÊM CÔNG TY</a></li>
 				<li><a href="#">REVIEW MỚI NHẤT</a></li>
 				<li><a href="#">REVIEW NHIỀU LIKE</a></li>
 				<li><a href="#">REVIEW NHIỀU HATE</a></li>
