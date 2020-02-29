@@ -58,6 +58,7 @@ class QuanTri extends Controller
             $nganhnghe = "";
             $nhanvien = "";
             $diachi = "";
+            $fileName = "";
             if(isset($_POST["ten-cong-ty"])){
                 $tencongty = $_POST["ten-cong-ty"];
                 $slugcongty = $_POST["slug-cong-ty"];
@@ -71,9 +72,11 @@ class QuanTri extends Controller
             if(isset($_POST["diachi"])){
                 $diachi = $_POST["diachi"];
             }
-            if (isset($_POST["image"])) {
-                $data = $_POST["image"];
+            if (isset($_POST["logo-cong-ty"])) {
+                $data = $_POST["logo-cong-ty"];
+                $fileName = $_FILES['logo-cong-ty']['name'];
             }
+            echo $fileName;
         } else {
             // View
             $this->view("admin-template", [
