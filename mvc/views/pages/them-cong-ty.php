@@ -1,7 +1,7 @@
-  <form method="POST" action="<?php echo $servername ?>/quan-tri/them-cong-ty">
+  <form method="POST" action="<?php echo $servername ?>/quan-tri/them-cong-ty" enctype="multipart/form-data">
   <div class="form-group">
     <label>Tên công ty</label>
-    <input type="text" class="form-control" id="ten-cong-ty" name="ten-cong-ty"  aria-describedby="emailHelp" placeholder="Enter Tên Công Ty">
+    <input type="text" class="form-control" id="ten-cong-ty" name="ten-cong-ty"  aria-describedby="emailHelp" placeholder="Enter Tên Công Ty" onblur="blurTenCongTy()">
   </div>
   <div class="form-group">
     <label>Slug công ty</label>
