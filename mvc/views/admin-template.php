@@ -96,7 +96,7 @@ function changeToSlug(e) {
 		<div class="col-md-2 sidebar">
 			<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">TẤT CẢ CÔNG TY</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-cong-ty">TẤT CẢ CÔNG TY</a></li>
 				<li><a href="<?php echo $servername ?>/quan-tri/them-cong-ty">THÊM
 						CÔNG TY</a></li>
 				<li><a href="#">REVIEW MỚI NHẤT</a></li>

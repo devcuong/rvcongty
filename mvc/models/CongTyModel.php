@@ -59,5 +59,19 @@ class CongTyModel extends DB{
             }
             return $result;
         }
+        
+        /*THÊM CÔNG TY*/
+        public function ThemCongTy($tencongty, $slugcongty, $fileName, $nganhnghe, $nhanvien, $diachi) {
+            $qr= "INSERT INTO congty (tencongty, slugcongty, logo, nganhnghe, nhanvien, diachi) VALUES(?, ?, ?, ?, ?, ?)";
+            $stmt = mysqli_stmt_init($this->con);
+            $result = 0;
+            if(!mysqli_stmt_prepare($stmt, $qr)){
+                $result = "SQL statement failed";
+            }else{
+                mysqli_stmt_bind_param($stmt, "ssssss", $tencongty, $slugcongty, $fileName, $nganhnghe, $nhanvien, $diachi);
+                $result =mysqli_stmt_execute($stmt);
+            }
+            return $result;
+        }
 }
 ?>
