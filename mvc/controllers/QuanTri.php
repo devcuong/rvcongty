@@ -71,6 +71,9 @@ class QuanTri extends Controller
             if(isset($_POST["diachi"])){
                 $diachi = $_POST["diachi"];
             }
+            if (isset($_POST["image"])) {
+                $data = $_POST["image"];
+            }
         } else {
             // View
             $this->view("admin-template", [
