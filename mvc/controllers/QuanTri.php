@@ -6,11 +6,15 @@ class QuanTri extends Controller
 
     public $UserModel;
     public $CongTyModel;
+    public $ReviewModel;
+    public $ReplyModel;
 
     public function __construct()
     {
         $this->UserModel = $this->model("UserModel");
         $this->CongTyModel = $this->model("CongTyModel");
+        $this->ReviewModel = $this->model("ReviewModel");
+        $this->ReplyModel = $this->model("ReplyModel");
     }
 
     public function Index()
@@ -20,7 +24,7 @@ class QuanTri extends Controller
             "Page" => "quan-tri"
         ]);
     }
-
+// QUẢN TRỊ VIÊN ĐĂNG NHẬP
     public function DangNhap()
     {
         $email = "";
@@ -131,6 +135,19 @@ class QuanTri extends Controller
             "SoTrang" => $soTrang,
             "TrangHienTai" => $trangHienTai,
             "CongTyTrangHienTai" => $congTyTrangHienTai
+        ]);
+    }
+    
+    // XÓA CÔNG TY
+    public function XoaCongTy($a, $b, $c){
+        $idCongTy = $c;
+        $kq = $this->CongTyModel->XoaCongTy($idCongTy);
+        if($kq){
+            
+        }
+        // View
+        $this->view("admin-template", [
+            "Page" => "tat-ca-cong-ty"
         ]);
     }
 }

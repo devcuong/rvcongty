@@ -73,5 +73,15 @@ class CongTyModel extends DB{
             }
             return $result;
         }
+        
+        /*XÓA CÔNG TY*/
+        public function XoaCongTy($idCongTy){
+            $qr = "DELETE FROM congty WHERE id = '$idCongTy'";
+            $result = false;
+            if(mysqli_query($this->con, $qr)){
+                $result = true;
+            }
+            return $result;
+        }
 }
 ?>
