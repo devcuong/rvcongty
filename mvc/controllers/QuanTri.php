@@ -163,5 +163,14 @@ class QuanTri extends Controller
             ]);
         }
     }
+    
+    // GET DATA
+    public function GetDataCongTy(){
+        if(isset($_POST["url-company"])){
+            $urlCompany = $_POST["url-company"];
+            $content = file_get_contents($urlCompany);
+            echo $content;
+        }
+    }
 }
 ?>

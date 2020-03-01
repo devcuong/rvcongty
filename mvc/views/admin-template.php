@@ -4,8 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-<title>S-Admin interface - Bootsnipp.com</title>
+<title>Admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
@@ -32,6 +31,7 @@ h1.page-header {
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/config.js"></script>  
 <script type="text/javascript">
 function changeToSlug(e) {
     return ("@" + e.toLowerCase().replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, "a").replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, "e").replace(/i|í|ì|ỉ|ĩ|ị/gi, "i").replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, "o").replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, "u").replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, "y").replace(/đ/gi, "d").replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, "").replace(/ /gi, "-").replace(/\-\-\-\-\-/gi, "-").replace(/\-\-\-\-/gi, "-").replace(/\-\-\-/gi, "-").replace(/\-\-/gi, "-") + "@").replace(/\@\-|\-\@|\@/gi, "")
@@ -42,6 +42,22 @@ function changeToSlug(e) {
    	   	 var slugCongTy = changeToSlug(tenCongTy);
       	  document.getElementById("slug-cong-ty").value = slugCongTy;
     }
+    }
+ // get reviewcongty
+    function getDuLieu(){
+		if($("#link-review").val() != ""){
+			  $.ajax({
+		          type: "POST",
+		          url: SiteName + "/quan-tri/get-data-cong-ty/",
+		          data: {"url-company": $("#link-review").val()},
+		          success: function(data)
+		          {
+		             if(data){
+		            	  alert(data);
+		             }
+		          }
+		        });
+		}
     }
     </script>
 </head>
