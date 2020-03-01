@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 01, 2020 lúc 04:52 AM
+-- Thời gian đã tạo: Th3 01, 2020 lúc 01:30 PM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -46,9 +46,7 @@ CREATE TABLE `congty` (
 --
 
 INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`) VALUES
-(2, 'Keaz', 'keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 3, 8, 2.66667, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
-(3, 'Sakuko Việt Nam', 'sakuko-viet-nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 217, 760, 3.5, '1 Trung Yên Plaza Cau Giay Ha Noi'),
-(4, 'Lien Viet Tech 2', 'lien-viet-tech-2', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 23, 71, 3.08696, '109 Tran Hung Dao Hoan Kiem Ha Noi');
+(6, 'Thiên Việt JSC', 'thien-viet-jsc', 'thien-vi-t-jsc-logo.png', 'Dịch vụ', '51-150', 1, 3, 3, 'number 5, hiep thanh 31, hiep thanh');
 
 -- --------------------------------------------------------
 
@@ -68,19 +66,7 @@ CREATE TABLE `reply` (
 --
 
 INSERT INTO `reply` (`id`, `congty`, `idreview`, `data`) VALUES
-(1, 0, 1, '[{\"replyer\":\"John\",\"reaction\":\"HATE\",\"noidung\":\"New York\",\"thoigian\":\"1581958324485\"},{\"replyer\":\"John Wick\",\"reaction\":\"DELETE\",\"noidung\":\"New York\",\"thoigian\":\"1581958358520\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"aaaaaaaaaaa\",\"thoigian\":\"2020-02-19 16:49:41\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhu1ea3m nhu00ed, dislike\",\"thoigian\":\"2020-02-19 16:51:55\"},{\"replyer\":\"u1ea8n Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhu1ea3m nhu00ed, dislike\",\"thoigian\":\"2020-02-19 16:59:32\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"Review nhảm nhí, dislike\",\"thoigian\":\"2020-02-19 17:02:04\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-02-19 17:02:24\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"<?php } ?><?php } ?>\",\"thoigian\":\"2020-02-21 17:24:59\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"<?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?><?php } ?>\",\"thoigian\":\"2020-02-21 17:25:49\"}]'),
-(2, 0, 5, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"$qr$qr$qr$qr\",\"thoigian\":\"2020-02-19 20:42:37\"}]'),
-(4, 0, 4, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"$result$result\",\"thoigian\":\"2020-02-19 20:44:09\"}]'),
-(6, 0, 3, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"DELETE\",\"noidung\":\"okokokokokokokokokokokokokokokok\",\"thoigian\":\"2020-02-19 21:08:58\"}]'),
-(7, 0, 2, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"okokokokokokokokokokokok\",\"thoigian\":\"2020-02-19 21:09:14\"}]'),
-(9, 0, 7, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"cái đéo gì vậy trời\",\"thoigian\":\"2020-02-19 21:23:04\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"ko hiểu luôn tụi bay\",\"thoigian\":\"2020-02-19 21:28:38\"}]'),
-(11, 0, 8, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"$data$data$data$data$data$data$data\",\"thoigian\":\"2020-02-20 04:39:17\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"HATE\",\"noidung\":\"SELECT * FROM Customers;\\r\\n\",\"thoigian\":\"2020-02-20 04:39:29\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"DELETE\",\"noidung\":\"SELECT * FROM Customers;\\r\\n\",\"thoigian\":\"2020-02-20 04:39:41\"}]'),
-(12, 0, 10, '[{\"replyer\":\"Ha Ha\",\"reaction\":\"HATE\",\"noidung\":\"abcabcabcabcabc\",\"thoigian\":\"2020-02-21 08:01:21\"}]'),
-(13, 0, 50000, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-02-21 17:23:56\"}]'),
-(14, 0, 50000, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"DELETE\",\"noidung\":\"Xóa review này giùm!\",\"thoigian\":\"2020-02-21 17:24:04\"}]'),
-(15, 0, 50000, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-02-21 17:25:25\"}]'),
-(16, 0, 50000, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-02-21 17:26:01\"}]'),
-(17, 0, 12, '[{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"<?php } ?><?php } ?><?php } ?><?php } ?><?php } ?>\",\"thoigian\":\"2020-02-21 17:26:19\"},{\"replyer\":\"Ẩn Danh\",\"reaction\":\"LIKE\",\"noidung\":\"SELECT * FROM Customers;\\r\\n\",\"thoigian\":\"2020-02-21 17:26:43\"}]');
+(18, 6, 17, '[{\"replyer\":\"Bác nói đúng vãi, tặng 1 like\",\"reaction\":\"LIKE\",\"noidung\":\"Bác nói đúng vãi, tặng 1 like\",\"thoigian\":\"2020-03-01 15:59:41\"},{\"replyer\":\"Review nhảm nhí, dislike\",\"reaction\":\"LIKE\",\"noidung\":\"Review nhảm nhí, dislike\",\"thoigian\":\"2020-03-01 16:10:56\"}]');
 
 -- --------------------------------------------------------
 
@@ -103,20 +89,7 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`id`, `reviewer`, `position`, `rate`, `noidung`, `congty`, `thoigian`) VALUES
-(1, 'Nguyễn Khắc Thành\r\n\r\n', 'DEV quèn', 5, 'Có nhiều gái xinh và dễ thương. Công ty tuyệt với, đuổi cũng méo đi.\r\n', 1, '1581955907004'),
-(2, 'Ẩn danh', 'HR Manager', 1, 'công ty max coi thường thiết kế, làm việc nhốn nháo không có trình tự gì\r\ncông ty như cái chợ ai thích làm gì thì làm, nên tránh', 1, '1581956999796'),
-(3, 'Cuong Doan', 'HR Manager', 1, 'Cuong DoanCuong DoanCuong DoanCuong DoanCuong DoanCuong DoanCuong DoanCuong DoanCuong Doan', 1, '2020-02-19 14:48:52'),
-(4, 'Cuong Doan', 'HR Manager', 3, 'dev siêu quèn', 1, '2020-02-19 14:49:15'),
-(5, 'Ẩn Danh', 'Dev quèn', 1, '$position$position$position$position$position$position$position$position$position$position$position$position$position', 1, '2020-02-19 15:10:18'),
-(6, 'Ẩn Danh', 'Dev quèn', 5, 'ok maok ma', 1, '2020-02-19 15:11:17'),
-(7, 'Ẩn Danh', 'Dev quèn', 5, 'aaaaaaaaaaaaaaa', 1, '2020-02-19 16:50:45'),
-(8, 'ok', 'abcdef ghg', 3, '$result$result$result$result$result$result$result$result$result$result', 1, '2020-02-20 04:24:16'),
-(9, 'Ẩn Danh', 'Dev quèn', 3, 'SELECT * FROM Customers;\r\n', 1, '2020-02-20 04:30:02'),
-(10, 'Ẩn Danh', 'Dev quèn', 2, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghgabcdef ghgabcdef ghg', 2, '2020-02-21 08:00:44'),
-(11, 'Ẩn Danh', 'Dev quèn', 1, 'HONG KONGMắc bệnh teo cơ từ 14 năm trước, Steven Yan phải ngồi xe lăn đi khắp các cửa hàng tìm mua khẩu trang, nhưng thường trở về trắng tay.\r\nYan cố gắng tìm kiếm nơi bán khẩu trang gần căn hộ mình nhưng chỉ thành công một lần vào tháng trước. Ông xếp hàng 6 giờ để lấy được 5 chiếc khẩu trang miễn phí. \"Tôi kiệt sức\", Yan nói. \"Tôi không dám di chuyển vì sợ mất chỗ\".', 1, '2020-02-21 09:34:13'),
-(12, 'Ẩn Danh', 'Dev quèn', 3, 'HONG KONGMắc bệnh teo cơ từ 14 năm trước, Steven Yan phải ngồi xe lăn đi khắp các cửa hàng tìm mua khẩu trang, nhưng thường trở về trắng tay.\r\n\r\nYan cố gắng tìm kiếm nơi bán khẩu trang gần căn hộ mình nhưng chỉ thành công một lần vào tháng trước. Ông xếp hàng 6 giờ để lấy được 5 chiếc khẩu trang miễn phí. \"Tôi kiệt sức\", Yan nói. \"Tôi không dám di chuyển vì sợ mất chỗ\".', 1, '2020-02-21 09:34:40'),
-(13, '24/2/2020', 'abcdef ghg', 3, 'rgafg rgafgrgafgrgafg', 1, '2020-02-24 17:38:44'),
-(14, 'Ha Ha', 'abcdef ghg', 1, '\r\nHow to get selected text position from textarea in JavaScript?', 1, '2020-02-24 17:40:31');
+(17, 'ok', 'abcdef ghg', 3, 'abcdef ghgabcdef ghgabcdef ghg', 6, '2020-03-01 15:59:08');
 
 -- --------------------------------------------------------
 
@@ -129,13 +102,6 @@ CREATE TABLE `user` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `user`
---
-
-INSERT INTO `user` (`id`, `email`, `password`) VALUES
-(0, 'viettxt@gmail.com', '9ffe76c47d51bbe9faee835b9b04ddba');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -173,19 +139,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `congty`
 --
 ALTER TABLE `congty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `reply`
 --
 ALTER TABLE `reply`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
