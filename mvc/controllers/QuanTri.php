@@ -140,10 +140,15 @@ class QuanTri extends Controller
     
     // XÓA CÔNG TY
     public function XoaCongTy($a, $b, $c){
+        $kt = false;
         $idCongTy = $c;
         $kq = $this->CongTyModel->XoaCongTy($idCongTy);
         if($kq){
-            
+            $kt = true;
+        }
+        $kq2 = $this->ReviewModel->XoaReview($idCongTy);
+        if($kq2){
+            $kt = true;
         }
         // View
         $this->view("admin-template", [

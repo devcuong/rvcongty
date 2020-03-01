@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 01, 2020 lúc 03:50 AM
+-- Thời gian đã tạo: Th3 01, 2020 lúc 04:52 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -48,8 +48,7 @@ CREATE TABLE `congty` (
 INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`) VALUES
 (2, 'Keaz', 'keaz', 'keaz-logo.jpg', 'Sản phẩm', '1-50', 3, 8, 2.66667, '220A-C Nguyễn Đình chiểu, phường 6 District 3 Ho Chi Minh'),
 (3, 'Sakuko Việt Nam', 'sakuko-viet-nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 217, 760, 3.5, '1 Trung Yên Plaza Cau Giay Ha Noi'),
-(4, 'Lien Viet Tech 2', 'lien-viet-tech-2', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 23, 71, 3.08696, '109 Tran Hung Dao Hoan Kiem Ha Noi'),
-(5, 'Lien Viet Tech 3', 'lien-viet-tech-3', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 23, 71, 3.08696, '109 Tran Hung Dao Hoan Kiem Ha Noi');
+(4, 'Lien Viet Tech 2', 'lien-viet-tech-2', 'lien-viet-tech-logo.png', 'Sản phẩm', '51-150', 23, 71, 3.08696, '109 Tran Hung Dao Hoan Kiem Ha Noi');
 
 -- --------------------------------------------------------
 
@@ -186,7 +185,7 @@ ALTER TABLE `reply`
 -- AUTO_INCREMENT cho bảng `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

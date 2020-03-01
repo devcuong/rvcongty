@@ -23,14 +23,14 @@ class ReplyModel extends DB{
     }
     
     // Thêm reply
-    public function ThemReplyTheoIdReview($iDreview, $data){
-        $qr = "INSERT INTO reply(idreview, data) VALUES(?, ?)";
+    public function ThemReplyTheoIdReview($congTy,$iDreview, $data){
+        $qr = "INSERT INTO reply(congty, idreview, data) VALUES(?, ?)";
         $stmt = mysqli_stmt_init($this->con);
         $result = 0;
         if(!mysqli_stmt_prepare($stmt, $qr)){
             echo "SQL statement failed";
         }else{
-            mysqli_stmt_bind_param($stmt, "ss", $iDreview, $data);
+            mysqli_stmt_bind_param($stmt, "sss",$congTy, $iDreview, $data);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
         }

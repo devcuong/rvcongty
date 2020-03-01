@@ -39,5 +39,15 @@ class ReviewModel extends DB{
         return mysqli_query($this->con, $qr);
        // return $qr;
     }
+    
+    // Xóa review theo ID công ty
+    public function XoaReview($iDCongTy){
+        $qr = "DELETE FROM review WHERE congty = '$iDCongTy'";
+        $result = false;
+        if(mysqli_query($this->con, $qr)){
+            $result = true;
+        }
+        return $result;
+    }
 }
 ?>
