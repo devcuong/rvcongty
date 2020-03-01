@@ -150,10 +150,18 @@ class QuanTri extends Controller
         if($kq2){
             $kt = true;
         }
-        // View
-        $this->view("admin-template", [
-            "Page" => "tat-ca-cong-ty"
-        ]);
+        if($kt){
+            // View
+            $this->view("admin-template", [
+                "Page" => "quan-tri-thanh-cong"
+            ]);
+            
+        }else{
+            // View
+            $this->view("admin-template", [
+                "Page" => "tat-ca-cong-ty"
+            ]);
+        }
     }
 }
 ?>

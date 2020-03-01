@@ -51,7 +51,6 @@ class CongTy extends Controller
             "SoTrang" => $soTrang,
             "TrangHienTai" => $trangReviewHienTai
         ]);
-        //echo $reviewTrangHienTai;
     }
 
     // Đăng review
@@ -143,10 +142,10 @@ class CongTy extends Controller
             }
             $arrData = json_decode($data);
             array_push($arrData, $replyer);
-            $kq = $this->ReplyModel->CapNhatReplyBangIdReview($idReview, json_encode($arrData, JSON_UNESCAPED_UNICODE));
+            $kq = $this->ReplyModel->CapNhatReplyBangIdReview($idCongTy, $idReview, json_encode($arrData, JSON_UNESCAPED_UNICODE));
         } else {
             array_push($arrData, $replyer);
-            $kq = $this->ReplyModel->ThemReplyTheoIdReview($idReview, json_encode($arrData, JSON_UNESCAPED_UNICODE));
+            $kq = $this->ReplyModel->ThemReplyTheoIdReview($idCongTy, $idReview, json_encode($arrData, JSON_UNESCAPED_UNICODE));
         }
         
         header("Location: " . $companyUrl, 301);
