@@ -53,7 +53,8 @@ function changeToSlug(e) {
 		          success: function(data)
 		          {
 		             if(data){
-		            	  alert(data);
+			             $("#mess-return").html(data);
+		            	  //alert(data);
 		             }
 		          }
 		        });

@@ -27,6 +27,7 @@
     <label>Link Review công ty</label>
     <input type="text" class="form-control" id="link-review" name="link-review" placeholder="Link Review">
   </div>
+  <span id="mess-return"></span>
   <button type="submit" name="btn-submit" class="btn btn-primary">Submit</button>
   <button type="button" name="btn-get" class="btn btn-primary" onclick="getDuLieu()">Get URL</button>
 </form>

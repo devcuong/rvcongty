@@ -168,9 +168,22 @@ class QuanTri extends Controller
     public function GetDataCongTy(){
         if(isset($_POST["url-company"])){
             $urlCompany = $_POST["url-company"];
-            $content = file_get_contents($urlCompany);
-            echo $content;
-        }
+            $page = file_get_contents($urlCompany);
+            @$doc = new DOMDocument();
+            @$doc->loadHTML($page);   
+            
+            $xpath = new DomXPath($doc);
+            
+            // Thông tin
+            $nodeList = $xpath->query("//div[@class='company-info__detail']");
+            $nodeCongTy = $nodeList->item(0);
+            $tenCongTy = $nodeCongTy->getElementsByTagName('h2')->item(0)->nodeValue;
+            $nganhNghe = $nodeCongTy->getElementsByTagName('div')->item(0)->getElementsByTagName('span')->item(0)->nodeValue;
+            $nhanVien = $nodeCongTy->getElementsByTagName('div')->item(0)->getElementsByTagName('span')->item(2)->nodeValue;
+            $diaChi = $nodeCongTy->getElementsByTagName('div')->item(1)->nodeValue;
+            // To check the result:
+            echo $diaChi ;
+}
     }
 }
 ?>
