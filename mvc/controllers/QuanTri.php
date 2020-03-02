@@ -177,13 +177,44 @@ class QuanTri extends Controller
             // Thông tin
             $nodeList = $xpath->query("//div[@class='company-info__detail']");
             $nodeCongTy = $nodeList->item(0);
+            
             $tenCongTy = $nodeCongTy->getElementsByTagName('h2')->item(0)->nodeValue;
             $nganhNghe = $nodeCongTy->getElementsByTagName('div')->item(0)->getElementsByTagName('span')->item(0)->nodeValue;
             $nhanVien = $nodeCongTy->getElementsByTagName('div')->item(0)->getElementsByTagName('span')->item(2)->nodeValue;
             $diaChi = $nodeCongTy->getElementsByTagName('div')->item(1)->nodeValue;
-            // To check the result:
-            echo $diaChi ;
-}
+            
+            // Image
+            $nodeImage = $xpath->query("//div[@class='company-info']");
+            $imageUrl = $nodeImage->item(0)->getElementsByTagName('img')->item(0)->getAttribute('src');
+            $arrImage = explode("/", $imageUrl);
+            $imageName = end($arrImage);
+            
+            // Model
+            $congty = $this->model("CongTyModel");
+            
+            $duongDanHinhAnh = 'mvc/public/asset/companies/logo/' . $imageName;
+            
+            file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com".$imageUrl));
+            
+            // Thêm công ty
+            $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy),trim($this->ToSlug($tenCongTy)),trim($tenCongTy),trim($nganhNghe),trim($nhanVien),trim($diaChi));
+            
+            echo $kq;
+        }
+    }
+    
+    function ToSlug($str) {
+        $str = trim(mb_strtolower($str));
+        $str = preg_replace('/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/', 'a', $str);
+        $str = preg_replace('/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/', 'e', $str);
+        $str = preg_replace('/(ì|í|ị|ỉ|ĩ)/', 'i', $str);
+        $str = preg_replace('/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/', 'o', $str);
+        $str = preg_replace('/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/', 'u', $str);
+        $str = preg_replace('/(ỳ|ý|ỵ|ỷ|ỹ)/', 'y', $str);
+        $str = preg_replace('/(đ)/', 'd', $str);
+        $str = preg_replace('/[^a-z0-9-\s]/', '', $str);
+        $str = preg_replace('/([\s]+)/', '-', $str);
+        return $str;
     }
 }
 ?>
