@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 01, 2020 lúc 05:24 PM
+-- Thời gian đã tạo: Th3 02, 2020 lúc 08:13 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -46,7 +46,21 @@ CREATE TABLE `congty` (
 --
 
 INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`) VALUES
-(6, 'Thiên Việt JSC', 'thien-viet-jsc', 'thien-vi-t-jsc-logo.png', 'Dịch vụ', '51-150', 1, 3, 3, 'number 5, hiep thanh 31, hiep thanh');
+(6, 'Thiên Việt JSC', 'thien-viet-jsc', 'thien-vi-t-jsc-logo.png', 'Dịch vụ', '51-150', 1, 3, 3, 'number 5, hiep thanh 31, hiep thanh'),
+(11, 'Nichietsu Vietnam', 'nichietsu-vietnam', 'nichietsu-vietnam-logo.png', 'Dịch vụ', '1-50', 0, 0, 0, '208 Nguyen Huu Canh Street\n  Binh Thanh\n  Ho Chi Minh'),
+(12, 'DFO Global Performance Commerce', 'dfo-global-performance-commerce', 'dfo-global-performance-commerce-logo.png', 'Sản phẩm', '301-500', 0, 0, 0, 'Floor 21, Saigon Centre Tower 2, 67 Le Loi\n  District 1\n  Ho Chi Minh'),
+(13, 'Schneider Electric Vietnam', 'schneider-electric-vietnam', 'schneider-electric-vietnam.png', 'Sản phẩm', '1-50', 0, 0, 0, 'Ho Chi Minh'),
+(15, 'Misa', 'misa', 'misa-logo.jpg', 'Sản phẩm', '1000+', 0, 0, 0, 'Khu đô thị Ngoại giao đoàn\n  Bac Tu Liem\n  Ha Noi'),
+(16, 'Vạn Minh', 'van-minh', 'v-n-minh-logo.jpg', 'Sản phẩm', '1-50', 0, 0, 0, '281 Phương Mai\n  Dong Da\n  Ha Noi'),
+(17, 'Expertrans Global', 'expertrans-global', 'expertrans-global-logo.png', 'Sản phẩm', '51-150', 0, 0, 0, '19  Trần Quang Diệu\n  Dong Da\n  Ha Noi'),
+(18, 'Asoview Vietnam', 'asoview-vietnam', 'asoview-logo.png', 'Sản phẩm', '1-50', 0, 0, 0, 'Lầu 3, toà nhà EBM, 3, 394, Ung Văn Khiêm, P.25\n  Binh Thanh\n  Ho Chi Minh'),
+(19, 'CMC Global', 'cmc-global', 'cmc-global-logo.jpg', 'Dịch vụ', '151-300', 0, 0, 0, 'Lot C1A, Dich Vong Hau\n  Cau Giay\n  Ha Noi'),
+(20, 'Digiworld Corporation', 'digiworld-corporation', 'digiworld-corporation-logo.png', 'Sản phẩm', '1-50', 0, 0, 0, 'Cach Mang Thang Tam\n  District 3\n  Ho Chi Minh'),
+(21, 'Tinh Van Outsourcing', 'tinh-van-outsourcing', 'tinh-van-outsourcing-logo.png', 'Dịch vụ', '51-150', 0, 0, 0, 'Hacinco Student village\n  Thanh Xuan\n  Ha Noi'),
+(22, 'FUJINET SYSTEMS JSC', 'fujinet-systems-jsc', 'fujinet-systems-jsc-logo.png', 'Dịch vụ', '501-1000', 0, 0, 0, '10 Waseco Building, Phổ Quang\n  Tan Binh\n  Ho Chi Minh'),
+(23, 'Sakuko Việt Nam', 'sakuko-viet-nam', 'sakuko-vi-t-nam-logo.png', 'Sản phẩm', '1-50', 0, 0, 0, '1 Trung Yên Plaza\n  Cau Giay\n  Ha Noi'),
+(24, 'Cổ Phần Công Nghệ Alphaway', 'co-phan-cong-nghe-alphaway', 'co-phan-cong-nghe-alphaway.png', 'Sản phẩm', '1-50', 0, 0, 0, 'Cau Giay, Ha Noi'),
+(25, 'Dũng Mori', 'dung-mori', 'dung-mori-logo.png', 'Sản phẩm', '1-50', 0, 0, 0, '19 Nguyễn Trãi\n  Thanh Xuan\n  Ha Noi');
 
 -- --------------------------------------------------------
 
@@ -139,7 +153,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `congty`
 --
 ALTER TABLE `congty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT cho bảng `reply`

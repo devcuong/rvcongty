@@ -178,7 +178,7 @@ class QuanTri extends Controller
             $nodeList = $xpath->query("//div[@class='company-info__detail']");
             $nodeCongTy = $nodeList->item(0);
             
-            $tenCongTy = $nodeCongTy->getElementsByTagName('h2')->item(0)->nodeValue;
+            $tenCongTy = $nodeCongTy->getElementsByTagName('h2')->item(0)->getElementsByTagName('a')->item(0)->nodeValue;
             $nganhNghe = $nodeCongTy->getElementsByTagName('div')->item(0)->getElementsByTagName('span')->item(0)->nodeValue;
             $nhanVien = $nodeCongTy->getElementsByTagName('div')->item(0)->getElementsByTagName('span')->item(2)->nodeValue;
             $diaChi = $nodeCongTy->getElementsByTagName('div')->item(1)->nodeValue;
@@ -197,9 +197,12 @@ class QuanTri extends Controller
             file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com".$imageUrl));
             
             // Thêm công ty
-            $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy),trim($this->ToSlug($tenCongTy)),trim($tenCongTy),trim($nganhNghe),trim($nhanVien),trim($diaChi));
+            $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy),trim($this->ToSlug(trim($tenCongTy))),trim($imageName),trim($nganhNghe),trim($nhanVien),trim($diaChi));
             
-            echo $kq;
+            if($kq){
+                echo "THÀNH CÔNG ".$tenCongTy;
+            }
+            
         }
     }
     

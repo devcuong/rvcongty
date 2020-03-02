@@ -20,7 +20,7 @@ class TimKiem extends Controller
     
     public function TrangKetQua($a, $b, $c=null, $d=null){
         $trangHienTai = 1;
-        $congTyMoiTrang = 1;
+        $congTyMoiTrang = 10;
         $tuKhoa = "";
         if($c != null){
             $trangHienTai = $c;
