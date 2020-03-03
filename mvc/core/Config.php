@@ -1,3 +1,3 @@
 <?php
-     $servername = "http://localhost/rvcongty";
+     $servername = "http://congtytop.com";
 ?>

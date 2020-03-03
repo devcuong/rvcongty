@@ -27,10 +27,10 @@ class ReviewModel extends DB{
             echo "SQL statement failed";
         }else{
             mysqli_stmt_bind_param($stmt, "ssssss", $reviewer, $position, $rate, $noidung, $congty, $thoigian);
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
+            $result = mysqli_stmt_execute($stmt);
         }
-        return json_encode($result);
+        return $result;
+        //return $qr;
     }
     
     // Lấy review để phân trang

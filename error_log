@@ -1,0 +1,96 @@
+[02-Mar-2020 12:57:31 UTC] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/nghi8308/congtytop.com/mvc/views/main-template.php on line 1
+[02-Mar-2020 22:16:12 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:16:12 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:16:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:16:14 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:16:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:16:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:16:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:16:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:19:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:19:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:20:58 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:20:58 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:21:37 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:22:48 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:23:47 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:23:59 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:29:31 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:29:36 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[02-Mar-2020 22:29:43 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 01:12:37 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 01:12:37 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 01:12:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 01:12:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 01:12:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 01:58:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 01:58:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:01:12 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:01:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:17:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:17:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:18:03 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:22:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:22:14 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:24:33 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:24:34 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:26:49 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:26:50 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:28:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:28:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:29:04 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:29:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:41:50 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 02:49:33 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 08:47:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined method mysqli_result::fetch_all() in /home/nghi8308/congtytop.com/mvc/controllers/TimKiem.php on line 16
+[03-Mar-2020 09:08:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 09:09:12 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 09:10:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 09:17:34 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 09:28:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 09:35:09 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 09:35:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 09:35:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 09:35:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 09:35:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 10:07:47 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 10:36:54 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 10:41:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php:31
+Stack trace:
+#0 /home/nghi8308/congtytop.com/mvc/controllers/CongTy.php(94): ReviewModel->ThemReview('Cuong Doan', 'dev si\xC3\xAAu qu\xC3\xA8n', '3', 'dev si\xC3\xAAu qu\xC3\xA8n...', '19', '2020-03-03 10:4...')
+#1 /home/nghi8308/congtytop.com/mvc/core/App.php(29): CongTy->DangReview('cong-ty', 'dang-review')
+#2 /home/nghi8308/congtytop.com/index.php(4): App->__construct()
+#3 {main}
+  thrown in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:05:18 Asia/Ho_Chi_Minh] PHP Notice:  Undefined index: companyId in /home/nghi8308/congtytop.com/mvc/controllers/CongTy.php on line 64
+[03-Mar-2020 11:05:18 Asia/Ho_Chi_Minh] PHP Notice:  Undefined index: companyUrl in /home/nghi8308/congtytop.com/mvc/controllers/CongTy.php on line 67
+[03-Mar-2020 11:05:18 Asia/Ho_Chi_Minh] PHP Notice:  Undefined index: content in /home/nghi8308/congtytop.com/mvc/controllers/CongTy.php on line 70
+[03-Mar-2020 11:05:18 Asia/Ho_Chi_Minh] PHP Notice:  Undefined index: score in /home/nghi8308/congtytop.com/mvc/controllers/CongTy.php on line 90
+[03-Mar-2020 11:05:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:07:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:10:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReplyModel.php on line 35
+[03-Mar-2020 11:23:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:26:52 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:29:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:30:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:30:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:30:38 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:31:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:31:31 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:31:54 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:32:06 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:33:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:33:49 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 11:34:21 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 14:54:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 15:07:02 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 15:11:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 15:11:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 15:11:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 15:11:50 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 15:11:59 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReviewModel.php on line 31
+[03-Mar-2020 15:19:49 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReplyModel.php on line 35
+[03-Mar-2020 15:20:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReplyModel.php on line 20
+[03-Mar-2020 15:23:00 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReplyModel.php on line 20
+[03-Mar-2020 15:29:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReplyModel.php on line 20
+[03-Mar-2020 15:30:09 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function mysqli_stmt_get_result() in /home/nghi8308/congtytop.com/mvc/models/ReplyModel.php on line 20

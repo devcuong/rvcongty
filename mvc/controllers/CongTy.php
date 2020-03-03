@@ -91,10 +91,17 @@ class CongTy extends Controller
         
         $createdDate = date("Y-m-d H:i:s");
         
+        /*echo $createdDate;*/
+        
         $kq = $this->ReviewModel->ThemReview($reviewerName, $reviewerPosition, $score, $content, $idCongTy, $createdDate);
-        if ($kq) {
+        /*echo $kq;*/
+                /*header("Location: " . $companyUrl);
+                exit();*/
+        
+        if ($kq > 0) {
             $kq2 = $this->CongTyModel->UpdateRateCongTy($idCongTy, $score);
             if ($kq2) {
+                ob_start();
                 header("Location: " . $companyUrl, 301);
                 exit();
             }
@@ -134,7 +141,6 @@ class CongTy extends Controller
         
         $createdDate = date("Y-m-d H:i:s");
         $replyer->thoigian = $createdDate;
-        
         $replyKiemTra = $this->ReplyModel->LayReplyBangIdReview($idReview);
         if (mysqli_num_rows($replyKiemTra) > 0) {
             while ($r = mysqli_fetch_array($replyKiemTra)) {
@@ -143,11 +149,12 @@ class CongTy extends Controller
             $arrData = json_decode($data);
             array_push($arrData, $replyer);
             $kq = $this->ReplyModel->CapNhatReplyBangIdReview($idCongTy, $idReview, json_encode($arrData, JSON_UNESCAPED_UNICODE));
+             echo $kq;
         } else {
             array_push($arrData, $replyer);
             $kq = $this->ReplyModel->ThemReplyTheoIdReview($idCongTy, $idReview, json_encode($arrData, JSON_UNESCAPED_UNICODE));
         }
-        
+        ob_start();
         header("Location: " . $companyUrl, 301);
         exit();
     }

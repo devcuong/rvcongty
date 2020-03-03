@@ -93,7 +93,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 while ($r = mysqli_fetch_array($data["Review"])) {
     ?>
   <div class="review card">
-		<header class="card-header">
+		<header class="card-header"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 			<p class="card-header-title">
               <?php echo $r["review_reviewer"]." (".$r["review_position"].")" ?>  &nbsp; 
         <span>
@@ -206,7 +206,7 @@ $dataReply = $r["reply_data"];
 <?php } ?>
 </section>
 <div class="modal" id="review-modal">
-    <form id="review-form" action="<?php echo $servername ?>/cong-ty/dang-review" method="POST">
+    <form id="review-form" action="<?php echo $servername ?>/cong-ty/dang-review/" method="POST">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
@@ -270,7 +270,7 @@ $dataReply = $r["reply_data"];
     <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
-            <form id="comment-form" action="<?php echo $servername ?>/cong-ty/dang-reply" method="POST">
+            <form id="comment-form" action="<?php echo $servername ?>/cong-ty/dang-reply/" method="POST">
                 <div class="field">
                     <label class="label">Tên họ</label>
                     <div class="control">

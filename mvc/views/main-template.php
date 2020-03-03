@@ -1,9 +1,10 @@
+
 <?php require_once 'mvc/core/Config.php'; ?>
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -874,7 +875,7 @@ transform
 	 timeago.render(nodes, "vi"), timeago.cancel();
     </script>
     <script>
-    jQuery.ui.autocomplete.prototype._resizeMenu = function() {
+    /*jQuery.ui.autocomplete.prototype._resizeMenu = function() {
         this.menu.element.outerWidth(this.element.outerWidth())
     }, $(function() {
         $("#company-search").autocomplete({
@@ -882,7 +883,7 @@ transform
                 var keyWord = e.term;
                 $.ajax({
                     type: "post",
-                    url: SiteName+"/tim-kiem/cong-ty/",
+                    url: "/tim-kiem/cong-ty",
                     dataType: "json",
                     data: {
                     	tencongty: e.term
@@ -944,7 +945,7 @@ transform
             return $childDiv.appendTo(div);
           };
         
-    });
+    });*/
     </script>
 </body>
 </html>

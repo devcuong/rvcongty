@@ -16,10 +16,9 @@ class ReplyModel extends DB{
             echo "SQL statement failed";
         }else{
             mysqli_stmt_bind_param($stmt, "sss",$congTy, $data, $iDreview);
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
+            $result= mysqli_stmt_execute($stmt);
         }
-        return json_encode($result);
+        return $result;
     }
     
     // Thêm reply
@@ -31,10 +30,9 @@ class ReplyModel extends DB{
             echo "SQL statement failed";
         }else{
             mysqli_stmt_bind_param($stmt, "sss",$congTy, $iDreview, $data);
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
+            $result = mysqli_stmt_execute($stmt);
         }
-        return json_encode($result);
+        return $result;
     }
 }
 ?>
