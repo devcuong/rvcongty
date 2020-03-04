@@ -1,1 +1,1 @@
-var SiteName = "http://congtytop.com";
+var SiteName = "http://localhost/rvcongty";

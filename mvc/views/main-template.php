@@ -1,6 +1,4 @@
-
 <?php require_once 'mvc/core/Config.php'; ?>
-
 <!DOCTYPE html>
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -875,7 +873,7 @@ transform
 	 timeago.render(nodes, "vi"), timeago.cancel();
     </script>
     <script>
-    /*jQuery.ui.autocomplete.prototype._resizeMenu = function() {
+    jQuery.ui.autocomplete.prototype._resizeMenu = function() {
         this.menu.element.outerWidth(this.element.outerWidth())
     }, $(function() {
         $("#company-search").autocomplete({
@@ -883,7 +881,7 @@ transform
                 var keyWord = e.term;
                 $.ajax({
                     type: "post",
-                    url: "/tim-kiem/cong-ty",
+                    url: SiteName+"/tim-kiem/cong-ty",
                     dataType: "json",
                     data: {
                     	tencongty: e.term
@@ -918,17 +916,14 @@ transform
 			var $span = $('<span>');
 			// image
 			$figure.addClass("company-logo image is-32x32");
-
 			// tên công ty
 			$span.addClass("company-name");
-
 			// suggest result
 			$childDiv.addClass("autocomplete-suggestion");
             $img.attr({
               src: SiteName+'/mvc/public/asset/companies/logo/' + item.image,
               alt: item.label,
             });
-
             $childDiv.attr('data-value', item.label);
             $childDiv.attr('data-slug', item.slug);
             //$li.append('<a href="#">');
@@ -941,11 +936,10 @@ transform
             var boldLabel = normalLabel.replace(re, "<b>$1</b>");
             $span.append(boldLabel);
             $childDiv.append($figure).append($span);    
-
             return $childDiv.appendTo(div);
           };
         
-    });*/
+    });
     </script>
 </body>
 </html>

@@ -13,9 +13,15 @@ class TimKiem extends Controller
             $tuKhoa = trim($_POST["tencongty"]);
             $congTyModel = $this->CongTyModel;
             $allKetQua = $congTyModel->LayCongTyTheoKyTu($tuKhoa);
-            $resultArrayKetQua = $allKetQua->fetch_all(MYSQLI_ASSOC);
-            echo json_encode($resultArrayKetQua);
+            //$resultArrayKetQua = $allKetQua -> fetch_all(MYSQLI_ASSOC);
+            //echo $_POST["tencongty"]."-"."ok";
+            $parameters = array();
+            while ($row = $allKetQua->fetch_assoc()) {
+              $parameters[] = $row;
+            }
+            echo json_encode($parameters);
         }
+       
     }
     
     public function TrangKetQua($a, $b, $c=null, $d=null){

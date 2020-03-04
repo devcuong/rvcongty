@@ -1,7 +1,7 @@
 <?php
 class Server{
     // Properties
-    public $servername = "http://congtytop.com";
+    public $servername = "http://localhost/rvcongty";
     
     // Methods
     function set_servername($servername) {
