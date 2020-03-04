@@ -27,7 +27,7 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination">
   <?php for ($i=1; $i<=$data["SoTrang"]; $i++){ ?>
-    <li class="page-item <?php if($i == $data["TrangHienTai"]) echo "active" ?>	"><a class="page-link" href="<?php echo $servername ?>/quan-tri/tat-ca-cong-ty?page=<?php echo $i ?>"><?php echo $i ?></a></li>
+    <li class="page-item <?php if($i == $data["TrangHienTai"]) echo "active" ?>	"><a class="page-link" href="<?php echo $servername ?>/quan-tri/tat-ca-cong-ty/<?php echo $i ?>"><?php echo $i ?></a></li>
    <?php } ?>
   </ul>
 </nav>

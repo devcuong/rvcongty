@@ -122,13 +122,13 @@ class QuanTri extends Controller
     }
     
     // TẤT CẢ CÔNG TY
-    public function TatCaCongTy()
+    public function TatCaCongTy($a, $b, $c = null)
     {
         if(isset($_SESSION["email"])){
             $trangHienTai = 1;
             $congTyMoiTrang = 10;
-            if(isset($_GET["page"])){
-                $trangHienTai = $_GET["page"];
+            if($c!=null){
+                $trangHienTai = $c;
             }
             $soCongTyBoQua = ($trangHienTai-1)*$congTyMoiTrang;
             // Model
