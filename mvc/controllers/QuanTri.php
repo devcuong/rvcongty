@@ -94,9 +94,10 @@ class QuanTri extends Controller
                         $duongDanHinhAnh = 'mvc/public/asset/companies/logo/' . $fileName;
                         // Upload file
                         move_uploaded_file($_FILES['logo-cong-ty']['tmp_name'], $duongDanHinhAnh);
-                    
+                        
+                        $createdDate = date("Y-m-d H:i:s");
                         // Thêm công ty
-                        $kq = $this->CongTyModel->ThemCongTy($tencongty, $slugcongty, $fileName, $nganhnghe, $nhanvien, $diachi);
+                        $kq = $this->CongTyModel->ThemCongTy($tencongty, $slugcongty, $fileName, $nganhnghe, $nhanvien, $diachi, $createdDate);
                         if($kq){
                             // View
                             $this->view("admin-template", [
@@ -214,8 +215,9 @@ class QuanTri extends Controller
             
             file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com".$imageUrl));
             
+            $createdDate = date("Y-m-d H:i:s");
             // Thêm công ty
-            $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy),trim($this->ToSlug(trim($tenCongTy))),trim($imageName),trim($nganhNghe),trim($nhanVien),trim($diaChi));
+            $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy),trim($this->ToSlug(trim($tenCongTy))),trim($imageName),trim($nganhNghe),trim($nhanVien),trim($diaChi),$createdDate);
             
             if($kq){
                 echo "THÀNH CÔNG ".$tenCongTy;

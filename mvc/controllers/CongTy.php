@@ -94,12 +94,9 @@ class CongTy extends Controller
         /*echo $createdDate;*/
         
         $kq = $this->ReviewModel->ThemReview($reviewerName, $reviewerPosition, $score, $content, $idCongTy, $createdDate);
-        /*echo $kq;*/
-                /*header("Location: " . $companyUrl);
-                exit();*/
-        
         if ($kq > 0) {
-            $kq2 = $this->CongTyModel->UpdateRateCongTy($idCongTy, $score);
+            $kq2 = $this->CongTyModel->UpdateRateCongTy($idCongTy, $score, $createdDate);
+            echo $kq2;
             if ($kq2) {
                 ob_start();
                 header("Location: " . $companyUrl, 301);
