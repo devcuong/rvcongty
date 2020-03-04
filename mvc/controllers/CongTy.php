@@ -82,7 +82,7 @@ class CongTy extends Controller
             if (trim($_POST['position']) != "") {
                 $reviewerPosition = trim($_POST["position"]);
             } else {
-                $reviewerPosition = "Dev quèn";
+                $reviewerPosition = "Dev";
             }
         }
         

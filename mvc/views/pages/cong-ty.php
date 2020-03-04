@@ -218,20 +218,20 @@ $dataReply = $r["reply_data"];
                     <label class="label">Tên họ</label>
                     <div class="control">
                         <input class="input" name="reviewer" type="text"
-                            placeholder="Muốn xưng tên thật thì xưng không thì thui">
+                            placeholder="Bạn có thể xưng tên thật hoặc không">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Chức vụ</label>
                     <div class="control">
-                        <input class="input" name="position" type="text" placeholder="Dev quèn/HR hay Manager">
+                        <input class="input" name="position" type="text" placeholder="Dev/HR hay Manager">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Review công ty <span class="has-text-danger">(Bắt buộc)</span> </label>
                     <div class="control">
                         <textarea required class="textarea" name="content"
-                            placeholder="Bức xúc hay gì thì viết dài dài vô (Tối thiểu 10 kí tự)"></textarea>
+                            placeholder="Mọi review cần mang tính khách quan, trung thực, không khuyến khích cảm xúc cá nhân (HR nhìn chảnh ...) (Tối thiểu 10 kí tự)"></textarea>
                     </div>
                     <p class="help is-danger is-hidden">Nội dung tối thiếu 10 kí tự</p>
                 </div>
@@ -240,11 +240,11 @@ $dataReply = $r["reply_data"];
                     <div class="control">
                         <div class="select">
                             <select name="score">
-                                <option value="1">1 điểm - Max sida, né gấp kẻo hối hận</option>
-                                <option value="2">2 điểm - Hết thuốc chữa, đang tính đường chuồn</option>
-                                <option value="3" selected>3 điểm - Cũng tạm, để coi sao</option>
-                                <option value="4">4 điểm - Cũng ngon, nên làm lâu dài</option>
-                                <option value="5">5 điểm - Công ty tuyệt cmn vời, đuổi cũng méo đi</option>
+                            	<option value="5">5 điểm - Công ty tuyệt cmn vời, đuổi cũng không đi</option>
+                            	<option value="4">4 điểm - Quá tốt, nên làm lâu dài</option>
+                            	<option value="3" selected>3 điểm - Tạm được, cần thời gian trải nghiệm</option>
+                            	<option value="2">2 điểm - Không tốt, chỉ nên làm lấy kinh nghiệm</option>
+                                <option value="1">1 điểm - Cực kỳ tệ, đang tính xin nghỉ</option>
                             </select>
                         </div>
                     </div>
@@ -253,7 +253,7 @@ $dataReply = $r["reply_data"];
                  <input type="hidden" name="companyUrl" value="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];?>" />
                 <div class="g-recaptcha" data-sitekey="6LdzGtkUAAAAAPbjiQfk8z3AbWKKjRWNE_MXxcOQ" data-callback="onReviewCaptchaSuccess"></div>
                 <p class="m-t-5">
-                    Người đăng chịu trách nhiệm về tính xác thực của nội dung chứ <b>bên mình không có chịu</b>, okay?
+                    Người đăng chịu trách nhiệm về tính xác thực của nội dung
                 </p>
             </section>
             <footer class="modal-card-foot">
@@ -275,14 +275,14 @@ $dataReply = $r["reply_data"];
                     <label class="label">Tên họ</label>
                     <div class="control">
                         <input class="input" name="reviewer" type="text"
-                            placeholder="Muốn xưng tên thật thì xưng không thì thui">
+                            placeholder="Bạn có thể xưng tên thật hoặc không">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Comment <span class="has-text-danger">(Bắt buộc)</span> </label>
                     <div class="control">
                         <textarea required class="textarea" name="content" id="review-content"
-                            placeholder="Bức xúc hay gì thì viết dài dài vô (Tối thiểu 10 kí tự)"></textarea>
+                            placeholder="Mọi review cần mang tính khách quan, trung thực, không khuyến khích cảm xúc cá nhân (HR nhìn chảnh ...) (Tối thiểu 10 kí tự)"></textarea>
                     </div>
 
                 </div>
@@ -292,7 +292,7 @@ $dataReply = $r["reply_data"];
                         <div class="select">
                             <select name="reaction" id="review-reaction">
                                 <option value="LIKE" selected>👍 Like</option>
-                                <option value="HATE">👎 Đếch lai</option>
+                                <option value="HATE">👎 DisLike</option>
                                 <option value="DELETE">❌ Xóa giùm</option>
                             </select>
                         </div>

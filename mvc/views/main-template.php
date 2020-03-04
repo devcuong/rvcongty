@@ -830,6 +830,14 @@ transform
     background-color: #0e7ccd;
     color: #fff;
 }
+.field:not(:last-child) {
+    margin-bottom: .75rem;
+}
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: #3273dc;
+    right: 1.125em;
+    z-index: 4;
+}
 </style>
 </head>
 
