@@ -27,6 +27,31 @@
 <div class="columns" style="height: auto !important;">
 	<section class="companies column is-three-fifths"
 		style="height: auto !important;">
+		<div class="tabs" style="margin-bottom:0.6rem">
+      <ul>
+        <li data-tab="top-comments" class="tab is-active">
+          <a href="/?tab=latest" class="has-text-weight-bold">
+            <span class="icon has-text-info">
+              <i class="fas fa-comments"></i>
+            </span>
+            Mới cập nhật</a>
+        </li>
+        <li data-tab="top-companies" class="tab ">
+          <a href="/?tab=best" class="has-text-weight-bold">
+            <span class="icon has-text-success">
+              <i class="fas fa-thumbs-up"></i>
+            </span>
+            Top công ty xịn</a>
+        </li>
+        <li data-tab="worst-companies" class="tab ">
+          <a href="/?tab=worst" class="has-text-weight-bold">
+            <span class="icon has-text-danger">
+              <i class="fas fa-thumbs-down"></i>
+            </span>
+            Công ty bựa nên né</a>
+        </li>
+      </ul>
+    </div>
 		<div class="tabs-section" style="height: auto !important;">
 			<nav class="pagination is-small custom-pagination" role="navigation"
 				aria-label="pagination">

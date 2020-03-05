@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 05, 2020 lúc 02:46 AM
--- Phiên bản máy phục vụ: 10.4.10-MariaDB
--- Phiên bản PHP: 7.3.12
+-- Máy chủ: localhost:3306
+-- Thời gian đã tạo: Th3 05, 2020 lúc 03:23 PM
+-- Phiên bản máy phục vụ: 5.6.47-cll-lve
+-- Phiên bản PHP: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `rvcongty`
+-- Cơ sở dữ liệu: `nghi8308_congty`
 --
 
 -- --------------------------------------------------------
@@ -47,10 +47,13 @@ CREATE TABLE `congty` (
 --
 
 INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`, `thoigian`) VALUES
-(41, 'Glass Egg', 'glass-egg', 'glass-egg-logo.jpg', 'Dịch vụ', '301-500', 1, 1, 1, '9  Doan Van Bo\n  District 4\n  Ho Chi Minh', '2020-03-05 01:57:44'),
-(42, 'Line Technology Vietnam', 'line-technology-vietnam', 'line-viet-nam-logo.png', 'Sản phẩm', '51-150', 0, 0, 0, '54 Nguyen Chi Thanh\n  Dong Da\n  Ha Noi', '2020-03-04 19:18:52'),
-(43, 'Sunshine Group', 'sunshine-group', 'sunshine-group.png', 'Sản phẩm', '51-150', 0, 0, 0, 'Ha Noi, Ho Chi Minh', '2020-03-04 19:53:48'),
-(44, 'Ominext', 'ominext', 'ominext-logo.png', 'Dịch vụ', '151-300', 0, 0, 0, '147  789 Building\n  Cau Giay\n  Ha Noi', '2020-03-04 19:54:01');
+(45, 'Luvina Software', 'luvina-software', 'luvina-software-logo.jpg', 'Sản phẩm', '301-500', 0, 0, 0, '106 Hoang Quoc Viet\n  Cau Giay\n  Ha Noi', '2020-03-05 01:48:09'),
+(46, 'Robert Bosch Engineering And Business Solutions', 'robert-bosch-engineering-and-business-solutions', 'robert-bosch-engineering-and-business-solutions-logo.jpg', 'Sản phẩm', '301-500', 0, 0, 0, '364 Cong Hoa\n  Tan Binh\n  Ho Chi Minh', '2020-03-05 01:48:27'),
+(47, 'Glass Egg', 'glass-egg', 'glass-egg-logo.jpg', 'Dịch vụ', '301-500', 0, 0, 0, '9  Doan Van Bo\n  District 4\n  Ho Chi Minh', '2020-03-05 01:48:49'),
+(48, 'Giao Hàng Tiết Kiệm', 'giao-hng-tiet-kiem', 'giao-hang-ti-t-ki-m-logo.png', 'Sản phẩm', '1000+', 0, 0, 0, '55 K2, Cầu Diễn\n  Nam Tu Liem\n  Ha Noi', '2020-03-05 01:49:06'),
+(49, 'Line Technology Vietnam', 'line-technology-vietnam', 'line-viet-nam-logo.png', 'Sản phẩm', '51-150', 0, 0, 0, '54 Nguyen Chi Thanh\n  Dong Da\n  Ha Noi', '2020-03-05 01:49:46'),
+(50, 'Sao Mai Soft', 'sao-mai-soft', 'sao-mai-soft-logo.png', 'Dịch vụ', '1-50', 0, 0, 0, '389 Trường Chinh\n  Thanh Xuan\n  Ha Noi', '2020-03-05 01:51:38'),
+(52, 'EMG Education', 'emg-education', 'emg-education-logo.png', 'Sản phẩm', '51-150', 0, 0, 0, '41 Nguyen Thi Minh Khai\n  District 1\n  Ho Chi Minh', '2020-03-05 02:42:53');
 
 -- --------------------------------------------------------
 
@@ -92,18 +95,6 @@ CREATE TABLE `review` (
   `congty` int(11) NOT NULL,
   `thoigian` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `review`
---
-
-INSERT INTO `review` (`id`, `reviewer`, `position`, `rate`, `noidung`, `congty`, `thoigian`) VALUES
-(62, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:54:24'),
-(63, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:56:16'),
-(64, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:56:31'),
-(65, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:56:44'),
-(66, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:56:51'),
-(67, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:57:44');
 
 -- --------------------------------------------------------
 
@@ -160,7 +151,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `congty`
 --
 ALTER TABLE `congty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT cho bảng `reply`
