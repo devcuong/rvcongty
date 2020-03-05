@@ -146,7 +146,7 @@
 										<?php } ?>
 						</span>
 			</p>
-			<p><?php echo mb_substr($r["noidung"],0, 50)."..." ?></p>
+			<p><?php echo $r["noidung"] ?></p>
 		</div>
                                         <?php } ?>
 

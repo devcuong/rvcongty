@@ -36,10 +36,10 @@
                     4. Trang này được tạo ra nhằm mục đích gì vậy? Có kiếm được tiền không?
                 </p>
                 <p class="answer">
-                    Review công ty là website để người dùng chia sẻ kinh nghiệm, trải nghiệm làm việc ở các công ty
-                    IT/Media/Creative. <br>
+                    Công ty top là website để người dùng chia sẻ kinh nghiệm, trải nghiệm làm việc ở các công ty
+                    thuộc đủ các ngành nghề. <br>
                     Mục tiêu của website là để anh em có chỗ chia sẻ, giúp nhau vào được công ty
-                    ngon, tẩy chay công ty dỏm.
+                    tốt về <b>lương, chính sách, lãnh đạo, môi trường</b>, tẩy chay công ty <b>dỏm, giả, hoặc lừa đảo.</b>
                     Hiện tại, chúng tôi hoạt động hoàn toàn phi lợi nhuận.
                 </p>
                 <p class="question">
