@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th3 04, 2020 lúc 11:55 PM
--- Phiên bản máy phục vụ: 5.6.47-cll-lve
--- Phiên bản PHP: 7.3.6
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th3 05, 2020 lúc 02:46 AM
+-- Phiên bản máy phục vụ: 10.4.10-MariaDB
+-- Phiên bản PHP: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `nghi8308_congty`
+-- Cơ sở dữ liệu: `rvcongty`
 --
 
 -- --------------------------------------------------------
@@ -38,26 +38,19 @@ CREATE TABLE `congty` (
   `luotdanhgia` int(11) NOT NULL,
   `tongsao` int(11) NOT NULL,
   `rate` float NOT NULL,
-  `diachi` varchar(100) NOT NULL
+  `diachi` varchar(100) NOT NULL,
+  `thoigian` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `congty`
 --
 
-INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`) VALUES
-(28, 'Luxstay', 'luxstay', 'luxstay-logo.png', 'Sản phẩm', '1-50', 2, 8, 4, '68 Duong Dinh Nghe\n  Cau Giay\n  Ha Noi'),
-(29, 'DFS Vietnam LLC', 'dfs-vietnam-llc', 'dfs-vietnam-llc-logo.jpg', 'Sản phẩm', '1000+', 1, 5, 5, 'Ho Chi Minh'),
-(30, 'Manteiv Group | Skyads', 'manteiv-group-skyads', 'manteiv-group-skyads.png', 'Sản phẩm', '1-50', 1, 1, 1, 'Thanh Xuan, Ha Noi'),
-(32, 'Expertrans Global', 'expertrans-global', 'expertrans-global-logo.png', 'Sản phẩm', '51-150', 0, 0, 0, '19  Trần Quang Diệu\n  Dong Da\n  Ha Noi'),
-(33, 'WASHIN ENGINE', 'washin-engine', 'washin-engine-logo.PNG', 'Dịch vụ', '1-50', 0, 0, 0, '264 Le Van Sy\n  District 3\n  Ho Chi Minh'),
-(34, 'FPT Software', 'fpt-software', 'fpt-software-logo.png', 'Dịch vụ', '1000+', 0, 0, 0, 'FPT Software Đường D1 Phường Tân Phú \n  District 9\n  Ho Chi Minh'),
-(35, 'MOR', 'mor', 'mor-logo.png', 'Dịch vụ', '51-150', 0, 0, 0, '451 Tô Hiến Thành\n  District 10\n  Ho Chi Minh'),
-(36, 'BELL Technology JSC', 'bell-technology-jsc', 'bell-technology-jsc.jpg', 'Sản phẩm', '1-50', 0, 0, 0, 'District 11, Ho Chi Minh'),
-(37, 'RIKKEISOFT', 'rikkeisoft', 'rikkeisoft-logo.png', 'Dịch vụ', '501-1000', 0, 0, 0, 'HH3 Building, Me Tri Street\n  Nam Tu Liem\n  Ha Noi'),
-(38, 'BUCA', 'buca', 'buca-logo.png', 'Sản phẩm', '51-150', 0, 0, 0, '68 Nguyen Co Thach\n  Nam Tu Liem\n  Ha Noi'),
-(39, 'Gameloft', 'gameloft', 'gameloft-logo.jpg', 'Sản phẩm', '301-500', 0, 0, 0, '364 Cong Hoa\n  Tan Binh\n  Ho Chi Minh'),
-(40, 'Samsung Vietnam Mobile R&D Center', 'samsung-vietnam-mobile-rd-center', 'samsung-vietnam-mobile-r-d-center-logo.png', 'Sản phẩm', '301-500', 0, 0, 0, '1 Pham Van Bach\n  Cau Giay\n  Ha Noi');
+INSERT INTO `congty` (`id`, `tencongty`, `slugcongty`, `logo`, `nganhnghe`, `nhanvien`, `luotdanhgia`, `tongsao`, `rate`, `diachi`, `thoigian`) VALUES
+(41, 'Glass Egg', 'glass-egg', 'glass-egg-logo.jpg', 'Dịch vụ', '301-500', 1, 1, 1, '9  Doan Van Bo\n  District 4\n  Ho Chi Minh', '2020-03-05 01:57:44'),
+(42, 'Line Technology Vietnam', 'line-technology-vietnam', 'line-viet-nam-logo.png', 'Sản phẩm', '51-150', 0, 0, 0, '54 Nguyen Chi Thanh\n  Dong Da\n  Ha Noi', '2020-03-04 19:18:52'),
+(43, 'Sunshine Group', 'sunshine-group', 'sunshine-group.png', 'Sản phẩm', '51-150', 0, 0, 0, 'Ha Noi, Ho Chi Minh', '2020-03-04 19:53:48'),
+(44, 'Ominext', 'ominext', 'ominext-logo.png', 'Dịch vụ', '151-300', 0, 0, 0, '147  789 Building\n  Cau Giay\n  Ha Noi', '2020-03-04 19:54:01');
 
 -- --------------------------------------------------------
 
@@ -105,10 +98,12 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`id`, `reviewer`, `position`, `rate`, `noidung`, `congty`, `thoigian`) VALUES
-(58, 'Ẩn Danh', 'Dev', 3, 'startup luôn nhiều khó khăn phải vượt qua, luxstay sẽ thành công, ủng hộ công ty. Đã theo dõi cty từ lâu, mỗi năm vẫn phát triển thần tốc cho dù bộ máy còn nhiều vấn đề. Công ty có nhiều người giỏi nhưng chưa liên kết tốt, đặc biệt là văn phòng ở 2 miền. hi vọng theo thời gian sẽ ngày càng tốt lên\r\n', 28, '2020-03-04 16:08:31'),
-(59, 'Ẩn Danh', 'Dev', 5, 'Luxstay là một tâp thể nhiệt huyết và năng động, Một môi trường Startup đáng để các bạn trẻ trau dồi và cống hiến.\r\n', 28, '2020-03-04 16:13:45'),
-(60, 'tui nè', 'CB', 5, 'v_v Làm cho CB của DFS ạ, cty tuyệt vời lắm em nói be bé vậy thôi.\r\n', 29, '2020-03-04 18:15:27'),
-(61, 'Ẩn Danh', 'Dev', 1, 'Nói chung là như lol, cty gì mà lương k trả cho nv, nợ đầm nợ đìa, nói chung là thất đức, làm ăn sẽ k có lộc, sớm phá sản.\r\n', 30, '2020-03-04 18:57:16');
+(62, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:54:24'),
+(63, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:56:16'),
+(64, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:56:31'),
+(65, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:56:44'),
+(66, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:56:51'),
+(67, 'Ha Ha', 'abcdef ghg', 1, 'abcdef ghgabcdef ghgabcdef ghgabcdef ghg', 41, '2020-03-05 01:57:44');
 
 -- --------------------------------------------------------
 
@@ -165,7 +160,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `congty`
 --
 ALTER TABLE `congty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT cho bảng `reply`
@@ -177,7 +172,7 @@ ALTER TABLE `reply`
 -- AUTO_INCREMENT cho bảng `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

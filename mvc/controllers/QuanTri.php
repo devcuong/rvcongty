@@ -5,8 +5,11 @@ class QuanTri extends Controller
 {
 
     public $UserModel;
+
     public $CongTyModel;
+
     public $ReviewModel;
+
     public $ReplyModel;
 
     public function __construct()
@@ -24,7 +27,8 @@ class QuanTri extends Controller
             "Page" => "quan-tri"
         ]);
     }
-// QUẢN TRỊ VIÊN ĐĂNG NHẬP
+
+    // QUẢN TRỊ VIÊN ĐĂNG NHẬP
     public function DangNhap()
     {
         $email = "";
@@ -42,15 +46,16 @@ class QuanTri extends Controller
             $temp = $row["password"];
         }
         $server = new Server();
-
+        
         if ($temp == $pass) {
-            echo "ok";  
+            echo "ok";
             $_SESSION["email"] = $email;
             header("Location: " . $server->servername . "/quan-tri/quan-tri-cong-ty", 301);
             exit();
         }
     }
-// QUẢN TRỊ CHUNG
+
+    // QUẢN TRỊ CHUNG
     public function QuanTriCongTy()
     {
         // View
@@ -58,10 +63,11 @@ class QuanTri extends Controller
             "Page" => "quan-tri-cong-ty"
         ]);
     }
-// THÊM CÔNG TY
+
+    // THÊM CÔNG TY
     public function ThemCongTy()
     {
-        if(isset($_SESSION["email"])){
+        if (isset($_SESSION["email"])) {
             if (isset($_POST["btn-submit"])) {
                 $tencongty = "";
                 $slugcongty = "";
@@ -69,77 +75,77 @@ class QuanTri extends Controller
                 $nhanvien = "";
                 $diachi = "";
                 $fileName = "";
-                if(isset($_POST["ten-cong-ty"])){
+                if (isset($_POST["ten-cong-ty"])) {
                     $tencongty = trim($_POST["ten-cong-ty"]);
                     $slugcongty = $_POST["slug-cong-ty"];
                 }
-                if(isset($_POST["nganh-nghe"])){
+                if (isset($_POST["nganh-nghe"])) {
                     $nganhnghe = trim($_POST["nganh-nghe"]);
                 }
-                if(isset($_POST["nhan-vien"])){
+                if (isset($_POST["nhan-vien"])) {
                     $nhanvien = trim($_POST["nhan-vien"]);
                 }
-                if(isset($_POST["dia-chi"])){
+                if (isset($_POST["dia-chi"])) {
                     $diachi = trim($_POST["dia-chi"]);
                 }
                 if (isset($_FILES["logo-cong-ty"])) {
-                
+                    
                     // Nếu file upload không bị lỗi,
-                    if ($_FILES['logo-cong-ty']['error'] > 0)
-                    {
+                    if ($_FILES['logo-cong-ty']['error'] > 0) {
                         echo 'File Upload Bị Lỗi';
-                    }
-                    else{
+                    } else {
                         $fileName = $_FILES['logo-cong-ty']['name'];
                         $duongDanHinhAnh = 'mvc/public/asset/companies/logo/' . $fileName;
                         // Upload file
                         move_uploaded_file($_FILES['logo-cong-ty']['tmp_name'], $duongDanHinhAnh);
                         
                         $createdDate = date("Y-m-d H:i:s");
-                        // Thêm công ty
-                        $kq = $this->CongTyModel->ThemCongTy($tencongty, $slugcongty, $fileName, $nganhnghe, $nhanvien, $diachi, $createdDate);
-                        if($kq){
-                            // View
-                            $this->view("admin-template", [
-                                "Page" => "quan-tri-thanh-cong"
-                            ]);
+                        // Kiểm tra công ty có hay chưa
+                        $daco = $this->CongTyModel->LayCongTyBangSlug($slugcongty);
+                        if (mysqli_num_rows($daco) < 1) {
+                            // Thêm công ty
+                            $kq = $this->CongTyModel->ThemCongTy($tencongty, $slugcongty, $fileName, $nganhnghe, $nhanvien, $diachi, $createdDate);
+                            if ($kq) {
+                                // View
+                                $this->view("admin-template", [
+                                    "Page" => "quan-tri-thanh-cong"
+                                ]);
+                            }
                         }
                     }
                 }
-                
             } else {
                 // View
                 $this->view("admin-template", [
                     "Page" => "them-cong-ty"
                 ]);
             }
-        }
-        else{
+        } else {
             // View
             $this->view("admin-template", [
                 "Page" => "quan-tri"
             ]);
         }
     }
-    
+
     // TẤT CẢ CÔNG TY
     public function TatCaCongTy($a, $b, $c = null)
     {
-        if(isset($_SESSION["email"])){
+        if (isset($_SESSION["email"])) {
             $trangHienTai = 1;
             $congTyMoiTrang = 10;
-            if($c!=null){
+            if ($c != null) {
                 $trangHienTai = $c;
             }
-            $soCongTyBoQua = ($trangHienTai-1)*$congTyMoiTrang;
+            $soCongTyBoQua = ($trangHienTai - 1) * $congTyMoiTrang;
             // Model
             $congty = $this->model("CongTyModel");
             $review = $this->model("ReviewModel");
             // Tất cả công ty
             $tatCaCongTy = $congty->TatCaCongTy();
             $soCongTy = mysqli_num_rows($tatCaCongTy);
-            $soTrang = ceil($soCongTy/$congTyMoiTrang);
-            $congTyTrangHienTai="";
+            $soTrang = ceil($soCongTy / $congTyMoiTrang);
+            $congTyTrangHienTai = "";
             $congTyTrangHienTai = $congty->LayCongTyPhanTrang($soCongTyBoQua, $congTyMoiTrang);
             // View
             $this->view("admin-template", [
@@ -149,47 +155,48 @@ class QuanTri extends Controller
                 "TrangHienTai" => $trangHienTai,
                 "CongTyTrangHienTai" => $congTyTrangHienTai
             ]);
-        }else{
+        } else {
             $server = new Server();
             ob_start();
-            header("Location: " . $server->get_servername()."/quan-tri" , 301);
+            header("Location: " . $server->get_servername() . "/quan-tri", 301);
             exit();
         }
     }
-    
+
     // XÓA CÔNG TY
-    public function XoaCongTy($a, $b, $c){
+    public function XoaCongTy($a, $b, $c)
+    {
         $kt = false;
         $idCongTy = $c;
         $kq = $this->CongTyModel->XoaCongTy($idCongTy);
-        if($kq){
+        if ($kq) {
             $kt = true;
         }
         $kq2 = $this->ReviewModel->XoaReview($idCongTy);
-        if($kq2){
+        if ($kq2) {
             $kt = true;
         }
-        if($kt){
+        if ($kt) {
             // View
             $this->view("admin-template", [
                 "Page" => "quan-tri-thanh-cong"
             ]);
-            
-        }else{
+        } else {
             $server = new Server();
             ob_start();
-            header("Location: " . $server->get_servername()."/quan-tri" , 301);
+            header("Location: " . $server->get_servername() . "/quan-tri", 301);
             exit();
         }
     }
-    
+
     // GET DATA
-    public function GetDataCongTy(){
-        if(isset($_POST["url-company"])){
+    public function GetDataCongTy()
+    {
+        if (isset($_POST["url-company"])) {
             $urlCompany = $_POST["url-company"];
             $page = file_get_contents($urlCompany);
             @$doc = new DOMDocument();
-            @$doc->loadHTML($page);   
+            @$doc->loadHTML($page);
             
             $xpath = new DomXPath($doc);
             
@@ -197,14 +204,26 @@ class QuanTri extends Controller
             $nodeList = $xpath->query("//div[@class='company-info__detail']");
             $nodeCongTy = $nodeList->item(0);
             
-            $tenCongTy = $nodeCongTy->getElementsByTagName('h2')->item(0)->getElementsByTagName('a')->item(0)->nodeValue;
-            $nganhNghe = $nodeCongTy->getElementsByTagName('div')->item(0)->getElementsByTagName('span')->item(0)->nodeValue;
-            $nhanVien = $nodeCongTy->getElementsByTagName('div')->item(0)->getElementsByTagName('span')->item(2)->nodeValue;
+            $tenCongTy = $nodeCongTy->getElementsByTagName('h2')
+                ->item(0)
+                ->getElementsByTagName('a')
+                ->item(0)->nodeValue;
+            $nganhNghe = $nodeCongTy->getElementsByTagName('div')
+                ->item(0)
+                ->getElementsByTagName('span')
+                ->item(0)->nodeValue;
+            $nhanVien = $nodeCongTy->getElementsByTagName('div')
+                ->item(0)
+                ->getElementsByTagName('span')
+                ->item(2)->nodeValue;
             $diaChi = $nodeCongTy->getElementsByTagName('div')->item(1)->nodeValue;
             
             // Image
             $nodeImage = $xpath->query("//div[@class='company-info']");
-            $imageUrl = $nodeImage->item(0)->getElementsByTagName('img')->item(0)->getAttribute('src');
+            $imageUrl = $nodeImage->item(0)
+                ->getElementsByTagName('img')
+                ->item(0)
+                ->getAttribute('src');
             $arrImage = explode("/", $imageUrl);
             $imageName = end($arrImage);
             
@@ -213,20 +232,28 @@ class QuanTri extends Controller
             
             $duongDanHinhAnh = 'mvc/public/asset/companies/logo/' . $imageName;
             
-            file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com".$imageUrl));
+            file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com" . $imageUrl));
             
             $createdDate = date("Y-m-d H:i:s");
-            // Thêm công ty
-            $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy),trim($this->ToSlug(trim($tenCongTy))),trim($imageName),trim($nganhNghe),trim($nhanVien),trim($diaChi),$createdDate);
             
-            if($kq){
-                echo "THÀNH CÔNG ".$tenCongTy;
+            // Kiểm tra công ty có hay chưa
+            $daco = $this->CongTyModel->LayCongTyBangSlug(trim($this->ToSlug(trim($tenCongTy))));
+            
+            if (mysqli_num_rows($daco) == 0) {
+                // Thêm công ty
+                $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy), trim($this->ToSlug(trim($tenCongTy))), trim($imageName), trim($nganhNghe), trim($nhanVien), trim($diaChi), $createdDate);
+                if ($kq) {
+                    echo "THÀNH CÔNG " . $tenCongTy;
+                }
             }
-            
+            else{
+                echo "ĐÃ CÓ " . $tenCongTy;
+            }
         }
     }
-    
-    function ToSlug($str) {
+
+    function ToSlug($str)
+    {
         $str = trim(mb_strtolower($str));
         $str = preg_replace('/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/', 'a', $str);
         $str = preg_replace('/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/', 'e', $str);

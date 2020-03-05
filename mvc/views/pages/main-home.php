@@ -1,7 +1,7 @@
 <section class="hero-img">
 	<div class="hero-img__gradient"></div>
 	<img src="<?php echo $servername ?>/mvc/public/images/banner.png"
-		alt="">
+		alt="công ty top">
 	<div class="hero">
 		<div class="hero-body z-1">
 			<div>
@@ -12,8 +12,7 @@
     							<input name="company-search" id="company-search" class="input form-control"
     								type="text" placeholder="Tìm công ty" autocomplete="off">
     							<div class="input-group-append">
-    								<button class="btn" type="submit"
-    									ng-click="toPageTrangChuTinTucTimKiem3(searchString)">
+    								<button class="btn" type="submit">
     									<i class="fa fa-search" aria-hidden="true"></i>
     								</button>
     							</div>
@@ -77,7 +76,7 @@
 					<div class="home-logo-company is-2">
 						<figure class="company-info__logo image is-64x64">
 							<img
-								src="<?php echo $servername ?>/mvc/public/asset/companies/logo/<?php echo $row["logo"]; ?>">
+								src="<?php echo $servername ?>/mvc/public/asset/companies/logo/<?php echo $row["logo"]; ?>" alt="<?php echo $row["tencongty"];?>">
 						</figure>
 					</div>
 					<div class="home-detail-company is-10">

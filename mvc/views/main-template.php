@@ -7,23 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
-	content="Review Công ty - Review lương bổng, đãi ngộ, HR, sếp và công việc,... gì cũng có">
+	content="Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE">
 
 <meta property="og:title"
-	content="Review Công ty - Review lương bổng, đãi ngộ, HR, sếp và công việc,... gì cũng có">
+	content="Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE">
 <meta property="og:description"
-	content="Review Công ty - Review lương bổng, đãi ngộ, HR, sếp và công việc,... gì cũng có">
+	content="Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE">
 <meta property="og:type" content="website">
 
-<meta property="og:url" content="https://rvcongty.com">
-<link rel="canonical" href="https://rvcongty.com/">
+<meta property="og:url" content="<?php echo $servername ?>">
+<link rel="canonical" href="<?php echo $servername ?>">
 
 <meta property="og:image"
-	content="https://reviewcongty.com/images/banner.jpg">
+	content="<?php echo $servername ?>/mvc/public/images/banner.png">
 <meta property="og:locale" content="vi_VN">
-<meta property="og:site_name" content="Review Công ty">
-<title>Review Công ty - Review lương bổng, đãi ngộ, HR, sếp và công
-	việc,... gì cũng có</title>
+<meta property="og:site_name" content="Công ty top">
+<title>Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE</title>
 
 <link rel="apple-touch-icon" sizes="57x57"
 	href="<?php echo $servername ?>/mvc/public/favicon/apple-icon-57x57.png">

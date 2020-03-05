@@ -13,6 +13,13 @@ class CongTyModel extends DB{
             return mysqli_query($this->con, $qr);
         }
         
+        // Lấy công ty bằng slug
+        public function LayCongTyBangSlug($slug){
+            $qr = "SELECT * FROM congty WHERE slugcongty = '$slug'";
+            return mysqli_query($this->con, $qr);
+            //return $qr;
+        }
+        
         /*PHÂN TRANG*/
         // Lấy công ty để phân trang
         public function LayCongTyPhanTrang($soCongTyBoQua, $soCongTyMoiTrang){
