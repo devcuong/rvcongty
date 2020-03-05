@@ -7,16 +7,18 @@
 			<div>
 				<div class="field has-addons">
 					<div class="control has-icons-left is-expanded banner-search-box">
-						<form action="<?php echo $servername ?>/tim-kiem/trang-ket-qua" method="POST">
-    						<div class="input-group box-search">
-    							<input name="company-search" id="company-search" class="input form-control"
-    								type="text" placeholder="Tìm công ty" autocomplete="off">
-    							<div class="input-group-append">
-    								<button class="btn" type="submit">
-    									<i class="fa fa-search" aria-hidden="true"></i>
-    								</button>
-    							</div>
-    						</div>
+						<form action="<?php echo $servername ?>/tim-kiem/trang-ket-qua"
+							method="POST">
+							<div class="input-group box-search">
+								<input name="company-search" id="company-search"
+									class="input form-control" type="text"
+									placeholder="Tìm công ty" autocomplete="off">
+								<div class="input-group-append">
+									<button class="btn" type="submit">
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>
@@ -27,31 +29,25 @@
 <div class="columns" style="height: auto !important;">
 	<section class="companies column is-three-fifths"
 		style="height: auto !important;">
-		<div class="tabs" style="margin-bottom:0.6rem">
-      <ul>
-        <li data-tab="top-comments" class="tab is-active">
-          <a href="/?tab=latest" class="has-text-weight-bold">
-            <span class="icon has-text-info">
-              <i class="fas fa-comments"></i>
-            </span>
-            Mới cập nhật</a>
-        </li>
-        <li data-tab="top-companies" class="tab ">
-          <a href="/?tab=best" class="has-text-weight-bold">
-            <span class="icon has-text-success">
-              <i class="fas fa-thumbs-up"></i>
-            </span>
-            Top công ty xịn</a>
-        </li>
-        <li data-tab="worst-companies" class="tab ">
-          <a href="/?tab=worst" class="has-text-weight-bold">
-            <span class="icon has-text-danger">
-              <i class="fas fa-thumbs-down"></i>
-            </span>
-            Công ty bựa nên né</a>
-        </li>
-      </ul>
-    </div>
+		<div class="tabs" style="margin-bottom: 0.6rem">
+			<ul>
+				<li data-tab="top-comments" class="tab <?php if($data["TabCongTy"]=="latest"){ echo "is-active"; } ?>"><a
+					href="<?php echo $servername ?>?tab=latest" class="has-text-weight-bold"> <span
+						class="icon has-text-info"> <i class="fas fa-comments"></i>
+					</span> Mới cập nhật
+				</a></li>
+				<li data-tab="top-companies" class="tab <?php if($data["TabCongTy"]=="best"){ echo "is-active"; } ?>"><a href="<?php echo $servername ?>?tab=best"
+					class="has-text-weight-bold"> <span class="icon has-text-success">
+							<i class="fas fa-thumbs-up"></i>
+					</span> Top công ty xịn
+				</a></li>
+				<li data-tab="worst-companies" class="tab <?php if($data["TabCongTy"]=="worst"){ echo "is-active"; } ?>"><a href="<?php echo $servername ?>?tab=worst"
+					class="has-text-weight-bold"> <span class="icon has-text-danger"> <i
+							class="fas fa-thumbs-down"></i>
+					</span> Công ty bựa nên né
+				</a></li>
+			</ul>
+		</div>
 		<div class="tabs-section" style="height: auto !important;">
 			<nav class="pagination is-small custom-pagination" role="navigation"
 				aria-label="pagination">
@@ -61,8 +57,7 @@
 						<?php for($i=1; $i<=$data["SoTrang"]; $i++){ ?>
 							<?php if($i == $data["TrangHienTai"]) {?>
 							<?php if("latest" == $data["TabCongTy"]){ ?>
-							<li><a
-						href="<?php echo $servername ?>/?page=<?php echo $i ?>"
+							<li><a href="<?php echo $servername ?>/?page=<?php echo $i ?>"
 						class="pagination-link is-current"><?php echo $i ?></a></li>
 								<?php }else if("best" == $data["TabCongTy"]) { ?>
 								<li><a
@@ -101,7 +96,8 @@
 					<div class="home-logo-company is-2">
 						<figure class="company-info__logo image is-64x64">
 							<img
-								src="<?php echo $servername ?>/mvc/public/asset/companies/logo/<?php echo $row["logo"]; ?>" alt="<?php echo $row["tencongty"];?>">
+								src="<?php echo $servername ?>/mvc/public/asset/companies/logo/<?php echo $row["logo"]; ?>"
+								alt="<?php echo $row["tencongty"];?>">
 						</figure>
 					</div>
 					<div class="home-detail-company is-10">
@@ -135,13 +131,13 @@
 							</h2>
 							<div class="company-info__other">
 								<span style="margin-right: 0.3rem"> <span class="icon"> <i
-										class="fas fa-briefcase"></i></span> <?php echo $row["nganhnghe"] ?>
+										class="fas fa-briefcase"></i></span> <?php echo $row["nganhnghe"]?>
 									</span> <span><span class="icon"> <i class="fas fa-users"></i>
 								</span> <?php echo $row["nhanvien"] ?> </span>
 							</div>
 							<div class="company-info__location">
 								<span> <span class="icon"> <i class="fas fa-building"></i>
-								</span> <?php echo $row["diachi"] ?>
+								</span> <?php echo $row["diachi"]?>
 									</span>
 							</div>
 						</div>
@@ -151,23 +147,42 @@
                                         <?php } ?>
 					<div style="margin-top: 0.6rem">
 				<nav class="pagination is-small custom-pagination" role="navigation"
-					aria-label="pagination">
-					<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b>
-						trên tổng số <b><?php echo $data["SoTrang"]; ?></b></span>
-					<ul class="pagination-list">
+				aria-label="pagination">
+				<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b>
+					trên tổng số <b><?php echo $data["SoTrang"]; ?></b></span>
+				<ul class="pagination-list">
 						<?php for($i=1; $i<=$data["SoTrang"]; $i++){ ?>
 							<?php if($i == $data["TrangHienTai"]) {?>
-							<li><a
-							href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
-							class="pagination-link is-current"><?php echo $i ?></a></li>
+							<?php if("latest" == $data["TabCongTy"]){ ?>
+							<li><a href="<?php echo $servername ?>/?page=<?php echo $i ?>"
+						class="pagination-link is-current"><?php echo $i ?></a></li>
+								<?php }else if("best" == $data["TabCongTy"]) { ?>
+								<li><a
+						href="<?php echo $servername ?>/?tab=best&amp;page=<?php echo $i ?>"
+						class="pagination-link is-current"><?php echo $i ?></a></li>
+								<?php }else{ ?>
+								<li><a
+						href="<?php echo $servername ?>/?tab=worst&amp;page=<?php echo $i ?>"
+						class="pagination-link is-current"><?php echo $i ?></a></li>
+								<?php } ?>
 							<?php }else{ ?>
+							<?php if("latest" == $data["TabCongTy"]) {?>
 							<li><a
-							href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
-							class="pagination-link "><?php echo $i ?></a></li>
+						href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
+						class="pagination-link "><?php echo $i ?></a></li>
+								<?php } else if("best" == $data["TabCongTy"]){ ?>
+								<li><a
+						href="<?php echo $servername ?>/?tab=best&amp;page=<?php echo $i ?>"
+						class="pagination-link "><?php echo $i ?></a></li>
+								<?php } else{ ?>
+								<li><a
+						href="<?php echo $servername ?>/?tab=worst&amp;page=<?php echo $i ?>"
+						class="pagination-link "><?php echo $i ?></a></li>
+								<?php }?>
 							<?php } ?>
 						<?php } ?>
 						</ul>
-				</nav>
+			</nav>
 
 			</div>
 		</div>
