@@ -3,7 +3,6 @@ class Review extends Controller
 {
 
     public $ReviewModel;
-    
     public $ReplyModel;
 
     public function __construct()
@@ -16,14 +15,19 @@ class Review extends Controller
     public function Index($a, $b){
         $review = $this->ReviewModel;
         $reply = $this->ReplyModel;
-        $rv = $review->LayReviewBangIdReview($b);
-        $idReview = "";
+        $rvNow = $review->LayReviewBangIdReview($b);
+        $rvLater = $review->LayReviewBangIdReview($b);
+        $getRVNow = $rvNow->fetch_assoc();
+        $tenCongTy = $getRVNow["congty_tencongty"];
+        $noiDungReview = $getRVNow["review_noidung"];
         $rp = $reply->LayReplyBangIdReview($b);
         // View
         $this->view("main-template", [
             "Page" => "review",
-            "Review" => $rv,
-            "Reply" => $rp
+            "Review" => $rvLater,
+            "Reply" => $rp,
+            "TenCongTy" => $tenCongTy,
+            "NoiDungReview" => $noiDungReview
         ]);
     }
 }

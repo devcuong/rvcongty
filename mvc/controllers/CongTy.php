@@ -45,15 +45,22 @@ class CongTy extends Controller
         $reviewTrangHienTai = $review->LayReviewPhanTrang($idCongTy, $soReviewBoQua, $soReviewMoiTrang);
         
         // Công ty
-        $congty = $congty->LayCongTyBangId($idCongTy);
+        $congTyLater = $congty->LayCongTyBangId($idCongTy);
+        $congTyNow = $congty->LayCongTyBangId($idCongTy);
+        $tencongty = "";        
+        $tencongty = $congTyNow->fetch_assoc()["tencongty"];
+        
+        // Title
+        $title = "Thông tin công ty ".$tencongty;
         
         // View
         $this->view("main-template", [
             "Page" => "cong-ty",
-            "CongTy" => $congty,
+            "CongTy" => $congTyLater,
             "Review" => $reviewTrangHienTai,
             "SoTrang" => $soTrang,
-            "TrangHienTai" => $trangReviewHienTai
+            "TrangHienTai" => $trangReviewHienTai,
+            "TenCongTy" => $tencongty
         ]);
     }
 

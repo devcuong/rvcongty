@@ -5,13 +5,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
-	content="<?php if($data["Page"] == "cong-ty"){ ?>Thông tin về mức lương, qui trình phỏng vấn, môi trường làm việc, sếp và công việc tại
-	<?php } else { ?>Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE<?php } ?>">
+	content="">
 
-<meta property="og:title"
-	content="Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE">
-<meta property="og:description"
-	content="Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
 <meta property="og:type" content="website">
 
 <meta property="og:url" content="<?php echo $servername ?>">
@@ -20,8 +17,8 @@
 <meta property="og:image"
 	content="<?php echo $servername ?>/mvc/public/images/banner.png">
 <meta property="og:locale" content="vi_VN">
-<meta property="og:site_name" content="Công ty top">
-<title>Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE</title>
+<meta property="og:site_name" content="Công ty TOP">
+<title>Công ty TOP - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT và liên quan IT</title>
 
 <link rel="apple-touch-icon" sizes="57x57"
 	href="<?php echo $servername ?>/mvc/public/favicon/apple-icon-57x57.png">
