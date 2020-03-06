@@ -43,10 +43,14 @@ class CongTy extends Controller
         
         // Lấy review tại trang
         $reviewTrangHienTai = $review->LayReviewPhanTrang($idCongTy, $soReviewBoQua, $soReviewMoiTrang);
+        
+        // Công ty
+        $congty = $congty->LayCongTyBangId($idCongTy);
+        
         // View
         $this->view("main-template", [
             "Page" => "cong-ty",
-            "CongTy" => $congty->LayCongTyBangId($idCongTy),
+            "CongTy" => $congty,
             "Review" => $reviewTrangHienTai,
             "SoTrang" => $soTrang,
             "TrangHienTai" => $trangReviewHienTai

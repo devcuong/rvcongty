@@ -5,7 +5,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
-	content="Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE">
+	content="<?php if($data["Page"] == "cong-ty"){ ?>Thông tin về mức lương, qui trình phỏng vấn, môi trường làm việc, sếp và công việc tại
+	<?php } else { ?>Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE<?php } ?>">
 
 <meta property="og:title"
 	content="Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE">
