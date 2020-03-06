@@ -21,6 +21,13 @@ class Review extends Controller
         $tenCongTy = $getRVNow["congty_tencongty"];
         $noiDungReview = $getRVNow["review_noidung"];
         $rp = $reply->LayReplyBangIdReview($b);
+        
+        // Title
+        $title = "Công ty ".$tenCongTy." - ".$noiDungReview;
+        
+        // Description
+        $description = "Công ty ".$tenCongTy." - Thông tin lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty IT và liên quan IT";
+        
         // View
         $this->view("main-template", [
             "Page" => "review",

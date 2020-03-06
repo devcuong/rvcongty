@@ -53,6 +53,9 @@ class CongTy extends Controller
         // Title
         $title = "Thông tin công ty ".$tencongty;
         
+        // Description
+       $description = "Thông tin về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ".$tencongty;
+        
         // View
         $this->view("main-template", [
             "Page" => "cong-ty",
@@ -60,7 +63,8 @@ class CongTy extends Controller
             "Review" => $reviewTrangHienTai,
             "SoTrang" => $soTrang,
             "TrangHienTai" => $trangReviewHienTai,
-            "TenCongTy" => $tencongty
+            "Title" => $title,
+            "Description" => $description
         ]);
     }
 

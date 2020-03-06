@@ -5,10 +5,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
-	content="">
+	content="<?php echo $data["Description"]; ?>">
 
-<meta property="og:title" content="">
-<meta property="og:description" content="">
+<meta property="og:title" content="<?php echo $data["Title"]; ?>">
+<meta property="og:description" content="<?php echo $data["Description"]; ?>">
 <meta property="og:type" content="website">
 
 <meta property="og:url" content="<?php echo $servername ?>">

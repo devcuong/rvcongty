@@ -26,13 +26,22 @@
             }else if($tabCongTy == "worst"){
                 $congTyTrangHienTai=$congty->LayCongTyWorstPhanTrang($soCongTyBoQua, $congTyMoiTrang);
             }
+            
+            // Title
+            $title = "Công ty TOP - Thông tin lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty IT và liên quan IT";
+            
+            // Description
+            $description = "Công ty TOP - Thông tin lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty IT và liên quan IT";
+            
             //View
             $this->view("main-template", ["Page"=>"main-home",
                 "15ReviewMoiNhat" => $review->Lay15ReviewMoiNhat(),
                 "SoTrang" => $soTrang,
                 "TrangHienTai" => $trangHienTai,
                 "CongTyTrangHienTai" => $congTyTrangHienTai,
-                "TabCongTy" => $tabCongTy
+                "TabCongTy" => $tabCongTy,
+                "Title" => $title,
+                "Description" => $description
             ]);
         }
         
