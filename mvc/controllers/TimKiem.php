@@ -47,13 +47,22 @@ class TimKiem extends Controller
         $soTrang = ceil($soCongTy/$congTyMoiTrang);
         $congTyTrangHienTai="";
         $congTyTrangHienTai = $congty->PhanTrangCongTyTheoTuKhoa($soCongTyBoQua, $congTyMoiTrang, $tuKhoa);
+        
+        // Title
+        $title = "Công ty TOP - Kết quả tìm kiếm";
+        
+        // Description
+        $description = "Công ty TOP - Kết quả tìm kiếm";
+        
         //View
         $this->view("main-template", ["Page"=>"trang-ket-qua",
             "15ReviewMoiNhat" => $review->Lay15ReviewMoiNhat(),
             "SoTrang" => $soTrang,
             "TrangHienTai" => $trangHienTai,
             "CongTyTrangHienTai" => $congTyTrangHienTai,
-            "TuKhoa" => $tuKhoa
+            "TuKhoa" => $tuKhoa,
+            "Title" => $title,
+            "Description" => $description
         ]);
     }
 }

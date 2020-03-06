@@ -1,4 +1,5 @@
 <?php
+require 'mvc/class/CutString.php';
 class Review extends Controller
 {
 
@@ -22,11 +23,13 @@ class Review extends Controller
         $noiDungReview = $getRVNow["review_noidung"];
         $rp = $reply->LayReplyBangIdReview($b);
         
+        $cutString = new CutString();
+        
         // Title
-        $title = "Công ty ".$tenCongTy." - ".$noiDungReview;
+        $title = "Công ty ".$tenCongTy." - ".$cutString->get_first_num_of_words($noiDungReview, 60);
         
         // Description
-        $description = "Công ty ".$tenCongTy." - Thông tin lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty IT và liên quan IT";
+        $description = "Công ty ".$tenCongTy." - ".$noiDungReview;
         
         // View
         $this->view("main-template", [
@@ -34,7 +37,9 @@ class Review extends Controller
             "Review" => $rvLater,
             "Reply" => $rp,
             "TenCongTy" => $tenCongTy,
-            "NoiDungReview" => $noiDungReview
+            "NoiDungReview" => $noiDungReview,
+            "Title" => $title,
+            "Description" => $description
         ]);
     }
 }
