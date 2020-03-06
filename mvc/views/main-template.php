@@ -1,10 +1,8 @@
 <?php require_once 'mvc/core/Config.php'; ?>
 <!DOCTYPE html>
-<html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
- 
-
-
+<html lang="vi">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
 	content="Công ty top - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT/MEDIA/CREATIVE">
