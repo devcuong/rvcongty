@@ -55,15 +55,15 @@
 	content="<?php echo $servername ?>/mvc/public/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<link rel="preload stylesheet" as="style" crossorigin="anonymous"
+<link rel="preload stylesheet" as="style"
 	href="<?php echo $servername ?>/mvc/public/css/bulma.min.css">
 <link href="<?php echo $servername ?>/mvc/public/css/css" rel="stylesheet">
-<link rel="stylesheet" as="style" crossorigin="anonymous"
+<link rel="stylesheet" as="style"
 	href="<?php echo $servername ?>/mvc/public/css/jquery-ui.min.css">
-<link rel="preload stylesheet" as="style" crossorigin="anonymous"
+<link rel="preload stylesheet" as="style"
     href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $servername ?>/mvc/public/css/style.css" />
-<link rel="preload stylesheet" as="style" crossorigin="anonymous"
+<link rel="preload stylesheet" as="style"
     href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/timeago.locales.min.js"></script>
