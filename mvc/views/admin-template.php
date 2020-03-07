@@ -7,7 +7,7 @@
 <title>Admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
 	rel="stylesheet">
 <style type="text/css">
 h1.page-header {
@@ -28,9 +28,9 @@ h1.page-header {
 	width: 100%;
 }
 </style>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/config.js"></script>  
 <script type="text/javascript">
 function changeToSlug(e) {
@@ -54,7 +54,6 @@ function changeToSlug(e) {
 		          {
 		             if(data){
 			             $("#mess-return").html(data);
-		            	  //alert(data);
 		             }
 		          }
 		        });

@@ -14,6 +14,7 @@ class QuanTri extends Controller
 
     public function __construct()
     {
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
         $this->UserModel = $this->model("UserModel");
         $this->CongTyModel = $this->model("CongTyModel");
         $this->ReviewModel = $this->model("ReviewModel");
@@ -240,10 +241,15 @@ class QuanTri extends Controller
             $daco = $this->CongTyModel->LayCongTyBangSlug(trim($this->ToSlug(trim($tenCongTy))));
             
             if (mysqli_num_rows($daco) == 0) {
+                $kt = false;
+                $db = new DB();
                 // Thêm công ty
                 $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy), trim($this->ToSlug(trim($tenCongTy))), trim($imageName), trim($nganhNghe), trim($nhanVien), trim($diaChi), $createdDate);
-                if ($kq) {
-                    echo "THÀNH CÔNG " . $tenCongTy;
+                $lastId = $this->CongTyModel->GetLastId();
+                $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 4, "Mới đi phỏng vấn về chờ kết quả",$lastId,$createdDate);
+                $kq3 = $this->CongTyModel->UpdateRateCongTy($lastId, 4, $createdDate);
+                if ($kq3) {
+                    echo "THÀNH CÔNG " . $tenCongTy." ".$lastId;
                 }
             }
             else{

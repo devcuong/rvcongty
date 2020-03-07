@@ -81,6 +81,10 @@ class CongTyModel extends DB{
             return $result;
         }
         
+        public function GetLastId(){
+            return $this->con->insert_id;
+        }
+        
         /*XÓA CÔNG TY*/
         public function XoaCongTy($idCongTy){
             $qr = "DELETE FROM congty WHERE id = '$idCongTy'";
