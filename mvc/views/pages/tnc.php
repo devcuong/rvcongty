@@ -7,7 +7,7 @@
             <div class="message-body is-size-5 help-section">
                 <p>
                     1. Công ty top là website để người dùng chia sẻ kinh nghiệm, trải nghiệm làm việc ở các công ty
-                    thuộc đủ mọi ngành nghề
+                    IT và liên quan IT
                 </p>
                 <p class="m-t-10">
                     2. Toàn bộ thông tin đăng tải trên congtytop.com là <b>do người dùng cung cấp</b>. Người dùng

@@ -25,7 +25,8 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 			<h2 class="is-size-5 has-text-weight-semibold company-info__name">
 				<a href="<?php echo $servername ?>/cong-ty/blameo-technology-<?php echo $row["id"]; ?>">
                   <?php echo $row["tencongty"] ?>
-              </a><span class="company-info__rating"> <span>
+              </a>
+              <span class="company-info__rating"> <span>
 										 <?php
     $n = $row["rate"];
     $whole = floor($row["rate"]);

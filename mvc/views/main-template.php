@@ -855,7 +855,7 @@ transform
 					src="<?php echo $servername ?>/mvc/public/images/logo.png" alt="">
 				</a>
 				<h1 class="logo__header has-text-white is-size-5">
-					<a href="<?php echo $servername ?>"> CÔNG TY TOP </a>
+					<a href="<?php echo $servername ?>"> <b>CÔNG TY TOP</b></a>
 				</h1>
 			</div>
 		</div>

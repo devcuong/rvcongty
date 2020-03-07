@@ -105,29 +105,31 @@
 							<h2 class="is-size-5 has-text-weight-semibold company-info__name">
 								<a
 									href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]?>">
-										<?php echo $row["tencongty"]; ?> </a> <span
-									class="company-info__rating"> <span>
+										<?php echo $row["tencongty"]; ?> </a> 
+								<span class="company-info__rating"> <span>
 										 <?php
-        $n = $row["rate"];
-        $whole = floor($row["rate"]);
-        $fraction = $n - $whole;
-        for ($i = 1; $i <= $whole; $i ++) {
-            ?>
+    $n = $row["rate"];
+    $whole = floor($row["rate"]);
+    $fraction = $n - $whole;
+    for ($i = 1; $i <= $whole; $i ++) {
+        ?>
 										 <span class="icon is-small has-text-warning"> <i
-											class="fas fa-star"></i>
-									</span>
+						class="fas fa-star"></i>
+				</span>
 										 <?php } ?>
+										<?php if($whole != 5) {?>
 										<span class="icon is-small has-text-warning"> <i
-											class="fas fa-star-half-alt"></i>
-									</span>
+						class="fas fa-star-half-alt"></i>
+				</span>
+										<?php } ?>
 										<?php for ($i=1; $i<=(5-($whole+1));$i++){ ?>
 										<span class="icon is-small has-text-warning"> <i
-											class="far fa-star"></i>
-									</span>
+						class="far fa-star"></i>
+				</span>
 										<?php } ?>
 										
 										</span> <span class="company-info__rating-count">(<?php echo $row["luotdanhgia"] ?>)</span>
-								</span>
+				</span>
 							</h2>
 							<div class="company-info__other">
 								<span style="margin-right: 0.3rem"> <span class="icon"> <i

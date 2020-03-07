@@ -2,7 +2,7 @@
     class Home extends Controller{
         function Index(){
             $trangHienTai = 1;
-            $congTyMoiTrang = 10;
+            $congTyMoiTrang = 15;
             $tabCongTy="latest";
             if(isset($_GET["page"])){
                 $trangHienTai = $_GET["page"];
