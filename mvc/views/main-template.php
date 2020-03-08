@@ -11,14 +11,16 @@
 <meta property="og:description" content="<?php echo $data["Description"]; ?>">
 <meta property="og:type" content="website">
 
-<meta property="og:url" content="<?php echo $servername ?>">
-<link rel="canonical" href="<?php echo $servername ?>">
+<meta property="og:url" content="<?php $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+echo $url ?>">
+<link rel="canonical" href="<?php $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+echo $url ?>">
 
 <meta property="og:image"
 	content="<?php echo $servername ?>/mvc/public/images/banner.png">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:site_name" content="Công ty TOP">
-<title>Công ty TOP - Thông tin lương bổng, đãi ngộ, HR, sếp và công việc của các công ty IT và liên quan IT</title>
+<title><?php echo $data["Title"]; ?></title>
 
 <link rel="apple-touch-icon" sizes="57x57"
 	href="<?php echo $servername ?>/mvc/public/favicon/apple-icon-57x57.png">
@@ -46,8 +48,6 @@
 	href="<?php echo $servername ?>/mvc/public/favicon/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16"
 	href="<?php echo $servername ?>/mvc/public/favicon/favicon-16x16.png">
-<link rel="manifest"
-	href="<?php echo $servername ?>/mvc/public/favicon/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage"
 	content="<?php echo $servername ?>/mvc/public/favicon/ms-icon-144x144.png">
