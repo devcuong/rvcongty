@@ -28,10 +28,10 @@
             }
             
             // Title
-            $title = "Công ty TOP - Thông tin lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty IT và liên quan IT";
+            $title = "Lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty - CongTyTop";
             
             // Description
-            $description = "Công ty TOP - Thông tin lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty IT và liên quan IT";
+            $description = "Trang Review đầy đủ nhất về lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty IT và liên quan IT - CongTyTop";
             
             //View
             $this->view("main-template", ["Page"=>"main-home",
