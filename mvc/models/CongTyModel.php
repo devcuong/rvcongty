@@ -94,5 +94,15 @@ class CongTyModel extends DB{
             }
             return $result;
         }
+        
+        /*CẬP NHẬT SLUG CÔNG TY*/
+        public function CapNhatSlug($id, $slug){
+            $qr = "UPDATE congty SET slugcongty = '$slug' WHERE id = $id";
+            $result = false;
+            if(mysqli_query($this->con, $qr)){
+                $result = true;
+            }
+            return $result;
+        }
 }
 ?>

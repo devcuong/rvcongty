@@ -115,7 +115,7 @@ function changeToSlug(e) {
 				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-cong-ty">TẤT CẢ CÔNG TY</a></li>
 				<li><a href="<?php echo $servername ?>/quan-tri/them-cong-ty">THÊM
 						CÔNG TY</a></li>
-				<li><a href="#">REVIEW MỚI NHẤT</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/review-moi-nhat">REVIEW MỚI NHẤT</a></li>
 				<li><a href="#">REVIEW NHIỀU LIKE</a></li>
 				<li><a href="#">REVIEW NHIỀU HATE</a></li>
 				<li><a href="#">REVIEW YÊU CẦU XÓA</a></li>

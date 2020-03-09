@@ -257,19 +257,100 @@ class QuanTri extends Controller
             }
         }
     }
+    /*cập nhật slug*/
+    function CapNhatSlug($a, $b, $c, $d){
+        $idCongTy = $c;
+        $tenCongTy = $d;
+        if(isset($_SESSION["email"])){
+            $slugCongTy = $this->ToSlug($tenCongTy);
+            $kq = $this->CongTyModel->CapNhatSlug($idCongTy, $slugCongTy);
+            if($kq){
+                // View
+                $this->view("admin-template", [
+                    "Page" => "quan-tri-thanh-cong"
+                ]);
+            }
+        }
+    }
+    
+    /*review mới nhất*/
+    function ReviewMoiNhat($a, $b, $c){
+        if (isset($_SESSION["email"])) {
+            $trangHienTai = 1;
+            $reviewMoiTrang = 10;
+            if ($c != null) {
+                $trangHienTai = $c;
+            }
+            $soReviewBoQua = ($trangHienTai - 1) * $reviewMoiTrang;
+            // Model
+            $review = $this->model("ReviewModel");
+            // Tất cả công ty
+            $tatCaReview = $review->TatCaReview();
+            $soCongTy = mysqli_num_rows($tatCaReview);
+            $soTrang = ceil($soCongTy / $reviewMoiTrang);
+            $reviewTrangHienTai = $review->LayReviewPhanTrang($soReviewBoQua, $reviewMoiTrang);
+            // View
+            $this->view("admin-template", [
+                "Page" => "review-moi-nhat",
+                "CongTy" => $congTyTrangHienTai,
+                "SoTrang" => $soTrang,
+                "TrangHienTai" => $trangHienTai,
+                "CongTyTrangHienTai" => $congTyTrangHienTai
+            ]);
+        } else {
+            $server = new Server();
+            ob_start();
+            header("Location: " . $server->get_servername() . "/quan-tri", 301);
+            exit();
+        }
+    }
 
-    function ToSlug($str)
+    function ToSlug($str, $options = array())
     {
-        $str = trim(mb_strtolower($str));
-        $str = preg_replace('/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/', 'a', $str);
-        $str = preg_replace('/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/', 'e', $str);
-        $str = preg_replace('/(ì|í|ị|ỉ|ĩ)/', 'i', $str);
-        $str = preg_replace('/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/', 'o', $str);
-        $str = preg_replace('/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/', 'u', $str);
-        $str = preg_replace('/(ỳ|ý|ỵ|ỷ|ỹ)/', 'y', $str);
-        $str = preg_replace('/(đ)/', 'd', $str);
-        $str = preg_replace('/[^a-z0-9-\s]/', '', $str);
-        $str = preg_replace('/([\s]+)/', '-', $str);
+        // Make sure string is in UTF-8 and strip invalid UTF-8 characters
+        $str = mb_convert_encoding((string)$str, 'UTF-8', mb_list_encodings());
+        
+        $defaults = array(
+            'delimiter' => '-',
+            'limit' => null,
+            'lowercase' => true,
+            'replacements' => array(),
+            'transliterate' => true,
+        );
+        
+        // Merge options
+        $options = array_merge($defaults, $options);
+        
+        // Lowercase
+        if ($options['lowercase']) {
+            $str = mb_strtolower($str, 'UTF-8');
+        }
+        
+        $char_map = array(
+            // Latin
+            'á' => 'a', 'à' => 'a', 'ả' => 'a', 'ã' => 'a', 'ạ' => 'a', 'ă' => 'a', 'ắ' => 'a', 'ằ' => 'a', 'ẳ' => 'a', 'ẵ' => 'a', 'ặ' => 'a', 'â' => 'a', 'ấ' => 'a', 'ầ' => 'a', 'ẩ' => 'a', 'ẫ' => 'a', 'ậ' => 'a', 'đ' => 'd', 'é' => 'e', 'è' => 'e', 'ẻ' => 'e', 'ẽ' => 'e', 'ẹ' => 'e', 'ê' => 'e', 'ế' => 'e', 'ề' => 'e', 'ể' => 'e', 'ễ' => 'e', 'ệ' => 'e', 'í' => 'i', 'ì' => 'i', 'ỉ' => 'i', 'ĩ' => 'i', 'ị' => 'i', 'ó' => 'o', 'ò' => 'o', 'ỏ' => 'o', 'õ' => 'o', 'ọ' => 'o', 'ô' => 'o', 'ố' => 'o', 'ồ' => 'o', 'ổ' => 'o', 'ỗ' => 'o', 'ộ' => 'o', 'ơ' => 'o', 'ớ' => 'o', 'ờ' => 'o', 'ở' => 'o', 'ỡ' => 'o', 'ợ' => 'o', 'ú' => 'u', 'ù' => 'u', 'ủ' => 'u', 'ũ' => 'u', 'ụ' => 'u', 'ư' => 'u', 'ứ' => 'u', 'ừ' => 'u', 'ử' => 'u', 'ữ' => 'u', 'ự' => 'u', 'ý' => 'y', 'ỳ' => 'y', 'ỷ' => 'y', 'ỹ' => 'y', 'ỵ' => 'y'
+        );
+        
+        // Make custom replacements
+        $str = preg_replace(array_keys($options['replacements']), $options['replacements'], $str);
+        
+        // Transliterate characters to ASCII
+        if ($options['transliterate']) {
+            $str = str_replace(array_keys($char_map), $char_map, $str);
+        }
+        
+        // Replace non-alphanumeric characters with our delimiter
+        $str = preg_replace('/[^\p{L}\p{Nd}]+/u', $options['delimiter'], $str);
+        
+        // Remove duplicate delimiters
+        $str = preg_replace('/(' . preg_quote($options['delimiter'], '/') . '){2,}/', '$1', $str);
+        
+        // Truncate slug to max. characters
+        $str = mb_substr($str, 0, ($options['limit'] ? $options['limit'] : mb_strlen($str, 'UTF-8')), 'UTF-8');
+        
+        // Remove delimiter from ends
+        $str = trim($str, $options['delimiter']);
+        
         return $str;
     }
 }

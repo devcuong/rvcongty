@@ -8,6 +8,7 @@
       <th scope="col">nhân viên</th>
       <th scope="col">địa chỉ</th>
       <th scope="col">xóa</th>
+       <th scope="col">update slug</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,7 @@
           <td><?php echo $row["nhanvien"] ?></td>
           <td><?php echo $row["diachi"] ?></td>
           <td><a href="<?php echo $servername ?>/quan-tri/xoa-cong-ty/<?php echo $row["id"] ?>">X</a></td>
+          <td><a href="<?php echo $servername ?>/quan-tri/cap-nhat-slug/<?php echo $row["id"]."/".$row["tencongty"] ?>">Update</a></td>
         </tr>
   <?php } ?>
   </tbody>
