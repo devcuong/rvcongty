@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-  <?php while ($row = mysqli_fetch_array($data["TatCaReview"])){ ?>
+  <?php while ($row = mysqli_fetch_array($data["ReviewTrangHienTai"])){ ?>
        <tr>
           <td><?php echo $row["id"] ?></td>
           <td><?php echo $row["reviewer"] ?></td>

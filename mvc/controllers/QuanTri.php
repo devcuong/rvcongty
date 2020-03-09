@@ -274,7 +274,7 @@ class QuanTri extends Controller
     }
     
     /*review mới nhất*/
-    function ReviewMoiNhat($a, $b, $c){
+    function ReviewMoiNhat($a, $b, $c = null){
         if (isset($_SESSION["email"])) {
             $trangHienTai = 1;
             $reviewMoiTrang = 10;
@@ -285,17 +285,16 @@ class QuanTri extends Controller
             // Model
             $review = $this->model("ReviewModel");
             // Tất cả công ty
-            $tatCaReview = $review->TatCaReview();
+            $tatCaReview = $review->LayTatCaReview();
             $soCongTy = mysqli_num_rows($tatCaReview);
             $soTrang = ceil($soCongTy / $reviewMoiTrang);
-            $reviewTrangHienTai = $review->LayReviewPhanTrang($soReviewBoQua, $reviewMoiTrang);
+            $reviewTrangHienTai = $review->LayReviewPhanTrangQuanTri($soReviewBoQua, $reviewMoiTrang);
             // View
             $this->view("admin-template", [
                 "Page" => "review-moi-nhat",
-                "CongTy" => $congTyTrangHienTai,
                 "SoTrang" => $soTrang,
                 "TrangHienTai" => $trangHienTai,
-                "CongTyTrangHienTai" => $congTyTrangHienTai
+                "ReviewTrangHienTai" => $reviewTrangHienTai
             ]);
         } else {
             $server = new Server();

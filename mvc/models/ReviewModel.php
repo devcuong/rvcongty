@@ -46,6 +46,13 @@ class ReviewModel extends DB{
        // return $qr;
     }
     
+    // Lấy review để phân trang quản trị
+    public function LayReviewPhanTrangQuanTri($soReviewBoQua, $soReviewMoiTrang){
+        $qr = "SELECT * from review ORDER BY id DESC LIMIT ".$soReviewBoQua.','.$soReviewMoiTrang;
+        return mysqli_query($this->con, $qr);
+        // return $qr;
+    }
+    
     // Xóa review theo ID công ty
     public function XoaReview($iDCongTy){
         $qr = "DELETE FROM review WHERE congty = '$iDCongTy'";
