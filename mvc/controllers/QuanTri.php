@@ -3,7 +3,7 @@ require 'mvc/class/Server.php';
 
 class QuanTri extends Controller
 {
-
+    // Khai báo model
     public $UserModel;
 
     public $CongTyModel;

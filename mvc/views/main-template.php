@@ -17,7 +17,9 @@ echo $url ?>">
 echo $url ?>">
 
 <meta property="og:image"
-	content="<?php echo $servername ?>/mvc/public/images/banner.png">
+	content="<?php
+	$url = (isset($_SERVER['HTTPS']) ? "https" : "http")."://$_SERVER[HTTP_HOST]";
+	echo $url ?>/mvc/public/images/banner.png">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:site_name" content="Công ty TOP">
 <title><?php echo $data["Title"]; ?></title>
