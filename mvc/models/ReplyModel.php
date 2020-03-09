@@ -34,5 +34,15 @@ class ReplyModel extends DB{
         }
         return $result;
     }
+    
+    // Xóa reply theo id review
+    public function XoaReplyTheoIdReview($iDReview){
+        $qr = "DELETE FROM reply WHERE idreview = $iDReview";
+        $result = false;
+        if(mysqli_query($this->con, $qr)){
+            $result = true;
+        }
+        return $result;
+    }
 }
 ?>

@@ -55,6 +55,17 @@ class QuanTri extends Controller
             exit();
         }
     }
+    
+    // QUẢN TRỊ VIÊN ĐĂNG XUẤT
+    public function DangXuat(){
+        unset($_SESSION['email']);
+        if(!isset($_SESSION['email'])){
+            // View
+            $this->view("admin-template", [
+                "Page" => "quan-tri"
+            ]);
+        }
+    }
 
     // QUẢN TRỊ CHUNG
     public function QuanTriCongTy()
@@ -167,26 +178,28 @@ class QuanTri extends Controller
     // XÓA CÔNG TY
     public function XoaCongTy($a, $b, $c)
     {
-        $kt = false;
-        $idCongTy = $c;
-        $kq = $this->CongTyModel->XoaCongTy($idCongTy);
-        if ($kq) {
-            $kt = true;
-        }
-        $kq2 = $this->ReviewModel->XoaReview($idCongTy);
-        if ($kq2) {
-            $kt = true;
-        }
-        if ($kt) {
-            // View
-            $this->view("admin-template", [
-                "Page" => "quan-tri-thanh-cong"
-            ]);
-        } else {
-            $server = new Server();
-            ob_start();
-            header("Location: " . $server->get_servername() . "/quan-tri", 301);
-            exit();
+        if (isset($_SESSION["email"])) {
+            $kt = false;
+            $idCongTy = $c;
+            $kq = $this->CongTyModel->XoaCongTy($idCongTy);
+            if ($kq) {
+                $kt = true;
+            }
+            $kq2 = $this->ReviewModel->XoaReview($idCongTy);
+            if ($kq2) {
+                $kt = true;
+            }
+            if ($kt) {
+                // View
+                $this->view("admin-template", [
+                    "Page" => "quan-tri-thanh-cong"
+                ]);
+            } else {
+                $server = new Server();
+                ob_start();
+                header("Location: " . $server->get_servername() . "/quan-tri", 301);
+                exit();
+            }
         }
     }
 
@@ -246,25 +259,26 @@ class QuanTri extends Controller
                 // Thêm công ty
                 $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy), trim($this->ToSlug(trim($tenCongTy))), trim($imageName), trim($nganhNghe), trim($nhanVien), trim($diaChi), $createdDate);
                 $lastId = $this->CongTyModel->GetLastId();
-                $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 4, "Thấy mọi cái đều ổn",$lastId,$createdDate);
+                $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 4, "Thấy mọi cái đều ổn", $lastId, $createdDate);
                 $kq3 = $this->CongTyModel->UpdateRateCongTy($lastId, 4, $createdDate);
                 if ($kq3) {
-                    echo "THÀNH CÔNG " . $tenCongTy." ".$lastId;
+                    echo "THÀNH CÔNG " . $tenCongTy . " " . $lastId;
                 }
-            }
-            else{
+            } else {
                 echo "ĐÃ CÓ " . $tenCongTy;
             }
         }
     }
-    /*cập nhật slug*/
-    function CapNhatSlug($a, $b, $c, $d){
+
+    /* cập nhật slug */
+    function CapNhatSlug($a, $b, $c, $d)
+    {
         $idCongTy = $c;
         $tenCongTy = $d;
-        if(isset($_SESSION["email"])){
+        if (isset($_SESSION["email"])) {
             $slugCongTy = $this->ToSlug($tenCongTy);
             $kq = $this->CongTyModel->CapNhatSlug($idCongTy, $slugCongTy);
-            if($kq){
+            if ($kq) {
                 // View
                 $this->view("admin-template", [
                     "Page" => "quan-tri-thanh-cong"
@@ -272,9 +286,10 @@ class QuanTri extends Controller
             }
         }
     }
-    
-    /*review mới nhất*/
-    function ReviewMoiNhat($a, $b, $c = null){
+
+    /* review mới nhất */
+    function ReviewMoiNhat($a, $b, $c = null)
+    {
         if (isset($_SESSION["email"])) {
             $trangHienTai = 1;
             $reviewMoiTrang = 10;
@@ -304,17 +319,45 @@ class QuanTri extends Controller
         }
     }
 
+    /* xóa review */
+    function XoaReview($a, $b, $c = NULL)
+    {
+        if (isset($_SESSION["email"])) {
+            $kt = false;
+            $idReview = $c;
+            $kq = $this->ReviewModel->XoaReviewBoiIdReview($idReview);
+            if ($kq) {
+                $kt = true;
+            }
+            $kq2 = $this->ReplyModel->XoaReplyTheoIdReview($idReview);
+            if ($kq2) {
+                $kt = true;
+            }
+            if ($kt) {
+                // View
+                $this->view("admin-template", [
+                    "Page" => "quan-tri-thanh-cong"
+                ]);
+            } else {
+                $server = new Server();
+                ob_start();
+                header("Location: " . $server->get_servername() . "/quan-tri", 301);
+                exit();
+            }
+        }
+    }
+
     function ToSlug($str, $options = array())
     {
         // Make sure string is in UTF-8 and strip invalid UTF-8 characters
-        $str = mb_convert_encoding((string)$str, 'UTF-8', mb_list_encodings());
+        $str = mb_convert_encoding((string) $str, 'UTF-8', mb_list_encodings());
         
         $defaults = array(
             'delimiter' => '-',
             'limit' => null,
             'lowercase' => true,
             'replacements' => array(),
-            'transliterate' => true,
+            'transliterate' => true
         );
         
         // Merge options
@@ -327,7 +370,73 @@ class QuanTri extends Controller
         
         $char_map = array(
             // Latin
-            'á' => 'a', 'à' => 'a', 'ả' => 'a', 'ã' => 'a', 'ạ' => 'a', 'ă' => 'a', 'ắ' => 'a', 'ằ' => 'a', 'ẳ' => 'a', 'ẵ' => 'a', 'ặ' => 'a', 'â' => 'a', 'ấ' => 'a', 'ầ' => 'a', 'ẩ' => 'a', 'ẫ' => 'a', 'ậ' => 'a', 'đ' => 'd', 'é' => 'e', 'è' => 'e', 'ẻ' => 'e', 'ẽ' => 'e', 'ẹ' => 'e', 'ê' => 'e', 'ế' => 'e', 'ề' => 'e', 'ể' => 'e', 'ễ' => 'e', 'ệ' => 'e', 'í' => 'i', 'ì' => 'i', 'ỉ' => 'i', 'ĩ' => 'i', 'ị' => 'i', 'ó' => 'o', 'ò' => 'o', 'ỏ' => 'o', 'õ' => 'o', 'ọ' => 'o', 'ô' => 'o', 'ố' => 'o', 'ồ' => 'o', 'ổ' => 'o', 'ỗ' => 'o', 'ộ' => 'o', 'ơ' => 'o', 'ớ' => 'o', 'ờ' => 'o', 'ở' => 'o', 'ỡ' => 'o', 'ợ' => 'o', 'ú' => 'u', 'ù' => 'u', 'ủ' => 'u', 'ũ' => 'u', 'ụ' => 'u', 'ư' => 'u', 'ứ' => 'u', 'ừ' => 'u', 'ử' => 'u', 'ữ' => 'u', 'ự' => 'u', 'ý' => 'y', 'ỳ' => 'y', 'ỷ' => 'y', 'ỹ' => 'y', 'ỵ' => 'y'
+            'á' => 'a',
+            'à' => 'a',
+            'ả' => 'a',
+            'ã' => 'a',
+            'ạ' => 'a',
+            'ă' => 'a',
+            'ắ' => 'a',
+            'ằ' => 'a',
+            'ẳ' => 'a',
+            'ẵ' => 'a',
+            'ặ' => 'a',
+            'â' => 'a',
+            'ấ' => 'a',
+            'ầ' => 'a',
+            'ẩ' => 'a',
+            'ẫ' => 'a',
+            'ậ' => 'a',
+            'đ' => 'd',
+            'é' => 'e',
+            'è' => 'e',
+            'ẻ' => 'e',
+            'ẽ' => 'e',
+            'ẹ' => 'e',
+            'ê' => 'e',
+            'ế' => 'e',
+            'ề' => 'e',
+            'ể' => 'e',
+            'ễ' => 'e',
+            'ệ' => 'e',
+            'í' => 'i',
+            'ì' => 'i',
+            'ỉ' => 'i',
+            'ĩ' => 'i',
+            'ị' => 'i',
+            'ó' => 'o',
+            'ò' => 'o',
+            'ỏ' => 'o',
+            'õ' => 'o',
+            'ọ' => 'o',
+            'ô' => 'o',
+            'ố' => 'o',
+            'ồ' => 'o',
+            'ổ' => 'o',
+            'ỗ' => 'o',
+            'ộ' => 'o',
+            'ơ' => 'o',
+            'ớ' => 'o',
+            'ờ' => 'o',
+            'ở' => 'o',
+            'ỡ' => 'o',
+            'ợ' => 'o',
+            'ú' => 'u',
+            'ù' => 'u',
+            'ủ' => 'u',
+            'ũ' => 'u',
+            'ụ' => 'u',
+            'ư' => 'u',
+            'ứ' => 'u',
+            'ừ' => 'u',
+            'ử' => 'u',
+            'ữ' => 'u',
+            'ự' => 'u',
+            'ý' => 'y',
+            'ỳ' => 'y',
+            'ỷ' => 'y',
+            'ỹ' => 'y',
+            'ỵ' => 'y'
         );
         
         // Make custom replacements

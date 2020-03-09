@@ -62,5 +62,15 @@ class ReviewModel extends DB{
         }
         return $result;
     }
+    
+    // Xóa review theo id review
+    public function XoaReviewBoiIdReview($idReview){
+        $qr = "DELETE FROM review WHERE id = $idReview";
+        $result = false;
+        if(mysqli_query($this->con, $qr)){
+            $result = true;
+        }
+        return $result;
+    }
 }
 ?>

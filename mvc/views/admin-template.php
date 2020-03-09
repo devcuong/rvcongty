@@ -88,8 +88,13 @@ function changeToSlug(e) {
 					</button>
 				</form>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="http://www.pingpong-labs.com" target="_blank">Visit
-							Site</a></li>
+					<li>
+					<?php if(isset($_SESSION["email"])){ ?>
+					<a href="<?php echo $servername ?>/quan-tri/dang-xuat" target="_blank">Logout</a>
+					<?php }else{ ?>
+					<a href="<?php echo $servername ?>/quan-tri/" target="_blank">Login</a>
+					<?php } ?>
+					</li>
 					<li class="dropdown "><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-expanded="false">
 							Account <span class="caret"></span>
