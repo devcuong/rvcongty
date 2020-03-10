@@ -834,14 +834,6 @@ transform
     right: 1.125em;
     z-index: 4;
 }
-.has-text-success {
-    color: #23d160 !important;
-    border: 1px solid;
-}
-.has-text-danger {
-    color: #ff3860 !important;
-    border: 1px solid;
-}
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159821622-1"></script>

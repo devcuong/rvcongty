@@ -30,19 +30,13 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 										 <?php
     $n = $row["rate"];
     $whole = floor($row["rate"]);
-    $fraction = $n - $whole;
     for ($i = 1; $i <= $whole; $i ++) {
         ?>
 										 <span class="icon is-small has-text-warning"> <i
 						class="fas fa-star"></i>
 				</span>
 										 <?php } ?>
-										<?php if($whole != 5) {?>
-										<span class="icon is-small has-text-warning"> <i
-						class="fas fa-star-half-alt"></i>
-				</span>
-										<?php } ?>
-										<?php for ($i=1; $i<=(5-($whole+1));$i++){ ?>
+										<?php for ($i=1; $i<=(5-$whole);$i++){ ?>
 										<span class="icon is-small has-text-warning"> <i
 						class="far fa-star"></i>
 				</span>
@@ -101,19 +95,13 @@ while ($r = mysqli_fetch_array($data["Review"])) {
         <?php
     $n = $r["review_rate"];
     $whole = floor($r["review_rate"]);
-    $fraction = $n - $whole;
     for ($i = 1; $i <= $whole; $i ++) {
         ?>
 										 <span class="icon is-small has-text-warning"> <i
 						class="fas fa-star"></i>
 				</span>
 										 <?php } ?>
-										<?php if($whole != 5) {?>
-										<span class="icon is-small has-text-warning"> <i
-						class="fas fa-star-half-alt"></i>
-				</span>
-										<?php } ?>
-										<?php for ($i=1; $i<=(5-($whole+1));$i++){ ?>
+										<?php for ($i=1; $i<=(5-$whole);$i++){ ?>
 										<span class="icon is-small has-text-warning"> <i
 						class="far fa-star"></i>
 				</span>
