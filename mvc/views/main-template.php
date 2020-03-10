@@ -11,14 +11,13 @@
 <meta property="og:description" content="<?php echo $data["Description"]; ?>">
 <meta property="og:type" content="website">
 
-<meta property="og:url" content="<?php $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+<meta property="og:url" content="<?php $url = "https"."://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 echo $url ?>">
-<link rel="canonical" href="<?php $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-echo $url ?>">
+<link rel="canonical" href="<?php echo $url ?>">
 
 <meta property="og:image"
 	content="<?php
-	$url = (isset($_SERVER['HTTPS']) ? "https" : "http")."://$_SERVER[HTTP_HOST]";
+	$url = "https"."://$_SERVER[HTTP_HOST]";
 	echo $url ?>/mvc/public/images/banner.png">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:site_name" content="Công ty TOP">

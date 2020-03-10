@@ -23,7 +23,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 
 		<div class="company-info__detail">
 			<h2 class="is-size-5 has-text-weight-semibold company-info__name">
-				<a href="<?php echo $servername ?>/cong-ty/blameo-technology-<?php echo $row["id"]; ?>">
+				<a href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"] ?>-<?php echo $row["id"]; ?>">
                   <?php echo $row["tencongty"] ?>
               </a>
               <span class="company-info__rating"> <span>

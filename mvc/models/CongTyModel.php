@@ -66,6 +66,15 @@ class CongTyModel extends DB{
             }
             return $result;
         }
+        // Update rate công ty giảm
+        public function UpdateRateCongTyXoaReview($iD, $score){
+            $qr = "UPDATE congty SET luotdanhgian = luotdanhgia - 1, tongsao = tongsao + $score, rate = tongsao/luotdanhgia WHERE id = $iD";
+            $result = false;
+            if(mysqli_query($this->con, $qr)){
+                $result = true;
+            }
+            return $result;
+        }
         
         /*THÊM CÔNG TY*/
         public function ThemCongTy($tencongty, $slugcongty, $fileName, $nganhnghe, $nhanvien, $diachi, $thoigian) {

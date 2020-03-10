@@ -241,6 +241,10 @@ class QuanTri extends Controller
             $arrImage = explode("/", $imageUrl);
             $imageName = end($arrImage);
             
+            // First comment
+            $nodeComment = $xpath->query("//div[@class='card-content']");
+            $firstComment = $nodeComment->item(0)->nodeValue;
+            
             // Model
             $congty = $this->model("CongTyModel");
             
@@ -259,8 +263,8 @@ class QuanTri extends Controller
                 // Thêm công ty
                 $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy), trim($this->ToSlug(trim($tenCongTy))), trim($imageName), trim($nganhNghe), trim($nhanVien), trim($diaChi), $createdDate);
                 $lastId = $this->CongTyModel->GetLastId();
-                $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 4, "Thấy mọi cái đều ổn", $lastId, $createdDate);
-                $kq3 = $this->CongTyModel->UpdateRateCongTy($lastId, 4, $createdDate);
+                $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 3, $firstComment, $lastId, $createdDate);
+                $kq3 = $this->CongTyModel->UpdateRateCongTy($lastId, 3, $createdDate);
                 if ($kq3) {
                     echo "THÀNH CÔNG " . $tenCongTy . " " . $lastId;
                 }
@@ -320,17 +324,23 @@ class QuanTri extends Controller
     }
 
     /* xóa review */
-    function XoaReview($a, $b, $c = NULL)
+    function XoaReview($a, $b, $c = NULL, $d = NULL, $e = NULL)
     {
         if (isset($_SESSION["email"])) {
             $kt = false;
             $idReview = $c;
+            $rate = $d;
+            $congty = $e;
             $kq = $this->ReviewModel->XoaReviewBoiIdReview($idReview);
             if ($kq) {
                 $kt = true;
             }
             $kq2 = $this->ReplyModel->XoaReplyTheoIdReview($idReview);
             if ($kq2) {
+                $kt = true;
+            }
+            $kq3 = $this->CongTyModel->UpdateRateCongTyXoaReview($congty, $rate);
+            if($kq3){
                 $kt = true;
             }
             if ($kt) {

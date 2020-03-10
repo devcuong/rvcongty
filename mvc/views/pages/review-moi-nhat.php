@@ -19,7 +19,7 @@
           <td><?php echo $row["noidung"] ?></td>
           <td><?php echo $row["congty"] ?></td>
           <td><?php echo $row["thoigian"] ?></td>
-          <td><a href="<?php echo $servername ?>/quan-tri/xoa-review/<?php echo $row["id"] ?>">X</a></td>
+          <td><a href="<?php echo $servername ?>/quan-tri/xoa-review/<?php echo $row["id"] ?>/<?php echo $row["rate"] ?>/<?php echo $row["congty"] ?>">X</a></td>
         </tr>
   <?php } ?>
   </tbody>
