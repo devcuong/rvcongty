@@ -28,7 +28,7 @@
             }
             
             // Title
-            $title = "Lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty - CongTyTop";
+            $title = "Review lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty - CongTyTop";
             
             // Description
             $description = "Trang Review đầy đủ nhất về lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty IT và liên quan IT - CongTyTop";

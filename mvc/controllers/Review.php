@@ -26,7 +26,7 @@ class Review extends Controller
         $cutString = new CutString();
         
         // Title
-        $title = "Công ty ".$tenCongTy." - ".$cutString->get_first_num_of_words($noiDungReview, 60);
+        $title = "Review công ty ".$tenCongTy." - ".$cutString->get_first_num_of_words($noiDungReview, 60);
         
         // Description
         $description = "Công ty ".$tenCongTy." - ".$noiDungReview;

@@ -51,10 +51,10 @@ class CongTy extends Controller
         $tencongty = $congTyNow->fetch_assoc()["tencongty"];
         
         // Title
-        $title = "Thông tin công ty ".$tencongty;
+        $title = "Review công ty ".$tencongty;
         
         // Description
-       $description = "Thông tin về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ".$tencongty;
+       $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ".$tencongty;
         
         // View
         $this->view("main-template", [
