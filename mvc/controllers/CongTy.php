@@ -56,6 +56,8 @@ class CongTy extends Controller
         // Description
        $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ".$tencongty;
         
+       // Keyword
+       $keyword = "review công ty $tencongty, review cong ty $tencongty, công ty review $tencongty, cong ty review $tencongty, review công việc $tencongty, review cong viec $tencongty, review mức lương $tencongty, review muc luong $tencongty, review sếp $tencongty, review sep $tencongty";
         // View
         $this->view("main-template", [
             "Page" => "cong-ty",
@@ -64,7 +66,8 @@ class CongTy extends Controller
             "SoTrang" => $soTrang,
             "TrangHienTai" => $trangReviewHienTai,
             "Title" => $title,
-            "Description" => $description
+            "Description" => $description,
+            "Keyword" => $keyword
         ]);
     }
 

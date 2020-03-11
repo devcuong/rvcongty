@@ -4,8 +4,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description"
-	content="<?php echo $data["Description"]; ?>">
+<meta name="description" content="<?php echo $data["Description"]; ?>">
+	
+<meta name="keywords" content="<?php echo $data["Keyword"]; ?>">
 
 <meta property="og:title" content="<?php echo $data["Title"]; ?>">
 <meta property="og:description" content="<?php echo $data["Description"]; ?>">
@@ -824,7 +825,7 @@ transform
 }
 .message.is-info .message-header {
     background-color: #0e7ccd;
-    color: #fff;
+    color: #fff;    
 }
 .field:not(:last-child) {
     margin-bottom: .75rem;

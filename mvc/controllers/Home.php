@@ -32,7 +32,8 @@
             
             // Description
             $description = "Trang Review đầy đủ nhất về lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty IT và liên quan IT - CongTyTop";
-            
+     
+            $keyword = "review công ty, review cong ty, công ty review, cong ty review, review công việc, review cong viec, review mức lương, review muc luong, review sếp, review sep";
             //View
             $this->view("main-template", ["Page"=>"main-home",
                 "15ReviewMoiNhat" => $review->Lay15ReviewMoiNhat(),
@@ -41,7 +42,8 @@
                 "CongTyTrangHienTai" => $congTyTrangHienTai,
                 "TabCongTy" => $tabCongTy,
                 "Title" => $title,
-                "Description" => $description
+                "Description" => $description,
+                "Keyword" => $keyword
             ]);
         }
         
