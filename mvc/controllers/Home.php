@@ -57,7 +57,7 @@ class Home extends Controller
         else if ($a == "sitemap.xml")
         {
             $server = new Server();
-            $baseUrl = $server->get_servername()."/cong-ty/";
+            $baseUrl = "https:".$server->get_servername()."/cong-ty/";
             $congty = $this->model("CongTyModel")->TatCaCongTy();
             header("Content-type: application/xml; charset=utf-8");
             echo '<?xml version="1.0" encoding="UTF-8" ?>'.PHP_EOL;
