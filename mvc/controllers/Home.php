@@ -56,7 +56,10 @@ class Home extends Controller
         }
         else if ($a == "sitemap.xml")
         {
-            echo $a;
+            $server = new Server();
+            $baseUrl = $server->get_servername();
+            header("Content-type: application/xml; charset=utf-8");
+            echo '<?xml version="1.0" encoding="UTF-8">'.PHP_EOL;
         }
     }
 }
