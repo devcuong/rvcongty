@@ -449,7 +449,7 @@ a.white-link:hover {
 }
 
 .company-info-company-page .company-info {
-	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+	border: 1px solid #A8E4FC !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -834,6 +834,17 @@ transform
     border-color: #3273dc;
     right: 1.125em;
     z-index: 4;
+}
+.button.is-rounded {
+    border-radius: 0px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.button.upload-review{
+	background-color: #f7941d;
+}
+.button.upload-review:hover{
+	background-color: #FF6600;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->

@@ -63,7 +63,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 		</div>
 
 	</div>
-	<button class="button-review button is-success is-medium is-rounded">
+	<button class="button-review button is-success is-medium is-rounded upload-review">
 		<span class="icon"> <i class="fas fa-pencil-alt"></i>
 		</span> &nbsp;&nbsp; Viết review
 	</button>

@@ -31,6 +31,8 @@ class Review extends Controller
         // Description
         $description = "Công ty ".$tenCongTy." - ".$noiDungReview;
         
+        $keyword =  $title = "Review công ty $tenCongTy";
+        
         // View
         $this->view("main-template", [
             "Page" => "review",
@@ -39,7 +41,8 @@ class Review extends Controller
             "TenCongTy" => $tenCongTy,
             "NoiDungReview" => $noiDungReview,
             "Title" => $title,
-            "Description" => $description
+            "Description" => $description,
+            "Keyword" => $keyword
         ]);
     }
 }
