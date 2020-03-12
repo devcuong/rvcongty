@@ -32,7 +32,7 @@ while ($row = mysqli_fetch_array($data["Review"])) {
     
         <div class="company-info__detail">
             <h2 class="is-size-5 has-text-weight-semibold company-info__name">
-                <a href="/companies/stringee">
+                <a href="<?php echo $servername ?>/cong-ty/<?php echo $row["congty_slugcongty"] ?>-<?php echo $row["congty_id"]; ?>">
                     <?php echo $row["congty_tencongty"] ?>
                 </a>            <span class="company-info__rating">
                     <span><span>
