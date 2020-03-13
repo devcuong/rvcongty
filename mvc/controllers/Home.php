@@ -1,5 +1,6 @@
 <?php
 require_once 'mvc/class/Server.php';
+require_once 'mvc/class/CutString.php';
 class Home extends Controller
 {
 
@@ -24,19 +25,6 @@ class Home extends Controller
             $soCongTy = mysqli_num_rows($tatCaCongTy);
             $soTrang = ceil($soCongTy / $congTyMoiTrang);
             
-            // Lấy trang trước và sau trang hiện tại
-            $soTrangTruoc = 4;
-            $soTrangSau = 4;
-            if(($trangHienTai - $soTrangTruoc)<=0){
-                $soTrangTruoc = $soTrangTruoc - $trangHienTai + 1;
-            }
-            
-            if(($trangHienTai + $soTrangSau)>$soTrang){
-                $soTrangSau = $soTrang - $trangHienTai;
-                $soTrangTruoc = $soTrangTruoc + (4 - $soTrangSau) + 1;
-            }
-            
-            
             $congTyTrangHienTai = "";
             if ($tabCongTy == "latest") {
                 $congTyTrangHienTai = $congty->LayCongTyPhanTrang($soCongTyBoQua, $congTyMoiTrang);
@@ -55,14 +43,18 @@ class Home extends Controller
             $description = "Trang Review đầy đủ nhất về lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty IT và liên quan IT - CongTyTop";
             
             $keyword = "review công ty, review cong ty, công ty review, cong ty review, review công việc, review cong viec, review mức lương, review muc luong, review sếp, review sep";
+            
+            $server = new Server();
+            
+            $string = new CutString();
+            
+            $nav = $string->get_nav_render($trangHienTai, $soTrang, $server->servername);
+            
             // View
             $this->view("main-template", [
                 "Page" => "main-home",
                 "15ReviewMoiNhat" => $review->Lay15ReviewMoiNhat(),
-                "SoTrang" => $soTrang,
-                "TrangHienTai" => $trangHienTai,
-                "TrangTruoc" => $soTrangTruoc,
-                "TrangSau" => $soTrangSau,
+                "Navigate" => $nav,
                 "CongTyTrangHienTai" => $congTyTrangHienTai,
                 "TabCongTy" => $tabCongTy,
                 "Title" => $title,

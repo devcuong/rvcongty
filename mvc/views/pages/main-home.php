@@ -49,20 +49,9 @@
 			</ul>
 		</div>
 		<div class="tabs-section" style="height: auto !important;">
-		<?php echo $data["SoTrang"] . "-" . $data["TrangHienTai"] . "-" . $data["TrangTruoc"] . "-" . $data["TrangSau"]?>
 			<nav class="pagination is-small custom-pagination" role="navigation"
 				aria-label="pagination">
-				<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b>
-					trên tổng số <b><?php echo $data["SoTrang"]; ?></b></span>
-				<ul class="pagination-list">
-				<?php for($i=$data["TrangTruoc"]; $i<$data["TrangHienTai"]; $i++ ){ ?>
-					 <li><a href="<?php echo $servername ?>/?page=<?php echo $i ?>" class="pagination-link"><?php echo $i ?></a></li>
-				<?php } ?>
-				<li><a href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $data["TrangHienTai"]?>" class="pagination-link is-current"><?php echo $i ?></a></li>
-                <?php for($i=$data["TrangHienTai"]+1; $i<=$data["TrangSau"]; $i++ ){ ?>
-					 <li><a href="<?php echo $servername ?>/?page=<?php echo $i ?>" class="pagination-link"><?php echo $i ?></a></li>
-				<?php } ?>
-                </ul>
+				<?php echo $data["Navigate"]; ?>
 			</nav>
 					<?php
     while ($row = mysqli_fetch_array($data["CongTyTrangHienTai"])) {
@@ -122,40 +111,7 @@
 					<div style="margin-top: 0.6rem">
 				<nav class="pagination is-small custom-pagination" role="navigation"
 				aria-label="pagination">
-				<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b>
-					trên tổng số <b><?php echo $data["SoTrang"]; ?></b></span>
-				<ul class="pagination-list">
-						<?php for($i=1; $i<=$data["SoTrang"]; $i++){ ?>
-							<?php if($i == $data["TrangHienTai"]) {?>
-							<?php if("latest" == $data["TabCongTy"]){ ?>
-							<li><a href="<?php echo $servername ?>/?page=<?php echo $i ?>"
-						class="pagination-link is-current"><?php echo $i ?></a></li>
-								<?php }else if("best" == $data["TabCongTy"]) { ?>
-								<li><a
-						href="<?php echo $servername ?>/?tab=best&amp;page=<?php echo $i ?>"
-						class="pagination-link is-current"><?php echo $i ?></a></li>
-								<?php }else{ ?>
-								<li><a
-						href="<?php echo $servername ?>/?tab=worst&amp;page=<?php echo $i ?>"
-						class="pagination-link is-current"><?php echo $i ?></a></li>
-								<?php } ?>
-							<?php }else{ ?>
-							<?php if("latest" == $data["TabCongTy"]) {?>
-							<li><a
-						href="<?php echo $servername ?>/?tab=latest&amp;page=<?php echo $i ?>"
-						class="pagination-link "><?php echo $i ?></a></li>
-								<?php } else if("best" == $data["TabCongTy"]){ ?>
-								<li><a
-						href="<?php echo $servername ?>/?tab=best&amp;page=<?php echo $i ?>"
-						class="pagination-link "><?php echo $i ?></a></li>
-								<?php } else{ ?>
-								<li><a
-						href="<?php echo $servername ?>/?tab=worst&amp;page=<?php echo $i ?>"
-						class="pagination-link "><?php echo $i ?></a></li>
-								<?php }?>
-							<?php } ?>
-						<?php } ?>
-						</ul>
+				<?php echo $data["Navigate"]; ?>
 			</nav>
 
 			</div>
