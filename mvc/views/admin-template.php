@@ -59,6 +59,23 @@ function changeToSlug(e) {
 		        });
 		}
     }
+
+    // get du lieu page reviewcongty
+    function getDuLieuPage(){
+		if($("#link-page").val() != ""){
+			  $.ajax({
+		          type: "POST",
+		          url: SiteName + "/quan-tri/get-data-page-cong-ty/",
+		          data: {"url-page": $("#link-page").val()},
+		          success: function(data)
+		          {
+		             if(data){
+			             $("#mess-return").html(data);
+		             }
+		          }
+		        });
+		}
+    }
     </script>
 </head>
 <body>

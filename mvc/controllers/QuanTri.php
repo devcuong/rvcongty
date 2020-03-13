@@ -3,6 +3,7 @@ require 'mvc/class/Server.php';
 
 class QuanTri extends Controller
 {
+
     // Khai báo model
     public $UserModel;
 
@@ -55,11 +56,12 @@ class QuanTri extends Controller
             exit();
         }
     }
-    
+
     // QUẢN TRỊ VIÊN ĐĂNG XUẤT
-    public function DangXuat(){
+    public function DangXuat()
+    {
         unset($_SESSION['email']);
-        if(!isset($_SESSION['email'])){
+        if (! isset($_SESSION['email'])) {
             // View
             $this->view("admin-template", [
                 "Page" => "quan-tri"
@@ -204,10 +206,85 @@ class QuanTri extends Controller
     }
 
     // GET DATA
-    public function GetDataCongTy()
+    public function GetDataCongTy($a = NULL)
     {
+        $urlCompany = "";
         if (isset($_POST["url-company"])) {
             $urlCompany = $_POST["url-company"];
+        } else if ($a != null) {
+            $urlCompany = $a;
+        }
+        $page = file_get_contents($urlCompany);
+        @$doc = new DOMDocument();
+        @$doc->loadHTML($page);
+        
+        $xpath = new DomXPath($doc);
+        
+        // Thông tin
+        $nodeList = $xpath->query("//div[@class='company-info__detail']");
+        $nodeCongTy = $nodeList->item(0);
+        
+        $tenCongTy = $nodeCongTy->getElementsByTagName('h2')
+            ->item(0)
+            ->getElementsByTagName('a')
+            ->item(0)->nodeValue;
+        $nganhNghe = $nodeCongTy->getElementsByTagName('div')
+            ->item(0)
+            ->getElementsByTagName('span')
+            ->item(0)->nodeValue;
+        $nhanVien = $nodeCongTy->getElementsByTagName('div')
+            ->item(0)
+            ->getElementsByTagName('span')
+            ->item(2)->nodeValue;
+        $diaChi = $nodeCongTy->getElementsByTagName('div')->item(1)->nodeValue;
+        
+        // Image
+        $nodeImage = $xpath->query("//div[@class='company-info']");
+        $imageUrl = $nodeImage->item(0)
+            ->getElementsByTagName('img')
+            ->item(0)
+            ->getAttribute('src');
+        $arrImage = explode("/", $imageUrl);
+        $imageName = end($arrImage);
+        
+        // First comment
+        $nodeComment = $xpath->query("//div[@class='card-content']");
+        $firstComment = $nodeComment->item(0)->nodeValue;
+        
+        // Model
+        $congty = $this->model("CongTyModel");
+        
+        $duongDanHinhAnh = 'mvc/public/asset/companies/logo/' . $imageName;
+        
+        file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com" . $imageUrl));
+        
+        $createdDate = date("Y-m-d H:i:s");
+        
+        // Kiểm tra công ty có hay chưa
+        $daco = $this->CongTyModel->LayCongTyBangSlug(trim($this->ToSlug(trim($tenCongTy))));
+        
+        if (mysqli_num_rows($daco) == 0) {
+            $kt = false;
+            $db = new DB();
+            // Thêm công ty
+            $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy), trim($this->ToSlug(trim($tenCongTy))), trim($imageName), trim($nganhNghe), trim($nhanVien), trim($diaChi), $createdDate);
+            $lastId = $this->CongTyModel->GetLastId();
+            $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 3, $firstComment, $lastId, $createdDate);
+            $kq3 = $this->CongTyModel->UpdateRateCongTy($lastId, 3, $createdDate);
+            if ($kq3) {
+                echo "THÀNH CÔNG " . $tenCongTy . " " . $lastId;
+            }
+        } else {
+            echo "ĐÃ CÓ " . $tenCongTy;
+        }
+    }
+
+    // get data page
+    public function GetDataPageCongTy()
+    {
+        if (isset($_POST["url-page"])) {
+            $url = "https://reviewcongty.com";
+            $urlCompany = $_POST["url-page"];
             $page = file_get_contents($urlCompany);
             @$doc = new DOMDocument();
             @$doc->loadHTML($page);
@@ -215,62 +292,13 @@ class QuanTri extends Controller
             $xpath = new DomXPath($doc);
             
             // Thông tin
-            $nodeList = $xpath->query("//div[@class='company-info__detail']");
-            $nodeCongTy = $nodeList->item(0);
-            
-            $tenCongTy = $nodeCongTy->getElementsByTagName('h2')
-                ->item(0)
-                ->getElementsByTagName('a')
-                ->item(0)->nodeValue;
-            $nganhNghe = $nodeCongTy->getElementsByTagName('div')
-                ->item(0)
-                ->getElementsByTagName('span')
-                ->item(0)->nodeValue;
-            $nhanVien = $nodeCongTy->getElementsByTagName('div')
-                ->item(0)
-                ->getElementsByTagName('span')
-                ->item(2)->nodeValue;
-            $diaChi = $nodeCongTy->getElementsByTagName('div')->item(1)->nodeValue;
-            
-            // Image
-            $nodeImage = $xpath->query("//div[@class='company-info']");
-            $imageUrl = $nodeImage->item(0)
-                ->getElementsByTagName('img')
-                ->item(0)
-                ->getAttribute('src');
-            $arrImage = explode("/", $imageUrl);
-            $imageName = end($arrImage);
-            
-            // First comment
-            $nodeComment = $xpath->query("//div[@class='card-content']");
-            $firstComment = $nodeComment->item(0)->nodeValue;
-            
-            // Model
-            $congty = $this->model("CongTyModel");
-            
-            $duongDanHinhAnh = 'mvc/public/asset/companies/logo/' . $imageName;
-            
-            file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com" . $imageUrl));
-            
-            $createdDate = date("Y-m-d H:i:s");
-            
-            // Kiểm tra công ty có hay chưa
-            $daco = $this->CongTyModel->LayCongTyBangSlug(trim($this->ToSlug(trim($tenCongTy))));
-            
-            if (mysqli_num_rows($daco) == 0) {
-                $kt = false;
-                $db = new DB();
-                // Thêm công ty
-                $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy), trim($this->ToSlug(trim($tenCongTy))), trim($imageName), trim($nganhNghe), trim($nhanVien), trim($diaChi), $createdDate);
-                $lastId = $this->CongTyModel->GetLastId();
-                $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 3, $firstComment, $lastId, $createdDate);
-                $kq3 = $this->CongTyModel->UpdateRateCongTy($lastId, 3, $createdDate);
-                if ($kq3) {
-                    echo "THÀNH CÔNG " . $tenCongTy . " " . $lastId;
-                }
-            } else {
-                echo "ĐÃ CÓ " . $tenCongTy;
+            $nodeList = $xpath->query("//div[@class='company-item']");
+            // $nodeCongTy = $nodeList->item(0)->getAttribute('data-href');
+            foreach ($nodeList as $node) {
+                echo $this->GetDataCongTy($url . $node->getAttribute('data-href'));
             }
+            
+            // echo $nodeCongTy;
         }
     }
 
@@ -340,7 +368,7 @@ class QuanTri extends Controller
                 $kt = true;
             }
             $kq3 = $this->CongTyModel->UpdateRateCongTyXoaReview($congty, $rate);
-            if($kq3){
+            if ($kq3) {
                 $kt = true;
             }
             if ($kt) {

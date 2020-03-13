@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_array($data["Review"])) {
             </a>
         </li>
         <li>
-            <a href="/companies/stringee">
+            <a href="/cong-ty/<?php echo $row["congty_slugcongty"]?>">
                 <span>Review Công ty <?php echo $row["congty_tencongty"]?></span>
             </a>
         </li>

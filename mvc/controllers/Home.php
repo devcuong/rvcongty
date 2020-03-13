@@ -48,7 +48,7 @@ class Home extends Controller
             
             $string = new CutString();
             
-            $nav = $string->get_nav_render($trangHienTai, $soTrang, $server->servername);
+            $nav = $string->get_nav_render($trangHienTai, $soTrang, $server->servername,$tabCongTy);
             
             // View
             $this->view("main-template", [

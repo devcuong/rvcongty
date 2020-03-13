@@ -27,7 +27,12 @@
     <label>Link Review công ty</label>
     <input type="text" class="form-control" id="link-review" name="link-review" placeholder="Link Review">
   </div>
+   <div class="form-group">
+    <label>Link Page</label>
+    <input type="text" class="form-control" id="link-page" name="link-page" placeholder="Link Page ReviewCongty">
+  </div>
   <span id="mess-return"></span>
   <button type="submit" name="btn-submit" class="btn btn-primary">Submit</button>
   <button type="button" name="btn-get" class="btn btn-primary" onclick="getDuLieu()">Get URL</button>
+  <button type="button" name="btn-get" class="btn btn-primary" onclick="getDuLieuPage()">Get Page</button>
 </form>
