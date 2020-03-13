@@ -23,6 +23,20 @@ class Home extends Controller
             $tatCaCongTy = $congty->TatCaCongTy();
             $soCongTy = mysqli_num_rows($tatCaCongTy);
             $soTrang = ceil($soCongTy / $congTyMoiTrang);
+            
+            // Lấy trang trước và sau trang hiện tại
+            $soTrangTruoc = 4;
+            $soTrangSau = 4;
+            if(($trangHienTai - $soTrangTruoc)<=0){
+                $soTrangTruoc = $soTrangTruoc - $trangHienTai + 1;
+            }
+            
+            if(($trangHienTai + $soTrangSau)>$soTrang){
+                $soTrangSau = $soTrang - $trangHienTai;
+                $soTrangTruoc = $soTrangTruoc + (4 - $soTrangSau) + 1;
+            }
+            
+            
             $congTyTrangHienTai = "";
             if ($tabCongTy == "latest") {
                 $congTyTrangHienTai = $congty->LayCongTyPhanTrang($soCongTyBoQua, $congTyMoiTrang);
@@ -47,6 +61,8 @@ class Home extends Controller
                 "15ReviewMoiNhat" => $review->Lay15ReviewMoiNhat(),
                 "SoTrang" => $soTrang,
                 "TrangHienTai" => $trangHienTai,
+                "TrangTruoc" => $soTrangTruoc,
+                "TrangSau" => $soTrangSau,
                 "CongTyTrangHienTai" => $congTyTrangHienTai,
                 "TabCongTy" => $tabCongTy,
                 "Title" => $title,
