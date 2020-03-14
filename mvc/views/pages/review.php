@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_array($data["Review"])) {
             </a>
         </li>
         <li>
-            <a href="/cong-ty/<?php echo $row["congty_slugcongty"]?>">
+            <a href="<?php echo $servername ?>/cong-ty/<?php echo $row["congty_slugcongty"]?>-<?php echo $row["congty_id"] ?>">
                 <span>Review Công ty <?php echo $row["congty_tencongty"]?></span>
             </a>
         </li>
@@ -83,7 +83,7 @@ while ($row = mysqli_fetch_array($data["Review"])) {
     <div class="review card">
         <header class="card-header">
             <p class="card-header-title">
-                 <?php echo $row["review_reviewer"] ?>  &nbsp; <span> <?php
+                 <?php echo $row["review_reviewer"] ?>  &nbsp;(<?php echo $row["review_position"] ?>) &nbsp;<span> <?php
                  $n = $row["review_rate"];
                  $whole = floor($row["review_rate"]);
     $fraction = $n - $whole;

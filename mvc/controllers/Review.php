@@ -14,7 +14,7 @@ class Review extends Controller
     }
     
     public function Index($a, $b){
-        $review = $this->ReviewModel;
+        /*$review = $this->ReviewModel;
         $reply = $this->ReplyModel;
         $rvNow = $review->LayReviewBangIdReview($b);
         $rvLater = $review->LayReviewBangIdReview($b);
@@ -43,7 +43,7 @@ class Review extends Controller
             "Title" => $title,
             "Description" => $description,
             "Keyword" => $keyword
-        ]);
+        ]);*/
     }
 }
     ?>

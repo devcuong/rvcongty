@@ -1,6 +1,6 @@
 <?php
 require 'mvc/class/Replyer.php';
-
+require 'mvc/class/CutString.php';
 class CongTy extends Controller
 {
 
@@ -20,23 +20,22 @@ class CongTy extends Controller
         $this->ReplyModel = $this->model("ReplyModel");
     }
 
-    function Index($a, $b, $c=null)
+    function Index($a, $b, $c=null, $d=null)
     {
         $trangReviewHienTai = 1;
-        $soReviewMoiTrang = 1;
+        $soReviewMoiTrang = 15;
         if($c != null){
             $pageOrView = $urlCongTy = explode("-", $c);
-            if($pageOrView[0] != "view"){
+            if($c != "review"){
                 $trangReviewHienTai = $c;
             }else{
-                $review = $this->ReviewModel;
-                $reply = $this->ReplyModel;
-                $rvNow = $review->LayReviewBangIdReview($b);
-                $rvLater = $review->LayReviewBangIdReview($b);
+                
+                $rvNow = $this->ReviewModel->LayReviewBangIdReview($d);
+                $rvLater = $this->ReviewModel->LayReviewBangIdReview($d);
                 $getRVNow = $rvNow->fetch_assoc();
                 $tenCongTy = $getRVNow["congty_tencongty"];
                 $noiDungReview = $getRVNow["review_noidung"];
-                $rp = $reply->LayReplyBangIdReview($b);
+                $rp = $this->ReplyModel->LayReplyBangIdReview($d);
                 
                 $cutString = new CutString();
                 
