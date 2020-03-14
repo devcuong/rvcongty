@@ -23,11 +23,45 @@ class CongTy extends Controller
     function Index($a, $b, $c=null)
     {
         $trangReviewHienTai = 1;
-        $soReviewMoiTrang = 10;
+        $soReviewMoiTrang = 1;
         if($c != null){
-            $trangReviewHienTai = $c;
+            $pageOrView = $urlCongTy = explode("-", $c);
+            if($pageOrView[0] != "view"){
+                $trangReviewHienTai = $c;
+            }else{
+                $review = $this->ReviewModel;
+                $reply = $this->ReplyModel;
+                $rvNow = $review->LayReviewBangIdReview($b);
+                $rvLater = $review->LayReviewBangIdReview($b);
+                $getRVNow = $rvNow->fetch_assoc();
+                $tenCongTy = $getRVNow["congty_tencongty"];
+                $noiDungReview = $getRVNow["review_noidung"];
+                $rp = $reply->LayReplyBangIdReview($b);
+                
+                $cutString = new CutString();
+                
+                // Title
+                $title = "Review công ty ".$tenCongTy." - ".$cutString->get_first_num_of_words($noiDungReview, 60);
+                
+                // Description
+                $description = "Công ty ".$tenCongTy." - ".$noiDungReview;
+                
+                $keyword =  $title = "Review công ty $tenCongTy";
+                
+                // View
+                $this->view("main-template", [
+                    "Page" => "review",
+                    "Review" => $rvLater,
+                    "Reply" => $rp,
+                    "TenCongTy" => $tenCongTy,
+                    "NoiDungReview" => $noiDungReview,
+                    "Title" => $title,
+                    "Description" => $description,
+                    "Keyword" => $keyword
+                ]);
+            }
+            
         }
-        
         $soReviewBoQua = ($trangReviewHienTai-1)*$soReviewMoiTrang;
         $urlCongTy = explode("-", $b);
         $idCongTy = end($urlCongTy);
