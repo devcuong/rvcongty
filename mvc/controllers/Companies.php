@@ -1,7 +1,7 @@
 <?php
 require 'mvc/class/Replyer.php';
 require 'mvc/class/CutString.php';
-class CongTy extends Controller
+class Companies extends Controller
 {
 
     public $CongTyModel;
@@ -93,7 +93,7 @@ class CongTy extends Controller
        $keyword = "review công ty $tencongty, review cong ty $tencongty, công ty review $tencongty, cong ty review $tencongty, review công việc $tencongty, review cong viec $tencongty, review mức lương $tencongty, review muc luong $tencongty, review sếp $tencongty, review sep $tencongty";
         // View
         $this->view("main-template", [
-            "Page" => "cong-ty",
+            "Page" => "companies",
             "CongTy" => $congTyLater,
             "Review" => $reviewTrangHienTai,
             "SoTrang" => $soTrang,

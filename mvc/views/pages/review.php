@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_array($data["Review"])) {
             </a>
         </li>
         <li>
-            <a href="<?php echo $servername ?>/cong-ty/<?php echo $row["congty_slugcongty"]?>-<?php echo $row["congty_id"] ?>">
+            <a href="<?php echo $servername ?>/companies/<?php echo $row["congty_slugcongty"]?>-<?php echo $row["congty_id"] ?>">
                 <span>Review Công ty <?php echo $row["congty_tencongty"]?></span>
             </a>
         </li>
@@ -32,7 +32,7 @@ while ($row = mysqli_fetch_array($data["Review"])) {
     
         <div class="company-info__detail">
             <h2 class="is-size-5 has-text-weight-semibold company-info__name">
-                <a href="<?php echo $servername ?>/cong-ty/<?php echo $row["congty_slugcongty"] ?>-<?php echo $row["congty_id"]; ?>">
+                <a href="<?php echo $servername ?>/companies/<?php echo $row["congty_slugcongty"] ?>-<?php echo $row["congty_id"]; ?>">
                     <?php echo $row["congty_tencongty"] ?>
                 </a>            <span class="company-info__rating">
                     <span><span>
@@ -178,7 +178,7 @@ while ($row = mysqli_fetch_array($data["Review"])) {
     <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
-            <form id="comment-form" action="<?php echo $servername ?>/cong-ty/dang-reply" method="POST">
+            <form id="comment-form" action="<?php echo $servername ?>/companies/dang-reply" method="POST">
                 <div class="field">
                     <label class="label">Tên họ</label>
                     <div class="control">

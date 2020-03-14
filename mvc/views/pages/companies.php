@@ -23,7 +23,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 
 		<div class="company-info__detail">
 			<h2 class="is-size-5 has-text-weight-semibold company-info__name">
-				<a href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"] ?>-<?php echo $row["id"]; ?>">
+				<a href="<?php echo $servername ?>/companies/<?php echo $row["slugcongty"] ?>-<?php echo $row["id"]; ?>">
                   <?php echo $row["tencongty"] ?>
               </a>
               <span class="company-info__rating"> <span>
@@ -75,9 +75,9 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
   <ul class="pagination-list">
   	<?php for($i=1; $i <= $data["SoTrang"]; $i++){ ?>
   		<?php if($i == $data["TrangHienTai"]){ ?>
-  		<li><a href="<?php echo $servername?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link is-current"><?php echo $i ?></a></li>
+  		<li><a href="<?php echo $servername?>/companies/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link is-current"><?php echo $i ?></a></li>
   		<?php }else{ ?>
-  		 <li><a href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link "><?php echo $i ?></a></li>
+  		 <li><a href="<?php echo $servername ?>/companies/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link "><?php echo $i ?></a></li>
   		<?php } ?>
   	<?php } ?>
   </ul>
@@ -110,7 +110,7 @@ while ($r = mysqli_fetch_array($data["Review"])) {
 			</p>
 			<span class="review__time needs_to_be_rendered" datetime="<?php echo $r["review_thoigian"] ?>"><?php echo $r["review_thoigian"] ?></span>
 			<a class="review__share"
-				href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"] ?>-<?php echo $row["id"] ?>/review/<?php echo $r["review_id"] ?>">
+				href="<?php echo $servername ?>/companies/<?php echo $row["slugcongty"] ?>-<?php echo $row["id"] ?>/review/<?php echo $r["review_id"] ?>">
 				<i class="fas fa-link" style="margin-right: 5px"></i> Share
 			</a>
 		</header>
@@ -185,9 +185,9 @@ $dataReply = $r["reply_data"];
   <ul class="pagination-list">
   	<?php for($i=1; $i <= $data["SoTrang"]; $i++){ ?>
   		<?php if($i == $data["TrangHienTai"]){ ?>
-  		<li><a href="<?php echo $servername?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link is-current"><?php echo $i ?></a></li>
+  		<li><a href="<?php echo $servername?>/companies/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link is-current"><?php echo $i ?></a></li>
   		<?php }else{ ?>
-  		 <li><a href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link "><?php echo $i ?></a></li>
+  		 <li><a href="<?php echo $servername ?>/companies/<?php echo $row["slugcongty"]."-".$row["id"]."/".$i ?>" class="pagination-link "><?php echo $i ?></a></li>
   		<?php } ?>
   	<?php } ?>
   </ul>
@@ -195,7 +195,7 @@ $dataReply = $r["reply_data"];
 <?php } ?>
 </section>
 <div class="modal" id="review-modal">
-    <form id="review-form" action="<?php echo $servername ?>/cong-ty/dang-review/" method="POST">
+    <form id="review-form" action="<?php echo $servername ?>/companies/dang-review/" method="POST">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
@@ -259,7 +259,7 @@ $dataReply = $r["reply_data"];
     <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
-            <form id="comment-form" action="<?php echo $servername ?>/cong-ty/dang-reply/" method="POST">
+            <form id="comment-form" action="<?php echo $servername ?>/companies/dang-reply/" method="POST">
                 <div class="field">
                     <label class="label">Tên họ</label>
                     <div class="control">

@@ -907,14 +907,14 @@ transform
                 var keyWord = e.term;
                 $.ajax({
                     type: "post",
-                    url: SiteName+"/tim-kiem/cong-ty",
+                    url: SiteName+"/tim-kiem/companies",
                     dataType: "json",
                     data: {
                     	tencongty: e.term
                     },
                     success: function(e) {
                         t($.map(e, function(e) {
-                            var t = SiteName+"/cong-ty/" + e.slugcongty + "-" + e.id + "/";
+                            var t = SiteName+"/companies/" + e.slugcongty + "-" + e.id + "/";
                             return {
                                 label: e.tencongty,
                                 url: t,

@@ -8,7 +8,7 @@ class TimKiem extends Controller
         $this->CongTyModel = $this->model("CongTyModel");
     }
     
-    public function CongTy(){
+    public function Companies(){
         if (isset($_POST["tencongty"])){
             $tuKhoa = trim($_POST["tencongty"]);
             $congTyModel = $this->CongTyModel;

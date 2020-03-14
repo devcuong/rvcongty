@@ -65,7 +65,7 @@ class Home extends Controller
         else if ($a == "sitemap.xml")
         {
             $server = new Server();
-            $baseUrl = "https:".$server->get_servername()."/cong-ty/";
+            $baseUrl = "https:".$server->get_servername()."/companies/";
             $congty = $this->model("CongTyModel")->TatCaCongTy();
             $createdDate = date("Y-m-d");
             header("Content-type: application/xml; charset=utf-8");

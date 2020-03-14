@@ -57,7 +57,7 @@
     while ($row = mysqli_fetch_array($data["CongTyTrangHienTai"])) {
         ?>
                                         <div
-				data-href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]?>"
+				data-href="<?php echo $servername ?>/companies/<?php echo $row["slugcongty"]."-".$row["id"]?>"
 				class="company-item">
 				<div class="company-info columns">
 					<div class="home-logo-company is-2">
@@ -71,7 +71,7 @@
 						<div class="company-info__detail">
 							<h2 class="is-size-5 has-text-weight-semibold company-info__name">
 								<a
-									href="<?php echo $servername ?>/cong-ty/<?php echo $row["slugcongty"]."-".$row["id"]?>">
+									href="<?php echo $servername ?>/companies/<?php echo $row["slugcongty"]."-".$row["id"]?>">
 										<?php echo $row["tencongty"]; ?> </a> 
 								<span class="company-info__rating"> <span>
 										 <?php
@@ -127,7 +127,7 @@
 			<h3>
 				<span class="has-text-weight-bold"><?php echo $r["reviewer"] ?></span>
 				đã review <a
-					href="<?php echo $servername ?>/cong-ty/<?php echo $r["slugcongty"]."-".$r["id"] ?>"> <?php echo $r["tencongty"] ?> </a>
+					href="<?php echo $servername ?>/companies/<?php echo $r["slugcongty"]."-".$r["id"] ?>"> <?php echo $r["tencongty"] ?> </a>
 			</h3>
 			<p>
 				<span class="needs_to_be_rendered"
