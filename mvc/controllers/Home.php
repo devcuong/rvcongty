@@ -62,7 +62,7 @@ class Home extends Controller
                 "Keyword" => $keyword
             ]);
         }
-        else if ($a == "sitemap.xml")
+        if ($a == "sitemap.xml")
         {
             $server = new Server();
             $baseUrl = "https:".$server->get_servername()."/companies/";
@@ -104,6 +104,7 @@ class Home extends Controller
             }
             echo '</urlset>'.PHP_EOL;
         }
+        //echo $a;
     }
 }
 ?>
