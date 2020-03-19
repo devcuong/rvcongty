@@ -23,8 +23,8 @@ class App
                 require_once "./mvc/controllers/" . $this->controller . ".php";
                 $this->controller = new $this->controller();
             } else {
-                //header("HTTP/1.0 404 Not Found");
-                header('Location: '."https://congtytop.com/404.php");
+
+                header('Location: '."404.php");
             }
         }
         else{
