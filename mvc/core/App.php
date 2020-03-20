@@ -14,7 +14,7 @@ class App
         //
         $arr = $this->UrlProcess();
         $classController = $this->UrlToClass($arr[0]);
-         echo $classController;
+         //echo $classController;
         // Xu li Controller
        
         if ($classController != NULL) {
@@ -23,9 +23,10 @@ class App
                 require_once "./mvc/controllers/" . $this->controller . ".php";
                 $this->controller = new $this->controller();
             } else {
-                if($classController == "sitemap.xml"){
-                    $this->controller = new $this->controller();
-                    require_once "./mvc/controllers/" . $this->controller . ".php";
+                if(strtolower($classController) == "sitemap.xml"){
+                   $params[0] = $classController;
+                   require_once "./mvc/controllers/" . $this->controller . ".php";
+                   $this->controller = new $this->controller();
                 }else {
                     header('Location: '."404.php");
                 }
