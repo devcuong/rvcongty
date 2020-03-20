@@ -610,9 +610,7 @@ a.white-link:hover {
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-
 </head>
-
 <body>
 	<nav class="main-nav navbar" role="navigation"
 		aria-label="main navigation">
@@ -644,6 +642,5 @@ a.white-link:hover {
 			</div>
 		</div>
 	</footer>
-  
 </body>
 </html>
