@@ -31,7 +31,8 @@ h1.page-header {
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/config.js"></script>  
+<script type="text/javascript"
+	src="<?php echo $servername ?>/mvc/public/js/config.js"></script>
 <script type="text/javascript">
 function changeToSlug(e) {
     return ("@" + e.toLowerCase().replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, "a").replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, "e").replace(/i|í|ì|ỉ|ĩ|ị/gi, "i").replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, "o").replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, "u").replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, "y").replace(/đ/gi, "d").replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, "").replace(/ /gi, "-").replace(/\-\-\-\-\-/gi, "-").replace(/\-\-\-\-/gi, "-").replace(/\-\-\-/gi, "-").replace(/\-\-/gi, "-") + "@").replace(/\@\-|\-\@|\@/gi, "")
@@ -89,7 +90,7 @@ function changeToSlug(e) {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"> Brand </a>
+				<a class="navbar-brand" href="#"> Quản trị </a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -103,11 +104,17 @@ function changeToSlug(e) {
 					<button type="submit" class="btn btn-default">
 						<i class="glyphicon glyphicon-search"></i>
 					</button>
+					<select>
+						<option href="#">Action</option> <option
+						   href="#">Another action</option> <option
+						   href="#">Something else here</option>
+					</select>
 				</form>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
 					<?php if(isset($_SESSION["email"])){ ?>
-					<a href="<?php echo $servername ?>/quan-tri/dang-xuat" target="_blank">Logout</a>
+					<a href="<?php echo $servername ?>/quan-tri/dang-xuat"
+						target="_blank">Logout</a>
 					<?php }else{ ?>
 					<a href="<?php echo $servername ?>/quan-tri/" target="_blank">Login</a>
 					<?php } ?>
@@ -134,10 +141,12 @@ function changeToSlug(e) {
 		<div class="col-md-2 sidebar">
 			<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="#">Home</a></li>
-				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-cong-ty">TẤT CẢ CÔNG TY</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-cong-ty">TẤT
+						CẢ CÔNG TY</a></li>
 				<li><a href="<?php echo $servername ?>/quan-tri/them-cong-ty">THÊM
 						CÔNG TY</a></li>
-				<li><a href="<?php echo $servername ?>/quan-tri/review-moi-nhat">REVIEW MỚI NHẤT</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/review-moi-nhat">REVIEW
+						MỚI NHẤT</a></li>
 				<li><a href="#">REVIEW NHIỀU LIKE</a></li>
 				<li><a href="#">REVIEW NHIỀU HATE</a></li>
 				<li><a href="#">REVIEW YÊU CẦU XÓA</a></li>

@@ -41,9 +41,9 @@ class QuanTri extends Controller
         if (isset($_POST["user-password"])) {
             $pass = md5(trim($_POST["user-password"]));
         }
+        //echo $email;
         $kq = $this->UserModel->LayUserBangEmailVaPassword($email);
         $temp = "";
-        
         while ($row = mysqli_fetch_array($kq)) {
             $temp = $row["password"];
         }

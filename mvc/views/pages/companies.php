@@ -219,8 +219,7 @@ $dataReply = $r["reply_data"];
                 <div class="field">
                     <label class="label">Review công ty <span class="has-text-danger">(Bắt buộc)</span> </label>
                     <div class="control">
-                        <textarea required class="textarea" name="content"
-                            placeholder="Mọi review cần mang tính khách quan, trung thực, không khuyến khích cảm xúc cá nhân (HR nhìn chảnh ...) (Tối thiểu 10 kí tự)"></textarea>
+                        <textarea required class="textarea" name="content" placeholder="Mọi review cần mang tính khách quan, trung thực, không khuyến khích cảm xúc cá nhân (HR nhìn chảnh ...) (Tối thiểu 10 kí tự)"></textarea>
                     </div>
                     <p class="help is-danger is-hidden">Nội dung tối thiếu 10 kí tự</p>
                 </div>
@@ -270,8 +269,7 @@ $dataReply = $r["reply_data"];
                 <div class="field">
                     <label class="label">Comment <span class="has-text-danger">(Bắt buộc)</span> </label>
                     <div class="control">
-                        <textarea required class="textarea" name="content" id="review-content"
-                            placeholder="Mọi review cần mang tính khách quan, trung thực, không khuyến khích cảm xúc cá nhân (HR nhìn chảnh ...) (Tối thiểu 10 kí tự)"></textarea>
+                        <textarea required class="textarea" name="content" id="review-content" placeholder="Mọi review cần mang tính khách quan, trung thực, không khuyến khích cảm xúc cá nhân (HR nhìn chảnh ...) (Tối thiểu 10 kí tự)"></textarea>
                     </div>
 
                 </div>

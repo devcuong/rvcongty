@@ -118,7 +118,7 @@ class Companies extends Controller
         $companyUrl = $_POST["companyUrl"];
         
         // content
-        $content = $_POST["content"];
+        $content = nl2br($_POST["content"]);
         
         // reviewer
         if (isset($_POST['reviewer'])) {
