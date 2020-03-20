@@ -106,8 +106,8 @@ while ($r = mysqli_fetch_array($data["Review"])) {
 						class="far fa-star"></i>
 				</span>
 										<?php } ?>
-        </span>
-        <span> &nbsp; LIÊN HỆ</span>
+        &nbsp;</span>
+        <button class="button is-danger is-outlined">LIÊN HỆ</button>
 			</p>
 			<span class="review__time needs_to_be_rendered" datetime="<?php echo $r["review_thoigian"] ?>"><?php echo $r["review_thoigian"] ?></span>
 			<a class="review__share"
