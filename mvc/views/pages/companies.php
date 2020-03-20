@@ -107,6 +107,7 @@ while ($r = mysqli_fetch_array($data["Review"])) {
 				</span>
 										<?php } ?>
         </span>
+        <span> &nbsp; LIÊN HỆ</span>
 			</p>
 			<span class="review__time needs_to_be_rendered" datetime="<?php echo $r["review_thoigian"] ?>"><?php echo $r["review_thoigian"] ?></span>
 			<a class="review__share"
@@ -137,10 +138,13 @@ while ($r = mysqli_fetch_array($data["Review"])) {
 				class="icon-dislike icon has-text-danger"> <i
 					class="fas fa-thumbs-down"></i>
 			</span>
-			</span> <span data-id="<?php echo $r["review_id"] ?>"
+			</span> 
+			<span data-id="<?php echo $r["review_id"] ?>"
 				data-prefill="Xóa review này giùm!" data-reaction="DELETE"
-				class="link-comment card-footer-item clickable"><span
-				class="icon-ban icon is-medium"> <span class="fa-stack fa-md"> <i
+				class="link-comment card-footer-item clickable">
+			<span
+				class="icon-ban icon is-medium"> 
+				<span class="fa-stack fa-md"> <i
 						class="fas fa-comments fa-stack-1x has-text-info"></i> <i
 						class="fas fa-ban fa-stack-2x has-text-danger"></i>
 				</span>
