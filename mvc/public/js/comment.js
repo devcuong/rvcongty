@@ -4,8 +4,8 @@
 
   $('.link-comment').forEach((element) => {
     element.addEventListener('click', () => {
-      const commentModal = $$('#comment-modal')
-      commentModal.classList.add('is-active')
+      const contactModal = $$('#comment-modal')
+      contactModal.classList.add('is-active')
 
       const data = element.dataset
       const reviewId = data.id

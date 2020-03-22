@@ -2,9 +2,24 @@
   const $ = document.querySelectorAll.bind(document)
   const $$ = document.querySelector.bind(document)
 
-  $$('.button-contact').addEventListener('click', () => {
-	  //alert("ok");
-    $$('#contact-modal').classList.add('is-active')
+  $('.button-contact').forEach((element) => {
+    element.addEventListener('click', () => {
+      const commentModal = $$('#contact-modal')
+      commentModal.classList.add('is-active')
+
+//      const data = element.dataset
+//      const reviewId = data.id
+//      const prefillContent = data.prefill
+//      const reaction = data.reaction
+//
+//      const idInput = $$('#review-id')
+//      const reviewContent = $$('#review-content')
+//      const reviewReaction = $$('#review-reaction')
+//
+//      idInput.value = reviewId
+//      reviewContent.value = prefillContent
+//      reviewReaction.value = reaction
+    })
   })
 
   $('.modal-background, .button-close').forEach((element) => {
@@ -25,11 +40,12 @@
     }
   }
 
-  const btnReviewSubmit = $$('.button-review-submit')
-  btnReviewSubmit.addEventListener('click', validateForm('review-form'))
+  const btnCommentSubmit = $$('.button-comment-submit')
+  btnCommentSubmit.addEventListener('click', validateForm('comment-form'))
 
-  function onReviewCaptchaSuccess() {
-    btnReviewSubmit.removeAttribute('disabled')
+  function onCommentCaptchaSuccess() {
+    btnCommentSubmit.removeAttribute('disabled')
   }
-  window.onReviewCaptchaSuccess = onReviewCaptchaSuccess
+
+  window.onCommentCaptchaSuccess = onCommentCaptchaSuccess
 })()
