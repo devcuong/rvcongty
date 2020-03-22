@@ -4,11 +4,14 @@
 
   $('.button-contact').forEach((element) => {
     element.addEventListener('click', () => {
-      const commentModal = $$('#contact-modal')
-      commentModal.classList.add('is-active')
+      const data = element.dataset;
+      const reviewId = data.id;
+      $('#contact-phone').html(reviewId);
+      const commentModal = $$('#contact-modal');
+      commentModal.classList.add('is-active');
 
-//      const data = element.dataset
-//      const reviewId = data.id
+
+      
 //      const prefillContent = data.prefill
 //      const reaction = data.reaction
 //

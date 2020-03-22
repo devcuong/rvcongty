@@ -308,6 +308,7 @@ $dataReply = $r["reply_data"];
   <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
+        		<span id="contact-phone"></span>
                 <div class="m-t-15">
                     <button type="button" class="button button-close">Hủy bỏ</button>
                 </div>
