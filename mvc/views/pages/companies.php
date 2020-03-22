@@ -306,19 +306,14 @@ $dataReply = $r["reply_data"];
 <script src="<?php echo $servername ?>/mvc/public/js/comment.js" async defer></script>
 <div class="modal" id="contact-modal">
   <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Modal title</p>
-      <button class="delete" aria-label="close"></button>
-    </header>
-    <section class="modal-card-body">
-      <!-- Content ... -->
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success">Save changes</button>
-      <button class="button">Cancel</button>
-    </footer>
-  </div>
+    <div class="modal-content">
+        <div class="box">
+                <div class="m-t-15">
+                    <button type="button" class="button button-close">Hủy bỏ</button>
+                </div>
+        </div>
+    </div>
+    <button class="modal-close button-close is-large" aria-label="close"></button>
 </div>
 <script src="<?php echo $servername ?>/mvc/public/js/contact.js" async defer></script>
 <?php } ?>

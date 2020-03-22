@@ -2,8 +2,9 @@
   const $ = document.querySelectorAll.bind(document)
   const $$ = document.querySelector.bind(document)
 
-  $$('.button-review').addEventListener('click', () => {
-    $$('#review-modal').classList.add('is-active')
+  $$('.button-contact').addEventListener('click', () => {
+	  //alert("ok");
+    $$('#contact-modal').classList.add('is-active')
   })
 
   $('.modal-background, .button-close').forEach((element) => {
