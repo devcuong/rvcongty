@@ -14,7 +14,6 @@ class App
         //
         $arr = $this->UrlProcess();
         $classController = $this->UrlToClass($arr[0]);
-         //echo $classController;
         // Xu li Controller
        
         if ($classController != NULL) {
