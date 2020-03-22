@@ -5,11 +5,10 @@
   $('.button-contact').forEach((element) => {
     element.addEventListener('click', () => {
       const data = element.dataset;
-      const reviewId = data.id;
-      $('#contact-phone').html(reviewId);
+      const phoneReviewer = data.phone;
+      jQuery('#contact-id').html(phoneReviewer);
       const commentModal = $$('#contact-modal');
       commentModal.classList.add('is-active');
-
 
       
 //      const prefillContent = data.prefill

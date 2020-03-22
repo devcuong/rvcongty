@@ -107,7 +107,7 @@ while ($r = mysqli_fetch_array($data["Review"])) {
 				</span>
 										<?php } ?>
         &nbsp;</span>
-        <button class="button is-danger is-outlined button-contact">LIÊN HỆ</button>
+        <button class="button is-danger is-outlined button-contact" data-phone="123">LIÊN HỆ</button>
 			</p>
 			<span class="review__time needs_to_be_rendered" datetime="<?php echo $r["review_thoigian"] ?>"><?php echo $r["review_thoigian"] ?></span>
 			<a class="review__share"
@@ -308,7 +308,7 @@ $dataReply = $r["reply_data"];
   <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
-        		<span id="contact-phone"></span>
+        		<span id="contact-id"></span>
                 <div class="m-t-15">
                     <button type="button" class="button button-close">Hủy bỏ</button>
                 </div>
