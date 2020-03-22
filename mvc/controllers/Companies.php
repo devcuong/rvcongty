@@ -109,6 +109,7 @@ class Companies extends Controller
     {
         $reviewerName = "";
         $reviewerPosition = "";
+        $contactReviewer = "";
         $score = "";
         
         // id công ty
@@ -136,6 +137,14 @@ class Companies extends Controller
                 $reviewerPosition = "Dev";
             }
         }
+        // contact
+        if(isset($_POST['contact'])){
+            if (trim($_POST['contact']) != ""){
+                $contactReviewer = trim($_POST["contact"]);
+            }else {
+                $contactReviewer = "Không có contact";
+            }
+        }
         
         // score
         $score = intval($_POST["score"]);
@@ -144,7 +153,7 @@ class Companies extends Controller
         
         /*echo $createdDate;*/
         
-        $kq = $this->ReviewModel->ThemReview($reviewerName, $reviewerPosition, $score, $content, $idCongTy, $createdDate);
+        $kq = $this->ReviewModel->ThemReview($reviewerName, $reviewerPosition, $score, $content, $idCongTy, $createdDate, $contactReviewer);
         if ($kq > 0) {
             $kq2 = $this->CongTyModel->UpdateRateCongTy($idCongTy, $score, $createdDate);
             echo $kq2;
