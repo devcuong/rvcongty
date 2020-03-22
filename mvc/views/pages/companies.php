@@ -107,7 +107,7 @@ while ($r = mysqli_fetch_array($data["Review"])) {
 				</span>
 										<?php } ?>
         &nbsp;</span>
-        <button class="button is-danger is-outlined">LIÊN HỆ</button>
+        <button class="button is-danger is-outlined button-contact">LIÊN HỆ</button>
 			</p>
 			<span class="review__time needs_to_be_rendered" datetime="<?php echo $r["review_thoigian"] ?>"><?php echo $r["review_thoigian"] ?></span>
 			<a class="review__share"
@@ -303,6 +303,23 @@ $dataReply = $r["reply_data"];
     </div>
     <button class="modal-close button-close is-large" aria-label="close"></button>
 </div>
-<?php } ?>
 <script src="<?php echo $servername ?>/mvc/public/js/comment.js" async defer></script>
+<div class="modal" id="contact-modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save changes</button>
+      <button class="button">Cancel</button>
+    </footer>
+  </div>
+</div>
+<script src="<?php echo $servername ?>/mvc/public/js/contact.js" async defer></script>
+<?php } ?>
 <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
