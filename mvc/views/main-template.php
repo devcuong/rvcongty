@@ -181,26 +181,38 @@ a.white-link:hover {
 .tabs
 
 
+
+
 :not
 
+
  
+
 
 (
 :last-child
 
+
  
+
 
 )
 {
 margin-bottom
 
 
+
+
 :
+
 
  
 
+
 0
 .8rem
+
+
 
 
 ;
@@ -363,23 +375,35 @@ margin-bottom
 }
 
 .tabs
+
+
 :not
+
  
+
 (
 :last-child
+
  
+
 ){
 margin-bottom
+
+
 :
+
  
+
 0
 px
+
  
+
 !
 important
+
+
 ;
-
-
 }
 .custom-pagination {
 	margin-top: 0.8rem;
@@ -686,6 +710,14 @@ important
 	z-index: 10;
 	background: white;
 }
+
+@media screen and (min-width:1088px) {
+	.navbar.is-primary .navbar-end>a.navbar-item.is-active, .navbar.is-primary .navbar-end>a.navbar-item:hover {
+		background-color: #F7941D;
+		color: #fff;
+		font-weight: bold;
+	}
+}
 </style>
 <script type="text/javascript" async=""
 	src="<?php echo $servername ?>/mvc/public/js/js"></script>
@@ -806,7 +838,11 @@ transform
 
 
 
+
+
 :rotate(360deg)
+
+
 
 
 
@@ -874,68 +910,106 @@ transform
 }
 
 .textarea
+
+
 :not
+
  
+
 (
 [
 rows
 ]
+
  
+
 )
 {
 max-height
+
+
 :
+
  
+
 600
 px
-;
 
-	
+
+;
 min-height
+
+
 :
+
  
+
 120
 px
 
 
+
+
 }
 .select
+
+
 :not
+
  
+
 (
 .is-multiple
+
  
+
 )
 {
 height
+
+
 :
+
  
+
 2
 .25em
+
+
 ;
-
-
 }
 .select
+
  
+
 select
+
+
 :not
+
  
+
 (
 [
 multiple
 ]
+
  
+
 )
 {
 padding-right
+
+
 :
+
  
+
 2
 .5em
+
+
 ;
-
-
 }
 .select {
 	display: inline-block;
@@ -961,20 +1035,30 @@ padding-right
 }
 
 .field
+
+
 :not
+
  
+
 (
 :last-child
+
  
+
 )
 {
 margin-bottom
+
+
 :
+
  
+
 .75rem
+
+
 ;
-
-
 }
 .select:not (.is-multiple ):not (.is-loading )::after {
 	border-color: #3273dc;
@@ -1026,10 +1110,8 @@ margin-bottom
 						<a href="<?php echo $servername ?>"> <b>CÔNG TY TOP</b></a>
 					</h1>
 				</div>
-				<span class="navbar-burger burger" data-target="navMenu"> 
-					<span></span>
-					<span></span>
-					<span></span>
+				<span class="navbar-burger burger" data-target="navMenu"> <span></span>
+					<span></span> <span></span>
 				</span>
 			</div>
 			<div id="navMenu" class="navbar-menu">
