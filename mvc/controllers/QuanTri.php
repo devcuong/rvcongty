@@ -269,7 +269,7 @@ class QuanTri extends Controller
             // Thêm công ty
             $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy), trim($this->ToSlug(trim($tenCongTy))), trim($imageName), trim($nganhNghe), trim($nhanVien), trim($diaChi), $createdDate);
             $lastId = $this->CongTyModel->GetLastId();
-            $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 3, $firstComment, $lastId, $createdDate);
+            $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 3, $firstComment, $lastId, $createdDate, "Không có contact");
             $kq3 = $this->CongTyModel->UpdateRateCongTy($lastId, 3, $createdDate);
             if ($kq3) {
                 echo "THÀNH CÔNG " . $tenCongTy . " " . $lastId;

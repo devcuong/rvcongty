@@ -116,7 +116,9 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 										<?php } ?>
         &nbsp;</span>
 				<button class="button is-danger is-outlined button-contact"
-					data-phone="<?php echo $r["review_contact"]?>">LIÊN HỆ</button>
+					data-phone="<?php if($r["review_contact"] == ""){
+					    echo "Không có contact";
+					} else echo $r["review_contact"]?>">LIÊN HỆ</button>
 			</p>
 			<span class="review__time needs_to_be_rendered"
 				datetime="<?php echo $r["review_thoigian"] ?>"><?php echo $r["review_thoigian"] ?></span>
