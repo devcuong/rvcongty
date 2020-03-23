@@ -1110,18 +1110,18 @@ margin-bottom
 						<a href="<?php echo $servername ?>"> <b>CÔNG TY TOP</b></a>
 					</h1>
 				</div>
-				<span class="navbar-burger burger" data-target="navMenu"> <span></span>
+				<!--  <span class="navbar-burger burger" data-target="navMenu"> <span></span>
 					<span></span> <span></span>
-				</span>
+				</span> -->
 			</div>
-			<div id="navMenu" class="navbar-menu">
+			<!--<div id="navMenu" class="navbar-menu">
 				<div class="navbar-end">
 					<a href="#" class="navbar-item is-active">Home</a> <a href="#"
 						class="navbar-item">Blog</a> <a href="#" class="navbar-item">Forum</a>
 					<a href="#" class="navbar-item">Shop</a> <a href="#"
 						class="navbar-item">Examples</a>
 				</div>
-			</div>
+			</div>-->
 		</div>
 	</nav>
 	<script type="text/javascript">
