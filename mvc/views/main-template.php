@@ -5,21 +5,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="<?php echo $data["Description"]; ?>">
-	
+
 <meta name="keywords" content="<?php echo $data["Keyword"]; ?>">
 
 <meta property="og:title" content="<?php echo $data["Title"]; ?>">
-<meta property="og:description" content="<?php echo $data["Description"]; ?>">
+<meta property="og:description"
+	content="<?php echo $data["Description"]; ?>">
 <meta property="og:type" content="website">
 
-<meta property="og:url" content="<?php $url = "https"."://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-echo $url ?>">
+<meta property="og:url"
+	content="<?php
+
+$url = "https" . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+echo $url?>">
 <link rel="canonical" href="<?php echo $url ?>">
 
 <meta property="og:image"
 	content="<?php
-	$url = "https"."://$_SERVER[HTTP_HOST]";
-	echo $url ?>/mvc/public/images/banner.png">
+$url = "https" . "://$_SERVER[HTTP_HOST]";
+echo $url?>/mvc/public/images/banner.png">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:site_name" content="Công ty TOP">
 <title><?php echo $data["Title"]; ?></title>
@@ -57,27 +61,34 @@ echo $url ?>">
 
 <link rel="preload stylesheet" as="style"
 	href="<?php echo $servername ?>/mvc/public/css/bulma.min.css">
-<link href="<?php echo $servername ?>/mvc/public/css/css" rel="stylesheet">
+<link href="<?php echo $servername ?>/mvc/public/css/css"
+	rel="stylesheet">
 <link rel="stylesheet" as="style"
 	href="<?php echo $servername ?>/mvc/public/css/jquery-ui.min.css">
 <link rel="preload stylesheet" as="style"
-    href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.css">
-<link rel="stylesheet" type="text/css" href="<?php echo $servername ?>/mvc/public/css/style.css" />
+	href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.css">
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $servername ?>/mvc/public/css/style.css" />
 <link rel="preload stylesheet" as="style"
-    href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" crossorigin="anonymous">
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+	crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/timeago.locales.min.js"></script>
-<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/config.js"></script>   
+<script type="text/javascript"
+	src="<?php echo $servername ?>/mvc/public/js/timeago.locales.min.js"></script>
+<script type="text/javascript"
+	src="<?php echo $servername ?>/mvc/public/js/jquery-ui.min.js"></script>
+<script type="text/javascript"
+	src="<?php echo $servername ?>/mvc/public/js/config.js"></script>
 <style type="text/css" id="less:stylesheets-style">
 @media screen and (min-width: 769px) {
-	.columns{
-        display: flex;
-    }
-    .hero{
-    bottom: 80px;
-    }
+	.columns {
+		display: flex;
+	}
+	.hero {
+		bottom: 80px;
+	}
 }
+
 @media screen and (max-width: 768px) {
 	html {
 		font-size: 14px;
@@ -167,10 +178,33 @@ a.white-link:hover {
 	margin-bottom: 15px !important;
 }
 
-.tabs:not (:last-child ) {
-	margin-bottom: 0.8rem;
-}
+.tabs
 
+
+:not
+
+ 
+
+(
+:last-child
+
+ 
+
+)
+{
+margin-bottom
+
+
+:
+
+ 
+
+0
+.8rem
+
+
+;
+}
 .z-1 {
 	z-index: 1;
 }
@@ -183,7 +217,7 @@ a.white-link:hover {
 	font-size: 1rem;
 	line-height: 1.5rem;
 	background-color: #00b9f2;
-	background-image:linear-gradient(97deg,#00b9f2 35%,#0e7ccd 62%,#00b9f2 81%);
+	background-image: linear-gradient(97deg, #00b9f2 35%, #0e7ccd 62%, #00b9f2 81%);
 }
 
 .main-nav .logo {
@@ -212,14 +246,16 @@ a.white-link:hover {
 
 .main-footer {
 	background-color: #00b9f2;
-    background-image: linear-gradient(97deg,#00b9f2 35%,#0e7ccd 62%,#00b9f2 81%);
+	background-image: linear-gradient(97deg, #00b9f2 35%, #0e7ccd 62%, #00b9f2 81%);
 	flex-basis: 40px;
 	padding: 0.5rem 0;
 	margin-top: 20px;
 }
-.level-item a{
+
+.level-item a {
 	color: #fff !important;
 }
+
 @media screen and (max-width: 768px) {
 	.main-footer {
 		padding: 0.5rem 1rem;
@@ -230,11 +266,10 @@ a.white-link:hover {
 	min-height: calc(100vh - 120px);
 }
 
-
 @media screen and (max-width: 768px) {
 	.hero-img {
 		margin-left: 0;
-/* 		height: 220px; */
+		/* 		height: 220px; */
 		margin-right: 0;
 	}
 }
@@ -246,89 +281,117 @@ a.white-link:hover {
 	right: -64px;
 	height: 434px;
 }
-.hero{
+
+.hero {
 	border-radius: 50px;
-    position: absolute;
-    left: 15%;
-    width: 70%;
-    z-index: 1000;
-	background: rgba(0,0,0,0.2);
+	position: absolute;
+	left: 15%;
+	width: 70%;
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.2);
 }
+
 .banner-search-box {
-    border-radius: 30px;
-    background-color: transparent;
+	border-radius: 30px;
+	background-color: transparent;
 	position: relative;
-    background: #fff;
+	background: #fff;
 }
+
 .box-search {
-    border-radius: 30px !important;
-    overflow: hidden;
+	border-radius: 30px !important;
+	overflow: hidden;
 	background-color: #fff;
-    border: 1px solid #ced4da;
+	border: 1px solid #ced4da;
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 }
-.banner-search-box .box-search .form-control{
+
+.banner-search-box .box-search .form-control {
 	position: relative;
 	flex: 1 1 auto;
 	padding: 12px 20px;
-    font-size: 120%;
+	font-size: 120%;
 	border: none;
 	border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+	border-bottom-right-radius: 0;
 	border-radius: 3px;
 	width: 1%;
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
+
 .input-group-append {
-    margin-left: -1px;
+	margin-left: -1px;
 	display: flex;
 }
+
 .input-group-append .btn {
-    padding: 0px 12px;
-	    width: 42px;
-    text-align: center;
+	padding: 0px 12px;
+	width: 42px;
+	text-align: center;
 	position: relative;
-    z-index: 2;
+	z-index: 2;
 }
+
 .box-search .input-group-append .btn i {
-    color: #b62831;
+	color: #b62831;
 }
+
 .box-search .input-group-append .btn {
-    background-color: transparent;
+	background-color: transparent;
 	border: none;
 }
+
 @media screen and (max-width: 768px) {
 	.hero-img .hero-img__gradient {
 		height: 220px;
 		left: 0;
 		right: 0;
 	}
-    .hero{
-    bottom: 20px;
-    }
+	.hero {
+		bottom: 20px;
+	}
 }
 
 .companies {
-    background-color: #fff;
-    color: #4a4a4a;
-    max-width: 100%;
-    position: relative;
-    padding: 0.3rem 0 0 0;
+	background-color: #fff;
+	color: #4a4a4a;
+	max-width: 100%;
+	position: relative;
+	padding: 0.3rem 0 0 0;
 }
-.tabs:not(:last-child){
-	margin-bottom: 0px !important;
+
+.tabs
+:not
+ 
+(
+:last-child
+ 
+){
+margin-bottom
+:
+ 
+0
+px
+ 
+!
+important
+;
+
+
 }
-.custom-pagination{
+.custom-pagination {
 	margin-top: 0.8rem;
 }
-.summary-reviews{
-	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
-    margin-left: 1rem;
+
+.summary-reviews {
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+	margin-left: 1rem;
 	padding-left: 0.5rem;
-    background: white;
+	background: white;
 }
+
 .custom-pagination {
 	padding-left: 1rem;
 	margin-bottom: 0.4rem;
@@ -345,10 +408,10 @@ a.white-link:hover {
 }
 
 .company-item:hover {
-/* 	background: #f1f2f2; */
-/* 	border-left: 2px solid #3273dc; */
-/* 	cursor: pointer; */
-	box-shadow: 0 3px 10px 0 rgba(0,0,0,0.1);
+	/* 	background: #f1f2f2; */
+	/* 	border-left: 2px solid #3273dc; */
+	/* 	cursor: pointer; */
+	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .company-info {
@@ -359,27 +422,32 @@ a.white-link:hover {
 	margin-left: 0px;
 	margin-right: 0px;
 }
-.home-logo-company{
+
+.home-logo-company {
 	text-align: center;
-	padding:1.25rem;
+	padding: 1.25rem;
 	border-right: 1px solid #A8E4FC;
 	background: #fff;
 }
-.home-detail-company{
+
+.home-detail-company {
 	flex-grow: 0;
 	flex-shrink: 0;
-	flex-basis:auto;
+	flex-basis: auto;
 }
-.company-info__detail{
-/* 	width: 100%; */
+
+.company-info__detail {
+	/* 	width: 100%; */
+	
 }
-.pagination-link{
+
+.pagination-link {
 	border-radius: 0px;
 }
-@media screen and (max-width: 768px) {
-/* 	.company-info { */
-/* 		padding: 0.4rem 1.2rem; */
-/* 	} */
+
+@media screen and (max-width: 768px) { /* 	.company-info { */
+	/* 		padding: 0.4rem 1.2rem; */
+	/* 	} */
 }
 
 .company-info .company-info__name {
@@ -619,7 +687,8 @@ a.white-link:hover {
 	background: white;
 }
 </style>
-<script type="text/javascript" async="" src="<?php echo $servername ?>/mvc/public/js/js"></script>
+<script type="text/javascript" async=""
+	src="<?php echo $servername ?>/mvc/public/js/js"></script>
 <style>
 #instantclick {
 	position: fixed;
@@ -707,7 +776,6 @@ to {
 }
 
 }
-
 body.fb_hidden {
 	height: 100%;
 	left: 0;
@@ -718,7 +786,6 @@ body.fb_hidden {
 	transform: none;
 	width: 100%
 }
-
 
 .loading.centered #fb_dialog_loader_close {
 	clear: both;
@@ -735,7 +802,15 @@ keyframes rotateSpinner { 0%{
 
 100%{
 transform
+
+
+
+
 :rotate(360deg)
+
+
+
+
 }
 }
 .fb_iframe_widget {
@@ -776,82 +851,158 @@ transform
 }
 
 .summary-reviews .review {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .btn-group button {
-  float: left; /* Float the buttons side by side */
-  border-radius: 0px;
+	float: left; /* Float the buttons side by side */
+	border-radius: 0px;
 }
 
 /* Clear floats (clearfix hack) */
 .btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
+	content: "";
+	clear: both;
+	display: table;
 }
 
 .ui-menu-item .ui-menu-item-wrapper.ui-state-active {
-    background: #F5FCFF !important; 
-    font-weight: bold !important;
-    color: #000!important;
+	background: #F5FCFF !important;
+	font-weight: bold !important;
+	color: #000 !important;
 	border: none;
 }
-.textarea:not([rows]) {
-    max-height: 600px;
-    min-height: 120px
+
+.textarea
+:not
+ 
+(
+[
+rows
+]
+ 
+)
+{
+max-height
+:
+ 
+600
+px
+;
+
+	
+min-height
+:
+ 
+120
+px
+
+
 }
-.select:not(.is-multiple) {
-    height: 2.25em;
+.select
+:not
+ 
+(
+.is-multiple
+ 
+)
+{
+height
+:
+ 
+2
+.25em
+;
+
+
 }
-.select select:not([multiple]) {
-    padding-right: 2.5em;
+.select
+ 
+select
+:not
+ 
+(
+[
+multiple
+]
+ 
+)
+{
+padding-right
+:
+ 
+2
+.5em
+;
+
+
 }
 .select {
-    display: inline-block;
-    max-width: 100%;
-    position: relative;
-    vertical-align: top;
+	display: inline-block;
+	max-width: 100%;
+	position: relative;
+	vertical-align: top;
 }
+
 .select select {
-    background-color: #fff;
-    border-color: #dbdbdb;
-    color: #363636;
-    cursor: pointer;
-    display: block;
-    font-size: 1em;
-    max-width: 100%;
-    outline: 0;
+	background-color: #fff;
+	border-color: #dbdbdb;
+	color: #363636;
+	cursor: pointer;
+	display: block;
+	font-size: 1em;
+	max-width: 100%;
+	outline: 0;
 }
+
 .message.is-info .message-header {
-    background-color: #0e7ccd;
-    color: #fff;    
+	background-color: #0e7ccd;
+	color: #fff;
 }
-.field:not(:last-child) {
-    margin-bottom: .75rem;
+
+.field
+:not
+ 
+(
+:last-child
+ 
+)
+{
+margin-bottom
+:
+ 
+.75rem
+;
+
+
 }
-.select:not(.is-multiple):not(.is-loading)::after {
-    border-color: #3273dc;
-    right: 1.125em;
-    z-index: 4;
+.select:not (.is-multiple ):not (.is-loading )::after {
+	border-color: #3273dc;
+	right: 1.125em;
+	z-index: 4;
 }
+
 .button.is-rounded {
-    border-radius: 0px;
-    padding-left: 1em;
-    padding-right: 1em;
+	border-radius: 0px;
+	padding-left: 1em;
+	padding-right: 1em;
 }
-.button.upload-review{
+
+.button.upload-review {
 	background-color: #f7941d;
 }
-.button.upload-review:hover{
+
+.button.upload-review:hover {
 	background-color: #FF6600;
 }
-.reviewer-contact{
+
+.reviewer-contact {
 	border: 2px solid #ff3860;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159821622-1"></script>
+<script async
+	src="https://www.googletagmanager.com/gtag/js?id=UA-159821622-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -863,21 +1014,46 @@ transform
 </head>
 
 <body>
-	<nav class="main-nav navbar" role="navigation"
+	<nav class="main-nav navbar is-primary" role="navigation"
 		aria-label="main navigation">
 		<div class="container">
-			<div class="logo" data-no-instant="">
-				<a href="<?php echo $servername ?>"> <img class="logo__img"
-					src="<?php echo $servername ?>/mvc/public/images/logo.png" alt="">
-				</a>
-				<h1 class="logo__header has-text-white is-size-5">
-					<a href="<?php echo $servername ?>"> <b>CÔNG TY TOP</b></a>
-				</h1>
+			<div class="navbar-brand">
+				<div class="logo" data-no-instant="">
+					<a href="<?php echo $servername ?>"> <img class="logo__img"
+						src="<?php echo $servername ?>/mvc/public/images/logo.png" alt="">
+					</a>
+					<h1 class="logo__header has-text-white is-size-5">
+						<a href="<?php echo $servername ?>"> <b>CÔNG TY TOP</b></a>
+					</h1>
+				</div>
+				<span class="navbar-burger burger" data-target="navMenu"> 
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</div>
+			<div id="navMenu" class="navbar-menu">
+				<div class="navbar-end">
+					<a href="#" class="navbar-item is-active">Home</a> <a href="#"
+						class="navbar-item">Blog</a> <a href="#" class="navbar-item">Forum</a>
+					<a href="#" class="navbar-item">Shop</a> <a href="#"
+						class="navbar-item">Examples</a>
+				</div>
 			</div>
 		</div>
 	</nav>
+	<script type="text/javascript">
+		(function(){
+			var burger = document.querySelector('.burger');
+			var nav = document.querySelector('#'+burger.dataset.target);
 
-
+			burger.addEventListener('click', function(){
+				//alert(burger.length);
+				burger.classList.toggle('is-active');
+				nav.classList.toggle('is-active');
+			})
+		})();
+	</script>
 	<div class="container main-container"
 		style="height: auto !important; min-height: 0px !important;">
 		<?php require_once "./mvc/views/pages/" . $data["Page"] . ".php"?>
@@ -897,11 +1073,11 @@ transform
 			</div>
 		</div>
 	</footer>
-	 <script type="text/javascript">
+	<script type="text/javascript">
 	 var nodes = document.querySelectorAll(".needs_to_be_rendered");
 	 timeago.render(nodes, "vi"), timeago.cancel();
     </script>
-    <script>
+	<script>
     jQuery.ui.autocomplete.prototype._resizeMenu = function() {
         this.menu.element.outerWidth(this.element.outerWidth())
     }, $(function() {
