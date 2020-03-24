@@ -27,14 +27,18 @@ class Home extends Controller
             $soTrang = ceil($soCongTy / $congTyMoiTrang);
             
             $congTyTrangHienTai = "";
+            $congTyTrangHienTaiSchema = "";
             if ($tabCongTy == "latest") {
                 $congTyTrangHienTai = $congty->LayCongTyPhanTrang($soCongTyBoQua, $congTyMoiTrang);
+                $congTyTrangHienTaiSchema = $congty->LayCongTyPhanTrang($soCongTyBoQua, $congTyMoiTrang);
             } else 
                 if ($tabCongTy == "best") {
                     $congTyTrangHienTai = $congty->LayCongTyBestPhanTrang($soCongTyBoQua, $congTyMoiTrang);
+                    $congTyTrangHienTaiSchema = $congty->LayCongTyBestPhanTrang($soCongTyBoQua, $congTyMoiTrang);
                 } else 
                     if ($tabCongTy == "worst") {
                         $congTyTrangHienTai = $congty->LayCongTyWorstPhanTrang($soCongTyBoQua, $congTyMoiTrang);
+                        $congTyTrangHienTaiSchema = $congty->LayCongTyWorstPhanTrang($soCongTyBoQua, $congTyMoiTrang);
                     }
             
             // Title
@@ -53,7 +57,7 @@ class Home extends Controller
             
             $schema = new Schema();
             
-            $StringSchema = $schema->generate_schema();
+            $StringSchema = $schema->generate_schema($congTyTrangHienTaiSchema,"main-home");
             
             // View
             $this->view("main-template", [
