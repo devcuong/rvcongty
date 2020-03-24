@@ -1,6 +1,7 @@
 <?php
 require 'mvc/class/Replyer.php';
 require 'mvc/class/CutString.php';
+require_once 'mvc/class/Schema.php';
 class Companies extends Controller
 {
 
@@ -35,6 +36,7 @@ class Companies extends Controller
                 $getRVNow = $rvNow->fetch_assoc();
                 $tenCongTy = $getRVNow["congty_tencongty"];
                 $noiDungReview = $getRVNow["review_noidung"];
+                
                 $rp = $this->ReplyModel->LayReplyBangIdReview($d);
                 
                 $cutString = new CutString();
@@ -80,6 +82,8 @@ class Companies extends Controller
         // Công ty
         $congTyLater = $congty->LayCongTyBangId($idCongTy);
         $congTyNow = $congty->LayCongTyBangId($idCongTy);
+        $congTySchema = $congty->LayCongTyBangId($idCongTy);
+        
         $tencongty = "";        
         $tencongty = $congTyNow->fetch_assoc()["tencongty"];
         
@@ -91,7 +95,12 @@ class Companies extends Controller
         
        // Keyword
        $keyword = "review công ty $tencongty, review cong ty $tencongty, công ty review $tencongty, cong ty review $tencongty, review công việc $tencongty, review cong viec $tencongty, review mức lương $tencongty, review muc luong $tencongty, review sếp $tencongty, review sep $tencongty";
-        // View
+       
+       $schema = new Schema();
+       
+       $StringSchema = $schema->generate_schema($congTySchema,"companies");
+       
+       // View
         $this->view("main-template", [
             "Page" => "companies",
             "CongTy" => $congTyLater,
@@ -100,7 +109,8 @@ class Companies extends Controller
             "TrangHienTai" => $trangReviewHienTai,
             "Title" => $title,
             "Description" => $description,
-            "Keyword" => $keyword
+            "Keyword" => $keyword,
+            "StringSchema" => $StringSchema
         ]);
     }
 

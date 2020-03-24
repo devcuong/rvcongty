@@ -9,13 +9,42 @@ class Schema
         $serverName = $server->get_servername();
         $stringSchema = "{";
         if ($page == "main-home") {
-            while ($r = mysqli_fetch_array($data)) {}
-            $stringSchema = $stringSchema . '"@context":"https://schema.org/",';
-            $stringSchema = $stringSchema . '"@type":"Organization",';
-            $stringSchema = $stringSchema . '"url":"'.$serverName.'",';
-            $stringSchema = $stringSchema . '"logo":"'.$serverName.'/mvc/public/images/logo.png"';
+            $dataSchema = array(
+                "@context"=>"https://schema.org/",
+                "@type"=>"Organization",
+                "url"=>"https:".$serverName,
+                "logo"=>"https:".$serverName."/mvc/public/images/logo.png"
+            );
+            $stringSchema = json_encode($dataSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }
-        $stringSchema = $stringSchema . "}";
+        if($page == "companies"){
+            $tenCongTy = "";
+            $slugCongTy = "";
+            $idCongTy = "";
+            $ratingCount = 0;
+            $ratingValue = 0;
+            while ($r = mysqli_fetch_array($data)){
+                $tenCongTy = $r["tencongty"];
+                $slugCongTy = $r["slugcongty"];
+                $idCongTy = $r["id"];
+                $ratingCount = (float)$r["luotdanhgia"];
+                $ratingValue = (float)$r["rate"];
+            }
+            $dataItemReviewed = array(
+                "@type"=>"Organization",
+                "name"=>$tenCongTy,
+                "sameAs"=>"https:".$serverName."/companies/".$slugCongTy."-".$idCongTy
+            );
+            
+            $dataSchema = array(
+                "@context"=>"https://schema.org/",
+                "@type"=>"EmployerAggregateRating",
+                "itemReviewed"=>$dataItemReviewed,
+                "ratingCount"=>$ratingCount,
+                "ratingValue"=>$ratingValue
+            );
+            $stringSchema = json_encode($dataSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        }
         return $stringSchema;
     }
 }
