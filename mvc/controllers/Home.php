@@ -1,6 +1,7 @@
 <?php
 require_once 'mvc/class/Server.php';
 require_once 'mvc/class/CutString.php';
+require_once 'mvc/class/Schema.php';
 class Home extends Controller
 {
 
@@ -50,6 +51,10 @@ class Home extends Controller
             
             $nav = $string->get_nav_render($trangHienTai, $soTrang, $server->servername,$tabCongTy);
             
+            $schema = new Schema();
+            
+            $StringSchema = $schema->generate_schema();
+            
             // View
             $this->view("main-template", [
                 "Page" => "main-home",
@@ -59,7 +64,8 @@ class Home extends Controller
                 "TabCongTy" => $tabCongTy,
                 "Title" => $title,
                 "Description" => $description,
-                "Keyword" => $keyword
+                "Keyword" => $keyword,
+                "StringSchema" => $StringSchema
             ]);
         }
         if ($a == "sitemap.xml")

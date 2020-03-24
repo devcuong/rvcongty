@@ -19,7 +19,9 @@
 $url = "https" . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 echo $url?>">
 <link rel="canonical" href="<?php echo $url ?>">
-
+<script type="application/ld+json">
+<?php echo $data["StringSchema"]; ?>
+</script>
 <meta property="og:image"
 	content="<?php
 $url = "https" . "://$_SERVER[HTTP_HOST]";
