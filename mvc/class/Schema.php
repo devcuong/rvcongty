@@ -12,7 +12,7 @@ class Schema
             while ($r = mysqli_fetch_array($data)) {}
             $stringSchema = $stringSchema . '"@context":"https://schema.org/",';
             $stringSchema = $stringSchema . '"@type":"Organization",';
-            $stringSchema = $stringSchema . '"url":"https://congtytop.com",';
+            $stringSchema = $stringSchema . '"url":"'.$serverName.'",';
             $stringSchema = $stringSchema . '"logo":"'.$serverName.'/mvc/public/images/logo.png"';
         }
         $stringSchema = $stringSchema . "}";
