@@ -97,7 +97,6 @@ class Companies extends Controller
        $keyword = "review công ty $tencongty, review cong ty $tencongty, công ty review $tencongty, cong ty review $tencongty, review công việc $tencongty, review cong viec $tencongty, review mức lương $tencongty, review muc luong $tencongty, review sếp $tencongty, review sep $tencongty";
        
        $schema = new Schema();
-       
        $StringSchema = $schema->generate_schema($congTySchema,"companies");
        
        // View

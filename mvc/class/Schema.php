@@ -47,5 +47,55 @@ class Schema
         }
         return $stringSchema;
     }
+    
+    function generate_schema_for_review($dataCongTy, $dataReview){
+        $server = new Server();
+        $serverName = $server->get_servername();
+        $arraySchemaReview = array();
+        $tenCongTy = "";
+        $hinhCongTy = "";
+        $ratingValue= 0;
+        while ($r = mysqli_fetch_array($dataCongTy)){
+            $tenCongTy = $r["tencongty"];
+            $hinhCongTy = "https://".$serverName."mvc/public/asset/companies/logo/".$r["hinhcongty"];
+            $ratingValue = (float)$r["rate"];
+        }
+        $itemReviewed = array(
+            "@type"=>"Organization",
+            "image" => $hinhCongTy,
+            "name" => $tenCongTy
+        );
+        $reviewRating = array(
+            "@type"=>"Rating",
+            "ratingValue"=>$ratingValue
+        );
+        $author = array(
+            "@type"=>"Person",
+            "name"=>"Anonymous"
+        );
+        $publisher = array(
+            "@type"=>"Organization",
+            "name"=>"Congtytop.com"
+        );
+        
+        //each review schema
+        $arraySchemaReview= array(
+            "@context"=>"https://schema.org/",
+            "@type"=>"Review",
+            "itemReviewed"=>$itemReviewed,
+            "reviewRating"=>$reviewRating,
+            "name"=>$tenCongTy,
+            "author"=>$author,
+            "publisher"=>$publisher
+        );
+        $returnArray = array();
+        while ($row = mysqli_fetch_array($dataReview)){
+            $reviewBody = $row["review_noidung"];
+            array_push($arraySchemaReview, "reviewBody",$reviewBody);
+            array_push($returnArray, $arraySchemaReview);
+        }
+        
+        return $returnArray;
+    }
 }
 ?>
