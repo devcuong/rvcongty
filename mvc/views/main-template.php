@@ -712,7 +712,10 @@ important
 	z-index: 10;
 	background: white;
 }
-
+.textarea:not([rows]) {
+    max-height: 600px;
+    min-height: 120px;
+}
 @media screen and (min-width:1088px) {
 	.navbar.is-primary .navbar-end>a.navbar-item.is-active, .navbar.is-primary .navbar-end>a.navbar-item:hover {
 		background-color: #F7941D;

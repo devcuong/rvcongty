@@ -105,7 +105,7 @@ while ($row = mysqli_fetch_array($data["Review"])) {
 										<?php } ?></span>
             </p>
             <time class="review__time ">3 giờ trước</time>
-            <a class="review__share" href="<?php echo $servername ?>/companies/<?php echo $row["congty_slugcongty"] ?>-<?php echo $row["id"] ?>/review/<?php echo $row["review_id"]; ?>">
+            <a class="review__share" href="<?php echo $servername ?>/companies/<?php echo $row["congty_slugcongty"] ?>-<?php echo $row["congty_id"] ?>/review/<?php echo $row["review_id"]; ?>">
                 <i class="fas fa-link" style="margin-right: 5px"></i> Share
             </a>
         </header>
