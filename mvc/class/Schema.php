@@ -57,7 +57,7 @@ class Schema
         $ratingValue= 0;
         while ($r = mysqli_fetch_array($dataCongTy)){
             $tenCongTy = $r["tencongty"];
-            $hinhCongTy = "https://".$serverName."mvc/public/asset/companies/logo/".$r["hinhcongty"];
+            $hinhCongTy = "https:".$serverName."/mvc/public/asset/companies/logo/".$r["logo"];
             $ratingValue = (float)$r["rate"];
         }
         $itemReviewed = array(
@@ -91,8 +91,9 @@ class Schema
         $returnArray = array();
         while ($row = mysqli_fetch_array($dataReview)){
             $reviewBody = $row["review_noidung"];
-            array_push($arraySchemaReview, "reviewBody",$reviewBody);
-            array_push($returnArray, $arraySchemaReview);
+            $arraySchemaReview["reviewBody"]=$reviewBody;
+            $stringSchemaReview = json_encode($arraySchemaReview, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+            array_push($returnArray, $stringSchemaReview);
         }
         
         return $returnArray;

@@ -1,4 +1,5 @@
 <?php
+echo count($data["ArrayReviewSchema"]);
 while ($row = mysqli_fetch_array($data["CongTy"])) {
     ?>
 <nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs"
@@ -92,6 +93,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 <?php } ?>
 	<!-- Review Page Top -->
  <?php
+    $rowIndex = 0;
     while ($r = mysqli_fetch_array($data["Review"])) {
         ?>
   <div class="review card">
@@ -116,9 +118,12 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 										<?php } ?>
         &nbsp;</span>
 				<button class="button is-danger is-outlined button-contact"
-					data-phone="<?php if($r["review_contact"] == ""){
-					    echo "Không có contact";
-					} else echo $r["review_contact"]?>">LIÊN HỆ</button>
+					data-phone="<?php
+        
+        if ($r["review_contact"] == "") {
+            echo "Không có contact";
+        } else
+            echo $r["review_contact"]?>">LIÊN HỆ</button>
 			</p>
 			<span class="review__time needs_to_be_rendered"
 				datetime="<?php echo $r["review_thoigian"] ?>"><?php echo $r["review_thoigian"] ?></span>
@@ -190,8 +195,17 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
       <?php } ?>
        </div>
        <?php } ?>
-  </div>
-  <?php } ?>
+       <div class="google-seo">
+			<script type="application/ld+json">
+                <?php
+        echo $data["ArrayReviewSchema"][$rowIndex]?>
+            </script>
+		</div>
+	</div>
+  <?php
+        $rowIndex ++;
+    }
+    ?>
   <?php if($data["SoTrang"]>0){ ?>
   <nav class="pagination is-small custom-pagination" role="navigation"
 		aria-label="pagination">
@@ -212,6 +226,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
   </ul>
 	</nav>
 <?php } ?>
+
 </section>
 <div class="modal" id="review-modal">
 	<form id="review-form"
@@ -365,7 +380,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 						<span id="contact-id"></span>
 					</p>
 				</div>
-				
+
 				<div class="m-t-15">
 					<button type="button" class="button button-close">Hủy bỏ</button>
 				</div>

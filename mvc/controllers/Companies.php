@@ -78,11 +78,13 @@ class Companies extends Controller
         
         // Lấy review tại trang
         $reviewTrangHienTai = $review->LayReviewPhanTrang($idCongTy, $soReviewBoQua, $soReviewMoiTrang);
+        $reviewForSchema = $review->LayReviewPhanTrang($idCongTy, $soReviewBoQua, $soReviewMoiTrang);
         
         // Công ty
         $congTyLater = $congty->LayCongTyBangId($idCongTy);
         $congTyNow = $congty->LayCongTyBangId($idCongTy);
         $congTySchema = $congty->LayCongTyBangId($idCongTy);
+        $congTyForReviewSchema = $congty->LayCongTyBangId($idCongTy);
         
         $tencongty = "";        
         $tencongty = $congTyNow->fetch_assoc()["tencongty"];
@@ -99,6 +101,8 @@ class Companies extends Controller
        $schema = new Schema();
        $StringSchema = $schema->generate_schema($congTySchema,"companies");
        
+       $arrayReviewSchema = $schema->generate_schema_for_review($congTyForReviewSchema, $reviewForSchema);
+       
        // View
         $this->view("main-template", [
             "Page" => "companies",
@@ -109,7 +113,8 @@ class Companies extends Controller
             "Title" => $title,
             "Description" => $description,
             "Keyword" => $keyword,
-            "StringSchema" => $StringSchema
+            "StringSchema" => $StringSchema,
+            "ArrayReviewSchema" => $arrayReviewSchema
         ]);
     }
 
