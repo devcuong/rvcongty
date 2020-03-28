@@ -352,7 +352,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 				<input type="hidden" name="companyId"
 					value="<?php echo $row["id"] ?>" /> <input type="hidden"
 					name="companyUrl"
-					value="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];?>" />
+					value="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];?>" />
 				<input type="hidden" id="review-id" name="reviewId" />
 
 				<div class="m-t-15">
