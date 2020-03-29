@@ -44,7 +44,7 @@ body {
 	justify-content: space-between;
 	padding: 10px;
 	border-bottom: var(- -border);
-	background: #eee;
+	background: linear-gradient(97deg,#00b9f2 35%,#0e7ccd 62%,#00b9f2 81%);
 	color: #666;
 }
 
