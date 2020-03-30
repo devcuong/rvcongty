@@ -1,5 +1,4 @@
 <?php
-echo count($data["ArrayReviewSchema"]);
 while ($row = mysqli_fetch_array($data["CongTy"])) {
     ?>
 <nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs"
@@ -69,6 +68,9 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 		<span class="icon"> <i class="fas fa-pencil-alt"></i>
 		</span> &nbsp;&nbsp; Viết review
 	</button>
+</section>
+<section class="chat-room">
+<iframe src="<?php echo $servername ?>/chat" width="100%" height="500"></iframe>
 </section>
 <section class="full-reviews">
 <?php if ($data["SoTrang"]>0){ ?>
