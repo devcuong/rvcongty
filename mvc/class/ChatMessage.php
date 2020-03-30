@@ -1,25 +1,25 @@
 <?php
 class ChatMessage {
     // Properties
-    public $replyer;
-    public $reaction;
+    public $chatuser;
+    public $chattime;
     public $noidung;
-    public $thoigian;
+    public $gioitinh;
     
     // Methods
-    function set_replyer($replyer) {
-        $this->replyer = $replyer;
+    function set_chatuser($chatuser) {
+        $this->chatuser = $chatuser;
     }
-    function get_replyer() {
-        return $this->replyer;
-    }
-    
-    function set_reaction($reaction){
-        $this->reaction = $reaction;
+    function get_chatuser() {
+        return $this->chatuser;
     }
     
-    function get_reaction(){
-        return $this->reaction;
+    function set_chattime($chattime){
+        $this->chattime = $chattime;
+    }
+    
+    function get_chattime(){
+        return $this->chattime;
     }
     
     function set_noidung($noidung){
@@ -30,12 +30,12 @@ class ChatMessage {
         return $this->noidung;
     }
     
-    function set_thoigian($thoigian){
-        $this->thoigian = $thoigian;
+    function set_gioitinh($gioitinh){
+        $this->gioitinh = $gioitinh;
     }
     
-    function get_thoigian(){
-        return $this->thoigian;
+    function get_gioitinh(){
+        return $this->gioitinh;
     }
 }
 ?>
