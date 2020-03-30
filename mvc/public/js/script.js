@@ -20,13 +20,13 @@ msgerForm.addEventListener("submit", event => {
   event.preventDefault();
 
   const msgText = msgerInput.value;
-  //alert(msgText);
-  if (!msgText) return;
-
-  appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
-  msgerInput.value = "";
-
-  //botResponse();
+  if (!msgText){ 
+	  return;
+  }else{
+	  guiMessage(msgText);
+	  appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+	  msgerInput.value = "";
+  }
 });
 
 function appendMessage(name, img, side, text) {
@@ -76,7 +76,18 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function sendServer(msgText){
-	
+//get reviewcongty
+function guiMessage(msgText){
+		  $.ajax({
+	          type: "POST",
+	          url: SiteName + "/chat/gui-message/",
+	          data: {"chat-message": msgText},
+	          success: function(data)
+	          {
+	             if(data){
+		            alert(data);
+	             }
+	          }
+	        });
 }
 

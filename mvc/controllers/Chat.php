@@ -8,5 +8,13 @@ class Chat extends Controller
         $this->view("chat-template", [
             "Page" => "chat"]);
     }
+    
+    function GuiMessage(){
+        $chatMessage = "";
+        if (isset($_POST["chat-message"])) {
+            $chatMessage = trim($_POST["chat-message"]);
+        }
+        echo "from server".$chatMessage;
+    }
 }
 ?>
