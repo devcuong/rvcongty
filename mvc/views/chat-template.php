@@ -7,7 +7,14 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="stylesheet" href="<?php echo $servername ?>/mvc/public/css/styles.css">
+<!--<script type="text/javascript">
+var myVar = setInterval(myTimer, 1000);
 
+function myTimer() {
+	var d = new Date();
+	alert(d.toLocaleTimeString());
+}
+</script>-->
 </head>
 <body>
 <!-- partial:index.partial.html -->

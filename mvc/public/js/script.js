@@ -79,3 +79,4 @@ function random(min, max) {
 function sendServer(msgText){
 	
 }
+

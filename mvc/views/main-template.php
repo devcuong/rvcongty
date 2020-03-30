@@ -1129,7 +1129,7 @@ margin-bottom
 			</div>-->
 		</div>
 	</nav>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		(function(){
 			var burger = document.querySelector('.burger');
 			var nav = document.querySelector('#'+burger.dataset.target);
@@ -1140,7 +1140,7 @@ margin-bottom
 				nav.classList.toggle('is-active');
 			})
 		})();
-	</script>
+	</script>-->
 	<div class="container main-container"
 		style="height: auto !important; min-height: 0px !important;">
 		<?php require_once "./mvc/views/pages/" . $data["Page"] . ".php"?>
