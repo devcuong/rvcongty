@@ -5,7 +5,7 @@ class ChatMessage {
     public $chattime;
     public $noidung;
     public $gioitinh;
-    
+    public $sessionid;
     // Methods
     function set_chatuser($chatuser) {
         $this->chatuser = $chatuser;
@@ -36,6 +36,14 @@ class ChatMessage {
     
     function get_gioitinh(){
         return $this->gioitinh;
+    }
+    
+    function set_sessionid($sessionid){
+        $this->sessionid = $sessionid;
+    }
+    
+    function get_sessionid(){
+        return $this->sessionid;
     }
 }
 ?>

@@ -1,4 +1,5 @@
 <?php
+require 'mvc/class/ChatMessage.php';
 class Chat extends Controller
 {
     function Index()
@@ -9,12 +10,16 @@ class Chat extends Controller
             "Page" => "chat"]);
     }
     
-    function GuiMessage(){
-        $chatMessage = "";
+    function GuiMessage($a, $b, $c){
+        $noiDungMessage = "";
+        $chatUser = "Ngạn mắt biếc";
+        $gioiTinh = "nam";
+        $idCongTy = $c;
+        $sessionId = session_id();
         if (isset($_POST["chat-message"])) {
-            $chatMessage = trim($_POST["chat-message"]);
+            $noiDungMessage= trim($_POST["chat-message"]);
         }
-        echo "from server".$chatMessage;
+        
     }
 }
 ?>

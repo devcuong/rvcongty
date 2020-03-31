@@ -23,7 +23,10 @@ msgerForm.addEventListener("submit", event => {
   if (!msgText){ 
 	  return;
   }else{
-	  guiMessage(msgText);
+	  var arrUrl = window.document.URL.split("/");
+	  var idCongTy = arrUrl[arrUrl.length - 1];
+	  //alert(idCongTy);
+	  guiMessage(msgText, idCongTy);
 	  appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
 	  msgerInput.value = "";
   }
@@ -77,10 +80,10 @@ function random(min, max) {
 }
 
 //get reviewcongty
-function guiMessage(msgText){
+function guiMessage(msgText, idCongTy){
 		  $.ajax({
 	          type: "POST",
-	          url: SiteName + "/chat/gui-message/",
+	          url: SiteName + "/chat/gui-message/"+idCongTy,
 	          data: {"chat-message": msgText},
 	          success: function(data)
 	          {
