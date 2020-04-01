@@ -31,9 +31,10 @@ class ChatModel extends DB{
             $result = mysqli_stmt_execute($stmt);
         }
         return $result;*/
-        $fp = fopen('mvc/public/asset/chatfile/f1.txt', 'w');
-        fwrite($fp, $noidung);
-        fclose($fp);
+        $filename4 = "mvc/public/asset/chatfile/f1.txt";
+        //$content = file_get_contents($filename4);
+        $noidung=$noidung. "\n";
+        file_put_contents($filename4, $noidung, FILE_APPEND);
     }
 }
 ?>

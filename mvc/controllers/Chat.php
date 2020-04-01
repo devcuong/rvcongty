@@ -50,8 +50,8 @@ class Chat extends Controller
             $kq = $this->ChatModel->ThemChatByIdCongTy($idCongTy, json_encode($arrData, JSON_UNESCAPED_UNICODE));
             echo $kq;
         }*/
-        array_push($arrData, $chatMessage);
-        $kq = $this->ChatModel->ThemChatByIdCongTy($idCongTy, json_encode($arrData, JSON_UNESCAPED_UNICODE));
+        //array_push($arrData, $chatMessage);
+        $kq = $this->ChatModel->ThemChatByIdCongTy($idCongTy, json_encode($chatMessage, JSON_UNESCAPED_UNICODE));
         echo $kq;
         
     }

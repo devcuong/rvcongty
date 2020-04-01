@@ -1,1 +1,1 @@
-[{"chatuser":"Ngạn mắt biếc","chattime":"2020-04-01 18:24:05","noidung":"hiiiiiiiiiiiiii","gioitinh":"nam","sessionid":"m9c2fv45fd15bd8uoo7qr8mjls"}]
+{"chatuser":"Ngạn mắt biếc","chattime":"2020-04-01 20:39:15","noidung":"dsafasdfasfa","gioitinh":"nam","sessionid":"sr72b6m1rnjt7le3pblvnhpv02"}
