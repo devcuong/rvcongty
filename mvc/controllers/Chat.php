@@ -12,7 +12,7 @@ class Chat extends Controller
     
     function Index()
     {
-       // echo session_id();
+        // echo session_id();
         // View
         $this->view("chat-template", [
             "Page" => "chat"]);
@@ -35,7 +35,7 @@ class Chat extends Controller
         $chatMessage->noidung = $noiDungMessage;
         $chatMessage->sessionid = $sessionId;
         $chatMessage->chattime = $chatTime;
-        $chatKiemTra = $this->ChatModel->LayChatByIdCongTy($idCongTy);
+        /*$chatKiemTra = $this->ChatModel->LayChatByIdCongTy($idCongTy);
         if (mysqli_num_rows($chatKiemTra) > 0) {
             while ($r = mysqli_fetch_array($chatKiemTra)) {
                 $noidung = $r["noidung"];
@@ -49,7 +49,10 @@ class Chat extends Controller
             array_push($arrData, $chatMessage);
             $kq = $this->ChatModel->ThemChatByIdCongTy($idCongTy, json_encode($arrData, JSON_UNESCAPED_UNICODE));
             echo $kq;
-        }
+        }*/
+        array_push($arrData, $chatMessage);
+        $kq = $this->ChatModel->ThemChatByIdCongTy($idCongTy, json_encode($arrData, JSON_UNESCAPED_UNICODE));
+        echo $kq;
         
     }
 }

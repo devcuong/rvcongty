@@ -7,7 +7,7 @@ class ChatModel extends DB{
     
     // Update chat có sẵn
     public function CapNhatChatByIdCongTy($idCongTy, $noidung){
-        $qr = "UPDATE chat SET noidung = ? WHERE congty = ?";
+        /*$qr = "UPDATE chat SET noidung = ? WHERE congty = ?";
         $stmt = mysqli_stmt_init($this->con);
         $result = 0;
         if(!mysqli_stmt_prepare($stmt, $qr)){
@@ -16,12 +16,12 @@ class ChatModel extends DB{
             mysqli_stmt_bind_param($stmt, "ss",$noidung, $idCongTy);
             $result= mysqli_stmt_execute($stmt);
         }
-        return $result;
+        return $result;*/
     }
     
     // Thêm chat
     public function ThemChatByIdCongTy($congTy, $noidung){
-        $qr = "INSERT INTO chat(congty, noidung) VALUES(?, ?)";
+       /* $qr = "INSERT INTO chat(congty, noidung) VALUES(?, ?)";
         $stmt = mysqli_stmt_init($this->con);
         $result = 0;
         if(!mysqli_stmt_prepare($stmt, $qr)){
@@ -30,7 +30,10 @@ class ChatModel extends DB{
             mysqli_stmt_bind_param($stmt, "ss",$congTy, $noidung);
             $result = mysqli_stmt_execute($stmt);
         }
-        return $result;
+        return $result;*/
+        $fp = fopen('mvc/public/asset/chatfile/f1.txt', 'w');
+        fwrite($fp, $noidung);
+        fclose($fp);
     }
 }
 ?>
