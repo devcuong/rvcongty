@@ -83,8 +83,8 @@ function random(min, max) {
 function guiMessage(msgText, idCongTy){
 		  $.ajax({
 	          type: "POST",
-	          url: SiteName + "/chat/gui-message/"+idCongTy,
-	          data: {"chat-message": msgText},
+	          url: SiteName + "/chat/gui-message/",
+	          data: {"chat-message": msgText,"cong-ty":idCongTy},
 	          success: function(data)
 	          {
 	             if(data){

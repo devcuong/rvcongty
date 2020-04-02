@@ -18,16 +18,19 @@ class Chat extends Controller
             "Page" => "chat"]);
     }
     
-    function GuiMessage($a, $b, $c){
+    function GuiMessage(){
         $noiDungMessage = "";
+        $congTy = "";
         $chatUser = "Ngạn mắt biếc";
         $gioiTinh = "nam";
-        $idCongTy = $c;
         $sessionId = session_id();
         $chatTime = date("Y-m-d H:i:s");
         $arrData = [];
         if (isset($_POST["chat-message"])) {
-            $noiDungMessage= trim($_POST["chat-message"]);
+            $noiDungMessage = trim($_POST["chat-message"]);
+        }
+        if (isset($_POST["cong-ty"])) {
+            $congTy = trim($_POST["cong-ty"]);
         }
         $chatMessage = new ChatMessage();
         $chatMessage->chatuser = $chatUser;
@@ -51,7 +54,7 @@ class Chat extends Controller
             echo $kq;
         }*/
         //array_push($arrData, $chatMessage);
-        $kq = $this->ChatModel->ThemChatByIdCongTy($idCongTy, json_encode($chatMessage, JSON_UNESCAPED_UNICODE));
+        $kq = $this->ChatModel->ThemChatByIdCongTy($congTy,json_encode($chatMessage, JSON_UNESCAPED_UNICODE));
         echo $kq;
         
     }

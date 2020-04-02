@@ -1,4 +1,1 @@
-https://webcode.tools/json-ld-generator/review
-https://schema.org/Thing
-https://schema.org/docs/documents.html
-http://www.phpzag.com/build-live-chat-system-with-ajax-php-mysql/
+https://tutorialio.com/read-a-large-file-line-by-line-in-php/

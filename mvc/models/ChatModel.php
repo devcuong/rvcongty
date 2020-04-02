@@ -20,7 +20,7 @@ class ChatModel extends DB{
     }
     
     // Thêm chat
-    public function ThemChatByIdCongTy($congTy, $noidung){
+    public function ThemChatByIdCongTy($congTy,$noidung){
        /* $qr = "INSERT INTO chat(congty, noidung) VALUES(?, ?)";
         $stmt = mysqli_stmt_init($this->con);
         $result = 0;
@@ -31,7 +31,8 @@ class ChatModel extends DB{
             $result = mysqli_stmt_execute($stmt);
         }
         return $result;*/
-        $filename4 = "mvc/public/asset/chatfile/f1.txt";
+        $filename4 = "mvc/public/asset/chatfile/".$congTy.".txt";
+        echo $filename4;
         //$content = file_get_contents($filename4);
         $noidung=$noidung. "\n";
         file_put_contents($filename4, $noidung, FILE_APPEND);
