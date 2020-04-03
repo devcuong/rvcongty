@@ -23,12 +23,13 @@ class Chat extends Controller
         if (isset($_POST["cong-ty"])){
             $fileName=$_POST["cong-ty"];
         }
-        else{
+       
+        if(!file_exists("mvc/public/asset/chatfile/".$fileName.".txt")){
             $fileName = "f1";
         }
         $textFile = "mvc/public/asset/chatfile/".$fileName.".txt";
         $chat = file_get_contents($textFile);
-        echo $chat;
+        echo "[".$chat."]";
     }
     
     function GuiMessage(){

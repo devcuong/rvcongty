@@ -25,7 +25,7 @@ function myTimer() {
         success: function(data)
         {
            if(data){
-	            
+	           //alert(data);
            }
         }
       });

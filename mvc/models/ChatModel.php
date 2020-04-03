@@ -32,9 +32,8 @@ class ChatModel extends DB{
         }
         return $result;*/
         $filename4 = "mvc/public/asset/chatfile/".$congTy.".txt";
-        echo $filename4;
         //$content = file_get_contents($filename4);
-        $noidung=$noidung. "\n";
+        $noidung=$noidung . "\n";
         file_put_contents($filename4, $noidung, FILE_APPEND);
     }
 }
