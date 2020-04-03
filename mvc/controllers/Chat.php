@@ -18,6 +18,10 @@ class Chat extends Controller
             "Page" => "chat"]);
     }
     
+    function ReadFile($a,$b,$c){
+        echo $c;
+    }
+    
     function GuiMessage(){
         $noiDungMessage = "";
         $congTy = "";
