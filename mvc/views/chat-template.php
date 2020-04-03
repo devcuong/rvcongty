@@ -16,7 +16,19 @@
 var myVar = setInterval(myTimer, 1000);
 
 function myTimer() {
-	 //window.location.reload(1);
+	var arrUrl = window.document.URL.split("/");
+	var idCongTy = arrUrl[arrUrl.length - 1];
+	$.ajax({
+        type: "POST",
+        url: SiteName + "/chat/read-file/",
+        data: {"cong-ty":idCongTy},
+        success: function(data)
+        {
+           if(data){
+	            
+           }
+        }
+      });
 }
 </script>
 </head>

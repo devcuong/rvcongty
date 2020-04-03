@@ -18,8 +18,17 @@ class Chat extends Controller
             "Page" => "chat"]);
     }
     
-    function ReadFile($a,$b,$c){
-        echo $c;
+    function ReadFile(){
+        $fileName = "";
+        if (isset($_POST["cong-ty"])){
+            $fileName=$_POST["cong-ty"];
+        }
+        else{
+            $fileName = "f1";
+        }
+        $textFile = "mvc/public/asset/chatfile/".$fileName.".txt";
+        $chat = file_get_contents($textFile);
+        echo $chat;
     }
     
     function GuiMessage(){
