@@ -70,7 +70,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 	</button>
 </section>
 <section class="chat-room">
-<iframe src="<?php echo $servername ?>/chat/<?php echo $row["id"]?>" width="100%" height="500"></iframe>
+<iframe src="https://minnit.chat/CONGTYTOP?embed&gray&nickname=" style="border:none;width:100%;height:400px;" allowTransparency="true"></iframe>
 </section>
 <section class="full-reviews">
 <?php if ($data["SoTrang"]>0){ ?>
