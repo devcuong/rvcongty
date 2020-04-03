@@ -25,7 +25,11 @@ function myTimer() {
         success: function(data)
         {
            if(data){
-	           //alert(data);
+        	   var arrayChat = JSON.parse(data);
+	           //alert(arrayChat[0].noidung);
+	           for(var i=0; i<arrayChat.length; i++){
+	        	   appendMessage(arrayChat[i].chatuser, BOT_IMG, "left", arrayChat[i].noidung);
+		       }
            }
         }
       });
