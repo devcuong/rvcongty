@@ -1088,6 +1088,10 @@ margin-bottom
 .reviewer-contact {
 	border: 2px solid #ff3860;
 }
+
+.chat-room {
+	margin-top: 5px;
+}
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async
