@@ -69,9 +69,6 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 		</span> &nbsp;&nbsp; Viết review
 	</button>
 </section>
-<section class="chat-room">
-<iframe src="https://minnit.chat/CONGTYTOP?embed&gray&nickname=" style="border:none;width:100%;height:400px;" allowTransparency="true"></iframe>
-</section>
 <section class="full-reviews">
 <?php if ($data["SoTrang"]>0){ ?>
 <nav class="pagination is-small custom-pagination" role="navigation"
@@ -119,13 +116,6 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 				</span>
 										<?php } ?>
         &nbsp;</span>
-				<button class="button is-danger is-outlined button-contact"
-					data-phone="<?php
-        
-        if ($r["review_contact"] == "") {
-            echo "Không có contact";
-        } else
-            echo $r["review_contact"]?>">LIÊN HỆ</button>
 			</p>
 			<span class="review__time needs_to_be_rendered"
 				datetime="<?php echo $r["review_thoigian"] ?>"><?php echo $r["review_thoigian"] ?></span>
@@ -255,13 +245,13 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 							placeholder="Dev/HR hay Manager">
 					</div>
 				</div>
-				<div class="field">
-					<label class="label">Contact</label>
-					<div class="control">
-						<input class="input" name="contact" type="text"
-							placeholder="Email/Facebook rác... gì cũng được, không có cũng được">
-					</div>
-				</div>
+<!-- 				<div class="field"> -->
+<!-- 					<label class="label">Contact</label> -->
+<!-- 					<div class="control"> -->
+<!-- 						<input class="input" name="contact" type="text" -->
+<!-- 							placeholder="Email/Facebook rác... gì cũng được, không có cũng được"> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 				<div class="field">
 					<label class="label">Review công ty <span class="has-text-danger">(Bắt
 							buộc)</span>
