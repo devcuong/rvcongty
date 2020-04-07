@@ -9,7 +9,7 @@ class Home extends Controller
     {
         if ($a == NULL) {
             $trangHienTai = 1;
-            $congTyMoiTrang = 15;
+            $congTyMoiTrang = 10;
             $tabCongTy = "latest";
             if (isset($_GET["page"])) {
                 $trangHienTai = $_GET["page"];
@@ -62,7 +62,7 @@ class Home extends Controller
             // View
             $this->view("main-template", [
                 "Page" => "main-home",
-                "15ReviewMoiNhat" => $review->Lay15ReviewMoiNhat(),
+                "10ReviewMoiNhat" => $review->Lay10ReviewMoiNhat(),
                 "Navigate" => $nav,
                 "CongTyTrangHienTai" => $congTyTrangHienTai,
                 "TabCongTy" => $tabCongTy,

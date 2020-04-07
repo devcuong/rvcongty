@@ -121,7 +121,7 @@
 		<h1 class="is-size-4 has-text-weight-bold reviews__header">Review gần
 			đây</h1>
 				<?php
-    while ($r = mysqli_fetch_array($data["15ReviewMoiNhat"])) {
+    while ($r = mysqli_fetch_array($data["10ReviewMoiNhat"])) {
         ?>
                                         <div class="review">
 			<h3>

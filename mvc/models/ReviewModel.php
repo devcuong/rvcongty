@@ -13,8 +13,8 @@ class ReviewModel extends DB{
     }
     
     // Lấy 15 review mới nhất
-    public function Lay15ReviewMoiNhat(){
-        $qr = "SELECT congty.id, review.reviewer, congty.tencongty, congty.slugcongty, review.thoigian, review.rate, review.noidung FROM review LEFT JOIN congty ON review.congty = congty.id ORDER BY review.id DESC LIMIT 15";
+    public function Lay10ReviewMoiNhat(){
+        $qr = "SELECT congty.id, review.reviewer, congty.tencongty, congty.slugcongty, review.thoigian, review.rate, review.noidung FROM review LEFT JOIN congty ON review.congty = congty.id ORDER BY review.id DESC LIMIT 10";
         return mysqli_query($this->con, $qr);
     }
     

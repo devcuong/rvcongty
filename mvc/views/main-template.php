@@ -1119,21 +1119,21 @@ margin-bottom
 						<a href="<?php echo $servername ?>"> <b>CÔNG TY TOP</b></a>
 					</h1>
 				</div>
-				<!--  <span class="navbar-burger burger" data-target="navMenu"> <span></span>
+				<span class="navbar-burger burger" data-target="navMenu"> <span></span>
 					<span></span> <span></span>
-				</span> -->
+				</span>
 			</div>
-			<!--<div id="navMenu" class="navbar-menu">
+			<div id="navMenu" class="navbar-menu">
 				<div class="navbar-end">
 					<a href="#" class="navbar-item is-active">Home</a> <a href="#"
 						class="navbar-item">Blog</a> <a href="#" class="navbar-item">Forum</a>
 					<a href="#" class="navbar-item">Shop</a> <a href="#"
 						class="navbar-item">Examples</a>
 				</div>
-			</div>-->
+			</div>
 		</div>
 	</nav>
-	<!-- <script type="text/javascript">
+	 <script type="text/javascript">
 		(function(){
 			var burger = document.querySelector('.burger');
 			var nav = document.querySelector('#'+burger.dataset.target);
@@ -1144,7 +1144,7 @@ margin-bottom
 				nav.classList.toggle('is-active');
 			})
 		})();
-	</script>-->
+	</script>
 	<div class="container main-container"
 		style="height: auto !important; min-height: 0px !important;">
 		<?php require_once "./mvc/views/pages/" . $data["Page"] . ".php"?>
