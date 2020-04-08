@@ -1193,6 +1193,9 @@ margin-bottom
 	background: #fff;
     margin: 50px 0 10px;
 }
+.origin a{
+	color: #000;
+}
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async
