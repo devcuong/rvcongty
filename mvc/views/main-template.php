@@ -1185,12 +1185,13 @@ margin-bottom
     line-height: 1;
 }
 .title-news-blue{
-	color: #f58133;
+	color: #00b9f2;
     font-size: 1.5rem;
     font-weight: 700;
     padding: 0 0 0 10px;
-    border-left: 5px solid #f58133;
-    margin: 50px 0 25px;
+    border-bottom: 5px solid #00b9f2;
+	background: #fff;
+    margin: 50px 0 10px;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->

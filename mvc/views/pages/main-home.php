@@ -161,7 +161,7 @@
 
 			</section>
 </div>
-<p class="title-news-blue">TIN TỨC CÔNG TY</p>
+<p class="title-news-blue">TIN TỨC</p>
 <div class="columns">
 	<div class="column">
 		<div class="card news first-news">
