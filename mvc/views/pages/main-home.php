@@ -161,6 +161,7 @@
 
 			</section>
 </div>
+<p class="title-news-blue">TIN TỨC CÔNG TY</p>
 <div class="columns">
 	<div class="column">
 		<div class="card news first-news">
@@ -218,22 +219,156 @@
 			</div>
 		</div>
 	</div>
-	<div class="column has-background-warning col-top-right">
-	<div class="news-right">
-                        <div class="media">
-                            <a class="news-right-img" target="_self" title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới" href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
-                                <img class="lazy-loading-image loaded" style="width:100%" src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg" alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới" data-pin-nopin="true">
+	<div class="column col-top-right">
+		<div class="news-right">
+			<div class="media">
+				<a class="news-right-img" target="_self"
+					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
+					<img class="lazy-loading-image loaded" style="width: 100%"
+					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					data-pin-nopin="true">
 
-                            </a>
-                            <div class="media-body has-menu-dots">
-                                <h3 class="news-right-title"><a target="_self" title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới" href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">Triển
-                                        lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a></h3>
-                                <h5 class="news-posted">
-                                    <span class="origin"><a title="Zing.vn" href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html">Zing.vn</a></span>
-                                    <span><i class="fa fa-calendar-o"></i>7 giờ</span>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
+				</a>
+				<div class="media-body has-menu-dots">
+					<h3 class="news-right-title">
+						<a target="_self"
+							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+							href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">Triển
+							lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
+					</h3>
+					<h5 class="news-posted">
+						<span class="origin"><a title="Zing.vn"
+							href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html">Zing.vn</a></span>
+					</h5>
+				</div>
+			</div>
+		</div>
+		<div class="news-right">
+			<div class="media">
+				<a class="news-right-img" target="_self"
+					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
+					<img class="lazy-loading-image loaded" style="width: 100%"
+					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					data-pin-nopin="true">
+
+				</a>
+				<div class="media-body has-menu-dots">
+					<h3 class="news-right-title">
+						<a target="_self"
+							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+							href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">Triển
+							lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
+					</h3>
+					<h5 class="news-posted">
+						<span class="origin"><a title="Zing.vn"
+							href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html">Zing.vn</a></span>
+					</h5>
+				</div>
+			</div>
+		</div>
+		<div class="news-right">
+			<div class="media">
+				<a class="news-right-img" target="_self"
+					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
+					<img class="lazy-loading-image loaded" style="width: 100%"
+					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					data-pin-nopin="true">
+
+				</a>
+				<div class="media-body has-menu-dots">
+					<h3 class="news-right-title">
+						<a target="_self"
+							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+							href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">Triển
+							lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
+					</h3>
+					<h5 class="news-posted">
+						<span class="origin"><a title="Zing.vn"
+							href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html">Zing.vn</a></span>
+					</h5>
+				</div>
+			</div>
+		</div>
+		<div class="news-right">
+			<div class="media">
+				<a class="news-right-img" target="_self"
+					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
+					<img class="lazy-loading-image loaded" style="width: 100%"
+					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					data-pin-nopin="true">
+
+				</a>
+				<div class="media-body has-menu-dots">
+					<h3 class="news-right-title">
+						<a target="_self"
+							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+							href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">Triển
+							lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
+					</h3>
+					<h5 class="news-posted">
+						<span class="origin"><a title="Zing.vn"
+							href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html">Zing.vn</a></span>
+					</h5>
+				</div>
+			</div>
+		</div>
+		<div class="news-right">
+			<div class="media">
+				<a class="news-right-img" target="_self"
+					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
+					<img class="lazy-loading-image loaded" style="width: 100%"
+					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					data-pin-nopin="true">
+
+				</a>
+				<div class="media-body has-menu-dots">
+					<h3 class="news-right-title">
+						<a target="_self"
+							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+							href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">Triển
+							lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
+					</h3>
+					<h5 class="news-posted">
+						<span class="origin"><a title="Zing.vn"
+							href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html">Zing.vn</a></span>
+					</h5>
+				</div>
+			</div>
+		</div>
+		<div class="news-right">
+			<div class="media">
+				<a class="news-right-img" target="_self"
+					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
+					<img class="lazy-loading-image loaded" style="width: 100%"
+					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					data-pin-nopin="true">
+
+				</a>
+				<div class="media-body has-menu-dots">
+					<h3 class="news-right-title">
+						<a target="_self"
+							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+							href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">Triển
+							lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
+					</h3>
+					<h5 class="news-posted">
+						<span class="origin"><a title="Zing.vn"
+							href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html">Zing.vn</a></span>
+					</h5>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

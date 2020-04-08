@@ -1145,6 +1145,53 @@ margin-bottom
 .col-top-right .news-right {
     padding-bottom: .75rem;
 }
+.news-right:not(:last-child) {
+    margin-bottom: 10px;
+}
+.media {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: start;
+    -webkit-box-align: start;
+    align-items: flex-start;
+}
+.news-right .news-right-img {
+    width: 150px;
+    margin-right: 0.625rem;
+}
+.news-right .news-right-img img {
+    max-width: 100%;
+}
+.has-menu-dots {
+    position: relative;
+    padding-right: 10px !important;
+}
+.col-top-right .news-right .news-right-title {
+    font-weight: 600;
+}
+.news-right .news-right-title {
+    display: block;
+    margin-bottom: 0.25rem;
+    max-height: 2.75rem;
+    line-height: 1.5;
+    overflow: hidden;
+}
+.news-right-title a {
+    font-size: 1rem;
+}
+.news-right .news-posted {
+    margin-bottom: 0px;
+    line-height: 1;
+}
+.title-news-blue{
+	color: #f58133;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0 0 0 10px;
+    border-left: 5px solid #f58133;
+    margin: 50px 0 25px;
+}
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async
