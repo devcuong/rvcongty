@@ -149,13 +149,13 @@ class QuanTri extends Controller
         if (isset($_SESSION["email"])) {
             if (isset($_POST["btn-submit"])) {
                 $tieudetintuc= "";
-                $slugtintuc= "";
+                $slugtieude= "";
                 $thumbnail= "";
                 $noidungtin= "";
                 $nguontin="";
                 if (isset($_POST["tieu-de-tin-tuc"])) {
                     $tieudetintuc = trim($_POST["tieu-de-tin-tuc"]);
-                    $slugtintuc = $_POST["slug-tin-tuc"];
+                    $slugtieude = $_POST["slug-tin-tuc"];
                 }
                 if (isset($_POST["noi-dung-tin"])) {
                     $noidungtin = trim($_POST["noi-dung-tin"]);
@@ -176,10 +176,10 @@ class QuanTri extends Controller
                         
                         $createdDate = date("Y-m-d H:i:s");
                         // Kiểm tra tin tức có hay chưa
-                        $daco = $this->CongTyModel->LayCongTyBangSlug($slugcongty);
+                        $daco = $this->NewsModel->LayTinTucBySlug($slugtieude);
                         if (mysqli_num_rows($daco) < 1) {
                             // Thêm công ty
-                            $kq = $this->CongTyModel->ThemCongTy($tencongty, $slugcongty, $fileName, $nganhnghe, $nhanvien, $diachi, $createdDate);
+                            $kq = $this->NewsModel->ThemTinTuc($tieudetintuc, $slugtieude, $noidungtin,$thumbnail,$nguontin,$createdDate);
                             if ($kq) {
                                 // View
                                 $this->view("admin-template", [
