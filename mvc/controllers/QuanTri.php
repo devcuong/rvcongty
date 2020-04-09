@@ -12,6 +12,8 @@ class QuanTri extends Controller
     public $ReviewModel;
 
     public $ReplyModel;
+    
+    public $NewsModel;
 
     public function __construct()
     {
@@ -20,6 +22,7 @@ class QuanTri extends Controller
         $this->CongTyModel = $this->model("CongTyModel");
         $this->ReviewModel = $this->model("ReviewModel");
         $this->ReplyModel = $this->model("ReplyModel");
+        $this->NewsModel = $this->model("NewsModel");
     }
 
     public function Index()
@@ -132,6 +135,64 @@ class QuanTri extends Controller
                 // View
                 $this->view("admin-template", [
                     "Page" => "them-cong-ty"
+                ]);
+            }
+        } else {
+            // View
+            $this->view("admin-template", [
+                "Page" => "quan-tri"
+            ]);
+        }
+    }
+    
+    public function ThemTinTuc(){
+        if (isset($_SESSION["email"])) {
+            if (isset($_POST["btn-submit"])) {
+                $tieudetintuc= "";
+                $slugtintuc= "";
+                $thumbnail= "";
+                $noidungtin= "";
+                $nguontin="";
+                if (isset($_POST["tieu-de-tin-tuc"])) {
+                    $tieudetintuc = trim($_POST["tieu-de-tin-tuc"]);
+                    $slugtintuc = $_POST["slug-tin-tuc"];
+                }
+                if (isset($_POST["noi-dung-tin"])) {
+                    $noidungtin = trim($_POST["noi-dung-tin"]);
+                }
+                if (isset($_POST["nguon-tin"])) {
+                    $nguontin= trim($_POST["nguon-tin"]);
+                }
+                if (isset($_FILES["thumbnail"])) {
+                    
+                    // Nếu file upload không bị lỗi,
+                    if ($_FILES['thumbnail']['error'] > 0) {
+                        echo 'File Upload Bị Lỗi';
+                    } else {
+                        $fileName = $_FILES['thumbnail']['name'];
+                        $duongDanHinhAnh = 'mvc/public/asset/companies/news/' . $fileName;
+                        // Upload file
+                        move_uploaded_file($_FILES['thumbnail']['tmp_name'], $duongDanHinhAnh);
+                        
+                        $createdDate = date("Y-m-d H:i:s");
+                        // Kiểm tra tin tức có hay chưa
+                        $daco = $this->CongTyModel->LayCongTyBangSlug($slugcongty);
+                        if (mysqli_num_rows($daco) < 1) {
+                            // Thêm công ty
+                            $kq = $this->CongTyModel->ThemCongTy($tencongty, $slugcongty, $fileName, $nganhnghe, $nhanvien, $diachi, $createdDate);
+                            if ($kq) {
+                                // View
+                                $this->view("admin-template", [
+                                    "Page" => "quan-tri-thanh-cong"
+                                ]);
+                            }
+                        }
+                    }
+                }
+            } else {
+                // View
+                $this->view("admin-template", [
+                    "Page" => "them-tin-tuc"
                 ]);
             }
         } else {

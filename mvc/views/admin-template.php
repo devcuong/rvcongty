@@ -33,10 +33,13 @@ h1.page-header {
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script type="text/javascript"
 	src="<?php echo $servername ?>/mvc/public/js/config.js"></script>
+<script type="text/javascript"
+	src="<?php echo $servername ?>/mvc/public/js/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
 function changeToSlug(e) {
     return ("@" + e.toLowerCase().replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, "a").replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, "e").replace(/i|í|ì|ỉ|ĩ|ị/gi, "i").replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, "o").replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, "u").replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, "y").replace(/đ/gi, "d").replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, "").replace(/ /gi, "-").replace(/\-\-\-\-\-/gi, "-").replace(/\-\-\-\-/gi, "-").replace(/\-\-\-/gi, "-").replace(/\-\-/gi, "-") + "@").replace(/\@\-|\-\@|\@/gi, "")
 };
+// lấy slug tên công ty
     function blurTenCongTy(){
    	 var tenCongTy = document.getElementById("ten-cong-ty").value;
    	 if(tenCongTy != ""){
@@ -44,6 +47,14 @@ function changeToSlug(e) {
       	  document.getElementById("slug-cong-ty").value = slugCongTy;
     }
     }
+    // lấy slug tin tức
+    function blurTieuDeTinTuc(){
+     	 var tieuDeTinTuc = document.getElementById("tieu-de-tin-tuc").value;
+     	 if(tieuDeTinTuc != ""){
+     	   	 var slugTinTuc = changeToSlug(tieuDeTinTuc);
+        	  document.getElementById("slug-tin-tuc").value = slugCongTy;
+      }
+      }
  // get reviewcongty
     function getDuLieu(){
 		if($("#link-review").val() != ""){
@@ -105,9 +116,9 @@ function changeToSlug(e) {
 						<i class="glyphicon glyphicon-search"></i>
 					</button>
 					<select>
-						<option href="#">Action</option> <option
-						   href="#">Another action</option> <option
-						   href="#">Something else here</option>
+						<option href="#">Action</option>
+						<option href="#">Another action</option>
+						<option href="#">Something else here</option>
 					</select>
 				</form>
 				<ul class="nav navbar-nav navbar-right">
