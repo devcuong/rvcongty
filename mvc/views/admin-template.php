@@ -52,7 +52,7 @@ function changeToSlug(e) {
      	 var tieuDeTinTuc = document.getElementById("tieu-de-tin-tuc").value;
      	 if(tieuDeTinTuc != ""){
      	   	 var slugTinTuc = changeToSlug(tieuDeTinTuc);
-        	  document.getElementById("slug-tin-tuc").value = slugCongTy;
+        	  document.getElementById("slug-tin-tuc").value = slugTinTuc;
       }
       }
  // get reviewcongty

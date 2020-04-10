@@ -44,7 +44,7 @@ class QuanTri extends Controller
         if (isset($_POST["user-password"])) {
             $pass = md5(trim($_POST["user-password"]));
         }
-        //echo $email;
+        echo $pass;
         $kq = $this->UserModel->LayUserBangEmailVaPassword($email);
         $temp = "";
         while ($row = mysqli_fetch_array($kq)) {
@@ -56,6 +56,9 @@ class QuanTri extends Controller
             echo "ok";
             $_SESSION["email"] = $email;
             header("Location: " . $server->servername . "/quan-tri/quan-tri-cong-ty", 301);
+            exit();
+        }else{
+            header("Location: " . $server->servername . "/quan-tri/", 301);
             exit();
         }
     }
