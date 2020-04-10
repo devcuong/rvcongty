@@ -172,8 +172,8 @@ class QuanTri extends Controller
                     if ($_FILES['thumbnail']['error'] > 0) {
                         echo 'File Upload Bị Lỗi';
                     } else {
-                        $fileName = $_FILES['thumbnail']['name'];
-                        $duongDanHinhAnh = 'mvc/public/asset/companies/news/' . $fileName;
+                        $thumbnail = $_FILES['thumbnail']['name'];
+                        $duongDanHinhAnh = 'mvc/public/asset/news/' . $thumbnail;
                         // Upload file
                         move_uploaded_file($_FILES['thumbnail']['tmp_name'], $duongDanHinhAnh);
                         
@@ -182,7 +182,7 @@ class QuanTri extends Controller
                         $daco = $this->NewsModel->LayTinTucBySlug($slugtieude);
                         if (mysqli_num_rows($daco) < 1) {
                             // Thêm công ty
-                            $kq = $this->NewsModel->ThemTinTuc($tieudetintuc, $slugtieude, $noidungtin,$thumbnail,$nguontin,$createdDate);
+                            $kq = $this->NewsModel->ThemTinTuc($tieudetintuc, $slugtieude,$thumbnail,$noidungtin,$nguontin,$createdDate);
                             if ($kq) {
                                 // View
                                 $this->view("admin-template", [
@@ -321,6 +321,7 @@ class QuanTri extends Controller
         $duongDanHinhAnh = 'mvc/public/asset/companies/logo/' . $imageName;
         
         file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com" . $imageUrl));
+        
         
         $createdDate = date("Y-m-d H:i:s");
         

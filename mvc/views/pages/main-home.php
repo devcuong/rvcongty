@@ -173,7 +173,7 @@
 				href="https://dailyxe.com.vn/tin-tuc/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-8474d.html">
 				<img class="card-img-top lazy-loading-image loaded"
 				style="width: 100%"
-				src="https://cdn.dailyxe.com.vn/image/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-81800j7.jpg"
+				src="http://t6n6z8i6.stackpathcdn.com/wp-content/uploads/2020/04/Untitled-design-1-1024x768.jpg"
 				alt="Rolls-Royce Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá tối"
 				data-pin-nopin="true">
 			</a>
@@ -187,6 +187,7 @@
 				</h1>
 				<h4 class="news-desc">Rolls-Royce Cullinan được bán với giá hơn 300
 					ngàn đô ở Mỹ và về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
+					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi. về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
 					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi.</h4>
 			</div>
 		</div>
@@ -201,7 +202,7 @@
 				href="https://dailyxe.com.vn/tin-tuc/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-8474d.html">
 				<img class="card-img-top lazy-loading-image loaded"
 				style="width: 100%"
-				src="https://cdn.dailyxe.com.vn/image/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-81800j7.jpg"
+				src="http://t6n6z8i6.stackpathcdn.com/wp-content/uploads/2020/04/Untitled-design-1-1024x768.jpg"
 				alt="Rolls-Royce Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá tối"
 				data-pin-nopin="true">
 			</a>
@@ -215,6 +216,7 @@
 				</h1>
 				<h4 class="news-desc">Rolls-Royce Cullinan được bán với giá hơn 300
 					ngàn đô ở Mỹ và về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
+					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi. về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
 					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi.</h4>
 			</div>
 		</div>
@@ -226,7 +228,7 @@
 					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
 					<img class="lazy-loading-image loaded" style="width: 100%"
-					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					src="http://t6n6z8i6.stackpathcdn.com/wp-content/uploads/2020/04/Untitled-design-1-1024x768.jpg"
 					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					data-pin-nopin="true">
 
@@ -251,7 +253,7 @@
 					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
 					<img class="lazy-loading-image loaded" style="width: 100%"
-					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					src="http://t6n6z8i6.stackpathcdn.com/wp-content/uploads/2020/04/Untitled-design-1-1024x768.jpg"
 					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					data-pin-nopin="true">
 
@@ -276,7 +278,7 @@
 					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
 					<img class="lazy-loading-image loaded" style="width: 100%"
-					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					src="http://t6n6z8i6.stackpathcdn.com/wp-content/uploads/2020/04/Untitled-design-1-1024x768.jpg"
 					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					data-pin-nopin="true">
 
@@ -301,7 +303,7 @@
 					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
 					<img class="lazy-loading-image loaded" style="width: 100%"
-					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					src="http://t6n6z8i6.stackpathcdn.com/wp-content/uploads/2020/04/Untitled-design-1-1024x768.jpg"
 					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					data-pin-nopin="true">
 
@@ -326,7 +328,7 @@
 					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
 					<img class="lazy-loading-image loaded" style="width: 100%"
-					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					src="http://t6n6z8i6.stackpathcdn.com/wp-content/uploads/2020/04/Untitled-design-1-1024x768.jpg"
 					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					data-pin-nopin="true">
 
@@ -351,7 +353,7 @@
 					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
 					<img class="lazy-loading-image loaded" style="width: 100%"
-					src="https://cdn.dailyxe.com.vn/image/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-81786j1.jpg"
+					src="http://t6n6z8i6.stackpathcdn.com/wp-content/uploads/2020/04/Untitled-design-1-1024x768.jpg"
 					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
 					data-pin-nopin="true">
 

@@ -158,8 +158,8 @@ function changeToSlug(e) {
 						CÔNG TY</a></li>
 				<li><a href="<?php echo $servername ?>/quan-tri/review-moi-nhat">REVIEW
 						MỚI NHẤT</a></li>
-				<li><a href="#">REVIEW NHIỀU LIKE</a></li>
-				<li><a href="#">REVIEW NHIỀU HATE</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/them-tin-tuc">THÊM TIN TỨC</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/quan-tri-tin-tuc">QUẢN TRỊ TIN TỨC</a></li>
 				<li><a href="#">REVIEW YÊU CẦU XÓA</a></li>
 			</ul>
 		</div>

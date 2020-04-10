@@ -13,6 +13,12 @@
 			readonly>
 	</div>
 	<div class="form-group">
+		<label>Mô tả ngắn</label> <textarea class="form-control"
+			id="mo-ta-ngan" name="mo-ta-ngan" placeholder="Mô tả ngắn"
+			></textarea>
+		<span> Có: ? Từ</span>
+	</div>
+	<div class="form-group">
 		<label>hình ảnh tin</label> <input type="file" class="form-control"
 			id="thumbnail" name="thumbnail" placeholder="thumbnail"
 			accept="image/x-png,image/gif,image/jpeg">
