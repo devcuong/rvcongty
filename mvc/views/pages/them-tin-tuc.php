@@ -14,9 +14,9 @@
 	</div>
 	<div class="form-group">
 		<label>Mô tả ngắn</label> <textarea class="form-control"
-			id="mo-ta-ngan" name="mo-ta-ngan" placeholder="Mô tả ngắn"
+			id="mo-ta-ngan" name="mo-ta-ngan" placeholder="Mô tả ngắn" onblur="blurMoTaNgan()"
 			></textarea>
-		<span> Có: ? Từ</span>
+		<span id="error-description"> Có: ? Từ</span>
 	</div>
 	<div class="form-group">
 		<label>hình ảnh tin</label> <input type="file" class="form-control"
@@ -29,7 +29,7 @@
 			placeholder="Nội dung tin"></textarea>
 		<script>
                 CKEDITOR.replace( 'noi-dung-tin' );
-            </script>
+        </script>
 	</div>
 	<div class="form-group">
 		<label>Nguồn Tin</label> <input type="text" class="form-control"

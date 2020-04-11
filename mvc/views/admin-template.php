@@ -38,7 +38,21 @@ h1.page-header {
 <script type="text/javascript">
 function changeToSlug(e) {
     return ("@" + e.toLowerCase().replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, "a").replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, "e").replace(/i|í|ì|ỉ|ĩ|ị/gi, "i").replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, "o").replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, "u").replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, "y").replace(/đ/gi, "d").replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, "").replace(/ /gi, "-").replace(/\-\-\-\-\-/gi, "-").replace(/\-\-\-\-/gi, "-").replace(/\-\-\-/gi, "-").replace(/\-\-/gi, "-") + "@").replace(/\@\-|\-\@|\@/gi, "")
-};
+}
+// Kiểm tra số ký tự mô tả
+	function blurMoTaNgan(){
+		var moTaNgan = document.getElementById("mo-ta-ngan").value;
+		$('#error-description').html('');
+		if(moTaNgan != "")
+		{
+			if(moTaNgan.length < 285 || moTaNgan.length > 290){
+				$("#error-description").html('<b>Mô tả phải dài từ 285 đến 290 kí tự.</b>');
+			}else{
+				$("#error-description").html('<b>ok</b>');
+			}
+		}
+	}
+
 // lấy slug tên công ty
     function blurTenCongTy(){
    	 var tenCongTy = document.getElementById("ten-cong-ty").value;
@@ -55,7 +69,8 @@ function changeToSlug(e) {
         	  document.getElementById("slug-tin-tuc").value = slugTinTuc;
       }
       }
- // get reviewcongty
+    
+ 	// get reviewcongty
     function getDuLieu(){
 		if($("#link-review").val() != ""){
 			  $.ajax({
