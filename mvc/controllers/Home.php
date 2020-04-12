@@ -4,6 +4,22 @@ require_once 'mvc/class/CutString.php';
 require_once 'mvc/class/Schema.php';
 class Home extends Controller
 {
+    
+    public $CongTyModel;
+    
+    public $ReviewModel;
+    
+    public $NewsModel;
+    
+    
+    
+    public function __construct()
+    {
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $this->CongTyModel = $this->model("CongTyModel");
+        $this->ReviewModel = $this->model("ReviewModel");
+        $this->NewsModel = $this->model("NewsModel");
+    }
 
     function Index($a = NULL)
     {
@@ -19,8 +35,10 @@ class Home extends Controller
             }
             $soCongTyBoQua = ($trangHienTai - 1) * $congTyMoiTrang;
             // Model
-            $congty = $this->model("CongTyModel");
-            $review = $this->model("ReviewModel");
+            $congty = $this->CongTyModel;
+            $review = $this->ReviewModel;
+            $news = $this->NewsModel;
+            
             // Tất cả công ty
             $tatCaCongTy = $congty->TatCaCongTy();
             $soCongTy = mysqli_num_rows($tatCaCongTy);
@@ -41,6 +59,8 @@ class Home extends Controller
                         $congTyTrangHienTaiSchema = $congty->LayCongTyWorstPhanTrang($soCongTyBoQua, $congTyMoiTrang);
                     }
             
+            $tinTucMoiNhat = $news->Lay8TinMoiNhat();
+                
             // Title
             $title = "Review lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty - CongTyTop";
             
@@ -66,6 +86,7 @@ class Home extends Controller
                 "Navigate" => $nav,
                 "CongTyTrangHienTai" => $congTyTrangHienTai,
                 "TabCongTy" => $tabCongTy,
+                "TinTucMoiNhat" => $tinTucMoiNhat,
                 "Title" => $title,
                 "Description" => $description,
                 "Keyword" => $keyword,

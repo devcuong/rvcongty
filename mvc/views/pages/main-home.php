@@ -163,64 +163,43 @@
 </div>
 <p class="title-news-blue">TIN TỨC</p>
 <div class="columns">
-	<div class="column">
+	<?php
+	$index = 0;
+while ($r = mysqli_fetch_array($data["TinTucMoiNhat"])) {
+    ?>
+        <?php if($index == 0 || $index == 1) { ?>
+        <div class="column">
 		<div class="card news first-news">
 			<a target="_blank"
-				title="Rolls-Royce Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá tối"
-				href="https://dailyxe.com.vn/tin-tuc/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-8474d.html">
+				title="<?php echo $r["tieude"] ?>"
+				href="<?php echo $servername ?>/companies-news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>">
 			</a> <a class="news-right-img" target="_self"
-				title="Rolls-Royce Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá tối"
-				href="https://dailyxe.com.vn/tin-tuc/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-8474d.html">
+				title="<?php echo $r["tieude"] ?>"
+				href="<?php echo $servername ?>/companies-news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>">
 				<img class="card-img-top lazy-loading-image loaded"
 				style="width: 100%"
-				src="http://t6n6z8i6.stackpathcdn.com/wp-content/uploads/2020/04/Untitled-design-1-1024x768.jpg"
-				alt="Rolls-Royce Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá tối"
+				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $r["thumbnail"] ?>"
+				alt="<?php echo $r["tieude"] ?>"
 				data-pin-nopin="true">
 			</a>
 			<div class="card-block has-menu-dots">
 				<h1 class="news-title">
 					<a target="_self"
-						title="Rolls-Royce Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá tối"
+						title="<?php echo $r["tieude"] ?>"
 						href="https://dailyxe.com.vn/tin-tuc/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-8474d.html">Rolls-Royce
-						Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá
-						tối</a>
+						<?php echo $r["tieude"] ?></a>
 				</h1>
 				<h4 class="news-desc">Rolls-Royce Cullinan được bán với giá hơn 300
 					ngàn đô ở Mỹ và về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
-					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi. về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
-					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi.</h4>
+					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi. về Việt
+					Nam thì con số này lên đến hơn 40 tỷ, nhưng xe đắt tiền không giúp
+					nó ngoại lệ với những đợt triệu hồi.</h4>
 			</div>
 		</div>
 	</div>
-	<div class="column">
-		<div class="card news first-news">
-			<a target="_blank"
-				title="Rolls-Royce Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá tối"
-				href="https://dailyxe.com.vn/tin-tuc/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-8474d.html">
-			</a> <a class="news-right-img" target="_self"
-				title="Rolls-Royce Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá tối"
-				href="https://dailyxe.com.vn/tin-tuc/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-8474d.html">
-				<img class="card-img-top lazy-loading-image loaded"
-				style="width: 100%"
-				src="http://t6n6z8i6.stackpathcdn.com/wp-content/uploads/2020/04/Untitled-design-1-1024x768.jpg"
-				alt="Rolls-Royce Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá tối"
-				data-pin-nopin="true">
-			</a>
-			<div class="card-block has-menu-dots">
-				<h1 class="news-title">
-					<a target="_self"
-						title="Rolls-Royce Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá tối"
-						href="https://dailyxe.com.vn/tin-tuc/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-8474d.html">Rolls-Royce
-						Cullinan giá hơn 40 tỷ ở Việt Nam bị triệu hồi vì...đèn hậu quá
-						tối</a>
-				</h1>
-				<h4 class="news-desc">Rolls-Royce Cullinan được bán với giá hơn 300
-					ngàn đô ở Mỹ và về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
-					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi. về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
-					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi.</h4>
-			</div>
-		</div>
-	</div>
+        <?php } ?>
+        <?php  $index++; ?>
+        <?php } ?>
 	<div class="column col-top-right">
 		<div class="news-right">
 			<div class="media">

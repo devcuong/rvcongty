@@ -19,5 +19,12 @@ class NewsModel extends DB{
             }
             return $result;
         }
+        
+        /*LẤY TIN TỨC TRANG CHỦ*/
+        public function Lay8TinMoiNhat(){
+            $qr = "SELECT * FROM news ORDER BY id DESC LIMIT 8";
+            return mysqli_query($this->con, $qr);
+        }
+        
 }
 ?>
