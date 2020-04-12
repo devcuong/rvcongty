@@ -46,7 +46,7 @@ function changeToSlug(e) {
 		if(moTaNgan != "")
 		{
 			if(moTaNgan.length < 285 || moTaNgan.length > 290){
-				$("#error-description").html('<b>Mô tả phải dài từ 285 đến 290 kí tự.</b>');
+				$("#error-description").html('<b>Hiện có '+ moTaNgan.length +', Mô tả phải dài từ 285 đến 290 kí tự.</b>');
 			}else{
 				$("#error-description").html('<b>ok</b>');
 			}
