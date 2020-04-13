@@ -59,7 +59,8 @@ class Home extends Controller
                         $congTyTrangHienTaiSchema = $congty->LayCongTyWorstPhanTrang($soCongTyBoQua, $congTyMoiTrang);
                     }
             
-            $tinTucMoiNhat = $news->Lay8TinMoiNhat();
+            $thumbnailTinTucMoiNhat = $news->Lay8TinMoiNhat();
+            $listTinTucMoiNhat = $news->Lay8TinMoiNhat();
                 
             // Title
             $title = "Review lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty - CongTyTop";
@@ -86,7 +87,8 @@ class Home extends Controller
                 "Navigate" => $nav,
                 "CongTyTrangHienTai" => $congTyTrangHienTai,
                 "TabCongTy" => $tabCongTy,
-                "TinTucMoiNhat" => $tinTucMoiNhat,
+                "ThumbnailTinTucMoiNhat" => $thumbnailTinTucMoiNhat,
+                "ListTinTucMoiNhat" => $listTinTucMoiNhat,
                 "Title" => $title,
                 "Description" => $description,
                 "Keyword" => $keyword,
