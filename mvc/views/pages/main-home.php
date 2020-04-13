@@ -205,7 +205,7 @@ while ($r = mysqli_fetch_array($data["ThumbnailTinTucMoiNhat"])) {
 			<div class="media">
 				<a class="news-right-img" target="_self"
 					title="<?php echo $row["tieude"] ?>"
-					href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html">
+					href="<?php echo $servername ?>/companies-news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>">
 					<img class="lazy-loading-image loaded" style="width: 100%"
 					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row["thumbnail"] ?>"
 					alt="<?php echo $row["tieude"] ?>"
@@ -220,7 +220,7 @@ while ($r = mysqli_fetch_array($data["ThumbnailTinTucMoiNhat"])) {
 					</h3>
 					<h5 class="news-posted">
 						<span class="origin"><a title="<?php echo $row["nguon"] ?>"
-							href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html"><?php echo $row["nguon"] ?></a></span>
+							href="<?php echo $servername ?>/companies-news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>"><?php echo $row["nguon"] ?></a></span>
 					</h5>
 				</div>
 			</div>
