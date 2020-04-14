@@ -1,8 +1,14 @@
-<?php
+ư<?php
 class NewsModel extends DB{
         // Lấy tin tức bằng slug
         public function LayTinTucBySlug($slug){
             $qr = "SELECT * FROM news WHERE slugtieude = '$slug'";
+            return mysqli_query($this->con, $qr);
+        }
+        
+        // Lấy tin tức bằng ID
+        public function LayTinTucById($id){
+            $qr = "SELECT * FROM news WHERE id = $id";
             return mysqli_query($this->con, $qr);
         }
     
@@ -15,7 +21,7 @@ class NewsModel extends DB{
                 $result = "SQL statement failed";
             }else{
                 mysqli_stmt_bind_param($stmt, "ssssss", $tieude, $slugtieude, $thumbnail, $noidung, $nguon, $thoigian);
-                $result =mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_execute($stmt);
             }
             return $result;
         }

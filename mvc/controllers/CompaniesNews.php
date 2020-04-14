@@ -9,7 +9,15 @@ class CompaniesNews extends Controller
     public function __construct()
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
-        $this->NewsModel = $this->model("ReplyModel");
+        $this->NewsModel = $this->model("NewsModel");
+    }
+    
+    function Index($a, $b=NULL){
+        if ($b != NULL){
+            $urlNews = explode("-", $b);
+            $idNews = end($urlNews);
+            $news = $this->NewsModel->LayTinTucById($idNews);
+        }
     }
 }
 ?>
