@@ -1,7 +1,4 @@
 <?php
-require 'mvc/class/Replyer.php';
-require 'mvc/class/CutString.php';
-require_once 'mvc/class/Schema.php';
 class CompaniesNews extends Controller
 {
     public $NewsModel;
@@ -17,6 +14,19 @@ class CompaniesNews extends Controller
             $urlNews = explode("-", $b);
             $idNews = end($urlNews);
             $news = $this->NewsModel->LayTinTucById($idNews);
+            
+            // Title
+            $title = "Review công ty ";
+            
+            // Description
+            $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ";
+            
+            // View
+            $this->view("main-template", [
+                "Page" => "companies-news",
+                "Title" => $title,
+                "Description" => $description
+            ]);
         }
     }
 }
