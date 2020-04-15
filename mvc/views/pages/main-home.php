@@ -186,7 +186,7 @@ while ($r = mysqli_fetch_array($data["ThumbnailTinTucMoiNhat"])) {
 				<h1 class="news-title">
 					<a target="_self"
 						title="<?php echo $r["tieude"] ?>"
-						href="https://dailyxe.com.vn/tin-tuc/rolls-royce-cullinan-gia-hon-40-ty-o-viet-nam-bi-trieu-hoi-viden-hau-qua-toi-8474d.html"><?php echo $r["tieude"] ?></a>
+						href="<?php echo $servername ?>/companies-news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>"><?php echo $r["tieude"] ?></a>
 				</h1>
 				<h4 class="news-desc"><?php echo $r["motangan"] ?></h4>
 			</div>
@@ -216,7 +216,7 @@ while ($r = mysqli_fetch_array($data["ThumbnailTinTucMoiNhat"])) {
 					<h3 class="news-right-title">
 						<a target="_self"
 							title="<?php echo $row["tieude"] ?>"
-							href="https://dailyxe.com.vn/tin-tuc/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-8473d.html"><?php echo $row["tieude"] ?></a>
+							href="<?php echo $servername ?>/companies-news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>"><?php echo $row["tieude"] ?></a>
 					</h3>
 					<h5 class="news-posted">
 						<span class="origin"><a title="<?php echo $row["nguon"] ?>"
