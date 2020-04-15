@@ -1081,10 +1081,6 @@ margin-bottom
 	background-color: #f7941d;
 }
 
-.chat-room {
-	margin-top: 5px;
-}
-
 .news.first-news {
     margin-top: 0;
     border: none;

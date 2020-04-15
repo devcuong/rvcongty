@@ -1,4 +1,4 @@
-ư<?php
+<?php
 class NewsModel extends DB{
         // Lấy tin tức bằng slug
         public function LayTinTucBySlug($slug){

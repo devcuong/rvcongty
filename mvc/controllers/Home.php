@@ -1,7 +1,7 @@
 <?php
-require_once 'mvc/class/Server.php';
-require_once 'mvc/class/CutString.php';
-require_once 'mvc/class/Schema.php';
+ require_once 'mvc/class/Server.php';
+ require_once 'mvc/class/CutString.php';
+ require_once 'mvc/class/Schema.php';
 class Home extends Controller
 {
     
@@ -137,7 +137,7 @@ class Home extends Controller
             }
             echo '</urlset>'.PHP_EOL;
         }
-        //echo $a;
+        echo "ok";
     }
 }
 ?>
