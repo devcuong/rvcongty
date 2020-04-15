@@ -15,7 +15,6 @@
 
 <meta property="og:url"
 	content="<?php
-
 $url = "https" . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 echo $url?>">
 <link rel="canonical" href="<?php echo $url ?>">
@@ -29,7 +28,6 @@ echo $url?>/mvc/public/images/banner.png">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:site_name" content="Công ty TOP">
 <title><?php echo $data["Title"]; ?></title>
-
 <link rel="apple-touch-icon" sizes="57x57"
 	href="<?php echo $servername ?>/mvc/public/favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60"
