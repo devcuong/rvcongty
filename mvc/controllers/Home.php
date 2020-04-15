@@ -137,7 +137,6 @@ class Home extends Controller
             }
             echo '</urlset>'.PHP_EOL;
         }
-        //echo $a;
     }
 }
 ?>
