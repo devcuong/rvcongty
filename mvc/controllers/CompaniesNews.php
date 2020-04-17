@@ -14,6 +14,7 @@ class CompaniesNews extends Controller
             $urlNews = explode("-", $b);
             $idNews = end($urlNews);
             $news = $this->NewsModel->LayTinTucById($idNews);
+            $newsMoiNhat = $this->NewsModel->Lay8TinMoiNhat();
             
             // Title
             $title = "Review công ty ";
@@ -26,7 +27,8 @@ class CompaniesNews extends Controller
                 "Page" => "companies-news",
                 "Title" => $title,
                 "Description" => $description,
-                "News" => $news
+                "News" => $news,
+                "NewsMoiNhat"=>$newsMoiNhat
             ]);
         }
     }

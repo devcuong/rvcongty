@@ -410,9 +410,7 @@ important
 }
 
 .summary-reviews {
-	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
-	margin-left: 1rem;
-	padding-left: 0.5rem;
+	padding-left: 1rem;
 	background: white;
 }
 
@@ -1097,9 +1095,8 @@ margin-bottom
     min-width: 0;
     word-wrap: break-word;
     background-color: #fff;
-    background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+	box-shadow: none;
 }
 .first-news>a {
     display: block;
