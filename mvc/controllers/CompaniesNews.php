@@ -25,7 +25,8 @@ class CompaniesNews extends Controller
             $this->view("main-template", [
                 "Page" => "companies-news",
                 "Title" => $title,
-                "Description" => $description
+                "Description" => $description,
+                "News" => $news
             ]);
         }
     }
