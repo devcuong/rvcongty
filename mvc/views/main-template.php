@@ -1119,9 +1119,12 @@ margin-bottom
 }
 .news .news-title {
     font-size: 125%;
-    font-weight: 400;
     display: block;
     margin-bottom: .25rem;
+}
+.news .news-title a{
+	color: #F7941D;
+	font-weight: 600;
 }
 .col-top-right {
     padding: .625rem !important;
@@ -1176,16 +1179,16 @@ margin-bottom
     line-height: 1;
 }
 .title-news-blue{
-	color: #00b9f2;
+	color: #71bf44 ;
     font-size: 1.5rem;
     font-weight: 700;
     padding: 0 0 0 10px;
-    border-bottom: 5px solid #00b9f2;
+    border-bottom: 5px solid #71bf44;
 	background: #fff;
     margin: 50px 0 10px;
 }
 .origin a{
-	color: #000;
+	color: #71bf44;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
