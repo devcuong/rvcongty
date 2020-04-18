@@ -176,6 +176,12 @@
 .news-posted .origin a{
     color: #71bf44;
 }
+.news-posted i{
+	margin-right: 3px;
+}
+.box-right>.card-block {
+    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+}
 </style>
 <div class="columns" style="height: auto !important;">
 	<section class="companies column is-two-thirds"
@@ -188,8 +194,7 @@ while ($row = mysqli_fetch_array($data["News"])) {
 			<div
 				class="detail-news-posted start-social-fixed d-flex align-items-center">
 				<div class="d-flex mr-auto">
-					<span class="time">đăng lúc <?php echo $row["thoigian"] ?></span> <span
-						class="name-menu">Tin tức mới</span>
+					<span class="time">đăng lúc <?php echo $row["thoigian"] ?></span>
 				</div>
 			</div>
 			<span macd="tinlienquan_chitiettintuc"></span>
