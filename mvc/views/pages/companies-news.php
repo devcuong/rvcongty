@@ -169,6 +169,13 @@
     max-height: 2.75rem;
     overflow: hidden;
 }
+.news-right .news-posted span {
+    font-size: 90%;
+    margin-right: 0px;
+}
+.news-posted .origin a{
+    color: #71bf44;
+}
 </style>
 <div class="columns" style="height: auto !important;">
 	<section class="companies column is-two-thirds"
@@ -181,7 +188,7 @@ while ($row = mysqli_fetch_array($data["News"])) {
 			<div
 				class="detail-news-posted start-social-fixed d-flex align-items-center">
 				<div class="d-flex mr-auto">
-					<span class="time">đăng lúc 15-04-2020 14:30</span> <span
+					<span class="time">đăng lúc <?php echo $row["thoigian"] ?></span> <span
 						class="name-menu">Tin tức mới</span>
 				</div>
 			</div>
@@ -248,9 +255,9 @@ while ($row = mysqli_fetch_array($data["News"])) {
 							</h3>
 							<p class="news-posted">
 								<span class="origin"><a title="BanXeHoi"
-									href="https://dailyxe.com.vn/banxehoi-banxehoi.com-6w.html">BanXeHoi</a></span>
-								<span><i class="fa fa-calendar-o"></i>1 giờ</span> <span><i
-									class="fa fa-eye"></i>2</span>
+									href="https://dailyxe.com.vn/banxehoi-banxehoi.com-6w.html"><?php echo $r["nguon"] ?></a></span>
+								<span><i
+									class="fa fa-eye"></i><?php echo $r["luotxem"] ?></span>
 							</p>
 						</div>
 					</div>
