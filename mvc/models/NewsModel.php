@@ -32,5 +32,14 @@ class NewsModel extends DB{
             return mysqli_query($this->con, $qr);
         }
         
+        /*CẬP NHẬT LƯỢT VIEW*/
+        public function CapNhatLuotView($idNews){
+            $qr = "UPDATE news SET luotxem = luotxem + 1 WHERE id = $idNews";
+            $result = false;
+            if(mysqli_query($this->con, $qr)){
+                $result = true;
+            }
+            return $result;
+        }
 }
 ?>

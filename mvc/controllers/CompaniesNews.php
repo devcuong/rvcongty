@@ -15,7 +15,7 @@ class CompaniesNews extends Controller
             $idNews = end($urlNews);
             $news = $this->NewsModel->LayTinTucById($idNews);
             $newsMoiNhat = $this->NewsModel->Lay8TinMoiNhat();
-            
+            $capNhatViews = $this->NewsModel->CapNhatLuotView($idNews);
             // Title
             $title = "Review công ty ";
             

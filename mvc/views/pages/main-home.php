@@ -1,7 +1,7 @@
 <section class="hero-img">
 	<div class="hero-img__gradient"></div>
-	<img src="<?php echo $servername ?>/mvc/public/images/banner.png"
-		alt="công ty top">
+	<!--<img src="<?php echo $servername ?>/mvc/public/images/banner.png" alt="công ty top"> -->
+	<img src="https://w7.pngwing.com/pngs/159/764/png-transparent-banner-infographic-green-illustration-green-silhouette-city-architecture-building-text-grass.png" alt="công ty top">
 	<div class="hero">
 		<div class="hero-body z-1">
 			<div>

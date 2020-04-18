@@ -147,7 +147,7 @@ body {
 }
 
 a {
-	color: #00b7ff;
+	color: #363636;
 }
 
 a.white-link:hover {
@@ -229,7 +229,7 @@ margin-bottom
 	font-size: 1rem;
 	line-height: 1.5rem;
 	background-color: #00b9f2;
-	background-image: linear-gradient(97deg, #00b9f2 35%, #0e7ccd 62%, #00b9f2 81%);
+	background-image: linear-gradient(97deg, #088A08 35%, #04B431 62%, #71bf44 81%);
 }
 
 .main-nav .logo {
@@ -425,7 +425,7 @@ important
 
 .company-item {
 	display: block;
-	border: 1px solid #A8E4FC !important;
+	border: 1px solid #71bf44 !important;
 	margin-bottom: 10px;
 }
 
@@ -448,7 +448,7 @@ important
 .home-logo-company {
 	text-align: center;
 	padding: 1.25rem;
-	border-right: 1px solid #A8E4FC;
+	border-right: 1px solid #71bf44;
 	background: #fff;
 }
 
