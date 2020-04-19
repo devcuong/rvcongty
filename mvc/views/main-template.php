@@ -556,6 +556,7 @@ important
 
 .summary-reviews .reviews__header {
 	margin-bottom: 0.4rem;
+	color:#F7941D;
 }
 
 @media screen and (max-width: 768px) {
@@ -1189,6 +1190,13 @@ margin-bottom
 }
 .origin a{
 	color: #71bf44;
+}
+.tabs li.is-active a {
+    border-bottom-color: #088A08;
+    color: #088A08;
+}
+.has-text-info {
+    color: #088A08 !important;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
