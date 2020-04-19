@@ -257,8 +257,7 @@ margin-bottom
 }
 
 .main-footer {
-	background-color: #00b9f2;
-	background-image: linear-gradient(97deg, #00b9f2 35%, #0e7ccd 62%, #00b9f2 81%);
+	background-image: linear-gradient(97deg, #088A08 35%, #04B431 62%, #71bf44 81%);
 	flex-basis: 40px;
 	padding: 0.5rem 0;
 	margin-top: 20px;
@@ -1032,7 +1031,7 @@ padding-right
 }
 
 .message.is-info .message-header {
-	background-color: #0e7ccd;
+	background-color: #04B431;
 	color: #fff;
 }
 
@@ -1202,6 +1201,9 @@ margin-bottom
     background-color: #088A08;
     border-color: #088A08;
     color: #fff;
+}
+.message.is-info .question{
+    color: #F7941D;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->

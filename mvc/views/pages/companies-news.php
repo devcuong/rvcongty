@@ -183,12 +183,35 @@
     padding: 0.625rem 0.625rem 0.625rem 0.625rem;
 }
 </style>
-<div class="columns" style="height: auto !important;">
-	<section class="companies column is-two-thirds"
-		style="height: auto !important;">
 		<?php
 while ($row = mysqli_fetch_array($data["News"])) {
     ?>
+<nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs">
+    <ul>
+        <li>
+            <a href="/">
+                <span class="icon is-small">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                </span>
+                <span>Trang chủ</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo $servername ?>/companies-news/">
+                <span>Companies News</span>
+            </a>
+        </li>
+        <li class="is-active">
+            <a href="#">
+                <span><?php echo $row["tieude"] ?></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<div class="columns" style="height: auto !important;">
+	<section class="companies column is-two-thirds"
+		style="height: auto !important;">
+
 		<div class="detail-news box-border">
 			<h1 class="detail-news-title"><?php echo $row["tieude"] ?></h1>
 			<div
