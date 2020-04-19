@@ -1198,6 +1198,11 @@ margin-bottom
 .has-text-info {
     color: #088A08 !important;
 }
+.pagination-link.is-current {
+    background-color: #088A08;
+    border-color: #088A08;
+    color: #fff;
+}
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async
