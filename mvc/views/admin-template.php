@@ -191,8 +191,38 @@ function changeToSlug(e) {
 		</footer>
 	</div>
 	<script type="text/javascript">
+	$('#txt-tag').tagEditor({placeholder: 'Tối thiểu 3 từ khóa', maxTags: 5, removeDuplicates: true, onChange: function (field, editor, tags) {
+	      ValidateTag();
+	  }});
 
-</script>
+	// Function validate tag
+	function ValidateTag(){
+		var kt = true;
+		$('#tag_error').html('');
+	    $('.tag-editor').removeClass('validation-failed');
+	    $('.tag-editor').removeClass('validation-success');
+	    $('#successTag').hide();
+	    var tag = $('#txt-tag').val();
+	    var count = 0;
+	    for(var i=0; i<tag.split(",").length;i++){
+	    	if(tag.split(",")[i].trim().length != 0)
+	    		count++;
+	    }
+	    if(count < 3){
+	        $('#tag_error').html('Nhập tối thiểu 3 từ khóa.');
+	        kt = false;
+	    }
+	    if(kt){
+	        $('.tag-editor').addClass('validation-success');
+	        $('#successTag').show();
+	        return true;
+	    }else{
+	    	$('.tag-editor').addClass('validation-failed');
+	        return false;
+	    }
+	}
+	</script>
+	 <script type="text/javascript" src="<?php echo $servername ?>/mvc/public/js/jquery.tag-editor.min.js"></script>
 </body>
 </html>
 

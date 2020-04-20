@@ -36,6 +36,10 @@
 			id="nguon-tin" name="nguon-tin" placeholder="Nguồn tin">
 	</div>
 	<div class="form-group">
+		<label>Nguồn Tin</label> <input type="text" class="form-control"
+			id="nguon-tin" name="nguon-tin" placeholder="Nguồn tin">
+	</div>
+	<div class="form-group">
 		<label>Link Review công ty</label> <input type="text"
 			class="form-control" id="link-review" name="link-review"
 			placeholder="Link Review">
