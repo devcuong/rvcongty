@@ -13,9 +13,9 @@
 			readonly>
 	</div>
 	<div class="form-group">
-		<label>Mô tả ngắn</label> <textarea class="form-control"
-			id="mo-ta-ngan" name="mo-ta-ngan" placeholder="Mô tả ngắn" onblur="blurMoTaNgan()"
-			></textarea>
+		<label>Mô tả ngắn</label>
+		<textarea class="form-control" id="mo-ta-ngan" name="mo-ta-ngan"
+			placeholder="Mô tả ngắn" onblur="blurMoTaNgan()"></textarea>
 		<span id="error-description"> Có: ? Từ</span>
 	</div>
 	<div class="form-group">
@@ -36,8 +36,8 @@
 			id="nguon-tin" name="nguon-tin" placeholder="Nguồn tin">
 	</div>
 	<div class="form-group">
-		<label>Nguồn Tin</label> <input type="text" class="form-control"
-			id="nguon-tin" name="nguon-tin" placeholder="Nguồn tin">
+		<label>Tag</label>
+		<input name="tag-news" id="tag-news" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>Link Review công ty</label> <input type="text"
