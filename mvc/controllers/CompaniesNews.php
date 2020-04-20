@@ -13,7 +13,7 @@ class CompaniesNews extends Controller
         if ($b != NULL){
             $urlNews = explode("-", $b);
             $idNews = end($urlNews);
-            $news = $this->NewsModel->LayTinTucById($idNews);
+            $news = $this->NewsModel->LayNewsById($idNews);
             $newsMoiNhat = $this->NewsModel->Lay8TinMoiNhat();
             $capNhatViews = $this->NewsModel->CapNhatLuotView($idNews);
             // Title

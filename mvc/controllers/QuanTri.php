@@ -12,7 +12,7 @@ class QuanTri extends Controller
     public $ReviewModel;
 
     public $ReplyModel;
-    
+
     public $NewsModel;
 
     public function __construct()
@@ -57,7 +57,7 @@ class QuanTri extends Controller
             $_SESSION["email"] = $email;
             header("Location: " . $server->servername . "/quan-tri/quan-tri-cong-ty", 301);
             exit();
-        }else{
+        } else {
             header("Location: " . $server->servername . "/quan-tri/", 301);
             exit();
         }
@@ -138,64 +138,6 @@ class QuanTri extends Controller
                 // View
                 $this->view("admin-template", [
                     "Page" => "them-cong-ty"
-                ]);
-            }
-        } else {
-            // View
-            $this->view("admin-template", [
-                "Page" => "quan-tri"
-            ]);
-        }
-    }
-    
-    public function ThemTinTuc(){
-        if (isset($_SESSION["email"])) {
-            if (isset($_POST["btn-submit"])) {
-                $tieudetintuc= "";
-                $slugtieude= "";
-                $thumbnail= "";
-                $noidungtin= "";
-                $nguontin="";
-                if (isset($_POST["tieu-de-tin-tuc"])) {
-                    $tieudetintuc = trim($_POST["tieu-de-tin-tuc"]);
-                    $slugtieude = $_POST["slug-tin-tuc"];
-                }
-                if (isset($_POST["noi-dung-tin"])) {
-                    $noidungtin = trim($_POST["noi-dung-tin"]);
-                }
-                if (isset($_POST["nguon-tin"])) {
-                    $nguontin= trim($_POST["nguon-tin"]);
-                }
-                if (isset($_FILES["thumbnail"])) {
-                    
-                    // Nếu file upload không bị lỗi,
-                    if ($_FILES['thumbnail']['error'] > 0) {
-                        echo 'File Upload Bị Lỗi';
-                    } else {
-                        $thumbnail = $_FILES['thumbnail']['name'];
-                        $duongDanHinhAnh = 'mvc/public/asset/news/' . $thumbnail;
-                        // Upload file
-                        move_uploaded_file($_FILES['thumbnail']['tmp_name'], $duongDanHinhAnh);
-                        
-                        $createdDate = date("Y-m-d H:i:s");
-                        // Kiểm tra tin tức có hay chưa
-                        $daco = $this->NewsModel->LayTinTucBySlug($slugtieude);
-                        if (mysqli_num_rows($daco) < 1) {
-                            // Thêm công ty
-                            $kq = $this->NewsModel->ThemTinTuc($tieudetintuc, $slugtieude,$thumbnail,$noidungtin,$nguontin,$createdDate);
-                            if ($kq) {
-                                // View
-                                $this->view("admin-template", [
-                                    "Page" => "quan-tri-thanh-cong"
-                                ]);
-                            }
-                        }
-                    }
-                }
-            } else {
-                // View
-                $this->view("admin-template", [
-                    "Page" => "them-tin-tuc"
                 ]);
             }
         } else {
@@ -321,7 +263,6 @@ class QuanTri extends Controller
         $duongDanHinhAnh = 'mvc/public/asset/companies/logo/' . $imageName;
         
         file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com" . $imageUrl));
-        
         
         $createdDate = date("Y-m-d H:i:s");
         
@@ -449,6 +390,127 @@ class QuanTri extends Controller
             }
         }
     }
+
+    /* QUẢN TRỊ TIN TỨC */
+    public function TatCaTinTuc($a, $b, $c = NULL)
+    {
+        if (isset($_SESSION["email"])) {
+            $trangHienTai = 1;
+            $newsMoiTrang = 10;
+            if ($c != null) {
+                $trangHienTai = $c;
+            }
+            $soNewsBoQua = ($trangHienTai - 1) * $newsMoiTrang;
+            // Model
+            $news = $this->model("NewsModel");
+            // Tất cả tin tức
+            $tatCaNews = $news->TatCaNews();
+            $soNews = mysqli_num_rows($tatCaNews);
+            $soTrang = ceil($soNews/ $newsMoiTrang);
+            $newsTrangHienTai = "";
+            $newsTrangHienTai = $news->LayNewsPhanTrang($soNewsBoQua, $newsMoiTrang);
+            // View
+            $this->view("admin-template", [
+                "Page" => "tat-ca-tin-tuc",
+                "News" => $newsTrangHienTai,
+                "SoTrang" => $soTrang,
+                "TrangHienTai" => $trangHienTai,
+                "NewsTrangHienTai" => $newsTrangHienTai
+            ]);
+        }
+    }
+    
+    /* xóa news */
+    function XoaNews($a, $b, $c = NULL, $d = NULL, $e = NULL)
+    {
+        if (isset($_SESSION["email"])) {
+            $kt = false;
+            $idNews = $c;
+            $kq = $this->NewsModel->XoaNews($idNews);
+            if ($kq) {
+                $kt = true;
+            }
+            if ($kt) {
+                // View
+                $this->view("admin-template", [
+                    "Page" => "quan-tri-thanh-cong"
+                ]);
+            } else {
+                $server = new Server();
+                ob_start();
+                header("Location: " . $server->get_servername() . "/quan-tri", 301);
+                exit();
+            }
+        }
+    }
+
+    /* THÊM TIN TỨC */
+    public function ThemTinTuc()
+    {
+        if (isset($_SESSION["email"])) {
+            if (isset($_POST["btn-submit"])) {
+                $tieudetintuc = "";
+                $slugtieude = "";
+                $thumbnail = "";
+                $noidungtin = "";
+                $nguontin = "";
+                $tagnews = "";
+                if (isset($_POST["tieu-de-tin-tuc"])) {
+                    $tieudetintuc = trim($_POST["tieu-de-tin-tuc"]);
+                    $slugtieude = $_POST["slug-tin-tuc"];
+                }
+                if (isset($_POST["noi-dung-tin"])) {
+                    $noidungtin = trim($_POST["noi-dung-tin"]);
+                }
+                if (isset($_POST["nguon-tin"])) {
+                    $nguontin = trim($_POST["nguon-tin"]);
+                }
+                if (isset($_POST["tag-news"])) {
+                    $tagnews = trim($_POST["tag-news"]);
+                }
+                if (isset($_FILES["thumbnail"])) {
+                    
+                    // Nếu file upload không bị lỗi,
+                    if ($_FILES['thumbnail']['error'] > 0) {
+                        echo 'File Upload Bị Lỗi';
+                    } else {
+                        $thumbnail = $_FILES['thumbnail']['name'];
+                        $duongDanHinhAnh = 'mvc/public/asset/news/' . $thumbnail;
+                        // Upload file
+                        move_uploaded_file($_FILES['thumbnail']['tmp_name'], $duongDanHinhAnh);
+                        
+                        $createdDate = date("Y-m-d H:i:s");
+                        // Kiểm tra tin tức có hay chưa
+                        $daco = $this->NewsModel->LayNewsBySlug($slugtieude);
+                        if (mysqli_num_rows($daco) < 1) {
+                            // Thêm công ty
+                            $kq = $this->NewsModel->ThemTinTuc($tieudetintuc, $slugtieude, $thumbnail, $noidungtin, $tagnews, $nguontin, $createdDate);
+                            if ($kq) {
+                                // View
+                                $this->view("admin-template", [
+                                    "Page" => "quan-tri-thanh-cong"
+                                ]);
+                            }
+                        }
+                    }
+                }
+            } else {
+                // View
+                $this->view("admin-template", [
+                    "Page" => "them-tin-tuc"
+                ]);
+            }
+        } else {
+            // View
+            $this->view("admin-template", [
+                "Page" => "quan-tri"
+            ]);
+        }
+    }
+
+    // SỬA TIN TỨC
+    public function SuaTinTuc()
+    {}
 
     function ToSlug($str, $options = array())
     {

@@ -1,14 +1,27 @@
 <?php
 class NewsModel extends DB{
+        
+        // Lấy tất cả tin tức
+        public function TatCaNews(){
+            $qr = "SELECT * FROM news";
+            return mysqli_query($this->con, $qr);
+        }
+    
         // Lấy tin tức bằng slug
-        public function LayTinTucBySlug($slug){
+        public function LayNewsBySlug($slug){
             $qr = "SELECT * FROM news WHERE slugtieude = '$slug'";
             return mysqli_query($this->con, $qr);
         }
         
         // Lấy tin tức bằng ID
-        public function LayTinTucById($id){
+        public function LayNewsById($id){
             $qr = "SELECT * FROM news WHERE id = $id";
+            return mysqli_query($this->con, $qr);
+        }
+        /*PHÂN TRANG*/
+        // Lấy news để phân trang
+        public function LayNewsPhanTrang($soNewsBoQua, $newsMoiTrang){
+            $qr = "SELECT * FROM news ORDER BY thoigian DESC LIMIT $soNewsBoQua, $newsMoiTrang" ;
             return mysqli_query($this->con, $qr);
         }
     
