@@ -438,7 +438,7 @@ class QuanTri extends Controller
             } else {
                 $server = new Server();
                 ob_start();
-                header("Location: " . $server->get_servername() . "/quan-tri", 301);
+                header("Location: " . $server->get_servername() . "/quan-tri/tat-ca-tin-tuc/", 301);
                 exit();
             }
         }

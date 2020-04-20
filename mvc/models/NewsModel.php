@@ -38,6 +38,15 @@ class NewsModel extends DB{
             }
             return $result;
         }
+        // Xóa NEWS theo ID
+        public function XoaNews($iDNews){
+            $qr = "DELETE FROM news WHERE id = $iDNews";
+            $result = false;
+            if(mysqli_query($this->con, $qr)){
+                $result = true;
+            }
+            return $result;
+        }
         
         /*LẤY TIN TỨC TRANG CHỦ*/
         public function Lay8TinMoiNhat(){
