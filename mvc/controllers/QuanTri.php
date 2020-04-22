@@ -509,8 +509,21 @@ class QuanTri extends Controller
     }
 
     // SỬA TIN TỨC
-    public function SuaTinTuc()
-    {}
+    public function CapNhatNews($a, $b, $c = NULL)
+    {
+  
+            if (!isset($_POST["btn-submit"])) {
+                if($c != NULL){
+                    $idNews = trim($c);
+                    $news = $this->NewsModel->LayNewsById($idNews);
+                    // View
+                    $this->view("admin-template", [
+                        "Page" => "cap-nhat-tin-tuc",
+                        "News" => $news,
+                    ]);
+                }
+            }
+    }
 
     function ToSlug($str, $options = array())
     {
