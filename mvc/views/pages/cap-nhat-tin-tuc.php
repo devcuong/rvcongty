@@ -24,6 +24,8 @@
 		<label>hình ảnh tin</label> <input type="file" class="form-control"
 			id="thumbnail" name="thumbnail" placeholder="thumbnail"
 			accept="image/x-png,image/gif,image/jpeg">
+		<input type="hidden" class="form-control"
+			id="hidden-thumbnail" name="hidden-thumbnail" value="<?php echo $row["thumbnail"] ?>" >
 	</div>
 	<div class="form-group">
 		<label>nội dung tin</label>

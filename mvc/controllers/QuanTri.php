@@ -3,7 +3,7 @@ require 'mvc/class/Server.php';
 
 class QuanTri extends Controller
 {
-
+    
     // Khai báo model
     public $UserModel;
 
@@ -32,7 +32,7 @@ class QuanTri extends Controller
             "Page" => "quan-tri"
         ]);
     }
-
+    
     // QUẢN TRỊ VIÊN ĐĂNG NHẬP
     public function DangNhap()
     {
@@ -62,7 +62,7 @@ class QuanTri extends Controller
             exit();
         }
     }
-
+    
     // QUẢN TRỊ VIÊN ĐĂNG XUẤT
     public function DangXuat()
     {
@@ -74,7 +74,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-
+    
     // QUẢN TRỊ CHUNG
     public function QuanTriCongTy()
     {
@@ -83,7 +83,7 @@ class QuanTri extends Controller
             "Page" => "quan-tri-cong-ty"
         ]);
     }
-
+    
     // THÊM CÔNG TY
     public function ThemCongTy()
     {
@@ -147,7 +147,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-
+    
     // TẤT CẢ CÔNG TY
     public function TatCaCongTy($a, $b, $c = null)
     {
@@ -182,7 +182,7 @@ class QuanTri extends Controller
             exit();
         }
     }
-
+    
     // XÓA CÔNG TY
     public function XoaCongTy($a, $b, $c)
     {
@@ -210,16 +210,17 @@ class QuanTri extends Controller
             }
         }
     }
-
+    
     // GET DATA
     public function GetDataCongTy($a = NULL)
     {
         $urlCompany = "";
         if (isset($_POST["url-company"])) {
             $urlCompany = $_POST["url-company"];
-        } else if ($a != null) {
-            $urlCompany = $a;
-        }
+        } else 
+            if ($a != null) {
+                $urlCompany = $a;
+            }
         $page = file_get_contents($urlCompany);
         @$doc = new DOMDocument();
         @$doc->loadHTML($page);
@@ -284,7 +285,7 @@ class QuanTri extends Controller
             echo "ĐÃ CÓ " . $tenCongTy;
         }
     }
-
+    
     // get data page
     public function GetDataPageCongTy()
     {
@@ -406,7 +407,7 @@ class QuanTri extends Controller
             // Tất cả tin tức
             $tatCaNews = $news->TatCaNews();
             $soNews = mysqli_num_rows($tatCaNews);
-            $soTrang = ceil($soNews/ $newsMoiTrang);
+            $soTrang = ceil($soNews / $newsMoiTrang);
             $newsTrangHienTai = "";
             $newsTrangHienTai = $news->LayNewsPhanTrang($soNewsBoQua, $newsMoiTrang);
             // View
@@ -419,7 +420,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-    
+
     /* xóa news */
     function XoaNews($a, $b, $c = NULL, $d = NULL, $e = NULL)
     {
@@ -452,6 +453,7 @@ class QuanTri extends Controller
                 $tieudetintuc = "";
                 $slugtieude = "";
                 $thumbnail = "";
+                $motangan = "";
                 $noidungtin = "";
                 $nguontin = "";
                 $tagnews = "";
@@ -468,6 +470,9 @@ class QuanTri extends Controller
                 if (isset($_POST["tag-news"])) {
                     $tagnews = trim($_POST["tag-news"]);
                 }
+                if(isset($_POST["mo-ta-ngan"])){
+                    $motangan = $_POST["mo-ta-ngan"];
+                }
                 if (isset($_FILES["thumbnail"])) {
                     
                     // Nếu file upload không bị lỗi,
@@ -483,8 +488,8 @@ class QuanTri extends Controller
                         // Kiểm tra tin tức có hay chưa
                         $daco = $this->NewsModel->LayNewsBySlug($slugtieude);
                         if (mysqli_num_rows($daco) < 1) {
-                            // Thêm công ty
-                            $kq = $this->NewsModel->ThemTinTuc($tieudetintuc, $slugtieude, $thumbnail, $noidungtin, $tagnews, $nguontin, $createdDate);
+                            // Thêm tin tức
+                            $kq = $this->NewsModel->ThemNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin, $createdDate);
                             if ($kq) {
                                 // View
                                 $this->view("admin-template", [
@@ -507,22 +512,71 @@ class QuanTri extends Controller
             ]);
         }
     }
-
+    
     // SỬA TIN TỨC
     public function CapNhatNews($a, $b, $c = NULL)
     {
-  
-            if (!isset($_POST["btn-submit"])) {
-                if($c != NULL){
-                    $idNews = trim($c);
-                    $news = $this->NewsModel->LayNewsById($idNews);
-                    // View
-                    $this->view("admin-template", [
-                        "Page" => "cap-nhat-tin-tuc",
-                        "News" => $news,
-                    ]);
-                }
+        if ($c != NULL) {
+            $idNews = trim($c);
+        }
+        if (! isset($_POST["btn-submit"])) {
+            $news = $this->NewsModel->LayNewsById($idNews);
+            // View
+            $this->view("admin-template", [
+                "Page" => "cap-nhat-tin-tuc",
+                "News" => $news
+            ]);
+        } else {
+            $tieudetintuc = "";
+            $slugtieude = "";
+            $thumbnail = "";
+            $noidungtin = "";
+            $nguontin = "";
+            $tagnews = "";
+            if (isset($_POST["tieu-de-tin-tuc"])) {
+                $tieudetintuc = trim($_POST["tieu-de-tin-tuc"]);
+                $slugtieude = $_POST["slug-tin-tuc"];
             }
+            if (isset($_POST["noi-dung-tin"])) {
+                $noidungtin = trim($_POST["noi-dung-tin"]);
+            }
+            if (isset($_POST["nguon-tin"])) {
+                $nguontin = trim($_POST["nguon-tin"]);
+            }
+            if (isset($_POST["tag-news"])) {
+                $tagnews = trim($_POST["tag-news"]);
+            }
+            if(isset($_POST["motangan"])){
+                $motangan = $_POST["motangan"];
+            }
+            if (isset($_FILES["thumbnail"])) {
+                // Nếu file upload không bị lỗi,
+                if ($_FILES['thumbnail']['error'] > 0) {
+                    echo 'File Upload Bị Lỗi';
+                } else {
+                    $thumbnail = $_FILES['thumbnail']['name'];
+                    $duongDanHinhAnh = 'mvc/public/asset/news/' . $thumbnail;
+                    // Remove file
+                    unlink('mvc/public/asset/news/' . $_POST["hidden-thumbnail"]);
+                    
+                    // Upload file
+                    move_uploaded_file($_FILES['thumbnail']['tmp_name'], $duongDanHinhAnh);
+                    
+                    $createdDate = date("Y-m-d H:i:s");
+                   
+                }
+            } else {
+                $thumbnail = $_POST["hidden-thumbnail"];
+            }
+            // cập nhật tin tức
+            $kq = $this->NewsModel->CapNhatNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin, $createdDate, $idNews);
+            if ($kq) {
+                // View
+                $this->view("admin-template", [
+                    "Page" => "quan-tri-thanh-cong"
+                ]);
+            }
+        }
     }
 
     function ToSlug($str, $options = array())

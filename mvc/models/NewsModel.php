@@ -26,15 +26,30 @@ class NewsModel extends DB{
         }
     
         /*THÊM TIN TỨC*/
-        public function ThemTinTuc($tieude, $slugtieude, $thumbnail, $noidung, $nguon, $thoigian) {
-            $qr= "INSERT INTO news (tieude, slugtieude, thumbnail, noidung, nguon, thoigian) VALUES(?, ?, ?, ?, ?, ?)";
+        public function ThemNews($tieude, $slugtieude, $thumbnail,$motangan, $noidung, $tagnews ,$nguon, $thoigian) {
+            $qr= "INSERT INTO news (tieude, slugtieude, thumbnail, motangan,noidung, tagnews ,nguon, thoigian) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = mysqli_stmt_init($this->con);
+            $result = 0;
+            //echo $result;
+            /*if(!mysqli_stmt_prepare($stmt, $qr)){
+                $result = "SQL statement failed";
+            }else{
+                mysqli_stmt_bind_param($stmt, "ssssssss", $tieude, $slugtieude, $thumbnail,$motangan,$noidung, $tagnews, $nguon, $thoigian);
+                $result = mysqli_stmt_execute($stmt);
+            }*/
+            return $qr;
+        }
+        /* CẬP NHẬT NEWS */
+        // Update reply có sẵn
+        public function CapNhatNews($tieude, $slugtieude, $thumbnail,$motangan, $noidung, $tagnews ,$nguon, $thoigian, $id){
+            $qr = "UPDATE news SET tieude = ?, slugtieude = ?, thumbnail = ?, motangan = ?, noidung = ?, tagnews = ?, nguon = ?, thoigian = ? WHERE id = ?";
             $stmt = mysqli_stmt_init($this->con);
             $result = 0;
             if(!mysqli_stmt_prepare($stmt, $qr)){
-                $result = "SQL statement failed";
+                echo "SQL statement failed";
             }else{
-                mysqli_stmt_bind_param($stmt, "ssssss", $tieude, $slugtieude, $thumbnail, $noidung, $nguon, $thoigian);
-                $result = mysqli_stmt_execute($stmt);
+                mysqli_stmt_bind_param($stmt, "sssssssss",$tieude, $slugtieude, $thumbnail, $motangan, $noidung, $tagnews, $nguon, $thoigian, $id);
+                $result= mysqli_stmt_execute($stmt);
             }
             return $result;
         }
