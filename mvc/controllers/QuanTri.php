@@ -516,12 +516,12 @@ class QuanTri extends Controller
     // SỬA TIN TỨC
     public function CapNhatNews($a, $b, $c = NULL)
     {
-        $idNews = "";
+        $idnews = "";
         if ($c != NULL) {
-            $idNews = trim($c);
+            $idnews = trim($c);
         }
         if (! isset($_POST["btn-submit"])) {
-            $news = $this->NewsModel->LayNewsById($idNews);
+            $news = $this->NewsModel->LayNewsById($idnews);
             // View
             $this->view("admin-template", [
                 "Page" => "cap-nhat-tin-tuc",
@@ -534,9 +534,13 @@ class QuanTri extends Controller
             $noidungtin = "";
             $nguontin = "";
             $tagnews = "";
+            $createddate = "";
             if (isset($_POST["tieu-de-tin-tuc"])) {
                 $tieudetintuc = trim($_POST["tieu-de-tin-tuc"]);
                 $slugtieude = $_POST["slug-tin-tuc"];
+            }
+            if(isset($_POST["id-tin-tuc"])){
+                $idnews = trim($_POST["id-tin-tuc"]);
             }
             if (isset($_POST["noi-dung-tin"])) {
                 $noidungtin = trim($_POST["noi-dung-tin"]);
@@ -563,14 +567,14 @@ class QuanTri extends Controller
                     // Upload file
                     move_uploaded_file($_FILES['thumbnail']['tmp_name'], $duongDanHinhAnh);
                     
-                    $createdDate = date("Y-m-d H:i:s");
+                    $createddate = date("Y-m-d H:i:s");
                    
                 }
             } else {
                 $thumbnail = $_POST["hidden-thumbnail"];
             }
             // cập nhật tin tức
-            $kq = $this->NewsModel->CapNhatNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin, $createdDate, $idNews);
+            $kq = $this->NewsModel->CapNhatNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin, $createddate, $idnews);
             if ($kq) {
                 // View
                 $this->view("admin-template", [
