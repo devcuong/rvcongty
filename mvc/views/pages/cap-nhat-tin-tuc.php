@@ -1,6 +1,6 @@
 <?php while ($row = mysqli_fetch_array($data["News"])){ ?>
 <form method="POST"
-	action="<?php echo $servername ?>/quan-tri/them-tin-tuc"
+	action="<?php echo $servername ?>/quan-tri/cap-nhat-news"
 	enctype="multipart/form-data">
 	<div class="form-group">
 		<label>Tiêu đề tin tức</label> <input type="text" class="form-control"

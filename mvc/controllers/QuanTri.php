@@ -516,6 +516,7 @@ class QuanTri extends Controller
     // SỬA TIN TỨC
     public function CapNhatNews($a, $b, $c = NULL)
     {
+        $idNews = "";
         if ($c != NULL) {
             $idNews = trim($c);
         }
@@ -546,8 +547,8 @@ class QuanTri extends Controller
             if (isset($_POST["tag-news"])) {
                 $tagnews = trim($_POST["tag-news"]);
             }
-            if(isset($_POST["motangan"])){
-                $motangan = $_POST["motangan"];
+            if(isset($_POST["mo-ta-ngan"])){
+                $motangan = $_POST["mo-ta-ngan"];
             }
             if (isset($_FILES["thumbnail"])) {
                 // Nếu file upload không bị lỗi,
