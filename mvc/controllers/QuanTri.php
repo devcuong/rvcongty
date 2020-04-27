@@ -3,7 +3,7 @@ require 'mvc/class/Server.php';
 
 class QuanTri extends Controller
 {
-    
+
     // Khai báo model
     public $UserModel;
 
@@ -32,7 +32,7 @@ class QuanTri extends Controller
             "Page" => "quan-tri"
         ]);
     }
-    
+
     // QUẢN TRỊ VIÊN ĐĂNG NHẬP
     public function DangNhap()
     {
@@ -62,7 +62,7 @@ class QuanTri extends Controller
             exit();
         }
     }
-    
+
     // QUẢN TRỊ VIÊN ĐĂNG XUẤT
     public function DangXuat()
     {
@@ -74,7 +74,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-    
+
     // QUẢN TRỊ CHUNG
     public function QuanTriCongTy()
     {
@@ -83,7 +83,7 @@ class QuanTri extends Controller
             "Page" => "quan-tri-cong-ty"
         ]);
     }
-    
+
     // THÊM CÔNG TY
     public function ThemCongTy()
     {
@@ -147,7 +147,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-    
+
     // TẤT CẢ CÔNG TY
     public function TatCaCongTy($a, $b, $c = null)
     {
@@ -182,7 +182,7 @@ class QuanTri extends Controller
             exit();
         }
     }
-    
+
     // XÓA CÔNG TY
     public function XoaCongTy($a, $b, $c)
     {
@@ -210,17 +210,16 @@ class QuanTri extends Controller
             }
         }
     }
-    
+
     // GET DATA
     public function GetDataCongTy($a = NULL)
     {
         $urlCompany = "";
         if (isset($_POST["url-company"])) {
             $urlCompany = $_POST["url-company"];
-        } else 
-            if ($a != null) {
-                $urlCompany = $a;
-            }
+        } else if ($a != null) {
+            $urlCompany = $a;
+        }
         $page = file_get_contents($urlCompany);
         @$doc = new DOMDocument();
         @$doc->loadHTML($page);
@@ -285,7 +284,7 @@ class QuanTri extends Controller
             echo "ĐÃ CÓ " . $tenCongTy;
         }
     }
-    
+
     // get data page
     public function GetDataPageCongTy()
     {
@@ -470,7 +469,7 @@ class QuanTri extends Controller
                 if (isset($_POST["tag-news"])) {
                     $tagnews = trim($_POST["tag-news"]);
                 }
-                if(isset($_POST["mo-ta-ngan"])){
+                if (isset($_POST["mo-ta-ngan"])) {
                     $motangan = $_POST["mo-ta-ngan"];
                 }
                 if (isset($_FILES["thumbnail"])) {
@@ -512,7 +511,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-    
+
     // SỬA TIN TỨC
     public function CapNhatNews($a, $b, $c = NULL)
     {
@@ -539,7 +538,7 @@ class QuanTri extends Controller
                 $tieudetintuc = trim($_POST["tieu-de-tin-tuc"]);
                 $slugtieude = $_POST["slug-tin-tuc"];
             }
-            if(isset($_POST["id-tin-tuc"])){
+            if (isset($_POST["id-tin-tuc"])) {
                 $idnews = trim($_POST["id-tin-tuc"]);
             }
             if (isset($_POST["noi-dung-tin"])) {
@@ -551,10 +550,11 @@ class QuanTri extends Controller
             if (isset($_POST["tag-news"])) {
                 $tagnews = trim($_POST["tag-news"]);
             }
-            if(isset($_POST["mo-ta-ngan"])){
+            if (isset($_POST["mo-ta-ngan"])) {
                 $motangan = $_POST["mo-ta-ngan"];
             }
-            if (isset($_FILES["thumbnail"])) {
+            if (isset($_FILES['thumbnail']['name'])) {
+                //echo $_FILES['thumbnail']['name'];
                 // Nếu file upload không bị lỗi,
                 if ($_FILES['thumbnail']['error'] > 0) {
                     echo 'File Upload Bị Lỗi';
@@ -568,10 +568,12 @@ class QuanTri extends Controller
                     move_uploaded_file($_FILES['thumbnail']['tmp_name'], $duongDanHinhAnh);
                     
                     $createddate = date("Y-m-d H:i:s");
-                   
                 }
-            } else {
-                $thumbnail = $_POST["hidden-thumbnail"];
+            }
+            if ("" == $thumbnail) {
+                if (isset($_POST["hidden-thumbnail"])) {
+                    $thumbnail = trim($_POST['hidden-thumbnail']);
+                }
             }
             // cập nhật tin tức
             $kq = $this->NewsModel->CapNhatNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin, $createddate, $idnews);
