@@ -11,9 +11,15 @@ class CompaniesNews extends Controller
     
     function Index($a, $b=NULL){
         if ($b != NULL){
+            $tags = "";
             $urlNews = explode("-", $b);
             $idNews = end($urlNews);
-            $news = $this->NewsModel->LayNewsById($idNews);
+            $newsNow = $this->NewsModel->LayNewsById($idNews);
+            $newsLater = $this->NewsModel->LayNewsById($idNews);
+            while ($r = mysqli_fetch_array($newsNow)) {
+                $tags = $r["tagnews"];
+            }
+            
             $newsMoiNhat = $this->NewsModel->Lay8TinMoiNhat();
             $capNhatViews = $this->NewsModel->CapNhatLuotView($idNews);
             // Title
@@ -24,11 +30,23 @@ class CompaniesNews extends Controller
             
             // View
             $this->view("main-template", [
-                "Page" => "companies-news",
+                "Page" => "news-detail",
                 "Title" => $title,
                 "Description" => $description,
-                "News" => $news,
+                "News" => $newsLater,
                 "NewsMoiNhat"=>$newsMoiNhat
+            ]);
+        }else{
+            // Title
+            $title = "Review công ty ";
+            
+            // Description
+            $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ";
+            
+            $this->view("main-template", [
+                "Page" => "companies-news",
+                "Title" => $title,
+                "Description" => $description
             ]);
         }
     }

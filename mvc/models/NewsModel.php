@@ -18,6 +18,12 @@ class NewsModel extends DB{
             $qr = "SELECT * FROM news WHERE id = $id";
             return mysqli_query($this->con, $qr);
         }
+        
+        // Lấy tin tức liên quan
+        public function Lay3NewsLienQuan($tags){
+            
+        }
+        
         /*PHÂN TRANG*/
         // Lấy news để phân trang
         public function LayNewsPhanTrang($soNewsBoQua, $newsMoiTrang){
