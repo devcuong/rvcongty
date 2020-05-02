@@ -23,6 +23,7 @@ class CompaniesNews extends Controller
             $newsMoiNhat = $this->NewsModel->Lay8TinMoiNhat();
             $capNhatViews = $this->NewsModel->CapNhatLuotView($idNews);
             $newsLienQuan = $this->NewsModel->Lay3NewsLienQuan($tags);
+           
             // Title
             $title = "Review công ty ";
             
@@ -35,7 +36,8 @@ class CompaniesNews extends Controller
                 "Title" => $title,
                 "Description" => $description,
                 "News" => $newsLater,
-                "NewsMoiNhat"=>$newsMoiNhat
+                "NewsMoiNhat"=>$newsMoiNhat,
+                "NewsLienQuan" => $newsLienQuan
             ]);
         }else{
             // Title

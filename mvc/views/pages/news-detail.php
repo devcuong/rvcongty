@@ -223,34 +223,15 @@ while ($row = mysqli_fetch_array($data["News"])) {
 			<span macd="tinlienquan_chitiettintuc"></span>
 			<ul class="list-group list-group-flush news-list-small ng-scope"
 				ng-controller="modal-content as ctrl">
-				<li class="list-group-item news-item"><h3 class="news-title">
-						<a target="_self"
-							href="https://dailyxe.com.vn/tin-tuc/hang-hot-mitsubishi-xpander-truoc-co-hoi-noi-dia-hoa-gia-con-co-the-re-hon-tai-viet-nam-5629d.html"
-							class="modal-link-content" data-id="5629"
-							ng-click="ctrl.loadTinTuc('5629', 'https://dailyxe.com.vn/tin-tuc/hang-hot-mitsubishi-xpander-truoc-co-hoi-noi-dia-hoa-gia-con-co-the-re-hon-tai-viet-nam-5629d.html')"
-							title="Hàng hot Mitsubishi Xpander trước cơ hội nội địa hóa, giá còn có thể rẻ hơn tại Việt Nam"><span
-							class="times-small"></span>Hàng hot Mitsubishi Xpander trước cơ
-							hội nội địa hóa, giá còn có thể rẻ hơn tại Việt Nam</a>
-					</h3></li>
-				<li class="list-group-item news-item"><h3 class="news-title">
-						<a target="_self"
-							href="https://dailyxe.com.vn/tin-tuc/nhung-mau-xe-phan-khuc-b-dat-khach-nhat-viet-nam-thang-72017-1444d.html"
-							class="modal-link-content" data-id="1444"
-							ng-click="ctrl.loadTinTuc('1444', 'https://dailyxe.com.vn/tin-tuc/nhung-mau-xe-phan-khuc-b-dat-khach-nhat-viet-nam-thang-72017-1444d.html')"
-							title="Những mẫu xe phân khúc B đắt khách nhất Việt Nam tháng 7/2017"><span
-							class="times-small"></span>Những mẫu xe phân khúc B đắt khách
-							nhất Việt Nam tháng 7/2017</a>
-					</h3></li>
-				<li class="list-group-item news-item"><h3 class="news-title">
-						<a target="_self"
-							href="https://dailyxe.com.vn/tin-tuc/giam-gia-bot-lai-nhieu-hang-xe-ban-chay-bat-ngo-trong-mua-dich-co-ca-nhung-cai-ten-xua-nay-e-nhat-viet-nam-12875d.html"
-							class="modal-link-content" data-id="12875"
-							ng-click="ctrl.loadTinTuc('12875', 'https://dailyxe.com.vn/tin-tuc/giam-gia-bot-lai-nhieu-hang-xe-ban-chay-bat-ngo-trong-mua-dich-co-ca-nhung-cai-ten-xua-nay-e-nhat-viet-nam-12875d.html')"
-							title="Giảm giá bớt lãi, nhiều hãng xe bán chạy bất ngờ trong mùa dịch: Có cả những cái tên xưa nay ế nhất Việt Nam"><span
-							class="times-small"></span>Giảm giá bớt lãi, nhiều hãng xe bán
-							chạy bất ngờ trong mùa dịch: Có cả những cái tên xưa nay ế nhất
-							Việt Nam</a>
-					</h3></li>
+				<?php while ($row2 = mysqli_fetch_array($data["NewsLienQuan"])) {?>
+				    <li class="list-group-item news-item"><h3 class="news-title">
+				    <a target="_self"
+	    href="<?php echo $servername ?>/companies-news/<?php echo $row2["slugtieude"] ?>-<?php echo $row2["id"] ?>"
+	    class="modal-link-content"
+	    title="<?php echo $row2["tieude"] ?>"><span
+	    class="times-small"></span><?php echo $row2["tieude"] ?></a>
+	    </h3></li>
+				<?php }?>
 			</ul>
 			<div class="detail-news-body detail-content clearfix" id="qcbody">
 			<?php echo $row["noidung"] ?>

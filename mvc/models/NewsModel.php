@@ -28,10 +28,10 @@ class NewsModel extends DB{
                 $condition .= "tagnews LIKE '%".trim($text)."%' OR ";
             }
             $condition = substr($condition, 0, -4);
-            $qr = "SELECT * FROM tagnews WHERE " . $condition;
+            $qr = "SELECT * FROM news WHERE " . $condition. " ORDER BY luotxem DESC limit 3";
             
-           //return mysqli_query($this->con, $qr);
-           return $qr;
+           return mysqli_query($this->con, $qr);
+           //return $qr;
         }
         
         /*PHÂN TRANG*/
