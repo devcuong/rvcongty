@@ -21,11 +21,17 @@ class NewsModel extends DB{
         
         // Lấy tin tức liên quan
         public function Lay3NewsLienQuan($tags){
+            $condition = '';
             $query = explode(" ", $tags);
             foreach($query as $text)
             {
-                $condition .= "video_title LIKE '%".mysqli_real_escape_string($connect, $text)."%' OR ";
-            }  
+                $condition .= "tagnews LIKE '%".trim($text)."%' OR ";
+            }
+            $condition = substr($condition, 0, -4);
+            $qr = "SELECT * FROM tagnews WHERE " . $condition;
+            
+           //return mysqli_query($this->con, $qr);
+           return $qr;
         }
         
         /*PHÂN TRANG*/
