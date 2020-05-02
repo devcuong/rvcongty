@@ -264,7 +264,7 @@ while ($row = mysqli_fetch_array($data["News"])) {
 							</h3>
 							<p class="news-posted">
 								<span class="origin"><a title="BanXeHoi"
-									href="https://dailyxe.com.vn/banxehoi-banxehoi.com-6w.html"><?php echo $r["nguon"] ?></a></span>
+									href="<?php echo $servername ?>/companies-news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>"><?php echo $r["nguon"] ?></a></span>
 								<span><i
 									class="fa fa-eye"></i><?php echo $r["luotxem"] ?></span>
 							</p>
