@@ -265,4 +265,66 @@
 		</div>
 	</div>
 </div>
-<div class="columns"></div>
+<div class="columns">
+	<div class="column is-two-thirds">
+		<div class="news box-border has-menu-dots">
+			<h2 class="news-title">
+				<a target="_self"
+					title="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam"
+					href="https://dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html">Đại
+					gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam</a>
+			</h2>
+			<p class="news-posted">
+				<span class="origin"><a title="Autopro"
+					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html">Autopro</a></span>
+				<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
+					class="fa fa-eye"></i>3</span>
+			</p>
+			<div class="media">
+				<a class="news-img"
+					href="https://dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html">
+					<img class="lazy-loading-image loaded" style="width: 100%"
+					src="https://cdn.dailyxe.com.vn/image/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-122334j2.jpg"
+					alt="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam">
+				<noscript>
+						<img
+							src=https://cdn.dailyxe.com.vn/image/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-122334j2.jpg
+							alt="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam">
+					</noscript>
+				</a>
+				<div class="media-body">
+					<h4 class="news-desc">BMW M8 Competition là phiên bản mạnh mẽ nhất
+						của dòng xe thể thao kích thước lớn nhất của hãng xe Đức. Xe được
+						nhập khẩu tư nhân với giá không hề rẻ.</h4>
+				</div>
+			</div>
+			<div class="dropdown dropdown-menu-item dropleft ng-scope"
+				ng-controller="favorite-link as ctrl">
+				<a class="btn" href="javascript:void(0)" name="dropdownMenuLink"
+					title="Tiện ích"
+					ng-click="ctrl.checkFavoriteLink('https&amp;#58;//dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html')"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-ellipsis-v"></i>
+				</a>
+				<div class="dropdown-menu fade">
+					<div class="feature-control">
+						<div class="feature-control-item favorite">
+							<a class="feature-control-icon " href="javascript:void(0)"
+								title="Lưu xem sau"
+								ng-click="addFavorite(4,'Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam', 'https&amp;#58;//dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html')">
+								<i class="far fa-star"></i>Lưu xem sau
+							</a>
+						</div>
+						<div class="feature-control-item favorite">
+							<a class="feature-control-icon feature-control-icon-share"
+								href="javascript:viewQRCodeDesktop('https&amp;#58;//dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html','Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam',437202924732568222)"
+								title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column">Auto</div>
+</div>
