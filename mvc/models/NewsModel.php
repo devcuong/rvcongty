@@ -21,7 +21,11 @@ class NewsModel extends DB{
         
         // Lấy tin tức liên quan
         public function Lay3NewsLienQuan($tags){
-            
+            $query = explode(" ", $tags);
+            foreach($query as $text)
+            {
+                $condition .= "video_title LIKE '%".mysqli_real_escape_string($connect, $text)."%' OR ";
+            }  
         }
         
         /*PHÂN TRANG*/
