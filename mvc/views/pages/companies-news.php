@@ -50,52 +50,242 @@
 
 .new-main-left {
 	padding-left: 0px;
+	padding-top: 24px;
 }
+
 .new-main-left .new-item {
-    height: 100%;
+	height: 100%;
 }
+
 .news-main .new-item {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.news-main .new-item .new-info {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	padding: 10px;
+	padding-top: 40px;
+	height: 100px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	background: -webkit-gradient(linear, left top, left bottom, from(transparent),
+		to(#000));
+	background: -webkit-linear-gradient(transparent, #000);
+	background: -o-linear-gradient(transparent, #000);
+	background: linear-gradient(transparent, #000);
+}
+.news-main .new-item .new-info .new-title {
+    color: #fff;
+    font-family: "Roboto",sans-serif;
+    font-size: 100%;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+.news-main .new-item .new-info .new-title:hover a {
+    color: #fff;
+    text-decoration: none;
+}
+.news-main .news-main-container .new-main-left .new-item .new-title {
+    font-size: 150%;
 }
 </style>
-<div class="columns">
-	<div class="column new-main-left">
-		<div class="new-item">
-			<a class="box-img"
-				title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
-				href="https://dailyxe.com.vn/hinh-anh/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-13927d.html">
-				<img class="new-img img-responsive lazy-loading-image loaded"
-				style="width: 100%"
-				src="https://cdn.dailyxe.com.vn/image/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-122378j8.jpg"
-				title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
-				alt="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
-			<noscript>
-					<img class="new-img img-responsive"
-						src=https://cdn.dailyxe.com.vn/image/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-122378j8.jpg
-						title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
-						alt="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
-				</noscript>
-			</a>
-			<div class="new-info">
-				<h3 class="new-title"
-					title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
-					<a title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
-						href="https://dailyxe.com.vn/hinh-anh/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-13927d.html">Những
-						bộ phận trên ô tô hay gặp trục trặc vào mùa hè</a>
-				</h3>
-				<p class="news-posted mb-0">
-					<span class="origin"><a title="DailyXe"
-						href="https://dailyxe.com.vn/dai-ly-xe-14w.html">DailyXe</a></span>
-					<span><i class="fa fa-calendar-o"></i>14 phút</span> <span><i
-						class="fa fa-eye"></i>20</span>
-				</p>
+<section class="news-main home-section">
+	<div class="container">
+		<div class="columns news-main-container">
+			<div class="column new-main-left">
+				<div class="new-item">
+					<a class="box-img"
+						title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang"
+						href="https://dailyxe.com.vn/tin-tuc/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-13921d.html">
+						<img class="new-img img-responsive lazy-loading-image loaded"
+						style="width: 100%"
+						src="https://cdn.dailyxe.com.vn/image/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-122340j8.jpg"
+						title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang"
+						alt="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang">
+					<noscript>
+							<img class="new-img img-responsive"
+								src=https://cdn.dailyxe.com.vn/image/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-122340j8.jpg
+								title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang"
+								alt="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang">
+						</noscript>
+					</a>
+					<div class="new-info">
+						<h3 class="new-title"
+							title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang">
+							<a
+								title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang"
+								href="https://dailyxe.com.vn/tin-tuc/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-13921d.html">Range
+								Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ
+								đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu
+								sang</a>
+						</h3>
+						<p class="news-posted mb-0">
+							<span class="origin"><a title="Autopro"
+								href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html">Autopro</a></span>
+							<span><i class="fa fa-calendar-o"></i>3 giờ</span> <span><i
+								class="fa fa-eye"></i>23</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="column new-main-right">
+				<div class="columns is-multiline is-mobile">
+					<div class="column is-half">
+						<div class="new-item">
+							<a class="box-img"
+								title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
+								href="https://dailyxe.com.vn/tin-tuc/can-canh-honda-msx-125-abs-2020-gia-tu-2-420-usd-13909d.html">
+								<img class="new-img img-responsive lazy-loading-image loaded"
+								style="width: 100%"
+								src="https://cdn.dailyxe.com.vn/image/can-canh-honda-msx-125-abs-2020-gia-tu-2-420-usd-122252j8.jpg"
+								title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
+								alt="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD">
+							<noscript>
+									<img class="new-img img-responsive"
+										title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
+										alt="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
+										src=https://cdn.dailyxe.com.vn/image/can-canh-honda-msx-125-abs-2020-gia-tu-2-420-usd-122252j8.jpg>
+								</noscript>
+							</a>
+							<div class="new-info">
+								<h3 class="new-title"
+									title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD">
+									<a title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
+										href="https://dailyxe.com.vn/tin-tuc/can-canh-honda-msx-125-abs-2020-gia-tu-2-420-usd-13909d.html">Cận
+										cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD</a>
+								</h3>
+								<p class="news-posted mb-0">
+									<span class="origin"><a title="Autodaily"
+										href="https://dailyxe.com.vn/autodaily.vn-chuyen-trang-thong-tin-dien-tu-ve-oto-xe-may-10w.html">Autodaily</a></span>
+									<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
+										class="fa fa-eye"></i>22</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="column is-half">
+						<div class="new-item">
+							<a class="box-img"
+								title="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
+								href="https://dailyxe.com.vn/tin-tuc/nhung-mau-o-to-giam-gia-manh-nhat-hien-nay-13925d.html">
+								<img class="new-img img-responsive lazy-loading-image loaded"
+								style="width: 100%"
+								src="https://cdn.dailyxe.com.vn/image/nhung-mau-o-to-giam-gia-manh-nhat-hien-nay-122367j8.jpg"
+								title="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
+								alt="Những mẫu ô tô giảm giá mạnh nhất hiện nay">
+							<noscript>
+									<img class="new-img img-responsive"
+										title="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
+										alt="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
+										src=https://cdn.dailyxe.com.vn/image/nhung-mau-o-to-giam-gia-manh-nhat-hien-nay-122367j8.jpg>
+								</noscript>
+							</a>
+							<div class="new-info">
+								<h3 class="new-title"
+									title="Những mẫu ô tô giảm giá mạnh nhất hiện nay">
+									<a title="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
+										href="https://dailyxe.com.vn/tin-tuc/nhung-mau-o-to-giam-gia-manh-nhat-hien-nay-13925d.html">Những
+										mẫu ô tô giảm giá mạnh nhất hiện nay</a>
+								</h3>
+								<p class="news-posted mb-0">
+									<span class="origin"><a title="DailyXe"
+										href="https://dailyxe.com.vn/dai-ly-xe-14w.html">DailyXe</a></span>
+									<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
+										class="fa fa-eye"></i>35</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="column is-half">
+						<div class="new-item">
+							<a class="box-img" title="Đại gia Việt ngày càng chuộng siêu SUV"
+								href="https://dailyxe.com.vn/tin-tuc/dai-gia-viet-ngay-cang-chuong-sieu-suv-13908d.html">
+								<img class="new-img img-responsive lazy-loading-image loaded"
+								style="width: 100%"
+								src="https://cdn.dailyxe.com.vn/image/dai-gia-viet-ngay-cang-chuong-sieu-suv-122241j8.jpg"
+								title="Đại gia Việt ngày càng chuộng siêu SUV"
+								alt="Đại gia Việt ngày càng chuộng siêu SUV">
+							<noscript>
+									<img class="new-img img-responsive"
+										title="Đại gia Việt ngày càng chuộng siêu SUV"
+										alt="Đại gia Việt ngày càng chuộng siêu SUV"
+										src=https://cdn.dailyxe.com.vn/image/dai-gia-viet-ngay-cang-chuong-sieu-suv-122241j8.jpg>
+								</noscript>
+							</a>
+							<div class="new-info">
+								<h3 class="new-title"
+									title="Đại gia Việt ngày càng chuộng siêu SUV">
+									<a title="Đại gia Việt ngày càng chuộng siêu SUV"
+										href="https://dailyxe.com.vn/tin-tuc/dai-gia-viet-ngay-cang-chuong-sieu-suv-13908d.html">Đại
+										gia Việt ngày càng chuộng siêu SUV</a>
+								</h3>
+								<p class="news-posted mb-0">
+									<span class="origin"><a title="Autodaily"
+										href="https://dailyxe.com.vn/autodaily.vn-chuyen-trang-thong-tin-dien-tu-ve-oto-xe-may-10w.html">Autodaily</a></span>
+									<span><i class="fa fa-calendar-o"></i>7 giờ</span> <span><i
+										class="fa fa-eye"></i>25</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="column is-half">
+						<div class="new-item">
+							<a class="box-img"
+								title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
+								href="https://dailyxe.com.vn/hinh-anh/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-13927d.html">
+								<img class="new-img img-responsive lazy-loading-image loaded"
+								style="width: 100%"
+								src="https://cdn.dailyxe.com.vn/image/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-122378j8.jpg"
+								title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
+								alt="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
+							<noscript>
+									<img class="new-img img-responsive"
+										title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
+										alt="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
+										src=https://cdn.dailyxe.com.vn/image/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-122378j8.jpg>
+								</noscript>
+							</a>
+							<div class="new-info">
+								<h3 class="new-title"
+									title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
+									<a title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
+										href="https://dailyxe.com.vn/hinh-anh/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-13927d.html">Những
+										bộ phận trên ô tô hay gặp trục trặc vào mùa hè</a>
+								</h3>
+								<p class="news-posted mb-0">
+									<span class="origin"><a title="DailyXe"
+										href="https://dailyxe.com.vn/dai-ly-xe-14w.html">DailyXe</a></span>
+									<span><i class="fa fa-calendar-o"></i>7 giờ</span> <span><i
+										class="fa fa-eye"></i>24</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+		<div class="d-flex justify-content-center">
+			<a class="btn btn-view-more btn-icon-right"
+				href="https://dailyxe.com.vn/tin-noi-bat/" title="Xem tất cả">Xem
+				tất cả <span> <i class="fas fa-chevron-right"></i>
+			</span>
+			</a>
+		</div>
 	</div>
-	<div class="column">2</div>
-</div>
+</section>
 <div class="columns">
 	<div class="column">
 		<div class="card news first-news">
