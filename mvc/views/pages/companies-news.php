@@ -1,3 +1,101 @@
+<style>
+.news .news-title {
+	font-family: 'Anton', sans-serif;
+	font-size: 125%;
+	font-weight: 400;
+	display: block;
+	margin-bottom: .25rem;
+}
+
+.news .news-posted, .news-right .news-posted {
+	color: #888;
+	font-size: 80%;
+	margin-bottom: .5rem;
+}
+
+.news .news-posted span, .news-right .news-posted span {
+	margin-right: 5px;
+}
+
+.news-posted .origin {
+	color: #FF9800;
+}
+
+.news-posted i, .news .news-posted i, .news-right .news-posted i {
+	margin-right: 3px;
+}
+
+.news .news-img {
+	width: 250px;
+	margin-right: .625rem;
+}
+
+.news .news-img>img {
+	max-width: 100%;
+}
+
+.news .news-desc {
+	color: #555;
+	margin-bottom: 0;
+}
+
+.news .news-desc {
+	font-weight: 400;
+}
+
+.news-item {
+	border: 1px solid #71bf44;
+	padding-left: 10px;
+}
+
+.new-main-left {
+	padding-left: 0px;
+}
+.new-main-left .new-item {
+    height: 100%;
+}
+.news-main .new-item {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+</style>
+<div class="columns">
+	<div class="column new-main-left">
+		<div class="new-item">
+			<a class="box-img"
+				title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
+				href="https://dailyxe.com.vn/hinh-anh/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-13927d.html">
+				<img class="new-img img-responsive lazy-loading-image loaded"
+				style="width: 100%"
+				src="https://cdn.dailyxe.com.vn/image/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-122378j8.jpg"
+				title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
+				alt="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
+			<noscript>
+					<img class="new-img img-responsive"
+						src=https://cdn.dailyxe.com.vn/image/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-122378j8.jpg
+						title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
+						alt="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
+				</noscript>
+			</a>
+			<div class="new-info">
+				<h3 class="new-title"
+					title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
+					<a title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
+						href="https://dailyxe.com.vn/hinh-anh/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-13927d.html">Những
+						bộ phận trên ô tô hay gặp trục trặc vào mùa hè</a>
+				</h3>
+				<p class="news-posted mb-0">
+					<span class="origin"><a title="DailyXe"
+						href="https://dailyxe.com.vn/dai-ly-xe-14w.html">DailyXe</a></span>
+					<span><i class="fa fa-calendar-o"></i>14 phút</span> <span><i
+						class="fa fa-eye"></i>20</span>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="column">2</div>
+</div>
 <div class="columns">
 	<div class="column">
 		<div class="card news first-news">
@@ -267,7 +365,7 @@
 </div>
 <div class="columns">
 	<div class="column is-two-thirds">
-		<div class="news box-border has-menu-dots">
+		<div class="news box-border news-item">
 			<h2 class="news-title">
 				<a target="_self"
 					title="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam"
@@ -286,42 +384,11 @@
 					<img class="lazy-loading-image loaded" style="width: 100%"
 					src="https://cdn.dailyxe.com.vn/image/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-122334j2.jpg"
 					alt="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam">
-				<noscript>
-						<img
-							src=https://cdn.dailyxe.com.vn/image/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-122334j2.jpg
-							alt="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam">
-					</noscript>
 				</a>
 				<div class="media-body">
 					<h4 class="news-desc">BMW M8 Competition là phiên bản mạnh mẽ nhất
 						của dòng xe thể thao kích thước lớn nhất của hãng xe Đức. Xe được
 						nhập khẩu tư nhân với giá không hề rẻ.</h4>
-				</div>
-			</div>
-			<div class="dropdown dropdown-menu-item dropleft ng-scope"
-				ng-controller="favorite-link as ctrl">
-				<a class="btn" href="javascript:void(0)" name="dropdownMenuLink"
-					title="Tiện ích"
-					ng-click="ctrl.checkFavoriteLink('https&amp;#58;//dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html')"
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<i class="fas fa-ellipsis-v"></i>
-				</a>
-				<div class="dropdown-menu fade">
-					<div class="feature-control">
-						<div class="feature-control-item favorite">
-							<a class="feature-control-icon " href="javascript:void(0)"
-								title="Lưu xem sau"
-								ng-click="addFavorite(4,'Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam', 'https&amp;#58;//dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html')">
-								<i class="far fa-star"></i>Lưu xem sau
-							</a>
-						</div>
-						<div class="feature-control-item favorite">
-							<a class="feature-control-icon feature-control-icon-share"
-								href="javascript:viewQRCodeDesktop('https&amp;#58;//dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html','Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam',437202924732568222)"
-								title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-							</a>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
