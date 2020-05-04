@@ -555,7 +555,7 @@ important
 
 .summary-reviews .reviews__header {
 	margin-bottom: 0.4rem;
-	color:#F7941D;
+	color:#e86b1f;
 }
 
 @media screen and (max-width: 768px) {
@@ -1123,7 +1123,7 @@ margin-bottom
     margin-bottom: .25rem;
 }
 .news .news-title a{
-	color: #F7941D;
+	color: #e86b1f;
 	font-weight: 600;
 }
 .col-top-right {
@@ -1203,7 +1203,7 @@ margin-bottom
     color: #fff;
 }
 .message.is-info .question{
-    color: #F7941D;
+    color: #e86b1f;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
