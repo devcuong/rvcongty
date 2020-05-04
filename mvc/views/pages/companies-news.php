@@ -87,19 +87,86 @@
 	background: -o-linear-gradient(transparent, #000);
 	background: linear-gradient(transparent, #000);
 }
+
 .news-main .new-item .new-info .new-title {
-    color: #fff;
-    font-family: "Roboto",sans-serif;
-    font-size: 100%;
-    margin-bottom: 5px;
-    text-decoration: none;
+	color: #fff;
+	font-family: "Roboto", sans-serif;
+	font-size: 100%;
+	margin-bottom: 5px;
+	text-decoration: none;
 }
+
+.news-main .new-item .new-info .new-title a {
+	color: #fff;
+}
+
 .news-main .new-item .new-info .new-title:hover a {
-    color: #fff;
-    text-decoration: none;
+	color: #fff;
+	text-decoration: none;
 }
+
 .news-main .news-main-container .new-main-left .new-item .new-title {
-    font-size: 150%;
+	font-size: 150%;
+}
+
+.news-main .new-item span {
+	color: #fff;
+	font-size: 80%;
+}
+
+.news-posted span:not (:last-child )::after {
+	content: "";
+	display: inline-block;
+	margin-left: 7px;
+	background-color: #888;
+	width: 5px;
+	height: 5px;
+	margin-bottom: 2px;
+	border-radius: 50%;
+}
+.banner-top.banner-bg {
+    width: 100%;
+    height: 315px;
+    background: url(https://dailyxe.com.vn/Resources/css/images/banner-default.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.banner-trans {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    -webkit-transition: all ease 1s !important;
+    -o-transition: all ease 1s !important;
+    transition: all ease 1s !important;
+    z-index: 101;
+    background-size: cover;
+}
+.banner-video-bg {
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-size: contain;
+    -o-object-fit: cover;
+    object-fit: cover;
+    z-index: 3;
 }
 </style>
 <section class="news-main home-section">
@@ -112,10 +179,10 @@
 						href="https://dailyxe.com.vn/tin-tuc/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-13921d.html">
 						<img class="new-img img-responsive lazy-loading-image loaded"
 						style="width: 100%"
-						src="https://cdn.dailyxe.com.vn/image/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-122340j8.jpg"
+						src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
 						title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang"
 						alt="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang">
-					<noscript>
+						<noscript>
 							<img class="new-img img-responsive"
 								src=https://cdn.dailyxe.com.vn/image/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-122340j8.jpg
 								title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang"
@@ -150,10 +217,10 @@
 								href="https://dailyxe.com.vn/tin-tuc/can-canh-honda-msx-125-abs-2020-gia-tu-2-420-usd-13909d.html">
 								<img class="new-img img-responsive lazy-loading-image loaded"
 								style="width: 100%"
-								src="https://cdn.dailyxe.com.vn/image/can-canh-honda-msx-125-abs-2020-gia-tu-2-420-usd-122252j8.jpg"
+								src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
 								title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
 								alt="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD">
-							<noscript>
+								<noscript>
 									<img class="new-img img-responsive"
 										title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
 										alt="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
@@ -183,10 +250,10 @@
 								href="https://dailyxe.com.vn/tin-tuc/nhung-mau-o-to-giam-gia-manh-nhat-hien-nay-13925d.html">
 								<img class="new-img img-responsive lazy-loading-image loaded"
 								style="width: 100%"
-								src="https://cdn.dailyxe.com.vn/image/nhung-mau-o-to-giam-gia-manh-nhat-hien-nay-122367j8.jpg"
+								src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
 								title="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
 								alt="Những mẫu ô tô giảm giá mạnh nhất hiện nay">
-							<noscript>
+								<noscript>
 									<img class="new-img img-responsive"
 										title="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
 										alt="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
@@ -215,10 +282,10 @@
 								href="https://dailyxe.com.vn/tin-tuc/dai-gia-viet-ngay-cang-chuong-sieu-suv-13908d.html">
 								<img class="new-img img-responsive lazy-loading-image loaded"
 								style="width: 100%"
-								src="https://cdn.dailyxe.com.vn/image/dai-gia-viet-ngay-cang-chuong-sieu-suv-122241j8.jpg"
+								src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
 								title="Đại gia Việt ngày càng chuộng siêu SUV"
 								alt="Đại gia Việt ngày càng chuộng siêu SUV">
-							<noscript>
+								<noscript>
 									<img class="new-img img-responsive"
 										title="Đại gia Việt ngày càng chuộng siêu SUV"
 										alt="Đại gia Việt ngày càng chuộng siêu SUV"
@@ -248,10 +315,10 @@
 								href="https://dailyxe.com.vn/hinh-anh/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-13927d.html">
 								<img class="new-img img-responsive lazy-loading-image loaded"
 								style="width: 100%"
-								src="https://cdn.dailyxe.com.vn/image/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-122378j8.jpg"
+								src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
 								title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
 								alt="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
-							<noscript>
+								<noscript>
 									<img class="new-img img-responsive"
 										title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
 										alt="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
@@ -277,284 +344,38 @@
 				</div>
 			</div>
 		</div>
-		<div class="d-flex justify-content-center">
-			<a class="btn btn-view-more btn-icon-right"
-				href="https://dailyxe.com.vn/tin-noi-bat/" title="Xem tất cả">Xem
-				tất cả <span> <i class="fas fa-chevron-right"></i>
-			</span>
-			</a>
-		</div>
 	</div>
 </section>
 <div class="columns">
-	<div class="column">
-		<div class="card news first-news">
-			<a target="_blank"
-				title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-				href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-9">
-			</a> <a class="news-right-img" target="_self"
-				title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-				href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-9">
-				<img class="card-img-top lazy-loading-image loaded"
-				style="width: 100%"
-				src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-				alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-				data-pin-nopin="true">
-			</a>
-			<div class="card-block has-menu-dots">
-				<h1 class="news-title">
-					<a target="_self"
-						title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-						href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-9">Triển
-						lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
-				</h1>
-				<h4 class="news-desc">Rolls-Royce Cullinan được bán với giá hơn 300
-					ngàn đô ở Mỹ và về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
-					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi. về Việt
-					Nam thì con số này lên đến hơn 40 tỷ, nhưng xe đắt tiền không giúp
-					nó ngoại lệ với những đợt triệu hồi.</h4>
-			</div>
-		</div>
-	</div>
-	<div class="column">
-		<div class="card news first-news">
-			<a target="_blank"
-				title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-				href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-8">
-			</a> <a class="news-right-img" target="_self"
-				title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-				href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-8">
-				<img class="card-img-top lazy-loading-image loaded"
-				style="width: 100%"
-				src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-				alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-				data-pin-nopin="true">
-			</a>
-			<div class="card-block has-menu-dots">
-				<h1 class="news-title">
-					<a target="_self"
-						title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-						href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-8">Triển
-						lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
-				</h1>
-				<h4 class="news-desc">Rolls-Royce Cullinan được bán với giá hơn 300
-					ngàn đô ở Mỹ và về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
-					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi. về Việt
-					Nam thì con số này lên đến hơn 40 tỷ, nhưng xe đắt tiền không giúp
-					nó ngoại lệ với những đợt triệu hồi.</h4>
-			</div>
-		</div>
-	</div>
-	<div class="column col-top-right">
-		<div class="card box-right box-border box-bottom">
-			<h3 class="card-header">Tin tức mới</h3>
-			<div class="card-block">
-				<div class="news-right">
-					<div class="media has-menu-dots">
-						<a class="news-right-img" target="_self"
-							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-9">
-							<img class="lazy-loading-image loaded"
-							src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-							alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							data-pin-nopin="true">
-						</a>
-						<div class="media-body">
-							<h3 class="news-right-title">
-								<a target="_self"
-									title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-									href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-9">Triển
-									lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
-							</h3>
-							<p class="news-posted">
-								<span class="origin"><a title="BanXeHoi"
-									href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-9">hrinsider</a></span>
-								<span><i class="fa fa-eye"></i>10</span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="news-right">
-					<div class="media has-menu-dots">
-						<a class="news-right-img" target="_self"
-							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-8">
-							<img class="lazy-loading-image loaded"
-							src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-							alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							data-pin-nopin="true">
-						</a>
-						<div class="media-body">
-							<h3 class="news-right-title">
-								<a target="_self"
-									title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-									href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-8">Triển
-									lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
-							</h3>
-							<p class="news-posted">
-								<span class="origin"><a title="BanXeHoi"
-									href="http://localhost/rvcongty/companies-news/ban-can-chuan-bi-gi-cho-buoi-phong-van-online-8">hrinsider</a></span>
-								<span><i class="fa fa-eye"></i>20</span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="news-right">
-					<div class="media has-menu-dots">
-						<a class="news-right-img" target="_self"
-							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							href="http://localhost/rvcongty/companies-news/trac-nghiem-hinh-anh-hinh-anh-dau-tien-ban-nhin-thay-se-tiet-lo-tinh-hinh-cuoc-song-hien-tai-cua-ban-7">
-							<img class="lazy-loading-image loaded"
-							src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-							alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							data-pin-nopin="true">
-						</a>
-						<div class="media-body">
-							<h3 class="news-right-title">
-								<a target="_self"
-									title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-									href="http://localhost/rvcongty/companies-news/trac-nghiem-hinh-anh-hinh-anh-dau-tien-ban-nhin-thay-se-tiet-lo-tinh-hinh-cuoc-song-hien-tai-cua-ban-7">Triển
-									lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
-							</h3>
-							<p class="news-posted">
-								<span class="origin"><a title="BanXeHoi"
-									href="http://localhost/rvcongty/companies-news/trac-nghiem-hinh-anh-hinh-anh-dau-tien-ban-nhin-thay-se-tiet-lo-tinh-hinh-cuoc-song-hien-tai-cua-ban-7">hrinsider</a></span>
-								<span><i class="fa fa-eye"></i>4</span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="news-right">
-					<div class="media has-menu-dots">
-						<a class="news-right-img" target="_self"
-							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							href="http://localhost/rvcongty/companies-news/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-6">
-							<img class="lazy-loading-image loaded"
-							src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-							alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							data-pin-nopin="true">
-						</a>
-						<div class="media-body">
-							<h3 class="news-right-title">
-								<a target="_self"
-									title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-									href="http://localhost/rvcongty/companies-news/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-6">Triển
-									lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
-							</h3>
-							<p class="news-posted">
-								<span class="origin"><a title="BanXeHoi"
-									href="http://localhost/rvcongty/companies-news/trien-lam-oto-frankfurt-motor-show-bi-lo-chet-yeu-neu-khong-doi-moi-6">hrinsider</a></span>
-								<span><i class="fa fa-eye"></i>4</span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="news-right">
-					<div class="media has-menu-dots">
-						<a class="news-right-img" target="_self"
-							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							href="http://localhost/rvcongty/companies-news/trac-nghiem-hinh-anh-hinh-anh-dau-tien-ban-nhin-thay-se-tiet-lo-tinh-hinh-cuoc-song-hien-tai-cua-ban-5">
-							<img class="lazy-loading-image loaded"
-							src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-							alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							data-pin-nopin="true">
-						</a>
-						<div class="media-body">
-							<h3 class="news-right-title">
-								<a target="_self"
-									title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-									href="http://localhost/rvcongty/companies-news/trac-nghiem-hinh-anh-hinh-anh-dau-tien-ban-nhin-thay-se-tiet-lo-tinh-hinh-cuoc-song-hien-tai-cua-ban-5">Triển
-									lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
-							</h3>
-							<p class="news-posted">
-								<span class="origin"><a title="BanXeHoi"
-									href="http://localhost/rvcongty/companies-news/trac-nghiem-hinh-anh-hinh-anh-dau-tien-ban-nhin-thay-se-tiet-lo-tinh-hinh-cuoc-song-hien-tai-cua-ban-5">hrinsider</a></span>
-								<span><i class="fa fa-eye"></i>3</span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="news-right">
-					<div class="media has-menu-dots">
-						<a class="news-right-img" target="_self"
-							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							href="http://localhost/rvcongty/companies-news/du-doan-su-nghiep-cua-12-cung-hoang-dao-trong-thang-042020-4">
-							<img class="lazy-loading-image loaded"
-							src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-							alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							data-pin-nopin="true">
-						</a>
-						<div class="media-body">
-							<h3 class="news-right-title">
-								<a target="_self"
-									title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-									href="http://localhost/rvcongty/companies-news/du-doan-su-nghiep-cua-12-cung-hoang-dao-trong-thang-042020-4">Triển
-									lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
-							</h3>
-							<p class="news-posted">
-								<span class="origin"><a title="BanXeHoi"
-									href="http://localhost/rvcongty/companies-news/du-doan-su-nghiep-cua-12-cung-hoang-dao-trong-thang-042020-4">hrinsider</a></span>
-								<span><i class="fa fa-eye"></i>1</span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="news-right">
-					<div class="media has-menu-dots">
-						<a class="news-right-img" target="_self"
-							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							href="http://localhost/rvcongty/companies-news/du-doan-su-nghiep-cua-12-con-giap-trong-thang-042020-3">
-							<img class="lazy-loading-image loaded"
-							src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-							alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							data-pin-nopin="true">
-						</a>
-						<div class="media-body">
-							<h3 class="news-right-title">
-								<a target="_self"
-									title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-									href="http://localhost/rvcongty/companies-news/du-doan-su-nghiep-cua-12-con-giap-trong-thang-042020-3">Triển
-									lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
-							</h3>
-							<p class="news-posted">
-								<span class="origin"><a title="BanXeHoi"
-									href="http://localhost/rvcongty/companies-news/du-doan-su-nghiep-cua-12-con-giap-trong-thang-042020-3">hrinsider</a></span>
-								<span><i class="fa fa-eye"></i>1</span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="news-right">
-					<div class="media has-menu-dots">
-						<a class="news-right-img" target="_self"
-							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							href="http://localhost/rvcongty/companies-news/dieu-sai-lam-nhat-trong-su-nghiep-cua-toi-do-chinh-la-qua-trung-thanh-2">
-							<img class="lazy-loading-image loaded"
-							src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-							alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							data-pin-nopin="true">
-						</a>
-						<div class="media-body">
-							<h3 class="news-right-title">
-								<a target="_self"
-									title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-									href="http://localhost/rvcongty/companies-news/dieu-sai-lam-nhat-trong-su-nghiep-cua-toi-do-chinh-la-qua-trung-thanh-2">Triển
-									lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
-							</h3>
-							<p class="news-posted">
-								<span class="origin"><a title="BanXeHoi"
-									href="http://localhost/rvcongty/companies-news/dieu-sai-lam-nhat-trong-su-nghiep-cua-toi-do-chinh-la-qua-trung-thanh-2">hrinsider</a></span>
-								<span><i class="fa fa-eye"></i>1</span>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="columns">
 	<div class="column is-two-thirds">
+	<p class="title-news-blue">TIN TỨC</p>
+		<div class="news box-border news-item">
+			<h2 class="news-title">
+				<a target="_self"
+					title="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam"
+					href="https://dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html">Đại
+					gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam</a>
+			</h2>
+			<p class="news-posted">
+				<span class="origin"><a title="Autopro"
+					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html">Autopro</a></span>
+				<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
+					class="fa fa-eye"></i>3</span>
+			</p>
+			<div class="media">
+				<a class="news-img"
+					href="https://dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html">
+					<img class="lazy-loading-image loaded" style="width: 100%"
+					src="https://cdn.dailyxe.com.vn/image/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-122334j2.jpg"
+					alt="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam">
+				</a>
+				<div class="media-body">
+					<h4 class="news-desc">BMW M8 Competition là phiên bản mạnh mẽ nhất
+						của dòng xe thể thao kích thước lớn nhất của hãng xe Đức. Xe được
+						nhập khẩu tư nhân với giá không hề rẻ.</h4>
+				</div>
+			</div>
+		</div>
 		<div class="news box-border news-item">
 			<h2 class="news-title">
 				<a target="_self"

@@ -1185,7 +1185,7 @@ margin-bottom
     padding: 0 0 0 10px;
     border-bottom: 5px solid #71bf44;
 	background: #fff;
-    margin: 50px 0 10px;
+    margin: 10px 0 20px;
 }
 .origin a{
 	color: #71bf44;
