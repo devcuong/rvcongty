@@ -19,6 +19,13 @@ class NewsModel extends DB{
             return mysqli_query($this->con, $qr);
         }
         
+        // Lấy tin tức bằng loại tin
+        public function LayNewsByLoai($loai, $sotin){
+            $qr = "SELECT * FROM news WHERE loainews = '$loai' LIMIT $sotin";
+            //return $qr;
+            return mysqli_query($this->con, $qr);
+        }
+        
         // Lấy tin tức liên quan
         public function Lay3NewsLienQuan($tags){
             $condition = '';

@@ -40,6 +40,9 @@ class CompaniesNews extends Controller
                 "NewsLienQuan" => $newsLienQuan
             ]);
         }else{
+            $newsBinhThuong = $this->NewsModel->LayNewsByLoai("NORMAL", 8);
+            $newsECom = $this->NewsModel->LayNewsByLoai("E-COM",8);
+            $newsStartup = $this->NewsModel->LayNewsByLoai("STARTUP", 8);
             // Title
             $title = "Review công ty ";
             
@@ -49,7 +52,10 @@ class CompaniesNews extends Controller
             $this->view("main-template", [
                 "Page" => "companies-news",
                 "Title" => $title,
-                "Description" => $description
+                "Description" => $description,
+                "NewsBinhThuong" => $newsBinhThuong,
+                "NewsECom" => $newsECom,
+                "NewsStartup" => $newsStartup
             ]);
         }
     }

@@ -348,61 +348,61 @@
 </section>
 <div class="columns">
 	<div class="column is-two-thirds">
-	<p class="title-news-blue">TIN TỨC</p>
+	<p class="title-news-blue">TIN CÔNG TY</p>
+	<?php while ($newsBinhThuong = mysqli_fetch_array($data["NewsBinhThuong"])){ ?>
 		<div class="news box-border news-item">
 			<h2 class="news-title">
 				<a target="_self"
-					title="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam"
-					href="https://dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html">Đại
-					gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam</a>
+					title="<?php echo $newsBinhThuong["tieude"] ?>"
+					href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"><?php echo $newsBinhThuong["tieude"] ?></a>
 			</h2>
 			<p class="news-posted">
 				<span class="origin"><a title="Autopro"
-					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html">Autopro</a></span>
+					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html"><?php echo $newsBinhThuong["nguon"] ?></a></span>
 				<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
-					class="fa fa-eye"></i>3</span>
+					class="fa fa-eye"></i><?php echo $newsBinhThuong["luotxem"] ?></span>
 			</p>
 			<div class="media">
 				<a class="news-img"
-					href="https://dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html">
+					href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $news["id"] ?>">
 					<img class="lazy-loading-image loaded" style="width: 100%"
-					src="https://cdn.dailyxe.com.vn/image/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-122334j2.jpg"
-					alt="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam">
+					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $newsBinhThuong["thumbnail"]?>"
+					alt="<?php echo $newsBinhThuong["tieude"] ?>">
 				</a>
 				<div class="media-body">
-					<h4 class="news-desc">BMW M8 Competition là phiên bản mạnh mẽ nhất
-						của dòng xe thể thao kích thước lớn nhất của hãng xe Đức. Xe được
-						nhập khẩu tư nhân với giá không hề rẻ.</h4>
+					<h4 class="news-desc"><?php echo $newsBinhThuong["motangan"] ?></h4>
 				</div>
 			</div>
 		</div>
+		<?php } ?>
+		<p class="title-news-blue">CÔNG TY E-COMMERCE</p>
+		<?php while ($NewsECom= mysqli_fetch_array($data["NewsECom"])){ ?>
 		<div class="news box-border news-item">
 			<h2 class="news-title">
 				<a target="_self"
-					title="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam"
-					href="https://dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html">Đại
-					gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam</a>
+					title="<?php echo $NewsECom["tieude"] ?>"
+					href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"><?php echo $NewsECom["tieude"] ?></a>
 			</h2>
 			<p class="news-posted">
 				<span class="origin"><a title="Autopro"
-					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html">Autopro</a></span>
+					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html"><?php echo $NewsECom["nguon"] ?></a></span>
 				<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
-					class="fa fa-eye"></i>3</span>
+					class="fa fa-eye"></i><?php echo $NewsECom["luotxem"] ?></span>
 			</p>
 			<div class="media">
 				<a class="news-img"
-					href="https://dailyxe.com.vn/tin-tuc/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-13920d.html">
+					href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $news["id"] ?>">
 					<img class="lazy-loading-image loaded" style="width: 100%"
-					src="https://cdn.dailyxe.com.vn/image/dai-gia-sai-gon-sam-sieu-pham-bmw-m8-competition-dau-tien-viet-nam-122334j2.jpg"
-					alt="Đại gia Sài Gòn sắm siêu phẩm BMW M8 Competition đầu tiên Việt Nam">
+					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsECom["thumbnail"]?>"
+					alt="<?php echo $NewsECom["tieude"] ?>">
 				</a>
 				<div class="media-body">
-					<h4 class="news-desc">BMW M8 Competition là phiên bản mạnh mẽ nhất
-						của dòng xe thể thao kích thước lớn nhất của hãng xe Đức. Xe được
-						nhập khẩu tư nhân với giá không hề rẻ.</h4>
+					<h4 class="news-desc"><?php echo $NewsECom["motangan"] ?></h4>
 				</div>
 			</div>
 		</div>
+		<?php } ?>
+		<p class="title-news-blue">CÔNG TY STARTUP</p>
 	</div>
 	<div class="column">Auto</div>
 </div>
