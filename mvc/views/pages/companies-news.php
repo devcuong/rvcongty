@@ -403,6 +403,32 @@
 		</div>
 		<?php } ?>
 		<p class="title-news-blue">CÔNG TY STARTUP</p>
+		<?php while ($NewsStartup= mysqli_fetch_array($data["NewsStartup"])){ ?>
+		<div class="news box-border news-item">
+			<h2 class="news-title">
+				<a target="_self"
+					title="<?php echo $NewsStartup["tieude"] ?>"
+					href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>"><?php echo $NewsStartup["tieude"] ?></a>
+			</h2>
+			<p class="news-posted">
+				<span class="origin"><a title="Autopro"
+					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html"><?php echo $NewsStartup["nguon"] ?></a></span>
+				<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
+					class="fa fa-eye"></i><?php echo $NewsStartup["luotxem"] ?></span>
+			</p>
+			<div class="media">
+				<a class="news-img"
+					href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
+					<img class="lazy-loading-image loaded" style="width: 100%"
+					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsStartup["thumbnail"]?>"
+					alt="<?php echo $NewsStartup["tieude"] ?>">
+				</a>
+				<div class="media-body">
+					<h4 class="news-desc"><?php echo $NewsStartup["motangan"] ?></h4>
+				</div>
+			</div>
+		</div>
+		<?php } ?>
 	</div>
 	<div class="column">Auto</div>
 </div>
