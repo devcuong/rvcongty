@@ -1178,14 +1178,32 @@ margin-bottom
     margin-bottom: 0px;
     line-height: 1;
 }
-.title-news-blue{
+.title-news-normal{
 	color: #71bf44 ;
     font-size: 1.5rem;
     font-weight: 700;
     padding: 0 0 0 10px;
-    border-bottom: 5px solid #71bf44;
+    border-bottom: 2px solid #71bf44;
 	background: #fff;
     margin: 10px 0 20px;
+}
+.title-news-ecom{
+	color: #71bf44 ;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0 0 0 10px;
+    border-bottom: 2px solid #71bf44;
+	background: #fff;
+    margin: 50px 0 20px;
+}
+.title-news-startup{
+	color: #71bf44 ;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0 0 0 10px;
+    border-bottom: 2px solid #71bf44;
+	background: #fff;
+    margin: 50px 0 20px;
 }
 .origin a{
 	color: #71bf44;

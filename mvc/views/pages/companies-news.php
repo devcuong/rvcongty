@@ -348,7 +348,7 @@
 </section>
 <div class="columns">
 	<div class="column is-two-thirds">
-	<p class="title-news-blue">TIN CÔNG TY</p>
+	<p class="title-news-normal">TIN CÔNG TY</p>
 	<?php while ($newsBinhThuong = mysqli_fetch_array($data["NewsBinhThuong"])){ ?>
 		<div class="news box-border news-item">
 			<h2 class="news-title">
@@ -375,7 +375,7 @@
 			</div>
 		</div>
 		<?php } ?>
-		<p class="title-news-blue">CÔNG TY E-COMMERCE</p>
+		<p class="title-news-ecom">CÔNG TY E-COMMERCE</p>
 		<?php while ($NewsECom= mysqli_fetch_array($data["NewsECom"])){ ?>
 		<div class="news box-border news-item">
 			<h2 class="news-title">
@@ -402,7 +402,7 @@
 			</div>
 		</div>
 		<?php } ?>
-		<p class="title-news-blue">CÔNG TY STARTUP</p>
+		<p class="title-news-startup">CÔNG TY STARTUP</p>
 		<?php while ($NewsStartup= mysqli_fetch_array($data["NewsStartup"])){ ?>
 		<div class="news box-border news-item">
 			<h2 class="news-title">
