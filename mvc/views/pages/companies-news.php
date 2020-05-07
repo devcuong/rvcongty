@@ -183,38 +183,29 @@
 	<div class="container">
 		<div class="columns news-main-container">
 			<div class="column new-main-left">
-			<?php $row = $data["NewsThumbnail"] -> fetch_array(MYSQLI_NUM);?>
+			<?php $row = $data["NewsThumbnail"];?>
 				<div class="new-item">
 					<a class="box-img"
-						title="<?php echo $row[2] ?>"
-						href="https://dailyxe.com.vn/tin-tuc/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-13921d.html">
+						title="<?php echo $row[0]["tieude"] ?>"
+						href="<?php echo $servername ?>/companies-news/<?php echo $row[0]["slugtieude"] ?>-<?php echo $row[0]["id"]; ?>">
 						<img class="new-img img-responsive lazy-loading-image loaded"
 						style="width: 100%"
-						src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-						title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang"
-						alt="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang">
-						<noscript>
-							<img class="new-img img-responsive"
-								src=https://cdn.dailyxe.com.vn/image/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-122340j8.jpg
-								title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang"
-								alt="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang">
-						</noscript>
+						src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[0]["thumbnail"] ?>"
+						title="<?php echo $row[0]["tieude"] ?>"
+						alt="<?php echo $row[0]["tieude"] ?>">
 					</a>
 					<div class="new-info">
 						<h3 class="new-title"
-							title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang">
+							title="<?php echo $row[0]["tieude"] ?>">
 							<a
-								title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang"
-								href="https://dailyxe.com.vn/tin-tuc/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-13921d.html">Range
-								Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ
-								đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu
-								sang</a>
+								title="<?php echo $row[0]["tieude"] ?>"
+								href="<?php echo $servername ?>/companies-news/<?php echo $row[0]["slugtieude"] ?>-<?php echo $row[0]["id"]; ?>"><?php echo $row[0]["tieude"] ?></a>
 						</h3>
 						<p class="news-posted mb-0">
-							<span class="origin"><a title="Autopro"
-								href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html">Autopro</a></span>
+							<span class="origin"><a title="<?php echo $row[0]["nguon"] ?>"
+								href="<?php echo $servername ?>/companies-news/<?php echo $row[0]["slugtieude"] ?>-<?php echo $row[0]["id"]; ?>"><?php echo $row[0]["nguon"] ?></a></span>
 							<span><i
-								class="fa fa-eye"></i>23</span>
+								class="fa fa-eye"></i><?php echo $row[0]["luotxem"] ?></span>
 						</p>
 					</div>
 				</div>
@@ -223,134 +214,111 @@
 				<div class="columns is-multiline is-mobile">
 					<div class="column is-half">
 						<div class="new-item">
-							<a class="box-img"
-								title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
-								href="https://dailyxe.com.vn/tin-tuc/can-canh-honda-msx-125-abs-2020-gia-tu-2-420-usd-13909d.html">
-								<img class="new-img img-responsive lazy-loading-image loaded"
-								style="width: 100%"
-								src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-								title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
-								alt="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD">
-								<noscript>
-									<img class="new-img img-responsive"
-										title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
-										alt="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
-										src=https://cdn.dailyxe.com.vn/image/can-canh-honda-msx-125-abs-2020-gia-tu-2-420-usd-122252j8.jpg>
-								</noscript>
-							</a>
-							<div class="new-info">
-								<h3 class="new-title"
-									title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD">
-									<a title="Cận cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD"
-										href="https://dailyxe.com.vn/tin-tuc/can-canh-honda-msx-125-abs-2020-gia-tu-2-420-usd-13909d.html">Cận
-										cảnh Honda MSX 125 ABS 2020 giá từ 2.420 USD</a>
-								</h3>
-								<p class="news-posted mb-0">
-									<span class="origin"><a title="Autodaily"
-										href="https://dailyxe.com.vn/autodaily.vn-chuyen-trang-thong-tin-dien-tu-ve-oto-xe-may-10w.html">Autodaily</a></span>
-									<span><i
-										class="fa fa-eye"></i>22</span>
-								</p>
-							</div>
-						</div>
+					<a class="box-img"
+						title="<?php echo $row[1]["tieude"] ?>"
+						href="<?php echo $servername ?>/companies-news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>">
+						<img class="new-img img-responsive lazy-loading-image loaded"
+						style="width: 100%"
+						src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[1]["thumbnail"] ?>"
+						title="<?php echo $row[1]["tieude"] ?>"
+						alt="<?php echo $row[1]["tieude"] ?>">
+					</a>
+					<div class="new-info">
+						<h3 class="new-title"
+							title="<?php echo $row[1]["tieude"] ?>">
+							<a
+								title="<?php echo $row[1]["tieude"] ?>"
+								href="<?php echo $servername ?>/companies-news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>"><?php echo $row[1]["tieude"] ?></a>
+						</h3>
+						<p class="news-posted mb-0">
+							<span class="origin"><a title="<?php echo $row[1]["nguon"] ?>"
+								href="<?php echo $servername ?>/companies-news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>"><?php echo $row[1]["nguon"] ?></a></span>
+							<span><i
+								class="fa fa-eye"></i><?php echo $row[1]["luotxem"] ?></span>
+						</p>
+					</div>
+				</div>
 					</div>
 					<div class="column is-half">
 						<div class="new-item">
-							<a class="box-img"
-								title="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
-								href="https://dailyxe.com.vn/tin-tuc/nhung-mau-o-to-giam-gia-manh-nhat-hien-nay-13925d.html">
-								<img class="new-img img-responsive lazy-loading-image loaded"
-								style="width: 100%"
-								src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-								title="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
-								alt="Những mẫu ô tô giảm giá mạnh nhất hiện nay">
-								<noscript>
-									<img class="new-img img-responsive"
-										title="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
-										alt="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
-										src=https://cdn.dailyxe.com.vn/image/nhung-mau-o-to-giam-gia-manh-nhat-hien-nay-122367j8.jpg>
-								</noscript>
-							</a>
-							<div class="new-info">
-								<h3 class="new-title"
-									title="Những mẫu ô tô giảm giá mạnh nhất hiện nay">
-									<a title="Những mẫu ô tô giảm giá mạnh nhất hiện nay"
-										href="https://dailyxe.com.vn/tin-tuc/nhung-mau-o-to-giam-gia-manh-nhat-hien-nay-13925d.html">Những
-										mẫu ô tô giảm giá mạnh nhất hiện nay</a>
-								</h3>
-								<p class="news-posted mb-0">
-									<span class="origin"><a title="DailyXe"
-										href="https://dailyxe.com.vn/dai-ly-xe-14w.html">DailyXe</a></span>
-									<span><i
-										class="fa fa-eye"></i>35</span>
-								</p>
-							</div>
-						</div>
+					<a class="box-img"
+						title="<?php echo $row[2]["tieude"] ?>"
+						href="<?php echo $servername ?>/companies-news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>">
+						<img class="new-img img-responsive lazy-loading-image loaded"
+						style="width: 100%"
+						src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[2]["thumbnail"] ?>"
+						title="<?php echo $row[2]["tieude"] ?>"
+						alt="<?php echo $row[2]["tieude"] ?>">
+					</a>
+					<div class="new-info">
+						<h3 class="new-title"
+							title="<?php echo $row[2]["tieude"] ?>">
+							<a
+								title="<?php echo $row[2]["tieude"] ?>"
+								href="<?php echo $servername ?>/companies-news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>"><?php echo $row[2]["tieude"] ?></a>
+						</h3>
+						<p class="news-posted mb-0">
+							<span class="origin"><a title="<?php echo $row[2]["nguon"] ?>"
+								href="<?php echo $servername ?>/companies-news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>"><?php echo $row[2]["nguon"] ?></a></span>
+							<span><i
+								class="fa fa-eye"></i><?php echo $row[2]["luotxem"] ?></span>
+						</p>
+					</div>
+				</div>
 					</div>
 					<div class="column is-half">
 						<div class="new-item">
-							<a class="box-img" title="Đại gia Việt ngày càng chuộng siêu SUV"
-								href="https://dailyxe.com.vn/tin-tuc/dai-gia-viet-ngay-cang-chuong-sieu-suv-13908d.html">
-								<img class="new-img img-responsive lazy-loading-image loaded"
-								style="width: 100%"
-								src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-								title="Đại gia Việt ngày càng chuộng siêu SUV"
-								alt="Đại gia Việt ngày càng chuộng siêu SUV">
-								<noscript>
-									<img class="new-img img-responsive"
-										title="Đại gia Việt ngày càng chuộng siêu SUV"
-										alt="Đại gia Việt ngày càng chuộng siêu SUV"
-										src=https://cdn.dailyxe.com.vn/image/dai-gia-viet-ngay-cang-chuong-sieu-suv-122241j8.jpg>
-								</noscript>
-							</a>
-							<div class="new-info">
-								<h3 class="new-title"
-									title="Đại gia Việt ngày càng chuộng siêu SUV">
-									<a title="Đại gia Việt ngày càng chuộng siêu SUV"
-										href="https://dailyxe.com.vn/tin-tuc/dai-gia-viet-ngay-cang-chuong-sieu-suv-13908d.html">Đại
-										gia Việt ngày càng chuộng siêu SUV</a>
-								</h3>
-								<p class="news-posted mb-0">
-									<span class="origin"><a title="Autodaily"
-										href="https://dailyxe.com.vn/autodaily.vn-chuyen-trang-thong-tin-dien-tu-ve-oto-xe-may-10w.html">Autodaily</a></span>
-									<span><i
-										class="fa fa-eye"></i>25</span>
-								</p>
-							</div>
-						</div>
+					<a class="box-img"
+						title="<?php echo $row[3]["tieude"] ?>"
+						href="<?php echo $servername ?>/companies-news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>">
+						<img class="new-img img-responsive lazy-loading-image loaded"
+						style="width: 100%"
+						src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[3]["thumbnail"] ?>"
+						title="<?php echo $row[3]["tieude"] ?>"
+						alt="<?php echo $row[3]["tieude"] ?>">
+					</a>
+					<div class="new-info">
+						<h3 class="new-title"
+							title="<?php echo $row[3]["tieude"] ?>">
+							<a
+								title="<?php echo $row[3]["tieude"] ?>"
+								href="<?php echo $servername ?>/companies-news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>"><?php echo $row[3]["tieude"] ?></a>
+						</h3>
+						<p class="news-posted mb-0">
+							<span class="origin"><a title="<?php echo $row[3]["nguon"] ?>"
+								href="<?php echo $servername ?>/companies-news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>"><?php echo $row[3]["nguon"] ?></a></span>
+							<span><i
+								class="fa fa-eye"></i><?php echo $row[3]["luotxem"] ?></span>
+						</p>
+					</div>
+				</div>
 					</div>
 					<div class="column is-half">
 						<div class="new-item">
-							<a class="box-img"
-								title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
-								href="https://dailyxe.com.vn/hinh-anh/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-13927d.html">
-								<img class="new-img img-responsive lazy-loading-image loaded"
-								style="width: 100%"
-								src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-								title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
-								alt="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
-								<noscript>
-									<img class="new-img img-responsive"
-										title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
-										alt="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
-										src=https://cdn.dailyxe.com.vn/image/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-122378j8.jpg>
-								</noscript>
-							</a>
-							<div class="new-info">
-								<h3 class="new-title"
-									title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè">
-									<a title="Những bộ phận trên ô tô hay gặp trục trặc vào mùa hè"
-										href="https://dailyxe.com.vn/hinh-anh/nhung-bo-phan-tren-o-to-hay-gap-truc-trac-vao-mua-he-13927d.html">Những
-										bộ phận trên ô tô hay gặp trục trặc vào mùa hè</a>
-								</h3>
-								<p class="news-posted mb-0">
-									<span class="origin"><a title="DailyXe"
-										href="https://dailyxe.com.vn/dai-ly-xe-14w.html">DailyXe</a></span>
-									<span><i
-										class="fa fa-eye"></i>24</span>
-								</p>
-							</div>
-						</div>
+					<a class="box-img"
+						title="<?php echo $row[4]["tieude"] ?>"
+						href="<?php echo $servername ?>/companies-news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>">
+						<img class="new-img img-responsive lazy-loading-image loaded"
+						style="width: 100%"
+						src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[4]["thumbnail"] ?>"
+						title="<?php echo $row[4]["tieude"] ?>"
+						alt="<?php echo $row[4]["tieude"] ?>">
+					</a>
+					<div class="new-info">
+						<h3 class="new-title"
+							title="<?php echo $row[4]["tieude"] ?>">
+							<a
+								title="<?php echo $row[4]["tieude"] ?>"
+								href="<?php echo $servername ?>/companies-news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>"><?php echo $row[4]["tieude"] ?></a>
+						</h3>
+						<p class="news-posted mb-0">
+							<span class="origin"><a title="<?php echo $row[4]["nguon"] ?>"
+								href="<?php echo $servername ?>/companies-news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>"><?php echo $row[4]["nguon"] ?></a></span>
+							<span><i
+								class="fa fa-eye"></i><?php echo $row[4]["luotxem"] ?></span>
+						</p>
+					</div>
+				</div>
 					</div>
 				</div>
 			</div>
