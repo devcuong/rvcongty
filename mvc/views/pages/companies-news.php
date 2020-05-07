@@ -168,14 +168,25 @@
     object-fit: cover;
     z-index: 3;
 }
+.news-main .new-item img {
+    -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.news-main .new-item:hover img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1)
+}
 </style>
 <section class="news-main home-section">
 	<div class="container">
 		<div class="columns news-main-container">
 			<div class="column new-main-left">
+			<?php $row = $data["NewsThumbnail"] -> fetch_array(MYSQLI_NUM);?>
 				<div class="new-item">
 					<a class="box-img"
-						title="Range Rover phiên bản lạ chào hàng đại gia Việt với giá hơn 19 tỷ đồng: Dài hơn Rolls-Royce Phantom EWB, chống đạn, nội thất siêu sang"
+						title="<?php echo $row[2] ?>"
 						href="https://dailyxe.com.vn/tin-tuc/range-rover-phien-ban-la-chao-hang-dai-gia-viet-voi-gia-hon-19-ty-dong-dai-hon-rolls-royce-phantom-ewb-chong-dan-noi-that-sieu-sang-13921d.html">
 						<img class="new-img img-responsive lazy-loading-image loaded"
 						style="width: 100%"
@@ -202,7 +213,7 @@
 						<p class="news-posted mb-0">
 							<span class="origin"><a title="Autopro"
 								href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html">Autopro</a></span>
-							<span><i class="fa fa-calendar-o"></i>3 giờ</span> <span><i
+							<span><i
 								class="fa fa-eye"></i>23</span>
 						</p>
 					</div>
@@ -237,7 +248,7 @@
 								<p class="news-posted mb-0">
 									<span class="origin"><a title="Autodaily"
 										href="https://dailyxe.com.vn/autodaily.vn-chuyen-trang-thong-tin-dien-tu-ve-oto-xe-may-10w.html">Autodaily</a></span>
-									<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
+									<span><i
 										class="fa fa-eye"></i>22</span>
 								</p>
 							</div>
@@ -270,7 +281,7 @@
 								<p class="news-posted mb-0">
 									<span class="origin"><a title="DailyXe"
 										href="https://dailyxe.com.vn/dai-ly-xe-14w.html">DailyXe</a></span>
-									<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
+									<span><i
 										class="fa fa-eye"></i>35</span>
 								</p>
 							</div>
@@ -302,7 +313,7 @@
 								<p class="news-posted mb-0">
 									<span class="origin"><a title="Autodaily"
 										href="https://dailyxe.com.vn/autodaily.vn-chuyen-trang-thong-tin-dien-tu-ve-oto-xe-may-10w.html">Autodaily</a></span>
-									<span><i class="fa fa-calendar-o"></i>7 giờ</span> <span><i
+									<span><i
 										class="fa fa-eye"></i>25</span>
 								</p>
 							</div>
@@ -335,7 +346,7 @@
 								<p class="news-posted mb-0">
 									<span class="origin"><a title="DailyXe"
 										href="https://dailyxe.com.vn/dai-ly-xe-14w.html">DailyXe</a></span>
-									<span><i class="fa fa-calendar-o"></i>7 giờ</span> <span><i
+									<span><i
 										class="fa fa-eye"></i>24</span>
 								</p>
 							</div>
@@ -359,7 +370,7 @@
 			<p class="news-posted">
 				<span class="origin"><a title="Autopro"
 					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html"><?php echo $newsBinhThuong["nguon"] ?></a></span>
-				<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
+				<span><i
 					class="fa fa-eye"></i><?php echo $newsBinhThuong["luotxem"] ?></span>
 			</p>
 			<div class="media">
@@ -386,7 +397,7 @@
 			<p class="news-posted">
 				<span class="origin"><a title="Autopro"
 					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html"><?php echo $NewsECom["nguon"] ?></a></span>
-				<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
+				<span><i
 					class="fa fa-eye"></i><?php echo $NewsECom["luotxem"] ?></span>
 			</p>
 			<div class="media">
@@ -413,7 +424,7 @@
 			<p class="news-posted">
 				<span class="origin"><a title="Autopro"
 					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html"><?php echo $NewsStartup["nguon"] ?></a></span>
-				<span><i class="fa fa-calendar-o"></i>6 giờ</span> <span><i
+				<span><i
 					class="fa fa-eye"></i><?php echo $NewsStartup["luotxem"] ?></span>
 			</p>
 			<div class="media">

@@ -6,6 +6,12 @@ class NewsModel extends DB{
             $qr = "SELECT * FROM news";
             return mysqli_query($this->con, $qr);
         }
+        
+        // Lấy 5 tin tức mới nhất
+        public function Lay5NewsMoiNhat(){
+            $qr = "SELECT * FROM news ORDER BY id DESC LIMIT 5";
+            return mysqli_query($this->con, $qr);
+        }
     
         // Lấy tin tức bằng slug
         public function LayNewsBySlug($slug){

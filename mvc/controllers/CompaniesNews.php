@@ -43,6 +43,7 @@ class CompaniesNews extends Controller
             $newsBinhThuong = $this->NewsModel->LayNewsByLoai("NORMAL", 8);
             $newsECom = $this->NewsModel->LayNewsByLoai("E-COM",8);
             $newsStartup = $this->NewsModel->LayNewsByLoai("STARTUP", 8);
+            $newsThumbnail = $this->NewsModel->Lay5NewsMoiNhat();
             // Title
             $title = "Review công ty ";
             
@@ -55,7 +56,8 @@ class CompaniesNews extends Controller
                 "Description" => $description,
                 "NewsBinhThuong" => $newsBinhThuong,
                 "NewsECom" => $newsECom,
-                "NewsStartup" => $newsStartup
+                "NewsStartup" => $newsStartup,
+                "NewsThumbnail" => $newsThumbnail
             ]);
         }
     }
