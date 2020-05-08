@@ -16,9 +16,19 @@ class TimKiem extends Controller
             $tuKhoa = trim($_POST["search"]);
             $newsModel = $this->NewsModel;
             $allKetQua = $newsModel->LayNewsTimKiem($tuKhoa);
+            
+            // Title
+            $title = "Công ty TOP - Kết quả tìm kiếm";
+            
+            // Description
+            $description = "Công ty TOP - Kết quả tìm kiếm";
             // View
             $this->view("main-template", [
-                "Page" => "ket-qua-tim-kiem-tin-tuc"
+                "Page" => "ket-qua-tim-kiem-tin-tuc",
+                "AllKetQua" => $allKetQua,
+                "Keyword" => $tuKhoa,
+                "Title" => $title,
+                "Description" => $description
             ]);
         }
     }
@@ -77,7 +87,7 @@ class TimKiem extends Controller
             "SoTrang" => $soTrang,
             "TrangHienTai" => $trangHienTai,
             "CongTyTrangHienTai" => $congTyTrangHienTai,
-            "TuKhoa" => $tuKhoa,
+            "Keyword" => $tuKhoa,
             "Title" => $title,
             "Description" => $description
         ]);
