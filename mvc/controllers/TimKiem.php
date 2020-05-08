@@ -2,12 +2,28 @@
 class TimKiem extends Controller
 {
     public $CongTyModel;
+    public $NewsModel;
     public function __construct()
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $this->CongTyModel = $this->model("CongTyModel");
+        $this->NewsModel = $this->model("NewsModel");
     }
     
+    // Tìm kiếm tin tức
+    public function News(){
+        if(isset($_POST["search"])){
+            $tuKhoa = trim($_POST["search"]);
+            $newsModel = $this->NewsModel;
+            $allKetQua = $newsModel->LayNewsTimKiem($tuKhoa);
+            // View
+            $this->view("main-template", [
+                "Page" => "ket-qua-tim-kiem-tin-tuc"
+            ]);
+        }
+    }
+    
+    // Tìm kiếm công ty
     public function Companies(){
         if (isset($_POST["tencongty"])){
             $tuKhoa = trim($_POST["tencongty"]);
@@ -24,6 +40,7 @@ class TimKiem extends Controller
        
     }
     
+    // Kết quả tìm kiếm công ty
     public function TrangKetQua($a, $b, $c=null, $d=null){
         $trangHienTai = 1;
         $congTyMoiTrang = 10;

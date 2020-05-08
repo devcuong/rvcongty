@@ -9,7 +9,7 @@ class NewsModel extends DB{
         
         // Lấy 5 tin tức mới nhất
         public function Lay5NewsMoiNhat(){
-            $qr = "SELECT * FROM news ORDER BY id DESC LIMIT 5";
+            $qr = "SELECT * FROM news ORDER BY luotxem DESC LIMIT 5";
             return mysqli_query($this->con, $qr);
         }
     
@@ -45,6 +45,20 @@ class NewsModel extends DB{
             
            return mysqli_query($this->con, $qr);
            //return $qr;
+        }
+        
+        // Lấy tin tức tìm kiếm
+        public function  LayNewsTimKiem($tuKhoa){
+            $condition = '';
+            $query = explode(" ", $tuKhoa);
+            foreach($query as $text)
+            {
+                $condition .= "tagnews LIKE '%".trim($text)."%' OR ";
+            }
+            $condition = substr($condition, 0, -4);
+            $qr = "SELECT * FROM news WHERE " . $condition. " ORDER BY luotxem DESC";
+            
+            return mysqli_query($this->con, $qr);
         }
         
         /*PHÂN TRANG*/
