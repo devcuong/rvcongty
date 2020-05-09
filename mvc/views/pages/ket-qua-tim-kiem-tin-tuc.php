@@ -1,6 +1,7 @@
 <style>
 .news-item {
     border: 1px solid #71bf44;
+	border-top: 3px solid #71bf44;
     padding-left: 10px;
 }
 .news {
@@ -77,4 +78,5 @@
 		</div>
 <?php } ?>
 </div>
+<div class="column"><?php require_once "./mvc/views/partials/right-news.php"?></div>
 </div>
