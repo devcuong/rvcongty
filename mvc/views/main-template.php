@@ -1213,6 +1213,12 @@ margin-bottom
 .message.is-info .question{
     color: #e86b1f;
 }
+@media screen and (max-width: 768px) { /* <== You can change this break point as per your  needs */
+  .reverse-columns {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+}
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async

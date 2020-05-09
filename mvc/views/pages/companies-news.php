@@ -189,7 +189,6 @@
 	transform: scale(1.1)
 }
 
-
 </style>
 <section class="news-main home-section">
 	<div class="container">
@@ -317,7 +316,7 @@
 		</div>
 	</div>
 </section>
-<div class="columns">
+<div class="reverse-columns columns">
 	<div class="column is-two-thirds">
 		<p class="title-news title-news-normal">TIN CÔNG TY</p>
 	<?php while ($newsBinhThuong = mysqli_fetch_array($data["NewsBinhThuong"])){ ?>
