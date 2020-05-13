@@ -13,6 +13,7 @@ class TimKiem extends Controller
     // Tìm kiếm tin tức
     public function News(){
         if(isset($_POST["search"])){
+           
             $tuKhoa = trim($_POST["search"]);
             $newsModel = $this->NewsModel;
             $allKetQua = $newsModel->LayNewsTimKiem($tuKhoa);
@@ -31,6 +32,11 @@ class TimKiem extends Controller
                 "Description" => $description
             ]);
         }
+        $trangHienTai = 0;
+        if (isset($_GET["page"])) {
+            $trangHienTai = $_GET["page"];
+        }
+        echo $trangHienTai;
     }
     
     // Tìm kiếm công ty
