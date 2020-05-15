@@ -17,7 +17,8 @@ class TimKiem extends Controller
     // Tìm kiếm tin tức
     public function News()
     {
-        $trangHienTai = 0;
+        $trangHienTai = 1;
+        $tinTucMoiTrang = 10;
         $keySearch = "";
         if (isset($_POST["search"])) {
             $keySearch = trim($_POST["search"]);
@@ -28,8 +29,10 @@ class TimKiem extends Controller
         if (isset($_GET["page"])) {
             $trangHienTai = $_GET["page"];
         }
+        $tinTucQuaBoQua = ($trangHienTai - 1) * $tinTucMoiTrang;
         $newsModel = $this->NewsModel;
         $allKetQua = $newsModel->LayNewsTimKiem($keySearch);
+        $soKetQuaTinTuc = mysqli_num_rows($allKetQua);
         
         // Title
         $title = "Công ty TOP - Kết quả tìm kiếm";
