@@ -179,9 +179,7 @@
 .news-posted i{
 	margin-right: 3px;
 }
-.box-right>.card-block {
-    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
-}
+
 </style>
 		<?php
 while ($row = mysqli_fetch_array($data["News"])) {

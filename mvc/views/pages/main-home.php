@@ -160,7 +160,7 @@
 
 			</section>
 </div>
-<p class="title-news-blue">TIN TỨC</p>
+<p class="title-news">TIN TỨC</p>
 <div class="columns">
 	<?php
 	$index = 0;

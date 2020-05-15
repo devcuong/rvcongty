@@ -1213,6 +1213,12 @@ margin-bottom
 .message.is-info .question{
     color: #e86b1f;
 }
+.box-right>.card-block {
+    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+}
+.mt-10{
+	margin-top: 10px;
+}
 @media screen and (max-width: 768px) { /* <== You can change this break point as per your  needs */
   .reverse-columns {
     flex-direction: column-reverse;

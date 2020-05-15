@@ -1,8 +1,12 @@
 <?php
+
 class TimKiem extends Controller
 {
+
     public $CongTyModel;
+
     public $NewsModel;
+
     public function __construct()
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -11,74 +15,77 @@ class TimKiem extends Controller
     }
     
     // Tìm kiếm tin tức
-    public function News(){
-        if(isset($_POST["search"])){
-           
-            $tuKhoa = trim($_POST["search"]);
-            $newsModel = $this->NewsModel;
-            $allKetQua = $newsModel->LayNewsTimKiem($tuKhoa);
-            
-            // Title
-            $title = "Công ty TOP - Kết quả tìm kiếm";
-            
-            // Description
-            $description = "Công ty TOP - Kết quả tìm kiếm";
-            // View
-            $this->view("main-template", [
-                "Page" => "ket-qua-tim-kiem-tin-tuc",
-                "AllKetQua" => $allKetQua,
-                "Keyword" => $tuKhoa,
-                "Title" => $title,
-                "Description" => $description
-            ]);
-        }
+    public function News()
+    {
         $trangHienTai = 0;
+        $keySearch = "";
+        if (isset($_POST["search"])) {
+            $keySearch = trim($_POST["search"]);
+        }
+        if (isset($_GET["keysearch"])) {
+            $keySearch = $_GET["keysearch"];
+        }
         if (isset($_GET["page"])) {
             $trangHienTai = $_GET["page"];
         }
-        echo $trangHienTai;
+        $newsModel = $this->NewsModel;
+        $allKetQua = $newsModel->LayNewsTimKiem($keySearch);
+        
+        // Title
+        $title = "Công ty TOP - Kết quả tìm kiếm";
+        // Description
+        $description = "Công ty TOP - Kết quả tìm kiếm";
+        // View
+        $this->view("main-template", [
+            "Page" => "ket-qua-tim-kiem-tin-tuc",
+            "AllKetQua" => $allKetQua,
+            "Keyword" => $keySearch,
+            "Title" => $title,
+            "Description" => $description
+        ]);
     }
     
     // Tìm kiếm công ty
-    public function Companies(){
-        if (isset($_POST["tencongty"])){
+    public function Companies()
+    {
+        if (isset($_POST["tencongty"])) {
             $tuKhoa = trim($_POST["tencongty"]);
             $congTyModel = $this->CongTyModel;
             $allKetQua = $congTyModel->LayCongTyTheoKyTu($tuKhoa);
-            //$resultArrayKetQua = $allKetQua -> fetch_all(MYSQLI_ASSOC);
-            //echo $_POST["tencongty"]."-"."ok";
+            // $resultArrayKetQua = $allKetQua -> fetch_all(MYSQLI_ASSOC);
+            // echo $_POST["tencongty"]."-"."ok";
             $parameters = array();
             while ($row = $allKetQua->fetch_assoc()) {
-              $parameters[] = $row;
+                $parameters[] = $row;
             }
             echo json_encode($parameters);
         }
-       
     }
     
     // Kết quả tìm kiếm công ty
-    public function TrangKetQua($a, $b, $c=null, $d=null){
+    public function TrangKetQua($a, $b, $c = null, $d = null)
+    {
         $trangHienTai = 1;
         $congTyMoiTrang = 10;
         $tuKhoa = "";
-        if($c != null){
+        if ($c != null) {
             $trangHienTai = $c;
         }
-        if(isset($_POST["company-search"])){
-            $tuKhoa= trim($_POST["company-search"]);
+        if (isset($_POST["company-search"])) {
+            $tuKhoa = trim($_POST["company-search"]);
         }
-        if($d != null){
-            $tuKhoa= $d;
+        if ($d != null) {
+            $tuKhoa = $d;
         }
-        $soCongTyBoQua = ($trangHienTai-1)*$congTyMoiTrang;
+        $soCongTyBoQua = ($trangHienTai - 1) * $congTyMoiTrang;
         // Model
         $congty = $this->model("CongTyModel");
         $review = $this->model("ReviewModel");
         // Tất cả công ty
         $congTyTimDuoc = $congty->LayCongTyTheoKyTu($tuKhoa);
         $soCongTy = mysqli_num_rows($congTyTimDuoc);
-        $soTrang = ceil($soCongTy/$congTyMoiTrang);
-        $congTyTrangHienTai="";
+        $soTrang = ceil($soCongTy / $congTyMoiTrang);
+        $congTyTrangHienTai = "";
         $congTyTrangHienTai = $congty->PhanTrangCongTyTheoTuKhoa($soCongTyBoQua, $congTyMoiTrang, $tuKhoa);
         
         // Title
@@ -87,8 +94,9 @@ class TimKiem extends Controller
         // Description
         $description = "Công ty TOP - Kết quả tìm kiếm";
         
-        //View
-        $this->view("main-template", ["Page"=>"trang-ket-qua",
+        // View
+        $this->view("main-template", [
+            "Page" => "trang-ket-qua",
             "15ReviewMoiNhat" => $review->Lay15ReviewMoiNhat(),
             "SoTrang" => $soTrang,
             "TrangHienTai" => $trangHienTai,
