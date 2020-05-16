@@ -1,17 +1,24 @@
 <?php
-
+require_once 'mvc/class/Server.php';
+require_once 'mvc/class/CutString.php';
 class TimKiem extends Controller
 {
 
     public $CongTyModel;
 
     public $NewsModel;
+    
+    public $Server;
+    
+    public $String;
 
     public function __construct()
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $this->CongTyModel = $this->model("CongTyModel");
         $this->NewsModel = $this->model("NewsModel");
+        $this->Server = new Server();
+        $this->String = new CutString();
     }
     
     // Tìm kiếm tin tức
@@ -33,7 +40,9 @@ class TimKiem extends Controller
         $newsModel = $this->NewsModel;
         $allKetQua = $newsModel->LayNewsTimKiem($keySearch);
         $soKetQuaTinTuc = mysqli_num_rows($allKetQua);
-        
+        $soTrang = ceil($soKetQuaTinTuc/ $tinTucMoiTrang);
+        $ketQuaTinTucTrangHienTai = $this->NewsModel->LayNewsPhanTrang($tinTucQuaBoQua, $tinTucMoiTrang);
+        $nav = $this->String->get_nav_render($trangHienTai, $soTrang, $this->Server->servername,$keySearch);
         // Title
         $title = "Công ty TOP - Kết quả tìm kiếm";
         // Description
@@ -41,7 +50,8 @@ class TimKiem extends Controller
         // View
         $this->view("main-template", [
             "Page" => "ket-qua-tim-kiem-tin-tuc",
-            "AllKetQua" => $allKetQua,
+            "KetQuaTrangHienTai" => $ketQuaTinTucTrangHienTai,
+            "Navigate" => $nav,
             "Keyword" => $keySearch,
             "Title" => $title,
             "Description" => $description

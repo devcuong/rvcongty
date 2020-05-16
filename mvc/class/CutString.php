@@ -31,7 +31,7 @@ class CutString{
         return trim($new_string);
     }
     
-    function get_nav_render($current, $pages, $route, $tab){
+    function get_nav_render_with_tab($current, $pages, $route, $tab){
         $nav = "";
         if ($pages > 0) {
             $nav .= "<ul class='pagination-list'>";
@@ -62,6 +62,39 @@ class CutString{
             $nav = $nav."</ul>";
         }
         
+        return $nav;
+    }
+    
+    function get_nav_render($current, $pages, $route, $keySearch){
+        $nav = "";
+        if ($pages > 0) {
+            $nav .= "<ul class='pagination-list'>";
+            if ($current == 1) {
+                $nav = $nav."<li><a class='pagination-link' disabled>ĐẦU</a></li>";
+            } else {
+                $nav = $nav."<li ><a class='pagination-link' href='" . $route . "/&keysearch=".$keySearch."&page=1'>ĐẦU</a></li>";
+            }
+            $i = ($current > 5 ? $current - 4 : 1);
+            if ($i != 1) {
+                $nav = $nav."<li class='disabled'><a class='pagination-link'>...</a></li>";
+            }
+            for (; $i <= $current + 4 && $i <= $pages; $i++) {
+                if ($i == $current) {
+                    $nav = $nav."<li><a class='pagination-link is-current'>" . $i . "</a></li>";
+                } else {
+                    $nav = $nav."<li><a class='pagination-link' href='" . $route . "/&keysearch=".$keySearch."&page=" . $i . "'>" . $i . "</a></li>";
+                }
+                if ($i == $current + 4 && $i < $pages) {
+                    $nav =$nav."<li><a class='pagination-link'>...</a></li>";
+                }
+            }
+            if ($current != $pages) {
+                $nav = $nav."<li><a class='pagination-link' href='&keysearch=".$keySearch."&page=".$pages."'>CUỐI</a></li>";
+            } else {
+                $nav = $nav."<li><a class='pagination-link' disabled>CUỐI</a></li>";
+            }
+            $nav = $nav."</ul>";
+        }
         return $nav;
     }
     

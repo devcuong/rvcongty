@@ -7,6 +7,12 @@ class NewsModel extends DB{
             return mysqli_query($this->con, $qr);
         }
         
+        // Lấy tin tức phân trang
+//         public function LayNewsPhanTrang($soNewsBoQua, $soNewsMoiTrang){
+//             $qr = "SELECT * FROM news ORDER BY luotxem DESC LIMIT $soNewsBoQua, $soNewsMoiTrang";
+//             return mysqli_query($this->con, $qr);
+//         }
+        
         // Lấy 5 tin tức mới nhất
         public function Lay5NewsMoiNhat(){
             $qr = "SELECT * FROM news ORDER BY luotxem DESC LIMIT 5";
