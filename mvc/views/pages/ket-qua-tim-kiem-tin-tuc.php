@@ -64,7 +64,19 @@
 </style>
 <section class="news-main home-section">
 	<div class="container">
-
+		<nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs">
+			<ul>
+				<li><a href="/"> <span class="icon is-small"> <i class="fas fa-home"
+							aria-hidden="true"></i>
+					</span> <span>Trang chủ</span>
+				</a></li>
+				<li><a href="<?php echo $servername ?>/companies-news/"> <span>Companies
+							News</span>
+				</a></li>
+				<li class="is-active"><a href="#"> <span>Kết quả tìm kiếm tin tức</span>
+				</a></li>
+			</ul>
+		</nav>
 		<div class="columns reverse-columns">
 			<div class="column is-two-thirds">
 				<p class="title-news">KẾT QUẢ - TÌM THẤY <?php echo mysqli_num_rows ( $data["KetQuaTrangHienTai"] );?> KẾT QUẢ PHÙ HỢP</p>
@@ -95,8 +107,8 @@
 </div>
 			<div class="column"><?php require_once "./mvc/views/partials/right-news.php"?></div>
 		</div>
-			<nav class="pagination is-small custom-pagination" role="navigation"
-				aria-label="pagination">
+		<nav class="pagination is-small custom-pagination" role="navigation"
+			aria-label="pagination">
 				<?php echo $data["Navigate"]; ?>
 			</nav>
 	</div>
