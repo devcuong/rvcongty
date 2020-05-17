@@ -714,9 +714,10 @@ important
 }
 @media screen and (min-width:1088px) {
 	.navbar.is-primary .navbar-end>a.navbar-item.is-active, .navbar.is-primary .navbar-end>a.navbar-item:hover {
-		background-color: #F7941D;
+		background-color: #0B610B;
 		color: #fff;
 		font-weight: bold;
+		border-bottom: 3px solid #F7941D
 	}
 }
 </style>
@@ -1258,10 +1259,8 @@ margin-bottom
 			</div>
 			<div id="navMenu" class="navbar-menu">
 				<div class="navbar-end">
-					<a href="#" class="navbar-item is-active">Home</a> <a href="#"
-						class="navbar-item">Blog</a> <a href="#" class="navbar-item">Forum</a>
-					<a href="#" class="navbar-item">Shop</a> <a href="#"
-						class="navbar-item">Examples</a>
+					<a href="<?php echo $servername ?>" class="navbar-item <?php if($data["Page"] == "main-home") { echo "is-active";} else{ echo ""; }?>">Trang chủ</a> 
+					<a href="<?php echo $servername ?>/companies-news/" class="navbar-item <?php if($data["Page"] == "companies-news") { echo "is-active";} else{ echo ""; }?>">Tin tức</a>
 				</div>
 			</div>
 		</div>

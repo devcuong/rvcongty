@@ -1,6 +1,17 @@
+<style>
+.news .news-posted, .news-right .news-posted {
+	color: #888;
+	font-size: 80%;
+	margin-bottom: .5rem;
+}
+.news-posted i, .news .news-posted i, .news-right .news-posted i {
+    margin-right: 3px;
+}
+</style>
 <section class="hero-img">
 	<div class="hero-img__gradient"></div>
-	<img src="<?php echo $servername ?>/mvc/public/images/banner.png" alt="công ty top">
+	<img src="<?php echo $servername ?>/mvc/public/images/banner.png"
+		alt="công ty top">
 	<div class="hero">
 		<div class="hero-body z-1">
 			<div>
@@ -163,14 +174,13 @@
 <p class="title-news">TIN TỨC</p>
 <div class="columns">
 	<?php
-	$index = 0;
+$index = 0;
 while ($r = mysqli_fetch_array($data["ThumbnailTinTucMoiNhat"])) {
     ?>
         <?php if($index == 0 || $index == 1) { ?>
         <div class="column">
 		<div class="card news first-news">
-			<a target="_blank"
-				title="<?php echo $r["tieude"] ?>"
+			<a target="_blank" title="<?php echo $r["tieude"] ?>"
 				href="<?php echo $servername ?>/companies-news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>">
 			</a> <a class="news-right-img" target="_self"
 				title="<?php echo $r["tieude"] ?>"
@@ -178,13 +188,11 @@ while ($r = mysqli_fetch_array($data["ThumbnailTinTucMoiNhat"])) {
 				<img class="card-img-top lazy-loading-image loaded"
 				style="width: 100%"
 				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $r["thumbnail"] ?>"
-				alt="<?php echo $r["tieude"] ?>"
-				data-pin-nopin="true">
+				alt="<?php echo $r["tieude"] ?>" data-pin-nopin="true">
 			</a>
 			<div class="card-block has-menu-dots">
 				<h1 class="news-title">
-					<a target="_self"
-						title="<?php echo $r["tieude"] ?>"
+					<a target="_self" title="<?php echo $r["tieude"] ?>"
 						href="<?php echo $servername ?>/companies-news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>"><?php echo $r["tieude"] ?></a>
 				</h1>
 				<h4 class="news-desc"><?php echo $r["motangan"] ?></h4>
@@ -196,9 +204,9 @@ while ($r = mysqli_fetch_array($data["ThumbnailTinTucMoiNhat"])) {
         <?php } ?>
 	<div class="column col-top-right">
 		<?php
-	$index = 0;
-    while ($row = mysqli_fetch_array($data["ListTinTucMoiNhat"])) {
-        ?>
+$index = 0;
+while ($row = mysqli_fetch_array($data["ListTinTucMoiNhat"])) {
+    ?>
     <?php if($index != 0 && $index != 1) { ?>
     <div class="news-right">
 			<div class="media">
@@ -207,19 +215,18 @@ while ($r = mysqli_fetch_array($data["ThumbnailTinTucMoiNhat"])) {
 					href="<?php echo $servername ?>/companies-news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>">
 					<img class="lazy-loading-image loaded" style="width: 100%"
 					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row["thumbnail"] ?>"
-					alt="<?php echo $row["tieude"] ?>"
-					data-pin-nopin="true">
+					alt="<?php echo $row["tieude"] ?>" data-pin-nopin="true">
 
 				</a>
 				<div class="media-body has-menu-dots">
 					<h3 class="news-right-title">
-						<a target="_self"
-							title="<?php echo $row["tieude"] ?>"
+						<a target="_self" title="<?php echo $row["tieude"] ?>"
 							href="<?php echo $servername ?>/companies-news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>"><?php echo $row["tieude"] ?></a>
 					</h3>
 					<h5 class="news-posted">
 						<span class="origin"><a title="<?php echo $row["nguon"] ?>"
 							href="<?php echo $servername ?>/companies-news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>"><?php echo $row["nguon"] ?></a></span>
+						<span><i class="fa fa-eye"></i><?php echo $row["luotxem"] ?></span>
 					</h5>
 				</div>
 			</div>
