@@ -137,6 +137,7 @@
 		<h1 class="is-size-4 has-text-weight-bold reviews__header">Review gần
 			đây</h1>
 				<?php
+				$cutString = new CutString();
     while ($r = mysqli_fetch_array($data["10ReviewMoiNhat"])) {
         ?>
                                         <div class="review">
@@ -165,7 +166,10 @@
 										<?php } ?>
 						</span>
 			</p>
-			<p><?php echo $r["noidung"] ?></p>
+			<p><?php $noidung = $r["noidung"];
+			 $shortString = $cutString->get_first_num_of_words(trim($noidung), 20);
+			 echo $shortString;
+			?></p>
 		</div>
                                         <?php } ?>
 

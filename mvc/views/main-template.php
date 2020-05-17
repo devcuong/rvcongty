@@ -1,4 +1,5 @@
 <?php require_once 'mvc/core/Config.php'; ?>
+<?php require_once 'mvc/class/CutString.php'; ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
