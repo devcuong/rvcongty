@@ -75,15 +75,15 @@
                                         <div
 				data-href="<?php echo $servername ?>/companies/<?php echo $row["slugcongty"]."-".$row["id"]?>"
 				class="company-item">
-				<div class="company-info columns">
-					<div class="home-logo-company is-2">
+				<div class="company-info">
+					<div class="home-logo-company">
 						<figure class="company-info__logo image is-64x64">
 							<img
 								src="<?php echo $servername ?>/mvc/public/asset/companies/logo/<?php echo $row["logo"]; ?>"
 								alt="<?php echo $row["tencongty"];?>">
 						</figure>
 					</div>
-					<div class="home-detail-company is-10">
+					
 						<div class="company-info__detail">
 							<h2 class="is-size-5 has-text-weight-semibold company-info__name">
 								<a
@@ -120,7 +120,7 @@
 									</span>
 							</div>
 						</div>
-					</div>
+					
 				</div>
 			</div>
                                         <?php } ?>
