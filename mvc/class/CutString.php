@@ -89,7 +89,7 @@ class CutString{
                 }
             }
             if ($current != $pages) {
-                $nav = $nav."<li><a class='pagination-link' href='&keysearch=".$keySearch."&page=".$pages."'>CUỐI</a></li>";
+                $nav = $nav."<li><a class='pagination-link' href='" . $route . "/&keysearch=".$keySearch."&page=".$pages."'>CUỐI</a></li>";
             } else {
                 $nav = $nav."<li><a class='pagination-link' disabled>CUỐI</a></li>";
             }
