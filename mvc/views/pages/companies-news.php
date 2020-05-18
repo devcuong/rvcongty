@@ -128,55 +128,6 @@
 	border-radius: 50%;
 }
 
-.banner-top.banner-bg {
-	width: 100%;
-	height: 315px;
-	background:
-		url(https://dailyxe.com.vn/Resources/css/images/banner-default.jpg);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	position: relative;
-}
-
-.banner-trans {
-	position: absolute;
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
-	pointer-events: none;
-	-webkit-transition: all ease 1s !important;
-	-o-transition: all ease 1s !important;
-	transition: all ease 1s !important;
-	z-index: 101;
-	background-size: cover;
-}
-
-.banner-video-bg {
-	background-size: cover;
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-}
-
-#myVideo {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	background-size: 100% 100%;
-	background-position: center center;
-	background-size: contain;
-	-o-object-fit: cover;
-	object-fit: cover;
-	z-index: 3;
-}
-
 .news-main .new-item img {
 	-webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	-o-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -187,6 +138,47 @@
 	-webkit-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	transform: scale(1.1)
+}
+
+/*news item for mobile*/
+.news-item .box-img {
+    margin-bottom: 10px;
+}
+.news-item .box-img {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.news-info {
+    position: relative;
+    padding-right: 20px !important;
+}
+.news-item .news-desc {
+    font-size: 130%;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+    max-height: 4.2em;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.news-item .news-desc {
+    margin-bottom: 10px;
+    font-size: 130%;
+    display: -webkit-box;
+    line-height: 1.4em;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #666;
+}
+.media-mobile {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 </style>
 <section class="news-main home-section">
@@ -318,11 +310,11 @@
 <!-- reverse-columns -->
 <div class="columns">
 	<div class="column is-two-thirds">
-	<!-- search box -->
+		<!-- search box -->
 	<?php require_once "./mvc/views/partials/search-box.php"?>
 		<p class="title-news title-news-normal">TIN CÔNG TY</p>
 	<?php while ($newsBinhThuong = mysqli_fetch_array($data["NewsBinhThuong"])){ ?>
-		<div class="news box-border news-item">
+		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
 				<a target="_self" title="<?php echo $newsBinhThuong["tieude"] ?>"
 					href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"><?php echo $newsBinhThuong["tieude"] ?></a>
@@ -341,6 +333,35 @@
 				</a>
 				<div class="media-body">
 					<h4 class="news-desc"><?php echo $newsBinhThuong["motangan"] ?></h4>
+				</div>
+			</div>
+		</div>
+		<div class="media news-item is-hidden-tablet media-mobile">
+			<a
+				title="17 hộ đầu tiên nhận gần 70 tỷ bồi thường đất xây sân bay Long Thành"
+				class="border-primary box-img"
+				href="https://dailyxe.com.vn/tin-tuc/17-ho-dau-tien-nhan-gan-70-ty-boi-thuong-dat-xay-san-bay-long-thanh-14511d.html">
+				<img class="lazy-loading-image loaded" style="width: 100%"
+				src="https://cdn.dailyxe.com.vn/image/17-ho-dau-tien-nhan-gan-70-ty-boi-thuong-dat-xay-san-bay-long-thanh-14511d.html-126609j6.jpg"
+				alt="17 hộ đầu tiên nhận gần 70 tỷ bồi thường đất xây sân bay Long Thành">
+			</a>
+			<div class="media-body news-info">
+				<h2 class="news-title">
+					<a
+						href="https://dailyxe.com.vn/tin-tuc/17-ho-dau-tien-nhan-gan-70-ty-boi-thuong-dat-xay-san-bay-long-thanh-14511d.html"
+						title="17 hộ đầu tiên nhận gần 70 tỷ bồi thường đất xây sân bay Long Thành">17
+						hộ đầu tiên nhận gần 70 tỷ bồi thường đất xây sân bay Long Thành</a>
+				</h2>
+				<p class="news-desc">17 hộ dân đầu tiên có đất nằm trong dự án xây
+					dựng sân bay Long Thành, huyện Long Thành (Đồng Nai), được nhận
+					tiền bồi thường gần 70 tỷ đồng.</p>
+				<div class="news-tag">
+					<a class="news-tag-item"
+						href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html"
+						title="Zing.vn"> <span class="news-type">Zing.vn</span>
+					</a> <span class="news-tag-item"> 4 phút </span> <span
+						class="news-tag-item"> <i class="fa fa-eye"></i> 2
+					</span>
 				</div>
 			</div>
 		</div>
