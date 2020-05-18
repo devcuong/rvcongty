@@ -43,6 +43,10 @@ class TimKiem extends Controller
         $soTrang = ceil($soKetQuaTinTuc/ $tinTucMoiTrang);
         $ketQuaTinTucTrangHienTai = $this->NewsModel->LayNewsPhanTrang($tinTucQuaBoQua, $tinTucMoiTrang);
         $nav = $this->String->get_nav_render($trangHienTai, $soTrang, $this->Server->servername."/tim-kiem/news",$keySearch);
+        
+        // Lấy tin tức xem nhiều nhất
+        $newsXemNhieuNhat = $this->NewsModel->Lay8NewsXemNhieuNhat();
+        
         // Title
         $title = "Công ty TOP - Kết quả tìm kiếm";
         // Description
@@ -52,6 +56,7 @@ class TimKiem extends Controller
             "Page" => "ket-qua-tim-kiem-tin-tuc",
             "KetQuaTrangHienTai" => $ketQuaTinTucTrangHienTai,
             "Navigate" => $nav,
+            "NewsXemNhieuNhat" => $newsXemNhieuNhat,
             "Keyword" => $keySearch,
             "Title" => $title,
             "Description" => $description

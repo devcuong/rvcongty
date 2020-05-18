@@ -77,8 +77,11 @@
 				</a></li>
 			</ul>
 		</nav>
-		<div class="columns reverse-columns">
+		<!-- reverse-columns -->
+		<div class="columns">
 			<div class="column is-two-thirds">
+			<!-- search box -->
+			<?php require_once "./mvc/views/partials/search-box.php"?>
 				<p class="title-news">KẾT QUẢ - TÌM THẤY <?php echo mysqli_num_rows ( $data["KetQuaTrangHienTai"] );?> KẾT QUẢ PHÙ HỢP</p>
 <?php while ($AllKetQua = mysqli_fetch_array($data["KetQuaTrangHienTai"])){ ?>
 <div class="news box-border news-item">
@@ -104,12 +107,13 @@
 					</div>
 				</div>
 <?php } ?>
-</div>
-			<div class="column"><?php require_once "./mvc/views/partials/right-news.php"?></div>
-		</div>
-		<nav class="pagination is-small custom-pagination" role="navigation"
-			aria-label="pagination">
+<nav class="pagination is-small custom-pagination" role="navigation"
+					aria-label="pagination">
 				<?php echo $data["Navigate"]; ?>
 			</nav>
+			</div>
+			<div class="column"><?php require_once "./mvc/views/partials/right-news.php"?></div>
+		</div>
+
 	</div>
 </section>
