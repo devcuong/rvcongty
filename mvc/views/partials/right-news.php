@@ -66,30 +66,33 @@
 <div class="card box-right box-border box-bottom mt-10">
 	<h3 class="card-header">Tin tức xem nhiều</h3>
 	<div class="card-block">
+						<?php
+    while ($row = mysqli_fetch_array($data["NewsXemNhieuNhat"])) {
+        ?>
 		<div class="news-right">
-			<div class="media has-menu-dots">
+			<div class="media">
 				<a class="news-right-img" target="_self"
-					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-					href="http://localhost/rvcongty/companies-news/dieu-sai-lam-nhat-trong-su-nghiep-cua-toi-do-chinh-la-qua-trung-thanh-2">
+					title="<?php echo $row["tieude"] ?>"
+					href="<?php echo $servername ?>/companies-news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>">
 					<img class="lazy-loading-image loaded"
-					src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row["thumbnail"] ?>"
+					alt="<?php echo $row["tieude"] ?>"
 					data-pin-nopin="true">
 				</a>
 				<div class="media-body">
 					<h3 class="news-right-title">
 						<a target="_self"
-							title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-							href="http://localhost/rvcongty/companies-news/dieu-sai-lam-nhat-trong-su-nghiep-cua-toi-do-chinh-la-qua-trung-thanh-2">Triển
-							lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
+							title="<?php echo $row["tieude"] ?>"
+							href="<?php echo $servername ?>/companies-news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>"><?php echo $row["tieude"] ?></a>
 					</h3>
 					<p class="news-posted">
-						<span class="origin"><a title="BanXeHoi"
-							href="http://localhost/rvcongty/companies-news/dieu-sai-lam-nhat-trong-su-nghiep-cua-toi-do-chinh-la-qua-trung-thanh-2">hrinsider</a></span>
-						<span><i class="fa fa-eye"></i>15</span>
+						<span class="origin"><a title="<?php echo $row["tieude"] ?>"
+							href="<?php echo $row["webnguon"] ?>"><?php echo $row["nguon"] ?></a></span>
+						<span><i class="fa fa-eye"></i><?php echo $row["luotxem"] ?></span>
 					</p>
 				</div>
 			</div>
 		</div>
+		<?php } ?>
 	</div>
 </div>

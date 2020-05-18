@@ -16,6 +16,7 @@ class CompaniesNews extends Controller
             $idNews = end($urlNews);
             $newsNow = $this->NewsModel->LayNewsById($idNews);
             $newsLater = $this->NewsModel->LayNewsById($idNews);
+           
             while ($r = mysqli_fetch_array($newsNow)) {
                 $tags = $r["tagnews"];
             }
@@ -38,13 +39,14 @@ class CompaniesNews extends Controller
                 "News" => $newsLater,
                 "NewsMoiNhat"=>$newsMoiNhat,
                 "NewsLienQuan" => $newsLienQuan
+              
             ]);
         }else{
             $newsBinhThuong = $this->NewsModel->LayNewsByLoai("NORMAL", 8);
             $newsECom = $this->NewsModel->LayNewsByLoai("E-COM",8);
             $newsStartup = $this->NewsModel->LayNewsByLoai("STARTUP", 8);
             $newsThumbnail = $this->NewsModel->Lay5NewsMoiNhat();
-            
+            $newsXemNhieuNhat = $this->NewsModel->Lay8NewsXemNhieuNhat();
             $rows = [];
             
             while($row = mysqli_fetch_assoc($newsThumbnail)) {
@@ -63,7 +65,8 @@ class CompaniesNews extends Controller
                 "NewsBinhThuong" => $newsBinhThuong,
                 "NewsECom" => $newsECom,
                 "NewsStartup" => $newsStartup,
-                "NewsThumbnail" => $rows
+                "NewsThumbnail" => $rows,
+                "NewsXemNhieuNhat" => $newsXemNhieuNhat
             ]);
         }
     }

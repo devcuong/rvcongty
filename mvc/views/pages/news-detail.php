@@ -215,7 +215,10 @@ while ($row = mysqli_fetch_array($data["News"])) {
 			<div
 				class="detail-news-posted start-social-fixed d-flex align-items-center">
 				<div class="d-flex mr-auto">
-					<span class="time">đăng lúc <?php echo $row["thoigian"] ?></span>
+					<span class="time">đăng lúc <?php 
+					$date = date_create($row["thoigian"]);
+					echo date_format($date,"H:i:s d/m/Y");
+					?></span>
 				</div>
 			</div>
 			<span macd="tinlienquan_chitiettintuc"></span>

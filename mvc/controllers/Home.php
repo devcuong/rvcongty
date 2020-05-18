@@ -25,7 +25,7 @@ class Home extends Controller
     {
         if ($a == NULL) {
             $trangHienTai = 1;
-            $congTyMoiTrang = 10;
+            $congTyMoiTrang = 8;
             $tabCongTy = "latest";
             if (isset($_GET["page"])) {
                 $trangHienTai = $_GET["page"];
