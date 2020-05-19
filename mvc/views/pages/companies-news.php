@@ -28,7 +28,7 @@
 }
 
 .news .news-img {
-	width: 250px;
+	width: 450px;
 	margin-right: .625rem;
 }
 
@@ -154,8 +154,12 @@
     position: relative;
     padding-right: 20px !important;
 }
+.news-info .news-title a{
+	color: #e86b1f;
+    font-weight: 600;
+}
 .news-item .news-desc {
-    font-size: 130%;
+    font-size: 100%;
     color: #666;
     margin-bottom: 10px;
     line-height: 1.4em;
@@ -163,18 +167,6 @@
     overflow: hidden;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
-}
-.news-item .news-desc {
-    margin-bottom: 10px;
-    font-size: 130%;
-    display: -webkit-box;
-    line-height: 1.4em;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    color: #666;
 }
 .media-mobile {
     -ms-flex-wrap: wrap;
@@ -190,7 +182,6 @@
 					<a class="box-img" title="<?php echo $row[0]["tieude"] ?>"
 						href="<?php echo $servername ?>/companies-news/<?php echo $row[0]["slugtieude"] ?>-<?php echo $row[0]["id"]; ?>">
 						<img class="new-img img-responsive lazy-loading-image loaded"
-						style="width: 100%"
 						src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[0]["thumbnail"] ?>"
 						title="<?php echo $row[0]["tieude"] ?>"
 						alt="<?php echo $row[0]["tieude"] ?>">
@@ -215,7 +206,6 @@
 							<a class="box-img" title="<?php echo $row[1]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>">
 								<img class="new-img img-responsive lazy-loading-image loaded"
-								style="width: 100%"
 								src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[1]["thumbnail"] ?>"
 								title="<?php echo $row[1]["tieude"] ?>"
 								alt="<?php echo $row[1]["tieude"] ?>">
@@ -238,7 +228,6 @@
 							<a class="box-img" title="<?php echo $row[2]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>">
 								<img class="new-img img-responsive lazy-loading-image loaded"
-								style="width: 100%"
 								src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[2]["thumbnail"] ?>"
 								title="<?php echo $row[2]["tieude"] ?>"
 								alt="<?php echo $row[2]["tieude"] ?>">
@@ -261,7 +250,6 @@
 							<a class="box-img" title="<?php echo $row[3]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>">
 								<img class="new-img img-responsive lazy-loading-image loaded"
-								style="width: 100%"
 								src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[3]["thumbnail"] ?>"
 								title="<?php echo $row[3]["tieude"] ?>"
 								alt="<?php echo $row[3]["tieude"] ?>">
@@ -284,7 +272,6 @@
 							<a class="box-img" title="<?php echo $row[4]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>">
 								<img class="new-img img-responsive lazy-loading-image loaded"
-								style="width: 100%"
 								src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[4]["thumbnail"] ?>"
 								title="<?php echo $row[4]["tieude"] ?>"
 								alt="<?php echo $row[4]["tieude"] ?>">
@@ -321,13 +308,13 @@
 			</h2>
 			<p class="news-posted">
 				<span class="origin"><a title="Autopro"
-					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html"><?php echo $newsBinhThuong["nguon"] ?></a></span>
+					href="<?php echo $newsBinhThuong["webnguon"] ?>"><?php echo $newsBinhThuong["nguon"] ?></a></span>
 				<span><i class="fa fa-eye"></i><?php echo $newsBinhThuong["luotxem"] ?></span>
 			</p>
 			<div class="media">
 				<a class="news-img"
-					href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $news["id"] ?>">
-					<img class="lazy-loading-image loaded" style="width: 100%"
+					href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>">
+					<img class="lazy-loading-image loaded"
 					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $newsBinhThuong["thumbnail"]?>"
 					alt="<?php echo $newsBinhThuong["tieude"] ?>">
 				</a>
@@ -338,29 +325,26 @@
 		</div>
 		<div class="media news-item is-hidden-tablet media-mobile">
 			<a
-				title="17 hộ đầu tiên nhận gần 70 tỷ bồi thường đất xây sân bay Long Thành"
+				title="<?php echo $newsBinhThuong["tieude"] ?>"
 				class="border-primary box-img"
-				href="https://dailyxe.com.vn/tin-tuc/17-ho-dau-tien-nhan-gan-70-ty-boi-thuong-dat-xay-san-bay-long-thanh-14511d.html">
-				<img class="lazy-loading-image loaded" style="width: 100%"
-				src="https://cdn.dailyxe.com.vn/image/17-ho-dau-tien-nhan-gan-70-ty-boi-thuong-dat-xay-san-bay-long-thanh-14511d.html-126609j6.jpg"
-				alt="17 hộ đầu tiên nhận gần 70 tỷ bồi thường đất xây sân bay Long Thành">
+				href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>">
+				<img class="lazy-loading-image loaded"
+				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $newsBinhThuong["thumbnail"]?>"
+				alt="<?php echo $newsBinhThuong["tieude"] ?>">
 			</a>
 			<div class="media-body news-info">
 				<h2 class="news-title">
 					<a
-						href="https://dailyxe.com.vn/tin-tuc/17-ho-dau-tien-nhan-gan-70-ty-boi-thuong-dat-xay-san-bay-long-thanh-14511d.html"
-						title="17 hộ đầu tiên nhận gần 70 tỷ bồi thường đất xây sân bay Long Thành">17
-						hộ đầu tiên nhận gần 70 tỷ bồi thường đất xây sân bay Long Thành</a>
+						href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"
+						title="<?php echo $newsBinhThuong["tieude"] ?>"><?php echo $newsBinhThuong["tieude"] ?></a>
 				</h2>
-				<p class="news-desc">17 hộ dân đầu tiên có đất nằm trong dự án xây
-					dựng sân bay Long Thành, huyện Long Thành (Đồng Nai), được nhận
-					tiền bồi thường gần 70 tỷ đồng.</p>
+				<p class="news-desc"><?php echo $newsBinhThuong["tieude"] ?></p>
 				<div class="news-tag">
 					<a class="news-tag-item"
 						href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html"
-						title="Zing.vn"> <span class="news-type">Zing.vn</span>
-					</a> <span class="news-tag-item"> 4 phút </span> <span
-						class="news-tag-item"> <i class="fa fa-eye"></i> 2
+						title="<?php echo $newsBinhThuong["webnguon"] ?>"> <span class="news-type"><?php echo $newsBinhThuong["nguon"] ?></span>
+					</a><span
+						class="news-tag-item"> <i class="fa fa-eye"></i><?php echo $newsBinhThuong["luotxem"] ?>
 					</span>
 				</div>
 			</div>
@@ -380,8 +364,8 @@
 			</p>
 			<div class="media">
 				<a class="news-img"
-					href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $news["id"] ?>">
-					<img class="lazy-loading-image loaded" style="width: 100%"
+					href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>">
+					<img class="lazy-loading-image loaded"
 					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsECom["thumbnail"]?>"
 					alt="<?php echo $NewsECom["tieude"] ?>">
 				</a>
@@ -406,7 +390,7 @@
 			<div class="media">
 				<a class="news-img"
 					href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
-					<img class="lazy-loading-image loaded" style="width: 100%"
+					<img class="lazy-loading-image loaded"
 					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsStartup["thumbnail"]?>"
 					alt="<?php echo $NewsStartup["tieude"] ?>">
 				</a>
