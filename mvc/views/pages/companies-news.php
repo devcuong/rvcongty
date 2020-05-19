@@ -143,17 +143,16 @@
 
 /*news item for mobile*/
 .news-item .box-img {
-    margin-bottom: 10px;
+/*     margin-bottom: 10px; */
 }
 .news-item .box-img {
     width: 100%;
     margin-right: 0px;
-    margin-bottom: 10px;
     position: relative;
 }
 .news-info {
     position: relative;
-    padding-right: 20px !important;
+/*     padding-right: 20px !important; */
 }
 .news-info .news-title a{
 	color: #e86b1f;
@@ -172,6 +171,13 @@
 .media-mobile {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+}
+.news-tag-item{
+	color: #71bf44;
+}
+.news-tag .news-tag-views{
+	color: #888;
+    font-size: 80%;
 }
 </style>
 <section class="news-main home-section">
@@ -339,13 +345,13 @@
 						href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"
 						title="<?php echo $newsBinhThuong["tieude"] ?>"><?php echo $newsBinhThuong["tieude"] ?></a>
 				</h2>
-				<p class="news-desc"><?php echo $newsBinhThuong["tieude"] ?></p>
+				<p class="news-desc"><?php echo $newsBinhThuong["motangan"] ?></p>
 				<div class="news-tag">
 					<a class="news-tag-item"
-						href="https://dailyxe.com.vn/zing.vn-tin-tuc-hinh-anh-moi-nhat-ve-cac-loai-xe-oto-9w.html"
-						title="<?php echo $newsBinhThuong["webnguon"] ?>"> <span class="news-type"><?php echo $newsBinhThuong["nguon"] ?></span>
-					</a><span
-						class="news-tag-item"> <i class="fa fa-eye"></i><?php echo $newsBinhThuong["luotxem"] ?>
+						href="<?php echo $newsBinhThuong["webnguon"] ?>"
+						title="<?php echo $newsBinhThuong["nguon"] ?>"> <span class="news-type"><?php echo $newsBinhThuong["nguon"] ?></span>
+					</a>
+					<span class="news-tag-views"> <i class="fa fa-eye"></i><?php echo $newsBinhThuong["luotxem"] ?>
 					</span>
 				</div>
 			</div>
@@ -384,8 +390,8 @@
 					href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>"><?php echo $NewsStartup["tieude"] ?></a>
 			</h2>
 			<p class="news-posted">
-				<span class="origin"><a title="Autopro"
-					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html"><?php echo $NewsStartup["nguon"] ?></a></span>
+				<span class="origin"><a title="<?php echo $NewsStartup["nguon"] ?>"
+					href="<?php echo $NewsStartup["webnguon"] ?>"><?php echo $NewsStartup["nguon"] ?></a></span>
 				<span><i class="fa fa-eye"></i><?php echo $NewsStartup["luotxem"] ?></span>
 			</p>
 			<div class="media">
