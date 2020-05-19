@@ -48,7 +48,8 @@
 .news-item {
 	border: 1px solid #71bf44;
 	border-top: 3px solid #71bf44;
-	padding-left: 10px;
+/* 	padding-left: 10px; */
+	padding: 5px;
 }
 
 .new-main-left {
@@ -323,7 +324,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="media news-item is-hidden-tablet media-mobile">
+		<div class="news media news-item is-hidden-tablet media-mobile">
 			<a
 				title="<?php echo $newsBinhThuong["tieude"] ?>"
 				class="border-primary box-img"

@@ -2,7 +2,7 @@
 .news-item {
 	border: 1px solid #71bf44;
 	border-top: 3px solid #71bf44;
-	padding-left: 10px;
+	padding: 5px;
 }
 
 .news {
