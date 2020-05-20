@@ -191,6 +191,59 @@
 .news-tag-views>* {
 	margin-right: 5px;
 }
+/*button xem tất cả*/
+.justify-content-center {
+    -ms-flex-pack: center !important;
+    -webkit-box-pack: center !important;
+    justify-content: center !important;
+}
+.d-flex {
+    display: -ms-flexbox !important;
+    display: -webkit-box !important;
+    display: flex !important;
+}
+.btn-view-more {
+    background-color: #666;
+    border-color: #666;
+    color: #fff;
+}
+
+.btn-icon-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    padding-right: 38px;
+    border-radius: 0px;
+    font-size: 90%;
+}
+
+.btn-icon-right span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 28px;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.2);
+}
+.btn-view-more:hover, .btn-view-more:focus, .btn-view-more:active {
+    background-color: #FF4000;
+    border-color: #FF4000;
+    color: #fff;
+}
+.btn {
+    padding: 7px 12px;
+    border: none;
+}
 </style>
 <section class="news-main home-section">
 	<div class="container">
@@ -358,13 +411,21 @@
 				</h2>
 				<p class="news-desc"><?php echo $newsBinhThuong["motangan"] ?></p>
 				<p class="news-posted">
-					<span class="origin"><a title="<?php echo $newsBinhThuong["nguon"] ?>"
+					<span class="origin"><a
+						title="<?php echo $newsBinhThuong["nguon"] ?>"
 						href="<?php echo $newsBinhThuong["webnguon"] ?>"><?php echo $newsBinhThuong["nguon"] ?></a></span>
 					<span><i class="fa fa-eye"></i><?php echo $newsBinhThuong["luotxem"] ?></span>
 				</p>
 			</div>
 		</div>
 		<?php } ?>
+		<div class="d-flex justify-content-center">
+			<a class="btn btn-view-more btn-icon-right"
+				href="https://dailyxe.com.vn/danh-sach-xe-oto" title="Xem tất cả">Xem
+				tất cả <span> <i class="fas fa-chevron-right"></i>
+			</span>
+			</a>
+		</div>
 		<p class="title-news title-news-ecom">CÔNG TY E-COMMERCE</p>
 		<?php while ($NewsECom= mysqli_fetch_array($data["NewsECom"])){ ?>
 		<div class="news box-border news-item is-hidden-mobile">
@@ -400,7 +461,7 @@
 			<div class="media-body news-info">
 				<h2 class="news-title">
 					<a
-						href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"
+						href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"
 						title="<?php echo $NewsECom["tieude"] ?>"><?php echo $NewsECom["tieude"] ?></a>
 				</h2>
 				<p class="news-desc"><?php echo $NewsECom["motangan"] ?></p>

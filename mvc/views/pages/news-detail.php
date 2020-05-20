@@ -1,5 +1,5 @@
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather" />
 <style type="text/css">
-@import url('https://fonts.googleapis.com/css?family=Anton');
 
 .box-border {
 	background-color: #fff;
@@ -20,9 +20,11 @@
 }
 
 .detail-news .detail-news-title {
-	font-family: 'Anton', sans-serif;
-	font-size: 1.4rem;
+	font-family: "Merriweather",serif;
+	font-size: 32px;
+	font-weight:bold;
 	margin-bottom: 10px;
+	line-height: 150%;
 }
 
 .detail-news .detail-news-posted {
