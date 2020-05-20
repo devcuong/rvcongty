@@ -54,13 +54,13 @@
 
 .new-main-left {
 	padding-left: 0px;
+	padding-right: 0px;
 	padding-top: 24px;
 }
 
 .new-main-left .new-item {
 	height: 100%;
 }
-
 .news-main .new-item {
 	position: relative;
 	width: 100%;
