@@ -48,7 +48,7 @@
 .news-item {
 	border: 1px solid #71bf44;
 	border-top: 3px solid #71bf44;
-/* 	padding-left: 10px; */
+	/* 	padding-left: 10px; */
 	padding: 5px;
 }
 
@@ -143,41 +143,53 @@
 
 /*news item for mobile*/
 .news-item .box-img {
-/*     margin-bottom: 10px; */
+	/*     margin-bottom: 10px; */
+	
 }
+
 .news-item .box-img {
-    width: 100%;
-    margin-right: 0px;
-    position: relative;
+	width: 100%;
+	margin-right: 0px;
+	position: relative;
 }
+
 .news-info {
-    position: relative;
-/*     padding-right: 20px !important; */
+	position: relative;
+	/*     padding-right: 20px !important; */
 }
-.news-info .news-title a{
+
+.news-info .news-title a {
 	color: #e86b1f;
-    font-weight: 600;
+	font-weight: 600;
 }
+
 .news-item .news-desc {
-    font-size: 100%;
-    color: #666;
-    margin-bottom: 10px;
-    line-height: 1.4em;
-    max-height: 4.2em;
-    overflow: hidden;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
+	font-size: 100%;
+	color: #666;
+	margin-bottom: 10px;
+	line-height: 1.4em;
+	max-height: 4.2em;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
 }
+
 .media-mobile {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
-.news-tag-item{
+
+.news-tag-item {
 	color: #71bf44;
 }
-.news-tag .news-tag-views{
+
+.news-tag .news-tag-views {
 	color: #888;
-    font-size: 80%;
+	font-size: 80%;
+}
+
+.news-tag-views>* {
+	margin-right: 5px;
 }
 </style>
 <section class="news-main home-section">
@@ -331,8 +343,7 @@
 			</div>
 		</div>
 		<div class="news media news-item is-hidden-tablet media-mobile">
-			<a
-				title="<?php echo $newsBinhThuong["tieude"] ?>"
+			<a title="<?php echo $newsBinhThuong["tieude"] ?>"
 				class="border-primary box-img"
 				href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>">
 				<img class="lazy-loading-image loaded"
@@ -346,27 +357,24 @@
 						title="<?php echo $newsBinhThuong["tieude"] ?>"><?php echo $newsBinhThuong["tieude"] ?></a>
 				</h2>
 				<p class="news-desc"><?php echo $newsBinhThuong["motangan"] ?></p>
-				<div class="news-tag">
-					<a class="news-tag-item"
-						href="<?php echo $newsBinhThuong["webnguon"] ?>"
-						title="<?php echo $newsBinhThuong["nguon"] ?>"> <span class="news-type"><?php echo $newsBinhThuong["nguon"] ?></span>
-					</a>
-					<span class="news-tag-views"> <i class="fa fa-eye"></i><?php echo $newsBinhThuong["luotxem"] ?>
-					</span>
-				</div>
+				<p class="news-posted">
+					<span class="origin"><a title="<?php echo $newsBinhThuong["nguon"] ?>"
+						href="<?php echo $newsBinhThuong["webnguon"] ?>"><?php echo $newsBinhThuong["nguon"] ?></a></span>
+					<span><i class="fa fa-eye"></i><?php echo $newsBinhThuong["luotxem"] ?></span>
+				</p>
 			</div>
 		</div>
 		<?php } ?>
 		<p class="title-news title-news-ecom">CÔNG TY E-COMMERCE</p>
 		<?php while ($NewsECom= mysqli_fetch_array($data["NewsECom"])){ ?>
-		<div class="news box-border news-item">
+		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
 				<a target="_self" title="<?php echo $NewsECom["tieude"] ?>"
 					href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"><?php echo $NewsECom["tieude"] ?></a>
 			</h2>
 			<p class="news-posted">
-				<span class="origin"><a title="Autopro"
-					href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html"><?php echo $NewsECom["nguon"] ?></a></span>
+				<span class="origin"><a title="<?php echo $NewsECom["nguon"] ?>"
+					href="<?php echo $NewsECom["webnguon"] ?>"><?php echo $NewsECom["nguon"] ?></a></span>
 				<span><i class="fa fa-eye"></i><?php echo $NewsECom["luotxem"] ?></span>
 			</p>
 			<div class="media">
@@ -381,10 +389,32 @@
 				</div>
 			</div>
 		</div>
+		<div class="news media news-item is-hidden-tablet media-mobile">
+			<a title="<?php echo $NewsECom["tieude"] ?>"
+				class="border-primary box-img"
+				href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>">
+				<img class="lazy-loading-image loaded"
+				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsECom["thumbnail"]?>"
+				alt="<?php echo $NewsECom["tieude"] ?>">
+			</a>
+			<div class="media-body news-info">
+				<h2 class="news-title">
+					<a
+						href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"
+						title="<?php echo $NewsECom["tieude"] ?>"><?php echo $NewsECom["tieude"] ?></a>
+				</h2>
+				<p class="news-desc"><?php echo $NewsECom["motangan"] ?></p>
+				<p class="news-posted">
+					<span class="origin"><a title="<?php echo $NewsECom["nguon"] ?>"
+						href="<?php echo $NewsECom["webnguon"] ?>"><?php echo $NewsECom["nguon"] ?></a></span>
+					<span><i class="fa fa-eye"></i><?php echo $NewsECom["luotxem"] ?></span>
+				</p>
+			</div>
+		</div>
 		<?php } ?>
 		<p class="title-news title-news-startup">CÔNG TY STARTUP</p>
 		<?php while ($NewsStartup= mysqli_fetch_array($data["NewsStartup"])){ ?>
-		<div class="news box-border news-item">
+		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
 				<a target="_self" title="<?php echo $NewsStartup["tieude"] ?>"
 					href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>"><?php echo $NewsStartup["tieude"] ?></a>
@@ -404,6 +434,28 @@
 				<div class="media-body">
 					<h4 class="news-desc"><?php echo $NewsStartup["motangan"] ?></h4>
 				</div>
+			</div>
+		</div>
+		<div class="news media news-item is-hidden-tablet media-mobile">
+			<a title="<?php echo $NewsStartup["tieude"] ?>"
+				class="border-primary box-img"
+				href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
+				<img class="lazy-loading-image loaded"
+				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsStartup["thumbnail"]?>"
+				alt="<?php echo $NewsStartup["tieude"] ?>">
+			</a>
+			<div class="media-body news-info">
+				<h2 class="news-title">
+					<a
+						href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>"
+						title="<?php echo $NewsStartup["tieude"] ?>"><?php echo $NewsStartup["tieude"] ?></a>
+				</h2>
+				<p class="news-desc"><?php echo $NewsStartup["motangan"] ?></p>
+				<p class="news-posted">
+					<span class="origin"><a title="<?php echo $NewsStartup["nguon"] ?>"
+						href="<?php echo $NewsStartup["webnguon"] ?>"><?php echo $NewsStartup["nguon"] ?></a></span>
+					<span><i class="fa fa-eye"></i><?php echo $NewsStartup["luotxem"] ?></span>
+				</p>
 			</div>
 		</div>
 		<?php } ?>
