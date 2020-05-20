@@ -244,10 +244,11 @@
     padding: 7px 12px;
     border: none;
 }
+
 </style>
 <section class="news-main home-section">
 	<div class="container">
-		<div class="columns news-main-container">
+		<div class="columns is-gapless news-main-container">
 			<div class="column new-main-left">
 			<?php $row = $data["NewsThumbnail"];?>
 				<div class="new-item">
@@ -271,8 +272,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="column new-main-right">
-				<div class="columns is-multiline is-mobile">
+			<div class="column new-main-right is-hidden-mobile">
+				<div class="columns is-gapless is-multiline is-mobile">
 					<div class="column is-half">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[1]["tieude"] ?>"
