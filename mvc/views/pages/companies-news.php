@@ -246,7 +246,16 @@
 }
 /*gap*/
 .gap-right-less{
-	padding-right: 0;
+	padding-right: 0.5rem;
+}
+.gap-left-less{
+	padding-left: 0.5rem;
+}
+.gap-top-less{
+	padding-top: 0.5rem;
+}
+.gap-bottom-less{
+	padding-bottom: 0.5rem;
 }
 </style>
 <section class="news-main home-section">
@@ -277,7 +286,7 @@
 			</div>
 			<div class="column new-main-right">
 				<div class="columns is-multiline is-mobile">
-					<div class="column is-half gap-right-less">
+					<div class="column is-half gap-right-less gap-bottom-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[1]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>">
@@ -299,7 +308,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="column is-half gap-right-less">
+					<div class="column is-half gap-left-less gap-bottom-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[2]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>">
@@ -321,7 +330,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="column is-half gap-right-less">
+					<div class="column is-half gap-right-less gap-top-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[3]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>">
@@ -343,7 +352,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="column is-half gap-right-less">
+					<div class="column is-half gap-left-less gap-top-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[4]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>">
