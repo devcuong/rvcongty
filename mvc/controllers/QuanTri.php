@@ -277,7 +277,7 @@ class QuanTri extends Controller
         
         // Kiểm tra công ty có hay chưa
         $daco = $this->CongTyModel->LayCongTyBangSlug(trim($this->ToSlug(trim($tenCongTy))));
-        mysqli_num_rows($daco);
+        //mysqli_num_rows($daco);
         if (mysqli_num_rows($daco) == 0) {
             $kt = false;
             $db = new DB();
