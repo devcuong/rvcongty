@@ -244,11 +244,14 @@
     padding: 7px 12px;
     border: none;
 }
-
+/*gap*/
+.gap-right-less{
+	padding-right: 0;
+}
 </style>
 <section class="news-main home-section">
 	<div class="container">
-		<div class="columns is-gapless news-main-container">
+		<div class="columns news-main-container">
 			<div class="column new-main-left">
 			<?php $row = $data["NewsThumbnail"];?>
 				<div class="new-item">
@@ -272,9 +275,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="column new-main-right is-hidden-mobile">
-				<div class="columns is-gapless is-multiline is-mobile">
-					<div class="column is-half">
+			<div class="column new-main-right">
+				<div class="columns is-multiline is-mobile">
+					<div class="column is-half gap-right-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[1]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>">
@@ -296,7 +299,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="column is-half">
+					<div class="column is-half gap-right-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[2]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>">
@@ -318,7 +321,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="column is-half">
+					<div class="column is-half gap-right-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[3]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>">
@@ -340,7 +343,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="column is-half">
+					<div class="column is-half gap-right-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[4]["tieude"] ?>"
 								href="<?php echo $servername ?>/companies-news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>">
