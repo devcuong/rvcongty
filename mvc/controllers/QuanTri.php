@@ -3,7 +3,7 @@ require 'mvc/class/Server.php';
 
 class QuanTri extends Controller
 {
-
+    
     // Khai báo model
     public $UserModel;
 
@@ -32,7 +32,7 @@ class QuanTri extends Controller
             "Page" => "quan-tri"
         ]);
     }
-
+    
     // QUẢN TRỊ VIÊN ĐĂNG NHẬP
     public function DangNhap()
     {
@@ -62,7 +62,7 @@ class QuanTri extends Controller
             exit();
         }
     }
-
+    
     // QUẢN TRỊ VIÊN ĐĂNG XUẤT
     public function DangXuat()
     {
@@ -74,7 +74,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-
+    
     // QUẢN TRỊ CHUNG
     public function QuanTriCongTy()
     {
@@ -83,7 +83,7 @@ class QuanTri extends Controller
             "Page" => "quan-tri-cong-ty"
         ]);
     }
-
+    
     // THÊM CÔNG TY
     public function ThemCongTy()
     {
@@ -147,7 +147,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-
+    
     // TẤT CẢ CÔNG TY
     public function TatCaCongTy($a, $b, $c = null)
     {
@@ -182,7 +182,7 @@ class QuanTri extends Controller
             exit();
         }
     }
-
+    
     // XÓA CÔNG TY
     public function XoaCongTy($a, $b, $c)
     {
@@ -210,17 +210,26 @@ class QuanTri extends Controller
             }
         }
     }
-
+    
     // GET DATA
     public function GetDataCongTy($a = NULL)
     {
         $urlCompany = "";
         if (isset($_POST["url-company"])) {
             $urlCompany = $_POST["url-company"];
-        } else if ($a != null) {
-            $urlCompany = $a;
-        }
-        $page = file_get_contents($urlCompany);
+        } else 
+            if ($a != null) {
+                $urlCompany = $a;
+            }
+        
+        $context = stream_context_create(array(
+            "http" => array(
+                "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+            )
+        ));
+        
+        $page = file_get_contents($urlCompany, false, $context);
+
         @$doc = new DOMDocument();
         @$doc->loadHTML($page);
         
@@ -262,13 +271,13 @@ class QuanTri extends Controller
         
         $duongDanHinhAnh = 'mvc/public/asset/companies/logo/' . $imageName;
         
-        file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com" . $imageUrl));
+        file_put_contents($duongDanHinhAnh, file_get_contents("https://reviewcongty.com" . $imageUrl, false, $context));
         
         $createdDate = date("Y-m-d H:i:s");
         
         // Kiểm tra công ty có hay chưa
         $daco = $this->CongTyModel->LayCongTyBangSlug(trim($this->ToSlug(trim($tenCongTy))));
-        
+        mysqli_num_rows($daco);
         if (mysqli_num_rows($daco) == 0) {
             $kt = false;
             $db = new DB();
@@ -284,7 +293,7 @@ class QuanTri extends Controller
             echo "ĐÃ CÓ " . $tenCongTy;
         }
     }
-
+    
     // get data page
     public function GetDataPageCongTy()
     {
@@ -511,7 +520,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-
+    
     // SỬA TIN TỨC
     public function CapNhatNews($a, $b, $c = NULL)
     {
@@ -554,7 +563,7 @@ class QuanTri extends Controller
                 $motangan = $_POST["mo-ta-ngan"];
             }
             if (isset($_FILES['thumbnail']['name'])) {
-                //echo $_FILES['thumbnail']['name'];
+                // echo $_FILES['thumbnail']['name'];
                 // Nếu file upload không bị lỗi,
                 if ($_FILES['thumbnail']['error'] > 0) {
                     echo 'File Upload Bị Lỗi';
