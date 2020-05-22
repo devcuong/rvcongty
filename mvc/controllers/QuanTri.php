@@ -225,7 +225,7 @@ class QuanTri extends Controller
         
         $context = stream_context_create(array(
             "http" => array(
-                "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+                "header" => "User-Agent: Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
             )
         ));
         
@@ -305,10 +305,10 @@ class QuanTri extends Controller
             $urlCompany = $_POST["url-page"];
             
             $context = stream_context_create(array(
-                "http" => array(
-                    "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
-                )
-            ));
+            "http" => array(
+                "header" => "User-Agent: Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+            )
+        ));
             
             $page = file_get_contents($urlCompany, false, $context);
             @$doc = new DOMDocument();
