@@ -31,6 +31,7 @@ class CutString{
         return trim($new_string);
     }
     
+    /*tìm kiếm chuỗi con trong chuỗi lớn*/
     function search_string($search, $string){
         $position = strpos($string, $search, 5);
         if (is_numeric($position)){
@@ -40,6 +41,11 @@ class CutString{
             return -1;
         }
     } 
+    
+    /*xóa chuỗi .see-more__expand*/
+    function remove_see_more($string){
+        $from = $this->search_string(".see-more__expand", $string);
+    }
     
     function get_nav_render_with_tab($current, $pages, $route, $tab){
         $nav = "";
