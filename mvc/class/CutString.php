@@ -45,6 +45,10 @@ class CutString{
     /*xóa chuỗi .see-more__expand*/
     function remove_see_more($string){
         $from = $this->search_string(".see-more__expand", $string);
+        if($from<0)
+            return $string;
+        else
+            return substr($string,0,intval($from));
     }
     
     function get_nav_render_with_tab($current, $pages, $route, $tab){
