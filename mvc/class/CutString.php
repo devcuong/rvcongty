@@ -31,6 +31,16 @@ class CutString{
         return trim($new_string);
     }
     
+    function search_string($search, $string){
+        $position = strpos($string, $search, 5);
+        if (is_numeric($position)){
+            return "Found at position: " . $position;
+        }
+        else{
+            return "Not Found";
+        }
+    } 
+    
     function get_nav_render_with_tab($current, $pages, $route, $tab){
         $nav = "";
         if ($pages > 0) {

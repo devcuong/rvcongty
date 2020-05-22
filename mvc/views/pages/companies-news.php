@@ -61,6 +61,7 @@
 .new-main-left .new-item {
 	height: 100%;
 }
+
 .news-main .new-item {
 	position: relative;
 	width: 100%;
@@ -193,74 +194,82 @@
 }
 /*button xem tất cả*/
 .justify-content-center {
-    -ms-flex-pack: center !important;
-    -webkit-box-pack: center !important;
-    justify-content: center !important;
+	-ms-flex-pack: center !important;
+	-webkit-box-pack: center !important;
+	justify-content: center !important;
 }
+
 .d-flex {
-    display: -ms-flexbox !important;
-    display: -webkit-box !important;
-    display: flex !important;
+	display: -ms-flexbox !important;
+	display: -webkit-box !important;
+	display: flex !important;
 }
+
 .btn-view-more {
-    background-color: #666;
-    border-color: #666;
-    color: #fff;
+	background-color: #666;
+	border-color: #666;
+	color: #fff;
 }
 
 .btn-icon-right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    padding-right: 38px;
-    border-radius: 0px;
-    font-size: 90%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	padding-right: 38px;
+	border-radius: 0px;
+	font-size: 90%;
 }
 
 .btn-icon-right span {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 28px;
-    height: 100%;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    background-color: rgba(0,0,0,0.2);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 28px;
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background-color: rgba(0, 0, 0, 0.2);
 }
+
 .btn-view-more:hover, .btn-view-more:focus, .btn-view-more:active {
-    background-color: #FF4000;
-    border-color: #FF4000;
-    color: #fff;
+	background-color: #FF4000;
+	border-color: #FF4000;
+	color: #fff;
 }
+
 .btn {
-    padding: 7px 12px;
-    border: none;
+	padding: 7px 12px;
+	border: none;
 }
 /*gap*/
-.gap-right-less{
+.gap-right-less {
 	padding-right: 0.5rem;
 }
-.gap-left-less{
+
+.gap-left-less {
 	padding-left: 0.5rem;
 }
-.gap-top-less{
+
+.gap-top-less {
 	padding-top: 0.5rem;
 }
-.gap-bottom-less{
+
+.gap-bottom-less {
 	padding-bottom: 0.5rem;
 }
 </style>
 <section class="news-main home-section">
 	<div class="container">
 		<div class="columns news-main-container">
+
 			<div class="column new-main-left">
 			<?php $row = $data["NewsThumbnail"];?>
 				<div class="new-item">
