@@ -34,10 +34,10 @@ class CutString{
     function search_string($search, $string){
         $position = strpos($string, $search, 5);
         if (is_numeric($position)){
-            return "Found at position: " . $position;
+            return $position;
         }
         else{
-            return "Not Found";
+            return -1;
         }
     } 
     
