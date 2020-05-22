@@ -19,14 +19,14 @@ class ReviewModel extends DB{
     }
     
     // Thêm review
-    public function ThemReview($reviewer,$position, $rate, $noidung, $congty, $thoigian, $contact){
-        $qr= "INSERT INTO review (reviewer, position, rate, noidung, congty, thoigian, contact) VALUES(?, ?, ?, ?, ?, ?, ?)";
+    public function ThemReview($reviewer,$position, $rate, $noidung, $congty, $thoigian){
+        $qr= "INSERT INTO review (reviewer, position, rate, noidung, congty, thoigian) VALUES(?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_stmt_init($this->con);
         $result = 0;
         if(!mysqli_stmt_prepare($stmt, $qr)){
             echo "SQL statement failed";
         }else{
-            mysqli_stmt_bind_param($stmt, "sssssss", $reviewer, $position, $rate, $noidung, $congty, $thoigian, $contact);
+            mysqli_stmt_bind_param($stmt, "ssssss", $reviewer, $position, $rate, $noidung, $congty, $thoigian);
             $result = mysqli_stmt_execute($stmt);
         }
         return $result;
@@ -41,7 +41,7 @@ class ReviewModel extends DB{
     
     // Lấy review để phân trang
     public function LayReviewPhanTrang($iDCongTy ,$soReviewBoQua, $soReviewMoiTrang){
-        $qr = "SELECT review.id AS review_id, review.reviewer AS review_reviewer, review.position AS review_position, review.rate AS review_rate, review.noidung AS review_noidung, review.congty AS review_congty, review.thoigian AS review_thoigian,review.contact AS review_contact ,reply.id AS reply_id, reply.idreview AS reply_idreview, reply.data AS reply_data FROM review LEFT JOIN reply on reply.idreview = review.id WHERE review.congty = $iDCongTy ORDER BY review.id DESC LIMIT ".$soReviewBoQua.','.$soReviewMoiTrang;
+        $qr = "SELECT review.id AS review_id, review.reviewer AS review_reviewer, review.position AS review_position, review.rate AS review_rate, review.noidung AS review_noidung, review.congty AS review_congty, review.thoigian AS review_thoigian, reply.id AS reply_id, reply.idreview AS reply_idreview, reply.data AS reply_data FROM review LEFT JOIN reply on reply.idreview = review.id WHERE review.congty = $iDCongTy ORDER BY review.id DESC LIMIT ".$soReviewBoQua.','.$soReviewMoiTrang;
         return mysqli_query($this->con, $qr);
        // return $qr;
     }

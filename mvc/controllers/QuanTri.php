@@ -1,5 +1,6 @@
 <?php
 require 'mvc/class/Server.php';
+require 'mvc/class/CutString.php';
 
 class QuanTri extends Controller
 {
@@ -265,6 +266,8 @@ class QuanTri extends Controller
         // First comment
         $nodeComment = $xpath->query("//div[@class='card-content']");
         $firstComment = $nodeComment->item(0)->nodeValue;
+        $cutString = new CutString();
+        $insertComment = $cutString->remove_see_more($firstComment);
         
         // Model
         $congty = $this->model("CongTyModel");
@@ -284,7 +287,7 @@ class QuanTri extends Controller
             // Thêm công ty
             $kq = $this->CongTyModel->ThemCongTy(trim($tenCongTy), trim($this->ToSlug(trim($tenCongTy))), trim($imageName), trim($nganhNghe), trim($nhanVien), trim($diaChi), $createdDate);
             $lastId = $this->CongTyModel->GetLastId();
-            $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 3, $firstComment, $lastId, $createdDate, "Không có contact");
+            $kq2 = $this->ReviewModel->ThemReview("Ẩn danh", "Dev", 3, $insertComment, $lastId, $createdDate);
             $kq3 = $this->CongTyModel->UpdateRateCongTy($lastId, 3, $createdDate);
             if ($kq3) {
                 echo "THÀNH CÔNG " . $tenCongTy . " " . $lastId;
@@ -300,7 +303,14 @@ class QuanTri extends Controller
         if (isset($_POST["url-page"])) {
             $url = "https://reviewcongty.com";
             $urlCompany = $_POST["url-page"];
-            $page = file_get_contents($urlCompany);
+            
+            $context = stream_context_create(array(
+                "http" => array(
+                    "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+                )
+            ));
+            
+            $page = file_get_contents($urlCompany, false, $context);
             @$doc = new DOMDocument();
             @$doc->loadHTML($page);
             

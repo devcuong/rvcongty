@@ -167,7 +167,7 @@ class Companies extends Controller
         
         /*echo $createdDate;*/
         
-        $kq = $this->ReviewModel->ThemReview($reviewerName, $reviewerPosition, $score, $content, $idCongTy, $createdDate, $contactReviewer);
+        $kq = $this->ReviewModel->ThemReview($reviewerName, $reviewerPosition, $score, $content, $idCongTy, $createdDate);
         if ($kq > 0) {
             $kq2 = $this->CongTyModel->UpdateRateCongTy($idCongTy, $score, $createdDate);
             echo $kq2;
