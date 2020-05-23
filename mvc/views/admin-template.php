@@ -89,19 +89,30 @@ function changeToSlug(e) {
 
     // get du lieu page reviewcongty
     function getDuLieuPage(){
-		if($("#link-page").val() != ""){
-			  $.ajax({
-		          type: "POST",
-		          url: SiteName + "/quan-tri/get-data-page-cong-ty/",
-		          data: {"url-page": $("#link-page").val()},
-		          success: function(data)
-		          {
-		             if(data){
-			             $("#mess-return").html(data);
-		             }
-		          }
-		        });
-		}
+    	setInterval(layDuLieuPage, 10000);
+    }
+
+    function layDuLieuPage(){
+    	var tuPage = parseInt($("#tu-page").val());
+   	 	alert(tuPage);
+     	var denPage = parseInt($("#den-page").val());
+        if(tuPage != denPage){
+        	if($("#link-page").val() != ""){
+    			  $.ajax({
+    		          type: "POST",
+    		          url: SiteName + "/quan-tri/get-data-page-cong-ty/",
+    		          data: {"url-page": $("#link-page").val()+tuPage},
+    		          success: function(data)
+    		          {
+    		             if(data){
+    			             $("#mess-return").html(data);
+    		             }
+    		          }
+    		        });
+    		}
+        	tuPage = parseInt(tuPage) + 1;
+        	$("#tu-page").val(tuPage);
+        }
     }
     </script>
 </head>
@@ -173,8 +184,10 @@ function changeToSlug(e) {
 						CÔNG TY</a></li>
 				<li><a href="<?php echo $servername ?>/quan-tri/review-moi-nhat">REVIEW
 						MỚI NHẤT</a></li>
-				<li><a href="<?php echo $servername ?>/quan-tri/them-tin-tuc">THÊM TIN TỨC</a></li>
-				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-tin-tuc">TẤT CẢ TIN TỨC</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/them-tin-tuc">THÊM
+						TIN TỨC</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-tin-tuc">TẤT
+						CẢ TIN TỨC</a></li>
 				<li><a href="#">REVIEW YÊU CẦU XÓA</a></li>
 			</ul>
 		</div>

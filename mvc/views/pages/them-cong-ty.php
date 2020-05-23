@@ -29,7 +29,9 @@
   </div>
    <div class="form-group">
     <label>Link Page</label>
-    <input type="text" class="form-control" id="link-page" name="link-page" placeholder="Link Page ReviewCongty">
+    <input type="text" class="form-control" id="link-page" name="link-page" placeholder="Link Page ReviewCongty"><br>
+    <input type="text" class="form-control" id="tu-page" name="tu-page" placeholder="Từ page reviewcongty"><br>
+    <input type="text" class="form-control" id="den-page" name="den-page" placeholder="Đến Page ReviewCongty">
   </div>
   <span id="mess-return"></span>
   <button type="submit" name="btn-submit" class="btn btn-primary">Submit</button>

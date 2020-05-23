@@ -225,7 +225,7 @@ class QuanTri extends Controller
         
         $context = stream_context_create(array(
             "http" => array(
-                "header" => "User-Agent: Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+                "header" => "User-Agent: Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.60 Mobile Safari/537.36"
             )
         ));
         
@@ -306,7 +306,7 @@ class QuanTri extends Controller
             
             $context = stream_context_create(array(
             "http" => array(
-                "header" => "User-Agent: Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+                "header" => "User-Agent: Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.60 Mobile Safari/537.36"
             )
         ));
             
