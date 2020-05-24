@@ -1227,6 +1227,9 @@ margin-bottom
     display: flex;
   }
 }
+.review a{
+	color: #e86b1f;
+}
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async
