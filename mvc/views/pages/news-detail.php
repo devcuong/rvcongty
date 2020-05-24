@@ -266,8 +266,8 @@ while ($row = mysqli_fetch_array($data["News"])) {
 									href="<?php echo $servername?>/companies-news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>"><?php echo $r["tieude"] ?></a>
 							</h3>
 							<p class="news-posted">
-								<span class="origin"><a title="BanXeHoi"
-									href="<?php echo $servername ?>/companies-news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>"><?php echo $r["nguon"] ?></a></span>
+								<span class="origin"><a title="<?php echo $r["tieude"] ?>"
+									href="<?php echo $r["webnguon"] ?>"><?php echo $r["nguon"] ?></a></span>
 								<span><i
 									class="fa fa-eye"></i><?php echo $r["luotxem"] ?></span>
 							</p>

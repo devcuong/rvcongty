@@ -89,12 +89,7 @@ function changeToSlug(e) {
 
     // get du lieu page reviewcongty
     function getDuLieuPage(){
-    	setInterval(layDuLieuPage, 10000);
-    }
-
-    function layDuLieuPage(){
     	var tuPage = parseInt($("#tu-page").val());
-   	 	alert(tuPage);
      	var denPage = parseInt($("#den-page").val());
         if(tuPage != denPage){
         	if($("#link-page").val() != ""){
@@ -106,12 +101,13 @@ function changeToSlug(e) {
     		          {
     		             if(data){
     			             $("#mess-return").html(data);
+    			             tuPage = parseInt(tuPage) + 1;
+     			         	 $("#tu-page").val(tuPage);
+    			             getDuLieuPage();
     		             }
     		          }
     		        });
     		}
-        	tuPage = parseInt(tuPage) + 1;
-        	$("#tu-page").val(tuPage);
         }
     }
     </script>
