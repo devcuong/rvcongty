@@ -271,7 +271,7 @@
 			<?php $row = $data["NewsThumbnail"];?>
 				<div class="new-item">
 					<a class="box-img" title="<?php echo $row[0]["tieude"] ?>"
-						href="<?php echo $servername ?>/companies-news/<?php echo $row[0]["slugtieude"] ?>-<?php echo $row[0]["id"]; ?>">
+						href="<?php echo $servername ?>/news/<?php echo $row[0]["slugtieude"] ?>-<?php echo $row[0]["id"]; ?>">
 						<img class="new-img img-responsive lazy-loading-image loaded"
 						src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[0]["thumbnail"] ?>"
 						title="<?php echo $row[0]["tieude"] ?>"
@@ -280,11 +280,11 @@
 					<div class="new-info">
 						<h3 class="new-title" title="<?php echo $row[0]["tieude"] ?>">
 							<a title="<?php echo $row[0]["tieude"] ?>"
-								href="<?php echo $servername ?>/companies-news/<?php echo $row[0]["slugtieude"] ?>-<?php echo $row[0]["id"]; ?>"><?php echo $row[0]["tieude"] ?></a>
+								href="<?php echo $servername ?>/news/<?php echo $row[0]["slugtieude"] ?>-<?php echo $row[0]["id"]; ?>"><?php echo $row[0]["tieude"] ?></a>
 						</h3>
 						<p class="news-posted mb-0">
 							<span class="origin"><a title="<?php echo $row[0]["nguon"] ?>"
-								href="<?php echo $servername ?>/companies-news/<?php echo $row[0]["slugtieude"] ?>-<?php echo $row[0]["id"]; ?>"><?php echo $row[0]["nguon"] ?></a></span>
+								href="<?php echo $servername ?>/news/<?php echo $row[0]["slugtieude"] ?>-<?php echo $row[0]["id"]; ?>"><?php echo $row[0]["nguon"] ?></a></span>
 							<span><i class="fa fa-eye"></i><?php echo $row[0]["luotxem"] ?></span>
 						</p>
 					</div>
@@ -295,7 +295,7 @@
 					<div class="column is-half gap-right-less gap-bottom-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[1]["tieude"] ?>"
-								href="<?php echo $servername ?>/companies-news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>">
+								href="<?php echo $servername ?>/news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>">
 								<img class="new-img img-responsive lazy-loading-image loaded"
 								src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[1]["thumbnail"] ?>"
 								title="<?php echo $row[1]["tieude"] ?>"
@@ -304,11 +304,11 @@
 							<div class="new-info">
 								<h3 class="new-title" title="<?php echo $row[1]["tieude"] ?>">
 									<a title="<?php echo $row[1]["tieude"] ?>"
-										href="<?php echo $servername ?>/companies-news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>"><?php echo $row[1]["tieude"] ?></a>
+										href="<?php echo $servername ?>/news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>"><?php echo $row[1]["tieude"] ?></a>
 								</h3>
 								<p class="news-posted mb-0">
 									<span class="origin"><a title="<?php echo $row[1]["nguon"] ?>"
-										href="<?php echo $servername ?>/companies-news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>"><?php echo $row[1]["nguon"] ?></a></span>
+										href="<?php echo $servername ?>/news/<?php echo $row[1]["slugtieude"] ?>-<?php echo $row[1]["id"]; ?>"><?php echo $row[1]["nguon"] ?></a></span>
 									<span><i class="fa fa-eye"></i><?php echo $row[1]["luotxem"] ?></span>
 								</p>
 							</div>
@@ -317,7 +317,7 @@
 					<div class="column is-half gap-left-less gap-bottom-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[2]["tieude"] ?>"
-								href="<?php echo $servername ?>/companies-news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>">
+								href="<?php echo $servername ?>/news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>">
 								<img class="new-img img-responsive lazy-loading-image loaded"
 								src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[2]["thumbnail"] ?>"
 								title="<?php echo $row[2]["tieude"] ?>"
@@ -326,11 +326,11 @@
 							<div class="new-info">
 								<h3 class="new-title" title="<?php echo $row[2]["tieude"] ?>">
 									<a title="<?php echo $row[2]["tieude"] ?>"
-										href="<?php echo $servername ?>/companies-news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>"><?php echo $row[2]["tieude"] ?></a>
+										href="<?php echo $servername ?>/news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>"><?php echo $row[2]["tieude"] ?></a>
 								</h3>
 								<p class="news-posted mb-0">
 									<span class="origin"><a title="<?php echo $row[2]["nguon"] ?>"
-										href="<?php echo $servername ?>/companies-news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>"><?php echo $row[2]["nguon"] ?></a></span>
+										href="<?php echo $servername ?>/news/<?php echo $row[2]["slugtieude"] ?>-<?php echo $row[2]["id"]; ?>"><?php echo $row[2]["nguon"] ?></a></span>
 									<span><i class="fa fa-eye"></i><?php echo $row[2]["luotxem"] ?></span>
 								</p>
 							</div>
@@ -339,7 +339,7 @@
 					<div class="column is-half gap-right-less gap-top-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[3]["tieude"] ?>"
-								href="<?php echo $servername ?>/companies-news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>">
+								href="<?php echo $servername ?>/news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>">
 								<img class="new-img img-responsive lazy-loading-image loaded"
 								src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[3]["thumbnail"] ?>"
 								title="<?php echo $row[3]["tieude"] ?>"
@@ -348,11 +348,11 @@
 							<div class="new-info">
 								<h3 class="new-title" title="<?php echo $row[3]["tieude"] ?>">
 									<a title="<?php echo $row[3]["tieude"] ?>"
-										href="<?php echo $servername ?>/companies-news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>"><?php echo $row[3]["tieude"] ?></a>
+										href="<?php echo $servername ?>/news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>"><?php echo $row[3]["tieude"] ?></a>
 								</h3>
 								<p class="news-posted mb-0">
 									<span class="origin"><a title="<?php echo $row[3]["nguon"] ?>"
-										href="<?php echo $servername ?>/companies-news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>"><?php echo $row[3]["nguon"] ?></a></span>
+										href="<?php echo $servername ?>/news/<?php echo $row[3]["slugtieude"] ?>-<?php echo $row[3]["id"]; ?>"><?php echo $row[3]["nguon"] ?></a></span>
 									<span><i class="fa fa-eye"></i><?php echo $row[3]["luotxem"] ?></span>
 								</p>
 							</div>
@@ -361,7 +361,7 @@
 					<div class="column is-half gap-left-less gap-top-less">
 						<div class="new-item">
 							<a class="box-img" title="<?php echo $row[4]["tieude"] ?>"
-								href="<?php echo $servername ?>/companies-news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>">
+								href="<?php echo $servername ?>/news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>">
 								<img class="new-img img-responsive lazy-loading-image loaded"
 								src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row[4]["thumbnail"] ?>"
 								title="<?php echo $row[4]["tieude"] ?>"
@@ -370,11 +370,11 @@
 							<div class="new-info">
 								<h3 class="new-title" title="<?php echo $row[4]["tieude"] ?>">
 									<a title="<?php echo $row[4]["tieude"] ?>"
-										href="<?php echo $servername ?>/companies-news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>"><?php echo $row[4]["tieude"] ?></a>
+										href="<?php echo $servername ?>/news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>"><?php echo $row[4]["tieude"] ?></a>
 								</h3>
 								<p class="news-posted mb-0">
 									<span class="origin"><a title="<?php echo $row[4]["nguon"] ?>"
-										href="<?php echo $servername ?>/companies-news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>"><?php echo $row[4]["nguon"] ?></a></span>
+										href="<?php echo $servername ?>/news/<?php echo $row[4]["slugtieude"] ?>-<?php echo $row[4]["id"]; ?>"><?php echo $row[4]["nguon"] ?></a></span>
 									<span><i class="fa fa-eye"></i><?php echo $row[4]["luotxem"] ?></span>
 								</p>
 							</div>
@@ -395,7 +395,7 @@
 		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
 				<a target="_self" title="<?php echo $newsBinhThuong["tieude"] ?>"
-					href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"><?php echo $newsBinhThuong["tieude"] ?></a>
+					href="<?php echo $servername ?>/news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"><?php echo $newsBinhThuong["tieude"] ?></a>
 			</h2>
 			<p class="news-posted">
 				<span class="origin"><a title="Autopro"
@@ -404,7 +404,7 @@
 			</p>
 			<div class="media">
 				<a class="news-img"
-					href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>">
+					href="<?php echo $servername ?>/news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>">
 					<img class="lazy-loading-image loaded"
 					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $newsBinhThuong["thumbnail"]?>"
 					alt="<?php echo $newsBinhThuong["tieude"] ?>">
@@ -417,7 +417,7 @@
 		<div class="news media news-item is-hidden-tablet media-mobile">
 			<a title="<?php echo $newsBinhThuong["tieude"] ?>"
 				class="border-primary box-img"
-				href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>">
+				href="<?php echo $servername ?>/news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>">
 				<img class="lazy-loading-image loaded"
 				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $newsBinhThuong["thumbnail"]?>"
 				alt="<?php echo $newsBinhThuong["tieude"] ?>">
@@ -425,7 +425,7 @@
 			<div class="media-body news-info">
 				<h2 class="news-title">
 					<a
-						href="<?php echo $servername ?>/companies-news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"
+						href="<?php echo $servername ?>/news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"
 						title="<?php echo $newsBinhThuong["tieude"] ?>"><?php echo $newsBinhThuong["tieude"] ?></a>
 				</h2>
 				<p class="news-desc"><?php echo $newsBinhThuong["motangan"] ?></p>
@@ -440,7 +440,7 @@
 		<?php } ?>
 		<div class="d-flex justify-content-center">
 			<a class="btn btn-view-more btn-icon-right"
-				href="<?php echo $servername ?>/companies-news/tin-cong-ty" title="Xem tất cả">Xem
+				href="<?php echo $servername ?>/news/tin-cong-ty" title="Xem tất cả">Xem
 				tất cả <span> <i class="fas fa-chevron-right"></i>
 			</span>
 			</a>
@@ -450,7 +450,7 @@
 		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
 				<a target="_self" title="<?php echo $NewsECom["tieude"] ?>"
-					href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"><?php echo $NewsECom["tieude"] ?></a>
+					href="<?php echo $servername ?>/news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"><?php echo $NewsECom["tieude"] ?></a>
 			</h2>
 			<p class="news-posted">
 				<span class="origin"><a title="<?php echo $NewsECom["nguon"] ?>"
@@ -459,7 +459,7 @@
 			</p>
 			<div class="media">
 				<a class="news-img"
-					href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>">
+					href="<?php echo $servername ?>/news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>">
 					<img class="lazy-loading-image loaded"
 					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsECom["thumbnail"]?>"
 					alt="<?php echo $NewsECom["tieude"] ?>">
@@ -472,7 +472,7 @@
 		<div class="news media news-item is-hidden-tablet media-mobile">
 			<a title="<?php echo $NewsECom["tieude"] ?>"
 				class="border-primary box-img"
-				href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>">
+				href="<?php echo $servername ?>/news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>">
 				<img class="lazy-loading-image loaded"
 				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsECom["thumbnail"]?>"
 				alt="<?php echo $NewsECom["tieude"] ?>">
@@ -480,7 +480,7 @@
 			<div class="media-body news-info">
 				<h2 class="news-title">
 					<a
-						href="<?php echo $servername ?>/companies-news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"
+						href="<?php echo $servername ?>/news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"
 						title="<?php echo $NewsECom["tieude"] ?>"><?php echo $NewsECom["tieude"] ?></a>
 				</h2>
 				<p class="news-desc"><?php echo $NewsECom["motangan"] ?></p>
@@ -494,7 +494,7 @@
 		<?php } ?>
 		<div class="d-flex justify-content-center">
 			<a class="btn btn-view-more btn-icon-right"
-				href="<?php echo $servername ?>/companies-news/tin-cong-ty-ecommerce" title="Xem tất cả">Xem
+				href="<?php echo $servername ?>/news/tin-cong-ty-ecommerce" title="Xem tất cả">Xem
 				tất cả <span> <i class="fas fa-chevron-right"></i>
 			</span>
 			</a>
@@ -504,7 +504,7 @@
 		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
 				<a target="_self" title="<?php echo $NewsStartup["tieude"] ?>"
-					href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>"><?php echo $NewsStartup["tieude"] ?></a>
+					href="<?php echo $servername ?>/news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>"><?php echo $NewsStartup["tieude"] ?></a>
 			</h2>
 			<p class="news-posted">
 				<span class="origin"><a title="<?php echo $NewsStartup["nguon"] ?>"
@@ -513,7 +513,7 @@
 			</p>
 			<div class="media">
 				<a class="news-img"
-					href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
+					href="<?php echo $servername ?>/news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
 					<img class="lazy-loading-image loaded"
 					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsStartup["thumbnail"]?>"
 					alt="<?php echo $NewsStartup["tieude"] ?>">
@@ -526,7 +526,7 @@
 		<div class="news media news-item is-hidden-tablet media-mobile">
 			<a title="<?php echo $NewsStartup["tieude"] ?>"
 				class="border-primary box-img"
-				href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
+				href="<?php echo $servername ?>/news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
 				<img class="lazy-loading-image loaded"
 				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsStartup["thumbnail"]?>"
 				alt="<?php echo $NewsStartup["tieude"] ?>">
@@ -534,7 +534,7 @@
 			<div class="media-body news-info">
 				<h2 class="news-title">
 					<a
-						href="<?php echo $servername ?>/companies-news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>"
+						href="<?php echo $servername ?>/news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>"
 						title="<?php echo $NewsStartup["tieude"] ?>"><?php echo $NewsStartup["tieude"] ?></a>
 				</h2>
 				<p class="news-desc"><?php echo $NewsStartup["motangan"] ?></p>
@@ -548,7 +548,7 @@
 		<?php } ?> 
 		<div class="d-flex justify-content-center">
 			<a class="btn btn-view-more btn-icon-right"
-				href="<?php echo $servername ?>/companies-news/tin-cong-ty-startup" title="Xem tất cả">Xem
+				href="<?php echo $servername ?>/news/tin-cong-ty-startup" title="Xem tất cả">Xem
 				tất cả <span> <i class="fas fa-chevron-right"></i>
 			</span>
 			</a>

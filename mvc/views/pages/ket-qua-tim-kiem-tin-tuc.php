@@ -120,7 +120,7 @@
 							aria-hidden="true"></i>
 					</span> <span>Trang chủ</span>
 				</a></li>
-				<li><a href="<?php echo $servername ?>/companies-news/"> <span>Companies
+				<li><a href="<?php echo $servername ?>/news/"> <span>Companies
 							News</span>
 				</a></li>
 				<li class="is-active"><a href="#"> <span>Kết quả tìm kiếm tin tức</span>
@@ -137,7 +137,7 @@
 <div class="news box-border news-item is-hidden-mobile">
 					<h2 class="news-title">
 						<a target="_self" title="<?php echo $AllKetQua["tieude"] ?>"
-							href="<?php echo $servername ?>/companies-news/<?php echo $AllKetQua["slugtieude"] ?>-<?php echo $AllKetQua["id"] ?>"><?php echo $AllKetQua["tieude"] ?></a>
+							href="<?php echo $servername ?>/news/<?php echo $AllKetQua["slugtieude"] ?>-<?php echo $AllKetQua["id"] ?>"><?php echo $AllKetQua["tieude"] ?></a>
 					</h2>
 					<p class="news-posted">
 						<span class="origin"><a title="<?php echo $AllKetQua["nguon"] ?>"
@@ -146,7 +146,7 @@
 					</p>
 					<div class="media">
 						<a class="news-img"
-							href="<?php echo $servername ?>/companies-news/<?php echo $AllKetQua["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
+							href="<?php echo $servername ?>/news/<?php echo $AllKetQua["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
 							<img class="lazy-loading-image loaded" style="width: 100%"
 							src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $AllKetQua["thumbnail"]?>"
 							alt="<?php echo $AllKetQua["tieude"] ?>">
@@ -159,7 +159,7 @@
 				<div class="news media news-item is-hidden-tablet media-mobile">
 			<a title="<?php echo $AllKetQua["tieude"] ?>"
 				class="border-primary box-img"
-				href="<?php echo $servername ?>/companies-news/<?php echo $AllKetQua["slugtieude"] ?>-<?php echo $AllKetQua["id"] ?>">
+				href="<?php echo $servername ?>/news/<?php echo $AllKetQua["slugtieude"] ?>-<?php echo $AllKetQua["id"] ?>">
 				<img class="lazy-loading-image loaded"
 				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $AllKetQua["thumbnail"]?>"
 				alt="<?php echo $AllKetQua["tieude"] ?>">
@@ -167,7 +167,7 @@
 			<div class="media-body news-info">
 				<h2 class="news-title">
 					<a
-						href="<?php echo $servername ?>/companies-news/<?php echo $AllKetQua["slugtieude"] ?>-<?php echo $AllKetQua["id"] ?>"
+						href="<?php echo $servername ?>/news/<?php echo $AllKetQua["slugtieude"] ?>-<?php echo $AllKetQua["id"] ?>"
 						title="<?php echo $AllKetQua["tieude"] ?>"><?php echo $AllKetQua["tieude"] ?></a>
 				</h2>
 				<p class="news-desc"><?php echo $AllKetQua["motangan"] ?></p>

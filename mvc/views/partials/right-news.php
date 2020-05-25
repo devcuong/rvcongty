@@ -57,7 +57,7 @@
 			<div class="media">
 				<a class="news-right-img" target="_self"
 					title="<?php echo $row["tieude"] ?>"
-					href="<?php echo $servername ?>/companies-news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>">
+					href="<?php echo $servername ?>/news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>">
 					<img class="lazy-loading-image loaded"
 					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row["thumbnail"] ?>"
 					alt="<?php echo $row["tieude"] ?>"
@@ -67,7 +67,7 @@
 					<h3 class="news-right-title">
 						<a target="_self"
 							title="<?php echo $row["tieude"] ?>"
-							href="<?php echo $servername ?>/companies-news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>"><?php echo $row["tieude"] ?></a>
+							href="<?php echo $servername ?>/news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>"><?php echo $row["tieude"] ?></a>
 					</h3>
 					<p class="news-posted">
 						<span class="origin"><a title="<?php echo $row["tieude"] ?>"

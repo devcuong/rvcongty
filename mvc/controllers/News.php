@@ -1,5 +1,5 @@
 <?php
-class CompaniesNews extends Controller
+class News extends Controller
 {
     public $NewsModel;
     
@@ -59,7 +59,7 @@ class CompaniesNews extends Controller
             $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ";
             
             $this->view("main-template", [
-                "Page" => "companies-news",
+                "Page" => "news",
                 "Title" => $title,
                 "Description" => $description,
                 "NewsBinhThuong" => $newsBinhThuong,

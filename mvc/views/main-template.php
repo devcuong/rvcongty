@@ -1463,8 +1463,8 @@ margin-bottom
 				<div class="navbar-end">
 					<a href="<?php echo $servername ?>"
 						class="navbar-item <?php if($data["Page"] == "main-home") { echo "is-active";} else{ echo ""; }?>">Trang
-						chủ</a> <a href="<?php echo $servername ?>/companies-news/"
-						class="navbar-item <?php if($data["Page"] == "companies-news") { echo "is-active";} else{ echo ""; }?>">Tin
+						chủ</a> <a href="<?php echo $servername ?>/news/"
+						class="navbar-item <?php if($data["Page"] == "news") { echo "is-active";} else{ echo ""; }?>">Tin
 						tức</a>
 				</div>
 			</div>

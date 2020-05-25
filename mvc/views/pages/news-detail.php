@@ -197,7 +197,7 @@ while ($row = mysqli_fetch_array($data["News"])) {
             </a>
         </li>
         <li>
-            <a href="<?php echo $servername ?>/companies-news/">
+            <a href="<?php echo $servername ?>/news/">
                 <span>Companies News</span>
             </a>
         </li>
@@ -229,7 +229,7 @@ while ($row = mysqli_fetch_array($data["News"])) {
 				<?php while ($row2 = mysqli_fetch_array($data["NewsLienQuan"])) {?>
 				    <li class="list-group-item news-item"><h3 class="news-title">
 				    <a target="_self"
-	    href="<?php echo $servername ?>/companies-news/<?php echo $row2["slugtieude"] ?>-<?php echo $row2["id"] ?>"
+	    href="<?php echo $servername ?>/news/<?php echo $row2["slugtieude"] ?>-<?php echo $row2["id"] ?>"
 	    class="modal-link-content"
 	    title="<?php echo $row2["tieude"] ?>"><span
 	    class="times-small"></span><?php echo $row2["tieude"] ?></a>
@@ -253,7 +253,7 @@ while ($row = mysqli_fetch_array($data["News"])) {
 					<div class="media has-menu-dots">
 						<a class="news-right-img" target="_self"
 							title="<?php echo $r["tieude"] ?>"
-							href="<?php echo $servername?>/companies-news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>">
+							href="<?php echo $servername?>/news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>">
 							<img class="lazy-loading-image loaded"
 							src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $r["thumbnail"] ?>"
 							alt="<?php echo $r["tieude"] ?>"
@@ -263,7 +263,7 @@ while ($row = mysqli_fetch_array($data["News"])) {
 							<h3 class="news-right-title">
 								<a target="_self"
 									title="<?php echo $r["tieude"] ?>"
-									href="<?php echo $servername?>/companies-news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>"><?php echo $r["tieude"] ?></a>
+									href="<?php echo $servername?>/news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>"><?php echo $r["tieude"] ?></a>
 							</h3>
 							<p class="news-posted">
 								<span class="origin"><a title="<?php echo $r["tieude"] ?>"
