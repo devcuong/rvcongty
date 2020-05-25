@@ -184,17 +184,23 @@ a.white-link:hover {
 
 
 
+
+
 :not
 
 
+
  
+
 
 
 (
 :last-child
 
 
+
  
+
 
 
 )
@@ -204,14 +210,20 @@ margin-bottom
 
 
 
+
+
 :
+
 
 
  
 
 
+
 0
 .8rem
+
+
 
 
 
@@ -377,30 +389,44 @@ margin-bottom
 .tabs
 
 
+
+
 :not
 
+
  
+
 
 (
 :last-child
 
+
  
+
 
 ){
 margin-bottom
 
 
+
+
 :
 
+
  
+
 
 0
 px
 
+
  
+
 
 !
 important
+
+
 
 
 ;
@@ -556,7 +582,7 @@ important
 
 .summary-reviews .reviews__header {
 	margin-bottom: 0.4rem;
-	color:#e86b1f;
+	color: #e86b1f;
 }
 
 @media screen and (max-width: 768px) {
@@ -709,12 +735,15 @@ important
 	z-index: 10;
 	background: white;
 }
-.textarea:not([rows]) {
-    max-height: 600px;
-    min-height: 120px;
+
+.textarea:not ([rows] ) {
+	max-height: 600px;
+	min-height: 120px;
 }
+
 @media screen and (min-width:1088px) {
-	.navbar.is-primary .navbar-end>a.navbar-item.is-active, .navbar.is-primary .navbar-end>a.navbar-item:hover {
+	.navbar.is-primary .navbar-end>a.navbar-item.is-active, .navbar.is-primary .navbar-end>a.navbar-item:hover
+		{
 		background-color: #0B610B;
 		color: #fff;
 		font-weight: bold;
@@ -843,7 +872,11 @@ transform
 
 
 
+
+
 :rotate(360deg)
+
+
 
 
 
@@ -915,37 +948,53 @@ transform
 .textarea
 
 
+
+
 :not
 
+
  
+
 
 (
 [
 rows
 ]
 
+
  
+
 
 )
 {
 max-height
 
 
+
+
 :
+
 
  
 
+
 600
 px
+
+
 
 
 ;
 min-height
 
 
+
+
 :
 
+
  
+
 
 120
 px
@@ -953,63 +1002,91 @@ px
 
 
 
+
+
 }
 .select
 
 
+
+
 :not
 
+
  
+
 
 (
 .is-multiple
 
+
  
+
 
 )
 {
 height
 
 
+
+
 :
+
 
  
 
+
 2
 .25em
+
+
 
 
 ;
 }
 .select
 
+
  
+
 
 select
 
 
+
+
 :not
 
+
  
+
 
 (
 [
 multiple
 ]
 
+
  
+
 
 )
 {
 padding-right
 
 
+
+
 :
+
 
  
 
+
 2
 .5em
+
+
 
 
 ;
@@ -1040,25 +1117,37 @@ padding-right
 .field
 
 
+
+
 :not
 
+
  
+
 
 (
 :last-child
 
+
  
+
 
 )
 {
 margin-bottom
 
 
+
+
 :
+
 
  
 
+
 .75rem
+
+
 
 
 ;
@@ -1080,155 +1169,205 @@ margin-bottom
 }
 
 .news.first-news {
-    margin-top: 0;
-    border: none;
+	margin-top: 0;
+	border: none;
 }
 
 .news {
-    margin-bottom: .625rem;
+	margin-bottom: .625rem;
 }
 
 .card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    border: 1px solid rgba(0,0,0,.125);
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, .125);
 	box-shadow: none;
 }
+
 .first-news>a {
-    display: block;
+	display: block;
 }
+
 .lazy-loading-image.loaded {
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
+	-webkit-filter: blur(0px);
+	filter: blur(0px);
 }
+
 .first-news .card-img-top {
-    max-width: 100%;
-    border-top-right-radius: 0;
+	max-width: 100%;
+	border-top-right-radius: 0;
 }
+
 .card-img-top {
-    width: 100%;
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
+	width: 100%;
+	border-top-left-radius: calc(.25rem - 1px);
+	border-top-right-radius: calc(.25rem - 1px);
 }
+
 .first-news .card-block {
-    padding: .625rem;
+	padding: .625rem;
 }
+
 .news .news-title {
-    font-size: 125%;
-    display: block;
-    margin-bottom: .25rem;
+	font-size: 125%;
+	display: block;
+	margin-bottom: .25rem;
 }
-.news .news-title a{
+
+.news .news-title a {
 	color: #e86b1f;
 	font-weight: 600;
 }
+
 .col-top-right {
-    padding: .625rem !important;
-    border-left: 1px solid #ddd;
+	padding: .625rem !important;
+	border-left: 1px solid #ddd;
 }
+
 .col-top-right .news-right:first-child {
-    margin-top: 0;
+	margin-top: 0;
 }
-.col-top-right .news-right:not(:last-child) {
-    border-bottom: 1px dashed #ddd;
+
+.col-top-right .news-right:not (:last-child ) {
+	border-bottom: 1px dashed #ddd;
 }
+
 .col-top-right .news-right {
-    padding-bottom: .75rem;
+	padding-bottom: .75rem;
 }
-.news-right:not(:last-child) {
-    margin-bottom: 10px;
+
+.news-right:not (:last-child ) {
+	margin-bottom: 10px;
 }
+
 .media {
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    -ms-flex-align: start;
-    -webkit-box-align: start;
-    align-items: flex-start;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-ms-flex-align: start;
+	-webkit-box-align: start;
+	align-items: flex-start;
 }
+
 .news-right .news-right-img {
-    width: 150px;
-    margin-right: 0.625rem;
+	width: 150px;
+	margin-right: 0.625rem;
 }
+
 .news-right .news-right-img img {
-    max-width: 100%;
+	max-width: 100%;
 }
+
 .has-menu-dots {
-    position: relative;
-    padding-right: 10px !important;
+	position: relative;
+	padding-right: 10px !important;
 }
+
 .col-top-right .news-right .news-right-title {
-    font-weight: 600;
+	font-weight: 600;
 }
+
 .news-right .news-right-title {
-    display: block;
-    margin-bottom: 0.25rem;
-    max-height: 2.75rem;
-    line-height: 1.5;
-    overflow: hidden;
+	display: block;
+	margin-bottom: 0.25rem;
+	max-height: 2.75rem;
+	line-height: 1.5;
+	overflow: hidden;
 }
+
 .news-right-title a {
-    font-size: 1rem;
+	font-size: 1rem;
 }
+
 .news-right .news-posted {
-    margin-bottom: 0px;
-    line-height: 1;
+	margin-bottom: 0px;
+	line-height: 1;
 }
-.title-news{
-	color: #71bf44 ;
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 0 0 0 10px;
-    border-bottom: 2px solid #71bf44;
+
+.title-news {
+	color: #71bf44;
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding: 0 0 0 10px;
+	border-bottom: 2px solid #71bf44;
 	background: #fff;
 }
-.title-news-normal{
-    margin: 10px 0 20px;
+
+.title-news-normal {
+	margin: 10px 0 20px;
 }
-.title-news-ecom{
-    margin: 50px 0 20px;
+
+.title-news-ecom {
+	margin: 50px 0 20px;
 }
-.title-news-startup{
-    margin: 50px 0 20px;
+
+.title-news-startup {
+	margin: 50px 0 20px;
 }
-.origin a{
+
+.origin a {
 	color: #71bf44;
 }
+
 .tabs li.is-active a {
-    border-bottom-color: #088A08;
-    color: #088A08;
+	border-bottom-color: #088A08;
+	color: #088A08;
 }
+
 .has-text-info {
-    color: #088A08 !important;
+	color: #088A08 !important;
 }
+
 .pagination-link.is-current {
-    background-color: #088A08;
-    border-color: #088A08;
-    color: #fff;
+	background-color: #088A08;
+	border-color: #088A08;
+	color: #fff;
 }
-.message.is-info .question{
-    color: #e86b1f;
+
+.message.is-info .question {
+	color: #e86b1f;
 }
+
 .box-right>.card-block {
-    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+	padding: 0.625rem 0.625rem 0.625rem 0.625rem;
 }
-.mt-10{
+
+.mt-10 {
 	margin-top: 10px;
 }
-@media screen and (max-width: 768px) { /* <== You can change this break point as per your  needs */
-  .reverse-columns {
-    flex-direction: column-reverse;
-    display: flex;
-  }
+.d-flex {
+	display: -ms-flexbox !important;
+	display: -webkit-box !important;
+	display: flex !important;
 }
-.review a{
+@media screen and (max-width: 768px) {
+	/* <== You can change this break point as per your  needs */
+	.reverse-columns {
+		flex-direction: column-reverse;
+		display: flex;
+	}
+}
+
+.review a {
 	color: #e86b1f;
+}
+
+.tt-header-top {
+    height: 30px;
+    background-color: #444;
+    color: #fff;
+    font-size: 90%;
+}
+.tt-header-top .page-link-out {
+    padding: 0px;
+    list-style: none;
+    margin-bottom: 0px;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -1245,6 +1384,39 @@ margin-bottom
 </head>
 
 <body>
+	<div class="tt-header-top">
+		<div class="container d-flex align-items-center">
+			<ul class="page-link-out d-flex mr-auto">
+				<li><a href="https://dailyxe.com.vn"
+					title="Hệ thống giao dịch và thông tin về xe ô tô">DailyXe</a></li>
+				<li class="active"><a href="https://dailyxe.com.vn/tin-tuc/"
+					title="Hệ thống tin tức">Tin tức</a></li>
+				<li><a href="https://dailyxe.com.vn/rao-xe/" title="Hệ thống raoxe">RaoXe</a></li>
+			</ul>
+			<div class="page-link-out">
+				<span class="d-none d-md-inline-block">Góp ý:</span> <a
+					href="mailto:hotro@dailyxe.com.vn"
+					title="Góp ý hotro@dailyxe.com.vn"> <i
+					class="fa fa-envelope mr-1 d-md-none"></i> hotro@dailyxe.com.vn
+				</a>
+			</div>
+			<div class="page-link-out ng-scope" ng-controller="dang-nhap as ctrl"
+				ng-init="checkIsDangNhap()">
+				<!-- ngIf: !isDangNhap -->
+				<a href="/dang-nhap" title="Đăng nhập" ng-if="!isDangNhap"
+					class="ng-scope">Đăng nhập</a>
+				<!-- end ngIf: !isDangNhap -->
+				<!-- ngIf: !isDangNhap -->
+				<span ng-if="!isDangNhap" class="ng-scope">/</span>
+				<!-- end ngIf: !isDangNhap -->
+				<!-- ngIf: !isDangNhap -->
+				<a href="/dang-ky" title="Đăng ký" ng-if="!isDangNhap"
+					class="ng-scope">Đăng ký</a>
+				<!-- end ngIf: !isDangNhap -->
+				<!-- ngIf: isDangNhap -->
+			</div>
+		</div>
+	</div>
 	<nav class="main-nav navbar is-primary" role="navigation"
 		aria-label="main navigation">
 		<div class="container">
@@ -1263,13 +1435,16 @@ margin-bottom
 			</div>
 			<div id="navMenu" class="navbar-menu">
 				<div class="navbar-end">
-					<a href="<?php echo $servername ?>" class="navbar-item <?php if($data["Page"] == "main-home") { echo "is-active";} else{ echo ""; }?>">Trang chủ</a> 
-					<a href="<?php echo $servername ?>/companies-news/" class="navbar-item <?php if($data["Page"] == "companies-news") { echo "is-active";} else{ echo ""; }?>">Tin tức</a>
+					<a href="<?php echo $servername ?>"
+						class="navbar-item <?php if($data["Page"] == "main-home") { echo "is-active";} else{ echo ""; }?>">Trang
+						chủ</a> <a href="<?php echo $servername ?>/companies-news/"
+						class="navbar-item <?php if($data["Page"] == "companies-news") { echo "is-active";} else{ echo ""; }?>">Tin
+						tức</a>
 				</div>
 			</div>
 		</div>
 	</nav>
-	 <script type="text/javascript">
+	<script type="text/javascript">
 		(function(){
 			var burger = document.querySelector('.burger');
 			var nav = document.querySelector('#'+burger.dataset.target);
