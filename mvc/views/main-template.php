@@ -1365,10 +1365,36 @@ margin-bottom
     font-size: 90%;
 }
 .tt-header-top .page-link-out {
+   margin-bottom: 0px;
     padding: 0px;
     list-style: none;
-    margin-bottom: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 90%;
+    color: #fff;
+    line-height: 30px;
 }
+.tt-header-top .page-link-out a {
+    position: relative;
+    display: block;
+    line-height: 30px;
+    padding: 0px 10px;
+	color: #fff;
+}
+.mr-auto {
+    margin-right: auto !important;
+}
+.tt-header-top .active {
+    background: #fff;
+}
+.tt-header-top .page-link-out .active a {
+    color: #333;
+}
+
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async
