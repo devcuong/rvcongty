@@ -492,6 +492,13 @@
 			</div>
 		</div>
 		<?php } ?>
+		<div class="d-flex justify-content-center">
+			<a class="btn btn-view-more btn-icon-right"
+				href="<?php echo $servername ?>/companies-news/tin-cong-ty-ecommerce" title="Xem tất cả">Xem
+				tất cả <span> <i class="fas fa-chevron-right"></i>
+			</span>
+			</a>
+		</div>
 		<p class="title-news title-news-startup">CÔNG TY STARTUP</p>
 		<?php while ($NewsStartup= mysqli_fetch_array($data["NewsStartup"])){ ?>
 		<div class="news box-border news-item is-hidden-mobile">
@@ -538,7 +545,14 @@
 				</p>
 			</div>
 		</div>
-		<?php } ?>
+		<?php } ?> 
+		<div class="d-flex justify-content-center">
+			<a class="btn btn-view-more btn-icon-right"
+				href="<?php echo $servername ?>/companies-news/tin-cong-ty-startup" title="Xem tất cả">Xem
+				tất cả <span> <i class="fas fa-chevron-right"></i>
+			</span>
+			</a>
+		</div>
 	</div>
 	<div class="column">
 		<?php require_once "./mvc/views/partials/right-news.php"?>
