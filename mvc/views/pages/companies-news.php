@@ -205,12 +205,20 @@
 	display: flex !important;
 }
 
+.btn {
+	padding: 7px 12px;
+	border: none;
+}
 .btn-view-more {
-	background-color: #666;
+	background-color: #71bf44;
 	border-color: #666;
 	color: #fff;
 }
-
+.btn-view-more:hover, .btn-view-more:focus, .btn-view-more:active {
+	background-color: #22924c;
+	border-color: #22924c;
+	color: #fff;
+}
 .btn-icon-right {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -237,17 +245,6 @@
 	right: 0px;
 	top: 0px;
 	background-color: rgba(0, 0, 0, 0.2);
-}
-
-.btn-view-more:hover, .btn-view-more:focus, .btn-view-more:active {
-	background-color: #FF4000;
-	border-color: #FF4000;
-	color: #fff;
-}
-
-.btn {
-	padding: 7px 12px;
-	border: none;
 }
 /*gap*/
 .gap-right-less {
@@ -443,7 +440,7 @@
 		<?php } ?>
 		<div class="d-flex justify-content-center">
 			<a class="btn btn-view-more btn-icon-right"
-				href="https://dailyxe.com.vn/danh-sach-xe-oto" title="Xem tất cả">Xem
+				href="<?php echo $servername ?>/companies-news/tin-cong-ty" title="Xem tất cả">Xem
 				tất cả <span> <i class="fas fa-chevron-right"></i>
 			</span>
 			</a>
