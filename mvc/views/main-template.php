@@ -1413,11 +1413,17 @@ margin-bottom
 	<div class="tt-header-top">
 		<div class="container d-flex align-items-center">
 			<ul class="page-link-out d-flex mr-auto">
-				<li><a href="<?php echo $servername ?>"
+				<li <?php if($data["Page"] == "main-home"){ 
+				    echo "class='active'";
+				 } ?>><a href="<?php echo $servername ?>"
 					title="Trang review công ty, lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty">Trang chủ</a></li>
-				<li class="active"><a href="<?php echo $servername ?>/news/"
+				<li <?php if($data["Page"] == "news"){ 
+				    echo "class='active'";
+				 } ?>><a href="<?php echo $servername ?>/news/"
 					title="Tin tức của các công ty hiện nay">Tin tức</a></li>
-				<li><a href="<?php echo $servername ?>/jobs/" title="Đăng tin tuyển dụng, việc làm, nhân sự">Việc làm</a></li>
+				<li <?php if($data["Page"] == "jobs"){ 
+				    echo "class='active'";
+				 } ?>><a href="<?php echo $servername ?>/jobs/" title="Đăng tin tuyển dụng, việc làm, nhân sự">Việc làm</a></li>
 			</ul>
 			<div class="page-link-out">
 				<span class="d-none d-md-inline-block">Góp ý:</span> <a
