@@ -198,7 +198,7 @@ while ($row = mysqli_fetch_array($data["News"])) {
         </li>
         <li>
             <a href="<?php echo $servername ?>/news/">
-                <span>Companies News</span>
+                <span>News</span>
             </a>
         </li>
         <li class="is-active">

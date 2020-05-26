@@ -240,7 +240,7 @@ margin-bottom
 
 .main-nav {
 	font-size: 1rem;
-	line-height: 1.5rem;
+	line-height: 0.6rem;
 	background-color: #00b9f2;
 	background-image: linear-gradient(97deg, #088A08 35%, #04B431 62%, #71bf44 81%);
 }
@@ -1359,8 +1359,8 @@ margin-bottom
 }
 
 .tt-header-top {
-    height: 30px;
-    background-color: #444;
+    height: 25px;
+    background-color: #424242;
     color: #fff;
     font-size: 90%;
 }
@@ -1376,12 +1376,12 @@ margin-bottom
     align-items: center;
     font-size: 90%;
     color: #fff;
-    line-height: 30px;
+    line-height: 25px;
 }
 .tt-header-top .page-link-out a {
     position: relative;
     display: block;
-    line-height: 30px;
+    line-height: 25px;
     padding: 0px 10px;
 	color: #fff;
 }
@@ -1413,34 +1413,34 @@ margin-bottom
 	<div class="tt-header-top">
 		<div class="container d-flex align-items-center">
 			<ul class="page-link-out d-flex mr-auto">
-				<li><a href="https://dailyxe.com.vn"
-					title="Hệ thống giao dịch và thông tin về xe ô tô">DailyXe</a></li>
-				<li class="active"><a href="https://dailyxe.com.vn/tin-tuc/"
-					title="Hệ thống tin tức">Tin tức</a></li>
-				<li><a href="https://dailyxe.com.vn/rao-xe/" title="Hệ thống raoxe">RaoXe</a></li>
+				<li><a href="<?php echo $servername ?>"
+					title="Trang review công ty, lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty">Trang chủ</a></li>
+				<li class="active"><a href="<?php echo $servername ?>/news/"
+					title="Tin tức của các công ty hiện nay">Tin tức</a></li>
+				<li><a href="<?php echo $servername ?>/jobs/" title="Đăng tin tuyển dụng, việc làm, nhân sự">Việc làm</a></li>
 			</ul>
 			<div class="page-link-out">
 				<span class="d-none d-md-inline-block">Góp ý:</span> <a
-					href="mailto:hotro@dailyxe.com.vn"
-					title="Góp ý hotro@dailyxe.com.vn"> <i
-					class="fa fa-envelope mr-1 d-md-none"></i> hotro@dailyxe.com.vn
+					href="mailto:company@congtytop.com"
+					title="Góp ý company@congtytop.com"> <i
+					class="fa fa-envelope mr-1 d-md-none"></i> company@congtytop.com
 				</a>
 			</div>
-			<div class="page-link-out ng-scope" ng-controller="dang-nhap as ctrl"
-				ng-init="checkIsDangNhap()">
+<!-- 			<div class="page-link-out ng-scope" ng-controller="dang-nhap as ctrl" -->
+<!-- 				ng-init="checkIsDangNhap()"> -->
 				<!-- ngIf: !isDangNhap -->
-				<a href="/dang-nhap" title="Đăng nhập" ng-if="!isDangNhap"
-					class="ng-scope">Đăng nhập</a>
+<!-- 				<a href="/dang-nhap" title="Đăng nhập" ng-if="!isDangNhap" -->
+<!-- 					class="ng-scope">Đăng nhập</a> -->
 				<!-- end ngIf: !isDangNhap -->
 				<!-- ngIf: !isDangNhap -->
-				<span ng-if="!isDangNhap" class="ng-scope">/</span>
+<!-- 				<span ng-if="!isDangNhap" class="ng-scope">/</span> -->
 				<!-- end ngIf: !isDangNhap -->
 				<!-- ngIf: !isDangNhap -->
-				<a href="/dang-ky" title="Đăng ký" ng-if="!isDangNhap"
-					class="ng-scope">Đăng ký</a>
+<!-- 				<a href="/dang-ky" title="Đăng ký" ng-if="!isDangNhap" -->
+<!-- 					class="ng-scope">Đăng ký</a> -->
 				<!-- end ngIf: !isDangNhap -->
 				<!-- ngIf: isDangNhap -->
-			</div>
+<!-- 			</div> -->
 		</div>
 	</div>
 	<nav class="main-nav navbar is-primary" role="navigation"
