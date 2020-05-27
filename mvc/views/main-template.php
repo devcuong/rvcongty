@@ -1562,7 +1562,7 @@ px
 <body>
 	<div class="tt-header-top">
 		<div class="container d-flex align-items-center">
-			<ul class="page-link-out d-flex mr-auto">
+			<ul class="page-link-out mr-auto is-hidden-touch">
 				<li
 					<?php
     
@@ -1629,7 +1629,7 @@ if ($data["Page"] == "jobs") {
 					<span></span> <span></span>
 				</span>
 			</div>
-			<div class="wrap <?php if($data["Page"] == "main-home"){ echo "hidden";} ?> is-hidden-mobile">
+			<div class="wrap <?php if($data["Page"] == "main-home"){ echo "hidden";} ?> is-hidden-touch">
 				<form action="<?php echo $servername ?>/tim-kiem/news" method="post"
 					style="width: 200%">
 					<div class="search">
