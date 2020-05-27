@@ -1,6 +1,6 @@
 <style>
 .wrap {
-	margin: 10px;
+	margin: 20px;
 }
 
 .search {

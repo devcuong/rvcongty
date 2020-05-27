@@ -186,11 +186,15 @@ a.white-link:hover {
 
 
 
+
+
 :not
 
 
 
+
  
+
 
 
 
@@ -199,7 +203,9 @@ a.white-link:hover {
 
 
 
+
  
+
 
 
 
@@ -212,7 +218,10 @@ margin-bottom
 
 
 
+
+
 :
+
 
 
 
@@ -220,8 +229,11 @@ margin-bottom
 
 
 
+
 0
 .8rem
+
+
 
 
 
@@ -391,17 +403,23 @@ margin-bottom
 
 
 
+
+
 :not
 
 
+
  
+
 
 
 (
 :last-child
 
 
+
  
+
 
 
 ){
@@ -410,21 +428,29 @@ margin-bottom
 
 
 
+
+
 :
 
 
+
  
+
 
 
 0
 px
 
 
+
  
+
 
 
 !
 important
+
+
 
 
 
@@ -736,11 +762,33 @@ important
 	background: white;
 }
 
-.textarea:not ([rows] ) {
-	max-height: 600px;
-	min-height: 120px;
-}
+.textarea
+:not
+ 
+(
+[
+rows
+]
+ 
+)
+{
+max-height
+:
+ 
+600
+px
+;
 
+	
+min-height
+:
+ 
+120
+px
+;
+
+
+}
 @media screen and (min-width:1088px) {
 	.navbar.is-primary .navbar-end>a.navbar-item.is-active, .navbar.is-primary .navbar-end>a.navbar-item:hover
 		{
@@ -874,7 +922,11 @@ transform
 
 
 
+
+
 :rotate(360deg)
+
+
 
 
 
@@ -950,10 +1002,14 @@ transform
 
 
 
+
+
 :not
 
 
+
  
+
 
 
 (
@@ -962,7 +1018,9 @@ rows
 ]
 
 
+
  
+
 
 
 )
@@ -972,14 +1030,20 @@ max-height
 
 
 
+
+
 :
+
 
 
  
 
 
+
 600
 px
+
+
 
 
 
@@ -990,10 +1054,14 @@ min-height
 
 
 
+
+
 :
 
 
+
  
+
 
 
 120
@@ -1004,8 +1072,12 @@ px
 
 
 
+
+
 }
 .select
+
+
 
 
 
@@ -1013,14 +1085,18 @@ px
 :not
 
 
+
  
+
 
 
 (
 .is-multiple
 
 
+
  
+
 
 
 )
@@ -1030,14 +1106,20 @@ height
 
 
 
+
+
 :
+
 
 
  
 
 
+
 2
 .25em
+
+
 
 
 
@@ -1047,7 +1129,9 @@ height
 .select
 
 
+
  
+
 
 
 select
@@ -1055,10 +1139,14 @@ select
 
 
 
+
+
 :not
 
 
+
  
+
 
 
 (
@@ -1067,7 +1155,9 @@ multiple
 ]
 
 
+
  
+
 
 
 )
@@ -1077,14 +1167,20 @@ padding-right
 
 
 
+
+
 :
+
 
 
  
 
 
+
 2
 .5em
+
+
 
 
 
@@ -1119,17 +1215,23 @@ padding-right
 
 
 
+
+
 :not
 
 
+
  
+
 
 
 (
 :last-child
 
 
+
  
+
 
 
 )
@@ -1139,13 +1241,19 @@ margin-bottom
 
 
 
+
+
 :
+
 
 
  
 
 
+
 .75rem
+
+
 
 
 
@@ -1234,18 +1342,50 @@ margin-bottom
 	margin-top: 0;
 }
 
-.col-top-right .news-right:not (:last-child ) {
-	border-bottom: 1px dashed #ddd;
-}
+.col-top-right
+ 
+.news-right
+:not
+ 
+(
+:last-child
+ 
+)
+{
+border-bottom
+:
+ 
+1
+px
+ 
+dashed
+ 
+#ddd
+;
 
+
+}
 .col-top-right .news-right {
 	padding-bottom: .75rem;
 }
 
-.news-right:not (:last-child ) {
-	margin-bottom: 10px;
-}
+.news-right
+:not
+ 
+(
+:last-child
+ 
+)
+{
+margin-bottom
+:
+ 
+10
+px
+;
 
+
+}
 .media {
 	display: -ms-flexbox;
 	display: -webkit-box;
@@ -1341,11 +1481,13 @@ margin-bottom
 .mt-10 {
 	margin-top: 10px;
 }
+
 .d-flex {
 	display: -ms-flexbox !important;
 	display: -webkit-box !important;
 	display: flex !important;
 }
+
 @media screen and (max-width: 768px) {
 	/* <== You can change this break point as per your  needs */
 	.reverse-columns {
@@ -1359,42 +1501,50 @@ margin-bottom
 }
 
 .tt-header-top {
-    height: 25px;
-    background-color: #424242;
-    color: #fff;
-    font-size: 90%;
-}
-.tt-header-top .page-link-out {
-   margin-bottom: 0px;
-    padding: 0px;
-    list-style: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    font-size: 90%;
-    color: #fff;
-    line-height: 25px;
-}
-.tt-header-top .page-link-out a {
-    position: relative;
-    display: block;
-    line-height: 25px;
-    padding: 0px 10px;
+	height: 25px;
+	background-color: #424242;
 	color: #fff;
-}
-.mr-auto {
-    margin-right: auto !important;
-}
-.tt-header-top .active {
-    background: #fff;
-}
-.tt-header-top .page-link-out .active a {
-    color: #333;
+	font-size: 90%;
 }
 
+.tt-header-top .page-link-out {
+	margin-bottom: 0px;
+	padding: 0px;
+	list-style: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 90%;
+	color: #fff;
+	line-height: 25px;
+}
+
+.tt-header-top .page-link-out a {
+	position: relative;
+	display: block;
+	line-height: 25px;
+	padding: 0px 10px;
+	color: #fff;
+}
+
+.mr-auto {
+	margin-right: auto !important;
+}
+
+.tt-header-top .active {
+	background: #fff;
+}
+
+.tt-header-top .page-link-out .active a {
+	color: #333;
+}
+
+.hidden {
+  display: none;
+}
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async
@@ -1413,17 +1563,31 @@ margin-bottom
 	<div class="tt-header-top">
 		<div class="container d-flex align-items-center">
 			<ul class="page-link-out d-flex mr-auto">
-				<li <?php if($data["Page"] == "main-home"){ 
-				    echo "class='active'";
-				 } ?>><a href="<?php echo $servername ?>"
-					title="Trang review công ty, lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty">Trang chủ</a></li>
-				<li <?php if($data["Page"] == "news"){ 
-				    echo "class='active'";
-				 } ?>><a href="<?php echo $servername ?>/news/"
+				<li
+					<?php
+    
+if ($data["Page"] == "main-home") {
+        echo "class='active'";
+    }
+    ?>><a href="<?php echo $servername ?>"
+					title="Trang review công ty, lương bổng, đãi ngộ, tuyển dụng, sếp của các công ty">Trang
+						chủ</a></li>
+				<li
+					<?php
+    
+if ($data["Page"] == "news") {
+        echo "class='active'";
+    }
+    ?>><a href="<?php echo $servername ?>/news/"
 					title="Tin tức của các công ty hiện nay">Tin tức</a></li>
-				<li <?php if($data["Page"] == "jobs"){ 
-				    echo "class='active'";
-				 } ?>><a href="<?php echo $servername ?>/jobs/" title="Đăng tin tuyển dụng, việc làm, nhân sự">Việc làm</a></li>
+				<li
+					<?php
+    
+if ($data["Page"] == "jobs") {
+        echo "class='active'";
+    }
+    ?>><a href="<?php echo $servername ?>/jobs/"
+					title="Đăng tin tuyển dụng, việc làm, nhân sự">Việc làm</a></li>
 			</ul>
 			<div class="page-link-out">
 				<span class="d-none d-md-inline-block">Góp ý:</span> <a
@@ -1432,21 +1596,21 @@ margin-bottom
 					class="fa fa-envelope mr-1 d-md-none"></i> company@congtytop.com
 				</a>
 			</div>
-<!-- 			<div class="page-link-out ng-scope" ng-controller="dang-nhap as ctrl" -->
-<!-- 				ng-init="checkIsDangNhap()"> -->
-				<!-- ngIf: !isDangNhap -->
-<!-- 				<a href="/dang-nhap" title="Đăng nhập" ng-if="!isDangNhap" -->
-<!-- 					class="ng-scope">Đăng nhập</a> -->
-				<!-- end ngIf: !isDangNhap -->
-				<!-- ngIf: !isDangNhap -->
-<!-- 				<span ng-if="!isDangNhap" class="ng-scope">/</span> -->
-				<!-- end ngIf: !isDangNhap -->
-				<!-- ngIf: !isDangNhap -->
-<!-- 				<a href="/dang-ky" title="Đăng ký" ng-if="!isDangNhap" -->
-<!-- 					class="ng-scope">Đăng ký</a> -->
-				<!-- end ngIf: !isDangNhap -->
-				<!-- ngIf: isDangNhap -->
-<!-- 			</div> -->
+			<!-- 			<div class="page-link-out ng-scope" ng-controller="dang-nhap as ctrl" -->
+			<!-- 				ng-init="checkIsDangNhap()"> -->
+			<!-- ngIf: !isDangNhap -->
+			<!-- 				<a href="/dang-nhap" title="Đăng nhập" ng-if="!isDangNhap" -->
+			<!-- 					class="ng-scope">Đăng nhập</a> -->
+			<!-- end ngIf: !isDangNhap -->
+			<!-- ngIf: !isDangNhap -->
+			<!-- 				<span ng-if="!isDangNhap" class="ng-scope">/</span> -->
+			<!-- end ngIf: !isDangNhap -->
+			<!-- ngIf: !isDangNhap -->
+			<!-- 				<a href="/dang-ky" title="Đăng ký" ng-if="!isDangNhap" -->
+			<!-- 					class="ng-scope">Đăng ký</a> -->
+			<!-- end ngIf: !isDangNhap -->
+			<!-- ngIf: isDangNhap -->
+			<!-- 			</div> -->
 		</div>
 	</div>
 	<nav class="main-nav navbar is-primary" role="navigation"
@@ -1464,6 +1628,19 @@ margin-bottom
 				<span class="navbar-burger burger" data-target="navMenu"> <span></span>
 					<span></span> <span></span>
 				</span>
+			</div>
+			<div class="wrap <?php if($data["Page"] == "main-home"){ echo "hidden";} ?> is-hidden-mobile">
+				<form action="<?php echo $servername ?>/tim-kiem/news" method="post"
+					style="width: 200%">
+					<div class="search">
+						<input type="text" name="search" class="searchTerm"
+							placeholder="Tìm tin tức hoặc những gì bạn muốn tìm">
+						<button type="submit" class="searchButton">
+							<i class="fa fa-search"></i>
+						</button>
+
+					</div>
+				</form>
 			</div>
 			<div id="navMenu" class="navbar-menu">
 				<div class="navbar-end">

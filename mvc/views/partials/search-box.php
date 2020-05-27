@@ -1,4 +1,4 @@
-<div class="card box-right box-border box-bottom">
+<div class="card box-right box-border box-bottom is-hidden-tablet">
 	<h3 class="card-header">TÌM KIẾM</h3>
 	<div class="wrap">
 		<form action="<?php echo $servername ?>/tim-kiem/news" method="post"
