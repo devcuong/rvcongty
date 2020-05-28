@@ -584,7 +584,8 @@ important
 @media screen and (max-width: 768px) {
 	.company-info-company-page .button-review {
 		position: relative;
-		right: calc(155px - 100vw);
+/* 		right: calc(155px - 100vw); */
+		left: calc(50vw - 72px);
 		top: 0.7rem;
 		margin-bottom: 1rem;
 	}
@@ -1664,7 +1665,7 @@ if ($data["Page"] == "jobs") {
 					<span></span> <span></span>
 				</span>
 			</div>
-			<div class="wrap <?php if($data["Page"] == "main-home"){ echo "hidden";} ?> is-hidden-touch">
+			<div class="wrap <?php if($data["Page"] == "main-home" || $data["Page"] == "companies"){ echo "hidden";} ?> is-hidden-touch">
 				<form action="<?php echo $servername ?>/tim-kiem/news" method="post"
 					style="width: 200%">
 					<div class="search">
