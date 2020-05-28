@@ -1,40 +1,5 @@
 <style>
-.wrap {
-	margin: 20px;
-}
 
-.search {
-	width: 100%;
-	position: relative;
-	display: flex;
-}
-
-.searchTerm {
-	width: 100%;
-	border: 3px solid #e86b1f;
-	border-right: none;
-	padding: 5px;
-	height: 36px;
-	border-radius: 5px 0 0 5px;
-	outline: none;
-	color: #9DBFAF;
-}
-
-.searchTerm:focus {
-	color: #e86b1f;
-}
-
-.searchButton {
-	width: 40px;
-	height: 36px;
-	border: 1px solid #e86b1f;
-	background: #e86b1f;
-	text-align: center;
-	color: #fff;
-	border-radius: 0 5px 5px 0;
-	cursor: pointer;
-	font-size: 20px;
-}
 
 .box-right>.card-header, .box-left>.card-header {
 	color: #fff;
