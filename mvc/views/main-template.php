@@ -1598,7 +1598,7 @@ px
 <body>
 	<div class="tt-header-top">
 		<div class="container d-flex align-items-center">
-			<ul class="page-link-out mr-auto is-hidden-touch">
+			<ul class="page-link-out mr-auto">
 				<li
 					<?php
     
@@ -1625,7 +1625,7 @@ if ($data["Page"] == "jobs") {
     ?>><a href="<?php echo $servername ?>/jobs/"
 					title="Đăng tin tuyển dụng, việc làm, nhân sự">Việc làm</a></li>
 			</ul>
-			<div class="page-link-out">
+			<div class="page-link-out is-hidden-touch">
 				<span class="d-none d-md-inline-block">Góp ý:</span> <a
 					href="mailto:company@congtytop.com"
 					title="Góp ý company@congtytop.com"> <i
