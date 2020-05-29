@@ -14,7 +14,6 @@
 
 .detail-news {
 	position: relative;
-	font-size: 2rem;
 	padding: 1.5rem;
 	font-family: "Roboto", sans-serif;
 }
@@ -233,20 +232,18 @@ while ($row = mysqli_fetch_array($data["News"])) {
 			</div>
 			<p class="text-right end-social-fixed">Nguồn: <?php echo $row["nguon"] ?></p>
 			<div class="call-to-like">
-				<img class="img-title" alt="call-to-like"
-					src="https://dailyxe.com.vn/Resources/images/call-to-like.png">
 				<div class="fb-like fb_iframe_widget"
-					data-href="https://dailyxe.com.vn/tin-tuc/mien-thue-nhap-khau-linh-kien-nguyen-lieu-lap-rap-o-to-trong-nuoc-14785d.html"
+					data-href="https://congtytop.com/news/<?php echo $row["slugtieude"]?>-<?php echo $row["id"] ?>"
 					data-layout="button_count" data-action="like" data-size="small"
 					data-show-faces="true" data-share="true" fb-xfbml-state="rendered"
-					fb-iframe-plugin-query="action=like&amp;app_id=264237830704171&amp;container_width=0&amp;href=https%3A%2F%2Fdailyxe.com.vn%2Ftin-tuc%2Fmien-thue-nhap-khau-linh-kien-nguyen-lieu-lap-rap-o-to-trong-nuoc-14785d.html&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small">
+					fb-iframe-plugin-query="action=like&amp;app_id=264237830704171&amp;container_width=0&amp;href=https://congtytop.com/news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small">
 					<span style="vertical-align: bottom; width: 138px; height: 20px;"><iframe
 							name="fb9d33fb75d95c" width="1000px" height="1000px"
 							data-testid="fb:like Facebook Social Plugin"
 							title="fb:like Facebook Social Plugin" frameborder="0"
 							allowtransparency="true" allowfullscreen="true" scrolling="no"
 							allow="encrypted-media"
-							src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=264237830704171&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2acbba13faf7f4%26domain%3Ddailyxe.com.vn%26origin%3Dhttps%253A%252F%252Fdailyxe.com.vn%252Ff23679434cf0294%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fdailyxe.com.vn%2Ftin-tuc%2Fmien-thue-nhap-khau-linh-kien-nguyen-lieu-lap-rap-o-to-trong-nuoc-14785d.html&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"
+							src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=264237830704171&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2acbba13faf7f4%26domain%3Dcongtytop.com%26origin%3Dhttps%253A%252F%252Fcongtytop.com%252Ff23679434cf0294%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fcongtytop.com%2Fnews%2F<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"
 							style="border: none; visibility: visible; width: 138px; height: 20px;"
 							class=""></iframe></span>
 				</div>
