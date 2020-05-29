@@ -1543,7 +1543,8 @@ px
 	color: #333;
 }
 .wrap {
-	margin: 20px;
+/* 	margin: 20px; */
+	padding: 1rem 0 0 1rem;
 }
 
 .search {
@@ -1632,21 +1633,21 @@ if ($data["Page"] == "jobs") {
 					class="fa fa-envelope mr-1 d-md-none"></i> company@congtytop.com
 				</a>
 			</div>
-			<!-- 			<div class="page-link-out ng-scope" ng-controller="dang-nhap as ctrl" -->
-			<!-- 				ng-init="checkIsDangNhap()"> -->
-			<!-- ngIf: !isDangNhap -->
-			<!-- 				<a href="/dang-nhap" title="Đăng nhập" ng-if="!isDangNhap" -->
-			<!-- 					class="ng-scope">Đăng nhập</a> -->
-			<!-- end ngIf: !isDangNhap -->
-			<!-- ngIf: !isDangNhap -->
-			<!-- 				<span ng-if="!isDangNhap" class="ng-scope">/</span> -->
-			<!-- end ngIf: !isDangNhap -->
-			<!-- ngIf: !isDangNhap -->
-			<!-- 				<a href="/dang-ky" title="Đăng ký" ng-if="!isDangNhap" -->
-			<!-- 					class="ng-scope">Đăng ký</a> -->
-			<!-- end ngIf: !isDangNhap -->
-			<!-- ngIf: isDangNhap -->
-			<!-- 			</div> -->
+			<div class="page-link-out ng-scope" ng-controller="dang-nhap as ctrl"
+			ng-init="checkIsDangNhap()">
+<!-- 			ngIf: !isDangNhap -->
+			 				<a href="/dang-nhap" title="Đăng nhập" ng-if="!isDangNhap"
+			 					class="ng-scope">Đăng nhập</a>
+<!-- 			 end ngIf: !isDangNhap -->
+<!-- 			 ngIf: !isDangNhap -->
+			 				<span ng-if="!isDangNhap" class="ng-scope">/</span>
+<!-- 			 end ngIf: !isDangNhap -->
+<!-- 			 ngIf: !isDangNhap -->
+			 				<a href="/dang-ky" title="Đăng ký" ng-if="!isDangNhap"
+			 					class="ng-scope">Đăng ký</a>
+<!-- 			 end ngIf: !isDangNhap -->
+<!-- 			 ngIf: isDangNhap -->
+			 			</div>
 		</div>
 	</div>
 	<nav class="main-nav navbar is-primary" role="navigation"
