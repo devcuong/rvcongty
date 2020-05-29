@@ -262,6 +262,8 @@
 .gap-bottom-less {
 	padding-bottom: 0.5rem;
 }
+
+}
 </style>
 <section class="news-main home-section">
 	<div class="container">
@@ -390,7 +392,7 @@
 	<div class="column is-two-thirds">
 		<!-- search box -->
 	<?php require_once "./mvc/views/partials/search-box.php"?>
-		<p class="title-news title-news-normal">TIN CÔNG TY</p>
+		<div class="page-heading d-flex"><h4 class="box-title-page mr-auto">TIN DOANH NGHIỆP</h4></div>
 	<?php while ($newsBinhThuong = mysqli_fetch_array($data["NewsBinhThuong"])){ ?>
 		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
@@ -445,7 +447,7 @@
 			</span>
 			</a>
 		</div>
-		<p class="title-news title-news-ecom">CÔNG TY E-COMMERCE</p>
+		<div class="page-heading d-flex"><h4 class="box-title-page mr-auto">DOANH NGHIỆP E-COMMERCE</h4></div>
 		<?php while ($NewsECom= mysqli_fetch_array($data["NewsECom"])){ ?>
 		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
@@ -499,7 +501,7 @@
 			</span>
 			</a>
 		</div>
-		<p class="title-news title-news-startup">CÔNG TY STARTUP</p>
+		<div class="page-heading d-flex"><h4 class="box-title-page mr-auto">DOANH NGHIỆP STARTUP</h4></div>
 		<?php while ($NewsStartup= mysqli_fetch_array($data["NewsStartup"])){ ?>
 		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">

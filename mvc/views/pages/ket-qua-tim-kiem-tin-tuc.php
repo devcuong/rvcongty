@@ -132,7 +132,7 @@
 			<div class="column is-two-thirds">
 			<!-- search box -->
 			<?php require_once "./mvc/views/partials/search-box.php"?>
-				<p class="title-news">KẾT QUẢ - TÌM THẤY <?php echo mysqli_num_rows ( $data["KetQuaTrangHienTai"] );?> KẾT QUẢ PHÙ HỢP</p>
+			<div class="page-heading d-flex"><h4 class="box-title-page mr-auto">KẾT QUẢ - TÌM THẤY <?php echo mysqli_num_rows ( $data["KetQuaTrangHienTai"] );?> KẾT QUẢ PHÙ HỢP</h4></div>
 <?php while ($AllKetQua = mysqli_fetch_array($data["KetQuaTrangHienTai"])){ ?>
 <div class="news box-border news-item is-hidden-mobile">
 					<h2 class="news-title">

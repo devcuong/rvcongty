@@ -1430,28 +1430,21 @@ px
 	margin-bottom: 0px;
 	line-height: 1;
 }
-
-.title-news {
-	color: #71bf44;
-	font-size: 1.5rem;
-	font-weight: 700;
-	padding: 0 0 0 10px;
-	border-bottom: 2px solid #71bf44;
-	background: #fff;
+.page-heading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #d0d1d5;
 }
-
-.title-news-normal {
-	margin: 10px 0 20px;
+.page-heading h4{
+	display: inline-block;
+    color: #71bf44;
+    font-family: 'Anton', sans-serif;
+    font-size: 150%;
+    font-weight: 400;
+    padding-right: 10px;
+    margin-bottom: -1px;
+    border-bottom: 2px solid #71bf44;
 }
-
-.title-news-ecom {
-	margin: 50px 0 20px;
-}
-
-.title-news-startup {
-	margin: 50px 0 20px;
-}
-
 .origin a {
 	color: #71bf44;
 }
