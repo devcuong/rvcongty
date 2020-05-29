@@ -120,8 +120,7 @@
 							aria-hidden="true"></i>
 					</span> <span>Trang chủ</span>
 				</a></li>
-				<li><a href="<?php echo $servername ?>/news/"> <span>Companies
-							News</span>
+				<li><a href="<?php echo $servername ?>/news/"> <span>News</span>
 				</a></li>
 				<li class="is-active"><a href="#"> <span>Kết quả tìm kiếm tin tức</span>
 				</a></li>
