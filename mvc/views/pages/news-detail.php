@@ -1,6 +1,6 @@
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather" />
+<link rel="stylesheet" type="text/css"
+	href="//fonts.googleapis.com/css?family=Merriweather" />
 <style type="text/css">
-
 .box-border {
 	background-color: #fff;
 	border-width: 1px;
@@ -20,9 +20,9 @@
 }
 
 .detail-news .detail-news-title {
-	font-family: "Merriweather",serif;
+	font-family: "Merriweather", serif;
 	font-size: 32px;
-	font-weight:bold;
+	font-weight: bold;
 	margin-bottom: 10px;
 	line-height: 150%;
 }
@@ -164,49 +164,42 @@
 .news-right .news-right-img img {
 	max-width: 100%;
 }
+
 .news-right .news-right-title {
-    display: block;
-    font-weight: 400;
-    margin-bottom: 0.25rem;
-    max-height: 2.75rem;
-    overflow: hidden;
-}
-.news-right .news-posted span {
-    font-size: 90%;
-    margin-right: 0px;
-}
-.news-posted .origin a{
-    color: #71bf44;
-}
-.news-posted i{
-	margin-right: 3px;
+	display: block;
+	font-weight: 400;
+	margin-bottom: 0.25rem;
+	max-height: 2.75rem;
+	overflow: hidden;
 }
 
+.news-right .news-posted span {
+	font-size: 90%;
+	margin-right: 0px;
+}
+
+.news-posted .origin a {
+	color: #71bf44;
+}
+
+.news-posted i {
+	margin-right: 3px;
+}
 </style>
-		<?php
+<?php
 while ($row = mysqli_fetch_array($data["News"])) {
     ?>
 <nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs">
-    <ul>
-        <li>
-            <a href="/">
-                <span class="icon is-small">
-                    <i class="fas fa-home" aria-hidden="true"></i>
-                </span>
-                <span>Trang chủ</span>
-            </a>
-        </li>
-        <li>
-            <a href="<?php echo $servername ?>/news/">
-                <span>News</span>
-            </a>
-        </li>
-        <li class="is-active">
-            <a href="#">
-                <span><?php echo $row["tieude"] ?></span>
-            </a>
-        </li>
-    </ul>
+	<ul>
+		<li><a href="/"> <span class="icon is-small"> <i class="fas fa-home"
+					aria-hidden="true"></i>
+			</span> <span>Trang chủ</span>
+		</a></li>
+		<li><a href="<?php echo $servername ?>/news/"> <span>News</span>
+		</a></li>
+		<li class="is-active"><a href="#"> <span><?php echo $row["tieude"] ?></span>
+		</a></li>
+	</ul>
 </nav>
 <div class="columns" style="height: auto !important;">
 	<section class="companies column is-two-thirds"
@@ -217,10 +210,10 @@ while ($row = mysqli_fetch_array($data["News"])) {
 			<div
 				class="detail-news-posted start-social-fixed d-flex align-items-center">
 				<div class="d-flex mr-auto">
-					<span class="time">đăng lúc <?php 
-					$date = date_create($row["thoigian"]);
-					echo date_format($date,"H:i:s d/m/Y");
-					?></span>
+					<span class="time">đăng lúc <?php
+    $date = date_create($row["thoigian"]);
+    echo date_format($date, "H:i:s d/m/Y");
+    ?></span>
 				</div>
 			</div>
 			<span macd="tinlienquan_chitiettintuc"></span>
@@ -228,21 +221,43 @@ while ($row = mysqli_fetch_array($data["News"])) {
 				ng-controller="modal-content as ctrl">
 				<?php while ($row2 = mysqli_fetch_array($data["NewsLienQuan"])) {?>
 				    <li class="list-group-item news-item"><h3 class="news-title">
-				    <a target="_self"
-	    href="<?php echo $servername ?>/news/<?php echo $row2["slugtieude"] ?>-<?php echo $row2["id"] ?>"
-	    class="modal-link-content"
-	    title="<?php echo $row2["tieude"] ?>"><span
-	    class="times-small"></span><?php echo $row2["tieude"] ?></a>
-	    </h3></li>
+						<a target="_self"
+							href="<?php echo $servername ?>/news/<?php echo $row2["slugtieude"] ?>-<?php echo $row2["id"] ?>"
+							class="modal-link-content" title="<?php echo $row2["tieude"] ?>"><span
+							class="times-small"></span><?php echo $row2["tieude"] ?></a>
+					</h3></li>
 				<?php }?>
 			</ul>
 			<div class="detail-news-body detail-content clearfix" id="qcbody">
 			<?php echo $row["noidung"] ?>
 			</div>
 			<p class="text-right end-social-fixed">Nguồn: <?php echo $row["nguon"] ?></p>
+			<div class="call-to-like">
+				<img class="img-title" alt="call-to-like"
+					src="https://dailyxe.com.vn/Resources/images/call-to-like.png">
+				<div class="fb-like fb_iframe_widget"
+					data-href="https://dailyxe.com.vn/tin-tuc/mien-thue-nhap-khau-linh-kien-nguyen-lieu-lap-rap-o-to-trong-nuoc-14785d.html"
+					data-layout="button_count" data-action="like" data-size="small"
+					data-show-faces="true" data-share="true" fb-xfbml-state="rendered"
+					fb-iframe-plugin-query="action=like&amp;app_id=264237830704171&amp;container_width=0&amp;href=https%3A%2F%2Fdailyxe.com.vn%2Ftin-tuc%2Fmien-thue-nhap-khau-linh-kien-nguyen-lieu-lap-rap-o-to-trong-nuoc-14785d.html&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small">
+					<span style="vertical-align: bottom; width: 138px; height: 20px;"><iframe
+							name="fb9d33fb75d95c" width="1000px" height="1000px"
+							data-testid="fb:like Facebook Social Plugin"
+							title="fb:like Facebook Social Plugin" frameborder="0"
+							allowtransparency="true" allowfullscreen="true" scrolling="no"
+							allow="encrypted-media"
+							src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=264237830704171&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2acbba13faf7f4%26domain%3Ddailyxe.com.vn%26origin%3Dhttps%253A%252F%252Fdailyxe.com.vn%252Ff23679434cf0294%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fdailyxe.com.vn%2Ftin-tuc%2Fmien-thue-nhap-khau-linh-kien-nguyen-lieu-lap-rap-o-to-trong-nuoc-14785d.html&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"
+							style="border: none; visibility: visible; width: 138px; height: 20px;"
+							class=""></iframe></span>
+				</div>
+				<div class="google-plusone">
+					<div class="g-plusone" data-annotation="inline" data-width="50"></div>
+				</div>
+			</div>
 		</div>
 		
 		<?php } ?>
+		
 	</section>
 	<section class="summary-reviews column z-1">
 		<div class="card box-right box-border box-bottom">
@@ -256,20 +271,17 @@ while ($row = mysqli_fetch_array($data["News"])) {
 							href="<?php echo $servername?>/news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>">
 							<img class="lazy-loading-image loaded"
 							src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $r["thumbnail"] ?>"
-							alt="<?php echo $r["tieude"] ?>"
-							data-pin-nopin="true">
+							alt="<?php echo $r["tieude"] ?>" data-pin-nopin="true">
 						</a>
 						<div class="media-body">
 							<h3 class="news-right-title">
-								<a target="_self"
-									title="<?php echo $r["tieude"] ?>"
+								<a target="_self" title="<?php echo $r["tieude"] ?>"
 									href="<?php echo $servername?>/news/<?php echo $r["slugtieude"] ?>-<?php echo $r["id"] ?>"><?php echo $r["tieude"] ?></a>
 							</h3>
 							<p class="news-posted">
 								<span class="origin"><a title="<?php echo $r["tieude"] ?>"
 									href="<?php echo $r["webnguon"] ?>"><?php echo $r["nguon"] ?></a></span>
-								<span><i
-									class="fa fa-eye"></i><?php echo $r["luotxem"] ?></span>
+								<span><i class="fa fa-eye"></i><?php echo $r["luotxem"] ?></span>
 							</p>
 						</div>
 					</div>

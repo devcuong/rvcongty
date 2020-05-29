@@ -52,9 +52,9 @@ class TimKiem extends Controller
         // Description
         $description = "Công ty TOP - Kết quả tìm kiếm";
         
-        echo mysqli_num_rows($allKetQua);
+        //echo $tinTucQuaBoQua;
         // View
-        /*$this->view("main-template", [
+        $this->view("main-template", [
             "Page" => "ket-qua-tim-kiem-tin-tuc",
             "KetQuaTrangHienTai" => $ketQuaTinTucTrangHienTai,
             "Navigate" => $nav,
@@ -62,7 +62,7 @@ class TimKiem extends Controller
             "Keyword" => $keySearch,
             "Title" => $title,
             "Description" => $description
-        ]);*/
+        ]);
     }
     
     // Tìm kiếm công ty
