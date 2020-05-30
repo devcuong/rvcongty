@@ -175,7 +175,7 @@
 
 			</section>
 </div>
-<p class="title-news">TIN TỨC</p>
+<div class="page-heading d-flex"><h4 class="box-title-page mr-auto">TIN TỨC</h4></div>
 <div class="columns">
 	<?php
 $index = 0;
