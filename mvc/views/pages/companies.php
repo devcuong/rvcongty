@@ -1,3 +1,18 @@
+<style>
+.textarea:not([rows]) {
+    max-height: 600px;
+    min-height: 120px;
+}
+.select select:not([multiple]) {
+    padding-right: 2.5em;
+}
+.select:not(.is-multiple) {
+    height: 2.25em;
+}
+.modal-card-foot .button:not(:last-child) {
+    margin-right: 10px;
+}
+</style>
 <?php
 while ($row = mysqli_fetch_array($data["CongTy"])) {
     ?>

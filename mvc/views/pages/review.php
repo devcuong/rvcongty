@@ -192,7 +192,6 @@ while ($row = mysqli_fetch_array($data["Review"])) {
                         <textarea required class="textarea" name="content" id="review-content"
                             placeholder="Bức xúc hay gì thì viết dài dài vô (Tối thiểu 10 kí tự)"></textarea>
                     </div>
-
                 </div>
                 <div class="field">
                     <label class="label">Bày tỏ thái độ</label>
