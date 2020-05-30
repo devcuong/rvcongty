@@ -17,13 +17,9 @@ class Videos extends Controller
         
         // View
         $this->view("main-template", [
-            "Page" => "news-detail",
+            "Page" => "videos",
             "Title" => $title,
-            "Description" => $description,
-            "News" => $newsLater,
-            "NewsMoiNhat"=>$newsMoiNhat,
-            "NewsLienQuan" => $newsLienQuan
-            
+            "Description" => $description, 
         ]);
     }
 }

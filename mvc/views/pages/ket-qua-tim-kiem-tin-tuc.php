@@ -140,7 +140,7 @@
 					</h2>
 					<p class="news-posted">
 						<span class="origin"><a title="<?php echo $AllKetQua["nguon"] ?>"
-							href="https://dailyxe.com.vn/autopro-autopro.com.vn-1w.html"><?php echo $AllKetQua["nguon"] ?></a></span>
+							href="<?php echo $servername ?>/news/<?php echo $AllKetQua["slugtieude"] ?>-<?php echo $AllKetQua["id"] ?>"><?php echo $AllKetQua["nguon"] ?></a></span>
 						<span><i class="fa fa-eye"></i><?php echo $AllKetQua["luotxem"] ?></span>
 					</p>
 					<div class="media">
