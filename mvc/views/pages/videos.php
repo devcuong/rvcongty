@@ -57,6 +57,83 @@
 .video-main {
     padding-bottom: 20px;
 }
+.video-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.video-item {
+    position: relative;
+    width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+.media {
+	border-top: 1px solid rgba(219, 219, 219, .5);
+	margin-top: 1rem;
+    padding-top: 1rem;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: start;
+    -webkit-box-align: start;
+    align-items: flex-start;
+}
+.video-item .video-img {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding-top: 56.2%;
+    overflow: hidden;
+    position: relative;
+}
+.video-item .video-img img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.video-item .video-time {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 3px;
+    padding: 2px 5px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 90%;
+}
+.video-item .media-body {
+    width: 100%;
+}
+.title {
+    color: #363636;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+}
+.video-item .title a {
+    display: block;
+}
+.dark-mode .video-info {
+    color: #999;
+}
 </style>
 <section id="divCenter" class="video-container">
 	<div class="container">
@@ -82,68 +159,6 @@
 			</div>
 			<div class="video-main">
 				<div class="video-list">
-					<!-- ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo" class="video-item media ">
-						<a title="Đại gia Việt ngày càng chuộng siêu SUV"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/dai-gia-viet-ngay-cang-chuong-sieu-suv-1210o.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/dai-gia-viet-ngay-cang-chuong-sieu-suv-122253j2.jpg"
-							alt="Đại gia Việt ngày càng chuộng siêu SUV"
-							src="https://cdn.dailyxe.com.vn/image/dai-gia-viet-ngay-cang-chuong-sieu-suv-122253j2.jpg">
-							<!-- ngIf: item.Duration --> <span
-							class="video-time ng-binding ng-scope" ng-if="item.Duration">16:49</span>
-							<!-- end ngIf: item.Duration --> <!-- ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/dai-gia-viet-ngay-cang-chuong-sieu-suv-1210o.html"
-									title="Đại gia Việt ngày càng chuộng siêu SUV"
-									class="ng-binding">Đại gia Việt ngày càng chuộng siêu SUV</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 28 ngày trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.SoLuotXem"> 3 lượt xem </span>
-								<!-- end ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/dai-gia-viet-ngay-cang-chuong-sieu-suv-1210o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Đại gia Việt ngày càng chuộng siêu SUV', 'https://dailyxe.com.vn/videos/dai-gia-viet-ngay-cang-chuong-sieu-suv-1210o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/dai-gia-viet-ngay-cang-chuong-sieu-suv-1210o.html', 'Đại gia Việt ngày càng chuộng siêu SUV', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 					<!-- end ngRepeat: item in listVideo -->
 					<div ng-repeat="item in listVideo" class="video-item media ">
 						<a
@@ -175,36 +190,6 @@
 								<span class="video-info-item ng-binding ng-scope"
 									ng-if="item.SoLuotXem"> 2 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/lexus-rc-f-track-edition-vuot-troi-hon-ve-kha-nang-van-hanh-va-xu-ly-1213o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Lexus RC F Track Edition vượt trội hơn về khả năng vận hành và xử lý', 'https://dailyxe.com.vn/videos/lexus-rc-f-track-edition-vuot-troi-hon-ve-kha-nang-van-hanh-va-xu-ly-1213o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/lexus-rc-f-track-edition-vuot-troi-hon-ve-kha-nang-van-hanh-va-xu-ly-1213o.html', 'Lexus RC F Track Edition vượt trội hơn về khả năng vận hành và xử lý', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -239,36 +224,6 @@
 								<span class="video-info-item ng-binding ng-scope"
 									ng-if="item.SoLuotXem"> 5 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/porsche-lap-dat-tram-sac-nhanh-dau-tien-danh-cho-taycan-tai-sai-gon-1214o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Porsche lắp đặt trạm sạc nhanh đầu tiên dành cho Taycan tại Sài Gòn', 'https://dailyxe.com.vn/videos/porsche-lap-dat-tram-sac-nhanh-dau-tien-danh-cho-taycan-tai-sai-gon-1214o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/porsche-lap-dat-tram-sac-nhanh-dau-tien-danh-cho-taycan-tai-sai-gon-1214o.html', 'Porsche lắp đặt trạm sạc nhanh đầu tiên dành cho Taycan tại Sài Gòn', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -2626,579 +2581,29 @@
 				</div>
 				<!-- ngIf: spinner -->
 				<!-- ngIf: !spinner && listVideo.length == 0 -->
-				<pagination class="pagination-custom ng-isolate-scope"
-					ng-show="!spinner &amp;&amp; totalPage > 1" page="displayPage"
-					page-size="displayItems" total="total" show-prev-next="true"
-					paging-action="loadData(page, pageSize); ScrollToContainer('#containerResult')">
-				<ul data-ng-hide="Hide" data-ng-class="ulClass" class="pagination">
-					<!-- ngRepeat: Item in List -->
-					<li title="Previous Page" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope disabled"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">&lt;</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Page 1" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope active"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">1</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Page 2" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">2</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Page 3" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">3</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Page 4" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">4</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Page 5" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">5</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Page 6" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">6</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Page 7" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">7</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Page 8" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope disabled"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">...</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Page 28" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">28</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Page 29" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">29</a></li>
-					<!-- end ngRepeat: Item in List -->
-					<li title="Next Page" data-ng-class="Item.liClass"
-						data-ng-repeat="Item in List" class="ng-scope"><a href=""
-						data-ng-class="Item.aClass" data-ng-click="Item.action()"
-						data-ng-bind="Item.value" class="ng-binding">&gt;</a></li>
-					<!-- end ngRepeat: Item in List -->
-				</ul>
-				</pagination>
 			</div>
 		</div>
-		<span macd="danhsachplaylist_video"></span>
-		<div class="video-bottom news-list ng-scope" id="containerResult"
-			ng-controller="playlist-videos-list as ctrl" ng-init="init('')">
-			<!-- ngIf: listVideo.length > 0 -->
-			<div class="d-flex align-items-center ng-scope"
-				ng-if="listVideo.length > 0">
-				<!-- ngIf: !isLoadTimKiem -->
-				<h1 class="video-title ng-scope" ng-if="!isLoadTimKiem">Playlist
-					videos</h1>
+		
 				<!-- end ngIf: !isLoadTimKiem -->
 				<!-- ngIf: isLoadTimKiem -->
-			</div>
-			<!-- end ngIf: listVideo.length > 0 -->
-			<!-- ngIf: listVideo.length > 0 -->
-			<div class="video-main ng-scope" ng-if="listVideo.length > 0">
-				<div class="video-list">
+			
+				
 					<!-- ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a title="DailyXe Review Honda" class="video-img"
-							href="https://dailyxe.com.vn/videos/dailyxe-review-honda-8q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/dailyxe-review-honda-75698j2.jpg"
-							alt="DailyXe Review Honda"
-							src="https://cdn.dailyxe.com.vn/image/dailyxe-review-honda-75698j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos --> <span
-							class="playlist-count ng-binding ng-scope" ng-if="item.IdVideos">5</span>
-							<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/dailyxe-review-honda-8q.html"
-									title="DailyXe Review Honda" class="ng-binding">DailyXe Review
-									Honda</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 10 tháng trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/dailyxe-review-honda-8q.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'DailyXe Review Honda', 'https://dailyxe.com.vn/videos/dailyxe-review-honda-8q.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/dailyxe-review-honda-8q.html', 'DailyXe Review Honda', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a title="DailyXe Review Ford" class="video-img"
-							href="https://dailyxe.com.vn/videos/dailyxe-review-ford-7q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/dailyxe-review-ford-75693j2.jpg"
-							alt="DailyXe Review Ford"
-							src="https://cdn.dailyxe.com.vn/image/dailyxe-review-ford-75693j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos --> <span
-							class="playlist-count ng-binding ng-scope" ng-if="item.IdVideos">4</span>
-							<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/dailyxe-review-ford-7q.html"
-									title="DailyXe Review Ford" class="ng-binding">DailyXe Review
-									Ford</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 10 tháng trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/dailyxe-review-ford-7q.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'DailyXe Review Ford', 'https://dailyxe.com.vn/videos/dailyxe-review-ford-7q.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/dailyxe-review-ford-7q.html', 'DailyXe Review Ford', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a title="DailyXe Review Chevrolet" class="video-img"
-							href="https://dailyxe.com.vn/videos/dailyxe-review-chevrolet-6q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/dailyxe-review-chevrolet-75690j2.jpg"
-							alt="DailyXe Review Chevrolet"
-							src="https://cdn.dailyxe.com.vn/image/dailyxe-review-chevrolet-75690j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos --> <span
-							class="playlist-count ng-binding ng-scope" ng-if="item.IdVideos">4</span>
-							<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/dailyxe-review-chevrolet-6q.html"
-									title="DailyXe Review Chevrolet" class="ng-binding">DailyXe
-									Review Chevrolet</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 10 tháng trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/dailyxe-review-chevrolet-6q.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'DailyXe Review Chevrolet', 'https://dailyxe.com.vn/videos/dailyxe-review-chevrolet-6q.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/dailyxe-review-chevrolet-6q.html', 'DailyXe Review Chevrolet', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a
-							title="Thỏa sức &quot;nghịch cát&quot; với video mới của Ken Block"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-5q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-15551j2.jpg"
-							alt="Thỏa sức &quot;nghịch cát&quot; với video mới của Ken Block"
-							src="https://cdn.dailyxe.com.vn/image/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-15551j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos --> <span
-							class="playlist-count ng-binding ng-scope" ng-if="item.IdVideos">3</span>
-							<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-5q.html"
-									title="Thỏa sức &quot;nghịch cát&quot; với video mới của Ken Block"
-									class="ng-binding">Thỏa sức "nghịch cát" với video mới của Ken
-									Block</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 1 năm trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-5q.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Thỏa sức &quot;nghịch cát&quot; với video mới của Ken Block', 'https://dailyxe.com.vn/videos/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-5q.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-5q.html', 'Thỏa sức &quot;nghịch cát&quot; với video mới của Ken Block', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a
-							title="Mercedes-AMG E63 S thử khả năng tăng tốc với Tesla Model S P100D [1]"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-4q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-66915j2.jpg"
-							alt="Mercedes-AMG E63 S thử khả năng tăng tốc với Tesla Model S P100D [1]"
-							src="https://cdn.dailyxe.com.vn/image/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-66915j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos --> <span
-							class="playlist-count ng-binding ng-scope" ng-if="item.IdVideos">2</span>
-							<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-4q.html"
-									title="Mercedes-AMG E63 S thử khả năng tăng tốc với Tesla Model S P100D [1]"
-									class="ng-binding">Mercedes-AMG E63 S thử khả năng tăng tốc với
-									Tesla Model S P100D [1]</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 1 năm trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-4q.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Mercedes-AMG E63 S thử khả năng tăng tốc với Tesla Model S P100D [1]', 'https://dailyxe.com.vn/videos/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-4q.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-4q.html', 'Mercedes-AMG E63 S thử khả năng tăng tốc với Tesla Model S P100D [1]', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a
-							title="Chevrolet Trailblazer được thử nghiệm vô cùng nghiêm ngặt trước khi về Việt Nam [1]"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-3q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-66917j2.jpg"
-							alt="Chevrolet Trailblazer được thử nghiệm vô cùng nghiêm ngặt trước khi về Việt Nam [1]"
-							src="https://cdn.dailyxe.com.vn/image/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-66917j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos --> <span
-							class="playlist-count ng-binding ng-scope" ng-if="item.IdVideos">2</span>
-							<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-3q.html"
-									title="Chevrolet Trailblazer được thử nghiệm vô cùng nghiêm ngặt trước khi về Việt Nam [1]"
-									class="ng-binding">Chevrolet Trailblazer được thử nghiệm vô
-									cùng nghiêm ngặt trước khi về Việt Nam [1]</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 1 năm trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-3q.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Chevrolet Trailblazer được thử nghiệm vô cùng nghiêm ngặt trước khi về Việt Nam [1]', 'https://dailyxe.com.vn/videos/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-3q.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-3q.html', 'Chevrolet Trailblazer được thử nghiệm vô cùng nghiêm ngặt trước khi về Việt Nam [1]', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a
-							title="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [1]"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-2q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-66916j2.jpg"
-							alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [1]"
-							src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-66916j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos --> <span
-							class="playlist-count ng-binding ng-scope" ng-if="item.IdVideos">17</span>
-							<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-2q.html"
-									title="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [1]"
-									class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật với
-									những dòng xe cơ bắp, bán tải và xe điện [1]</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 1 năm trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-2q.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [1]', 'https://dailyxe.com.vn/videos/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-2q.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-2q.html', 'Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [1]', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a
-							title="9 cảnh hành động nghẹt thở tiêu biểu xuyên suốt series phim Fast and Furious"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-1q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-66930j2.jpg"
-							alt="9 cảnh hành động nghẹt thở tiêu biểu xuyên suốt series phim Fast and Furious"
-							src="https://cdn.dailyxe.com.vn/image/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-66930j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos --> <span
-							class="playlist-count ng-binding ng-scope" ng-if="item.IdVideos">9</span>
-							<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-1q.html"
-									title="9 cảnh hành động nghẹt thở tiêu biểu xuyên suốt series phim Fast and Furious"
-									class="ng-binding">9 cảnh hành động nghẹt thở tiêu biểu xuyên
-									suốt series phim Fast and Furious</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 1 năm trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-1q.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, '9 cảnh hành động nghẹt thở tiêu biểu xuyên suốt series phim Fast and Furious', 'https://dailyxe.com.vn/videos/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-1q.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-1q.html', '9 cảnh hành động nghẹt thở tiêu biểu xuyên suốt series phim Fast and Furious', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
 				</div>
 				<!-- ngIf: spinner -->
