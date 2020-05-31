@@ -1,5 +1,5 @@
 <?php require_once 'mvc/core/Config.php'; ?>
-<?php require_once 'mvc/class/CutString.php'; ?>
+<?php header("HTTP/1.0 404 Not Found"); ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
