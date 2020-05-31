@@ -85,7 +85,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
 	</button>
 </section>
 <section class="full-reviews">
-<?php if ($data["SoTrang"]>0){ ?>
+<?php if ($data["SoTrang"]>1){ ?>
 <nav class="pagination is-small custom-pagination" role="navigation"
 		aria-label="pagination">
 		<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b>
@@ -213,7 +213,7 @@ while ($row = mysqli_fetch_array($data["CongTy"])) {
         $rowIndex ++;
     }
     ?>
-  <?php if($data["SoTrang"]>0){ ?>
+  <?php if($data["SoTrang"]>1){ ?>
   <nav class="pagination is-small custom-pagination" role="navigation"
 		aria-label="pagination">
 		<span class="pagination-summary">Trang <b><?php echo $data["TrangHienTai"] ?></b>
