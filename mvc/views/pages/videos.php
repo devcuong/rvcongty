@@ -124,16 +124,36 @@
 }
 .title {
     color: #363636;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: bold;
     line-height: 1.125;
+}
+.video-item .title {
+    color: #333;
+    font-family: "Roboto", sans-serif;
+    font-size: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
 }
 .video-item .title a {
     display: block;
 }
-.dark-mode .video-info {
+.video-info {
     color: #999;
+	display: flex;
 }
+.video-item .video-info .video-info-item:not(:last-child) {
+    margin-right: 20px;
+}
+.video-info-item i{
+	margin-right: 3px;
+}
+
 </style>
 <section id="divCenter" class="video-container">
 	<div class="container">
@@ -184,11 +204,11 @@
 							<div class="video-info">
 								<!-- ngIf: item.NgayTao -->
 								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 24 ngày trước </span>
+									ng-if="item.NgayTao">27/04/2020</span>
 								<!-- end ngIf: item.NgayTao -->
 								<!-- ngIf: item.SoLuotXem -->
 								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.SoLuotXem"> 2 lượt xem </span>
+									ng-if="item.SoLuotXem"> <i class="fa fa-eye"></i>2 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
 						</div>
@@ -257,36 +277,7 @@
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/xe-vinfast-lux-giam-gia-gan-300-trieu-dong-1215o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Xe VinFast Lux giảm giá gần 300 triệu đồng', 'https://dailyxe.com.vn/videos/xe-vinfast-lux-giam-gia-gan-300-trieu-dong-1215o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/xe-vinfast-lux-giam-gia-gan-300-trieu-dong-1215o.html', 'Xe VinFast Lux giảm giá gần 300 triệu đồng', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+					
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -319,36 +310,6 @@
 								<span class="video-info-item ng-binding ng-scope"
 									ng-if="item.SoLuotXem"> 5 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/can-canh-man-off-road-hiem-hoi-cua-mercedes-amg-g63-1212o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Cận cảnh màn off-road hiếm hoi của Mercedes-AMG G63', 'https://dailyxe.com.vn/videos/can-canh-man-off-road-hiem-hoi-cua-mercedes-amg-g63-1212o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/can-canh-man-off-road-hiem-hoi-cua-mercedes-amg-g63-1212o.html', 'Cận cảnh màn off-road hiếm hoi của Mercedes-AMG G63', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -383,36 +344,6 @@
 									ng-if="item.SoLuotXem"> 2 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/vi-sao-toyota-rav4-van-chua-duoc-ban-chinh-hang-1209o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Vì sao Toyota RAV4 vẫn chưa được bán chính hãng?', 'https://dailyxe.com.vn/videos/vi-sao-toyota-rav4-van-chua-duoc-ban-chinh-hang-1209o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/vi-sao-toyota-rav4-van-chua-duoc-ban-chinh-hang-1209o.html', 'Vì sao Toyota RAV4 vẫn chưa được bán chính hãng?', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -445,36 +376,6 @@
 								<span class="video-info-item ng-binding ng-scope"
 									ng-if="item.SoLuotXem"> 0 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/danh-gia-toyota-rush-tot-o-ca-vai-tro-mpv-va-suv-1208o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Đánh giá Toyota Rush – Tốt ở cả vai trò MPV và SUV', 'https://dailyxe.com.vn/videos/danh-gia-toyota-rush-tot-o-ca-vai-tro-mpv-va-suv-1208o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/danh-gia-toyota-rush-tot-o-ca-vai-tro-mpv-va-suv-1208o.html', 'Đánh giá Toyota Rush – Tốt ở cả vai trò MPV và SUV', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -510,36 +411,7 @@
 									ng-if="item.SoLuotXem"> 2 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/gia-tu-41-47-ty-bmw-x5-2020-xdrive-canh-tranh-voi-mercedes-gle-2020-va-audi-q7-2020-1207o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Giá từ 4,1 - 4,7 tỷ, BMW X5 2020 xDrive cạnh tranh với Mercedes GLE 2020 và Audi Q7 2020', 'https://dailyxe.com.vn/videos/gia-tu-41-47-ty-bmw-x5-2020-xdrive-canh-tranh-voi-mercedes-gle-2020-va-audi-q7-2020-1207o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/gia-tu-41-47-ty-bmw-x5-2020-xdrive-canh-tranh-voi-mercedes-gle-2020-va-audi-q7-2020-1207o.html', 'Giá từ 4,1 - 4,7 tỷ, BMW X5 2020 xDrive cạnh tranh với Mercedes GLE 2020 và Audi Q7 2020', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -571,36 +443,6 @@
 								<span class="video-info-item ng-binding ng-scope"
 									ng-if="item.SoLuotXem"> 4 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/porsche-911-2021-them-tuy-chon-va-mau-moi-1206o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Porsche 911 2021 thêm tuỳ chọn và màu mới', 'https://dailyxe.com.vn/videos/porsche-911-2021-them-tuy-chon-va-mau-moi-1206o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/porsche-911-2021-them-tuy-chon-va-mau-moi-1206o.html', 'Porsche 911 2021 thêm tuỳ chọn và màu mới', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -636,36 +478,7 @@
 									ng-if="item.SoLuotXem"> 1 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/ra-mat-3-phien-ban-bmw-series-7-moi-tai-viet-nam-gia-tu-4369-ty-dong-1203o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Ra mắt 3 phiên bản BMW Series 7 mới tại Việt Nam, giá từ 4,369 tỷ đồng', 'https://dailyxe.com.vn/videos/ra-mat-3-phien-ban-bmw-series-7-moi-tai-viet-nam-gia-tu-4369-ty-dong-1203o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/ra-mat-3-phien-ban-bmw-series-7-moi-tai-viet-nam-gia-tu-4369-ty-dong-1203o.html', 'Ra mắt 3 phiên bản BMW Series 7 mới tại Việt Nam, giá từ 4,369 tỷ đồng', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -700,36 +513,7 @@
 									ng-if="item.SoLuotXem"> 2 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/co-hoi-so-huu-suv-phap-chi-tu-999-trieu-dong-va-nhieu-qua-tang-hap-dan-1204o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Cơ hội sở hữu SUV Pháp chỉ từ 999 triệu đồng và nhiều quà tặng hấp dẫn', 'https://dailyxe.com.vn/videos/co-hoi-so-huu-suv-phap-chi-tu-999-trieu-dong-va-nhieu-qua-tang-hap-dan-1204o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/co-hoi-so-huu-suv-phap-chi-tu-999-trieu-dong-va-nhieu-qua-tang-hap-dan-1204o.html', 'Cơ hội sở hữu SUV Pháp chỉ từ 999 triệu đồng và nhiều quà tặng hấp dẫn', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -764,36 +548,7 @@
 									ng-if="item.SoLuotXem"> 2 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/ford-mustang-55-nam-tuoi-do-1000-ma-luc-voi-gia-gan-24-ty-vnd-tin-duoc-khong-1205o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Ford Mustang 55 năm tuổi độ 1.000 mã lực với giá gần 24 tỷ VNĐ, tin được không?', 'https://dailyxe.com.vn/videos/ford-mustang-55-nam-tuoi-do-1000-ma-luc-voi-gia-gan-24-ty-vnd-tin-duoc-khong-1205o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/ford-mustang-55-nam-tuoi-do-1000-ma-luc-voi-gia-gan-24-ty-vnd-tin-duoc-khong-1205o.html', 'Ford Mustang 55 năm tuổi độ 1.000 mã lực với giá gần 24 tỷ VNĐ, tin được không?', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -826,36 +581,7 @@
 									ng-if="item.SoLuotXem"> 11 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/vinfast-7-cho-chay-tren-cao-toc-trung-luong-1202o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'VinFast 7 chỗ cháy trên cao tốc Trung Lương', 'https://dailyxe.com.vn/videos/vinfast-7-cho-chay-tren-cao-toc-trung-luong-1202o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/vinfast-7-cho-chay-tren-cao-toc-trung-luong-1202o.html', 'VinFast 7 chỗ cháy trên cao tốc Trung Lương', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -889,36 +615,6 @@
 								<span class="video-info-item ng-binding ng-scope"
 									ng-if="item.SoLuotXem"> 2 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/chay-oto-7-cho-tren-cao-toc-trung-luong-giao-thong-un-tac-3-km-1201o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Cháy ôtô 7 chỗ trên cao tốc Trung Lương, giao thông ùn tắc 3 km', 'https://dailyxe.com.vn/videos/chay-oto-7-cho-tren-cao-toc-trung-luong-giao-thong-un-tac-3-km-1201o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/chay-oto-7-cho-tren-cao-toc-trung-luong-giao-thong-un-tac-3-km-1201o.html', 'Cháy ôtô 7 chỗ trên cao tốc Trung Lương, giao thông ùn tắc 3 km', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -954,36 +650,6 @@
 									ng-if="item.SoLuotXem"> 5 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/danh-gia-xe-bmw-740li-2020-pure-excellence-gia-hon-6-ty-dong-dau-tien-tai-viet-nam-1199o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Đánh giá xe BMW 740Li 2020 Pure Excellence giá hơn 6 tỷ đồng ĐẦU TIÊN tại Việt Nam', 'https://dailyxe.com.vn/videos/danh-gia-xe-bmw-740li-2020-pure-excellence-gia-hon-6-ty-dong-dau-tien-tai-viet-nam-1199o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/danh-gia-xe-bmw-740li-2020-pure-excellence-gia-hon-6-ty-dong-dau-tien-tai-viet-nam-1199o.html', 'Đánh giá xe BMW 740Li 2020 Pure Excellence giá hơn 6 tỷ đồng ĐẦU TIÊN tại Việt Nam', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1018,36 +684,6 @@
 									ng-if="item.SoLuotXem"> 1 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/noi-that-thuong-gia-cuc-dinh-cua-bmw-740li-2020-gia-hon-6-ty-tai-viet-nam-1198o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Nội thất thương gia cực đỉnh của BMW 740li 2020 giá hơn 6 tỷ tại Việt Nam', 'https://dailyxe.com.vn/videos/noi-that-thuong-gia-cuc-dinh-cua-bmw-740li-2020-gia-hon-6-ty-tai-viet-nam-1198o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/noi-that-thuong-gia-cuc-dinh-cua-bmw-740li-2020-gia-hon-6-ty-tai-viet-nam-1198o.html', 'Nội thất thương gia cực đỉnh của BMW 740li 2020 giá hơn 6 tỷ tại Việt Nam', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1081,36 +717,7 @@
 									ng-if="item.SoLuotXem"> 7 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/hyundai-trieu-hoi-gan-12000-xe-sonata-va-nexo-2020-1196o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Hyundai triệu hồi gần 12.000 xe Sonata và Nexo 2020', 'https://dailyxe.com.vn/videos/hyundai-trieu-hoi-gan-12000-xe-sonata-va-nexo-2020-1196o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/hyundai-trieu-hoi-gan-12000-xe-sonata-va-nexo-2020-1196o.html', 'Hyundai triệu hồi gần 12.000 xe Sonata và Nexo 2020', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1144,36 +751,6 @@
 								<span class="video-info-item ng-binding ng-scope"
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/chien-binh-offroad-jeep-wrangler-rubicon-2020-gia-hon-4-ty-tai-viet-nam-1197o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Chiến binh Offroad Jeep Wrangler Rubicon 2020 giá hơn 4 tỷ tại Việt Nam', 'https://dailyxe.com.vn/videos/chien-binh-offroad-jeep-wrangler-rubicon-2020-gia-hon-4-ty-tai-viet-nam-1197o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/chien-binh-offroad-jeep-wrangler-rubicon-2020-gia-hon-4-ty-tai-viet-nam-1197o.html', 'Chiến binh Offroad Jeep Wrangler Rubicon 2020 giá hơn 4 tỷ tại Việt Nam', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -1209,36 +786,6 @@
 									ng-if="item.SoLuotXem"> 4 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/chi-tiet-phien-ban-moi-kia-soluto-at-luxury-gia-tu-484-trieu-1195o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Chi tiết phiên bản mới Kia Soluto AT Luxury giá từ 484 triệu', 'https://dailyxe.com.vn/videos/chi-tiet-phien-ban-moi-kia-soluto-at-luxury-gia-tu-484-trieu-1195o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/chi-tiet-phien-ban-moi-kia-soluto-at-luxury-gia-tu-484-trieu-1195o.html', 'Chi tiết phiên bản mới Kia Soluto AT Luxury giá từ 484 triệu', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1271,36 +818,6 @@
 								<span class="video-info-item ng-binding ng-scope"
 									ng-if="item.SoLuotXem"> 5 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/audi-a3-sedan-2021-ra-mat-voi-thiet-ke-lot-xac-1194o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Audi A3 sedan 2021 ra mắt với thiết kế lột xác', 'https://dailyxe.com.vn/videos/audi-a3-sedan-2021-ra-mat-voi-thiet-ke-lot-xac-1194o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/audi-a3-sedan-2021-ra-mat-voi-thiet-ke-lot-xac-1194o.html', 'Audi A3 sedan 2021 ra mắt với thiết kế lột xác', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -1336,36 +853,7 @@
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/toyota-alphard-co-them-phien-ban-dac-biet-phuc-vu-khach-dai-gia-1193o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Toyota Alphard có thêm phiên bản đặc biệt phục vụ khách đại gia', 'https://dailyxe.com.vn/videos/toyota-alphard-co-them-phien-ban-dac-biet-phuc-vu-khach-dai-gia-1193o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/toyota-alphard-co-them-phien-ban-dac-biet-phuc-vu-khach-dai-gia-1193o.html', 'Toyota Alphard có thêm phiên bản đặc biệt phục vụ khách đại gia', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+						
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1400,36 +888,7 @@
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/top-5-mau-xe-hot-vua-ve-viet-nam-urus-4-cho-cuc-doc-rav4-gia-cao-hon-glc300-1192o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Top 5 mẫu xe hot vừa về Việt Nam - Urus 4 chỗ cực độc, RAV4 giá cao hơn GLC300', 'https://dailyxe.com.vn/videos/top-5-mau-xe-hot-vua-ve-viet-nam-urus-4-cho-cuc-doc-rav4-gia-cao-hon-glc300-1192o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/top-5-mau-xe-hot-vua-ve-viet-nam-urus-4-cho-cuc-doc-rav4-gia-cao-hon-glc300-1192o.html', 'Top 5 mẫu xe hot vừa về Việt Nam - Urus 4 chỗ cực độc, RAV4 giá cao hơn GLC300', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1463,36 +922,6 @@
 								<span class="video-info-item ng-binding ng-scope"
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
-							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/video-ong-hoang-dia-hinh-mercedes-g-class-chay-off-road-dien-cuong-tren-dat-nga-1190o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Video: “Ông hoàng địa hình” Mercedes G-Class chạy off-road “điên cuồng” trên đất Nga', 'https://dailyxe.com.vn/videos/video-ong-hoang-dia-hinh-mercedes-g-class-chay-off-road-dien-cuong-tren-dat-nga-1190o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/video-ong-hoang-dia-hinh-mercedes-g-class-chay-off-road-dien-cuong-tren-dat-nga-1190o.html', 'Video: “Ông hoàng địa hình” Mercedes G-Class chạy off-road “điên cuồng” trên đất Nga', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -1528,36 +957,6 @@
 									ng-if="item.SoLuotXem"> 7 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/o-to-nissan-va-thong-diep-chuyen-dong-thong-minh-den-tu-hang-xe-nhat-ban-1191o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Ô tô Nissan và Thông điệp “Chuyển động thông minh” đến từ hãng xe Nhật Bản', 'https://dailyxe.com.vn/videos/o-to-nissan-va-thong-diep-chuyen-dong-thong-minh-den-tu-hang-xe-nhat-ban-1191o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/o-to-nissan-va-thong-diep-chuyen-dong-thong-minh-den-tu-hang-xe-nhat-ban-1191o.html', 'Ô tô Nissan và Thông điệp “Chuyển động thông minh” đến từ hãng xe Nhật Bản', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1592,36 +991,7 @@
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/ford-mustang-la-mau-xe-the-thao-ban-chay-nhat-the-gioi-2019-1189o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Ford Mustang là mẫu xe thể thao bán chạy nhất thế giới 2019', 'https://dailyxe.com.vn/videos/ford-mustang-la-mau-xe-the-thao-ban-chay-nhat-the-gioi-2019-1189o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/ford-mustang-la-mau-xe-the-thao-ban-chay-nhat-the-gioi-2019-1189o.html', 'Ford Mustang là mẫu xe thể thao bán chạy nhất thế giới 2019', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1656,36 +1026,7 @@
 									ng-if="item.SoLuotXem"> 4 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/trai-nghiem-thuc-te-bentley-flying-spur-2020-yen-tinh-toi-muc-nao-1188o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Trải nghiệm thực tế: Bentley Flying Spur 2020 yên tĩnh tới mức nào?', 'https://dailyxe.com.vn/videos/trai-nghiem-thuc-te-bentley-flying-spur-2020-yen-tinh-toi-muc-nao-1188o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/trai-nghiem-thuc-te-bentley-flying-spur-2020-yen-tinh-toi-muc-nao-1188o.html', 'Trải nghiệm thực tế: Bentley Flying Spur 2020 yên tĩnh tới mức nào?', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1720,36 +1061,7 @@
 									ng-if="item.SoLuotXem"> 5 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/huong-dan-do-xe-song-song-de-dang-va-chinh-xac-cho-tai-moi-1184o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Hướng dẫn đỗ xe song song - DỄ DÀNG và CHÍNH XÁC cho tài mới', 'https://dailyxe.com.vn/videos/huong-dan-do-xe-song-song-de-dang-va-chinh-xac-cho-tai-moi-1184o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/huong-dan-do-xe-song-song-de-dang-va-chinh-xac-cho-tai-moi-1184o.html', 'Hướng dẫn đỗ xe song song - DỄ DÀNG và CHÍNH XÁC cho tài mới', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1784,36 +1096,7 @@
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/bat-chap-dich-covid-19-doanh-so-o-to-honda-thang-32020-van-tang-40-1183o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Bất chấp dịch Covid-19, doanh số ô tô Honda tháng 3/2020 vẫn tăng 40%', 'https://dailyxe.com.vn/videos/bat-chap-dich-covid-19-doanh-so-o-to-honda-thang-32020-van-tang-40-1183o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/bat-chap-dich-covid-19-doanh-so-o-to-honda-thang-32020-van-tang-40-1183o.html', 'Bất chấp dịch Covid-19, doanh số ô tô Honda tháng 3/2020 vẫn tăng 40%', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1847,36 +1130,7 @@
 									ng-if="item.SoLuotXem"> 4 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/moi-sieu-xe-ban-ra-ferrari-thu-loi-khoang-94000-usd-1182o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Mỗi siêu xe bán ra, Ferrari thu lời khoảng 94.000 USD', 'https://dailyxe.com.vn/videos/moi-sieu-xe-ban-ra-ferrari-thu-loi-khoang-94000-usd-1182o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/moi-sieu-xe-ban-ra-ferrari-thu-loi-khoang-94000-usd-1182o.html', 'Mỗi siêu xe bán ra, Ferrari thu lời khoảng 94.000 USD', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1910,36 +1164,7 @@
 									ng-if="item.SoLuotXem"> 2 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/ba-ly-do-nguoi-viet-khong-chon-xe-hoi-trung-quoc-1-1180o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, '&quot;Ba lý do người Việt không chọn xe hơi Trung Quốc&quot; [1]', 'https://dailyxe.com.vn/videos/ba-ly-do-nguoi-viet-khong-chon-xe-hoi-trung-quoc-1-1180o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/ba-ly-do-nguoi-viet-khong-chon-xe-hoi-trung-quoc-1-1180o.html', '&quot;Ba lý do người Việt không chọn xe hơi Trung Quốc&quot; [1]', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -1973,36 +1198,7 @@
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/ba-ly-do-nguoi-viet-khong-chon-xe-hoi-trung-quoc-2-1181o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, '&quot;Ba lý do người Việt không chọn xe hơi Trung Quốc&quot; [2]', 'https://dailyxe.com.vn/videos/ba-ly-do-nguoi-viet-khong-chon-xe-hoi-trung-quoc-2-1181o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/ba-ly-do-nguoi-viet-khong-chon-xe-hoi-trung-quoc-2-1181o.html', '&quot;Ba lý do người Việt không chọn xe hơi Trung Quốc&quot; [2]', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -2037,36 +1233,7 @@
 									ng-if="item.SoLuotXem"> 1 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/mercedes-benz-ngang-nguoc-chay-234kmh-tren-cao-toc-thach-thuc-luc-luong-chuc-nang-1185o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Mercedes-Benz ngang ngược chạy 234km/h trên cao tốc, thách thức lực lượng chức năng', 'https://dailyxe.com.vn/videos/mercedes-benz-ngang-nguoc-chay-234kmh-tren-cao-toc-thach-thuc-luc-luong-chuc-nang-1185o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/mercedes-benz-ngang-nguoc-chay-234kmh-tren-cao-toc-thach-thuc-luc-luong-chuc-nang-1185o.html', 'Mercedes-Benz ngang ngược chạy 234km/h trên cao tốc, thách thức lực lượng chức năng', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -2100,36 +1267,7 @@
 									ng-if="item.SoLuotXem"> 6 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/danh-gia-xe-bmw-320i-gt-sport-line-2020-tai-viet-nam-1179o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Đánh giá xe BMW 320i GT Sport Line 2020 tại Việt Nam', 'https://dailyxe.com.vn/videos/danh-gia-xe-bmw-320i-gt-sport-line-2020-tai-viet-nam-1179o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/danh-gia-xe-bmw-320i-gt-sport-line-2020-tai-viet-nam-1179o.html', 'Đánh giá xe BMW 320i GT Sport Line 2020 tại Việt Nam', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -2164,36 +1302,7 @@
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/nissan-tung-uu-dai-khung-cho-khach-mua-xe-trong-thang-42020-1178o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Nissan tung ưu đãi khủng cho khách mua xe trong tháng 4/2020', 'https://dailyxe.com.vn/videos/nissan-tung-uu-dai-khung-cho-khach-mua-xe-trong-thang-42020-1178o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/nissan-tung-uu-dai-khung-cho-khach-mua-xe-trong-thang-42020-1178o.html', 'Nissan tung ưu đãi khủng cho khách mua xe trong tháng 4/2020', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -2228,36 +1337,7 @@
 									ng-if="item.SoLuotXem"> 2 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/huong-dan-lai-xe-so-tu-dong-tu-a-toi-z-tren-honda-accord-1177o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Hướng dẫn lái xe số tự động từ A tới Z trên Honda Accord', 'https://dailyxe.com.vn/videos/huong-dan-lai-xe-so-tu-dong-tu-a-toi-z-tren-honda-accord-1177o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/huong-dan-lai-xe-so-tu-dong-tu-a-toi-z-tren-honda-accord-1177o.html', 'Hướng dẫn lái xe số tự động từ A tới Z trên Honda Accord', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -2292,36 +1372,7 @@
 									ng-if="item.SoLuotXem"> 5 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/tesla-he-lo-nhung-hinh-anh-dau-tien-ve-du-an-san-xuat-may-tho-chong-covid-19-1175o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Tesla hé lộ những hình ảnh đầu tiên về dự án sản xuất máy thở chống Covid-19', 'https://dailyxe.com.vn/videos/tesla-he-lo-nhung-hinh-anh-dau-tien-ve-du-an-san-xuat-may-tho-chong-covid-19-1175o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/tesla-he-lo-nhung-hinh-anh-dau-tien-ve-du-an-san-xuat-may-tho-chong-covid-19-1175o.html', 'Tesla hé lộ những hình ảnh đầu tiên về dự án sản xuất máy thở chống Covid-19', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -2355,36 +1406,7 @@
 									ng-if="item.SoLuotXem"> 13 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/so-sanh-genesis-g80-2021-voi-audi-a7-sportback-2-1174o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'So sánh Genesis G80 2021 với Audi A7 Sportback [2]', 'https://dailyxe.com.vn/videos/so-sanh-genesis-g80-2021-voi-audi-a7-sportback-2-1174o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/so-sanh-genesis-g80-2021-voi-audi-a7-sportback-2-1174o.html', 'So sánh Genesis G80 2021 với Audi A7 Sportback [2]', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -2418,36 +1440,7 @@
 									ng-if="item.SoLuotXem"> 7 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/so-sanh-genesis-g80-2021-voi-audi-a7-sportback-1173o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'So sánh Genesis G80 2021 với Audi A7 Sportback', 'https://dailyxe.com.vn/videos/so-sanh-genesis-g80-2021-voi-audi-a7-sportback-1173o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/so-sanh-genesis-g80-2021-voi-audi-a7-sportback-1173o.html', 'So sánh Genesis G80 2021 với Audi A7 Sportback', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -2481,36 +1474,7 @@
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/3-mau-xe-bmw-danh-cho-gioi-tre-viet-khong-the-bo-qua-1172o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, '3 mẫu xe BMW dành cho giới trẻ Việt KHÔNG THỂ BỎ QUA', 'https://dailyxe.com.vn/videos/3-mau-xe-bmw-danh-cho-gioi-tre-viet-khong-the-bo-qua-1172o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/3-mau-xe-bmw-danh-cho-gioi-tre-viet-khong-the-bo-qua-1172o.html', '3 mẫu xe BMW dành cho giới trẻ Việt KHÔNG THỂ BỎ QUA', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
@@ -2545,36 +1509,7 @@
 									ng-if="item.SoLuotXem"> 3 lượt xem </span>
 								<!-- end ngIf: item.SoLuotXem -->
 							</div>
-							<div
-								compile="buildDropdownMenuItemDesktop(replaceCharactersToHtmlCode(item.TongHop_FullLink), replaceCharactersToHtmlCode(item.TenStandardized), null)">
-								<div class="dropdown dropdown-menu-item dropleft ng-scope"
-									ng-controller="favorite-link as ctrl">
-									<a class="btn" href="javascript:void(0)" role="button"
-										id="dropdownMenuLink"
-										ng-click="ctrl.checkFavoriteLink('https://dailyxe.com.vn/videos/my-nhan-xe-sau-vai-phut-chu-nhan-chiec-bmw-m5-2020-lap-tuc-gay-tai-nan-kinh-hoang-1176o.html')"
-										data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> <i class="fas fa-ellipsis-v"></i>
-									</a>
-									<div class="dropdown-menu fade"
-										aria-labelledby="dropdownMenuLink">
-										<div class="feature-control">
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon " href="javascript:void(0)"
-													title="Lưu xem sau"
-													ng-click="addFavorite(null, 'Mỹ: Nhận xe sau vài phút, chủ nhân chiếc BMW M5 2020 lập tức gây tai nạn kinh hoàng', 'https://dailyxe.com.vn/videos/my-nhan-xe-sau-vai-phut-chu-nhan-chiec-bmw-m5-2020-lap-tuc-gay-tai-nan-kinh-hoang-1176o.html')">
-													<i class="far fa-star"></i>Lưu xem sau
-												</a>
-											</div>
-											<div class="feature-control-item favorite">
-												<a class="feature-control-icon feature-control-icon-share"
-													href="javascript:viewQRCodeDesktop('https://dailyxe.com.vn/videos/my-nhan-xe-sau-vai-phut-chu-nhan-chiec-bmw-m5-2020-lap-tuc-gay-tai-nan-kinh-hoang-1176o.html', 'Mỹ: Nhận xe sau vài phút, chủ nhân chiếc BMW M5 2020 lập tức gây tai nạn kinh hoàng', '437202924732568222')"
-													title="Chia sẻ"> <i class="fas fa-share-alt"></i>Chia sẻ
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!-- end ngRepeat: item in listVideo -->
