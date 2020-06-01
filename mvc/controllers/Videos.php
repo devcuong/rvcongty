@@ -1,14 +1,17 @@
 <?php
 class Videos extends Controller
 {
-    //public $VideoModel;
+    public $VideoModel;
     public function __construct()
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
-        //$this->NewsModel = $this->model("NewsModel");
+        $this->VideoModel= $this->model("VideoModel");
     }
     
     function Index(){
+        
+        $allVideos = $this->VideoModel->TatCaVideo();
+        
         // Title
         $title = "Review công ty ";
         
@@ -19,7 +22,8 @@ class Videos extends Controller
         $this->view("main-template", [
             "Page" => "videos",
             "Title" => $title,
-            "Description" => $description, 
+            "Description" => $description,
+            "Videos" => $allVideos
         ]);
     }
 }

@@ -17,6 +17,8 @@ class QuanTri extends Controller
     public $NewsModel;
     
     public $PlaylistModel;
+    
+    public $VideoModel;
 
     public function __construct()
     {
@@ -27,6 +29,7 @@ class QuanTri extends Controller
         $this->ReplyModel = $this->model("ReplyModel");
         $this->NewsModel = $this->model("NewsModel");
         $this->PlaylistModel = $this->model("PlaylistModel");
+        $this->VideoModel = $this->model("VideoModel");
     }
 
     public function Index()
@@ -622,7 +625,7 @@ class QuanTri extends Controller
                 if (isset($_POST["slug-playlist"])){
                     $slugPlaylist = $_POST["slug-playlist"];
                 }
-                // Thêm tin tức
+                // Thêm playlist
                 $kq = $this->PlaylistModel->ThemPlaylist($tieuDePlaylist, $slugPlaylist, $soVideo, $createdDate);
                 if ($kq) {
                     // View
@@ -649,7 +652,37 @@ class QuanTri extends Controller
     public function ThemVideo(){
         if (isset($_SESSION["email"])) {
             if (isset($_POST["btn-submit"])) {
-                
+                $tieuDeVideo = "";
+                $slugVideo = "";
+                $playList = "";
+                $urlVideo = "";
+                $timeDuration = "";
+                $thumbVideoId = "";
+                $createdDate = date("Y-m-d H:i:s");
+                if(isset($_POST["tieu-de-video"])){
+                    $tieuDeVideo = $_POST["tieu-de-video"];
+                }
+                if (isset($_POST["slug-video"])){
+                    $slugVideo = $_POST["slug-video"];
+                }
+                if(isset($_POST["playlist-video"])){
+                    $playList = $_POST["playlist-video"];
+                }
+                if (isset($_POST["url-video"])){
+                    $urlVideo = $_POST["url-video"];
+                    $thumbVideoId = explode("v=", $urlVideo)[1];
+                }
+                if (isset($_POST["time-duration"])){
+                    $timeDuration = $_POST["time-duration"];
+                }
+                // Thêm playlist
+                $kq = $this->VideoModel->ThemVideo($tieuDeVideo, $slugVideo, $playList, $urlVideo, $thumbVideoId, $timeDuration, $createdDate);
+                if ($kq) {
+                    // View
+                    $this->view("admin-template", [
+                        "Page" => "quan-tri-thanh-cong"
+                    ]);
+                }
             }else{
                 $listPlaylist = $this->PlaylistModel->TatCaPlaylist();
                 // View

@@ -232,26 +232,25 @@
 			<div class="video-main">
 				<div class="video-list">
 					<!-- end ngRepeat: item in listVideo -->
+					<?php while ($row = mysqli_fetch_array($data["Videos"])) {?>
 					<div ng-repeat="item in listVideo" class="video-item media ">
 						<a
-							title="Lexus RC F Track Edition vượt trội hơn về khả năng vận hành và xử lý"
+							title="<?php echo $row["tieudevideo"]; ?>"
 							class="video-img"
 							href="https://dailyxe.com.vn/videos/lexus-rc-f-track-edition-vuot-troi-hon-ve-kha-nang-van-hanh-va-xu-ly-1213o.html">
 							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/lexus-rc-f-track-edition-vuot-troi-hon-ve-kha-nang-van-hanh-va-xu-ly-123615j2.jpg"
+							ng-src="https://img.youtube.com/vi/<?php echo $row["videoid"]; ?>/hqdefault.jpg"
 							alt="Lexus RC F Track Edition vượt trội hơn về khả năng vận hành và xử lý"
-							src="https://cdn.dailyxe.com.vn/image/lexus-rc-f-track-edition-vuot-troi-hon-ve-kha-nang-van-hanh-va-xu-ly-123615j2.jpg">
-							<!-- ngIf: item.Duration --> <span
-							class="video-time ng-binding ng-scope" ng-if="item.Duration">2:12</span>
-							<!-- end ngIf: item.Duration --> <!-- ngIf: item.IdVideos -->
+							src="https://img.youtube.com/vi/<?php echo $row["videoid"]; ?>/hqdefault.jpg">
+							<span
+							class="video-time ng-binding ng-scope" ng-if="item.Duration"><?php echo $row["thoiluong"]; ?></span>
 						</a>
 						<div class="media-body has-menu-dots">
 							<h2 class="title">
 								<a
 									href="https://dailyxe.com.vn/videos/lexus-rc-f-track-edition-vuot-troi-hon-ve-kha-nang-van-hanh-va-xu-ly-1213o.html"
-									title="Lexus RC F Track Edition vượt trội hơn về khả năng vận hành và xử lý"
-									class="ng-binding">Lexus RC F Track Edition vượt trội hơn về
-									khả năng vận hành và xử lý</a>
+									title="<?php echo $row["tieudevideo"]; ?>"
+									class="ng-binding"><?php echo $row["tieudevideo"]; ?></a>
 							</h2>
 							<div class="video-info">
 								<!-- ngIf: item.NgayTao -->
@@ -266,6 +265,7 @@
 							</div>
 						</div>
 					</div>
+					<?php } ?>
 					<!-- end ngRepeat: item in listVideo -->
 					<div ng-repeat="item in listVideo" class="video-item media ">
 						<a

@@ -77,6 +77,14 @@ function changeToSlug(e) {
         	  document.getElementById("slug-playlist").value = slugPlaylist;
       }
       }
+    // lấy slug video
+    function blurTieuDeVideo(){
+     	 var tieuDeVideo = document.getElementById("tieu-de-video").value;
+     	 if(tieuDeVideo != ""){
+     	   	 var slugPlaylist = changeToSlug(tieuDeVideo);
+        	  document.getElementById("slug-video").value = slugPlaylist;
+      }
+    }
     
  	// get reviewcongty
     function getDuLieu(){
@@ -192,10 +200,14 @@ function changeToSlug(e) {
 						TIN TỨC</a></li>
 				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-tin-tuc">TẤT
 						CẢ TIN TỨC</a></li>
-				<li><a href="<?php echo $servername ?>/quan-tri/them-playlist">THÊM PLAYLIST</a></li>
-				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-playlist">TẤT CẢ PLAYLIST</a></li>
-				<li><a href="<?php echo $servername ?>/quan-tri/them-video">THÊM VIDEO</a></li>
-				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-video">TẤT CẢ VIDEO</a></li>	
+				<li><a href="<?php echo $servername ?>/quan-tri/them-playlist">THÊM
+						PLAYLIST</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-playlist">TẤT
+						CẢ PLAYLIST</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/them-video">THÊM
+						VIDEO</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-video">TẤT CẢ
+						VIDEO</a></li>
 				<li><a href="#">REVIEW YÊU CẦU XÓA</a></li>
 			</ul>
 		</div>
@@ -204,6 +216,8 @@ function changeToSlug(e) {
 		</div>
 		<footer class="pull-left footer">
 			<p class="col-md-12">
+			
+			
 			<hr class="divider">
 			Copyright &COPY; 2015 <a href="http://www.pingpong-labs.com">Gravitano</a>
 			</p>
