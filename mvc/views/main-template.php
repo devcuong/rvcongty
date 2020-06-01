@@ -1626,20 +1626,12 @@ if ($data["Page"] == "jobs") {
 					class="fa fa-envelope mr-1 d-md-none"></i> company@congtytop.com
 				</a>
 			</div>
-			<div class="page-link-out ng-scope" ng-controller="dang-nhap as ctrl"
-			ng-init="checkIsDangNhap()">
-<!-- 			ngIf: !isDangNhap -->
-			 				<a href="/dang-nhap" title="Đăng nhập" ng-if="!isDangNhap"
+			<div class="page-link-out ng-scope" ng-controller="dang-nhap as ctrl">
+			 				<a href="<?php echo $servername ?>" title="Đăng nhập"
 			 					class="ng-scope">Đăng nhập</a>
-<!-- 			 end ngIf: !isDangNhap -->
-<!-- 			 ngIf: !isDangNhap -->
-			 				<span ng-if="!isDangNhap" class="ng-scope">/</span>
-<!-- 			 end ngIf: !isDangNhap -->
-<!-- 			 ngIf: !isDangNhap -->
-			 				<a href="/dang-ky" title="Đăng ký" ng-if="!isDangNhap"
+			 				<span class="ng-scope">/</span>
+			 				<a href="<?php echo $servername ?>" title="Đăng ký"
 			 					class="ng-scope">Đăng ký</a>
-<!-- 			 end ngIf: !isDangNhap -->
-<!-- 			 ngIf: isDangNhap -->
 			 			</div>
 		</div>
 	</div>
