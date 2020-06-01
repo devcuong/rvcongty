@@ -612,7 +612,6 @@ class QuanTri extends Controller
                 
             }
             else{
-                
                 // View
                 $this->view("admin-template", [
                     "Page" => "them-playlist"

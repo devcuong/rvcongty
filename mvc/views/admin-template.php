@@ -69,6 +69,14 @@ function changeToSlug(e) {
         	  document.getElementById("slug-tin-tuc").value = slugTinTuc;
       }
       }
+    // lấy slug playlist
+    function blurTieuDePlaylist(){
+     	 var tieuDeTinTuc = document.getElementById("tieu-de-playlist").value;
+     	 if(tieuDeTinTuc != ""){
+     	   	 var slugTinTuc = changeToSlug(tieuDeTinTuc);
+        	  document.getElementById("slug-playlist").value = slugTinTuc;
+      }
+      }
     
  	// get reviewcongty
     function getDuLieu(){
@@ -184,6 +192,10 @@ function changeToSlug(e) {
 						TIN TỨC</a></li>
 				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-tin-tuc">TẤT
 						CẢ TIN TỨC</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/them-playlist">THÊM PLAYLIST</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-playlist">TẤT CẢ PLAYLIST</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/them-video">THÊM VIDEO</a></li>
+				<li><a href="<?php echo $servername ?>/quan-tri/tat-ca-video">TẤT CẢ VIDEO</a></li>	
 				<li><a href="#">REVIEW YÊU CẦU XÓA</a></li>
 			</ul>
 		</div>
@@ -192,8 +204,6 @@ function changeToSlug(e) {
 		</div>
 		<footer class="pull-left footer">
 			<p class="col-md-12">
-			
-			
 			<hr class="divider">
 			Copyright &COPY; 2015 <a href="http://www.pingpong-labs.com">Gravitano</a>
 			</p>
