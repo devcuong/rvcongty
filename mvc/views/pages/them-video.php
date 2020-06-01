@@ -15,8 +15,8 @@
 		<label>Playlist</label>
 		<div class="custom-select" style="width: 200px;">
 			<select name="playlist-video" id="playlist-video">
-			<?php while () {?>
-				<option value="volvo">Volvo</option>
+			<?php while ($row = mysqli_fetch_array($data["ListPlaylist"])) {?>
+				<option value="<?php echo $row["id"] ?>"><?php echo $row["tenplaylist"] ?></option>
 				<?php } ?>
 			</select>
 		</div>

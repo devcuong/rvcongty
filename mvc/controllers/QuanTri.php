@@ -651,9 +651,11 @@ class QuanTri extends Controller
             if (isset($_POST["btn-submit"])) {
                 
             }else{
+                $listPlaylist = $this->PlaylistModel->TatCaPlaylist();
                 // View
                 $this->view("admin-template", [
-                    "Page" => "them-video"
+                    "Page" => "them-video",
+                    "ListPlaylist" => $listPlaylist
                 ]);
             }
         }

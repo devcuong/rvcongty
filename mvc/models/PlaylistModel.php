@@ -13,5 +13,10 @@ class PlaylistModel extends DB{
         }
         return $result;
     }
+    // LẤY TẤT CẢ PLAYLIST
+    public function TatCaPlaylist(){
+        $qr = "SELECT * FROM playlist";
+        return mysqli_query($this->con, $qr);
+    }
 }
 ?>
