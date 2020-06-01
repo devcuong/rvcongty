@@ -71,10 +71,10 @@ function changeToSlug(e) {
       }
     // lấy slug playlist
     function blurTieuDePlaylist(){
-     	 var tieuDeTinTuc = document.getElementById("tieu-de-playlist").value;
-     	 if(tieuDeTinTuc != ""){
-     	   	 var slugTinTuc = changeToSlug(tieuDeTinTuc);
-        	  document.getElementById("slug-playlist").value = slugTinTuc;
+     	 var tieuDePlaylist = document.getElementById("tieu-de-playlist").value;
+     	 if(tieuDePlaylist != ""){
+     	   	 var slugPlaylist = changeToSlug(tieuDePlaylist);
+        	  document.getElementById("slug-playlist").value = slugPlaylist;
       }
       }
     
