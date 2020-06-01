@@ -15,6 +15,8 @@ class QuanTri extends Controller
     public $ReplyModel;
 
     public $NewsModel;
+    
+    public $PlaylistModel;
 
     public function __construct()
     {
@@ -24,6 +26,7 @@ class QuanTri extends Controller
         $this->ReviewModel = $this->model("ReviewModel");
         $this->ReplyModel = $this->model("ReplyModel");
         $this->NewsModel = $this->model("NewsModel");
+        $this->PlaylistModel = $this->model("PlaylistModel");
     }
 
     public function Index()
@@ -609,7 +612,24 @@ class QuanTri extends Controller
     {
         if (isset($_SESSION["email"])) {
             if (isset($_POST["btn-submit"])) {
-                
+                $tieuDePlaylist = "";
+                $slugPlaylist = "";
+                $soVideo = 0;
+                $createdDate = date("Y-m-d H:i:s");
+                if(isset($_POST["tieu-de-playlist"])){
+                    $tieuDePlaylist = $_POST["tieu-de-playlist"];
+                }
+                if (isset($_POST["slug-playlist"])){
+                    $slugPlaylist = $_POST["slug-playlist"];
+                }
+                // Thêm tin tức
+                $kq = $this->PlaylistModel->ThemPlaylist($tieuDePlaylist, $slugPlaylist, $soVideo, $createdDate);
+                if ($kq) {
+                    // View
+                    $this->view("admin-template", [
+                        "Page" => "quan-tri-thanh-cong"
+                    ]);
+                }
             }
             else{
                 // View
@@ -617,9 +637,30 @@ class QuanTri extends Controller
                     "Page" => "them-playlist"
                 ]);
             }
+        }else {
+            $server = new Server();
+            // View
+            header("Location: " . $server->servername . "/quan-tri/", 301);
+            exit();
         }
     }
-
+    
+    /* THÊM PLAYLIST */
+    public function ThemVideo(){
+        if (isset($_SESSION["email"])) {
+            if (isset($_POST["btn-submit"])) {
+                
+            }else{
+                $listPlaylist = $this->PlaylistModel->TatCaPlaylist();
+                // View
+                $this->view("admin-template", [
+                    "Page" => "them-video",
+                    "ListPlaylist" => $listPlaylist
+                ]);
+            }
+        }
+    }
+    
     function ToSlug($str, $options = array())
     {
         // Make sure string is in UTF-8 and strip invalid UTF-8 characters
