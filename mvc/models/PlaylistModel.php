@@ -20,16 +20,16 @@ class PlaylistModel extends DB{
         return mysqli_query($this->con, $qr);
     }
     
-    // TĂNG SỐ VIDEO
-    public function TangSoVideo($idPlaylist) {
-        $qr = "UPDATE playlist SET sovideo = sovideo + 1 WHERE id = $idPlaylist";
+    /*UPDATE THÔNG TIN PLAYLIST KHI THÊM VIDEO*/
+    public function UpdateInfoKhiThemVideo($idPlaylist, $imageThumbnail, $thoiGian){
+        $qr = "UPDATE playlist SET sovideo = sovideo + 1, thumbnail = '$imageThumbnail', thoigian = '$thoiGian', WHERE id = $idPlaylist";
         $result = false;
         if(mysqli_query($this->con, $qr)){
             $result = true;
         }
         return $result;
     }
-    
+        
     /*PHÂN TRANG*/
     // Lấy playlist để phân trang
     public function LayPlaylistPhanTrang($soPlaylistBoQua, $PlaylistMoiTrang){
@@ -46,5 +46,7 @@ class PlaylistModel extends DB{
         }
         return $result;
     }
+    
+    
 }
 ?>

@@ -709,7 +709,7 @@ class QuanTri extends Controller
                 $urlVideo = "";
                 $timeDuration = "";
                 $thumbVideoId = "";
-                $result = 1;
+                $kt = false;
                 $createdDate = date("Y-m-d H:i:s");
                 if (isset($_POST["tieu-de-video"])) {
                     $tieuDeVideo = $_POST["tieu-de-video"];
@@ -729,14 +729,15 @@ class QuanTri extends Controller
                 }
                 // Thêm video
                 $kq = $this->VideoModel->ThemVideo($tieuDeVideo, $slugVideo, $playList, $urlVideo, $thumbVideoId, $timeDuration, $createdDate);
-                if (! $kq) {
-                    $result = 0;
+                if ($kq) {
+                    $result = true;
                 }
-                $kq2 = $this->PlaylistModel->TangSoVideo($playList);
-                if (! $kq2) {
-                    $result = 0;
+                // Update thông tin Playlist khi thêm video
+                $kq2 = $this->PlaylistModel->UpdateInfoKhiThemVideo($playList, $thumbVideoId, $createdDate);
+                if ($kq2) {
+                    $result = true;
                 }
-                if ($result == 1) {
+                if ($result) {
                     // View
                     $this->view("admin-template", [
                         "Page" => "quan-tri-thanh-cong"

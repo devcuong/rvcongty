@@ -274,7 +274,6 @@
 			</div>
 			<div class="video-main ng-scope" ng-if="listVideo.length > 0">
 				<div class="video-list">
-					<!-- ngRepeat: item in listVideo -->
 					<div ng-repeat="item in listVideo"
 						class="video-item media playlist">
 						<a title="DailyXe Review Honda" class="video-img"
