@@ -4,7 +4,7 @@ require 'mvc/class/CutString.php';
 
 class QuanTri extends Controller
 {
-
+    
     // Khai báo model
     public $UserModel;
 
@@ -15,9 +15,9 @@ class QuanTri extends Controller
     public $ReplyModel;
 
     public $NewsModel;
-    
+
     public $PlaylistModel;
-    
+
     public $VideoModel;
 
     public function __construct()
@@ -39,7 +39,7 @@ class QuanTri extends Controller
             "Page" => "quan-tri"
         ]);
     }
-
+    
     // QUẢN TRỊ VIÊN ĐĂNG NHẬP
     public function DangNhap()
     {
@@ -69,7 +69,7 @@ class QuanTri extends Controller
             exit();
         }
     }
-
+    
     // QUẢN TRỊ VIÊN ĐĂNG XUẤT
     public function DangXuat()
     {
@@ -81,7 +81,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-
+    
     // QUẢN TRỊ CHUNG
     public function QuanTriCongTy()
     {
@@ -90,7 +90,7 @@ class QuanTri extends Controller
             "Page" => "quan-tri-cong-ty"
         ]);
     }
-
+    
     // THÊM CÔNG TY
     public function ThemCongTy()
     {
@@ -154,7 +154,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-
+    
     // TẤT CẢ CÔNG TY
     public function TatCaCongTy($a, $b, $c = null)
     {
@@ -189,7 +189,7 @@ class QuanTri extends Controller
             exit();
         }
     }
-
+    
     // XÓA CÔNG TY
     public function XoaCongTy($a, $b, $c)
     {
@@ -217,16 +217,17 @@ class QuanTri extends Controller
             }
         }
     }
-
+    
     // GET DATA
     public function GetDataCongTy($a = NULL)
     {
         $urlCompany = "";
         if (isset($_POST["url-company"])) {
             $urlCompany = $_POST["url-company"];
-        } else if ($a != null) {
-            $urlCompany = $a;
-        }
+        } else 
+            if ($a != null) {
+                $urlCompany = $a;
+            }
         
         $context = stream_context_create(array(
             "http" => array(
@@ -301,7 +302,7 @@ class QuanTri extends Controller
             echo "ĐÃ CÓ " . $tenCongTy;
         }
     }
-
+    
     // get data page
     public function GetDataPageCongTy()
     {
@@ -535,7 +536,7 @@ class QuanTri extends Controller
             ]);
         }
     }
-
+    
     // SỬA TIN TỨC
     public function CapNhatNews($a, $b, $c = NULL)
     {
@@ -619,37 +620,38 @@ class QuanTri extends Controller
                 $slugPlaylist = "";
                 $soVideo = 0;
                 $createdDate = date("Y-m-d H:i:s");
-                if(isset($_POST["tieu-de-playlist"])){
+                if (isset($_POST["tieu-de-playlist"])) {
                     $tieuDePlaylist = $_POST["tieu-de-playlist"];
                 }
-                if (isset($_POST["slug-playlist"])){
+                if (isset($_POST["slug-playlist"])) {
                     $slugPlaylist = $_POST["slug-playlist"];
                 }
                 // Thêm playlist
                 $kq = $this->PlaylistModel->ThemPlaylist($tieuDePlaylist, $slugPlaylist, $soVideo, $createdDate);
+                
                 if ($kq) {
                     // View
                     $this->view("admin-template", [
                         "Page" => "quan-tri-thanh-cong"
                     ]);
                 }
-            }
-            else{
+            } else {
                 // View
                 $this->view("admin-template", [
                     "Page" => "them-playlist"
                 ]);
             }
-        }else {
+        } else {
             $server = new Server();
             // View
             header("Location: " . $server->servername . "/quan-tri/", 301);
             exit();
         }
     }
-    
+
     /* THÊM PLAYLIST */
-    public function ThemVideo(){
+    public function ThemVideo()
+    {
         if (isset($_SESSION["email"])) {
             if (isset($_POST["btn-submit"])) {
                 $tieuDeVideo = "";
@@ -658,32 +660,40 @@ class QuanTri extends Controller
                 $urlVideo = "";
                 $timeDuration = "";
                 $thumbVideoId = "";
+                $result = 1;
                 $createdDate = date("Y-m-d H:i:s");
-                if(isset($_POST["tieu-de-video"])){
+                if (isset($_POST["tieu-de-video"])) {
                     $tieuDeVideo = $_POST["tieu-de-video"];
                 }
-                if (isset($_POST["slug-video"])){
+                if (isset($_POST["slug-video"])) {
                     $slugVideo = $_POST["slug-video"];
                 }
-                if(isset($_POST["playlist-video"])){
+                if (isset($_POST["playlist-video"])) {
                     $playList = $_POST["playlist-video"];
                 }
-                if (isset($_POST["url-video"])){
+                if (isset($_POST["url-video"])) {
                     $urlVideo = $_POST["url-video"];
                     $thumbVideoId = explode("v=", $urlVideo)[1];
                 }
-                if (isset($_POST["time-duration"])){
+                if (isset($_POST["time-duration"])) {
                     $timeDuration = $_POST["time-duration"];
                 }
-                // Thêm playlist
+                // Thêm video
                 $kq = $this->VideoModel->ThemVideo($tieuDeVideo, $slugVideo, $playList, $urlVideo, $thumbVideoId, $timeDuration, $createdDate);
-                if ($kq) {
+                if (! $kq) {
+                    $result = 0;
+                }
+                $kq2 = $this->PlaylistModel->TangSoVideo($playList);
+                if (! $kq2) {
+                    $result = 0;
+                }
+                if ($result == 1) {
                     // View
                     $this->view("admin-template", [
                         "Page" => "quan-tri-thanh-cong"
                     ]);
                 }
-            }else{
+            } else {
                 $listPlaylist = $this->PlaylistModel->TatCaPlaylist();
                 // View
                 $this->view("admin-template", [
@@ -693,7 +703,7 @@ class QuanTri extends Controller
             }
         }
     }
-    
+
     function ToSlug($str, $options = array())
     {
         // Make sure string is in UTF-8 and strip invalid UTF-8 characters

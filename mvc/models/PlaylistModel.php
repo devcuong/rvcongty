@@ -10,6 +10,7 @@ class PlaylistModel extends DB{
         }else{
             mysqli_stmt_bind_param($stmt, "ssss", $tenplaylist, $slugplaylist, $sovideo, $thoigian);
             $result = mysqli_stmt_execute($stmt);
+            //echo $stmt->error;
         }
         return $result;
     }
@@ -17,6 +18,16 @@ class PlaylistModel extends DB{
     public function TatCaPlaylist(){
         $qr = "SELECT * FROM playlist";
         return mysqli_query($this->con, $qr);
+    }
+    
+    // TĂNG SỐ VIDEO
+    public function TangSoVideo($idPlaylist) {
+        $qr = "UPDATE playlist SET sovideo = sovideo + 1 WHERE id = $idPlaylist";
+        $result = false;
+        if(mysqli_query($this->con, $qr)){
+            $result = true;
+        }
+        return $result;
     }
 }
 ?>

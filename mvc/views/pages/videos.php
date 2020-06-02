@@ -214,10 +214,7 @@
 		<div class="video-bottom news-list ng-scope" id="containerResult"
 			ng-controller="videos-list as ctrl" ng-init="init('')">
 			<div class="d-flex align-items-center">
-				<!-- ngIf: !isLoadTimKiem -->
 				<h1 class="video-title ng-scope" ng-if="!isLoadTimKiem">Videos</h1>
-				<!-- end ngIf: !isLoadTimKiem -->
-				<!-- ngIf: isLoadTimKiem -->
 				<div class="d-flex align-items-center ml-auto">
 					<div class="form-search m-0">
 						<input ng-attr-id="{{id}}" type="text" ng-model="tuKhoaTimKiem"
@@ -253,7 +250,10 @@
 									class="ng-binding"><?php echo $row["tieudevideo"]; ?></a>
 							</h2>
 							<div class="video-info">
-								<span class="video-info-item ng-binding ng-scope">27/04/2020</span>
+								<span class="video-info-item ng-binding ng-scope"><?php
+    $date = date_create($row["thoigian"]);
+    echo date_format($date, "d/m/Y");
+    ?></span>
 								<span class="video-info-item ng-binding ng-scope"> <i class="fa fa-eye"></i><?php echo $row["luotxem"]; ?> lượt xem
 								</span>
 							</div>
