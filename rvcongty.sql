@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 01, 2020 lúc 12:02 PM
+-- Thời gian đã tạo: Th6 02, 2020 lúc 03:10 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -836,9 +836,20 @@ CREATE TABLE `video` (
   `tieudevideo` varchar(100) NOT NULL,
   `slugvideo` varchar(100) NOT NULL,
   `playlist` int(11) NOT NULL,
+  `url` varchar(200) NOT NULL,
+  `videoid` varchar(11) NOT NULL,
   `thoiluong` varchar(11) NOT NULL,
+  `luotxem` int(11) NOT NULL,
   `thoigian` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `video`
+--
+
+INSERT INTO `video` (`id`, `tieudevideo`, `slugvideo`, `playlist`, `url`, `videoid`, `thoiluong`, `luotxem`, `thoigian`) VALUES
+(1, 'FBNC- Quản lý nhân sự trong công ty (P1)', 'fbnc-quan-ly-nhan-su-trong-cong-ty-p1', 0, 'https://www.youtube.com/watch?v=VQk_kUIwuRg', 'VQk_kUIwuRg', '11:19', 0, '2020-06-01 22:37:33'),
+(2, 'FBNC- Quản lý nhân sự trong công ty (P2)', 'fbnc-quan-ly-nhan-su-trong-cong-ty-p2', 0, 'https://www.youtube.com/watch?v=YVB-jYJwIAQ', 'YVB-jYJwIAQ', '11:01', 0, '2020-06-01 22:41:41');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -930,7 +941,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT cho bảng `video`
 --
 ALTER TABLE `video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
