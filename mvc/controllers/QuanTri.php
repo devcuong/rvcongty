@@ -7,19 +7,13 @@ class QuanTri extends Controller
     
     // Khai báo model
     public $UserModel;
-
     public $CongTyModel;
-
     public $ReviewModel;
-
     public $ReplyModel;
-
     public $NewsModel;
-
     public $PlaylistModel;
-
     public $VideoModel;
-
+    
     public function __construct()
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -60,12 +54,12 @@ class QuanTri extends Controller
         $server = new Server();
         
         if ($temp == $pass) {
-            echo "ok";
+            //echo "ok";
             $_SESSION["email"] = $email;
-            header("Location: " . $server->servername . "/quan-tri/quan-tri-cong-ty", 301);
+            header("Location: " . $server->get_servername(). "/quan-tri/quan-tri-cong-ty", 301);
             exit();
         } else {
-            header("Location: " . $server->servername . "/quan-tri/", 301);
+            header("Location: " . $server->get_servername(). "/quan-tri/", 301);
             exit();
         }
     }
@@ -659,24 +653,52 @@ class QuanTri extends Controller
             $soPlaylistBoQua = ($trangHienTai - 1) * $playlistMoiTrang;
             // Model
             $playlist = $this->PlaylistModel;
-            // Tất cả tin tức
+            // Tất cả playlist
             $tatCaPlaylist = $playlist->TatCaPlaylist();
             $soPlaylist = mysqli_num_rows($tatCaPlaylist);
             $soTrang = ceil($soPlaylist / $playlistMoiTrang);
             $playlistTrangHienTai = "";
-            $playlistTrangHienTai = $playlist->LayNewsPhanTrang($soPlaylistBoQua, $playlistMoiTrang);
+            $playlistTrangHienTai = $playlist->LayPlaylistPhanTrang($soPlaylistBoQua, $playlistMoiTrang);
             // View
             $this->view("admin-template", [
-                "Page" => "tat-ca-tin-tuc",
-                "News" => $playlistTrangHienTai,
+                "Page" => "tat-ca-playlist",
+                "Playlist" => $playlistTrangHienTai,
                 "SoTrang" => $soTrang,
                 "TrangHienTai" => $trangHienTai,
-                "NewsTrangHienTai" => $playlistTrangHienTai
+                "PlaylistTrangHienTai" => $playlistTrangHienTai
             ]);
         }
     }
+    
+    /* XÓA PLAYLIST */
+    function XoaPlaylist($a, $b, $c = NULL, $d = NULL, $e = NULL)
+    {
+        if (isset($_SESSION["email"])) {
+            $kt = false;
+            $idPlaylist = $c;
+            $kq = $this->PlaylistModel->XoaPlaylist($idPlaylist);
+            if ($kq) {
+                $kt = true;
+            }
+            $kq2 = $this->VideoModel->XoaVideoByIdPlaylist($idPlaylist);
+            if ($kq2) {
+                $kt = true;
+            }
+            if ($kt) {
+                // View
+                $this->view("admin-template", [
+                    "Page" => "quan-tri-thanh-cong"
+                ]);
+            } else {
+                $server = new Server();
+                ob_start();
+                header("Location: " . $server->get_servername() . "/quan-tri/tat-ca-video/", 301);
+                exit();
+            }
+        }
+    }
 
-    /* THÊM PLAYLIST */
+    /* THÊM VIDEO */
     public function ThemVideo()
     {
         if (isset($_SESSION["email"])) {
@@ -727,6 +749,57 @@ class QuanTri extends Controller
                     "Page" => "them-video",
                     "ListPlaylist" => $listPlaylist
                 ]);
+            }
+        }
+    }
+    
+    /* TẤT CẢ VIDEO */
+    public function TatCaVideo($a, $b, $c = NULL){
+        if (isset($_SESSION["email"])) {
+            $trangHienTai = 1;
+            $videoMoiTrang = 10;
+            if ($c != null) {
+                $trangHienTai = $c;
+            }
+            $soVideoBoQua = ($trangHienTai - 1) * $videoMoiTrang;
+            // Model
+            $video = $this->VideoModel;
+            // Tất cả video
+            $tatCaVideo = $video->TatCaVideo();
+            $soVideo = mysqli_num_rows($tatCaVideo);
+            $soTrang = ceil($soVideo/ $videoMoiTrang);
+            $videoTrangHienTai = $video->LayVideoPhanTrang($soVideoBoQua, $videoMoiTrang);
+            // View
+            $this->view("admin-template", [
+                "Page" => "tat-ca-video",
+                "Video" => $videoTrangHienTai,
+                "SoTrang" => $soTrang,
+                "TrangHienTai" => $trangHienTai,
+                "VideoTrangHienTai" => $videoTrangHienTai
+            ]);
+        }
+    }
+    
+    /* XÓA VIDEO */
+    function XoaVideo($a, $b, $c = NULL, $d = NULL, $e = NULL)
+    {
+        if (isset($_SESSION["email"])) {
+            $kt = false;
+            $idVideo = $c;
+            $kq = $this->VideoModel->XoaVideo($idVideo);
+            if ($kq) {
+                $kt = true;
+            }
+            if ($kt) {
+                // View
+                $this->view("admin-template", [
+                    "Page" => "quan-tri-thanh-cong"
+                ]);
+            } else {
+                $server = new Server();
+                ob_start();
+                header("Location: " . $server->get_servername() . "/quan-tri/tat-ca-video/", 301);
+                exit();
             }
         }
     }

@@ -29,5 +29,22 @@ class PlaylistModel extends DB{
         }
         return $result;
     }
+    
+    /*PHÂN TRANG*/
+    // Lấy playlist để phân trang
+    public function LayPlaylistPhanTrang($soPlaylistBoQua, $PlaylistMoiTrang){
+        $qr = "SELECT * FROM playlist ORDER BY thoigian DESC LIMIT $soPlaylistBoQua, $PlaylistMoiTrang" ;
+        return mysqli_query($this->con, $qr);
+    }
+    
+    /*XÓA PLAYLIST*/
+    public function XoaPlaylist($idPlaylist){
+        $qr = "DELETE FROM playlist WHERE id = $idPlaylist";
+        $result = false;
+        if(mysqli_query($this->con, $qr)){
+            $result = true;
+        }
+        return $result;
+    }
 }
 ?>

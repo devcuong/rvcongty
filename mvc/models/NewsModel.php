@@ -109,7 +109,7 @@ class NewsModel extends DB{
             }
             return $result;
         }
-        // Xóa NEWS theo ID
+        /* Xóa NEWS theo ID */
         public function XoaNews($iDNews){
             $qr = "DELETE FROM news WHERE id = $iDNews";
             $result = false;
