@@ -648,6 +648,33 @@ class QuanTri extends Controller
             exit();
         }
     }
+    /* TẤT CẢ PLAYLIST */
+    public function TatCaPlaylist($a, $b, $c = NULL){
+        if (isset($_SESSION["email"])) {
+            $trangHienTai = 1;
+            $playlistMoiTrang = 10;
+            if ($c != null) {
+                $trangHienTai = $c;
+            }
+            $soPlaylistBoQua = ($trangHienTai - 1) * $playlistMoiTrang;
+            // Model
+            $playlist = $this->PlaylistModel;
+            // Tất cả tin tức
+            $tatCaPlaylist = $playlist->TatCaPlaylist();
+            $soPlaylist = mysqli_num_rows($tatCaPlaylist);
+            $soTrang = ceil($soPlaylist / $playlistMoiTrang);
+            $playlistTrangHienTai = "";
+            $playlistTrangHienTai = $playlist->LayNewsPhanTrang($soPlaylistBoQua, $playlistMoiTrang);
+            // View
+            $this->view("admin-template", [
+                "Page" => "tat-ca-tin-tuc",
+                "News" => $playlistTrangHienTai,
+                "SoTrang" => $soTrang,
+                "TrangHienTai" => $trangHienTai,
+                "NewsTrangHienTai" => $playlistTrangHienTai
+            ]);
+        }
+    }
 
     /* THÊM PLAYLIST */
     public function ThemVideo()
