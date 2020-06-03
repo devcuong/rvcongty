@@ -177,9 +177,11 @@
 	color: #999;
 	display: flex;
 }
-.date-add{
+
+.date-add {
 	margin-right: 20px;
 }
+
 .video-info-item i {
 	margin-right: 3px;
 }
@@ -224,7 +226,17 @@
 </style>
 <section id="divCenter" class="video-container">
 	<div class="container">
-		<span macd="danhsach_video"></span>
+		<nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs"
+			data-no-instant="">
+			<ul>
+				<li><a href="http://localhost/rvcongty"> <span class="icon is-small">
+							<i class="fas fa-home" aria-hidden="true"></i>
+					</span> <span>Trang chủ</span>
+				</a></li>
+				<li class="is-active"><a href="#"> <span>Videos</span>
+				</a></li>
+			</ul>
+		</nav>
 		<div class="video-bottom news-list ng-scope" id="containerResult"
 			ng-controller="videos-list as ctrl" ng-init="init('')">
 			<div class="page-heading d-flex">
