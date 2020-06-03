@@ -274,260 +274,46 @@
 			</div>
 			<div class="video-main ng-scope" ng-if="listVideo.length > 0">
 				<div class="video-list">
-					<div ng-repeat="item in listVideo"
+				<?php while ($row = mysqli_fetch_array($data["Playlist"])) {?>
+				<div ng-repeat="item in listVideo"
 						class="video-item media playlist">
-						<a title="DailyXe Review Honda" class="video-img"
+						<a title="<?php echo $row["tenplaylist"]; ?>" class="video-img"
 							href="https://dailyxe.com.vn/videos/dailyxe-review-honda-8q.html">
 							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/dailyxe-review-honda-75698j2.jpg"
-							alt="DailyXe Review Honda"
-							src="https://cdn.dailyxe.com.vn/image/dailyxe-review-honda-75698j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos -->
+							ng-src="https://img.youtube.com/vi/<?php echo $row["thumbnail"]; ?>/hqdefault.jpg"
+							alt="<?php echo $row["tenplaylist"]; ?>"
+							src="https://img.youtube.com/vi/<?php echo $row["thumbnail"]; ?>/hqdefault.jpg">
 							<span class="playlist-count ng-binding ng-scope"
-							ng-if="item.IdVideos">5</span>
-						<!-- end ngIf: item.IdVideos -->
+							ng-if="item.IdVideos"><?php echo mysqli_num_rows($data["Playlist"]) ?></span>
 						</a>
 						<div class="media-body has-menu-dots">
 							<h2 class="title">
 								<a
 									href="https://dailyxe.com.vn/videos/dailyxe-review-honda-8q.html"
-									title="DailyXe Review Honda" class="ng-binding">DailyXe Review
-									Honda</a>
+									title="DailyXe Review Honda" class="ng-binding"><?php echo $row["tenplaylist"]; ?></a>
 							</h2>
 							<div class="video-info">
 								<!-- ngIf: item.NgayTao -->
 								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 10 tháng trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
+									ng-if="item.NgayTao">Cập nhật: 10 tháng trước</span>
 							</div>
 						</div>
 					</div>
+				<?php } ?>
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a title="DailyXe Review Ford" class="video-img"
-							href="https://dailyxe.com.vn/videos/dailyxe-review-ford-7q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/dailyxe-review-ford-75693j2.jpg"
-							alt="DailyXe Review Ford"
-							src="https://cdn.dailyxe.com.vn/image/dailyxe-review-ford-75693j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos -->
-							<span class="playlist-count ng-binding ng-scope"
-							ng-if="item.IdVideos">4</span>
-						<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/dailyxe-review-ford-7q.html"
-									title="DailyXe Review Ford" class="ng-binding">DailyXe Review
-									Ford</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 10 tháng trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a title="DailyXe Review Chevrolet" class="video-img"
-							href="https://dailyxe.com.vn/videos/dailyxe-review-chevrolet-6q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/dailyxe-review-chevrolet-75690j2.jpg"
-							alt="DailyXe Review Chevrolet"
-							src="https://cdn.dailyxe.com.vn/image/dailyxe-review-chevrolet-75690j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos -->
-							<span class="playlist-count ng-binding ng-scope"
-							ng-if="item.IdVideos">4</span>
-						<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/dailyxe-review-chevrolet-6q.html"
-									title="DailyXe Review Chevrolet" class="ng-binding">DailyXe
-									Review Chevrolet</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 10 tháng trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a
-							title="Thỏa sức &quot;nghịch cát&quot; với video mới của Ken Block"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-5q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-15551j2.jpg"
-							alt="Thỏa sức &quot;nghịch cát&quot; với video mới của Ken Block"
-							src="https://cdn.dailyxe.com.vn/image/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-15551j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos -->
-							<span class="playlist-count ng-binding ng-scope"
-							ng-if="item.IdVideos">3</span>
-						<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/thoa-suc-nghich-cat-voi-video-moi-cua-ken-block-5q.html"
-									title="Thỏa sức &quot;nghịch cát&quot; với video mới của Ken Block"
-									class="ng-binding">Thỏa sức "nghịch cát" với video mới của Ken
-									Block</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 1 năm trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a
-							title="Mercedes-AMG E63 S thử khả năng tăng tốc với Tesla Model S P100D [1]"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-4q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-66915j2.jpg"
-							alt="Mercedes-AMG E63 S thử khả năng tăng tốc với Tesla Model S P100D [1]"
-							src="https://cdn.dailyxe.com.vn/image/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-66915j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos -->
-							<span class="playlist-count ng-binding ng-scope"
-							ng-if="item.IdVideos">2</span>
-						<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/mercedes-amg-e63-s-thu-kha-nang-tang-toc-voi-tesla-model-s-p100d-1-4q.html"
-									title="Mercedes-AMG E63 S thử khả năng tăng tốc với Tesla Model S P100D [1]"
-									class="ng-binding">Mercedes-AMG E63 S thử khả năng tăng tốc với
-									Tesla Model S P100D [1]</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 1 năm trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a
-							title="Chevrolet Trailblazer được thử nghiệm vô cùng nghiêm ngặt trước khi về Việt Nam [1]"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-3q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-66917j2.jpg"
-							alt="Chevrolet Trailblazer được thử nghiệm vô cùng nghiêm ngặt trước khi về Việt Nam [1]"
-							src="https://cdn.dailyxe.com.vn/image/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-66917j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos -->
-							<span class="playlist-count ng-binding ng-scope"
-							ng-if="item.IdVideos">2</span>
-						<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/chevrolet-trailblazer-duoc-thu-nghiem-vo-cung-nghiem-ngat-truoc-khi-ve-viet-nam-1-3q.html"
-									title="Chevrolet Trailblazer được thử nghiệm vô cùng nghiêm ngặt trước khi về Việt Nam [1]"
-									class="ng-binding">Chevrolet Trailblazer được thử nghiệm vô
-									cùng nghiêm ngặt trước khi về Việt Nam [1]</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 1 năm trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a
-							title="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [1]"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-2q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-66916j2.jpg"
-							alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [1]"
-							src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-66916j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos -->
-							<span class="playlist-count ng-binding ng-scope"
-							ng-if="item.IdVideos">17</span>
-						<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-2q.html"
-									title="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [1]"
-									class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật với
-									những dòng xe cơ bắp, bán tải và xe điện [1]</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 1 năm trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-						</div>
-					</div>
+					
 					<!-- end ngRepeat: item in listVideo -->
-					<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
-						<a
-							title="9 cảnh hành động nghẹt thở tiêu biểu xuyên suốt series phim Fast and Furious"
-							class="video-img"
-							href="https://dailyxe.com.vn/videos/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-1q.html">
-							<img
-							ng-src="https://cdn.dailyxe.com.vn/image/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-66930j2.jpg"
-							alt="9 cảnh hành động nghẹt thở tiêu biểu xuyên suốt series phim Fast and Furious"
-							src="https://cdn.dailyxe.com.vn/image/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-66930j2.jpg">
-							<!-- ngIf: item.Duration --> <!-- ngIf: item.IdVideos -->
-							<span class="playlist-count ng-binding ng-scope"
-							ng-if="item.IdVideos">9</span>
-						<!-- end ngIf: item.IdVideos -->
-						</a>
-						<div class="media-body has-menu-dots">
-							<h2 class="title">
-								<a
-									href="https://dailyxe.com.vn/videos/9-canh-hanh-dong-nghet-tho-tieu-bieu-xuyen-suot-series-phim-fast-and-furious-1q.html"
-									title="9 cảnh hành động nghẹt thở tiêu biểu xuyên suốt series phim Fast and Furious"
-									class="ng-binding">9 cảnh hành động nghẹt thở tiêu biểu xuyên
-									suốt series phim Fast and Furious</a>
-							</h2>
-							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao"> 1 năm trước </span>
-								<!-- end ngIf: item.NgayTao -->
-								<!-- ngIf: item.SoLuotXem -->
-							</div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 			
