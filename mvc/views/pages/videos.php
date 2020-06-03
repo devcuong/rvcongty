@@ -85,9 +85,41 @@
 	margin-bottom: 20px;
 }
 
+@media screen and (max-width: 769px) {
+	.video-item {
+		position: relative;
+		width: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+@media ( min-width : 768px) and (max-width: 1024px) {
+	.video-item {
+		position: relative;
+		width: 50%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
 .media {
-	border-top: 1px solid rgba(219, 219, 219, .5);
-	margin-top: 1rem;
+	border-top: 0px !important;
+	margin-top: 0px !important;
 	padding-top: 1rem;
 	display: -ms-flexbox;
 	display: -webkit-box;
@@ -95,6 +127,7 @@
 	-ms-flex-align: start;
 	-webkit-box-align: start;
 	align-items: flex-start;
+	padding-top: 1rem;
 }
 
 .video-item .video-img {
@@ -105,9 +138,11 @@
 	overflow: hidden;
 	position: relative;
 }
+
 .playlist .video-img {
-    position: relative;
+	position: relative;
 }
+
 .video-item .video-img img {
 	width: 100%;
 	position: absolute;
@@ -162,50 +197,49 @@
 	color: #999;
 	display: flex;
 }
-
-.video-item .video-info .video-info-item:not(:last-child) {
-    margin-right: 20px;
+.date-add{
+	margin-right: 20px;
 }
-
 .video-info-item i {
 	margin-right: 3px;
 }
 
 .playlist .playlist-count {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 40%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    color: #ccc;
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    font-size: 130%;
-    padding-bottom: 20px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 40%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #ccc;
+	display: -webkit-box !important;
+	display: -ms-flexbox !important;
+	display: flex !important;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	font-size: 130%;
+	padding-bottom: 20px;
 }
 
 .playlist .playlist-count::after {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    content: "";
-    display: block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 17px;
-    height: 17px;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDMyMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIwIDMyMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxnPgoJCTxyZWN0IHk9Ijk2IiB3aWR0aD0iMjU2IiBoZWlnaHQ9IjQyLjY2NyIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQ0NDQ0NDIiBkYXRhLW9sZF9jb2xvcj0iI2NjY2NjYyI+PC9yZWN0PgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cmVjdCB5PSIxMC42NjciIHdpZHRoPSIyNTYiIGhlaWdodD0iNDIuNjY3IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDQ0NDQ0MiIGRhdGEtb2xkX2NvbG9yPSIjY2NjY2NjIj48L3JlY3Q+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxyZWN0IHk9IjE4MS4zMzMiIHdpZHRoPSIxNzAuNjY3IiBoZWlnaHQ9IjQyLjY2NyIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQ0NDQ0NDIiBkYXRhLW9sZF9jb2xvcj0iI2NjY2NjYyI+PC9yZWN0PgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjIxMy4zMzMsMTgxLjMzMyAyMTMuMzMzLDMwOS4zMzMgMzIwLDI0NS4zMzMgICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0NDQ0NDQyIgZGF0YS1vbGRfY29sb3I9IiNjY2NjY2MiPjwvcG9seWdvbj4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+);
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	content: "";
+	display: block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 17px;
+	height: 17px;
+	background-image:
+		url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDMyMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIwIDMyMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxnPgoJCTxyZWN0IHk9Ijk2IiB3aWR0aD0iMjU2IiBoZWlnaHQ9IjQyLjY2NyIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQ0NDQ0NDIiBkYXRhLW9sZF9jb2xvcj0iI2NjY2NjYyI+PC9yZWN0PgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cmVjdCB5PSIxMC42NjciIHdpZHRoPSIyNTYiIGhlaWdodD0iNDIuNjY3IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDQ0NDQ0MiIGRhdGEtb2xkX2NvbG9yPSIjY2NjY2NjIj48L3JlY3Q+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxyZWN0IHk9IjE4MS4zMzMiIHdpZHRoPSIxNzAuNjY3IiBoZWlnaHQ9IjQyLjY2NyIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQ0NDQ0NDIiBkYXRhLW9sZF9jb2xvcj0iI2NjY2NjYyI+PC9yZWN0PgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjIxMy4zMzMsMTgxLjMzMyAyMTMuMzMzLDMwOS4zMzMgMzIwLDI0NS4zMzMgICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0NDQ0NDQyIgZGF0YS1vbGRfY29sb3I9IiNjY2NjY2MiPjwvcG9seWdvbj4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+);
 }
 </style>
 <section id="divCenter" class="video-container">
@@ -213,48 +247,35 @@
 		<span macd="danhsach_video"></span>
 		<div class="video-bottom news-list ng-scope" id="containerResult"
 			ng-controller="videos-list as ctrl" ng-init="init('')">
-			<div class="d-flex align-items-center">
-				<h1 class="video-title ng-scope" ng-if="!isLoadTimKiem">Videos</h1>
-				<div class="d-flex align-items-center ml-auto">
-					<div class="form-search m-0">
-						<input ng-attr-id="{{id}}" type="text" ng-model="tuKhoaTimKiem"
-							class="form-control ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty"
-							placeholder="Tìm kiếm videos..."
-							auto-complete="ctrl.autoCompleteOptions"
-							ng-keyup="$event.keyCode === 13 &amp;&amp; loadData(1, displayItems)"
-							id="auto-complete-video"><i class="fa fa-search"></i>
-					</div>
-				</div>
+			<div class="page-heading d-flex">
+				<h4 class="box-title-page mr-auto">VIDEOS</h4>
 			</div>
 			<div class="video-main">
 				<div class="video-list">
 					<!-- end ngRepeat: item in listVideo -->
 					<?php while ($row = mysqli_fetch_array($data["Videos"])) {?>
 					<div ng-repeat="item in listVideo" class="video-item media ">
-						<a
-							title="<?php echo $row["tieudevideo"]; ?>"
-							class="video-img"
+						<a title="<?php echo $row["tieudevideo"]; ?>" class="video-img"
 							href="<?php echo $servername ?>/videos/<?php echo $row["slugvideo"] ?>-<?php echo $row["id"] ?>">
 							<img
 							ng-src="https://img.youtube.com/vi/<?php echo $row["videoid"]; ?>/hqdefault.jpg"
 							alt="<?php echo $row["tieudevideo"]; ?>"
 							src="https://img.youtube.com/vi/<?php echo $row["videoid"]; ?>/hqdefault.jpg">
-							<span
-							class="video-time ng-binding ng-scope" ng-if="item.Duration"><?php echo $row["thoiluong"]; ?></span>
+							<span class="video-time ng-binding ng-scope"
+							ng-if="item.Duration"><?php echo $row["thoiluong"]; ?></span>
 						</a>
 						<div class="media-body has-menu-dots">
 							<h2 class="title">
 								<a
 									href="<?php echo $servername ?>/videos/<?php echo $row["slugvideo"] ?>-<?php echo $row["id"] ?>"
-									title="<?php echo $row["tieudevideo"]; ?>"
-									class="ng-binding"><?php echo $row["tieudevideo"]; ?></a>
+									title="<?php echo $row["tieudevideo"]; ?>" class="ng-binding"><?php echo $row["tieudevideo"]; ?></a>
 							</h2>
 							<div class="video-info">
-								<span class="video-info-item ng-binding ng-scope"><?php
-    $date = date_create($row["thoigian"]);
-    echo date_format($date, "d/m/Y");
-    ?></span>
-								<span class="video-info-item ng-binding ng-scope"> <i class="fa fa-eye"></i><?php echo $row["luotxem"]; ?> lượt xem
+								<span class="video-info-item ng-binding ng-scope date-add"><?php
+        $date = date_create($row["thoigian"]);
+        echo date_format($date, "d/m/Y");
+        ?></span> <span class="video-info-item ng-binding ng-scope"> <i
+									class="fa fa-eye"></i><?php echo $row["luotxem"]; ?> lượt xem
 								</span>
 							</div>
 						</div>
@@ -266,17 +287,13 @@
 		<div class="video-bottom news-list ng-scope" id="containerResult"
 			ng-controller="playlist-videos-list as ctrl" ng-init="init('')">
 			<!-- ngIf: listVideo.length > 0 -->
-			<div class="d-flex align-items-center ng-scope"
-				ng-if="listVideo.length > 0">
-				<!-- ngIf: !isLoadTimKiem -->
-				<h1 class="video-title ng-scope" ng-if="!isLoadTimKiem">Playlist
-					videos</h1>
+			<div class="page-heading d-flex">
+				<h4 class="box-title-page mr-auto">PLAYLIST VIDEOS</h4>
 			</div>
 			<div class="video-main ng-scope" ng-if="listVideo.length > 0">
 				<div class="video-list">
 				<?php while ($row = mysqli_fetch_array($data["Playlist"])) {?>
-				<div ng-repeat="item in listVideo"
-						class="video-item media playlist">
+				<div ng-repeat="item in listVideo" class="video-item media playlist">
 						<a title="<?php echo $row["tenplaylist"]; ?>" class="video-img"
 							href="https://dailyxe.com.vn/videos/dailyxe-review-honda-8q.html">
 							<img
@@ -284,7 +301,7 @@
 							alt="<?php echo $row["tenplaylist"]; ?>"
 							src="https://img.youtube.com/vi/<?php echo $row["thumbnail"]; ?>/hqdefault.jpg">
 							<span class="playlist-count ng-binding ng-scope"
-							ng-if="item.IdVideos"><?php echo mysqli_num_rows($data["Playlist"]) ?></span>
+							ng-if="item.IdVideos"><?php echo $row["sovideo"] ?></span>
 						</a>
 						<div class="media-body has-menu-dots">
 							<h2 class="title">
@@ -295,28 +312,17 @@
 							<div class="video-info">
 								<!-- ngIf: item.NgayTao -->
 								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao">Cập nhật: 10 tháng trước</span>
+									ng-if="item.NgayTao">Cập nhật: <?php
+        $date = date_create($row["thoigian"]);
+        echo date_format($date, "d/m/Y");
+        ?></span>
 							</div>
 						</div>
 					</div>
 				<?php } ?>
-					<!-- end ngRepeat: item in listVideo -->
-					
-					<!-- end ngRepeat: item in listVideo -->
-					
-					<!-- end ngRepeat: item in listVideo -->
-					
-					<!-- end ngRepeat: item in listVideo -->
-					
-					<!-- end ngRepeat: item in listVideo -->
-					
-					<!-- end ngRepeat: item in listVideo -->
-					
-					<!-- end ngRepeat: item in listVideo -->
-					
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 
