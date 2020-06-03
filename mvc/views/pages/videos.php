@@ -254,7 +254,7 @@
 							alt="<?php echo $row["tieudevideo"]; ?>"
 							src="https://img.youtube.com/vi/<?php echo $row["videoid"]; ?>/hqdefault.jpg">
 							<span class="video-time ng-binding ng-scope"
-							ng-if="item.Duration"><?php echo $row["thoiluong"]; ?></span>
+							><?php echo $row["thoiluong"]; ?></span>
 						</a>
 						<div class="media-body has-menu-dots">
 							<h2 class="title">
@@ -282,7 +282,7 @@
 			<div class="page-heading d-flex">
 				<h4 class="box-title-page mr-auto">PLAYLIST VIDEOS</h4>
 			</div>
-			<div class="video-main ng-scope" ng-if="listVideo.length > 0">
+			<div class="video-main ng-scope">
 				<div class="video-list">
 				<?php while ($row = mysqli_fetch_array($data["Playlist"])) {?>
 				<div ng-repeat="item in listVideo" class="video-item media playlist">
@@ -292,8 +292,7 @@
 							ng-src="https://img.youtube.com/vi/<?php echo $row["thumbnail"]; ?>/hqdefault.jpg"
 							alt="<?php echo $row["tenplaylist"]; ?>"
 							src="https://img.youtube.com/vi/<?php echo $row["thumbnail"]; ?>/hqdefault.jpg">
-							<span class="playlist-count ng-binding ng-scope"
-							ng-if="item.IdVideos"><?php echo $row["sovideo"] ?></span>
+							<span class="playlist-count ng-binding ng-scope"><?php echo $row["sovideo"] ?></span>
 						</a>
 						<div class="media-body has-menu-dots">
 							<h2 class="title">
@@ -303,8 +302,7 @@
 							</h2>
 							<div class="video-info">
 								<!-- ngIf: item.NgayTao -->
-								<span class="video-info-item ng-binding ng-scope"
-									ng-if="item.NgayTao">Cập nhật: <?php
+								<span class="video-info-item ng-binding ng-scope">Cập nhật: <?php
         $date = date_create($row["thoigian"]);
         echo date_format($date, "d/m/Y");
         ?></span>
