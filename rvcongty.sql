@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 02, 2020 lúc 03:10 AM
+-- Thời gian đã tạo: Th6 03, 2020 lúc 05:09 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -433,6 +433,7 @@ CREATE TABLE `playlist` (
   `tenplaylist` varchar(100) NOT NULL,
   `slugplaylist` varchar(100) NOT NULL,
   `sovideo` int(11) NOT NULL,
+  `thumbnail` varchar(100) NOT NULL,
   `thoigian` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -440,8 +441,8 @@ CREATE TABLE `playlist` (
 -- Đang đổ dữ liệu cho bảng `playlist`
 --
 
-INSERT INTO `playlist` (`id`, `tenplaylist`, `slugplaylist`, `sovideo`, `thoigian`) VALUES
-(0, 'DailyXe Review Honda', 'dailyxe-review-honda', 0, '2020-06-01 16:11:12');
+INSERT INTO `playlist` (`id`, `tenplaylist`, `slugplaylist`, `sovideo`, `thumbnail`, `thoigian`) VALUES
+(2, 'Quản trị nhân lực - TS Võ Việt Hằng Có học có hơn', 'quan-tri-nhan-luc-ts-vo-viet-hang-co-hoc-co-hon', 2, 'GIfwA3-QCQE', '2020-06-02 21:58:20');
 
 -- --------------------------------------------------------
 
@@ -848,8 +849,7 @@ CREATE TABLE `video` (
 --
 
 INSERT INTO `video` (`id`, `tieudevideo`, `slugvideo`, `playlist`, `url`, `videoid`, `thoiluong`, `luotxem`, `thoigian`) VALUES
-(1, 'FBNC- Quản lý nhân sự trong công ty (P1)', 'fbnc-quan-ly-nhan-su-trong-cong-ty-p1', 0, 'https://www.youtube.com/watch?v=VQk_kUIwuRg', 'VQk_kUIwuRg', '11:19', 0, '2020-06-01 22:37:33'),
-(2, 'FBNC- Quản lý nhân sự trong công ty (P2)', 'fbnc-quan-ly-nhan-su-trong-cong-ty-p2', 0, 'https://www.youtube.com/watch?v=YVB-jYJwIAQ', 'YVB-jYJwIAQ', '11:01', 0, '2020-06-01 22:41:41');
+(6, 'Quản trị nhân lực - Bài 1: Hoạch định nguồn nhân lực', 'quan-tri-nhan-luc-bai-1-hoach-dinh-nguon-nhan-luc', 2, 'https://www.youtube.com/watch?v=4OeTSzfIZ28', '4OeTSzfIZ28', '35:29', 0, '2020-06-02 23:13:56');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -926,6 +926,12 @@ ALTER TABLE `news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT cho bảng `playlist`
+--
+ALTER TABLE `playlist`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT cho bảng `reply`
 --
 ALTER TABLE `reply`
@@ -941,7 +947,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT cho bảng `video`
 --
 ALTER TABLE `video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
