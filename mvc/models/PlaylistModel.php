@@ -31,9 +31,9 @@ class PlaylistModel extends DB
     {
         $qr = "";
         if ($action == "add") {
-            $qr = "UPDATE playlist SET sovideo = sovideo + 1, thumbnail = '$imageThumbnail', thoigian = '$thoiGian', WHERE id = $idPlaylist";
+            $qr = "UPDATE playlist SET sovideo = sovideo + 1, thumbnail = '$imageThumbnail', thoigian = '$thoiGian' WHERE id = $idPlaylist";
         } else {
-            $qr = "UPDATE playlist SET sovideo = sovideo - 1, thoigian = '$thoiGian', WHERE id = $idPlaylist";
+            $qr = "UPDATE playlist SET sovideo = sovideo - 1, thoigian = '$thoiGian' WHERE id = $idPlaylist";
         }
         $result = false;
         if (mysqli_query($this->con, $qr)) {
