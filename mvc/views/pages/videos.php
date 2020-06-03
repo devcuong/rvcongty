@@ -87,33 +87,13 @@
 
 @media screen and (max-width: 769px) {
 	.video-item {
-		position: relative;
 		width: 100%;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		padding-left: 10px;
-		padding-right: 10px;
 	}
 }
 
 @media ( min-width : 768px) and (max-width: 1024px) {
 	.video-item {
-		position: relative;
 		width: 50%;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		padding-left: 10px;
-		padding-right: 10px;
 	}
 }
 
