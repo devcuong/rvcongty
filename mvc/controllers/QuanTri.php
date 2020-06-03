@@ -787,8 +787,14 @@ class QuanTri extends Controller
         if (isset($_SESSION["email"])) {
             $kt = false;
             $idVideo = $c;
+            $idPlaylist = $d;
+            $createdDate = date("Y-m-d H:i:s");
             $kq = $this->VideoModel->XoaVideo($idVideo);
             if ($kq) {
+                $kt = true;
+            }
+            $kq2 = $this->PlaylistModel->UpdateInfoKhiCapNhatVideo("delete", $idPlaylist, "none", $createdDate);
+            if ($kq2) {
                 $kt = true;
             }
             if ($kt) {
