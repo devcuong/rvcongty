@@ -1,4 +1,6 @@
 <?php
+require_once 'mvc/class/Server.php';
+require_once 'mvc/class/CutString.php';
 class Videos extends Controller
 {
     public $VideoModel;
@@ -11,12 +13,27 @@ class Videos extends Controller
     }
     
     function Index(){
+        $trangVideosHienTai= 1;
+        $soVideoMoiTrang = 15;
+        if (isset($_GET["page"])) {
+            $trangVideosHienTai= $_GET["page"];
+        }
+        $soVideoBoQua = ($trangVideosHienTai- 1) * $soVideoMoiTrang;
         
-        $allVideos = $this->VideoModel->TatCaVideo();
-        $allPlaylist = $this->PlaylistModel->TatCaPlaylist();
-        //echo mysqli_num_rows($allPlaylist);
+        // Tất cả video
+        $tatCaVideo = $this->VideoModel->TatCaVideo();
+        $soVideo = mysqli_num_rows($tatCaVideo);
+        $soTrang = ceil($soVideo/ $soVideoMoiTrang);
+        $videoTrangHienTai = $this->VideoModel->LayVideoPhanTrang($soVideoBoQua, $soVideoMoiTrang);
+        $tatCaPlaylist = $this->PlaylistModel->TatCaPlaylist();
+        
+        // Tạo navigate phân trang
+        $server = new Server();
+        $string = new CutString();
+        $nav = $string->get_nav_render_videos($trangVideosHienTai, $soTrang, $server->servername."/videos");
+        
         // Title
-        $title = "Review công ty ";
+        $title = "Video về quản trị nguồn nhân lực";
         
         // Description
         $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ";
@@ -26,8 +43,9 @@ class Videos extends Controller
             "Page" => "videos",
             "Title" => $title,
             "Description" => $description,
-            "Videos" => $allVideos,
-            "Playlist" => $allPlaylist
+            "Videos" => $videoTrangHienTai,
+            "Playlist" => $tatCaPlaylist,
+            "Navigate" => $nav
         ]);
     }
 }

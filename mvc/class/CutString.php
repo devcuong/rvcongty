@@ -50,7 +50,7 @@ class CutString{
         else
             return substr($string,0,intval($from));
     }
-    
+    /*TẠO PHÂN TRANG TRANG CHỦ*/
     function get_nav_render_with_tab($current, $pages, $route, $tab){
         $nav = "";
         if ($pages > 0) {
@@ -84,8 +84,8 @@ class CutString{
         
         return $nav;
     }
-    
-    function get_nav_render($current, $pages, $route, $keySearch){
+    /*TẠO PHÂN TRANG TÌM KIẾM*/
+    function get_nav_render_with_search($current, $pages, $route, $keySearch){
         $nav = "";
         if ($pages > 0) {
             $nav .= "<ul class='pagination-list'>";
@@ -117,6 +117,38 @@ class CutString{
         }
         return $nav;
     }
-    
+    /*TẠO PHÂN TRANG VIDEOS*/
+    function get_nav_render_videos($current, $pages, $route){
+        $nav = "";
+        if ($pages > 0) {
+            $nav .= "<ul class='pagination-list'>";
+            if ($current == 1) {
+                $nav = $nav."<li><a class='pagination-link' disabled>ĐẦU</a></li>";
+            } else {
+                $nav = $nav."<li ><a class='pagination-link' href='" . $route . "&page=1'>ĐẦU</a></li>";
+            }
+            $i = ($current > 5 ? $current - 4 : 1);
+            if ($i != 1) {
+                $nav = $nav."<li class='disabled'><a class='pagination-link'>...</a></li>";
+            }
+            for (; $i <= $current + 4 && $i <= $pages; $i++) {
+                if ($i == $current) {
+                    $nav = $nav."<li><a class='pagination-link is-current'>" . $i . "</a></li>";
+                } else {
+                    $nav = $nav."<li><a class='pagination-link' href='" . $route . "&page=" . $i . "'>" . $i . "</a></li>";
+                }
+                if ($i == $current + 4 && $i < $pages) {
+                    $nav =$nav."<li><a class='pagination-link'>...</a></li>";
+                }
+            }
+            if ($current != $pages) {
+                $nav = $nav."<li><a class='pagination-link' href='" . $route . "&page=".$pages."'>CUỐI</a></li>";
+            } else {
+                $nav = $nav."<li><a class='pagination-link' disabled>CUỐI</a></li>";
+            }
+            $nav = $nav."</ul>";
+        }
+        return $nav;
+    }
 }
 ?>

@@ -42,7 +42,7 @@ class TimKiem extends Controller
         $soKetQuaTinTuc = mysqli_num_rows($allKetQua);
         $soTrang = ceil($soKetQuaTinTuc/ $tinTucMoiTrang);
         $ketQuaTinTucTrangHienTai = $this->NewsModel->LayNewsPhanTrang($tinTucQuaBoQua, $tinTucMoiTrang);
-        $nav = $this->String->get_nav_render($trangHienTai, $soTrang, $this->Server->servername."/tim-kiem/news",$keySearch);
+        $nav = $this->String->get_nav_render_with_search($trangHienTai, $soTrang, $this->Server->servername."/tim-kiem/news",$keySearch);
         
         // Lấy tin tức xem nhiều nhất
         $newsXemNhieuNhat = $this->NewsModel->Lay8NewsXemNhieuNhat();

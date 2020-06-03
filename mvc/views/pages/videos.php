@@ -238,9 +238,13 @@
 			</ul>
 		</nav>
 		<div class="video-bottom news-list ng-scope" id="containerResult"
-			ng-controller="videos-list as ctrl" ng-init="init('')">
+			ng-controller="videos-list as ctrl">
 			<div class="page-heading d-flex">
 				<h4 class="box-title-page mr-auto">VIDEOS</h4>
+				<nav class="pagination is-small custom-pagination" role="navigation"
+					aria-label="pagination">
+				<?php echo $data["Navigate"]; ?>
+			</nav>
 			</div>
 			<div class="video-main">
 				<div class="video-list">
@@ -253,8 +257,7 @@
 							ng-src="https://img.youtube.com/vi/<?php echo $row["videoid"]; ?>/hqdefault.jpg"
 							alt="<?php echo $row["tieudevideo"]; ?>"
 							src="https://img.youtube.com/vi/<?php echo $row["videoid"]; ?>/hqdefault.jpg">
-							<span class="video-time ng-binding ng-scope"
-							><?php echo $row["thoiluong"]; ?></span>
+							<span class="video-time ng-binding ng-scope"><?php echo $row["thoiluong"]; ?></span>
 						</a>
 						<div class="media-body has-menu-dots">
 							<h2 class="title">
