@@ -733,7 +733,7 @@ class QuanTri extends Controller
                     $result = true;
                 }
                 // Update thông tin Playlist khi thêm video
-                $kq2 = $this->PlaylistModel->UpdateInfoKhiThemVideo($playList, $thumbVideoId, $createdDate);
+                $kq2 = $this->PlaylistModel->UpdateInfoKhiCapNhatVideo("add",$playList, $thumbVideoId, $createdDate);
                 if ($kq2) {
                     $result = true;
                 }

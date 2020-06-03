@@ -18,7 +18,7 @@
           <td><?php echo $row["url"] ?></td>
           <td><?php echo $row["luotxem"] ?></td>
           <td><?php echo $row["thoigian"] ?></td>
-          <td><a href="<?php echo $servername ?>/quan-tri/xoa-video/<?php echo $row["id"] ?>">X</a></td>
+          <td><a href="<?php echo $servername ?>/quan-tri/xoa-video/<?php echo $row["id"] ?>/<?php echo $row["playlist"] ?>">X</a></td>
         </tr>
   <?php } ?>
   </tbody>
