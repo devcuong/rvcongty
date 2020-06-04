@@ -95,14 +95,13 @@ body{
 .video-item .video-time {
 	position: absolute;
 	bottom: 5px;
-	right: 5px;
+	left: 60px;
 	background-color: rgba(0, 0, 0, 0.8);
 	border-radius: 3px;
 	padding: 2px 5px;
 	color: #fff;
 	font-weight: 500;
 	font-size: 90%;
-	right: 5px;
 }
 
 .video-item .media-body {
@@ -123,7 +122,7 @@ body{
 .video-item .title a{
 	color: #fff;
 }
-.dark-mode .video-info {
+.video-info {
 	color: #999;
 }
 
@@ -156,6 +155,26 @@ body{
     top: 0;
     z-index: 1020;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 </style>
 <section id="divCenter" class="video-container">
 	<div class="container">
@@ -173,39 +192,6 @@ body{
 									frameborder="0"
 									allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 									allowfullscreen="" class="ng-scope"></iframe>
-								<script class="ng-scope">
-                            var tag = document.createElement('script');
-
-                            tag.src = "https://www.youtube.com/iframe_api";
-                            var firstScriptTag = document.getElementsByTagName('script')[0];
-                            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                    
-                            var player;
-                            function onYouTubeIframeAPIReady() {
-                                var player;
-                                player = new YT.Player('player', {
-                                    events: {
-                                    'onReady': onPlayerReady,
-                                    'onStateChange': onPlayerStateChange,
-                                    }
-                                });
-                            }
-                            
-                            function onPlayerReady(event) {
-                                event.target.playVideo();
-                            }
-                    
-                            function onPlayerStateChange(event) {
-                                if(event.data == 2){
-                                    console.log("paused");
-                                }
-                                if(event.data == 0){
-                                    angular.element(document.getElementById('video-main')).scope().playNextVideo();
-                                }
-                            }
-
-                           
-                            </script>
 							</div>
 						</div>
 						<ul class="hash-tag-list ng-hide"
