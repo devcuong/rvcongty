@@ -223,6 +223,10 @@
 	background-image:
 		url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDMyMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIwIDMyMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxnPgoJCTxyZWN0IHk9Ijk2IiB3aWR0aD0iMjU2IiBoZWlnaHQ9IjQyLjY2NyIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQ0NDQ0NDIiBkYXRhLW9sZF9jb2xvcj0iI2NjY2NjYyI+PC9yZWN0PgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cmVjdCB5PSIxMC42NjciIHdpZHRoPSIyNTYiIGhlaWdodD0iNDIuNjY3IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDQ0NDQ0MiIGRhdGEtb2xkX2NvbG9yPSIjY2NjY2NjIj48L3JlY3Q+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxyZWN0IHk9IjE4MS4zMzMiIHdpZHRoPSIxNzAuNjY3IiBoZWlnaHQ9IjQyLjY2NyIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQ0NDQ0NDIiBkYXRhLW9sZF9jb2xvcj0iI2NjY2NjYyI+PC9yZWN0PgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjIxMy4zMzMsMTgxLjMzMyAyMTMuMzMzLDMwOS4zMzMgMzIwLDI0NS4zMzMgICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0NDQ0NDQyIgZGF0YS1vbGRfY29sb3I9IiNjY2NjY2MiPjwvcG9seWdvbj4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+);
 }
+
+.title-video-box {
+	margin-top: 1rem;
+}
 </style>
 <section id="divCenter" class="video-container">
 	<div class="container">
@@ -240,7 +244,7 @@
 		<div class="video-bottom news-list ng-scope" id="containerResult"
 			ng-controller="videos-list as ctrl">
 			<div class="page-heading d-flex">
-				<h4 class="box-title-page mr-auto">VIDEOS</h4>
+				<h4 class="box-title-page mr-auto title-video-box">VIDEOS</h4>
 				<nav class="pagination is-small custom-pagination" role="navigation"
 					aria-label="pagination">
 				<?php echo $data["Navigate"]; ?>
@@ -281,7 +285,6 @@
 		</div>
 		<div class="video-bottom news-list ng-scope" id="containerResult"
 			ng-controller="playlist-videos-list as ctrl" ng-init="init('')">
-			<!-- ngIf: listVideo.length > 0 -->
 			<div class="page-heading d-flex">
 				<h4 class="box-title-page mr-auto">PLAYLIST VIDEOS</h4>
 			</div>
@@ -304,7 +307,6 @@
 									title="DailyXe Review Honda" class="ng-binding"><?php echo $row["tenplaylist"]; ?></a>
 							</h2>
 							<div class="video-info">
-								<!-- ngIf: item.NgayTao -->
 								<span class="video-info-item ng-binding ng-scope">Cập nhật: <?php
         $date = date_create($row["thoigian"]);
         echo date_format($date, "d/m/Y");
