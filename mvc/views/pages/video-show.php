@@ -177,8 +177,19 @@ body{
 }
 </style>
 <section id="divCenter" class="video-container">
+<nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs" data-no-instant="">
+	<ul>
+		<li><a href="<?php echo $servername ?>"> <span class="icon is-small">
+					<i class="fas fa-home" aria-hidden="true"></i>
+			</span> <span>Trang chủ</span>
+		</a></li>
+		<li><a href="<?php echo $servername ?>/videos/"><span>Videos</span>
+		</a></li>
+		<li class="is-active"><a href="#"> <span>Videos ABC</span>
+		</a></li>
+	</ul>
+</nav>
 	<div class="container">
-		<span macd="chitiet_video"></span>
 		<div class="video-main ng-scope" id="video-main"
 			ng-controller="videos-detail as ctrl" ng-init="init('2', 'true')">
 			<div class="columns">
@@ -194,10 +205,6 @@ body{
 									allowfullscreen="" class="ng-scope"></iframe>
 							</div>
 						</div>
-						<ul class="hash-tag-list ng-hide"
-							ng-show="dataVideo.HashTagsInChiTiet">
-							<!-- ngRepeat: item in listHashTag -->
-						</ul>
 						<h1 class="video-title ng-binding">Triển lãm Auto Show Detroit
 							2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [2]</h1>
 						<div class="video-info">
@@ -215,7 +222,6 @@ body{
 							</div>
 						</div>
 						<div class="video-list video-list-vertical">
-							<!-- ngRepeat: item in listPlaylistVideo -->
 							<div ng-repeat="item in listPlaylistVideo"
 								class="video-item media">
 								<a class="video-img"
