@@ -43,6 +43,18 @@ body{
 }
 .playlist-container .video-main-more-list-header {
 	background-color: #111;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 10px 30px;
+    margin-bottom: 10px;
 }
 
 .playlist-container .video-list-vertical .video-item {
@@ -254,7 +266,6 @@ body{
 									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-2-66855j0.jpg">
 									<!-- ngIf: item.Duration -->
 									<span class="video-time ng-binding ng-scope">1:58</span>
-								<!-- end ngIf: item.Duration -->
 								</a>
 								<div class="media-body">
 									<h3 class="title">
@@ -303,8 +314,7 @@ body{
 									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-7-66860j0.jpg"
 									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [7]"
 									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-7-66860j0.jpg">
-									<span class="video-time ng-binding ng-scope"
-									ng-if="item.Duration">1:44</span>
+									<span class="video-time ng-binding ng-scope">1:44</span>
 								</a>
 								<div class="media-body">
 									<h3 class="title">
@@ -315,8 +325,7 @@ body{
 									<div class="video-info">
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.SoLuotXem">22 lượt xem</span>
-										<span class="video-info-item ng-binding ng-scope"
-											ng-if="item.NgayTao">1 năm trước</span>
+										<span class="video-info-item ng-binding ng-scope">1 năm trước</span>
 									</div>
 								</div>
 							</div>
