@@ -1,4 +1,7 @@
 <style>
+body{
+	background: #222 !important;
+}
 .video-main-content {
 	width: 100%;
 	margin-bottom: 20px;
@@ -28,7 +31,7 @@
 .video-main-content .video-title {
 	font-size: 130%;
 	font-weight: 500;
-	color: #000;
+	color: #fff;
 	padding-top: 0px;
 }
 .playlist-container {
@@ -43,6 +46,7 @@
 }
 
 .playlist-container .video-list-vertical .video-item {
+	border-top: 0px;
 	width: 100%;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -94,7 +98,6 @@
 }
 
 .video-item .title {
-	color: #fff;
 	font-family: "Roboto", sans-serif;
 	font-size: 100%;
 	display: -webkit-box;
@@ -105,7 +108,9 @@
 	overflow: hidden;
 	width: 100%;
 }
-
+.video-item .title a{
+	color: #fff;
+}
 .dark-mode .video-info {
 	color: #999;
 }
@@ -258,18 +263,13 @@
 											với những dòng xe cơ bắp, bán tải và xe điện [2]</a>
 									</h3>
 									<div class="video-info">
-										<!-- ngIf: item.SoLuotXem -->
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.SoLuotXem">33 lượt xem</span>
-										<!-- end ngIf: item.SoLuotXem -->
-										<!-- ngIf: item.NgayTao -->
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.NgayTao">1 năm trước</span>
-										<!-- end ngIf: item.NgayTao -->
 									</div>
 								</div>
 							</div>
-							<!-- end ngRepeat: item in listPlaylistVideo -->
 							<div ng-repeat="item in listPlaylistVideo"
 								class="video-item media ">
 								<a class="video-img"
@@ -278,10 +278,8 @@
 									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-3-66856j0.jpg"
 									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [3]"
 									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-3-66856j0.jpg">
-									<!-- ngIf: item.Duration -->
 									<span class="video-time ng-binding ng-scope"
 									ng-if="item.Duration">1:10</span>
-								<!-- end ngIf: item.Duration -->
 								</a>
 								<div class="media-body">
 									<h3 class="title">
@@ -290,18 +288,13 @@
 											với những dòng xe cơ bắp, bán tải và xe điện [3]</a>
 									</h3>
 									<div class="video-info">
-										<!-- ngIf: item.SoLuotXem -->
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.SoLuotXem">140 lượt xem</span>
-										<!-- end ngIf: item.SoLuotXem -->
-										<!-- ngIf: item.NgayTao -->
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.NgayTao">1 năm trước</span>
-										<!-- end ngIf: item.NgayTao -->
 									</div>
 								</div>
 							</div>
-							<!-- end ngRepeat: item in listPlaylistVideo -->
 							<div ng-repeat="item in listPlaylistVideo"
 								class="video-item media ">
 								<a class="video-img"
@@ -310,10 +303,8 @@
 									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-7-66860j0.jpg"
 									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [7]"
 									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-7-66860j0.jpg">
-									<!-- ngIf: item.Duration -->
 									<span class="video-time ng-binding ng-scope"
 									ng-if="item.Duration">1:44</span>
-								<!-- end ngIf: item.Duration -->
 								</a>
 								<div class="media-body">
 									<h3 class="title">
@@ -322,18 +313,13 @@
 											với những dòng xe cơ bắp, bán tải và xe điện [7]</a>
 									</h3>
 									<div class="video-info">
-										<!-- ngIf: item.SoLuotXem -->
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.SoLuotXem">22 lượt xem</span>
-										<!-- end ngIf: item.SoLuotXem -->
-										<!-- ngIf: item.NgayTao -->
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.NgayTao">1 năm trước</span>
-										<!-- end ngIf: item.NgayTao -->
 									</div>
 								</div>
 							</div>
-							<!-- end ngRepeat: item in listPlaylistVideo -->
 							<div ng-repeat="item in listPlaylistVideo"
 								class="video-item media ">
 								<a class="video-img"
@@ -342,10 +328,8 @@
 									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-8-66861j0.jpg"
 									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [8]"
 									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-8-66861j0.jpg">
-									<!-- ngIf: item.Duration -->
 									<span class="video-time ng-binding ng-scope"
 									ng-if="item.Duration">1:10</span>
-								<!-- end ngIf: item.Duration -->
 								</a>
 								<div class="media-body">
 									<h3 class="title">
@@ -354,18 +338,13 @@
 											với những dòng xe cơ bắp, bán tải và xe điện [8]</a>
 									</h3>
 									<div class="video-info">
-										<!-- ngIf: item.SoLuotXem -->
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.SoLuotXem">18 lượt xem</span>
-										<!-- end ngIf: item.SoLuotXem -->
-										<!-- ngIf: item.NgayTao -->
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.NgayTao">1 năm trước</span>
-										<!-- end ngIf: item.NgayTao -->
 									</div>
 								</div>
 							</div>
-							<!-- end ngRepeat: item in listPlaylistVideo -->
 							<div ng-repeat="item in listPlaylistVideo"
 								class="video-item media ">
 								<a class="video-img"
@@ -377,7 +356,6 @@
 									<!-- ngIf: item.Duration -->
 									<span class="video-time ng-binding ng-scope"
 									ng-if="item.Duration">1:31</span>
-								<!-- end ngIf: item.Duration -->
 								</a>
 								<div class="media-body">
 									<h3 class="title">
@@ -386,18 +364,13 @@
 											với những dòng xe cơ bắp, bán tải và xe điện [6]</a>
 									</h3>
 									<div class="video-info">
-										<!-- ngIf: item.SoLuotXem -->
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.SoLuotXem">30 lượt xem</span>
-										<!-- end ngIf: item.SoLuotXem -->
-										<!-- ngIf: item.NgayTao -->
 										<span class="video-info-item ng-binding ng-scope"
 											ng-if="item.NgayTao">1 năm trước</span>
-										<!-- end ngIf: item.NgayTao -->
 									</div>
 								</div>
 							</div>
-							<!-- end ngRepeat: item in listPlaylistVideo -->
 							<div ng-repeat="item in listPlaylistVideo"
 								class="video-item media ">
 								<a class="video-img"
