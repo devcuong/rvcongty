@@ -13,6 +13,19 @@ body {
 	height: 465px;
 }
 
+@media screen and (max-width: 769px) {
+	.video-main-iframe {
+		height: 315px;
+	}
+	.player-col, .playlist-col {
+		padding: 0px;
+	}
+	.video-main-content .video-title, .video-main-content .video-info{
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+    }
+}
+
 .embed-responsive {
 	position: relative;
 	display: block;
@@ -136,25 +149,39 @@ body {
 }
 
 .video-item
+
  
+
 .video-info
+
  
+
 .video-info-item
+
+
 :not
+
  
+
 (
 :last-child
+
  
+
 )
 {
 margin-right
+
+
 :
+
  
+
 20
 px
+
+
 ;
-
-
 }
 .video-item .video-info .video-info-item {
 	font-size: 90%;
@@ -213,6 +240,11 @@ px
 .breadcrumb ul li.is-active a {
 	color: #fff;
 }
+
+.breadcrumb a:hover {
+    color: #e86b1f;
+}
+
 .video-info-item i {
 	margin-right: 3px;
 }
@@ -234,13 +266,14 @@ px
 		<div class="video-main ng-scope" id="video-main"
 			ng-controller="videos-detail as ctrl" ng-init="init('2', 'true')">
 			<div class="columns">
-				<div class="column is-two-thirds">
+				<div class="column is-two-thirds player-col">
 					<div class="video-main-content">
 						<div class="video-main-iframe">
 							<div class="embed-responsive embed-responsive-16by9"
 								compile="stringHTMLIframe">
 								<iframe width="560" height="315"
-									src="https://www.youtube.com/embed/<?php echo $row["videoid"] ?>" frameborder="0"
+									src="https://www.youtube.com/embed/<?php echo $row["videoid"] ?>"
+									frameborder="0"
 									allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 									allowfullscreen></iframe>
 							</div>
@@ -251,7 +284,7 @@ px
 						</div>
 					</div>
 				</div>
-				<div class="column">
+				<div class="column playlist-col">
 					<div
 						class="video-main-more-list playlist-container container-scroll mb-5">
 						<div class="video-main-more-list-header sticky-top">
@@ -263,7 +296,8 @@ px
 						<?php while ($row2 = mysqli_fetch_array($data["ListVideo"])) {?>
 							<div ng-repeat="item in listPlaylistVideo"
 								class="video-item media <?php if($row2["id"] == $data["VideoId"]) echo "playing" ?>">
-								<a class="video-img" href="<?php echo $servername ?>/videos/<?php echo $row2["slugvideo"] ?>-<?php echo $row2["id"] ?>"
+								<a class="video-img"
+									href="<?php echo $servername ?>/videos/<?php echo $row2["slugvideo"] ?>-<?php echo $row2["id"] ?>"
 									title="<?php echo $row2["tieudevideo"] ?>"> <img
 									ng-src="https://img.youtube.com/vi/<?php echo $row2["videoid"]; ?>/hqdefault.jpg"
 									alt="<?php echo $row2["tieudevideo"] ?>"
@@ -272,11 +306,12 @@ px
 								</a>
 								<div class="media-body">
 									<h3 class="title">
-										<a class="ng-binding" href="<?php echo $servername ?>/videos/<?php echo $row2["slugvideo"] ?>-<?php echo $row2["id"] ?>"><?php echo $row2["tieudevideo"] ?></a>
+										<a class="ng-binding"
+											href="<?php echo $servername ?>/videos/<?php echo $row2["slugvideo"] ?>-<?php echo $row2["id"] ?>"><?php echo $row2["tieudevideo"] ?></a>
 									</h3>
 									<div class="video-info">
 										<span class="video-info-item ng-binding ng-scope"><i
-									class="fa fa-eye"></i><?php echo $row2["luotxem"] ?> lượt xem</span>
+											class="fa fa-eye"></i><?php echo $row2["luotxem"] ?> lượt xem</span>
 										<span class="video-info-item ng-binding ng-scope"><?php
         $date = date_create($row2["thoigian"]);
         echo date_format($date, "d/m/Y");
