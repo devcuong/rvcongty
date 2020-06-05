@@ -257,193 +257,27 @@ px
 							</div>
 						</div>
 						<div class="video-list video-list-vertical">
+						<?php while ($row2 = mysqli_fetch_array($data["ListVideo"])) {?>
 							<div ng-repeat="item in listPlaylistVideo"
-								class="video-item media">
-								<a class="video-img"
-									title="Xem nhanh Honda CB650R 2019 chính hãng giá 246 triệu"> <img
-									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-5-66858j0.jpg"
-									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [5]"
-									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-5-66858j0.jpg">
-									<span class="video-time ng-binding ng-scope">1:05</span>
+								class="video-item media <?php if($row2["id"] == $data["VideoId"]) echo "playing" ?>">
+								<a class="video-img" src="<?php echo $servername ?>/"
+									title="<?php echo $row2["tieudevideo"] ?>"> <img
+									ng-src="https://img.youtube.com/vi/<?php echo $row2["videoid"]; ?>/hqdefault.jpg"
+									alt="<?php echo $row2["tieudevideo"] ?>"
+									src="https://img.youtube.com/vi/<?php echo $row2["videoid"]; ?>/hqdefault.jpg">
+									<span class="video-time ng-binding ng-scope"><?php echo $row2["thoiluong"]; ?></span>
 								</a>
 								<div class="media-body">
 									<h3 class="title">
-										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
-											với những dòng xe cơ bắp, bán tải và xe điện [5]</a>
+										<a class="ng-binding"><?php echo $row2["tieudevideo"] ?></a>
 									</h3>
 									<div class="video-info">
-										<span class="video-info-item ng-binding ng-scope">24 lượt xem</span>
+										<span class="video-info-item ng-binding ng-scope"><?php echo $row2["luotxem"] ?> lượt xem</span>
 										<span class="video-info-item ng-binding ng-scope">1 năm trước</span>
 									</div>
 								</div>
 							</div>
-							<div ng-repeat="item in listPlaylistVideo"
-								class="video-item media  playing">
-								<a class="video-img"
-									title="Xem nhanh Honda CB650R 2019 chính hãng giá 246 triệu"> <img
-									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-2-66855j0.jpg"
-									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [2]"
-									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-2-66855j0.jpg">
-									<!-- ngIf: item.Duration --> <span
-									class="video-time ng-binding ng-scope">1:58</span>
-								</a>
-								<div class="media-body">
-									<h3 class="title">
-										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
-											với những dòng xe cơ bắp, bán tải và xe điện [2]</a>
-									</h3>
-									<div class="video-info">
-										<span class="video-info-item ng-binding ng-scope">33 lượt xem</span>
-										<span class="video-info-item ng-binding ng-scope">1 năm trước</span>
-									</div>
-								</div>
-							</div>
-							<div ng-repeat="item in listPlaylistVideo"
-								class="video-item media ">
-								<a class="video-img"
-									title="Xem nhanh Honda CB650R 2019 chính hãng giá 246 triệu"> <img
-									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-3-66856j0.jpg"
-									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [3]"
-									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-3-66856j0.jpg">
-									<span class="video-time ng-binding ng-scope">1:10</span>
-								</a>
-								<div class="media-body">
-									<h3 class="title">
-										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
-											với những dòng xe cơ bắp, bán tải và xe điện [3]</a>
-									</h3>
-									<div class="video-info">
-										<span class="video-info-item ng-binding ng-scope"
-											ng-if="item.SoLuotXem">140 lượt xem</span> <span
-											class="video-info-item ng-binding ng-scope"
-											ng-if="item.NgayTao">1 năm trước</span>
-									</div>
-								</div>
-							</div>
-							<div ng-repeat="item in listPlaylistVideo"
-								class="video-item media ">
-								<a class="video-img"
-									title="Xem nhanh Honda CB650R 2019 chính hãng giá 246 triệu"> <img
-									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-7-66860j0.jpg"
-									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [7]"
-									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-7-66860j0.jpg">
-									<span class="video-time ng-binding ng-scope">1:44</span>
-								</a>
-								<div class="media-body">
-									<h3 class="title">
-										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
-											với những dòng xe cơ bắp, bán tải và xe điện [7]</a>
-									</h3>
-									<div class="video-info">
-										<span class="video-info-item ng-binding ng-scope">22 lượt xem</span>
-										<span class="video-info-item ng-binding ng-scope">1 năm trước</span>
-									</div>
-								</div>
-							</div>
-							<div ng-repeat="item in listPlaylistVideo"
-								class="video-item media ">
-								<a class="video-img"
-									title="Xem nhanh Honda CB650R 2019 chính hãng giá 246 triệu"> <img
-									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-8-66861j0.jpg"
-									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [8]"
-									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-8-66861j0.jpg">
-									<span class="video-time ng-binding ng-scope">1:10</span>
-								</a>
-								<div class="media-body">
-									<h3 class="title">
-										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
-											với những dòng xe cơ bắp, bán tải và xe điện [8]</a>
-									</h3>
-									<div class="video-info">
-										<span class="video-info-item ng-binding ng-scope">18 lượt xem</span>
-										<span class="video-info-item ng-binding ng-scope">1 năm trước</span>
-									</div>
-								</div>
-							</div>
-							<div ng-repeat="item in listPlaylistVideo"
-								class="video-item media ">
-								<a class="video-img"
-									title="Xem nhanh Honda CB650R 2019 chính hãng giá 246 triệu"> <img
-									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-6-66859j0.jpg"
-									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [6]"
-									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-6-66859j0.jpg">
-									<!-- ngIf: item.Duration --> <span
-									class="video-time ng-binding ng-scope">1:31</span>
-								</a>
-								<div class="media-body">
-									<h3 class="title">
-										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
-											với những dòng xe cơ bắp, bán tải và xe điện [6]</a>
-									</h3>
-									<div class="video-info">
-										<span class="video-info-item ng-binding ng-scope"
-											ng-if="item.SoLuotXem">30 lượt xem</span> <span
-											class="video-info-item ng-binding ng-scope"
-											ng-if="item.NgayTao">1 năm trước</span>
-									</div>
-								</div>
-							</div>
-							<div ng-repeat="item in listPlaylistVideo"
-								class="video-item media ">
-								<a class="video-img"
-									title="Xem nhanh Honda CB650R 2019 chính hãng giá 246 triệu"> <img
-									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-66854j0.jpg"
-									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [1]"
-									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-1-66854j0.jpg">
-									<span class="video-time ng-binding ng-scope">1:29</span>
-								</a>
-								<div class="media-body">
-									<h3 class="title">
-										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
-											với những dòng xe cơ bắp, bán tải và xe điện [1]</a>
-									</h3>
-									<div class="video-info">
-
-										<span class="video-info-item ng-binding ng-scope">49 lượt xem</span>
-										<span class="video-info-item ng-binding ng-scope">1 năm trước</span>
-									</div>
-								</div>
-							</div>
-							<div ng-repeat="item in listPlaylistVideo"
-								class="video-item media ">
-								<a class="video-img"
-									title="Xem nhanh Honda CB650R 2019 chính hãng giá 246 triệu"> <img
-									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-4-66857j0.jpg"
-									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [4]"
-									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-4-66857j0.jpg">
-									<span class="video-time ng-binding ng-scope">1:01</span>
-								</a>
-								<div class="media-body">
-									<h3 class="title">
-										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
-											với những dòng xe cơ bắp, bán tải và xe điện [4]</a>
-									</h3>
-									<div class="video-info">
-										<span class="video-info-item ng-binding ng-scope">14 lượt xem</span>
-										<span class="video-info-item ng-binding ng-scope">1 năm trước</span>
-									</div>
-								</div>
-							</div>
-							<div ng-repeat="item in listPlaylistVideo"
-								class="video-item media ">
-								<a class="video-img"
-									title="Xem nhanh Honda CB650R 2019 chính hãng giá 246 triệu"> <img
-									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-9-66862j0.jpg"
-									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [9]"
-									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-9-66862j0.jpg">
-									<span class="video-time ng-binding ng-scope">1:04</span>
-								</a>
-								<div class="media-body">
-									<h3 class="title">
-										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
-											với những dòng xe cơ bắp, bán tải và xe điện [9]</a>
-									</h3>
-									<div class="video-info">
-										<span class="video-info-item ng-binding ng-scope">17 lượt xem</span>
-										<span class="video-info-item ng-binding ng-scope">1 năm trước</span>
-									</div>
-								</div>
-							</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>

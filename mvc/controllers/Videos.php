@@ -57,7 +57,8 @@ class Videos extends Controller
                 "Title" => $title,
                 "Description" => $description,
                 "Video" => $video,
-                "ListVideo" => $playList
+                "ListVideo" => $playList,
+                "VideoId" => $vidId
             ]);
         } else {
             $trangVideosHienTai = 1;
