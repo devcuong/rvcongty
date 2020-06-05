@@ -1,7 +1,8 @@
 <style>
-body{
+body {
 	background: #222 !important;
 }
+
 .video-main-content {
 	width: 100%;
 	margin-bottom: 20px;
@@ -34,27 +35,30 @@ body{
 	color: #fff;
 	padding-top: 0px;
 }
+
 .playlist-container {
 	background-color: #111;
 	max-height: 530px;
 }
+
 .container-scroll {
-    overflow: auto;
+	overflow: auto;
 }
+
 .playlist-container .video-main-more-list-header {
 	background-color: #111;
 	display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    padding: 10px 30px;
-    margin-bottom: 10px;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	padding: 10px 30px;
+	margin-bottom: 10px;
 }
 
 .playlist-container .video-list-vertical .video-item {
@@ -78,20 +82,22 @@ body{
 	margin-right: 10px;
 	margin-bottom: 0px;
 }
+
 .video-item.playing::before {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    left: 0px;
-    content: "";
-    width: 0px;
-    height: 0px;
-    border: 7px solid transparent;
-    border-left-width: 13px;
-    border-left-color: #999;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	left: 0px;
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 7px solid transparent;
+	border-left-width: 13px;
+	border-left-color: #999;
 }
+
 .video-item .video-time {
 	position: absolute;
 	bottom: 5px;
@@ -119,17 +125,36 @@ body{
 	overflow: hidden;
 	width: 100%;
 }
-.video-item .title a{
+
+.video-item .title a {
 	color: #fff;
 }
+
 .video-info {
 	color: #999;
 }
 
-.video-item .video-info .video-info-item:not (:last-child ) {
-	margin-right: 20px;
-}
+.video-item
+ 
+.video-info
+ 
+.video-info-item
+:not
+ 
+(
+:last-child
+ 
+)
+{
+margin-right
+:
+ 
+20
+px
+;
 
+
+}
 .video-item .video-info .video-info-item {
 	font-size: 90%;
 	color: #666;
@@ -150,75 +175,76 @@ body{
 }
 
 .sticky-top {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1020;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 1020;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+	width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+	background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+	background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+	background: #555;
 }
+
 .breadcrumb a {
-    align-items: center;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    padding: 0 .75em;
+	align-items: center;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	padding: 0 .75em;
 }
-.breadcrumb ul li.is-active a{
+
+.breadcrumb ul li.is-active a {
 	color: #fff;
 }
 </style>
 <section id="divCenter" class="video-container">
-<nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs" data-no-instant="">
-	<ul>
-		<li><a href="<?php echo $servername ?>"> <span class="icon is-small">
-					<i class="fas fa-home" aria-hidden="true"></i>
-			</span> <span>Trang chủ</span>
-		</a></li>
-		<li><a href="<?php echo $servername ?>/videos/"><span>Videos</span>
-		</a></li>
-		<li class="is-active"><a href="#"> <span>Videos ABC</span>
-		</a></li>
-	</ul>
-</nav>
+<?php while ($row = mysqli_fetch_array($data["Video"])){ ?>
+	<nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs">
+		<ul>
+			<li><a href="<?php echo $servername ?>"> <span class="icon is-small">
+						<i class="fas fa-home" aria-hidden="true"></i>
+				</span> <span>Trang chủ</span>
+			</a></li>
+			<li><a href="<?php echo $servername ?>/videos/"><span>Videos</span> </a></li>
+			<li class="is-active"><a href="#"> <span><?php echo $row["tieudevideo"]?></span>
+			</a></li>
+		</ul>
+	</nav>
 	<div class="container">
 		<div class="video-main ng-scope" id="video-main"
 			ng-controller="videos-detail as ctrl" ng-init="init('2', 'true')">
 			<div class="columns">
 				<div class="column is-two-thirds">
+				
 					<div class="video-main-content">
 						<div class="video-main-iframe">
 							<div class="embed-responsive embed-responsive-16by9"
 								compile="stringHTMLIframe">
-								<iframe id="player" width="560" height="315"
-									src="https://www.youtube.com/embed/Jn3XnB2IlNw?autoplay=1&amp;enablejsapi=1&amp;rel=0"
-									frameborder="0"
+								<iframe width="560" height="315"
+									src="https://www.youtube.com/embed/<?php echo $row["videoid"] ?>" frameborder="0"
 									allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-									allowfullscreen="" class="ng-scope"></iframe>
+									allowfullscreen></iframe>
 							</div>
 						</div>
-						<h1 class="video-title ng-binding">Triển lãm Auto Show Detroit
-							2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [2]</h1>
+						<h1 class="video-title ng-binding"><?php echo $row["tieudevideo"] ?></h1>
 						<div class="video-info">
-							<span class="mr-auto ng-binding">33 lượt xem</span>
+							<span class="mr-auto ng-binding"><?php echo $row["luotxem"] ?> lượt xem</span>
 						</div>
 					</div>
 				</div>
@@ -227,8 +253,7 @@ body{
 						class="video-main-more-list playlist-container container-scroll mb-5">
 						<div class="video-main-more-list-header sticky-top">
 							<div class="d-flex mb-2">
-								<span class="title ng-binding">Triển lãm Auto Show Detroit 2019
-									nổi bật với những dòng xe cơ bắp, bán tải và xe điện [1]</span>
+								<span class="title ng-binding"><?php echo $data["Title"] ?></span>
 							</div>
 						</div>
 						<div class="video-list video-list-vertical">
@@ -243,8 +268,7 @@ body{
 								</a>
 								<div class="media-body">
 									<h3 class="title">
-										<a
-											class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
+										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
 											với những dòng xe cơ bắp, bán tải và xe điện [5]</a>
 									</h3>
 									<div class="video-info">
@@ -260,13 +284,12 @@ body{
 									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-2-66855j0.jpg"
 									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [2]"
 									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-2-66855j0.jpg">
-									<!-- ngIf: item.Duration -->
-									<span class="video-time ng-binding ng-scope">1:58</span>
+									<!-- ngIf: item.Duration --> <span
+									class="video-time ng-binding ng-scope">1:58</span>
 								</a>
 								<div class="media-body">
 									<h3 class="title">
-										<a
-											class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
+										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
 											với những dòng xe cơ bắp, bán tải và xe điện [2]</a>
 									</h3>
 									<div class="video-info">
@@ -286,14 +309,13 @@ body{
 								</a>
 								<div class="media-body">
 									<h3 class="title">
-										<a
-											class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
+										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
 											với những dòng xe cơ bắp, bán tải và xe điện [3]</a>
 									</h3>
 									<div class="video-info">
 										<span class="video-info-item ng-binding ng-scope"
-											ng-if="item.SoLuotXem">140 lượt xem</span>
-										<span class="video-info-item ng-binding ng-scope"
+											ng-if="item.SoLuotXem">140 lượt xem</span> <span
+											class="video-info-item ng-binding ng-scope"
 											ng-if="item.NgayTao">1 năm trước</span>
 									</div>
 								</div>
@@ -309,8 +331,7 @@ body{
 								</a>
 								<div class="media-body">
 									<h3 class="title">
-										<a
-											class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
+										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
 											với những dòng xe cơ bắp, bán tải và xe điện [7]</a>
 									</h3>
 									<div class="video-info">
@@ -346,8 +367,8 @@ body{
 									ng-src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-6-66859j0.jpg"
 									alt="Triển lãm Auto Show Detroit 2019 nổi bật với những dòng xe cơ bắp, bán tải và xe điện [6]"
 									src="https://cdn.dailyxe.com.vn/image/trien-lam-auto-show-detroit-2019-noi-bat-voi-nhung-dong-xe-co-bap-ban-tai-va-xe-dien-6-66859j0.jpg">
-									<!-- ngIf: item.Duration -->
-									<span class="video-time ng-binding ng-scope">1:31</span>
+									<!-- ngIf: item.Duration --> <span
+									class="video-time ng-binding ng-scope">1:31</span>
 								</a>
 								<div class="media-body">
 									<h3 class="title">
@@ -356,8 +377,8 @@ body{
 									</h3>
 									<div class="video-info">
 										<span class="video-info-item ng-binding ng-scope"
-											ng-if="item.SoLuotXem">30 lượt xem</span>
-										<span class="video-info-item ng-binding ng-scope"
+											ng-if="item.SoLuotXem">30 lượt xem</span> <span
+											class="video-info-item ng-binding ng-scope"
 											ng-if="item.NgayTao">1 năm trước</span>
 									</div>
 								</div>
@@ -373,8 +394,7 @@ body{
 								</a>
 								<div class="media-body">
 									<h3 class="title">
-										<a
-											class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
+										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
 											với những dòng xe cơ bắp, bán tải và xe điện [1]</a>
 									</h3>
 									<div class="video-info">
@@ -395,8 +415,7 @@ body{
 								</a>
 								<div class="media-body">
 									<h3 class="title">
-										<a
-											class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
+										<a class="ng-binding">Triển lãm Auto Show Detroit 2019 nổi bật
 											với những dòng xe cơ bắp, bán tải và xe điện [4]</a>
 									</h3>
 									<div class="video-info">
@@ -431,4 +450,5 @@ body{
 			</div>
 		</div>
 	</div>
+	<?php } ?>
 </section>

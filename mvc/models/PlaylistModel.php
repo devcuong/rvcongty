@@ -41,12 +41,16 @@ class PlaylistModel extends DB
         }
         return $result;
     }
-
     /* PHÂN TRANG */
     // Lấy playlist để phân trang
     public function LayPlaylistPhanTrang($soPlaylistBoQua, $PlaylistMoiTrang)
     {
         $qr = "SELECT * FROM playlist ORDER BY thoigian DESC LIMIT $soPlaylistBoQua, $PlaylistMoiTrang";
+        return mysqli_query($this->con, $qr);
+    }
+    // Lấy playlist bằng id
+    public function LayPlaylistById($playId){
+        $qr = "SELECT * FROM playlist WHERE id = $playId";
         return mysqli_query($this->con, $qr);
     }
 

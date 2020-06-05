@@ -26,6 +26,16 @@ class VideoModel extends DB{
         return mysqli_query($this->con, $qr);
     }
     
+    /*LẤY VIDEO BỞI ID*/
+    public function LayVideoById($videoId){
+        $qr = "SELECT * FROM video WHERE id = $videoId";
+        return mysqli_query($this->con, $qr);
+    }
+    // LẤY VIDEO BỞI PLAYLIST-ID
+    public function LayVideoByPlaylistId($playId){
+        $qr = "SELECT * FROM video WHERE playlist = $playId";
+        return mysqli_query($this->con, $qr);
+    }
     /*XÓA VIDEO*/
     public function XoaVideo($idVideo){
         $qr = "DELETE FROM video WHERE id = $idVideo";

@@ -19,9 +19,34 @@ class Videos extends Controller
     function Index($a, $b = NULL)
     {
         if ($b != NULL) {
+            // Video id
+            $vidId = trim(explode("-", $b)[1]);
+            
+            // Playlist id
+            $playId = "";
+            // Lấy video
+            $video = $this->VideoModel->LayVideoById($vidId);
+            // Lấy playId từ video
+            $video4PlayId = $this->VideoModel->LayVideoById($vidId);
+            
+            while ($row = mysqli_fetch_array($video4PlayId)){
+                $playId = $row["playlist"];
+            }
+            
+            // Lấy playlist bằng playId
+            $playList = $this->VideoModel->LayVideoByPlaylistId($playId);
+            
+            // Lấy playlist để lấy tiêu đề
+            $playList4tieuDe = $this->PlaylistModel->LayPlaylistById($playId);
+            
+            // Tiêu đề
+            $tieuDe="";
+            while ($row2 = mysqli_fetch_array($playList4tieuDe)){
+                $tieuDe= $row2["tenplaylist"];
+            }
             
             // Title
-            $title = "Video về quản trị nguồn nhân lực";
+            $title = "Video về quản trị nguồn nhân lực - ".$tieuDe;
             
             // Description
             $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ";
@@ -30,7 +55,9 @@ class Videos extends Controller
             $this->view("main-template", [
                 "Page" => "video-show",
                 "Title" => $title,
-                "Description" => $description
+                "Description" => $description,
+                "Video" => $video,
+                "ListVideo" => $playList
             ]);
         } else {
             $trangVideosHienTai = 1;
