@@ -182,6 +182,9 @@ body{
     justify-content: center;
     padding: 0 .75em;
 }
+.breadcrumb ul li.is-active a{
+	color: #fff;
+}
 </style>
 <section id="divCenter" class="video-container">
 <nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs" data-no-instant="">
