@@ -233,7 +233,7 @@
 		<nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs"
 			data-no-instant="">
 			<ul>
-				<li><a href="http://localhost/rvcongty"> <span class="icon is-small">
+				<li><a href="<?php echo $servername ?>"> <span class="icon is-small">
 							<i class="fas fa-home" aria-hidden="true"></i>
 					</span> <span>Trang chủ</span>
 				</a></li>

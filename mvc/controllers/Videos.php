@@ -20,12 +20,14 @@ class Videos extends Controller
     {
         if ($b != NULL) {
             // Video id
-            $vidId = trim(explode("-", $b)[1]);
-            
+             $url = explode("-", $b);
+             $vidId = end($url);
             // Playlist id
             $playId = "";
             // Lấy video
             $video = $this->VideoModel->LayVideoById($vidId);
+            // Tăng lượt view
+            $this->VideoModel->CapNhatLuotView($vidId);
             // Lấy playId từ video
             $video4PlayId = $this->VideoModel->LayVideoById($vidId);
             
@@ -46,16 +48,20 @@ class Videos extends Controller
             }
             
             // Title
-            $title = "Video về quản trị nguồn nhân lực - ".$tieuDe;
+            $title = "Video ".$tieuDe." - CongTyTop";
             
             // Description
-            $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ";
+            $description = "Video ".$tieuDe;
+            
+            // Keyword
+            $keyword = "Video ".$tieuDe;
             
             // View
             $this->view("main-template", [
                 "Page" => "video-show",
                 "Title" => $title,
                 "Description" => $description,
+                "Keyword" => $keyword,
                 "Video" => $video,
                 "ListVideo" => $playList,
                 "VideoId" => $vidId

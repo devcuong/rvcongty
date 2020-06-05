@@ -36,6 +36,15 @@ class VideoModel extends DB{
         $qr = "SELECT * FROM video WHERE playlist = $playId";
         return mysqli_query($this->con, $qr);
     }
+    /*CẬP NHẬT LƯỢT VIEW VIDE*/
+    public function CapNhatLuotView($idVideo){
+        $qr = "UPDATE video SET luotxem = luotxem + 1 WHERE id = $idVideo";
+        $result = false;
+        if(mysqli_query($this->con, $qr)){
+            $result = true;
+        }
+        return $result;
+    }
     /*XÓA VIDEO*/
     public function XoaVideo($idVideo){
         $qr = "DELETE FROM video WHERE id = $idVideo";

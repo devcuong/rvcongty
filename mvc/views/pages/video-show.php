@@ -34,6 +34,7 @@ body {
 	font-weight: 500;
 	color: #fff;
 	padding-top: 0px;
+	text-transform: uppercase;
 }
 
 .playlist-container {
@@ -212,6 +213,9 @@ px
 .breadcrumb ul li.is-active a {
 	color: #fff;
 }
+.video-info-item i {
+	margin-right: 3px;
+}
 </style>
 <section id="divCenter" class="video-container">
 <?php while ($row = mysqli_fetch_array($data["Video"])){ ?>
@@ -259,7 +263,7 @@ px
 						<?php while ($row2 = mysqli_fetch_array($data["ListVideo"])) {?>
 							<div ng-repeat="item in listPlaylistVideo"
 								class="video-item media <?php if($row2["id"] == $data["VideoId"]) echo "playing" ?>">
-								<a class="video-img" src="<?php echo $servername ?>/"
+								<a class="video-img" href="<?php echo $servername ?>/videos/<?php echo $row2["slugvideo"] ?>-<?php echo $row2["id"] ?>"
 									title="<?php echo $row2["tieudevideo"] ?>"> <img
 									ng-src="https://img.youtube.com/vi/<?php echo $row2["videoid"]; ?>/hqdefault.jpg"
 									alt="<?php echo $row2["tieudevideo"] ?>"
@@ -268,11 +272,15 @@ px
 								</a>
 								<div class="media-body">
 									<h3 class="title">
-										<a class="ng-binding"><?php echo $row2["tieudevideo"] ?></a>
+										<a class="ng-binding" href="<?php echo $servername ?>/videos/<?php echo $row2["slugvideo"] ?>-<?php echo $row2["id"] ?>"><?php echo $row2["tieudevideo"] ?></a>
 									</h3>
 									<div class="video-info">
-										<span class="video-info-item ng-binding ng-scope"><?php echo $row2["luotxem"] ?> lượt xem</span>
-										<span class="video-info-item ng-binding ng-scope">1 năm trước</span>
+										<span class="video-info-item ng-binding ng-scope"><i
+									class="fa fa-eye"></i><?php echo $row2["luotxem"] ?> lượt xem</span>
+										<span class="video-info-item ng-binding ng-scope"><?php
+        $date = date_create($row2["thoigian"]);
+        echo date_format($date, "d/m/Y");
+        ?></span>
 									</div>
 								</div>
 							</div>
