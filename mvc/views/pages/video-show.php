@@ -231,7 +231,6 @@ px
 			ng-controller="videos-detail as ctrl" ng-init="init('2', 'true')">
 			<div class="columns">
 				<div class="column is-two-thirds">
-				
 					<div class="video-main-content">
 						<div class="video-main-iframe">
 							<div class="embed-responsive embed-responsive-16by9"
