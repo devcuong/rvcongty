@@ -36,6 +36,20 @@ class VideoModel extends DB{
         $qr = "SELECT * FROM video WHERE playlist = $playId";
         return mysqli_query($this->con, $qr);
     }
+    // LẤY VIDEO TÌM KIẾM
+    public function  LayVideoTimKiem($tuKhoa){
+        $condition = '';
+        $query = explode(" ", $tuKhoa);
+        foreach($query as $text)
+        {
+            $condition .= "tieudevideo LIKE '%".trim($text)."%' OR ";
+        }
+        $condition = substr($condition, 0, -4);
+        $qr = "SELECT * FROM video WHERE " . $condition. " ORDER BY luotxem DESC";
+    
+        return mysqli_query($this->con, $qr);
+    }
+    
     /*CẬP NHẬT LƯỢT VIEW VIDE*/
     public function CapNhatLuotView($idVideo){
         $qr = "UPDATE video SET luotxem = luotxem + 1 WHERE id = $idVideo";

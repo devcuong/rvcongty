@@ -10,6 +10,8 @@ class TimKiem extends Controller
     
     public $ReviewModel;
     
+    public $VideoModel;
+    
     public $Server;
     
     public $String;
@@ -20,8 +22,44 @@ class TimKiem extends Controller
         $this->CongTyModel = $this->model("CongTyModel");
         $this->ReviewModel= $this->model("ReviewModel");
         $this->NewsModel = $this->model("NewsModel");
+        $this->VideoModel = $this->model("VideoModel");
         $this->Server = new Server();
         $this->String = new CutString();
+    }
+    
+    // Tìm kiếm video
+    public function Videos(){
+        
+        $trangHienTai = 1;
+        $videoMoiTrang = 2;
+        $keySearch = "";
+        if (isset($_POST["search"])) {
+            $keySearch = trim($_POST["search"]);
+        }
+        if (isset($_GET["keysearch"])) {
+            $keySearch = $_GET["keysearch"];
+        }
+        if (isset($_GET["page"])) {
+            $trangHienTai = $_GET["page"];
+        }
+        $videoQuaBoQua = ($trangHienTai - 1) * $videoMoiTrang;
+        $allKetQua = $this->VideoModel->LayVideoTimKiem($keySearch);
+        $soKetQuaVideo = mysqli_num_rows($allKetQua);
+        $soTrang = ceil($soKetQuaVideo/ $videoMoiTrang);
+        $ketQuaTinTucTrangHienTai = $this->VideoModel->LayVideoPhanTrang($videoQuaBoQua, $videoMoiTrang);
+        $nav = $this->String->get_nav_render_with_search($trangHienTai, $soTrang, $this->Server->servername."/tim-kiem/news",$keySearch);
+        
+        // Title
+        $title = "Công ty TOP - Kết quả tìm kiếm";
+        // Description
+        $description = "Công ty TOP - Kết quả tìm kiếm";
+        
+        // View
+        $this->view("main-template", [
+            "Page" => "ket-qua-tim-kiem-video",
+            "Title" => $title,
+            "Description" => $description
+        ]);
     }
     
     // Tìm kiếm tin tức
@@ -40,8 +78,7 @@ class TimKiem extends Controller
             $trangHienTai = $_GET["page"];
         }
         $tinTucQuaBoQua = ($trangHienTai - 1) * $tinTucMoiTrang;
-        $newsModel = $this->NewsModel;
-        $allKetQua = $newsModel->LayNewsTimKiem($keySearch);
+        $allKetQua = $this->NewsModel->LayNewsTimKiem($keySearch);
         $soKetQuaTinTuc = mysqli_num_rows($allKetQua);
         $soTrang = ceil($soKetQuaTinTuc/ $tinTucMoiTrang);
         $ketQuaTinTucTrangHienTai = $this->NewsModel->LayNewsPhanTrang($tinTucQuaBoQua, $tinTucMoiTrang);
