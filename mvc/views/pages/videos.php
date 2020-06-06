@@ -241,6 +241,7 @@
 				</a></li>
 			</ul>
 		</nav>
+		<?php require_once "./mvc/views/partials/search-box.php"?>
 		<div class="video-bottom news-list ng-scope" id="containerResult"
 			ng-controller="videos-list as ctrl">
 			<div class="page-heading d-flex">

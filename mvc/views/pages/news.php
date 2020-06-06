@@ -268,7 +268,6 @@
 <section class="news-main home-section">
 	<div class="container">
 		<div class="columns news-main-container">
-
 			<div class="column new-main-left">
 			<?php $row = $data["NewsThumbnail"];?>
 				<div class="new-item">

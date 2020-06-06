@@ -8,6 +8,8 @@ class TimKiem extends Controller
 
     public $NewsModel;
     
+    public $ReviewModel;
+    
     public $Server;
     
     public $String;
@@ -16,6 +18,7 @@ class TimKiem extends Controller
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $this->CongTyModel = $this->model("CongTyModel");
+        $this->ReviewModel= $this->model("ReviewModel");
         $this->NewsModel = $this->model("NewsModel");
         $this->Server = new Server();
         $this->String = new CutString();
@@ -98,15 +101,12 @@ class TimKiem extends Controller
             $tuKhoa = $d;
         }
         $soCongTyBoQua = ($trangHienTai - 1) * $congTyMoiTrang;
-        // Model
-        $congty = $this->model("CongTyModel");
-        $review = $this->model("ReviewModel");
         // Tất cả công ty
-        $congTyTimDuoc = $congty->LayCongTyTheoKyTu($tuKhoa);
+        $congTyTimDuoc = $this->CongTyModel->LayCongTyTheoKyTu($tuKhoa);
         $soCongTy = mysqli_num_rows($congTyTimDuoc);
         $soTrang = ceil($soCongTy / $congTyMoiTrang);
         $congTyTrangHienTai = "";
-        $congTyTrangHienTai = $congty->PhanTrangCongTyTheoTuKhoa($soCongTyBoQua, $congTyMoiTrang, $tuKhoa);
+        $congTyTrangHienTai = $this->CongTyModel->PhanTrangCongTyTheoTuKhoa($soCongTyBoQua, $congTyMoiTrang, $tuKhoa);
         
         // Title
         $title = "Công ty TOP - Kết quả tìm kiếm";
@@ -117,7 +117,7 @@ class TimKiem extends Controller
         // View
         $this->view("main-template", [
             "Page" => "trang-ket-qua",
-            "15ReviewMoiNhat" => $review->Lay15ReviewMoiNhat(),
+            "15ReviewMoiNhat" => $this->ReviewModel->Lay15ReviewMoiNhat(),
             "SoTrang" => $soTrang,
             "TrangHienTai" => $trangHienTai,
             "CongTyTrangHienTai" => $congTyTrangHienTai,
