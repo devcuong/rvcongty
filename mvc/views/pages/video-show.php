@@ -263,8 +263,7 @@ px
 		</ul>
 	</nav>
 	<div class="container">
-		<div class="video-main ng-scope" id="video-main"
-			ng-controller="videos-detail as ctrl" ng-init="init('2', 'true')">
+		<div class="video-main ng-scope" id="video-main">
 			<div class="columns">
 				<div class="column is-two-thirds player-col">
 					<div class="video-main-content">
