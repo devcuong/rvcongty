@@ -21,8 +21,8 @@ class VideoModel extends DB{
     }
     
     /*LẤY VIDEO PHÂN TRANG*/
-    public function LayVideoPhanTrang($soVideoBoQua, $playlistMoiTrang){
-        $qr = "SELECT * FROM video ORDER BY thoigian DESC LIMIT $soVideoBoQua, $playlistMoiTrang" ;
+    public function LayVideoPhanTrang($soVideoBoQua, $videoMoiTrang){
+        $qr = "SELECT * FROM video ORDER BY thoigian DESC LIMIT $soVideoBoQua, $videoMoiTrang" ;
         return mysqli_query($this->con, $qr);
     }
     
@@ -45,8 +45,19 @@ class VideoModel extends DB{
             $condition .= "tieudevideo LIKE '%".trim($text)."%' OR ";
         }
         $condition = substr($condition, 0, -4);
-        $qr = "SELECT * FROM video WHERE " . $condition. " ORDER BY luotxem DESC";
-    
+        $qr = "SELECT * FROM video WHERE " . $condition. " ORDER BY thoigian DESC";
+        return mysqli_query($this->con, $qr);
+    }
+    // PHÂN TRANG VIDEO TÌM KIẾM
+    public function PhanTrangVideoTimKiem($tuKhoa, $soVideoBoQua, $videoMoiTrang){
+        $condition = '';
+        $query = explode(" ", $tuKhoa);
+        foreach($query as $text)
+        {
+            $condition .= "tieudevideo LIKE '%".trim($text)."%' OR ";
+        }
+        $condition = substr($condition, 0, -4);
+        $qr = "SELECT * FROM video WHERE " . $condition. " ORDER BY thoigian DESC LIMIT $soVideoBoQua, $videoMoiTrang";
         return mysqli_query($this->con, $qr);
     }
     

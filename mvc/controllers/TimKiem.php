@@ -46,8 +46,8 @@ class TimKiem extends Controller
         $allKetQua = $this->VideoModel->LayVideoTimKiem($keySearch);
         $soKetQuaVideo = mysqli_num_rows($allKetQua);
         $soTrang = ceil($soKetQuaVideo/ $videoMoiTrang);
-        $ketQuaTinTucTrangHienTai = $this->VideoModel->LayVideoPhanTrang($videoQuaBoQua, $videoMoiTrang);
-        $nav = $this->String->get_nav_render_with_search($trangHienTai, $soTrang, $this->Server->servername."/tim-kiem/news",$keySearch);
+        $ketQuaVideoTrangHienTai = $this->VideoModel->PhanTrangVideoTimKiem($keySearch, $videoQuaBoQua, $videoMoiTrang);
+        $nav = $this->String->get_nav_render_with_search($trangHienTai, $soTrang, $this->Server->servername."/tim-kiem/videos",$keySearch);
         
         // Title
         $title = "Công ty TOP - Kết quả tìm kiếm";
@@ -58,7 +58,9 @@ class TimKiem extends Controller
         $this->view("main-template", [
             "Page" => "ket-qua-tim-kiem-video",
             "Title" => $title,
-            "Description" => $description
+            "Description" => $description,
+            "Navigate" => $nav,
+            "KetQuaTrangHienTai" => $ketQuaVideoTrangHienTai,
         ]);
     }
     
@@ -92,7 +94,6 @@ class TimKiem extends Controller
         // Description
         $description = "Công ty TOP - Kết quả tìm kiếm";
         
-        //echo $tinTucQuaBoQua;
         // View
         $this->view("main-template", [
             "Page" => "ket-qua-tim-kiem-tin-tuc",
