@@ -1605,7 +1605,7 @@ if ($data["Page"] == "main-home") {
 				<li
 					<?php
     
-if ($data["Page"] == "news") {
+					if ($data["Page"] == "news" || $data["Page"] == "videos" || $data["Page"] == "video-show") {
         echo "class='active'";
     }
     ?>><a href="<?php echo $servername ?>/news/"
@@ -1652,11 +1652,11 @@ if ($data["Page"] == "jobs") {
 				</span>
 			</div>
 			<div class="wrap <?php if($data["Page"] == "main-home" || $data["Page"] == "companies"){ echo "hidden";} ?> is-hidden-touch">
-				<form action="<?php echo $servername ?>/tim-kiem/news" method="post"
+				<form action="<?php echo $servername ?>/tim-kiem/<?php if($data["Page"] == "news" || $data["Page"] == "news-detail" || $data["Page"] == "news" || $data["Page"] == "ket-qua-tim-kiem-tin-tuc") echo "news"; else echo "videos" ?>" method="post"
 					style="width: 200%">
 					<div class="search">
 						<input type="text" name="search" class="searchTerm"
-							placeholder="Tìm tin tức hoặc những gì bạn muốn tìm">
+							placeholder="Tìm tin tức hoặc videos gì bạn muốn tìm">
 						<button type="submit" class="searchButton">
 							<i class="fa fa-search"></i>
 						</button>
