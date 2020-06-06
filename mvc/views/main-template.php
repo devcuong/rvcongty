@@ -188,12 +188,20 @@ a.white-link:hover {
 
 
 
+
+
+
+
 :not
 
 
 
 
+
+
  
+
+
 
 
 
@@ -204,7 +212,11 @@ a.white-link:hover {
 
 
 
+
+
  
+
+
 
 
 
@@ -220,7 +232,13 @@ margin-bottom
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -230,8 +248,14 @@ margin-bottom
 
 
 
+
+
 0
 .8rem
+
+
+
+
 
 
 
@@ -405,11 +429,19 @@ margin-bottom
 
 
 
+
+
+
+
 :not
 
 
 
+
+
  
+
+
 
 
 
@@ -418,7 +450,11 @@ margin-bottom
 
 
 
+
+
  
+
+
 
 
 
@@ -430,11 +466,19 @@ margin-bottom
 
 
 
+
+
+
+
 :
 
 
 
+
+
  
+
+
 
 
 
@@ -443,12 +487,20 @@ px
 
 
 
+
+
  
+
+
 
 
 
 !
 important
+
+
+
+
 
 
 
@@ -584,7 +636,7 @@ important
 @media screen and (max-width: 768px) {
 	.company-info-company-page .button-review {
 		position: relative;
-/* 		right: calc(155px - 100vw); */
+		/* 		right: calc(155px - 100vw); */
 		left: calc(50vw - 72px);
 		top: 0.7rem;
 		margin-bottom: 1rem;
@@ -764,31 +816,63 @@ important
 }
 
 .textarea
+
+
+
+
 :not
+
+
  
+
+
 (
 [
 rows
 ]
+
+
  
+
+
 )
 {
 max-height
+
+
+
+
 :
+
+
  
+
+
 600
 px
-;
 
-	
+
+
+
+;
 min-height
+
+
+
+
 :
+
+
  
+
+
 120
 px
+
+
+
+
 ;
-
-
 }
 @media screen and (min-width:1088px) {
 	.navbar.is-primary .navbar-end>a.navbar-item.is-active, .navbar.is-primary .navbar-end>a.navbar-item:hover
@@ -925,7 +1009,15 @@ transform
 
 
 
+
+
+
+
 :rotate(360deg)
+
+
+
+
 
 
 
@@ -1005,11 +1097,19 @@ transform
 
 
 
+
+
+
+
 :not
 
 
 
+
+
  
+
+
 
 
 
@@ -1020,7 +1120,11 @@ rows
 
 
 
+
+
  
+
+
 
 
 
@@ -1033,7 +1137,13 @@ max-height
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -1041,8 +1151,14 @@ max-height
 
 
 
+
+
 600
 px
+
+
+
+
 
 
 
@@ -1057,11 +1173,19 @@ min-height
 
 
 
+
+
+
+
 :
 
 
 
+
+
  
+
+
 
 
 
@@ -1075,8 +1199,16 @@ px
 
 
 
+
+
+
+
 }
 .select
+
+
+
+
 
 
 
@@ -1087,7 +1219,11 @@ px
 
 
 
+
+
  
+
+
 
 
 
@@ -1096,7 +1232,11 @@ px
 
 
 
+
+
  
+
+
 
 
 
@@ -1109,7 +1249,13 @@ height
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -1117,8 +1263,14 @@ height
 
 
 
+
+
 2
 .25em
+
+
+
+
 
 
 
@@ -1131,7 +1283,11 @@ height
 
 
 
+
+
  
+
+
 
 
 
@@ -1142,11 +1298,19 @@ select
 
 
 
+
+
+
+
 :not
 
 
 
+
+
  
+
+
 
 
 
@@ -1157,7 +1321,11 @@ multiple
 
 
 
+
+
  
+
+
 
 
 
@@ -1170,7 +1338,13 @@ padding-right
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -1178,8 +1352,14 @@ padding-right
 
 
 
+
+
 2
 .5em
+
+
+
+
 
 
 
@@ -1218,11 +1398,19 @@ padding-right
 
 
 
+
+
+
+
 :not
 
 
 
+
+
  
+
+
 
 
 
@@ -1231,7 +1419,11 @@ padding-right
 
 
 
+
+
  
+
+
 
 
 
@@ -1244,7 +1436,13 @@ margin-bottom
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -1252,7 +1450,13 @@ margin-bottom
 
 
 
+
+
 .75rem
+
+
+
+
 
 
 
@@ -1344,48 +1548,104 @@ margin-bottom
 }
 
 .col-top-right
+
+
  
+
+
 .news-right
+
+
+
+
 :not
+
+
  
+
+
 (
 :last-child
+
+
  
+
+
 )
 {
 border-bottom
+
+
+
+
 :
+
+
  
+
+
 1
 px
+
+
  
+
+
 dashed
+
+
  
+
+
 #ddd
+
+
+
+
 ;
-
-
 }
 .col-top-right .news-right {
 	padding-bottom: .75rem;
 }
 
 .news-right
+
+
+
+
 :not
+
+
  
+
+
 (
 :last-child
+
+
  
+
+
 )
 {
 margin-bottom
+
+
+
+
 :
+
+
  
+
+
 10
 px
+
+
+
+
 ;
-
-
 }
 .media {
 	display: -ms-flexbox;
@@ -1430,21 +1690,24 @@ px
 	margin-bottom: 0px;
 	line-height: 1;
 }
+
 .page-heading {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #d0d1d5;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #d0d1d5;
 }
-.page-heading h4{
+
+.page-heading h4 {
 	display: inline-block;
-    color: #71bf44;
-    font-family: 'Anton', sans-serif;
-    font-size: 150%;
-    font-weight: 400;
-    padding-right: 10px;
-    margin-bottom: -1px;
-    border-bottom: 2px solid #71bf44;
+	color: #71bf44;
+	font-family: 'Anton', sans-serif;
+	font-size: 150%;
+	font-weight: 400;
+	padding-right: 10px;
+	margin-bottom: -1px;
+	border-bottom: 2px solid #71bf44;
 }
+
 .origin a {
 	color: #71bf44;
 }
@@ -1535,8 +1798,9 @@ px
 .tt-header-top .page-link-out .active a {
 	color: #333;
 }
+
 .wrap {
-/* 	margin: 20px; */
+	/* 	margin: 20px; */
 	padding: 1rem 1rem 1rem 1rem;
 }
 
@@ -1572,8 +1836,9 @@ px
 	cursor: pointer;
 	font-size: 20px;
 }
+
 .hidden {
-  display: none;
+	display: none;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -1596,7 +1861,7 @@ px
 				<li
 					<?php
     
-if ($data["Page"] == "main-home") {
+    if ($data["Page"] == "main-home") {
         echo "class='active'";
     }
     ?>><a href="<?php echo $servername ?>"
@@ -1605,7 +1870,7 @@ if ($data["Page"] == "main-home") {
 				<li
 					<?php
     
-					if ($data["Page"] == "news" || $data["Page"] == "videos" || $data["Page"] == "video-show") {
+    if ($data["Page"] == "news" || $data["Page"] == "videos" || $data["Page"] == "video-show") {
         echo "class='active'";
     }
     ?>><a href="<?php echo $servername ?>/news/"
@@ -1613,7 +1878,7 @@ if ($data["Page"] == "main-home") {
 				<li
 					<?php
     
-if ($data["Page"] == "jobs") {
+    if ($data["Page"] == "jobs") {
         echo "class='active'";
     }
     ?>><a href="<?php echo $servername ?>/jobs/"
@@ -1627,12 +1892,11 @@ if ($data["Page"] == "jobs") {
 				</a>
 			</div>
 			<div class="page-link-out ng-scope" ng-controller="dang-nhap as ctrl">
-			 				<a href="<?php echo $servername ?>" title="Đăng nhập"
-			 					class="ng-scope">Đăng nhập</a>
-			 				<span class="ng-scope">/</span>
-			 				<a href="<?php echo $servername ?>" title="Đăng ký"
-			 					class="ng-scope">Đăng ký</a>
-			 			</div>
+				<a href="<?php echo $servername ?>" title="Đăng nhập"
+					class="ng-scope">Đăng nhập</a> <span class="ng-scope">/</span> <a
+					href="<?php echo $servername ?>" title="Đăng ký" class="ng-scope">Đăng
+					ký</a>
+			</div>
 		</div>
 	</div>
 	<nav class="main-nav navbar is-primary" role="navigation"
@@ -1651,9 +1915,11 @@ if ($data["Page"] == "jobs") {
 					<span></span> <span></span>
 				</span>
 			</div>
-			<div class="wrap <?php if($data["Page"] == "main-home" || $data["Page"] == "companies"){ echo "hidden";} ?> is-hidden-touch">
-				<form action="<?php echo $servername ?>/tim-kiem/<?php if($data["Page"] == "news" || $data["Page"] == "news-detail" || $data["Page"] == "news" || $data["Page"] == "ket-qua-tim-kiem-tin-tuc") echo "news"; else echo "videos" ?>" method="post"
-					style="width: 200%">
+			<div
+				class="wrap <?php if($data["Page"] == "main-home" || $data["Page"] == "companies"){ echo "hidden";} ?> is-hidden-touch">
+				<form
+					action="<?php echo $servername ?>/tim-kiem/<?php if($data["Page"] == "news" || $data["Page"] == "news-detail" || $data["Page"] == "news" || $data["Page"] == "ket-qua-tim-kiem-tin-tuc") echo "news"; else echo "videos" ?>"
+					method="post" style="width: 200%">
 					<div class="search">
 						<input type="text" name="search" class="searchTerm"
 							placeholder="Tìm tin tức hoặc videos gì bạn muốn tìm">
@@ -1664,15 +1930,16 @@ if ($data["Page"] == "jobs") {
 					</div>
 				</form>
 			</div>
+			<?php if($data["Page"] == "news" || $data["Page"] == "news-detail" || $data["Page"] == "ket-qua-tim-kiem-tin-tuc" || $data["Page"] == "videos" || $data["Page"] == "video-show") {?>
 			<div id="navMenu" class="navbar-menu">
 				<div class="navbar-end">
-					<a href="<?php echo $servername ?>"
-						class="navbar-item <?php if($data["Page"] == "main-home") { echo "is-active";} else{ echo ""; }?>">Trang
-						chủ</a> <a href="<?php echo $servername ?>/news/"
+					<a href="<?php echo $servername ?>/news/"
 						class="navbar-item <?php if($data["Page"] == "news") { echo "is-active";} else{ echo ""; }?>">Tin
-						tức</a>
+						tức</a> <a href="<?php echo $servername ?>/videos/"
+						class="navbar-item <?php if($data["Page"] == "videos" || $data["Page"] == "video-show") { echo "is-active";} else{ echo ""; }?>">Videos</a>
 				</div>
 			</div>
+			<?php } ?>
 		</div>
 	</nav>
 	<script type="text/javascript">
