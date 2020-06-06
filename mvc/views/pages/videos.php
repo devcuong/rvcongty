@@ -294,7 +294,7 @@
 				<?php while ($row = mysqli_fetch_array($data["Playlist"])) {?>
 				<div ng-repeat="item in listVideo" class="video-item media playlist">
 						<a title="<?php echo $row["tenplaylist"]; ?>" class="video-img"
-							href="https://dailyxe.com.vn/videos/dailyxe-review-honda-8q.html">
+							href="<?php echo $servername ?>/videos/playlist/<?php echo $row["slugplaylist"] ?>-<?php echo $row["id"] ?>">
 							<img
 							ng-src="https://img.youtube.com/vi/<?php echo $row["thumbnail"]; ?>/hqdefault.jpg"
 							alt="<?php echo $row["tenplaylist"]; ?>"
@@ -304,7 +304,7 @@
 						<div class="media-body has-menu-dots">
 							<h2 class="title">
 								<a
-									href="https://dailyxe.com.vn/videos/dailyxe-review-honda-8q.html"
+									href="<?php echo $servername ?>/videos/playlist/<?php echo $row["slugplaylist"] ?>-<?php echo $row["id"] ?>"
 									title="DailyXe Review Honda" class="ng-binding"><?php echo $row["tenplaylist"]; ?></a>
 							</h2>
 							<div class="video-info">

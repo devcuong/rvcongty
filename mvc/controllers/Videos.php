@@ -35,7 +35,7 @@ class Videos extends Controller
                 $playId = $row["playlist"];
             }
             
-            // Lấy playlist bằng playId
+            // Lấy video bằng playId
             $playList = $this->VideoModel->LayVideoByPlaylistId($playId);
             
             // Lấy playlist để lấy tiêu đề
@@ -101,6 +101,33 @@ class Videos extends Controller
                 "Playlist" => $tatCaPlaylist,
                 "Navigate" => $nav
             ]);
+        }
+    }
+    
+    /*PLAYLIST*/
+    public function playlist($a, $b, $c=NULL) {
+        if($c != NULL){
+              // Video id
+             $url = explode("-", $c);
+             $playId = end($url);
+             // Lấy playlist bằng playId
+             $playList = $this->VideoModel->LayVideoByPlaylistId($playId);
+             
+             // Title
+             $title = "Video về quản trị nguồn nhân lực";
+             
+             // Description
+             $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ";
+            
+             // Keyword
+             
+             // View
+             $this->view("main-template", [
+                 "Page" => "playlist-show",
+                 "Title" => $title,
+                 "Description" => $description,
+                 "Playlist" => $playList
+             ]);
         }
     }
 }
