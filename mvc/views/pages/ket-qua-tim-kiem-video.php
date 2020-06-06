@@ -239,6 +239,8 @@
 				</a></li>
 				<li><a href="<?php echo $servername ?>/videos"> <span>Videos</span>
 				</a></li>
+				<li class="active"><a href="<?php echo $servername ?>/videos"> <span>Kết quả tìm kiếm video</span>
+				</a></li>
 			</ul>
 		</nav>
 		<?php require_once "./mvc/views/partials/search-box.php"?>
