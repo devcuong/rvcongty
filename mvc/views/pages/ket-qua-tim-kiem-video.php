@@ -237,7 +237,7 @@
 							<i class="fas fa-home" aria-hidden="true"></i>
 					</span> <span>Trang chủ</span>
 				</a></li>
-				<li class="is-active"><a href="#"> <span>Videos</span>
+				<li><a href="<?php echo $servername ?>/videos"> <span>Videos</span>
 				</a></li>
 			</ul>
 		</nav>

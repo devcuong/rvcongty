@@ -31,7 +31,7 @@ class TimKiem extends Controller
     public function Videos(){
         
         $trangHienTai = 1;
-        $videoMoiTrang = 2;
+        $videoMoiTrang = 15;
         $keySearch = "";
         if (isset($_POST["search"])) {
             $keySearch = trim($_POST["search"]);
@@ -68,7 +68,7 @@ class TimKiem extends Controller
     public function News()
     {
         $trangHienTai = 1;
-        $tinTucMoiTrang = 2;
+        $tinTucMoiTrang = 15;
         $keySearch = "";
         if (isset($_POST["search"])) {
             $keySearch = trim($_POST["search"]);
@@ -83,6 +83,7 @@ class TimKiem extends Controller
         $allKetQua = $this->NewsModel->LayNewsTimKiem($keySearch);
         $soKetQuaTinTuc = mysqli_num_rows($allKetQua);
         $soTrang = ceil($soKetQuaTinTuc/ $tinTucMoiTrang);
+        // Đang sửa
         $ketQuaTinTucTrangHienTai = $this->NewsModel->LayNewsPhanTrang($tinTucQuaBoQua, $tinTucMoiTrang);
         $nav = $this->String->get_nav_render_with_search($trangHienTai, $soTrang, $this->Server->servername."/tim-kiem/news",$keySearch);
         
