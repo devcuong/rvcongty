@@ -1,7 +1,7 @@
 <?php
 require_once 'mvc/class/Server.php';
 require_once 'mvc/class/CutString.php';
-
+require_once 'mvc/class/Schema.php';
 class Videos extends Controller
 {
 
@@ -24,8 +24,10 @@ class Videos extends Controller
              $vidId = end($url);
             // Playlist id
             $playId = "";
-            // Lấy video
+            // Lấy video for show
             $video = $this->VideoModel->LayVideoById($vidId);
+            // Lấy video for schema
+            $video4Schema = $this->VideoModel->LayVideoById($vidId);
             // Tăng lượt view
             $this->VideoModel->CapNhatLuotView($vidId);
             // Lấy playId từ video
@@ -47,6 +49,10 @@ class Videos extends Controller
                 $tieuDe= $row2["tenplaylist"];
             }
             
+            // Schema
+            $schema = new Schema();
+            $StringSchema = $schema->generate_schema($video4Schema,"video-show");
+            
             // Title
             $title = "Video ".$tieuDe." - CongTyTop";
             
@@ -64,7 +70,8 @@ class Videos extends Controller
                 "Keyword" => $keyword,
                 "Video" => $video,
                 "ListVideo" => $playList,
-                "VideoId" => $vidId
+                "VideoId" => $vidId,
+                "StringSchema" => $StringSchema
             ]);
         } else {
             $trangVideosHienTai = 1;
@@ -86,11 +93,14 @@ class Videos extends Controller
             $string = new CutString();
             $nav = $string->get_nav_render_videos($trangVideosHienTai, $soTrang, $server->servername . "/videos");
             
+            
+            
             // Title
             $title = "Video về quản trị nguồn nhân lực";
             
             // Description
             $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ";
+            
             
             // View
             $this->view("main-template", [

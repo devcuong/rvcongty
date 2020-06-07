@@ -62,27 +62,42 @@ class Schema
             );
             $publisher = array(
                 "@type"=>"Organization",
-                "name"=>"CongTyTop - Trang đánh giá công ty, thông tin việc làm đầy đủ nhất",
+                "name"=>"CongTyTop - Trang đánh giá công ty, công việc và cung cấp thông tin việc làm đầy đủ nhất",
                 "logo"=>$logo
             );
+            $id="";
             $tieuDeVideo = "";
+            $slugTieuDe = "";
             $thoiGian = "";
             $videoId = "";
+            $description = "";
             while ($r = mysqli_fetch_array($data)){
+                $id = $r["id"];
                 $tieuDeVideo = $r["tieudevideo"];
-                $thoiGian= $r["thoigian"];
+                $slugTieuDe = $r["slugvideo"];
+                $thoiGian = $r["thoigian"];
                 $videoId = $r["videoid"];
+                $description = $r["tieudevideo"];
             }
+            $image = array(
+                "@type"=>"ImageObject",
+                "url"=>"https://img.youtube.com/vi/".$videoId."/hqdefault.jpg",
+                "width"=>480,
+                "height"=>360
+            );
             $dataSchema = array(
                 "@context"=>"https://schema.org/",
                 "@type"=>"NewsArticle",
+                "headline"=>$tieuDeVideo,
+                "image"=>$image,
                 "datePublished"=>$thoiGian,
                 "dateModified"=>$thoiGian,
                 "mainEntityOfPage"=>$mainEntityOfPage,
                 "author"=>$author,
-                "publisher"=>$publisher
+                "publisher"=>$publisher,
+                "description"=>$description
             );
-         
+            $stringSchema = json_encode($dataSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }
         return $stringSchema;
     }
