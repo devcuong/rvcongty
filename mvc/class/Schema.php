@@ -123,7 +123,7 @@ class Schema
                 $tieuDePlaylist = $r["tenplaylist"];
                 $thoiGian = $r["thoigian"];
                 $videoId = $r["thumbnail"];
-                $description = $r["tieudevideo"];
+                $description = $r["tenplaylist"];
             }
             $image = array(
                 "@type"=>"ImageObject",

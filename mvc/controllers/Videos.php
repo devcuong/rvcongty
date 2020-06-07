@@ -125,6 +125,7 @@ class Videos extends Controller
              $playList2 = $this->VideoModel->LayVideoByPlaylistId($playId);
              $playList3 = $this->VideoModel->LayVideoByPlaylistId($playId);
              // Lấy playlist để gen schema
+             $playList4 = $this->PlaylistModel->LayPlaylistById($playId);
              
              // Cập nhật lượt xem video bằng playId
              $this->VideoModel->CapNhatLuotViewBangPlaylist($playId);
@@ -142,7 +143,7 @@ class Videos extends Controller
 
              // Schema
              $schema = new Schema();
-             $StringSchema = $schema->generate_schema($playList3,"playlist-show");
+             $StringSchema = $schema->generate_schema($playList4,"playlist-show");
              
              // Title
              $title = "Video ".$tieuDeVideo;
