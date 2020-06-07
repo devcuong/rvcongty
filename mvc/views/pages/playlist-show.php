@@ -250,7 +250,13 @@ px
 }
 </style>
 <section id="divCenter" class="video-container">
-<?php while ($row = mysqli_fetch_array($data["Video"])){ ?>
+<?php $currentVideoId = -1;
+      $indexVideo = 0;
+?>
+<?php while ($row = mysqli_fetch_array($data["Playlist"])){ 
+    $currentVideoId = $row["id"];
+    if($indexVideo == 0){
+?>
 	<nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs">
 		<ul>
 			<li><a href="<?php echo $servername ?>"> <span class="icon is-small">
@@ -292,9 +298,9 @@ px
 							</div>
 						</div>
 						<div class="video-list video-list-vertical">
-						<?php while ($row2 = mysqli_fetch_array($data["ListVideo"])) {?>
+						<?php while ($row2 = mysqli_fetch_array($data["Playlist2"])) {?>
 							<div ng-repeat="item in listPlaylistVideo"
-								class="video-item media <?php if($row2["id"] == $data["VideoId"]) echo "playing" ?>">
+								class="video-item media <?php if($row2["id"] == $currentVideoId) echo "playing" ?>">
 								<a class="video-img"
 									href="<?php echo $servername ?>/videos/<?php echo $row2["slugvideo"] ?>-<?php echo $row2["id"] ?>"
 									title="<?php echo $row2["tieudevideo"] ?>"> <img
@@ -325,5 +331,7 @@ px
 			</div>
 		</div>
 	</div>
+	<?php $indexVideo++;?>
+	<?php } ?>
 	<?php } ?>
 </section>

@@ -61,7 +61,7 @@ class VideoModel extends DB{
         return mysqli_query($this->con, $qr);
     }
     
-    /*CẬP NHẬT LƯỢT VIEW VIDE*/
+    /*CẬP NHẬT LƯỢT VIEW VIDE0*/
     public function CapNhatLuotView($idVideo){
         $qr = "UPDATE video SET luotxem = luotxem + 1 WHERE id = $idVideo";
         $result = false;
@@ -70,6 +70,17 @@ class VideoModel extends DB{
         }
         return $result;
     }
+    
+    /*CẬP NHẬT LƯỢT VIEW VIDEO BẰNG PLAYLIST*/
+    public function CapNhatLuotViewBangPlaylist($idPlaylist){
+        $qr = "UPDATE video SET luotxem = luotxem + 1 WHERE playlist = $idPlaylist";
+        $result = false;
+        if(mysqli_query($this->con, $qr)){
+            $result = true;
+        }
+        return $result;
+    }
+    
     /*XÓA VIDEO*/
     public function XoaVideo($idVideo){
         $qr = "DELETE FROM video WHERE id = $idVideo";

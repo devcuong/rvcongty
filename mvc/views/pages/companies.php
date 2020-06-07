@@ -12,6 +12,9 @@
 .modal-card-foot .button:not(:last-child) {
     margin-right: 10px;
 }
+.g-recaptcha{
+	margin-top: 10px;
+}
 </style>
 <?php
 while ($row = mysqli_fetch_array($data["CongTy"])) {

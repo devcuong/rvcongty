@@ -112,21 +112,39 @@ class Videos extends Controller
              $playId = end($url);
              // Lấy playlist bằng playId
              $playList = $this->VideoModel->LayVideoByPlaylistId($playId);
+             $playList2 = $this->VideoModel->LayVideoByPlaylistId($playId);
+             $playList3 = $this->VideoModel->LayVideoByPlaylistId($playId);
+             // Cập nhật lượt xem video bằng playId
+             $this->VideoModel->CapNhatLuotViewBangPlaylist($playId);
+             
+             // Thông tin
+             $tieuDeVideo = "";
+             $index = 0;
+             while ($row = mysqli_fetch_array($playList3)){
+                 if($index == 0){
+                    $tieuDeVideo = $row["tieudevideo"];
+                 }
+                 $index ++; 
+             }
+            
              
              // Title
-             $title = "Video về quản trị nguồn nhân lực";
+             $title = "Video ".$tieuDeVideo;
              
              // Description
-             $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ";
-            
+             $description = "Video ".$title;
+             
              // Keyword
+             $keyword = "Video ".$title;
              
              // View
              $this->view("main-template", [
                  "Page" => "playlist-show",
                  "Title" => $title,
                  "Description" => $description,
-                 "Playlist" => $playList
+                 "Keyword" => $keyword,
+                 "Playlist" => $playList,
+                 "Playlist2" => $playList2
              ]);
         }
     }
