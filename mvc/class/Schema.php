@@ -65,16 +65,12 @@ class Schema
                 "name"=>"CongTyTop - Trang đánh giá công ty, công việc và cung cấp thông tin việc làm đầy đủ nhất",
                 "logo"=>$logo
             );
-            $id="";
             $tieuDeVideo = "";
-            $slugTieuDe = "";
             $thoiGian = "";
             $videoId = "";
             $description = "";
             while ($r = mysqli_fetch_array($data)){
-                $id = $r["id"];
                 $tieuDeVideo = $r["tieudevideo"];
-                $slugTieuDe = $r["slugvideo"];
                 $thoiGian = $r["thoigian"];
                 $videoId = $r["videoid"];
                 $description = $r["tieudevideo"];
@@ -88,11 +84,61 @@ class Schema
             $dataSchema = array(
                 "@context"=>"https://schema.org/",
                 "@type"=>"NewsArticle",
+                "mainEntityOfPage"=>$mainEntityOfPage,
                 "headline"=>$tieuDeVideo,
                 "image"=>$image,
                 "datePublished"=>$thoiGian,
                 "dateModified"=>$thoiGian,
+                "author"=>$author,
+                "publisher"=>$publisher,
+                "description"=>$description
+            );
+            $stringSchema = json_encode($dataSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        }
+        if($page == "playlist-show"){
+            $mainEntityOfPage = array(
+                "@type"=>"WebPage",
+                "@id"=>""
+            );
+            $author = array(
+                "@type"=>"Person",
+                "name"=>"CongTyTop"
+            );
+            $logo = array(
+                "@type"=>"ImageObject",
+                "url"=>"https:".$serverName."/mvc/public/images/logo.png",
+                "width"=>341,
+                "height"=>341
+            );
+            $publisher = array(
+                "@type"=>"Organization",
+                "name"=>"CongTyTop - Trang đánh giá công ty, công việc và cung cấp thông tin việc làm đầy đủ nhất",
+                "logo"=>$logo
+            );
+            $tieuDePlaylist = "";
+            $thoiGian = "";
+            $videoId = "";
+            $description = "";
+            while ($r = mysqli_fetch_array($data)){
+                $tieuDePlaylist = $r["tenplaylist"];
+                $thoiGian = $r["thoigian"];
+                $videoId = $r["thumbnail"];
+                $description = $r["tieudevideo"];
+            }
+            $image = array(
+                "@type"=>"ImageObject",
+                "url"=>"https://img.youtube.com/vi/".$videoId."/hqdefault.jpg",
+                "width"=>480,
+                "height"=>360
+            );
+            $dataSchema = array(
+                "@context"=>"https://schema.org/",
+                "@type"=>"NewsArticle",
                 "mainEntityOfPage"=>$mainEntityOfPage,
+                "headline"=>$tieuDePlaylist,
+                "image"=>$image,
+                "datePublished"=>$thoiGian,
+                "dateModified"=>$thoiGian,
                 "author"=>$author,
                 "publisher"=>$publisher,
                 "description"=>$description

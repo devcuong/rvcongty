@@ -124,6 +124,8 @@ class Videos extends Controller
              $playList = $this->VideoModel->LayVideoByPlaylistId($playId);
              $playList2 = $this->VideoModel->LayVideoByPlaylistId($playId);
              $playList3 = $this->VideoModel->LayVideoByPlaylistId($playId);
+             // Lấy playlist để gen schema
+             
              // Cập nhật lượt xem video bằng playId
              $this->VideoModel->CapNhatLuotViewBangPlaylist($playId);
              
@@ -136,7 +138,11 @@ class Videos extends Controller
                  }
                  $index ++; 
              }
-            
+             
+
+             // Schema
+             $schema = new Schema();
+             $StringSchema = $schema->generate_schema($playList3,"playlist-show");
              
              // Title
              $title = "Video ".$tieuDeVideo;
@@ -154,7 +160,8 @@ class Videos extends Controller
                  "Description" => $description,
                  "Keyword" => $keyword,
                  "Playlist" => $playList,
-                 "Playlist2" => $playList2
+                 "Playlist2" => $playList2,
+                 "StringSchema" => $StringSchema
              ]);
         }
     }
