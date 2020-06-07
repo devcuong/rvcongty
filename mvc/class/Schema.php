@@ -45,6 +45,45 @@ class Schema
             );
             $stringSchema = json_encode($dataSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }
+        if($page == "video-show"){
+            $mainEntityOfPage = array(
+                "@type"=>"WebPage",
+                "@id"=>""
+            );
+            $author = array(
+                "@type"=>"Person",
+                "name"=>"CongTyTop"
+            );
+            $logo = array(
+                "@type"=>"ImageObject",
+                "url"=>"https:".$serverName."/mvc/public/images/logo.png",
+                "width"=>341,
+                "height"=>341
+            );
+            $publisher = array(
+                "@type"=>"Organization",
+                "name"=>"CongTyTop - Trang đánh giá công ty, thông tin việc làm đầy đủ nhất",
+                "logo"=>$logo
+            );
+            $tieuDeVideo = "";
+            $thoiGian = "";
+            $videoId = "";
+            while ($r = mysqli_fetch_array($data)){
+                $tieuDeVideo = $r["tieudevideo"];
+                $thoiGian= $r["thoigian"];
+                $videoId = $r["videoid"];
+            }
+            $dataSchema = array(
+                "@context"=>"https://schema.org/",
+                "@type"=>"NewsArticle",
+                "datePublished"=>$thoiGian,
+                "dateModified"=>$thoiGian,
+                "mainEntityOfPage"=>$mainEntityOfPage,
+                "author"=>$author,
+                "publisher"=>$publisher
+            );
+         
+        }
         return $stringSchema;
     }
     
