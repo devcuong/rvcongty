@@ -41,6 +41,7 @@
 	margin-bottom: 0;
 	font-weight: 400;
 }
+
 .news-item {
 	border: 1px solid #71bf44;
 	border-top: 3px solid #71bf44;
@@ -204,16 +205,19 @@
 	padding: 7px 12px;
 	border: none;
 }
+
 .btn-view-more {
 	background-color: #71bf44;
 	border-color: #666;
 	color: #fff;
 }
+
 .btn-view-more:hover, .btn-view-more:focus, .btn-view-more:active {
 	background-color: #22924c;
 	border-color: #22924c;
 	color: #fff;
 }
+
 .btn-icon-right {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -258,14 +262,38 @@
 	padding-bottom: 0.5rem;
 }
 
+.title-news-box {
+	margin-top: 1rem;
+}
+
+.nav-float-right {
+	justify-content: center;
+}
+
+.page-heading {
+	margin-top: 0px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #d0d1d5;
 }
 </style>
+<nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs">
+	<ul>
+		<li><a href="/"> <span class="icon is-small"> <i class="fas fa-home"
+					aria-hidden="true"></i>
+			</span> <span>Trang chủ</span>
+		</a></li>
+		<li><a href="<?php echo $servername ?>/news/"> <span>News</span>
+		</a></li>
+		<li class="is-active"><a
+			href="<?php echo $servername ?>/news/tin-tuc-moi"> <span>Tin tức mới</span>
+	</ul>
+</nav>
 <div class="columns">
 	<div class="column is-two-thirds">
 		<div class="page-heading d-flex">
-			<h4 class="box-title-page mr-auto">TIN TỨC MỚI</h4>
+			<h4 class="box-title-page mr-auto title-news-box">TIN TỨC MỚI</h4>
 			<nav class="pagination is-small custom-pagination" role="navigation"
-					aria-label="pagination">
+				aria-label="pagination">
 				<?php echo $data["Navigate"]; ?>
 			</nav>
 		</div>
@@ -327,8 +355,14 @@
 			</div>
 		</div>
 		<?php } ?>
+		<div class="d-flex nav-float-right">
+			<nav class="pagination is-small custom-pagination" role="navigation"
+				aria-label="pagination">
+				<?php echo $data["Navigate"]; ?>
+			</nav>
+		</div>
 	</div>
-	<div  class="column">
+	<div class="column">
 		<?php require_once "./mvc/views/partials/right-news.php"?>
 	</div>
 </div>
