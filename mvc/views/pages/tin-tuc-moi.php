@@ -322,5 +322,7 @@
 			</div>
 		</div>
 	</div>
-	<div></div>
+	<div  class="column">
+		<?php require_once "./mvc/views/partials/right-news.php"?>
+	</div>
 </div>
