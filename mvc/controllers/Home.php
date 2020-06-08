@@ -78,7 +78,7 @@ class Home extends Controller
             
             $schema = new Schema();
             
-            $StringSchema = $schema->generate_schema($congTyTrangHienTaiSchema,"main-home");
+            $StringSchema = $schema->generate_schema_for_vid_videos($congTyTrangHienTaiSchema,"main-home");
             
             // View
             $this->view("main-template", [

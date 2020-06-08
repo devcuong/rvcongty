@@ -3,7 +3,7 @@ require_once 'mvc/class/Server.php';
 class Schema
 {
 
-    function generate_schema($data, $page)
+    function generate_schema_for_videos($data, $page)
     {
         $server = new Server();
         $serverName = $server->get_servername();
@@ -42,6 +42,50 @@ class Schema
                 "itemReviewed"=>$dataItemReviewed,
                 "ratingCount"=>$ratingCount,
                 "ratingValue"=>$ratingValue
+            );
+            $stringSchema = json_encode($dataSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        }
+        if($page == "videos"){
+            $mainEntityOfPage = array(
+                "@type"=>"WebPage",
+                "@id"=>""
+            );
+            $author = array(
+                "@type"=>"Person",
+                "name"=>"CongTyTop"
+            );
+            $logo = array(
+                "@type"=>"ImageObject",
+                "url"=>"https:".$serverName."/mvc/public/images/logo.png",
+                "width"=>341,
+                "height"=>341
+            );
+            $publisher = array(
+                "@type"=>"Organization",
+                "name"=>"CongTyTop - Trang đánh giá công ty, công việc và cung cấp thông tin việc làm đầy đủ nhất",
+                "logo"=>$logo
+            );
+            $thoiGian = "";
+            while ($r = mysqli_fetch_array($data)){
+                $thoiGian = $r["thoigian"];
+            }
+            $image = array(
+                "@type"=>"ImageObject",
+                "url"=>"https:".$serverName."/mvc/public/images/banner.png",
+                "width"=>1105,
+                "height"=>341
+            );
+            $dataSchema = array(
+                "@context"=>"https://schema.org/",
+                "@type"=>"NewsArticle",
+                "mainEntityOfPage"=>$mainEntityOfPage,
+                "headline"=>"Tổng hợp video về việc làm, nhân sự, lao động, quản trị nguồn nhân lực - CongTyTop",
+                "image"=>$image,
+                "datePublished"=>$thoiGian,
+                "dateModified"=>$thoiGian,
+                "author"=>$author,
+                "publisher"=>$publisher,
+                "description"=>"Chuyên trang tổng hợp video về việc làm, nhân sự, lao động, đánh giá, xu hướng nguồn nhân lực tại Việt Nam - CongTyTop"
             );
             $stringSchema = json_encode($dataSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }

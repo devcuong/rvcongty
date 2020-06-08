@@ -12,6 +12,9 @@ class News extends Controller
     function Index($a, $b=NULL){
         if ($b != NULL){
             $tags = "";
+            $tieuDe = "";
+            $thoiGian = "";
+            $thumbnail = "";
             $urlNews = explode("-", $b);
             $idNews = end($urlNews);
             $newsNow = $this->NewsModel->LayNewsById($idNews);
@@ -19,6 +22,9 @@ class News extends Controller
            
             while ($r = mysqli_fetch_array($newsNow)) {
                 $tags = $r["tagnews"];
+                $tieuDe = $r["tieude"];
+                $thoiGian = $r["thoigian"];
+                $thumbnail = $r["thumbnail"];
             }
             
             $newsMoiNhat = $this->NewsModel->Lay8TinMoiNhat();

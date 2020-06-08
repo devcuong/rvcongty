@@ -51,7 +51,7 @@ class Videos extends Controller
             
             // Schema
             $schema = new Schema();
-            $StringSchema = $schema->generate_schema($video4Schema,"video-show");
+            $StringSchema = $schema->generate_schema_for_vid_videos($video4Schema,"video-show");
             
             // Title
             $title = "Video ".$tieuDe." - CongTyTop";
@@ -86,6 +86,8 @@ class Videos extends Controller
             $soVideo = mysqli_num_rows($tatCaVideo);
             $soTrang = ceil($soVideo / $soVideoMoiTrang);
             $videoTrangHienTai = $this->VideoModel->LayVideoPhanTrang($soVideoBoQua, $soVideoMoiTrang);
+            // Video trang hiện tại để gen schema
+            $videoTrangHienTaiForSchema = $this->VideoModel->LayVideoPhanTrang($soVideoBoQua, $soVideoMoiTrang);
             $tatCaPlaylist = $this->PlaylistModel->TatCaPlaylist();
             
             // Tạo navigate phân trang
@@ -93,7 +95,9 @@ class Videos extends Controller
             $string = new CutString();
             $nav = $string->get_nav_render_videos($trangVideosHienTai, $soTrang, $server->servername . "/videos");
             
-            
+            // Schema
+            $schema = new Schema();
+            $StringSchema = $schema->generate_schema_for_vid_videos($videoTrangHienTaiForSchema,"videos");
             
             // Title
             $title = "Video về quản trị nguồn nhân lực";
@@ -109,7 +113,8 @@ class Videos extends Controller
                 "Description" => $description,
                 "Videos" => $videoTrangHienTai,
                 "Playlist" => $tatCaPlaylist,
-                "Navigate" => $nav
+                "Navigate" => $nav,
+                "StringSchema" => $StringSchema
             ]);
         }
     }
@@ -143,7 +148,7 @@ class Videos extends Controller
 
              // Schema
              $schema = new Schema();
-             $StringSchema = $schema->generate_schema($playList4,"playlist-show");
+             $StringSchema = $schema->generate_schema_for_vid_videos($playList4,"playlist-show");
              
              // Title
              $title = "Video ".$tieuDeVideo;
