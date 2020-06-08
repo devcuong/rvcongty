@@ -189,10 +189,6 @@ px
 	position: relative;
 }
 
-.dark-mode .video-info .video-info-item:not (:first-child )::after {
-	background-color: #999;
-}
-
 .mb-2 {
 	margin-bottom: 0.5rem !important;
 }
