@@ -481,7 +481,7 @@
 			<div class="media-body news-info">
 				<h2 class="news-title">
 					<a
-						href="<?php echo $servername ?>/news/<?php echo $NewsHR["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"
+						href="<?php echo $servername ?>/news/<?php echo $NewsHR["slugtieude"] ?>-<?php echo $NewsHR["id"] ?>"
 						title="<?php echo $NewsHR["tieude"] ?>"><?php echo $NewsHR["tieude"] ?></a>
 				</h2>
 				<p class="news-desc"><?php echo $NewsHR["motangan"] ?></p>
@@ -503,5 +503,6 @@
 	</div>
 	<div class="column">
 		<?php require_once "./mvc/views/partials/right-news.php"?>
+		<?php require_once "./mvc/views/partials/right-videos.php"?>
 	</div>
 </div>
