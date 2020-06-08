@@ -11,6 +11,20 @@ class News extends Controller
         $this->NewsModel = $this->model("NewsModel");
     }
     
+    function TinTucMoi(){
+        // Title
+        $title = "CongTyTop";
+        
+        // Description
+        $description = "CongTyTop";
+        
+        $this->view("main-template", [
+            "Page" => "tin-tuc-moi",
+            "Title" => $title,
+            "Description" => $description
+        ]);
+    }
+    
     function Index($a, $b=NULL){
         if ($b != NULL){
             $tags = "";
@@ -86,5 +100,7 @@ class News extends Controller
             ]);
         }
     }
+    
+    
 }
 ?>

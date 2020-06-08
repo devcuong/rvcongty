@@ -39,16 +39,11 @@
 .news .news-desc {
 	color: #555;
 	margin-bottom: 0;
-}
-
-.news .news-desc {
 	font-weight: 400;
 }
-
 .news-item {
 	border: 1px solid #71bf44;
 	border-top: 3px solid #71bf44;
-	/* 	padding-left: 10px; */
 	padding: 5px;
 }
 
@@ -399,7 +394,7 @@
 					href="<?php echo $servername ?>/news/<?php echo $newsBinhThuong["slugtieude"] ?>-<?php echo $newsBinhThuong["id"] ?>"><?php echo $newsBinhThuong["tieude"] ?></a>
 			</h2>
 			<p class="news-posted">
-				<span class="origin"><a title="Autopro"
+				<span class="origin"><a title="<?php echo $newsBinhThuong["nguon"] ?>"
 					href="<?php echo $newsBinhThuong["webnguon"] ?>"><?php echo $newsBinhThuong["nguon"] ?></a></span>
 				<span><i class="fa fa-eye"></i><?php echo $newsBinhThuong["luotxem"] ?></span>
 			</p>
@@ -441,7 +436,7 @@
 		<?php } ?>
 		<div class="d-flex justify-content-center">
 			<a class="btn btn-view-more btn-icon-right"
-				href="<?php echo $servername ?>/news/tin-cong-ty" title="Xem tất cả">Xem
+				href="<?php echo $servername ?>/news/tin-tuc-moi" title="Xem tất cả">Xem
 				tất cả <span> <i class="fas fa-chevron-right"></i>
 			</span>
 			</a>
@@ -495,7 +490,7 @@
 		<?php } ?>
 		<div class="d-flex justify-content-center">
 			<a class="btn btn-view-more btn-icon-right"
-				href="<?php echo $servername ?>/news/tin-cong-ty-ecommerce" title="Xem tất cả">Xem
+				href="<?php echo $servername ?>/news/hr-insider" title="Xem tất cả">Xem
 				tất cả <span> <i class="fas fa-chevron-right"></i>
 			</span>
 			</a>
