@@ -185,7 +185,6 @@
 			</div>
 			<div class="column">
 			<?php require_once "./mvc/views/partials/right-news.php"?>
-			<?php require_once "./mvc/views/partials/right-videos.php"?>
 			</div>
 		</div>
 

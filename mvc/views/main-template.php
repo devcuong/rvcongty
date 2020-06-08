@@ -1935,7 +1935,10 @@ px
 				<div class="navbar-end">
 					<a href="<?php echo $servername ?>/news/"
 						class="navbar-item <?php if($data["Page"] == "news") { echo "is-active";} else{ echo ""; }?>">Tin
-						tức</a> <a href="<?php echo $servername ?>/videos/"
+						tức</a> 
+					<a href="<?php echo $servername ?>/videos/"
+						class="navbar-item <?php if($data["Page"] == "hr-insider") { echo "is-active";} else{ echo ""; }?>">HR Insider</a>
+					<a href="<?php echo $servername ?>/videos/"
 						class="navbar-item <?php if($data["Page"] == "videos" || $data["Page"] == "video-show") { echo "is-active";} else{ echo ""; }?>">Videos</a>
 				</div>
 			</div>
