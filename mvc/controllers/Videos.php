@@ -144,7 +144,6 @@ class Videos extends Controller
                  }
                  $index ++; 
              }
-             
 
              // Schema
              $schema = new Schema();

@@ -391,7 +391,7 @@
 	<div class="column is-two-thirds">
 		<!-- search box -->
 	<?php require_once "./mvc/views/partials/search-box.php"?>
-		<div class="page-heading d-flex"><h4 class="box-title-page mr-auto">TIN DOANH NGHIỆP</h4></div>
+		<div class="page-heading d-flex"><h4 class="box-title-page mr-auto">TIN TỨC MỚI</h4></div>
 	<?php while ($newsBinhThuong = mysqli_fetch_array($data["NewsBinhThuong"])){ ?>
 		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
@@ -446,49 +446,49 @@
 			</span>
 			</a>
 		</div>
-		<div class="page-heading d-flex"><h4 class="box-title-page mr-auto">DOANH NGHIỆP E-COMMERCE</h4></div>
-		<?php while ($NewsECom= mysqli_fetch_array($data["NewsECom"])){ ?>
+		<div class="page-heading d-flex"><h4 class="box-title-page mr-auto">HR INSIDER</h4></div>
+		<?php while ($NewsHR = mysqli_fetch_array($data["NewsHR"])){ ?>
 		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
-				<a target="_self" title="<?php echo $NewsECom["tieude"] ?>"
-					href="<?php echo $servername ?>/news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"><?php echo $NewsECom["tieude"] ?></a>
+				<a target="_self" title="<?php echo $NewsHR["tieude"] ?>"
+					href="<?php echo $servername ?>/news/<?php echo $NewsHR["slugtieude"] ?>-<?php echo $NewsHR["id"] ?>"><?php echo $NewsHR["tieude"] ?></a>
 			</h2>
 			<p class="news-posted">
-				<span class="origin"><a title="<?php echo $NewsECom["nguon"] ?>"
-					href="<?php echo $NewsECom["webnguon"] ?>"><?php echo $NewsECom["nguon"] ?></a></span>
-				<span><i class="fa fa-eye"></i><?php echo $NewsECom["luotxem"] ?></span>
+				<span class="origin"><a title="<?php echo $NewsHR["nguon"] ?>"
+					href="<?php echo $NewsHR["webnguon"] ?>"><?php echo $NewsHR["nguon"] ?></a></span>
+				<span><i class="fa fa-eye"></i><?php echo $NewsHR["luotxem"] ?></span>
 			</p>
 			<div class="media">
 				<a class="news-img"
-					href="<?php echo $servername ?>/news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>">
+					href="<?php echo $servername ?>/news/<?php echo $NewsHR["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>">
 					<img class="lazy-loading-image loaded"
-					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsECom["thumbnail"]?>"
-					alt="<?php echo $NewsECom["tieude"] ?>">
+					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsHR["thumbnail"]?>"
+					alt="<?php echo $NewsHR["tieude"] ?>">
 				</a>
 				<div class="media-body">
-					<h4 class="news-desc"><?php echo $NewsECom["motangan"] ?></h4>
+					<h4 class="news-desc"><?php echo $NewsHR["motangan"] ?></h4>
 				</div>
 			</div>
 		</div>
 		<div class="news media news-item is-hidden-tablet media-mobile">
-			<a title="<?php echo $NewsECom["tieude"] ?>"
+			<a title="<?php echo $NewsHR["tieude"] ?>"
 				class="border-primary box-img"
-				href="<?php echo $servername ?>/news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>">
+				href="<?php echo $servername ?>/news/<?php echo $NewsHR["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>">
 				<img class="lazy-loading-image loaded"
-				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsECom["thumbnail"]?>"
-				alt="<?php echo $NewsECom["tieude"] ?>">
+				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsHR["thumbnail"]?>"
+				alt="<?php echo $NewsHR["tieude"] ?>">
 			</a>
 			<div class="media-body news-info">
 				<h2 class="news-title">
 					<a
-						href="<?php echo $servername ?>/news/<?php echo $NewsECom["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"
-						title="<?php echo $NewsECom["tieude"] ?>"><?php echo $NewsECom["tieude"] ?></a>
+						href="<?php echo $servername ?>/news/<?php echo $NewsHR["slugtieude"] ?>-<?php echo $NewsECom["id"] ?>"
+						title="<?php echo $NewsHR["tieude"] ?>"><?php echo $NewsHR["tieude"] ?></a>
 				</h2>
-				<p class="news-desc"><?php echo $NewsECom["motangan"] ?></p>
+				<p class="news-desc"><?php echo $NewsHR["motangan"] ?></p>
 				<p class="news-posted">
-					<span class="origin"><a title="<?php echo $NewsECom["nguon"] ?>"
-						href="<?php echo $NewsECom["webnguon"] ?>"><?php echo $NewsECom["nguon"] ?></a></span>
-					<span><i class="fa fa-eye"></i><?php echo $NewsECom["luotxem"] ?></span>
+					<span class="origin"><a title="<?php echo $NewsHR["nguon"] ?>"
+						href="<?php echo $NewsHR["webnguon"] ?>"><?php echo $NewsHR["nguon"] ?></a></span>
+					<span><i class="fa fa-eye"></i><?php echo $NewsHR["luotxem"] ?></span>
 				</p>
 			</div>
 		</div>
@@ -496,60 +496,6 @@
 		<div class="d-flex justify-content-center">
 			<a class="btn btn-view-more btn-icon-right"
 				href="<?php echo $servername ?>/news/tin-cong-ty-ecommerce" title="Xem tất cả">Xem
-				tất cả <span> <i class="fas fa-chevron-right"></i>
-			</span>
-			</a>
-		</div>
-		<div class="page-heading d-flex"><h4 class="box-title-page mr-auto">DOANH NGHIỆP STARTUP</h4></div>
-		<?php while ($NewsStartup= mysqli_fetch_array($data["NewsStartup"])){ ?>
-		<div class="news box-border news-item is-hidden-mobile">
-			<h2 class="news-title">
-				<a target="_self" title="<?php echo $NewsStartup["tieude"] ?>"
-					href="<?php echo $servername ?>/news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>"><?php echo $NewsStartup["tieude"] ?></a>
-			</h2>
-			<p class="news-posted">
-				<span class="origin"><a title="<?php echo $NewsStartup["nguon"] ?>"
-					href="<?php echo $NewsStartup["webnguon"] ?>"><?php echo $NewsStartup["nguon"] ?></a></span>
-				<span><i class="fa fa-eye"></i><?php echo $NewsStartup["luotxem"] ?></span>
-			</p>
-			<div class="media">
-				<a class="news-img"
-					href="<?php echo $servername ?>/news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
-					<img class="lazy-loading-image loaded"
-					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsStartup["thumbnail"]?>"
-					alt="<?php echo $NewsStartup["tieude"] ?>">
-				</a>
-				<div class="media-body">
-					<h4 class="news-desc"><?php echo $NewsStartup["motangan"] ?></h4>
-				</div>
-			</div>
-		</div>
-		<div class="news media news-item is-hidden-tablet media-mobile">
-			<a title="<?php echo $NewsStartup["tieude"] ?>"
-				class="border-primary box-img"
-				href="<?php echo $servername ?>/news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>">
-				<img class="lazy-loading-image loaded"
-				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $NewsStartup["thumbnail"]?>"
-				alt="<?php echo $NewsStartup["tieude"] ?>">
-			</a>
-			<div class="media-body news-info">
-				<h2 class="news-title">
-					<a
-						href="<?php echo $servername ?>/news/<?php echo $NewsStartup["slugtieude"] ?>-<?php echo $NewsStartup["id"] ?>"
-						title="<?php echo $NewsStartup["tieude"] ?>"><?php echo $NewsStartup["tieude"] ?></a>
-				</h2>
-				<p class="news-desc"><?php echo $NewsStartup["motangan"] ?></p>
-				<p class="news-posted">
-					<span class="origin"><a title="<?php echo $NewsStartup["nguon"] ?>"
-						href="<?php echo $NewsStartup["webnguon"] ?>"><?php echo $NewsStartup["nguon"] ?></a></span>
-					<span><i class="fa fa-eye"></i><?php echo $NewsStartup["luotxem"] ?></span>
-				</p>
-			</div>
-		</div>
-		<?php } ?> 
-		<div class="d-flex justify-content-center">
-			<a class="btn btn-view-more btn-icon-right"
-				href="<?php echo $servername ?>/news/tin-cong-ty-startup" title="Xem tất cả">Xem
 				tất cả <span> <i class="fas fa-chevron-right"></i>
 			</span>
 			</a>

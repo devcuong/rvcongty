@@ -1,4 +1,6 @@
 <?php
+require_once 'mvc/class/Server.php';
+require_once 'mvc/class/Schema.php';
 class News extends Controller
 {
     public $NewsModel;
@@ -13,6 +15,7 @@ class News extends Controller
         if ($b != NULL){
             $tags = "";
             $tieuDe = "";
+            $moTa = "";
             $thoiGian = "";
             $thumbnail = "";
             $urlNews = explode("-", $b);
@@ -23,6 +26,7 @@ class News extends Controller
             while ($r = mysqli_fetch_array($newsNow)) {
                 $tags = $r["tagnews"];
                 $tieuDe = $r["tieude"];
+                $moTa = $r["motangan"];
                 $thoiGian = $r["thoigian"];
                 $thumbnail = $r["thumbnail"];
             }
@@ -31,26 +35,33 @@ class News extends Controller
             $capNhatViews = $this->NewsModel->CapNhatLuotView($idNews);
             $newsLienQuan = $this->NewsModel->Lay3NewsLienQuan($tags);
            
+            // Schema
+            $schema = new Schema();
+            $StringSchema = $schema->generate_schema_for_news($tieuDe,$thoiGian,$thumbnail,"news-detail");
+            
             // Title
-            $title = "Review công ty ";
+            $title = $tieuDe." - CongTyTop";
             
             // Description
-            $description = "Review về mức lương, qui trình phỏng vấn, môi trường, tuyển dụng, sếp và công việc tại ";
+            $description = $moTa;
+            
+            // Keyword
+            $keyword = "";
             
             // View
             $this->view("main-template", [
                 "Page" => "news-detail",
                 "Title" => $title,
                 "Description" => $description,
+                "Keyword" => $keyword,
                 "News" => $newsLater,
                 "NewsMoiNhat"=>$newsMoiNhat,
-                "NewsLienQuan" => $newsLienQuan
-              
+                "NewsLienQuan" => $newsLienQuan,
+                "StringSchema" => $StringSchema
             ]);
         }else{
-            $newsBinhThuong = $this->NewsModel->LayNewsByLoai("NORMAL", 8);
-            $newsECom = $this->NewsModel->LayNewsByLoai("E-COM",8);
-            $newsStartup = $this->NewsModel->LayNewsByLoai("STARTUP", 8);
+            $newsBinhThuong = $this->NewsModel->LayNewsByLoai("NORMAL", 3);
+            $newsECom = $this->NewsModel->LayNewsByLoai("HR",3);
             $newsThumbnail = $this->NewsModel->Lay5NewsMoiNhat();
             $newsXemNhieuNhat = $this->NewsModel->Lay8NewsXemNhieuNhat();
             $rows = [];
@@ -69,8 +80,7 @@ class News extends Controller
                 "Title" => $title,
                 "Description" => $description,
                 "NewsBinhThuong" => $newsBinhThuong,
-                "NewsECom" => $newsECom,
-                "NewsStartup" => $newsStartup,
+                "NewsHR" => $newsECom,
                 "NewsThumbnail" => $rows,
                 "NewsXemNhieuNhat" => $newsXemNhieuNhat
             ]);

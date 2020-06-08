@@ -197,6 +197,10 @@ class Schema
     /* SCHEMA CHO TRANG NEWS */
     function generate_schema_for_news($tieuDe, $thoiGian,$thumbnai ,$page)
     {
+        
+        $server = new Server();
+        $serverName = $server->get_servername();
+        $stringSchema = "{";
         if ($page == "news-detail") {
             $mainEntityOfPage = array(
                 "@type" => "WebPage",
@@ -217,10 +221,6 @@ class Schema
                 "name" => "CongTyTop - Trang đánh giá công ty, công việc và cung cấp thông tin việc làm đầy đủ nhất",
                 "logo" => $logo
             );
-            $thoiGian = "";
-            while ($r = mysqli_fetch_array($data)) {
-                $thoiGian = $r["thoigian"];
-            }
             $image = array(
                 "@type" => "ImageObject",
                 "url" => "https:" . $serverName . "/mvc/public/images/banner.png",
@@ -231,16 +231,17 @@ class Schema
                 "@context" => "https://schema.org/",
                 "@type" => "NewsArticle",
                 "mainEntityOfPage" => $mainEntityOfPage,
-                "headline" => "Tổng hợp video về việc làm, nhân sự, lao động, quản trị nguồn nhân lực - CongTyTop",
+                "headline" => $tieuDe,
                 "image" => $image,
                 "datePublished" => $thoiGian,
                 "dateModified" => $thoiGian,
                 "author" => $author,
                 "publisher" => $publisher,
-                "description" => "Chuyên trang tổng hợp video về việc làm, nhân sự, lao động, đánh giá, xu hướng nguồn nhân lực tại Việt Nam - CongTyTop"
+                "description" => $tieuDe
             );
             $stringSchema = json_encode($dataSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }
+        return $stringSchema;
     }
 
     /* SCHEMA CHO REVIEW */
