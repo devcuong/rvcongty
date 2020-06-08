@@ -264,7 +264,12 @@
 	<div class="column is-two-thirds">
 		<div class="page-heading d-flex">
 			<h4 class="box-title-page mr-auto">TIN TỨC MỚI</h4>
+			<nav class="pagination is-small custom-pagination" role="navigation"
+					aria-label="pagination">
+				<?php echo $data["Navigate"]; ?>
+			</nav>
 		</div>
+		<?php while ($row = mysqli_fetch_array($data["NewsTrangHienTai"])) { ?>
 		<div class="news media news-item is-hidden-tablet media-mobile">
 			<a
 				title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
@@ -321,6 +326,7 @@
 				</div>
 			</div>
 		</div>
+		<?php } ?>
 	</div>
 	<div  class="column">
 		<?php require_once "./mvc/views/partials/right-news.php"?>

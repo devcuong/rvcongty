@@ -1,6 +1,7 @@
 <?php
 require_once 'mvc/class/Server.php';
 require_once 'mvc/class/Schema.php';
+require_once 'mvc/class/CutString.php';
 class News extends Controller
 {
     public $NewsModel;
@@ -12,6 +13,29 @@ class News extends Controller
     }
     
     function TinTucMoi(){
+        $trangTinTucHienTai = 1;
+        $soTinTucMoiTrang = 15;
+        if (isset($_GET["page"])) {
+            $trangTinTucHienTai= $_GET["page"];
+        }
+        $soTinTucBoQua = ($trangTinTucHienTai - 1) * $soTinTucMoiTrang;
+        
+        // Tất cả tin tức
+        $tatCaTinTuc = $this->NewsModel->TatCaNews();
+        $soTinTuc = mysqli_num_rows($tatCaTinTuc);
+        $soTrang = ceil($soTinTuc/$soTinTucMoiTrang);
+        
+        // Lấy tin tức phân trang
+        $tinTucTrangHienTai = $this->NewsModel->LayNewsPhanTrang($soTinTucBoQua, $soTinTucMoiTrang);
+        
+        // Lấy tin tức được xem nhiều nhất
+        $tinTucXemNhieuNhat = $this->NewsModel->Lay8NewsXemNhieuNhat();
+        
+        // Tạo navigate phân trang
+        $server = new Server();
+        $string = new CutString();
+        $nav = $string->get_nav_render_videos($trangTinTucHienTai, $soTrang, $server->servername . "/news/tin-tuc-moi");
+        
         // Title
         $title = "CongTyTop";
         
@@ -21,7 +45,10 @@ class News extends Controller
         $this->view("main-template", [
             "Page" => "tin-tuc-moi",
             "Title" => $title,
-            "Description" => $description
+            "Description" => $description,
+            "NewsXemNhieuNhat"=>$tinTucXemNhieuNhat,
+            "NewsTrangHienTai" => $tinTucTrangHienTai,
+            "Navigate" => $nav
         ]);
     }
     
