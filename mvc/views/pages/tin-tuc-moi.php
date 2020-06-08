@@ -269,11 +269,8 @@
 .nav-float-right {
 	justify-content: center;
 }
-
 .page-heading {
-	margin-top: 0px;
-	margin-bottom: 10px;
-	border-bottom: 1px solid #d0d1d5;
+    margin-top: 0px;
 }
 </style>
 <nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs">
@@ -284,8 +281,8 @@
 		</a></li>
 		<li><a href="<?php echo $servername ?>/news/"> <span>News</span>
 		</a></li>
-		<li class="is-active"><a
-			href="<?php echo $servername ?>/news/tin-tuc-moi"> <span>Tin tức mới</span>
+		<li class="is-active"><a href="#"> <span>Tin tức mới</span>
+		</a></li>
 	</ul>
 </nav>
 <div class="columns">
@@ -300,57 +297,47 @@
 		<?php while ($row = mysqli_fetch_array($data["NewsTrangHienTai"])) { ?>
 		<div class="news media news-item is-hidden-tablet media-mobile">
 			<a
-				title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
+				title="<?php echo $row["tieude"] ?>"
 				class="border-primary box-img"
-				href="http://localhost/rvcongty/news/dieu-sai-lam-nhat-trong-su-nghiep-cua-toi-do-chinh-la-qua-trung-thanh-2">
+				href="<?php echo $servername ?>/news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>">
 				<img class="lazy-loading-image loaded"
-				src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-				alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới">
+				src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row["thumbnail"] ?>"
+				alt="<?php echo $row["tieude"] ?>">
 			</a>
 			<div class="media-body news-info">
 				<h2 class="news-title">
 					<a
-						href="http://localhost/rvcongty/news/dieu-sai-lam-nhat-trong-su-nghiep-cua-toi-do-chinh-la-qua-trung-thanh-2"
-						title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới">Triển
-						lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
+						href="<?php echo $servername ?>/news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>"
+						title="<?php echo $row["tieude"] ?>"><?php echo $row["tieude"] ?></a>
 				</h2>
-				<p class="news-desc">Rolls-Royce Cullinan được bán với giá hơn 300
-					ngàn đô ở Mỹ và về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng
-					xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi. về Việt
-					Nam thì con số này lên đến hơn 40 tỷ, nhưng xe đắt tiền không giúp
-					nó ngoại lệ với những đợt triệu hồi.</p>
+				<p class="news-desc"><?php echo $row["tieude"] ?>"><?php echo $row["motangan"] ?></p>
 				<p class="news-posted">
-					<span class="origin"><a title="hrinsider"
-						href="http://hrinsider.vietnamworks.com/">hrinsider</a></span> <span><i
-						class="fa fa-eye"></i>38</span>
+					<span class="origin"><a title="<?php echo $row["nguon"] ?>"
+						href="<?php echo $row["webnguon"] ?>"><?php echo $row["nguon"] ?></a></span> <span><i
+						class="fa fa-eye"></i><?php echo $row["luotxem"] ?></span>
 				</p>
 			</div>
 		</div>
 		<div class="news box-border news-item is-hidden-mobile">
 			<h2 class="news-title">
 				<a target="_self"
-					title="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới"
-					href="http://localhost/rvcongty/news/dieu-sai-lam-nhat-trong-su-nghiep-cua-toi-do-chinh-la-qua-trung-thanh-2">Triển
-					lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới</a>
+					title="<?php echo $row["tieude"] ?>"
+					href="<?php echo $servername ?>/news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>"><?php echo $row["tieude"] ?></a>
 			</h2>
 			<p class="news-posted">
-				<span class="origin"><a title="Autopro"
-					href="http://hrinsider.vietnamworks.com/">hrinsider</a></span> <span><i
-					class="fa fa-eye"></i>38</span>
+				<span class="origin"><a title="<?php echo $row["nguon"] ?>"
+					href="<?php echo $row["webnguon"] ?>"><?php echo $row["nguon"] ?></a></span> <span><i
+					class="fa fa-eye"></i><?php echo $row["luotxem"] ?></span>
 			</p>
 			<div class="media">
 				<a class="news-img"
-					href="http://localhost/rvcongty/news/dieu-sai-lam-nhat-trong-su-nghiep-cua-toi-do-chinh-la-qua-trung-thanh-2">
+					href="<?php echo $servername ?>/news/<?php echo $row["slugtieude"] ?>-<?php echo $row["id"] ?>">
 					<img class="lazy-loading-image loaded"
-					src="http://localhost/rvcongty/mvc/public/asset/news/1603.11.1.jpg"
-					alt="Triển lãm ôtô Frankfurt Motor Show bị lo chết yểu nếu không đổi mới">
+					src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row["thumbnail"] ?>"
+					alt="<?php echo $row["tieude"] ?>">
 				</a>
 				<div class="media-body">
-					<h4 class="news-desc">Rolls-Royce Cullinan được bán với giá hơn 300
-						ngàn đô ở Mỹ và về Việt Nam thì con số này lên đến hơn 40 tỷ,
-						nhưng xe đắt tiền không giúp nó ngoại lệ với những đợt triệu hồi.
-						về Việt Nam thì con số này lên đến hơn 40 tỷ, nhưng xe đắt tiền
-						không giúp nó ngoại lệ với những đợt triệu hồi.</h4>
+					<h4 class="news-desc"><?php echo $row["motangan"] ?></h4>
 				</div>
 			</div>
 		</div>
