@@ -2,8 +2,8 @@
 require_once 'mvc/class/Server.php';
 class Schema
 {
-
-    function generate_schema_for_videos($data, $page)
+    /*SCHEMA CHO TRANG CHỦ VÀ TRANG VIDEO*/
+    function generate_schema_for_vid_videos($data, $page)
     {
         $server = new Server();
         $serverName = $server->get_servername();
@@ -191,7 +191,12 @@ class Schema
         }
         return $stringSchema;
     }
+    /*SCHEMA CHO TRANG NEWS*/
+    function generate_schema_for_news($data, $page){
+        
+    }
     
+    /*SCHEMA CHO REVIEW*/
     function generate_schema_for_review($dataCongTy, $dataReview){
         $server = new Server();
         $serverName = $server->get_servername();
