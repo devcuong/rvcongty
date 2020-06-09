@@ -67,7 +67,7 @@ class NewsModel extends DB{
             $query = explode(" ", $tuKhoa);
             foreach($query as $text)
             {
-                $condition .= "tagnews LIKE '%".trim($text)."%' OR ";
+                $condition .= "tieude LIKE '%".trim($text)."%' OR ";
             }
             $condition = substr($condition, 0, -4);
             $qr = "SELECT * FROM news WHERE " . $condition. " ORDER BY luotxem DESC";
@@ -76,6 +76,19 @@ class NewsModel extends DB{
         }
         
         /*PHÂN TRANG*/
+        // phân trang trang kết quả tìm kiếm
+        public function  LayNewsTimKiemDePhanTrang($tuKhoa,$soNewsBoQua, $newsMoiTrang){
+            $condition = '';
+            $query = explode(" ", $tuKhoa);
+            foreach($query as $text)
+            {
+                $condition .= "tieude LIKE '%".trim($text)."%' OR ";
+            }
+            $condition = substr($condition, 0, -4);
+            $qr = "SELECT * FROM news WHERE " . $condition. " ORDER BY luotxem DESC LIMIT $soNewsBoQua, $newsMoiTrang";
+            
+            return mysqli_query($this->con, $qr);
+        }
         // Lấy news để phân trang
         public function LayNewsPhanTrang($soNewsBoQua, $newsMoiTrang){
             $qr = "SELECT * FROM news ORDER BY thoigian DESC LIMIT $soNewsBoQua, $newsMoiTrang" ;
