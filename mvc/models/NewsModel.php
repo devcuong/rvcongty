@@ -77,7 +77,7 @@ class NewsModel extends DB{
         
         /*PHÂN TRANG*/
         // phân trang trang kết quả tìm kiếm
-        public function  LayNewsTimKiemDePhanTrang($tuKhoa,$soNewsBoQua, $newsMoiTrang){
+        public function  LayNewsTimKiemDePhanTrang($tuKhoa,$soNewsBoQua,$newsMoiTrang){
             $condition = '';
             $query = explode(" ", $tuKhoa);
             foreach($query as $text)
@@ -102,29 +102,29 @@ class NewsModel extends DB{
         }
     
         /*THÊM TIN TỨC*/
-        public function ThemNews($tieude, $slugtieude, $thumbnail,$motangan, $noidung, $tagnews ,$nguon, $thoigian) {
-            $qr= "INSERT INTO news (tieude, slugtieude, thumbnail, motangan,noidung, tagnews ,nguon, thoigian) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        public function ThemNews($tieude, $slugtieude, $thumbnail,$motangan, $noidung, $tagnews ,$nguon, $webnguontin, $thoigian) {
+            $qr= "INSERT INTO news (tieude, slugtieude, thumbnail, motangan,noidung, tagnews ,nguon, webnguon, thoigian) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($this->con);
             $result = 0;
             //echo $result;
             if(!mysqli_stmt_prepare($stmt, $qr)){
                 $result = "SQL statement failed";
             }else{
-                mysqli_stmt_bind_param($stmt, "ssssssss", $tieude, $slugtieude, $thumbnail,$motangan,$noidung, $tagnews, $nguon, $thoigian);
+                mysqli_stmt_bind_param($stmt, "ssssssss", $tieude, $slugtieude, $thumbnail,$motangan,$noidung, $tagnews, $nguon, $webnguontin, $thoigian);
                 $result = mysqli_stmt_execute($stmt);
             }
             return $qr;
         }
         /* CẬP NHẬT NEWS */
         // Update reply có sẵn
-        public function CapNhatNews($tieude, $slugtieude, $thumbnail,$motangan, $noidung, $tagnews ,$nguon, $thoigian, $id){
-            $qr = "UPDATE news SET tieude = ?, slugtieude = ?, thumbnail = ?, motangan = ?, noidung = ?, tagnews = ?, nguon = ?, thoigian = ? WHERE id = ?";
+        public function CapNhatNews($tieude, $slugtieude, $thumbnail,$motangan, $noidung, $tagnews ,$nguon,$webnguontin, $thoigian, $id){
+            $qr = "UPDATE news SET tieude = ?, slugtieude = ?, thumbnail = ?, motangan = ?, noidung = ?, tagnews = ?, nguon = ?, webnguon = ?, thoigian = ? WHERE id = ?";
             $stmt = mysqli_stmt_init($this->con);
             $result = 0;
             if(!mysqli_stmt_prepare($stmt, $qr)){
                 echo "SQL statement failed";
             }else{
-                mysqli_stmt_bind_param($stmt, "sssssssss",$tieude, $slugtieude, $thumbnail, $motangan, $noidung, $tagnews, $nguon, $thoigian, $id);
+                mysqli_stmt_bind_param($stmt, "ssssssssss",$tieude, $slugtieude, $thumbnail, $motangan, $noidung, $tagnews, $nguon, $webnguontin, $thoigian, $id);
                 $result= mysqli_stmt_execute($stmt);
             }
             return $result;

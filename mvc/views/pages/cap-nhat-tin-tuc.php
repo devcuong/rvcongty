@@ -40,6 +40,10 @@
 			id="nguon-tin" name="nguon-tin" placeholder="Nguồn tin" value="<?php echo $row["nguon"] ?>">
 	</div>
 	<div class="form-group">
+		<label>Website Nguồn Tin</label> <input type="text" class="form-control"
+			id="web-nguon-tin" name="web-nguon-tin" placeholder="Nguồn tin" value="<?php echo $row["webnguon"] ?>">
+	</div>
+	<div class="form-group">
 		<label>Tag</label>
 		<input name="tag-news" id="tag-news" class="form-control" value="<?php echo $row["tagnews"] ?>">
 	</div>

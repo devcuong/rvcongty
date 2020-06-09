@@ -474,6 +474,7 @@ class QuanTri extends Controller
                 $motangan = "";
                 $noidungtin = "";
                 $nguontin = "";
+                $webnguontin = "";
                 $tagnews = "";
                 if (isset($_POST["tieu-de-tin-tuc"])) {
                     $tieudetintuc = trim($_POST["tieu-de-tin-tuc"]);
@@ -484,6 +485,9 @@ class QuanTri extends Controller
                 }
                 if (isset($_POST["nguon-tin"])) {
                     $nguontin = trim($_POST["nguon-tin"]);
+                }
+                if (isset($_POST["web-nguon-tin"])) {
+                    $webnguontin= trim($_POST["web-nguon-tin"]);
                 }
                 if (isset($_POST["tag-news"])) {
                     $tagnews = trim($_POST["tag-news"]);
@@ -507,7 +511,7 @@ class QuanTri extends Controller
                         $daco = $this->NewsModel->LayNewsBySlug($slugtieude);
                         if (mysqli_num_rows($daco) < 1) {
                             // Thêm tin tức
-                            $kq = $this->NewsModel->ThemNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin, $createdDate);
+                            $kq = $this->NewsModel->ThemNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin, $webnguontin,$createdDate);
                             if ($kq) {
                                 // View
                                 $this->view("admin-template", [
@@ -551,6 +555,7 @@ class QuanTri extends Controller
             $thumbnail = "";
             $noidungtin = "";
             $nguontin = "";
+            $webnguontin = "";
             $tagnews = "";
             $createddate = "";
             if (isset($_POST["tieu-de-tin-tuc"])) {
@@ -565,6 +570,9 @@ class QuanTri extends Controller
             }
             if (isset($_POST["nguon-tin"])) {
                 $nguontin = trim($_POST["nguon-tin"]);
+            }
+            if (isset($_POST["web-nguon-tin"])) {
+                $webnguontin = trim($_POST["web-nguon-tin"]);
             }
             if (isset($_POST["tag-news"])) {
                 $tagnews = trim($_POST["tag-news"]);
@@ -595,7 +603,7 @@ class QuanTri extends Controller
                 }
             }
             // cập nhật tin tức
-            $kq = $this->NewsModel->CapNhatNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin, $createddate, $idnews);
+            $kq = $this->NewsModel->CapNhatNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin,$webnguontin, $createddate, $idnews);
             if ($kq) {
                 // View
                 $this->view("admin-template", [

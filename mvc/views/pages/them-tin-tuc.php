@@ -36,6 +36,10 @@
 			id="nguon-tin" name="nguon-tin" placeholder="Nguồn tin">
 	</div>
 	<div class="form-group">
+		<label>Web Nguồn Tin</label> <input type="text" class="form-control"
+			id="web-nguon-tin" name="web-nguon-tin" placeholder="Website Nguồn tin">
+	</div>
+	<div class="form-group">
 		<label>Tag</label>
 		<input name="tag-news" id="tag-news" class="form-control">
 	</div>
