@@ -2067,12 +2067,16 @@ px
 					</div>
 				</form>
 			</div>
-			<?php if($data["Page"] == "news" || $data["Page"] == "news-detail" || $data["Page"] == "ket-qua-tim-kiem-tin-tuc" || $data["Page"] == "videos" || $data["Page"] == "video-show") {?>
+			<?php if($data["Page"] == "news" || $data["Page"] == "news-detail" || $data["Page"] == "tin-tuc-moi"|| $data["Page"] == "hr-insider"|| $data["Page"] == "ket-qua-tim-kiem-tin-tuc" || $data["Page"] == "videos" || $data["Page"] == "video-show") {?>
 			<div id="navMenu" class="navbar-menu">
 				<div class="navbar-end">
 					<a href="<?php echo $servername ?>/news/"
 						class="navbar-item <?php if($data["Page"] == "news") { echo "is-active";} else{ echo ""; }?>">Tin
-						tức</a> <a href="<?php echo $servername ?>/videos/"
+						tức</a>
+					<a href="<?php echo $servername ?>/news/tin-tuc-moi/"
+						class="navbar-item <?php if($data["Page"] == "tin-tuc-moi") { echo "is-active";} else{ echo ""; }?>">Tin
+						tức mới</a> 
+					<a href="<?php echo $servername ?>/news/hr-insider/"
 						class="navbar-item <?php if($data["Page"] == "hr-insider") { echo "is-active";} else{ echo ""; }?>">HR
 						Insider</a> <a href="<?php echo $servername ?>/videos/"
 						class="navbar-item <?php if($data["Page"] == "videos" || $data["Page"] == "video-show") { echo "is-active";} else{ echo ""; }?>">Videos</a>
