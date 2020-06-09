@@ -21,12 +21,12 @@ class News extends Controller
         $soTinTucBoQua = ($trangTinTucHienTai - 1) * $soTinTucMoiTrang;
         
         // Tất cả tin tức
-        $tatCaTinTuc = $this->NewsModel->TatCaNews();
+        $tatCaTinTuc = $this->NewsModel->LayNewsByLoaiNoLimit("NORMAL");
         $soTinTuc = mysqli_num_rows($tatCaTinTuc);
         $soTrang = ceil($soTinTuc/$soTinTucMoiTrang);
         
         // Lấy tin tức phân trang
-        $tinTucTrangHienTai = $this->NewsModel->LayNewsPhanTrang($soTinTucBoQua, $soTinTucMoiTrang);
+        $tinTucTrangHienTai = $this->NewsModel->LayNewsPhanTrangTheoLoai("NORMAL", $soTinTucBoQua, $soTinTucMoiTrang);
         
         // Lấy tin tức được xem nhiều nhất
         $tinTucXemNhieuNhat = $this->NewsModel->Lay8NewsXemNhieuNhat();
@@ -44,6 +44,47 @@ class News extends Controller
         
         $this->view("main-template", [
             "Page" => "tin-tuc-moi",
+            "Title" => $title,
+            "Description" => $description,
+            "NewsXemNhieuNhat"=>$tinTucXemNhieuNhat,
+            "NewsTrangHienTai" => $tinTucTrangHienTai,
+            "Navigate" => $nav
+        ]);
+    }
+    
+    function HrInsider(){
+        
+        $trangTinTucHienTai = 1;
+        $soTinTucMoiTrang = 15;
+        if (isset($_GET["page"])) {
+            $trangTinTucHienTai= $_GET["page"];
+        }
+        $soTinTucBoQua = ($trangTinTucHienTai - 1) * $soTinTucMoiTrang;
+        
+        // Tất cả tin tức
+        $tatCaTinTuc = $this->NewsModel->LayNewsByLoaiNoLimit("HR");
+        $soTinTuc = mysqli_num_rows($tatCaTinTuc);
+        $soTrang = ceil($soTinTuc/$soTinTucMoiTrang);
+        
+        // Lấy tin tức phân trang
+        $tinTucTrangHienTai = $this->NewsModel->LayNewsPhanTrangTheoLoai("HR", $soTinTucBoQua, $soTinTucMoiTrang);
+        
+        // Lấy tin tức được xem nhiều nhất
+        $tinTucXemNhieuNhat = $this->NewsModel->Lay8NewsXemNhieuNhat();
+        
+        // Tạo navigate phân trang
+        $server = new Server();
+        $string = new CutString();
+        $nav = $string->get_nav_render_videos($trangTinTucHienTai, $soTrang, $server->servername . "/news/tin-tuc-moi");
+        
+        // Title
+        $title = "CongTyTop";
+        
+        // Description
+        $description = "CongTyTop";
+        
+        $this->view("main-template", [
+            "Page" => "hr-insider",
             "Title" => $title,
             "Description" => $description,
             "NewsXemNhieuNhat"=>$tinTucXemNhieuNhat,

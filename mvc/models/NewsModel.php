@@ -14,11 +14,6 @@ class NewsModel extends DB{
             return mysqli_query($this->con, $qr);
         }
         
-        // Lấy tin tức phân trang
-//         public function LayNewsPhanTrang($soNewsBoQua, $soNewsMoiTrang){
-//             $qr = "SELECT * FROM news ORDER BY luotxem DESC LIMIT $soNewsBoQua, $soNewsMoiTrang";
-//             return mysqli_query($this->con, $qr);
-//         }
         
         // Lấy 5 tin tức mới nhất
         public function Lay5NewsMoiNhat(){
@@ -42,6 +37,12 @@ class NewsModel extends DB{
         public function LayNewsByLoai($loai, $sotin){
             $qr = "SELECT * FROM news WHERE loainews = '$loai' LIMIT $sotin";
             //return $qr;
+            return mysqli_query($this->con, $qr);
+        }
+        
+        // Lấy tin tức bằng loại tin không giới hạn số tin
+        public function LayNewsByLoaiNoLimit($loai){
+            $qr = "SELECT * FROM news WHERE loainews = '$loai'";
             return mysqli_query($this->con, $qr);
         }
         
@@ -78,6 +79,12 @@ class NewsModel extends DB{
         // Lấy news để phân trang
         public function LayNewsPhanTrang($soNewsBoQua, $newsMoiTrang){
             $qr = "SELECT * FROM news ORDER BY thoigian DESC LIMIT $soNewsBoQua, $newsMoiTrang" ;
+            return mysqli_query($this->con, $qr);
+        }
+        
+        // Lấy news để phân trang theo loại tin
+        public function LayNewsPhanTrangTheoLoai($loaiNews, $soNewsBoQua, $newsMoiTrang){
+            $qr = "SELECT * FROM news WHERE loainews = '$loaiNews' ORDER BY thoigian DESC LIMIT $soNewsBoQua, $newsMoiTrang" ;
             return mysqli_query($this->con, $qr);
         }
     

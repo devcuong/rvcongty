@@ -19,9 +19,12 @@
 $url = "https" . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 echo $url?>">
 <link rel="canonical" href="<?php echo $url ?>">
+<?php if(isset($data["StringSchema"])) {?>
 <script type="application/ld+json">
-<?php echo $data["StringSchema"]; ?>
+<?php echo $data["StringSchema"];?>
 </script>
+<?php } ?>
+
 <meta property="og:image"
 	content="<?php
 $url = "https" . "://$_SERVER[HTTP_HOST]";
@@ -192,6 +195,8 @@ a.white-link:hover {
 
 
 
+
+
 :not
 
 
@@ -199,7 +204,9 @@ a.white-link:hover {
 
 
 
+
  
+
 
 
 
@@ -214,7 +221,9 @@ a.white-link:hover {
 
 
 
+
  
+
 
 
 
@@ -236,7 +245,10 @@ margin-bottom
 
 
 
+
+
 :
+
 
 
 
@@ -250,8 +262,11 @@ margin-bottom
 
 
 
+
 0
 .8rem
+
+
 
 
 
@@ -433,13 +448,17 @@ margin-bottom
 
 
 
+
+
 :not
 
 
 
 
 
+
  
+
 
 
 
@@ -452,7 +471,9 @@ margin-bottom
 
 
 
+
  
+
 
 
 
@@ -470,13 +491,17 @@ margin-bottom
 
 
 
+
+
 :
 
 
 
 
 
+
  
+
 
 
 
@@ -489,7 +514,9 @@ px
 
 
 
+
  
+
 
 
 
@@ -497,6 +524,8 @@ px
 
 !
 important
+
+
 
 
 
@@ -820,10 +849,14 @@ important
 
 
 
+
+
 :not
 
 
+
  
+
 
 
 (
@@ -832,7 +865,9 @@ rows
 ]
 
 
+
  
+
 
 
 )
@@ -842,14 +877,20 @@ max-height
 
 
 
+
+
 :
+
 
 
  
 
 
+
 600
 px
+
+
 
 
 
@@ -860,14 +901,20 @@ min-height
 
 
 
+
+
 :
+
 
 
  
 
 
+
 120
 px
+
+
 
 
 
@@ -1013,7 +1060,11 @@ transform
 
 
 
+
+
 :rotate(360deg)
+
+
 
 
 
@@ -1101,13 +1152,17 @@ transform
 
 
 
+
+
 :not
 
 
 
 
 
+
  
+
 
 
 
@@ -1122,7 +1177,9 @@ rows
 
 
 
+
  
+
 
 
 
@@ -1141,7 +1198,10 @@ max-height
 
 
 
+
+
 :
+
 
 
 
@@ -1153,8 +1213,11 @@ max-height
 
 
 
+
 600
 px
+
+
 
 
 
@@ -1177,13 +1240,17 @@ min-height
 
 
 
+
+
 :
 
 
 
 
 
+
  
+
 
 
 
@@ -1203,8 +1270,12 @@ px
 
 
 
+
+
 }
 .select
+
+
 
 
 
@@ -1221,7 +1292,9 @@ px
 
 
 
+
  
+
 
 
 
@@ -1234,7 +1307,9 @@ px
 
 
 
+
  
+
 
 
 
@@ -1253,7 +1328,10 @@ height
 
 
 
+
+
 :
+
 
 
 
@@ -1265,8 +1343,11 @@ height
 
 
 
+
 2
 .25em
+
+
 
 
 
@@ -1285,7 +1366,9 @@ height
 
 
 
+
  
+
 
 
 
@@ -1302,13 +1385,17 @@ select
 
 
 
+
+
 :not
 
 
 
 
 
+
  
+
 
 
 
@@ -1323,7 +1410,9 @@ multiple
 
 
 
+
  
+
 
 
 
@@ -1342,7 +1431,10 @@ padding-right
 
 
 
+
+
 :
+
 
 
 
@@ -1354,8 +1446,11 @@ padding-right
 
 
 
+
 2
 .5em
+
+
 
 
 
@@ -1402,13 +1497,17 @@ padding-right
 
 
 
+
+
 :not
 
 
 
 
 
+
  
+
 
 
 
@@ -1421,7 +1520,9 @@ padding-right
 
 
 
+
  
+
 
 
 
@@ -1440,7 +1541,10 @@ margin-bottom
 
 
 
+
+
 :
+
 
 
 
@@ -1452,7 +1556,10 @@ margin-bottom
 
 
 
+
 .75rem
+
+
 
 
 
@@ -1550,7 +1657,9 @@ margin-bottom
 .col-top-right
 
 
+
  
+
 
 
 .news-right
@@ -1558,17 +1667,23 @@ margin-bottom
 
 
 
+
+
 :not
 
 
+
  
+
 
 
 (
 :last-child
 
 
+
  
+
 
 
 )
@@ -1578,26 +1693,36 @@ border-bottom
 
 
 
+
+
 :
 
 
+
  
+
 
 
 1
 px
 
 
+
  
+
 
 
 dashed
 
 
+
  
 
 
+
 #ddd
+
+
 
 
 
@@ -1613,17 +1738,23 @@ dashed
 
 
 
+
+
 :not
 
 
+
  
+
 
 
 (
 :last-child
 
 
+
  
+
 
 
 )
@@ -1633,14 +1764,20 @@ margin-bottom
 
 
 
+
+
 :
+
 
 
  
 
 
+
 10
 px
+
+
 
 
 
@@ -1935,10 +2072,9 @@ px
 				<div class="navbar-end">
 					<a href="<?php echo $servername ?>/news/"
 						class="navbar-item <?php if($data["Page"] == "news") { echo "is-active";} else{ echo ""; }?>">Tin
-						tức</a> 
-					<a href="<?php echo $servername ?>/videos/"
-						class="navbar-item <?php if($data["Page"] == "hr-insider") { echo "is-active";} else{ echo ""; }?>">HR Insider</a>
-					<a href="<?php echo $servername ?>/videos/"
+						tức</a> <a href="<?php echo $servername ?>/videos/"
+						class="navbar-item <?php if($data["Page"] == "hr-insider") { echo "is-active";} else{ echo ""; }?>">HR
+						Insider</a> <a href="<?php echo $servername ?>/videos/"
 						class="navbar-item <?php if($data["Page"] == "videos" || $data["Page"] == "video-show") { echo "is-active";} else{ echo ""; }?>">Videos</a>
 				</div>
 			</div>
