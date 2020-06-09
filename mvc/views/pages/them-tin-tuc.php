@@ -40,6 +40,15 @@
 			id="web-nguon-tin" name="web-nguon-tin" placeholder="Website Nguồn tin">
 	</div>
 	<div class="form-group">
+		<label>Loại tin</label>
+		<div class="custom-select" style="width: 200px;">
+			<select name="loai-tin" id="loai-tin">
+				<option value="HR">NORMAL</option>
+				<option value="HR">HR</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
 		<label>Tag</label>
 		<input name="tag-news" id="tag-news" class="form-control">
 	</div>

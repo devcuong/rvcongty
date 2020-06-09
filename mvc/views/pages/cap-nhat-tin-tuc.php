@@ -40,8 +40,17 @@
 			id="nguon-tin" name="nguon-tin" placeholder="Nguồn tin" value="<?php echo $row["nguon"] ?>">
 	</div>
 	<div class="form-group">
-		<label>Website Nguồn Tin</label> <input type="text" class="form-control"
+		<label>Web Nguồn Tin</label> <input type="text" class="form-control"
 			id="web-nguon-tin" name="web-nguon-tin" placeholder="Nguồn tin" value="<?php echo $row["webnguon"] ?>">
+	</div>
+	<div class="form-group">
+		<label>Loại tin</label>
+		<div class="custom-select" style="width: 200px;">
+			<select name="loai-tin" id="loai-tin">
+				<option value="HR" <?php if($row["webnguon"] == "NORMAL") echo "selected" ?>>NORMAL</option>
+				<option value="HR" <?php if($row["webnguon"] == "HR") echo "selected" ?>>HR</option>
+			</select>
+		</div>
 	</div>
 	<div class="form-group">
 		<label>Tag</label>
