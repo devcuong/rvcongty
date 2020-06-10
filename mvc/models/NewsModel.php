@@ -124,7 +124,7 @@ class NewsModel extends DB{
             if(!mysqli_stmt_prepare($stmt, $qr)){
                 echo "SQL statement failed";
             }else{
-                mysqli_stmt_bind_param($stmt, "ssssssssss",$tieude, $slugtieude, $thumbnail, $motangan, $noidung, $tagnews, $nguon, $webnguontin, $loaitin, $thoigian, $id);
+                mysqli_stmt_bind_param($stmt, "sssssssssss",$tieude, $slugtieude, $thumbnail, $motangan, $noidung, $tagnews, $nguon, $webnguontin, $loaitin, $thoigian, $id);
                 $result= mysqli_stmt_execute($stmt);
             }
             return $result;

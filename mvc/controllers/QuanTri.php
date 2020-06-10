@@ -488,7 +488,10 @@ class QuanTri extends Controller
                     $nguontin = trim($_POST["nguon-tin"]);
                 }
                 if (isset($_POST["web-nguon-tin"])) {
-                    $webnguontin= trim($_POST["web-nguon-tin"]);
+                    $webnguontin = trim($_POST["web-nguon-tin"]);
+                }
+                if (isset($_POST["loai-tin"])) {
+                    $loaitin = trim($_POST["loai-tin"]);
                 }
                 if (isset($_POST["tag-news"])) {
                     $tagnews = trim($_POST["tag-news"]);
@@ -500,7 +503,12 @@ class QuanTri extends Controller
                     
                     // Nếu file upload không bị lỗi,
                     if ($_FILES['thumbnail']['error'] > 0) {
-                        echo 'File Upload Bị Lỗi';
+                        if(isset($_POST["hidden-thumbnail"])){
+                            $thumbnail = $_POST["hidden-thumbnail"];
+                        }else{
+                            echo 'File Upload Bị Lỗi';
+                        }
+                        
                     } else {
                         $thumbnail = $_FILES['thumbnail']['name'];
                         $duongDanHinhAnh = 'mvc/public/asset/news/' . $thumbnail;
@@ -512,7 +520,7 @@ class QuanTri extends Controller
                         $daco = $this->NewsModel->LayNewsBySlug($slugtieude);
                         if (mysqli_num_rows($daco) < 1) {
                             // Thêm tin tức
-                            $kq = $this->NewsModel->ThemNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin, $webnguontin,$createdDate);
+                            $kq = $this->NewsModel->ThemNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin, $webnguontin, $loaitin, $createdDate);
                             if ($kq) {
                                 // View
                                 $this->view("admin-template", [
@@ -557,6 +565,7 @@ class QuanTri extends Controller
             $noidungtin = "";
             $nguontin = "";
             $webnguontin = "";
+            $loaitin="";
             $tagnews = "";
             $createddate = "";
             if (isset($_POST["tieu-de-tin-tuc"])) {
@@ -585,7 +594,11 @@ class QuanTri extends Controller
                 // echo $_FILES['thumbnail']['name'];
                 // Nếu file upload không bị lỗi,
                 if ($_FILES['thumbnail']['error'] > 0) {
-                    echo 'File Upload Bị Lỗi';
+                    if(isset($_POST["hidden-thumbnail"])){
+                        $thumbnail = $_POST["hidden-thumbnail"];
+                    }else{
+                        echo 'File Upload Bị Lỗi';
+                    }
                 } else {
                     $thumbnail = $_FILES['thumbnail']['name'];
                     $duongDanHinhAnh = 'mvc/public/asset/news/' . $thumbnail;
@@ -604,7 +617,7 @@ class QuanTri extends Controller
                 }
             }
             // cập nhật tin tức
-            $kq = $this->NewsModel->CapNhatNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin,$webnguontin, $createddate, $idnews);
+            $kq = $this->NewsModel->CapNhatNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin,$webnguontin, $loaitin, $createddate, $idnews);
             if ($kq) {
                 // View
                 $this->view("admin-template", [
