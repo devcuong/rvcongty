@@ -102,29 +102,29 @@ class NewsModel extends DB{
         }
     
         /*THÊM TIN TỨC*/
-        public function ThemNews($tieude, $slugtieude, $thumbnail,$motangan, $noidung, $tagnews ,$nguon, $webnguontin, $thoigian) {
-            $qr= "INSERT INTO news (tieude, slugtieude, thumbnail, motangan,noidung, tagnews ,nguon, webnguon, thoigian) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        public function ThemNews($tieude, $slugtieude, $thumbnail,$motangan, $noidung, $tagnews ,$nguon, $webnguontin, $loaitin, $thoigian) {
+            $qr= "INSERT INTO news (tieude, slugtieude, thumbnail, motangan,noidung, tagnews ,nguon, webnguon, loainews, thoigian) VALUES(?, ?, ?, ?, ?, ?, ?, ?,?,?)";
             $stmt = mysqli_stmt_init($this->con);
             $result = 0;
             //echo $result;
             if(!mysqli_stmt_prepare($stmt, $qr)){
                 $result = "SQL statement failed";
             }else{
-                mysqli_stmt_bind_param($stmt, "ssssssss", $tieude, $slugtieude, $thumbnail,$motangan,$noidung, $tagnews, $nguon, $webnguontin, $thoigian);
+                mysqli_stmt_bind_param($stmt, "ssssssssss", $tieude, $slugtieude, $thumbnail,$motangan,$noidung, $tagnews, $nguon, $webnguontin, $loaitin, $thoigian);
                 $result = mysqli_stmt_execute($stmt);
             }
             return $qr;
         }
         /* CẬP NHẬT NEWS */
         // Update reply có sẵn
-        public function CapNhatNews($tieude, $slugtieude, $thumbnail,$motangan, $noidung, $tagnews ,$nguon,$webnguontin, $thoigian, $id){
-            $qr = "UPDATE news SET tieude = ?, slugtieude = ?, thumbnail = ?, motangan = ?, noidung = ?, tagnews = ?, nguon = ?, webnguon = ?, thoigian = ? WHERE id = ?";
+        public function CapNhatNews($tieude, $slugtieude, $thumbnail,$motangan, $noidung, $tagnews ,$nguon,$webnguontin,$loaitin, $thoigian, $id){
+            $qr = "UPDATE news SET tieude = ?, slugtieude = ?, thumbnail = ?, motangan = ?, noidung = ?, tagnews = ?, nguon = ?, webnguon = ?, loainews = ?, thoigian = ? WHERE id = ?";
             $stmt = mysqli_stmt_init($this->con);
             $result = 0;
             if(!mysqli_stmt_prepare($stmt, $qr)){
                 echo "SQL statement failed";
             }else{
-                mysqli_stmt_bind_param($stmt, "ssssssssss",$tieude, $slugtieude, $thumbnail, $motangan, $noidung, $tagnews, $nguon, $webnguontin, $thoigian, $id);
+                mysqli_stmt_bind_param($stmt, "ssssssssss",$tieude, $slugtieude, $thumbnail, $motangan, $noidung, $tagnews, $nguon, $webnguontin, $loaitin, $thoigian, $id);
                 $result= mysqli_stmt_execute($stmt);
             }
             return $result;

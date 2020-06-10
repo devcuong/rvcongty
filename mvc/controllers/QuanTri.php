@@ -475,6 +475,7 @@ class QuanTri extends Controller
                 $noidungtin = "";
                 $nguontin = "";
                 $webnguontin = "";
+                $loaitin = "";
                 $tagnews = "";
                 if (isset($_POST["tieu-de-tin-tuc"])) {
                     $tieudetintuc = trim($_POST["tieu-de-tin-tuc"]);

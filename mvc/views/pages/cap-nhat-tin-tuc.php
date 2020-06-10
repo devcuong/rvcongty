@@ -47,8 +47,8 @@
 		<label>Loại tin</label>
 		<div class="custom-select" style="width: 200px;">
 			<select name="loai-tin" id="loai-tin">
-				<option value="HR" <?php if($row["webnguon"] == "NORMAL") echo "selected" ?>>NORMAL</option>
-				<option value="HR" <?php if($row["webnguon"] == "HR") echo "selected" ?>>HR</option>
+				<option value="HR" <?php if($row["loainews"] == "NORMAL") echo "selected" ?>>NORMAL</option>
+				<option value="HR" <?php if($row["loainews"] == "HR") echo "selected" ?>>HR</option>
 			</select>
 		</div>
 	</div>
