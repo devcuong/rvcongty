@@ -150,6 +150,7 @@
 							src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $AllKetQua["thumbnail"]?>"
 							alt="<?php echo $AllKetQua["tieude"] ?>">
 						</a>
+						
 						<div class="media-body">
 							<h4 class="news-desc"><?php echo $AllKetQua["motangan"] ?></h4>
 						</div>
