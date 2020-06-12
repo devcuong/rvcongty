@@ -190,7 +190,7 @@ while ($row = mysqli_fetch_array($data["News"])) {
     ?>
 <nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs">
 	<ul>
-		<li><a href="/"> <span class="icon is-small"> <i class="fas fa-home"
+		<li><a href="<?php echo $servername ?>"> <span class="icon is-small"> <i class="fas fa-home"
 					aria-hidden="true"></i>
 			</span> <span>Trang chủ</span>
 		</a></li>

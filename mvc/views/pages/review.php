@@ -4,7 +4,7 @@ while ($row = mysqli_fetch_array($data["Review"])) {
 <nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs">
     <ul>
         <li>
-            <a href="/">
+            <a href="<?php echo $servername ?>">
                 <span class="icon is-small">
                     <i class="fas fa-home" aria-hidden="true"></i>
                 </span>
