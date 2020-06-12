@@ -1983,6 +1983,10 @@ px
     -webkit-box-flex: 1;
     flex: 1;
 }
+.news .news-img {
+	width: 150px;
+	margin-right: .625rem;
+}
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async

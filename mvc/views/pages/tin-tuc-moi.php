@@ -27,11 +27,6 @@
 	margin-right: 3px;
 }
 
-.news .news-img {
-	width: 450px;
-	margin-right: .625rem;
-}
-
 .news .news-img>img {
 	max-width: 100%;
 }
