@@ -392,6 +392,10 @@ class QuanTri extends Controller
             if ($kq2) {
                 $kt = true;
             }
+            $congTyUpdate = $this->CongTyModel->LayCongTyBangId($congty);
+            $luotDanhGia = 0;
+            $tongSao = 0;
+            $rate = 0;
             $kq3 = $this->CongTyModel->UpdateRateCongTyXoaReview($congty, $rate);
             echo $kq3;
             if ($kq3) {
