@@ -589,6 +589,9 @@ class QuanTri extends Controller
             if (isset($_POST["web-nguon-tin"])) {
                 $webnguontin = trim($_POST["web-nguon-tin"]);
             }
+            if(isset($_POST["loai-tin"])){
+                $loaitin = trim($_POST["loai-tin"]);
+            }
             if (isset($_POST["tag-news"])) {
                 $tagnews = trim($_POST["tag-news"]);
             }
