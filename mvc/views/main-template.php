@@ -1794,7 +1794,7 @@ px
 }
 
 .news-right .news-right-img {
-	width: 150px;
+	width: 100px;
 	margin-right: 0.625rem;
 }
 
@@ -1976,6 +1976,12 @@ px
 
 .hidden {
 	display: none;
+}
+/*News Item*/
+.media-body {
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->

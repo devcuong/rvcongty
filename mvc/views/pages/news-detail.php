@@ -156,7 +156,7 @@
 }
 
 .news-right .news-right-img {
-	width: 150px;
+	width: 100px;
 	margin-right: 0.625rem;
 }
 
@@ -190,8 +190,8 @@ while ($row = mysqli_fetch_array($data["News"])) {
     ?>
 <nav class="breadcrumb m-b-10 m-t-10" aria-label="breadcrumbs">
 	<ul>
-		<li><a href="<?php echo $servername ?>"> <span class="icon is-small"> <i class="fas fa-home"
-					aria-hidden="true"></i>
+		<li><a href="<?php echo $servername ?>"> <span class="icon is-small">
+					<i class="fas fa-home" aria-hidden="true"></i>
 			</span> <span>Trang chủ</span>
 		</a></li>
 		<li><a href="<?php echo $servername ?>/news/"> <span>News</span>
