@@ -393,6 +393,7 @@ class QuanTri extends Controller
                 $kt = true;
             }
             $kq3 = $this->CongTyModel->UpdateRateCongTyXoaReview($congty, $rate);
+            echo $kq3;
             if ($kq3) {
                 $kt = true;
             }

@@ -68,7 +68,7 @@ class CongTyModel extends DB{
         }
         // Update rate công ty giảm
         public function UpdateRateCongTyXoaReview($iD, $score){
-            $qr = "UPDATE congty SET luotdanhgian = luotdanhgia - 1, tongsao = tongsao + $score, rate = tongsao/luotdanhgia WHERE id = $iD";
+            $qr = "UPDATE congty SET luotdanhgia = luotdanhgia - 1, tongsao = tongsao - $score, rate = tongsao/luotdanhgia WHERE id = $iD";
             $result = false;
             if(mysqli_query($this->con, $qr)){
                 $result = true;
