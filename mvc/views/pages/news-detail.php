@@ -184,36 +184,40 @@
 .news-posted i {
 	margin-right: 3px;
 }
+
 .tags-container {
 	display: inline-block;
-    margin-top: 12px;
-    width: auto;
+	margin-top: 12px;
+	width: auto;
 }
+
 .tags-container .tags-wrapper::before {
 	color: #FF4000;
-    display: inline;
-    content: "Từ khóa:";
-    float: left;
-    margin-right: 4px;
-    font-size: 13px;
-    margin-top: 4px;
-    line-height: 15px;
+	display: inline;
+	content: "Từ khóa:";
+	float: left;
+	margin-right: 4px;
+	font-size: 13px;
+	margin-top: 4px;
+	line-height: 15px;
 }
 
 .tags-container .tags-wrapper .tags-item {
-    float: left;
-    margin-right: 4px;
-    width: auto !important;
+	float: left;
+	margin-right: 4px;
+	width: auto !important;
 }
+
 .tags-container .tags-wrapper .tags-item a {
-    color: #6e6e6e;
-    background-color: initial;
-    font-size: 13px;
-    padding: 0;
+	color: #6e6e6e;
+	background-color: initial;
+	font-size: 13px;
+	padding: 0;
 }
+
 .tags-container .tags-wrapper .tags-item a:after {
-    display: inline;
-    content: ',';
+	display: inline;
+	content: ',';
 }
 </style>
 <?php
@@ -259,9 +263,12 @@ while ($row = mysqli_fetch_array($data["News"])) {
 				<?php }?>
 			</ul>
 			<div class="detail-news-body detail-content clearfix" id="qcbody">
-			<?php echo $row["motangan"] ?>
-			<figure class="image"><img alt="" src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row['thumbnail']?>"></figure>
-			<?php echo $row["noidung"] ?>
+			<?php echo $row["motangan"]?>
+			<figure class="image">
+					<img alt="<?php echo $row["tieude"] ?>"
+						src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row['thumbnail']?>">
+				</figure>
+			<?php echo $row["noidung"]?>
 			</div>
 			<p class="text-right end-social-fixed">Nguồn: <?php echo $row["nguon"] ?></p>
 			<div class="call-to-like">
@@ -286,16 +293,18 @@ while ($row = mysqli_fetch_array($data["News"])) {
 			</div>
 			<div class="tags-container">
 				<ul class="tags-wrapper">
-					<li class="tags-item"><a href="/tong-lien-doan-lao-dong.html"
-						title="tổng liên đoàn lao động">Tổng liên đoàn lao động</a></li>
-					<li class="tags-item"><a href="/nguoi-lao-dong.html"
-						title="người lao động">Người lao động</a></li>
-					<li class="tags-item"><a href="/ho-tro-nguoi-lao-dong.html"
-						title="hỗ trợ người lao động">Hỗ trợ người lao động</a></li>
-					<li class="tags-item"><a href="/tien-ho-tro.html"
-						title="tiền hỗ trợ">Tiền hỗ trợ</a></li>
-					<li class="tags-item"><a href="/ho-tro.html" title="hỗ trợ">Hỗ trợ</a></li>
-					<li class="tags-item"><a href="/covid-19.html" title="covid-19">Covid-19</a></li>
+				<?php
+    
+    $tagNews = $row["tagnews"];
+    $listTagNews = explode(",", $tagNews);
+    ?>
+				<?php
+    for ($x = 0; $x < count($listTagNews); $x ++) {
+        ?>
+    
+					<li class="tags-item"><a href="<?php echo $servername ?>/tim-kiem/news&keysearch=<?php echo trim($listTagNews[$x]); ?>"
+						title="<?php echo trim($listTagNews[$x]); ?>"><?php echo trim($listTagNews[$x]); ?></a></li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>
