@@ -616,7 +616,6 @@ class QuanTri extends Controller
                     // Upload file
                     move_uploaded_file($_FILES['thumbnail']['tmp_name'], $duongDanHinhAnh);
                     
-                    $createddate = date("Y-m-d H:i:s");
                 }
             }
             if ("" == $thumbnail) {
@@ -624,6 +623,9 @@ class QuanTri extends Controller
                     $thumbnail = trim($_POST['hidden-thumbnail']);
                 }
             }
+            
+            $createddate = date("Y-m-d H:i:s");
+            
             // cập nhật tin tức
             $kq = $this->NewsModel->CapNhatNews($tieudetintuc, $slugtieude, $thumbnail, $motangan, $noidungtin, $tagnews, $nguontin,$webnguontin, $loaitin, $createddate, $idnews);
             if ($kq) {
