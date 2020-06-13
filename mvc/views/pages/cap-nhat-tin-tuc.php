@@ -32,7 +32,11 @@
 		<textarea class="form-control" id="noi-dung-tin" name="noi-dung-tin"
 			placeholder="Nội dung tin"><?php echo $row["noidung"] ?></textarea>
 		<script>
-                CKEDITOR.replace( 'noi-dung-tin' );
+                CKEDITOR.replace( 'noi-dung-tin',{
+                    enterMode: CKEDITOR.ENTER_BR,
+                    shiftEnterMode: CKEDITOR.ENTER_BR,
+                    language: 'vi'
+                 } );
         </script>
 	</div>
 	<div class="form-group">
