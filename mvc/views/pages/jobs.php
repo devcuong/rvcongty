@@ -13,8 +13,8 @@
 	position: relative;
 	width: 20%;
 	padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 20px;
+	padding-right: 10px;
+	margin-bottom: 20px;
 	border-top: 0px !important;
 	margin-top: 0px !important;
 	padding-top: 1rem;
@@ -24,6 +24,10 @@
 	-ms-flex-align: start;
 	-webkit-box-align: start;
 	align-items: flex-start;
+}
+
+.job-wraper .job-item:hover {
+	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1)
 }
 
 .job-wraper .job-item {
@@ -71,9 +75,9 @@
 	height: 40px;
 	overflow: hidden;
 	line-height: 18px;
-    letter-spacing: normal;
-    margin-bottom: 0;
-    text-transform: none;
+	letter-spacing: normal;
+	margin-bottom: 0;
+	text-transform: none;
 }
 
 .job-item .content-item-company {
@@ -102,10 +106,8 @@
 		<div class="job-wraper">
 			<div class="job-item">
 				<div class="job-image">
-					<a
-						href="#"
-						title="Construction Manager" target="_blank"><div class="bg-image"
-							role="img"
+					<a href="#" title="Construction Manager" target="_blank"><div
+							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
 							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
 					</a>
@@ -113,9 +115,7 @@
 				<div class="content">
 					<div class="job-desc">
 						<div class="heading">
-							<a
-								href="#"
-								title="Construction Manager" target="_blank">Construction
+							<a href="#" title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
 						<div class="content-item content-item-company"
@@ -140,10 +140,8 @@
 		<div class="job-wraper">
 			<div class="job-item">
 				<div class="job-image">
-					<a
-						href="#"
-						title="Construction Manager" target="_blank"><div class="bg-image"
-							role="img"
+					<a href="#" title="Construction Manager" target="_blank"><div
+							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
 							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
 					</a>
@@ -151,9 +149,7 @@
 				<div class="content">
 					<div class="job-desc">
 						<div class="heading">
-							<a
-								href="#"
-								title="Construction Manager" target="_blank">Construction
+							<a href="#" title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
 						<div class="content-item content-item-company"
@@ -178,10 +174,8 @@
 		<div class="job-wraper">
 			<div class="job-item">
 				<div class="job-image">
-					<a
-						href="#"
-						title="Construction Manager" target="_blank"><div class="bg-image"
-							role="img"
+					<a href="#" title="Construction Manager" target="_blank"><div
+							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
 							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
 					</a>
@@ -189,9 +183,7 @@
 				<div class="content">
 					<div class="job-desc">
 						<div class="heading">
-							<a
-								href="#"
-								title="Construction Manager" target="_blank">Construction
+							<a href="#" title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
 						<div class="content-item content-item-company"
@@ -216,10 +208,8 @@
 		<div class="job-wraper">
 			<div class="job-item">
 				<div class="job-image">
-					<a
-						href="#"
-						title="Construction Manager" target="_blank"><div class="bg-image"
-							role="img"
+					<a href="#" title="Construction Manager" target="_blank"><div
+							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
 							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
 					</a>
@@ -227,9 +217,7 @@
 				<div class="content">
 					<div class="job-desc">
 						<div class="heading">
-							<a
-								href="#"
-								title="Construction Manager" target="_blank">Construction
+							<a href="#" title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
 						<div class="content-item content-item-company"
@@ -254,10 +242,8 @@
 		<div class="job-wraper">
 			<div class="job-item">
 				<div class="job-image">
-					<a
-						href="#"
-						title="Construction Manager" target="_blank"><div class="bg-image"
-							role="img"
+					<a href="#" title="Construction Manager" target="_blank"><div
+							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
 							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
 					</a>
@@ -265,9 +251,7 @@
 				<div class="content">
 					<div class="job-desc">
 						<div class="heading">
-							<a
-								href="#"
-								title="Construction Manager" target="_blank">Construction
+							<a href="#" title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
 						<div class="content-item content-item-company"
@@ -292,10 +276,8 @@
 		<div class="job-wraper">
 			<div class="job-item">
 				<div class="job-image">
-					<a
-						href="#"
-						title="Construction Manager" target="_blank"><div class="bg-image"
-							role="img"
+					<a href="#" title="Construction Manager" target="_blank"><div
+							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
 							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
 					</a>
@@ -303,9 +285,7 @@
 				<div class="content">
 					<div class="job-desc">
 						<div class="heading">
-							<a
-								href="#"
-								title="Construction Manager" target="_blank">Construction
+							<a href="#" title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
 						<div class="content-item content-item-company"
