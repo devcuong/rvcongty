@@ -116,7 +116,7 @@
 .all-ribbon {
     position: absolute;
     top: 0;
-    left: 10px;
+    left: 0px;
     filter: drop-shadow(2px 0px 1px rgba(0, 0, 0, 0.5));
 }
 
