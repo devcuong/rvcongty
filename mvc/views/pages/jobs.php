@@ -1,23 +1,330 @@
 <style>
 .job-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-left: -10px;
-    margin-right: -10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
-.job-item {
-    position: relative;
-    width: 20%;
-	background: blue;
+
+.job-wraper {
+	flex-shrink: 0;
+	height: 100%;
+	position: relative;
+	width: 20%;
+	padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+	border-top: 0px !important;
+	margin-top: 0px !important;
+	padding-top: 1rem;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-ms-flex-align: start;
+	-webkit-box-align: start;
+	align-items: flex-start;
+}
+
+.job-wraper .job-item {
+	width: 100%;
+}
+
+.job-item .job-image {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.job-item .bg-image {
+	width: 100%;
+	height: 100px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.job-item .content {
+	color: #333;
+	padding: 12px;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.job-item .job-image>a {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.job-item .content-item {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 2px;
+}
+
+.job-item .heading {
+	font-size: 15px;
+	font-weight: 600;
+	height: 40px;
+	overflow: hidden;
+	line-height: 18px;
+    letter-spacing: normal;
+    margin-bottom: 0;
+    text-transform: none;
+}
+
+.job-item .content-item-company {
+	color: #333;
+	font-weight: 600;
+}
+
+.job-item .content-item-location {
+	color: #666;
+}
+
+.job-item .salary {
+	color: #f7941d;
+	font-weight: 500;
+	font-size: inherit;
+	line-height: 19px;
+	text-decoration: none;
+}
+
+.job-item .salary a {
+	color: inherit;
 }
 </style>
-<div class="job-list">
-	<div class="job-item">a</div>
-	<div class="job-item">b</div>
-	<div class="job-item">c</div>
-	<div class="job-item">d</div>
-	<div class="job-item">d</div>
+<div class="job-container">
+	<div class="job-list">
+		<div class="job-wraper">
+			<div class="job-item">
+				<div class="job-image">
+					<a
+						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						title="Construction Manager" target="_blank"><div class="bg-image"
+							role="img"
+							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+					</a>
+				</div>
+				<div class="content">
+					<div class="job-desc">
+						<div class="heading">
+							<a
+								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								title="Construction Manager" target="_blank">Construction
+								Manager</a>
+						</div>
+						<div class="content-item content-item-company"
+							title="Jotun Paints (Vietnam) Co., Ltd.">Jotun Paints (Vietnam)
+							Co., Ltd.</div>
+						<div class="content-item content-item-location"
+							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
+						<div class="content-item">
+							<div class="salary">
+								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
+									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+							</div>
+						</div>
+						<div class="content-action">
+							<div class="content-item content-item-expiredDate"
+								title="Hết hạn trong 17 ngày">Hết hạn trong 17 ngày</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="job-wraper">
+			<div class="job-item">
+				<div class="job-image">
+					<a
+						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						title="Construction Manager" target="_blank"><div class="bg-image"
+							role="img"
+							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+					</a>
+				</div>
+				<div class="content">
+					<div class="job-desc">
+						<div class="heading">
+							<a
+								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								title="Construction Manager" target="_blank">Construction
+								Manager</a>
+						</div>
+						<div class="content-item content-item-company"
+							title="Jotun Paints (Vietnam) Co., Ltd.">Jotun Paints (Vietnam)
+							Co., Ltd.</div>
+						<div class="content-item content-item-location"
+							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
+						<div class="content-item">
+							<div class="salary">
+								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
+									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+							</div>
+						</div>
+						<div class="content-action">
+							<div class="content-item content-item-expiredDate"
+								title="Hết hạn trong 17 ngày">Hết hạn trong 17 ngày</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="job-wraper">
+			<div class="job-item">
+				<div class="job-image">
+					<a
+						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						title="Construction Manager" target="_blank"><div class="bg-image"
+							role="img"
+							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+					</a>
+				</div>
+				<div class="content">
+					<div class="job-desc">
+						<div class="heading">
+							<a
+								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								title="Construction Manager" target="_blank">Construction
+								Manager</a>
+						</div>
+						<div class="content-item content-item-company"
+							title="Jotun Paints (Vietnam) Co., Ltd.">Jotun Paints (Vietnam)
+							Co., Ltd.</div>
+						<div class="content-item content-item-location"
+							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
+						<div class="content-item">
+							<div class="salary">
+								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
+									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+							</div>
+						</div>
+						<div class="content-action">
+							<div class="content-item content-item-expiredDate"
+								title="Hết hạn trong 17 ngày">Hết hạn trong 17 ngày</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="job-wraper">
+			<div class="job-item">
+				<div class="job-image">
+					<a
+						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						title="Construction Manager" target="_blank"><div class="bg-image"
+							role="img"
+							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+					</a>
+				</div>
+				<div class="content">
+					<div class="job-desc">
+						<div class="heading">
+							<a
+								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								title="Construction Manager" target="_blank">Construction
+								Manager</a>
+						</div>
+						<div class="content-item content-item-company"
+							title="Jotun Paints (Vietnam) Co., Ltd.">Jotun Paints (Vietnam)
+							Co., Ltd.</div>
+						<div class="content-item content-item-location"
+							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
+						<div class="content-item">
+							<div class="salary">
+								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
+									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+							</div>
+						</div>
+						<div class="content-action">
+							<div class="content-item content-item-expiredDate"
+								title="Hết hạn trong 17 ngày">Hết hạn trong 17 ngày</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="job-wraper">
+			<div class="job-item">
+				<div class="job-image">
+					<a
+						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						title="Construction Manager" target="_blank"><div class="bg-image"
+							role="img"
+							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+					</a>
+				</div>
+				<div class="content">
+					<div class="job-desc">
+						<div class="heading">
+							<a
+								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								title="Construction Manager" target="_blank">Construction
+								Manager</a>
+						</div>
+						<div class="content-item content-item-company"
+							title="Jotun Paints (Vietnam) Co., Ltd.">Jotun Paints (Vietnam)
+							Co., Ltd.</div>
+						<div class="content-item content-item-location"
+							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
+						<div class="content-item">
+							<div class="salary">
+								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
+									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+							</div>
+						</div>
+						<div class="content-action">
+							<div class="content-item content-item-expiredDate"
+								title="Hết hạn trong 17 ngày">Hết hạn trong 17 ngày</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="job-wraper">
+			<div class="job-item">
+				<div class="job-image">
+					<a
+						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						title="Construction Manager" target="_blank"><div class="bg-image"
+							role="img"
+							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+					</a>
+				</div>
+				<div class="content">
+					<div class="job-desc">
+						<div class="heading">
+							<a
+								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								title="Construction Manager" target="_blank">Construction
+								Manager</a>
+						</div>
+						<div class="content-item content-item-company"
+							title="Jotun Paints (Vietnam) Co., Ltd.">Jotun Paints (Vietnam)
+							Co., Ltd.</div>
+						<div class="content-item content-item-location"
+							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
+						<div class="content-item">
+							<div class="salary">
+								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
+									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+							</div>
+						</div>
+						<div class="content-action">
+							<div class="content-item content-item-expiredDate"
+								title="Hết hạn trong 17 ngày">Hết hạn trong 17 ngày</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
