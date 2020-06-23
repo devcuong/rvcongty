@@ -219,6 +219,15 @@
 	display: inline;
 	content: ',';
 }
+.news-description{
+	margin-bottom: 1rem;
+	font-weight: 600;
+    font-style: italic; 
+}
+.image-news{
+	margin-bottom: 1rem;
+	width:100%;
+}
 </style>
 <?php
 while ($row = mysqli_fetch_array($data["News"])) {
@@ -263,8 +272,10 @@ while ($row = mysqli_fetch_array($data["News"])) {
 				<?php }?>
 			</ul>
 			<div class="detail-news-body detail-content clearfix" id="qcbody">
+			<div class="news-description">
 			<?php echo $row["motangan"]?>
-			<figure class="image">
+			</div>
+			<figure class="image-news">
 					<img alt="<?php echo $row["tieude"] ?>"
 						src="<?php echo $servername ?>/mvc/public/asset/news/<?php echo $row['thumbnail']?>">
 				</figure>
