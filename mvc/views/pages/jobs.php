@@ -35,6 +35,18 @@
 	border: 1px solid #e4e4e4;
 }
 
+@media screen and (max-width: 769px) {
+	.job-wraper {
+		width: 100%;
+	}
+}
+
+@media ( min-width : 768px) and (max-width: 1024px) {
+	.job-wraper {
+		width: 50%;
+	}
+}
+
 .job-item .job-image {
 	position: relative;
 	display: flex;
@@ -100,6 +112,26 @@
 .job-item .salary a {
 	color: inherit;
 }
+
+.all-ribbon {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    filter: drop-shadow(2px 0px 1px rgba(0, 0, 0, 0.5));
+}
+
+.ribbon-product {
+    background: rgba(255, 255, 255, 1);
+    min-height: 50px;
+}
+
+.ribbon-end {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 100px 0 0;
+    border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
+}
 </style>
 <div class="job-container">
 	<div class="job-list">
@@ -125,8 +157,52 @@
 							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
 						<div class="content-item">
 							<div class="salary">
-								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
-									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+								<a href="#" title="Đăng nhập để xem lương">Đăng nhập để xem
+									lương</a>
+							</div>
+						</div>
+						<div class="content-action">
+							<div class="content-item content-item-expiredDate"
+								title="Hết hạn trong 17 ngày">Hết hạn trong 17 ngày</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="job-wraper">
+			<div class="job-item">
+				<div class="job-image">
+					<a href="#" title="Construction Manager" target="_blank"><div
+							class="bg-image" role="img"
+							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+					</a>
+					<div class="all-ribbon">
+						<div class="ribbon-product">
+							<span><img
+								src="https://cdn.dailyxe.com.vn/image/ford-viet-nam-33523j1.jpg"
+								alt="" class="ribbon-logo"></span>
+						</div>
+						<div class="ribbon-end">
+							<!--day la shape khong co content-->
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="job-desc">
+						<div class="heading">
+							<a href="#" title="Construction Manager" target="_blank">Construction
+								Manager</a>
+						</div>
+						<div class="content-item content-item-company"
+							title="Jotun Paints (Vietnam) Co., Ltd.">Jotun Paints (Vietnam)
+							Co., Ltd.</div>
+						<div class="content-item content-item-location"
+							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
+						<div class="content-item">
+							<div class="salary">
+								<a href="#" title="Đăng nhập để xem lương">Đăng nhập để xem
+									lương</a>
 							</div>
 						</div>
 						<div class="content-action">
@@ -159,8 +235,8 @@
 							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
 						<div class="content-item">
 							<div class="salary">
-								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
-									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+								<a href="#" title="Đăng nhập để xem lương">Đăng nhập để xem
+									lương</a>
 							</div>
 						</div>
 						<div class="content-action">
@@ -193,8 +269,8 @@
 							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
 						<div class="content-item">
 							<div class="salary">
-								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
-									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+								<a href="#" title="Đăng nhập để xem lương">Đăng nhập để xem
+									lương</a>
 							</div>
 						</div>
 						<div class="content-action">
@@ -227,8 +303,8 @@
 							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
 						<div class="content-item">
 							<div class="salary">
-								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
-									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+								<a href="#" title="Đăng nhập để xem lương">Đăng nhập để xem
+									lương</a>
 							</div>
 						</div>
 						<div class="content-action">
@@ -261,42 +337,8 @@
 							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
 						<div class="content-item">
 							<div class="salary">
-								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
-									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
-							</div>
-						</div>
-						<div class="content-action">
-							<div class="content-item content-item-expiredDate"
-								title="Hết hạn trong 17 ngày">Hết hạn trong 17 ngày</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="job-wraper">
-			<div class="job-item">
-				<div class="job-image">
-					<a href="#" title="Construction Manager" target="_blank"><div
-							class="bg-image" role="img"
-							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
-							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
-					</a>
-				</div>
-				<div class="content">
-					<div class="job-desc">
-						<div class="heading">
-							<a href="#" title="Construction Manager" target="_blank">Construction
-								Manager</a>
-						</div>
-						<div class="content-item content-item-company"
-							title="Jotun Paints (Vietnam) Co., Ltd.">Jotun Paints (Vietnam)
-							Co., Ltd.</div>
-						<div class="content-item content-item-location"
-							title="Bình Dương, Hồ Chí Minh">Bình Dương, Hồ Chí Minh</div>
-						<div class="content-item">
-							<div class="salary">
-								<a href="https://www.vietnamworks.com/dang-nhap?from=home-v2"
-									title="Đăng nhập để xem lương">Đăng nhập để xem lương</a>
+								<a href="#" title="Đăng nhập để xem lương">Đăng nhập để xem
+									lương</a>
 							</div>
 						</div>
 						<div class="content-action">
