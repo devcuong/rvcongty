@@ -102,7 +102,7 @@
 			<div class="job-item">
 				<div class="job-image">
 					<a
-						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						href="#"
 						title="Construction Manager" target="_blank"><div class="bg-image"
 							role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
@@ -113,7 +113,7 @@
 					<div class="job-desc">
 						<div class="heading">
 							<a
-								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								href="#"
 								title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
@@ -140,7 +140,7 @@
 			<div class="job-item">
 				<div class="job-image">
 					<a
-						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						href="#"
 						title="Construction Manager" target="_blank"><div class="bg-image"
 							role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
@@ -151,7 +151,7 @@
 					<div class="job-desc">
 						<div class="heading">
 							<a
-								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								href="#"
 								title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
@@ -178,7 +178,7 @@
 			<div class="job-item">
 				<div class="job-image">
 					<a
-						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						href="#"
 						title="Construction Manager" target="_blank"><div class="bg-image"
 							role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
@@ -189,7 +189,7 @@
 					<div class="job-desc">
 						<div class="heading">
 							<a
-								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								href="#"
 								title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
@@ -216,7 +216,7 @@
 			<div class="job-item">
 				<div class="job-image">
 					<a
-						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						href="#"
 						title="Construction Manager" target="_blank"><div class="bg-image"
 							role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
@@ -227,7 +227,7 @@
 					<div class="job-desc">
 						<div class="heading">
 							<a
-								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								href="#"
 								title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
@@ -254,7 +254,7 @@
 			<div class="job-item">
 				<div class="job-image">
 					<a
-						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						href="#"
 						title="Construction Manager" target="_blank"><div class="bg-image"
 							role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
@@ -265,7 +265,7 @@
 					<div class="job-desc">
 						<div class="heading">
 							<a
-								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								href="#"
 								title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
@@ -292,7 +292,7 @@
 			<div class="job-item">
 				<div class="job-image">
 					<a
-						href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+						href="#"
 						title="Construction Manager" target="_blank"><div class="bg-image"
 							role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
@@ -303,7 +303,7 @@
 					<div class="job-desc">
 						<div class="heading">
 							<a
-								href="https://www.vietnamworks.com/construction-manager-57-1259250-jv?utm_campaign=1259250&amp;utm_source=specialOffers&amp;utm_medium=specialOffers"
+								href="#"
 								title="Construction Manager" target="_blank">Construction
 								Manager</a>
 						</div>
