@@ -136,6 +136,18 @@
 	border-width: 20px 100px 0 0;
 	border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
 }
+.s009 form .inner-form .basic-search{
+	display: flex;
+}
+.basic-search .input-search{
+	width: 40% !important;
+}
+.basic-search .select-location{
+	width: 20% !important;
+}
+.basic-search .select-category{
+	width: 20% !important;
+}
 </style>
 <script>
 $(document).ready(function(){
@@ -156,7 +168,7 @@ $(document).ready(function(){
 		<form>
 			<div class="inner-form">
 				<div class="basic-search">
-					<div class="input-field">
+					<div class="input-field input-search">
 						<input id="search" type="text" placeholder="Type Keywords" />
 						<div class="icon-wrap">
 							<svg class="svg-inline--fa fa-search fa-w-16" fill="#ccc"
@@ -168,6 +180,24 @@ $(document).ready(function(){
                 </svg>
 						</div>
 					</div>
+					<div class="input-field select-location">
+							<div class="input-select">
+								<select data-trigger="" name="choices-single-defaul">
+									<option placeholder="" value="">Accessories</option>
+									<option>Subject b</option>
+									<option>Subject c</option>
+								</select>
+							</div>
+						</div>
+						<div class="input-field select-category">
+							<div class="input-select">
+								<select data-trigger="" name="choices-single-defaul">
+									<option placeholder="" value="">Accessories</option>
+									<option>Subject b</option>
+									<option>Subject c</option>
+								</select>
+							</div>
+						</div>
 				</div>
 				<div class="advance-search">
 					<div class="row">
