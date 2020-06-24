@@ -114,24 +114,25 @@
 }
 
 .all-ribbon {
-    position: absolute;
-    top: 0;
-    left: 0px;
-    filter: drop-shadow(2px 0px 1px rgba(0, 0, 0, 0.5));
+	position: absolute;
+	top: 0;
+	left: 0px;
+	filter: drop-shadow(2px 0px 1px rgba(0, 0, 0, 0.5));
 }
 
 .ribbon-product {
-    background: rgba(255, 255, 255, 1);
-    min-height: 50px;
+	background: rgba(255, 255, 255, 1);
+	min-height: 50px;
 }
 
 .ribbon-end {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 20px 100px 0 0;
-    border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 20px 100px 0 0;
+	border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
 }
+
 </style>
 <div class="job-container">
 	<div class="job-list">
@@ -141,7 +142,7 @@
 					<a href="#" title="Construction Manager" target="_blank"><div
 							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
-							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;<?php echo $servername ?>/mvc/public/images/banner-jobs.png&quot;);"></div>
 					</a>
 				</div>
 				<div class="content">
@@ -175,7 +176,7 @@
 					<a href="#" title="Construction Manager" target="_blank"><div
 							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
-							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;<?php echo $servername ?>/mvc/public/images/banner-jobs.png&quot;);"></div>
 					</a>
 					<div class="all-ribbon">
 						<div class="ribbon-product">
@@ -219,7 +220,7 @@
 					<a href="#" title="Construction Manager" target="_blank"><div
 							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
-							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;<?php echo $servername ?>/mvc/public/images/banner-jobs.png&quot;);"></div>
 					</a>
 				</div>
 				<div class="content">
@@ -253,7 +254,7 @@
 					<a href="#" title="Construction Manager" target="_blank"><div
 							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
-							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;<?php echo $servername ?>/mvc/public/images/banner-jobs.png&quot;);"></div>
 					</a>
 				</div>
 				<div class="content">
@@ -287,7 +288,7 @@
 					<a href="#" title="Construction Manager" target="_blank"><div
 							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
-							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;<?php echo $servername ?>/mvc/public/images/banner-jobs.png&quot;);"></div>
 					</a>
 				</div>
 				<div class="content">
@@ -321,7 +322,7 @@
 					<a href="#" title="Construction Manager" target="_blank"><div
 							class="bg-image" role="img"
 							aria-label="Jotun Paints (Vietnam) Co., Ltd. tuyển dụng - Tìm việc mới nhất, lương thưởng hấp dẫn."
-							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;https://images.vietnamworks.com/logo/bannerdefaultNew_111116_111282_111620.png&quot;);"></div>
+							style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(216, 216, 216, 0) 34%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.1) 100%), url(&quot;<?php echo $servername ?>/mvc/public/images/banner-jobs.png&quot;);"></div>
 					</a>
 				</div>
 				<div class="content">
