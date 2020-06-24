@@ -141,9 +141,13 @@
 $(document).ready(function(){
   $("#hide-search").click(function(){
     $("#advanced-search-section").hide();
+    $("#hide-search").hide();
+    $("#show-search").show();
   });
   $("#show-search").click(function(){
     $("#advanced-search-section").show();
+    $("#show-search").hide();
+    $("#hide-search").show();
   });
 });
 </script>
