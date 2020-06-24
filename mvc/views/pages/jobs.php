@@ -194,17 +194,19 @@ $(document).ready(function(){
 								</select>
 							</div>
 						</div>
+						<div class="input-field">
+							<div class="group-btn">
+								<button class="btn-search">SEARCH</button>
+							</div>
+						</div>
 					</div>
 					<div class="row third">
 						<div class="input-field">
 							<div class="result-count">
-								<a id="show-search">Chọn tìm kiếm nâng cao</a>
-								<a id="hide-search">Ẩn tìm kiếm nâng cao</a>
+								<a id="show-search">Chọn tìm kiếm nâng cao</a> <a
+									id="hide-search">Ẩn tìm kiếm nâng cao</a>
 							</div>
-							<div class="group-btn">
-								<button class="btn-delete" id="delete">RESET</button>
-								<button class="btn-search">SEARCH</button>
-							</div>
+
 						</div>
 					</div>
 					<div class="row second" id="advanced-search-section">
