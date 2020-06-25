@@ -132,10 +132,9 @@
 	border-width: 20px 100px 0 0;
 	border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
 }
-.search-wraper{
+
+.search-wraper {
 	width: 100%;
-	min-height:300px;
-	background: #000;
 }
 </style>
 <script>
@@ -152,9 +151,23 @@ $(document).ready(function(){
   });
 });
 </script>
-<div class="job-container">
-	<div class="search-wraper">
+<div class="search-job">
+	<div class="container search-wraper">
+		<div class="columns">
+			<div class="column is-10">
+			<div class="columns">
+				<div class="column is-6">aaa</div>
+				<div class="column is-3">aaa</div>
+				<div class="column is-3">aaa</div>
+			</div>
+			</div>
+			<div class="column is-2">
+			aaa
+			</div>
 	</div>
+</div>
+<div class="job-container">
+
 	<div class="job-list">
 		<div class="job-wraper">
 			<div class="job-item">
