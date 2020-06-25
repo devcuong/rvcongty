@@ -132,6 +132,11 @@
 	border-width: 20px 100px 0 0;
 	border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
 }
+.search-wraper{
+	width: 100%;
+	min-height:300px;
+	background: #000;
+}
 </style>
 <script>
 $(document).ready(function(){
@@ -148,7 +153,8 @@ $(document).ready(function(){
 });
 </script>
 <div class="job-container">
-	
+	<div class="search-wraper">
+	</div>
 	<div class="job-list">
 		<div class="job-wraper">
 			<div class="job-item">
